@@ -4,15 +4,15 @@
 
 ### Local-first AI for Windows
 
-**Voice · Memory · Secure Desktop Control · Connected Services · Developer Fabric**
+**AI Runtime · Voice · Memory · Skills · Secure Desktop Control · Maps/GPS · Developer Fabric**
 
 <br>
 
-<img alt="AURA v2.3" src="https://img.shields.io/badge/AURA-v2.3-6f42c1?style=flat-square">
-<img alt="Runtime v3" src="https://img.shields.io/badge/Intelligence_Runtime-v3-1f6feb?style=flat-square">
-<img alt="Windows" src="https://img.shields.io/badge/Platform-Windows-0078D4?style=flat-square&logo=windows11&logoColor=white">
-<img alt="Python 3.14" src="https://img.shields.io/badge/Python-3.14-3776AB?style=flat-square&logo=python&logoColor=white">
-<img alt="License" src="https://img.shields.io/badge/License-All_Rights_Reserved-555?style=flat-square">
+<img alt="AURA v2.3" src="https://img.shields.io/badge/AURA-v2.3-6f42c1?style=for-the-badge">
+<img alt="Runtime v3" src="https://img.shields.io/badge/Runtime-v3-1f6feb?style=for-the-badge">
+<img alt="Windows" src="https://img.shields.io/badge/Windows-Desktop-0078D4?style=for-the-badge&logo=windows11&logoColor=white">
+<img alt="Python 3.14" src="https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<img alt="License" src="https://img.shields.io/badge/License-All_Rights_Reserved-555?style=for-the-badge">
 
 <br><br>
 
@@ -25,6 +25,18 @@
 </div>
 
 ---
+
+## What AURA can do
+
+| Intelligence | Personal Assistant | System & Creation |
+|---|---|---|
+| **Multi-provider Runtime v3** — capability-aware routing, failover, provider health and local/cloud policy | **Persistent Memory** — contextual recall, provenance, sensitive-memory filtering and private sessions | **Secure Windows Control** — bounded window/app orchestration behind policy gates |
+| **AURA Skills v2.3** — research, weather, navigation, files, productivity, memory, system, voice and developer skills | **Voice Assistant** — push-to-talk, local STT paths, XTTS, Chatterbox and Piper | **Supervised Automation** — missions, approvals, receipts, idempotency and recovery |
+| **Web Research** — search, browser workflows, grounded source handling and structured results | **Productivity** — tasks, reminders, calendar, agenda, notes and Google-connected workflows | **Developer Fabric** — planning, coding agents, patch proposals, tests, diffs, backup and rollback |
+| **Weather Intelligence** — forecast, air quality, wind, pressure and regional map fields | **Maps & GPS** — geocoding, routes, distance, ETA and navigation handoff | **Files & Projects** — authorized document analysis, local project summaries and cross-file search |
+| **Controlled Learning** — provenance-aware candidates, duplicate/conflict review and explicit consolidation | **Media & Creative** — local media center, YouTube analytics, Obsidian and long-form revision workflows | **Profile Portability** — export/import preview, rollback and secret-safe profile transfer |
+
+> AURA is designed around **explicit user control**. Sensitive mutations require policy approval, microphone capture is push-to-talk only, and private runtime data is intentionally excluded from the public repository.
 
 ## Overview
 
