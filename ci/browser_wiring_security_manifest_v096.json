@@ -1,0 +1,99 @@
+{
+  "schema": "aura.browser-wiring-security-manifest.v096-r3.v3",
+  "created_at": "2026-08-28T14:51:07",
+  "status": "D2_R4_R3_ZERO_FAIL_WIRING_SECURITY",
+  "product_version": "0.9.5",
+  "target_version": "0.9.6",
+  "milestone": "Browser / Web Workflows",
+  "strategy": "MINIMAL_WIRING_AROUND_CERTIFIED_AUTHORITIES",
+  "source_dry_run": {
+    "path": "AURA_V0_9_6_D2_R3_R2_BROWSER_WIRING_SECURITY_FULL_DRY_RUN_RESULT.json",
+    "status": "PASS_V0_9_6_D2_R3_R2_BROWSER_WIRING_SECURITY_FULL_DRY_RUN",
+    "checks": "51/51 + R4_R2 36/36",
+    "blockers": 0
+  },
+  "existing_authorities": {
+    "security/permissions.py": {
+      "pre_sha256": "de81fd45114252111c4681fa998ff034f57247b3c30b12e9aa6f797465e90d34",
+      "post_sha256": "6df1f3a88072355147e9b1409566bb9046a25412f57112830308ccc948c7d4a0"
+    },
+    "runtime/route_contract.py": {
+      "pre_sha256": "556379f6ecac877a13f78159f660c880a1590b538e93ef76c8853200c6d7d5d6",
+      "post_sha256": "a04a000f19c4794b543dbd4cd5b73541997f32055d3a7776f4979a89eb62f9b4"
+    },
+    "integrations/registry.py": {
+      "pre_sha256": "0e851ecbe6d0bbbf5362a0c743d7ccca596ff62b36689ea4fd89002757cf2b30",
+      "post_sha256": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411"
+    },
+    "runtime/personal_integrations.py": {
+      "pre_sha256": "0715250cda381afcbe4e233abced9362214ac9f9166f0cc078cabd04bd2926eb",
+      "post_sha256": "de47c1a8bd1598ab6d03a29276dfdd0ada90b5220415cc8e2a418b940259a893"
+    }
+  },
+  "new_files": {
+    "runtime/browser_wiring_v096.py": "31b73e0b56204bdac1cf3768ed56d75edcf44bbb3cd2bf0891f182d8ff02fac1",
+    "tests/invariants/test_browser_wiring_v096.py": "9319598ad79c9fdbbdadd61da362f0dcbcdf2d11771540031ec5374319209ec9",
+    "tests/invariants/test_browser_security_mapping_v096.py": "87a2166fd00c4599fa0139e4d18407384b130bcaa6a9dde042db0029a1152da1",
+    "tests/invariants/test_browser_workflow_contract_preserved_d2r4_v096.py": "e0459e7d1993380aa32811a62fc32e73efe3a2175d6e1fe7a4bebb4dd1501b49"
+  },
+  "historical_D1_preservation": {
+    "contract_sha256": "9e9f8e32f4671ef7b6409859e27a1384721abbeb1baeeacc43a8604b008c0fda",
+    "historical_invariant_sha256": "102bd73652314136f975ddce5c35f2cc3be3fc075e2f2274eadb8712cece4a15",
+    "historical_gate_policy": "IMMUTABLE_PREWRITE_ONLY",
+    "current_postwrite_gate": "test_browser_workflow_contract_preserved_d2r4_v096.py"
+  },
+  "security_mapping": {
+    "browser.open": "WEB_READ",
+    "browser.navigate": "WEB_READ",
+    "browser.read": "WEB_READ",
+    "browser.extract": "WEB_READ",
+    "browser.search": "WEB_READ",
+    "browser.click": "BROWSER_MUTATE / confirmation required / no executor in D2 R4",
+    "browser.fill": "BROWSER_MUTATE / confirmation required / no executor in D2 R4",
+    "browser.submit": "BROWSER_MUTATE / confirmation required / no executor in D2 R4",
+    "browser.download": "BROWSER_DOWNLOAD / confirmation required / no persistence in D2 R4"
+  },
+  "route_mapping": {
+    "browser.open": "browser-open",
+    "browser.navigate": "browser-navigate",
+    "browser.read": "browser-read",
+    "browser.extract": "browser-extract",
+    "browser.search": "browser-search",
+    "browser.click": "browser-click",
+    "browser.fill": "browser-fill",
+    "browser.submit": "browser-submit",
+    "browser.download": "browser-download",
+    "browser.workflow": "browser-workflow"
+  },
+  "orchestration": {
+    "MissionEngine": "UNCHANGED",
+    "ActionReceiptService": "UNCHANGED",
+    "SecurityPolicyEngineV2": "UNCHANGED",
+    "BrowserWiringAdapter": "ACTIVE_ADAPTER_BOUNDARY",
+    "BrowserIntegrationProviderAdapter": "REGISTRY_COMPATIBLE",
+    "state_changing_executor": "DISABLED"
+  },
+  "protected_authorities": {
+    "security/policy_engine_v2.py": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "action_receipts/service.py": "4c0f13eefaa6351eca157235d3b0ceea5643474a8cbf0cdb7401c1d71b34023e",
+    "tools/web_search.py": "12527a9474569ba697cb0d7235a9848ce63ba15dde21b4bbeab766556ca3dc27",
+    "tools/web_fetch.py": "68d7eb5f3894b30a5dc15019714311d2435dc0ca64be65a0f02d97ea40d9450f",
+    "tools/safe_http.py": "3d9cfa0c877b03eef3f4dfa4ce7550bf56ef7bf78963db31f24910e2ed2c385c",
+    "integrations/browser/provider.py": "fee06ec1a9651687aacd93669114003d03618fa2ee85c171632abdeb232cdaf8",
+    "runtime/browser_workflows.py": "cb92861f65a719810c77fb50c8640af8d691b9d289ac83bfc229e602355700d1"
+  },
+  "database_sha256": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb",
+  "visual_authorities": {
+    "main_css": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5",
+    "activity_project": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4",
+    "activity_dist": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4"
+  },
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_scope": [
+    "bind BrowserIntegrationProviderAdapter to real existing Web Search / Web Fetch adapters",
+    "live read-only browser workflow dry-run",
+    "prove source/evidence propagation end-to-end",
+    "keep state-changing executor disabled"
+  ]
+}

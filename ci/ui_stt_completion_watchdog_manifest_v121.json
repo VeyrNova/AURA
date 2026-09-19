@@ -1,0 +1,22 @@
+{
+  "schema": "aura.ui-stt-completion-watchdog.v121.v1",
+  "status": "IMPLEMENTED_V1_2_1_UI_STT_COMPLETION_WATCHDOG_HOTFIX",
+  "generated_at": "2026-08-29T09:50:33",
+  "product_version": "1.2.1",
+  "source_main_window_sha256": "cda6d7d746d8f98b01ede7e5f634a26fc005768fb9406bcb1d3891bde1309481",
+  "baseline_main_window_sha256": "326d1b2ca580ef83c704c97b24e0052ca83c56c6c8b72f9a9e39a2e460f61d0a",
+  "protected_voice_backends_unchanged": true,
+  "behavior": {
+    "fresh_hybrid_backend_per_microphone_turn": true,
+    "primary_worker_terminal_state_capture": true,
+    "watchdog_ms": 12000,
+    "fresh_hybrid_recovery": true,
+    "hard_fail_safe_ms": 30000,
+    "duplicate_terminal_guard": true,
+    "explicit_voice_idle_event_on_terminal": true,
+    "text_input_routing_modified": false
+  },
+  "network_during_install": "NOT USED",
+  "version_bumped": false,
+  "next_state": "READY_FOR_V1_2_1_UI_STT_LIVE_USER_ACCEPTANCE"
+}

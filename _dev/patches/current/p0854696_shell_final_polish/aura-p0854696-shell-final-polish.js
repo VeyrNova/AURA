@@ -1,0 +1,162 @@
+/* AURA P0.8.5.4.6.9.6 — SHELL FINAL POLISH */
+(()=>{
+  'use strict';
+  if(window.__AURA_P0854696_SHELL_POLISH__)return;
+  window.__AURA_P0854696_SHELL_POLISH__=true;
+
+  const VERSION='P0.8.5.4.6.9.6';
+  const q=(s,r=document)=>r.querySelector(s);
+
+  const CLOCK_SVG=`<svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="8.1"></circle>
+    <path d="M12 7.4v5l3.25 1.95"></path>
+  </svg>`;
+
+  const CORE_SVG=`<svg class="aura-p0854696-core-svg" viewBox="0 0 48 48" aria-hidden="true">
+    <defs>
+      <linearGradient id="auraCoreGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#6de8ff"/>
+        <stop offset=".55" stop-color="#3f8cff"/>
+        <stop offset="1" stop-color="#9a6cff"/>
+      </linearGradient>
+    </defs>
+    <path class="core-outer" d="M24 4.7 40.2 14v20L24 43.3 7.8 34V14z"/>
+    <path class="core-mid" d="M24 10.2 35.5 16.8v14.4L24 37.8 12.5 31.2V16.8z"/>
+    <path class="core-inner" d="M24 15.4 31.1 19.5v9L24 32.6l-7.1-4.1v-9z"/>
+    <path class="core-outer" d="m7.8 14 16.2 10 16.2-10M24 24v19.3" opacity=".55"/>
+    <circle class="core-node" cx="24" cy="4.7" r="1.2"/>
+    <circle class="core-node" cx="40.2" cy="14" r="1.2"/>
+    <circle class="core-node" cx="40.2" cy="34" r="1.2"/>
+    <circle class="core-node" cx="24" cy="43.3" r="1.2"/>
+    <circle class="core-node" cx="7.8" cy="34" r="1.2"/>
+    <circle class="core-node" cx="7.8" cy="14" r="1.2"/>
+    <path class="core-center" d="m24 19.1 4.25 2.45v4.9L24 28.9l-4.25-2.45v-4.9z"/>
+  </svg>`;
+
+  const MIC_SVG=`<svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="8.2" y="3.8" width="7.6" height="11.1" rx="3.8"></rect>
+    <path d="M5.8 11.4v.7a6.2 6.2 0 0 0 12.4 0v-.7"></path>
+    <path d="M12 18.3v2.3M8.9 20.6h6.2"></path>
+  </svg>`;
+
+  const SEND_SVG=`<svg viewBox="0 0 24 24" aria-hidden="true">
+    <defs>
+      <linearGradient id="auraSendGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#6de8ff"/>
+        <stop offset=".58" stop-color="#3f8cff"/>
+        <stop offset="1" stop-color="#9a6cff"/>
+      </linearGradient>
+    </defs>
+    <path d="M4.2 5.2 20 12 4.2 18.8l2.25-5.15L14.1 12l-7.65-1.65z"></path>
+  </svg>`;
+
+  function polishBrand(){
+    const mark=q('.topbar .brand-mark');
+    if(mark){
+      mark.setAttribute('aria-hidden','true');
+      mark.dataset.auraMasterVector='AURA_LOGO_SYMBOL_MASTER.svg';
+    }
+  }
+
+  function installClock(){
+    const top=q('.top-center');
+    if(!top)return null;
+    let clock=q('#auraP0854696Clock');
+    if(!clock){
+      clock=document.createElement('div');
+      clock.id='auraP0854696Clock';
+      clock.className='aura-p0854696-clock';
+      clock.setAttribute('role','timer');
+      clock.setAttribute('aria-label','Heure locale');
+      clock.innerHTML=`${CLOCK_SVG}<b data-time>--:--</b>`;
+      const router=q('.aura-p0640-router-pill',top);
+      (router||q('#routeText',top)||top.lastElementChild)?.insertAdjacentElement('afterend',clock);
+      if(!clock.isConnected)top.appendChild(clock);
+    }
+
+    const fmt=new Intl.DateTimeFormat('fr-FR',{hour:'2-digit',minute:'2-digit',hour12:false});
+    const update=()=>{
+      const b=q('[data-time]',clock);
+      if(!b)return;
+      const value=fmt.format(new Date()).replace(' h ',':').replace('h',':');
+      b.textContent=value;
+      clock.title=`Heure locale · ${value}`;
+      clock.setAttribute('aria-label',`Heure locale ${value}`);
+    };
+    update();
+    window.__AURA_P0854696_CLOCK_TIMER__&&clearInterval(window.__AURA_P0854696_CLOCK_TIMER__);
+    window.__AURA_P0854696_CLOCK_TIMER__=setInterval(update,1000);
+    return clock;
+  }
+
+  function polishCore(){
+    const card=q('.aura-p0702-core-card');
+    if(!card)return false;
+    const icon=q('.aura-p0702-core-icon',card);
+    if(icon&&!icon.dataset.auraP0854696){
+      icon.innerHTML=CORE_SVG;
+      icon.dataset.auraP0854696='1';
+    }
+    const title=q('b',card);
+    const sub=q('small',card);
+    const status=q('[data-core-status]',card);
+    if(title)title.textContent='AURA CORE';
+    if(sub)sub.textContent='Noyau central';
+    if(status&&!String(status.textContent||'').trim())status.textContent='Opérationnel';
+    card.dataset.auraP0854696='definitive-core';
+    return true;
+  }
+
+  function polishComposer(){
+    const mic=q('#micBtn');
+    const send=q('#sendBtn');
+    if(mic){
+      mic.innerHTML=MIC_SVG;
+      mic.title='Push to talk · maintenir pour parler';
+      mic.setAttribute('aria-label','Push to talk · maintenir pour parler');
+      mic.dataset.auraControl='push-to-talk';
+    }
+    if(send){
+      send.innerHTML=SEND_SVG;
+      send.title='Envoyer le texte';
+      send.setAttribute('aria-label','Envoyer le texte');
+      send.dataset.auraControl='send-text';
+    }
+    return !!(mic&&send);
+  }
+
+  function apply(){
+    polishBrand();
+    installClock();
+    polishCore();
+    polishComposer();
+    document.documentElement.dataset.auraShellPolish='p0854696';
+  }
+
+  apply();
+
+  // Left rail is generated by P0.7.0.2. Keep this observer only long enough
+  // to catch delayed shell construction; it never rebuilds the runtime.
+  let attempts=0;
+  const timer=setInterval(()=>{
+    apply();
+    attempts++;
+    if(attempts>=20 && q('.aura-p0702-core-card') && q('#micBtn') && q('#sendBtn')){
+      clearInterval(timer);
+    }
+  },250);
+
+  window.addEventListener('aura:left-rail-ready',polishCore);
+  window.addEventListener('aura:workspace-changed',()=>setTimeout(polishComposer,0));
+
+  window.dispatchEvent(new CustomEvent('aura:shell-polish-ready',{
+    detail:{
+      version:VERSION,
+      masterLogo:'/assets/AURA_LOGO_SYMBOL_MASTER.svg',
+      clock:true,
+      coreCard:true,
+      composerControls:true,
+      musicModule:false
+    }
+  }));
+})();

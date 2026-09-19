@@ -1,0 +1,18 @@
+{
+  "schema": "aura.activity-center-theme-dedup.v095.v1",
+  "phase": "D2 R5 Activity Center Theme + Dedup Fix",
+  "product_version_during_d2": "0.9.4",
+  "contract": {
+    "modules_notifications_card": 1,
+    "modules_activity_center_card": 0,
+    "notifications_opens_activity_center": true,
+    "activity_center_theming_applied": true,
+    "system_live_module_card": 0
+  },
+  "hashes": {
+    "p081_project": "4d903ff49dfdcec96c7c1630cc3c5d4494b433c569cf6c706bbb20f506114236",
+    "p081_dist": "f976c9f75bdd8bab5ce3e9498d4ebfeebc89af07f5475a1d85297dbb03fc3942",
+    "rail_js": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "rail_css": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+  }
+}

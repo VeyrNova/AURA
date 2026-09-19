@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#02050a" />
+  <title>AURA</title>
+  <script src="./src/aura-v123-eventsource-bridge.js"></script>
+  <link rel="stylesheet" href="./src/aura-v123-personal-results-web.css">
+  <script type="module" src="./src/aura-v123-personal-results-web.js"></script>
+<link rel="stylesheet" href="./src/aura-v123-visible-productivity-rebind.css?v=w131-3d4-r6-20260904">
+<link rel="stylesheet" href="/src/aura-adf-h-r5-developer-mode.css?v=adf-h-r5-r3">
+  <link rel="stylesheet" href="./dist/assets/aura-v2-product-ui-cleanup-r2.css" data-aura-v2-product-cleanup="r2">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar glass">
+      <div class="brand">
+        <div class="brand-mark"><span></span><i></i></div>
+        <div><strong>AURA</strong><small>NEURAL OPERATING INTERFACE</small></div>
+      </div>
+      <div class="top-center">
+        <div class="state-pill"><span id="stateDot"></span><b id="stateText">BOOTSTRAP</b></div>
+        <div class="route-pill" id="routeText">LOCAL RUNTIME</div>
+      </div>
+      <div class="top-actions">
+        <span class="mini-chip" id="coreChip">CORE · CONNECTING</span>
+        <span class="mini-chip" id="voiceChip">CAMILLA · WARMING</span>
+        <button class="power" id="powerBtn" title="Fermer AURA" aria-label="Fermer AURA">⏻</button>
+      </div>
+    </header>
+
+    <aside class="rail glass">
+      <button class="rail-btn active" id="homeBtn" title="Accueil"><span>⌂</span><small>HOME</small></button>
+      <button class="rail-btn" id="talkBtn" title="Conversation"><span>◌</span><small>TALK</small></button>
+      <button class="rail-btn locked" title="Memoire — migration future"><span>◇</span><small>MEM</small></button>
+      <button class="rail-btn locked" title="Systeme — migration future"><span>▦</span><small>SYS</small></button>
+      <div class="rail-spacer"></div>
+      <button class="rail-btn locked" title="Reglages — migration future"><span>⚙</span><small>SET</small></button>
+    </aside>
+
+    <main class="workspace">
+      <section class="hero">
+        <div id="stage"></div>
+        <div class="scanlines"></div>
+        <div class="core-label">
+          <span>NEURAL CORE</span>
+          <strong id="coreState">INITIALIZING</strong>
+          <small id="coreSub">Runtime v2 handshake</small>
+        </div>
+        <div class="boot-card glass" id="bootCard">
+          <div class="boot-head"><span>CONSTRUCTION AURA</span><b id="bootPercent">00%</b></div>
+          <div class="boot-track"><i id="bootFill"></i></div>
+          <small id="bootPhase">EMERGENCE DU NOYAU</small>
+        </div>
+        <section class="conversation glass" id="conversation" aria-live="polite">
+          <div class="conversation-head"><div><span>CONVERSATION</span><small id="conversationStatus">Lien local sécurisé</small></div><button id="closeTalk" aria-label="Fermer la conversation">×</button></div>
+          <div class="messages" id="messages"><div class="empty-conversation" id="emptyConversation">AURA est prête à recevoir un message dès que le Core est opérationnel.</div></div>
+        </section>
+      </section>
+
+      <aside class="telemetry glass">
+        <div class="panel-title"><span>SYSTEM LIVE</span><i>v1.2.2 INTERACTIVE</i></div>
+        <div class="metric"><label>DISPLAY GPU</label><strong id="displayGpu">DETECTION...</strong><small>Three.js WebGL2 · Balanced</small></div>
+        <div class="metric"><label>COMPUTE GPU</label><strong id="computeGpu">NVIDIA / CUDA</strong><small>XTTS priority</small></div>
+        <div class="separator"></div>
+        <div class="metric"><label>VOICE RUNTIME</label><strong id="voiceState">WARMING</strong><small id="voiceSub">Camilla · XTTS</small></div>
+        <div class="metric"><label>INTELLIGENCE</label><strong id="providerState">GROQ + GEMINI</strong><small id="providerSub">Cloud route ready</small></div>
+        <div class="separator"></div>
+        <div class="metric"><label>EVENT LINK</label><strong id="eventLink">CONNECTING</strong><small id="eventCount">0 events</small></div>
+        <div class="pcm-wrap">
+          <div class="pcm-head"><span>LIVE PCM</span><b id="pcmValue">0.00</b></div>
+          <canvas id="wave" width="320" height="76"></canvas>
+        </div>
+        <div class="privacy"><span>◆</span><p><b>LOCAL CONTROL</b><br>RC4.2 transmet le texte uniquement entre la coque locale et le Core local. Aucun accès OS direct depuis JavaScript.</p></div>
+      </aside>
+
+      <footer class="composer glass" id="composer">
+        <button class="attach disabled" title="Pièces jointes dans RC5" aria-disabled="true">＋</button>
+        <div class="composer-input-wrap">
+          <textarea id="messageInput" rows="1" maxlength="4000" placeholder="AURA démarre…" disabled></textarea>
+          <small id="composerHint">Interaction activée lorsque le Runtime est prêt.</small>
+        </div>
+        <button class="mic" id="micBtn" title="Maintenir pour parler" disabled>◉</button>
+        <button class="send" id="sendBtn" title="Envoyer" disabled>➤</button>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast"></div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+<script src="./src/aura-v123-visible-productivity-rebind.js?v=y150-r5-final-certified-20260905"></script>
+<script defer src="/src/aura-adf-h-r5-developer-mode.js?v=adf-h-r5-r3"></script>
+
+<!-- AURA A200-R18 loopback host transport -->
+<script defer src="dist/assets/aura-a200-supervised-host-transport.js" data-aura-a200-r18="transport"></script>
+
+<!-- AURA A200-R17 supervised approval/status UI -->
+<link rel="stylesheet" href="dist/assets/aura-a200-supervised-bridge-ui.css" data-aura-a200-r17="style">
+<script defer src="dist/assets/aura-a200-supervised-bridge-ui.js" data-aura-a200-r17="script"></script>
+
+<!-- AURA A200-R20 conversation intent preview -->
+<script defer src="dist/assets/aura-a200-conversation-intent-preview.js" data-aura-a200-r20="intent-preview"></script>
+
+<!-- AURA A200-R21 composer supervised plan -->
+<!-- AURA v2 product cleanup: composer supervised-plan CSS disabled -->
+<!-- AURA v2 product cleanup: composer supervised-plan JS disabled -->
+<script src="./dist/assets/aura-v2-product-ui-cleanup-r2.js" data-aura-v2-product-cleanup="r2"></script>
+</body>
+</html>

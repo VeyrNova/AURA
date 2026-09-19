@@ -1,0 +1,16 @@
+/* AURA v2 Product UI Cleanup R2 - presentation only */
+[data-aura-v2-product-hidden="1"]{
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+[data-aura-v2-product-collapsed="1"]{
+  display:none!important;
+  height:0!important;
+  min-height:0!important;
+  max-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  overflow:hidden!important;
+}

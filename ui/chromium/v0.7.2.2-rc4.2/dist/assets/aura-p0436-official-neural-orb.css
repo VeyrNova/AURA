@@ -1,0 +1,55 @@
+/* AURA P0.4.3.6 OFFICIAL VECTOR NEURAL ORB */
+/* AURA P0.4.3.7 REFERENCE FIDELITY PASS */
+/* AURA P0.4.3.8 ELECTRIC MEMBRANE + TENDRIL REFINEMENT */
+/* AURA P0.4.3.9 TRUE STAGED NEURAL CONSTRUCTION */
+/* AURA P0.4.3.10 CHECKPOINT VISUAL INTERPOLATION */
+.aura-p042-final-orb #stage > canvas.aura-p0436-orb-canvas,
+#stage > canvas.aura-final-orb-canvas.aura-p0436-orb-canvas {
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:none !important;
+  z-index:6 !important;
+  filter:saturate(1.38) contrast(1.14) brightness(1.20)
+    drop-shadow(0 0 8px rgba(99,243,255,.14))
+    drop-shadow(0 0 20px rgba(155,92,255,.12))
+    drop-shadow(0 0 30px rgba(218,92,255,.08));
+}
+
+/* Stronger specificity than all legacy P0.4.2 canvas rules. */
+.aura-p042-final-orb #stage > canvas.aura-final-orb-canvas:not(.aura-p0436-orb-canvas) {
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+}
+
+.aura-p0436-lockup {
+  position:absolute;
+  z-index:8;
+  transform:translate(-50%,-50%);
+  transform-origin:50% 50%;
+  pointer-events:none;
+  user-select:none;
+  object-fit:contain;
+  opacity:0;
+  will-change:transform,opacity,filter;
+  filter:drop-shadow(0 0 7px rgba(243,250,255,.24))
+         drop-shadow(0 0 16px rgba(99,243,255,.22))
+         drop-shadow(0 0 28px rgba(155,92,255,.22));
+}
+.aura-p0436-lockup[data-state="SPEAKING"]{
+  filter:drop-shadow(0 0 8px rgba(243,250,255,.30))
+         drop-shadow(0 0 20px rgba(99,243,255,.30))
+         drop-shadow(0 0 34px rgba(218,92,255,.26));
+}
+
+.brand-mark.aura-p0436-brand-active{display:grid !important;place-items:center !important;overflow:visible !important}
+.brand-mark.aura-p0436-brand-active>span,.brand-mark.aura-p0436-brand-active>i{display:none !important}
+.aura-p0436-header-symbol{display:block;width:92%;height:92%;object-fit:contain;filter:drop-shadow(0 0 4px rgba(99,243,255,.20)) drop-shadow(0 0 7px rgba(218,92,255,.12))}
+body[data-state="SPEAKING"] .aura-p0436-header-symbol{filter:drop-shadow(0 0 6px rgba(99,243,255,.32)) drop-shadow(0 0 10px rgba(218,92,255,.22))}
+
+.aura-ref-orb-layer,.aura-svg-identity-layer,.aura-reference-logo,.aura-reference-procedural-canvas{display:none !important}

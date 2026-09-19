@@ -1,0 +1,24 @@
+{
+  "schema": "aura.google-conversational-intent-resolver.v122.v1",
+  "status": "IMPLEMENTED_V1_2_2_GOOGLE_CONVERSATIONAL_INTENT_RESOLVER",
+  "generated_at": "2026-08-29T10:03:36",
+  "product_version": "1.2.1",
+  "target_version": "1.2.2",
+  "runtime_sha256": "9a5cd74de96b68888a8e47af323292621ed70a27fc516700548fae3c53359ce7",
+  "baseline_runtime_sha256": "8bf3744380bf357cbd610d1be2c54e6a49c7e1ad64511a1fd9be2df9b9a531d5",
+  "main_window_sha256": "cda6d7d746d8f98b01ede7e5f634a26fc005768fb9406bcb1d3891bde1309481",
+  "main_window_modified": false,
+  "aura_core_modified": false,
+  "old_pre_llm_router_reintroduced": false,
+  "coverage": {
+    "gmail_plural_list": true,
+    "gmail_singular_read_preserved": true,
+    "calendar_existing": true,
+    "contacts_existing": true,
+    "google_drive_aliases": true,
+    "generic_llm_fallback_preserved": true
+  },
+  "network_during_install": "NOT USED",
+  "version_bumped": false,
+  "next_state": "READY_FOR_V1_2_2_FT3_LIVE_GOOGLE_CONVERSATIONAL_ACCEPTANCE_FINAL_CERTIFICATION_VERSION_BUMP"
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "aura.connected-accounts-core.v120.v1",
+  "status": "IMPLEMENTED_V1_2_0_CONNECTED_ACCOUNTS_CORE_SETTINGS",
+  "generated_at": "2026-08-28T21:28:14",
+  "product_version": "1.1.1",
+  "release_version_pending": "1.2.0",
+  "scope": {
+    "google": [
+      "gmail",
+      "calendar",
+      "contacts",
+      "drive"
+    ],
+    "microsoft": [
+      "outlook_mail",
+      "calendar",
+      "contacts"
+    ],
+    "orange_mail": "EXCLUDED"
+  },
+  "new_files": {
+    "accounts/__init__.py": "36cc639c1a2505c5f7bbe39cd0386289fc972cacade185cb2a4a5c059617cc7d",
+    "accounts/model.py": "7b090ae994301ddc03d75aa706622eee0c95de403668848d6852cd9370f227a9",
+    "accounts/registry.py": "e79ad748658224a92467ead998e9b15df597902abcca7e9abb55a0dcd7034010",
+    "accounts/secret_store.py": "42e4b956028d37d69b115206f20109a16b18f557aabfc16bd3c05522a78897ea",
+    "accounts/google_oauth.py": "fb36889e66979ab1d08df5545380f326be2dc29496ffcf31e2bd2211a8e61633",
+    "accounts/microsoft_oauth.py": "fb5d66f2f0c56ed34b026990f892518a8983577af722ab039f0d35818eeadf58",
+    "runtime/connected_accounts_v120.py": "13d2306231332c4d6622d5e99104b923d1dae8d0424f56aea87dca163979bb00",
+    "tests/invariants/test_connected_accounts_v120.py": "bcb00961c13bba090ca14209ef5784f4b85ab8dc4e4482f4a1cfe29c8458d8b5"
+  },
+  "modified_files": {
+    "ui/final_modules.py": {
+      "before": "154d75c900a1b3a9520bab3ec0183a3274e166e9f45af76dc3fc90fb051dfef3",
+      "after": "83d154a8e5e2162758cbea1e35b761e1c68cedad8f7e5479cb2d3f9013b6cfcf"
+    }
+  },
+  "oauth": {
+    "live_login_performed": false,
+    "google_client_configuration_present": false,
+    "microsoft_client_configuration_present": false
+  },
+  "security": {
+    "secret_store": "Windows keyring / WinVault",
+    "plaintext_tokens": "FORBIDDEN",
+    "password_storage": "FORBIDDEN",
+    "result_secret_values": "FORBIDDEN"
+  },
+  "next_state": "V1_2_0_CORE_IMPLEMENTED_READY_FOR_USER_OAUTH_CONFIGURATION_AND_LIVE_ACCEPTANCE"
+}

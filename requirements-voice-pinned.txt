@@ -1,0 +1,6 @@
+# Voice dependencies verified for AURA v0.5 on 2026-08-07.
+faster-whisper==1.2.1
+sounddevice==0.5.5
+numpy==2.5.1
+piper-tts==1.6.0
+websockets==16.1.1

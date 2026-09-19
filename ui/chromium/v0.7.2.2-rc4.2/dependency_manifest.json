@@ -1,0 +1,56 @@
+{
+  "version": "0.7.2.2-rc4.2",
+  "name": "aura-threejs-shell",
+  "dependencies": {
+    "three": {
+      "version": "0.185.1",
+      "resolved": "https://registry.npmjs.org/three/-/three-0.185.1.tgz",
+      "overridden": false
+    },
+    "vite": {
+      "version": "8.1.5",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.1.5.tgz",
+      "overridden": false,
+      "dependencies": {
+        "@types/node": {},
+        "@vitejs/devtools": {},
+        "esbuild": {},
+        "fsevents": {},
+        "jiti": {},
+        "less": {},
+        "lightningcss": {
+          "version": "1.33.0",
+          "resolved": "https://registry.npmjs.org/lightningcss/-/lightningcss-1.33.0.tgz",
+          "overridden": false
+        },
+        "picomatch": {
+          "version": "4.0.5",
+          "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz",
+          "overridden": false
+        },
+        "postcss": {
+          "version": "8.5.26",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.26.tgz",
+          "overridden": false
+        },
+        "rolldown": {
+          "version": "1.1.5",
+          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.1.5.tgz",
+          "overridden": false
+        },
+        "sass-embedded": {},
+        "sass": {},
+        "stylus": {},
+        "sugarss": {},
+        "terser": {},
+        "tinyglobby": {
+          "version": "0.2.17",
+          "resolved": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz",
+          "overridden": false
+        },
+        "tsx": {},
+        "yaml": {}
+      }
+    }
+  }
+}

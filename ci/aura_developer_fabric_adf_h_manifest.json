@@ -1,0 +1,20 @@
+{
+  "schema": "aura.developer-fabric.adf-h.manifest.v1",
+  "installed_at": "2026-08-31T18:56:38",
+  "aura_version": "1.3.0",
+  "native_developer_workspace": true,
+  "live_main_window_binding": true,
+  "text_and_voice_common_route": "MainWindow._on_user_message",
+  "voice_origin": "MainWindow._on_stt_finished",
+  "native_tts": "MainWindow._speak_text",
+  "intercept_before_intent_and_llm": true,
+  "self_development_summary_delivery": "resource-status timer -> native TTS",
+  "manual_microphone_tts_acceptance_required": true,
+  "developer_visual_identity": {
+    "accent": "amber-electric",
+    "persistent_badge": true,
+    "write_gated_audit_status": true,
+    "window_border": true,
+    "composer_when_detectable": true
+  }
+}

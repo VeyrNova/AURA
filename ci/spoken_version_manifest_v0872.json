@@ -1,0 +1,62 @@
+{
+  "schema": "aura.spoken-version.v0872.v1",
+  "milestone": "AURA v0.8.7.2 Spoken Version Sync",
+  "product_version_during_d2": "0.8.7.1",
+  "canonical_authority": "core.version.AURA_VERSION",
+  "spoken_authority": "core.spoken_version",
+  "integration": {
+    "self_version_reply": "ai.local_first_voice.self_reply",
+    "identity_prompt": "consciousness.context_builder.ConsciousnessContextBuilder.build_system_prompt",
+    "tts_final_normalization": "voice.text_to_speech.sanitize_for_speech"
+  },
+  "rules": {
+    "stale_self_identification_fail_closes_to_canonical": true,
+    "technical_P_RC_versions_preserved": true,
+    "canonical_numeric_version_spelled_before_TTS": true,
+    "MemoryKernel_changed": false,
+    "SecurityPolicyEngine_changed": false
+  },
+  "written_at": "2026-08-26T11:12:34",
+  "runtime": {
+    "ok": true,
+    "sample": 7,
+    "pid": 19036,
+    "port": 48362,
+    "interaction_ready": true,
+    "core_service_bridge": true,
+    "bridge_version": "P0.6.5.4",
+    "metadata_schema": "aura.runtime-metadata.v1",
+    "product_version": "0.8.7.1",
+    "ui_release": "0.7.2.2-rc4.2"
+  },
+  "files": {
+    "spoken_authority": {
+      "path": "C:\\AURA GPT version\\core\\spoken_version.py",
+      "sha256": "1665e485cedd2d6f8adb4b0ea64b5695461dc078e1e5b7beaa2d0fb9555b9340"
+    },
+    "local_first_voice": {
+      "path": "C:\\AURA GPT version\\ai\\local_first_voice.py",
+      "sha256": "b069ac09281b4b68759eecbd5392038ac39897330111ed66ab4d30ec0910319b"
+    },
+    "context_builder": {
+      "path": "C:\\AURA GPT version\\consciousness\\context_builder.py",
+      "sha256": "4273e8b84afe8d54893c55c5fafcf9a612cdd6b02e997894f075029cce6966be"
+    },
+    "text_to_speech": {
+      "path": "C:\\AURA GPT version\\voice\\text_to_speech.py",
+      "sha256": "9d4f576de34332d980ac834835cdedcf2af8c3834743088a711b5a0a72b8423d"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_spoken_product_version_v0872.py",
+      "sha256": "95acd7b169b6e02fd68c43c889efdc662e0957e416aa5af3da8b8ad4284d318c"
+    }
+  },
+  "certification_target_version": "0.9.4",
+  "final_product_version": "0.9.4",
+  "final_spoken_identity": "AURA, version zero point neuf point quatre",
+  "certified_at": "2026-08-26T18:38:22",
+  "certified_at_v0922": "2026-08-27T18:20:54",
+  "reverified_at_v09221": "2026-08-27T19:00:45",
+  "reverified_at_v093": "2026-08-27T20:46:17",
+  "reverified_at_v094": "2026-08-28T10:06:06"
+}

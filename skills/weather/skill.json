@@ -1,0 +1,19 @@
+{
+  "schema": "aura.skill.v1",
+  "version": "2.3.0",
+  "skill_id": "weather",
+  "title": "MÃ©tÃ©o",
+  "description": "MÃ©tÃ©o courante via le service mÃ©tÃ©o existant.",
+  "enabled": true,
+  "commands": [
+    "weather_current"
+  ],
+  "permissions": [
+    "network",
+    "location_context"
+  ],
+  "owner": "services.core_bridge",
+  "risk": "network_read",
+  "execution_mode": "delegate_existing_owner",
+  "microphone_policy": "not_applicable"
+}

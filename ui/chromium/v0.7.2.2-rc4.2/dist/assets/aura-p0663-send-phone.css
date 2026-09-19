@@ -1,0 +1,46 @@
+/* AURA P0.6.6.3 SEND TO PHONE */
+#auraNavigationWorkspace .aura-send-phone{margin:0 12px 10px;border:1px solid rgba(85,202,234,.18);border-radius:11px;background:rgba(3,14,24,.82);overflow:hidden}
+#auraNavigationWorkspace .aura-send-phone-launch{position:relative;width:100%;padding:10px 34px 10px 11px;text-align:left;border:0;background:linear-gradient(90deg,rgba(8,76,96,.34),rgba(64,31,116,.34));color:#e7fbff;cursor:pointer}
+#auraNavigationWorkspace .aura-send-phone-launch span{display:block;font-size:9px;font-weight:800;letter-spacing:.08em}
+#auraNavigationWorkspace .aura-send-phone-launch small{display:block;margin-top:2px;font-size:6.5px;letter-spacing:.05em;color:#6ea2b1}
+#auraNavigationWorkspace .aura-send-phone-launch i{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-style:normal;font-size:19px;color:#76dff5;transition:transform .18s ease}
+#auraNavigationWorkspace .aura-send-phone.open .aura-send-phone-launch i{transform:translateY(-50%) rotate(90deg)}
+#auraNavigationWorkspace .aura-send-phone-body{display:none;padding:10px;border-top:1px solid rgba(77,190,220,.14)}
+#auraNavigationWorkspace .aura-send-phone.open .aura-send-phone-body{display:block}
+#auraNavigationWorkspace .aura-send-phone-body>header{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;border-bottom:1px solid rgba(78,190,222,.15)}
+#auraNavigationWorkspace .aura-send-phone-body>header div{display:flex;flex-direction:column;gap:2px}
+#auraNavigationWorkspace .aura-send-phone-body>header span{font-size:7px;letter-spacing:.14em;color:#5bbbd0}
+#auraNavigationWorkspace .aura-send-phone-body>header b{font-size:11px;letter-spacing:.08em;color:#e8fbff}
+#auraNavigationWorkspace .aura-send-phone-body>header em{font-style:normal;font-size:6.5px;padding:3px 6px;border:1px solid rgba(82,213,246,.32);border-radius:999px;color:#7fe8ff}
+#auraNavigationWorkspace .aura-send-provider{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:8px 0}
+#auraNavigationWorkspace .aura-send-provider button{padding:8px 6px;border:1px solid rgba(74,164,194,.2);border-radius:8px;background:rgba(3,16,27,.84);font-size:7px;font-weight:700;letter-spacing:.06em;color:#6d909c;cursor:pointer}
+#auraNavigationWorkspace .aura-send-provider button.active{border-color:rgba(78,218,247,.62);background:rgba(8,73,94,.42);color:#dffbff;box-shadow:inset 0 0 14px rgba(53,203,235,.07)}
+#auraNavigationWorkspace .aura-send-origin{display:flex;align-items:flex-start;gap:8px;padding:8px;border:1px solid rgba(74,164,194,.15);border-radius:8px;background:rgba(3,15,25,.62);cursor:pointer}
+#auraNavigationWorkspace .aura-send-origin input{margin:2px 0 0;accent-color:#48d3ed}
+#auraNavigationWorkspace .aura-send-origin span{display:flex;min-width:0;flex-direction:column;gap:2px}
+#auraNavigationWorkspace .aura-send-origin b{font-size:6.6px;letter-spacing:.05em;color:#bceef7}
+#auraNavigationWorkspace .aura-send-origin small{font-size:6.2px;line-height:1.3;color:#5f828e}
+#auraNavigationWorkspace .aura-send-qr-wrap{display:grid;grid-template-columns:118px 1fr;gap:9px;align-items:center;margin:8px 0;padding:8px;border:1px solid rgba(73,183,211,.16);border-radius:9px;background:rgba(2,12,21,.72)}
+#auraNavigationWorkspace #auraSendQr{width:118px;height:118px;border-radius:6px;background:#fff;image-rendering:pixelated;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 8px 22px rgba(0,0,0,.24)}
+#auraNavigationWorkspace .aura-send-meta{display:flex;min-width:0;flex-direction:column;gap:7px}
+#auraNavigationWorkspace .aura-send-meta>div{display:flex;min-width:0;flex-direction:column;gap:2px;padding-bottom:6px;border-bottom:1px solid rgba(78,170,195,.1)}
+#auraNavigationWorkspace .aura-send-meta>div:last-child{padding-bottom:0;border-bottom:0}
+#auraNavigationWorkspace .aura-send-meta span{font-size:6.2px;letter-spacing:.09em;color:#587b87}
+#auraNavigationWorkspace .aura-send-meta b{overflow:hidden;text-overflow:ellipsis;font-size:7.3px;color:#c9f4fb;white-space:nowrap}
+#auraNavigationWorkspace .aura-send-actions{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+#auraNavigationWorkspace .aura-send-actions button{padding:8px;border:1px solid rgba(73,202,234,.28);border-radius:8px;background:linear-gradient(90deg,rgba(8,73,94,.38),rgba(60,30,108,.32));text-align:left;color:#e1fbff;cursor:pointer}
+#auraNavigationWorkspace .aura-send-actions button span{display:block;font-size:7px;font-weight:700;letter-spacing:.05em}
+#auraNavigationWorkspace .aura-send-actions button small{display:block;margin-top:2px;font-size:5.8px;color:#6092a0}
+#auraNavigationWorkspace .aura-send-actions button:disabled{opacity:.5;cursor:wait}
+#auraNavigationWorkspace .aura-send-notice{margin-top:7px;padding:7px;border-radius:7px;background:rgba(101,73,35,.12);font-size:6.3px;line-height:1.35;color:#9da58f}
+#auraNavigationWorkspace .aura-send-phone-body>footer{display:flex;justify-content:space-between;gap:8px;margin-top:7px;padding-top:7px;border-top:1px solid rgba(74,177,204,.13);font-size:6px;color:#5d8895}
+#auraNavigationWorkspace .aura-send-phone-body>footer span{flex:0 0 auto;color:#71dff4}
+#auraNavigationWorkspace .aura-send-phone-body>footer span.error{color:#ef9b88}
+#auraNavigationWorkspace .aura-send-phone-body>footer small{text-align:right;line-height:1.25}
+#auraNavigationWorkspace.navigation-live .aura-send-phone{display:none!important}
+@media(max-height:820px){#auraNavigationWorkspace .aura-send-qr-wrap{grid-template-columns:96px 1fr}#auraNavigationWorkspace #auraSendQr{width:96px;height:96px}#auraNavigationWorkspace .aura-send-phone-body{padding:8px}}
+
+/* AURA P0.6.6.3.1 SEND PHONE VISIBILITY RUNTIME */
+#auraNavigationWorkspace.poi-mode .aura-send-phone,
+#auraNavigationWorkspace.traffic-weather-mode .aura-send-phone{display:block!important;position:relative;z-index:4;pointer-events:auto}
+#auraNavigationWorkspace .aura-send-phone-launch{pointer-events:auto}

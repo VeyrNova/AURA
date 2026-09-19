@@ -1,0 +1,153 @@
+/* AURA P0.4.3.2 SVG IDENTITY LAYER */
+
+.aura-svg-identity-layer {
+  --aura-svg-size: 118px;
+  --aura-svg-scale: 1;
+  --aura-svg-pcm: 0;
+  position: absolute;
+  left: 50%;
+  top: 48.5%;
+  width: var(--aura-svg-size);
+  height: var(--aura-svg-size);
+  transform:
+    translate(-50%,-50%)
+    scale(var(--aura-svg-scale));
+  transform-origin: 50% 50%;
+  z-index: 7;
+  pointer-events: none;
+  will-change: transform, filter;
+  filter:
+    drop-shadow(0 0 5px rgba(84,217,255,.10))
+    drop-shadow(0 0 10px rgba(139,92,255,.08));
+}
+
+.aura-core-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.aura-core-svg .branch {
+  fill: none;
+  stroke-width: 4.5;
+  transition:
+    stroke-dashoffset 240ms cubic-bezier(.2,.7,.2,1),
+    opacity 220ms ease;
+}
+
+.aura-core-svg .branch.cyan {
+  stroke: url(#auraCyan);
+}
+
+.aura-core-svg .branch.violet {
+  stroke: url(#auraViolet);
+}
+
+.aura-core-svg .flow {
+  fill: none;
+  stroke-width: 7;
+  stroke-dasharray: .055 .20 !important;
+  animation: auraSvgCurrent 2.3s linear infinite;
+  filter: url(#auraGlow);
+}
+
+.aura-core-svg .flow-left,
+.aura-core-svg .flow-ul,
+.aura-core-svg .flow-ur {
+  stroke: url(#auraCyan);
+}
+
+.aura-core-svg .flow-right,
+.aura-core-svg .flow-ll,
+.aura-core-svg .flow-lr {
+  stroke: url(#auraViolet);
+}
+
+.aura-svg-hub,
+.aura-svg-hub-ring,
+.aura-svg-seed,
+.aura-svg-seed-glow {
+  transition:
+    opacity 260ms ease,
+    transform 340ms cubic-bezier(.2,.8,.2,1);
+}
+
+.aura-svg-seed-glow {
+  transform-origin: 60px 60px;
+  animation: auraSvgSeedBreath 4.8s ease-in-out infinite;
+}
+
+.aura-svg-identity-layer[data-state="LISTENING"] {
+  filter:
+    drop-shadow(0 0 6px rgba(84,217,255,.24))
+    drop-shadow(0 0 14px rgba(84,217,255,.12));
+}
+
+.aura-svg-identity-layer[data-state="THINKING"],
+.aura-svg-identity-layer[data-state="ANALYZING"],
+.aura-svg-identity-layer[data-state="SEARCHING"] {
+  filter:
+    drop-shadow(0 0 6px rgba(84,217,255,.16))
+    drop-shadow(0 0 16px rgba(139,92,255,.16));
+}
+
+.aura-svg-identity-layer[data-state="SPEAKING"] {
+  filter:
+    drop-shadow(0 0 7px rgba(84,217,255,.22))
+    drop-shadow(0 0 18px rgba(216,76,255,.18));
+}
+
+@keyframes auraSvgCurrent {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes auraSvgSeedBreath {
+  0%,100% { transform: scale(.92); opacity:.40; }
+  50%     { transform: scale(1.10); opacity:.80; }
+}
+
+/* Header now uses the same vector identity asset. */
+.brand-mark.aura-brand-svg-active {
+  display: grid !important;
+  place-items: center;
+  overflow: visible !important;
+}
+
+.brand-mark.aura-brand-svg-active > span,
+.brand-mark.aura-brand-svg-active > i {
+  display: none !important;
+}
+
+.aura-header-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(.94);
+  transition:
+    transform 220ms ease,
+    filter 220ms ease;
+  filter: drop-shadow(0 0 4px rgba(84,217,255,.14));
+}
+
+body[data-state="LISTENING"] .aura-header-svg {
+  transform: scale(.98);
+  filter: drop-shadow(0 0 6px rgba(84,217,255,.30));
+}
+
+body[data-state="THINKING"] .aura-header-svg,
+body[data-state="ANALYZING"] .aura-header-svg,
+body[data-state="SEARCHING"] .aura-header-svg {
+  filter:
+    drop-shadow(0 0 5px rgba(84,217,255,.22))
+    drop-shadow(0 0 8px rgba(139,92,255,.18));
+}
+
+body[data-state="SPEAKING"] .aura-header-svg {
+  transform: scale(1.01);
+  filter:
+    drop-shadow(0 0 5px rgba(84,217,255,.24))
+    drop-shadow(0 0 9px rgba(216,76,255,.18));
+}

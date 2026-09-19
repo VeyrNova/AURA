@@ -1,0 +1,79 @@
+/* AURA P0.7.0 WORKSPACE MANAGER V2 */
+/* Additive UI layer over the established P0.6.3 workspace styling. */
+
+body[data-aura-workspace="maps"] .workspace>.composer,
+body[data-aura-workspace="weather"] .workspace>.composer,
+body[data-aura-workspace="talk"] .workspace>.composer,
+body[data-aura-workspace="plan"] .workspace>.composer,
+body[data-aura-workspace="memory"] .workspace>.composer,
+body[data-aura-workspace="system"] .workspace>.composer{
+  z-index:60;
+}
+
+body.aura-workspace-transition #auraNavigationWorkspace.open{
+  animation:auraP070WorkspaceEnter .19s cubic-bezier(.2,.72,.2,1);
+}
+@keyframes auraP070WorkspaceEnter{
+  from{filter:brightness(.9);opacity:.985}
+  to{filter:none;opacity:1}
+}
+
+#auraNavigationWorkspace button:focus-visible,
+#auraNavigationWorkspace input:focus-visible,
+.aura-p070-resume-chip:focus-visible{
+  outline:1px solid rgba(116,232,255,.78);
+  outline-offset:2px;
+}
+
+.aura-p070-resume-chip{
+  position:absolute;
+  right:18px;
+  top:16px;
+  z-index:58;
+  display:none;
+  grid-template-columns:8px minmax(0,1fr) auto;
+  align-items:center;
+  gap:9px;
+  min-width:190px;
+  max-width:min(330px,34vw);
+  min-height:42px;
+  padding:7px 10px;
+  border:1px solid rgba(63,155,181,.28);
+  border-radius:11px;
+  color:#bfeef7;
+  background:linear-gradient(135deg,rgba(5,30,40,.94),rgba(15,20,43,.92));
+  box-shadow:0 10px 30px rgba(0,0,0,.22);
+  cursor:pointer;
+  text-align:left;
+  opacity:0;
+  transform:translateY(-4px);
+  transition:opacity .16s ease,transform .16s ease,border-color .16s ease,background .16s ease;
+}
+.aura-p070-resume-chip.show:not([hidden]){display:grid;opacity:1;transform:none}
+.aura-p070-resume-chip:hover{border-color:rgba(94,221,246,.55);background:linear-gradient(135deg,rgba(7,39,51,.98),rgba(22,25,55,.96))}
+.aura-p070-resume-chip>i{width:7px;height:7px;border-radius:50%;background:#63e4f4;box-shadow:0 0 12px rgba(99,228,244,.52)}
+.aura-p070-resume-chip>span{display:flex;flex-direction:column;min-width:0;gap:2px}
+.aura-p070-resume-chip small{font-size:7.5px;line-height:1.2;letter-spacing:.12em;color:#6f9ca9}
+.aura-p070-resume-chip b{font-size:9.5px;line-height:1.25;letter-spacing:.05em;color:#d6f8ff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aura-p070-resume-chip em{font-style:normal;font-size:14px;color:#a57cff}
+
+.aura-p070-workspace-status b:after{
+  content:" · V2";
+  color:#776b9e;
+  font-size:6px;
+  letter-spacing:.08em;
+}
+
+html[data-reduced-motion="true"] .aura-p070-resume-chip{transition:none}
+html[data-reduced-motion="true"] body.aura-workspace-transition #auraNavigationWorkspace.open{animation:none}
+@media (prefers-reduced-motion:reduce){
+  .aura-p070-resume-chip{transition:none}
+  body.aura-workspace-transition #auraNavigationWorkspace.open{animation:none}
+}
+
+@media(max-width:900px){
+  .aura-p070-resume-chip{right:12px;top:12px;max-width:44vw}
+}
+@media(max-width:650px){
+  .aura-p070-resume-chip{left:10px;right:10px;top:10px;max-width:none}
+}

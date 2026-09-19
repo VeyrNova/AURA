@@ -1,0 +1,81 @@
+{
+  "schema": "aura.runtime-performance.v0867.v1",
+  "milestone": "E67 Runtime & Performance Cleanup",
+  "product_version_during_d2": "0.8.6.6",
+  "microphone": {
+    "existing_live_index_validation_preserved": true,
+    "existing_default_fallback_preserved": true,
+    "stale_warning_dedup_added": true,
+    "marker": "# AURA v0.8.6.7 - stale microphone warning dedup"
+  },
+  "xtts": {
+    "resource_guardian_limits_changed": false,
+    "provider_policy_changed": false,
+    "first_warmup_preserves_original": true,
+    "repeat_warmup_reuses_resident_model": true,
+    "marker": "# AURA v0.8.6.7 - repeat XTTS warmup reuse"
+  },
+  "historical_metrics_before_write": {
+    "cold_prewarm_seconds": {
+      "count": 43,
+      "min": 24.186,
+      "median": 34.549,
+      "max": 80.539,
+      "mean": 38.495000000000005
+    },
+    "first_audio_seconds": {
+      "count": 116,
+      "min": 0.362,
+      "median": 0.706,
+      "max": 2.798,
+      "mean": 0.7635775862068965
+    },
+    "warmup_first_chunk_seconds": {
+      "count": 42,
+      "min": 1.007,
+      "median": 1.632,
+      "max": 6.068,
+      "mean": 1.975047619047619
+    }
+  },
+  "written_at": "2026-08-26T09:29:16",
+  "files": {
+    "microphone": {
+      "path": "C:\\AURA GPT version\\voice\\microphone.py",
+      "sha256": "c4a3d811de7eee7b56599c509313316a6c3f3d845d36d1381054c075ff0ea27f"
+    },
+    "xtts": {
+      "path": "C:\\AURA GPT version\\voice\\xtts_tts.py",
+      "sha256": "3cdf085bb1da23d10050a417fd6a2cf01058dea83170f3712d3a2fbea70d6ff6"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_runtime_performance_v0867.py",
+      "sha256": "46b8c18d5396949ea43563ead1421e474c4cb8bdd13e404be84ecd943c4e19f2"
+    }
+  },
+  "critical_baseline_v0866": {
+    "exit": 0,
+    "controlled_drift": [],
+    "unexpected_drift": []
+  },
+  "fast_lane": {
+    "exit": 0,
+    "pass_global": true,
+    "fail_labels": [],
+    "controlled": true
+  },
+  "runtime": {
+    "ok": true,
+    "sample": 6,
+    "pid": 28420,
+    "port": 12168,
+    "interaction_ready": true,
+    "core_service_bridge": true,
+    "bridge_version": "P0.6.5.4",
+    "metadata_schema": "aura.runtime-metadata.v1",
+    "product_version": "0.8.6.6",
+    "ui_release": "0.7.2.2-rc4.2",
+    "log_offset": 1016922
+  },
+  "fresh_log_evidence": []
+}

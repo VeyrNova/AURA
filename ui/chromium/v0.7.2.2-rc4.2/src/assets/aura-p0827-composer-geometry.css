@@ -1,0 +1,25 @@
+/* AURA P0.8.2.7 — COMPOSER GEOMETRY ROOT-CAUSE FIX */
+/* Safety floor: an old hidden input event may leave inline height:0px. The canonical textarea can never collapse below one readable line. */
+#composer.composer .composer-input-wrap #messageInput,
+.workspace>.composer .composer-input-wrap #messageInput{
+  min-height:18px!important;
+  max-height:92px!important;
+}
+/* Preserve the P0.8.2.3 single-surface contract. */
+html[data-aura-conversation-drawer="open"] body:not([data-aura-workspace="talk"]) #composer.composer,
+html[data-aura-conversation-drawer="open"] body:not([data-aura-workspace="talk"]) .workspace>.composer,
+body.aura-p0823-single-composer:not([data-aura-workspace="talk"]) #composer.composer,
+body.aura-p0823-single-composer:not([data-aura-workspace="talk"]) .workspace>.composer{
+  display:none!important;
+  pointer-events:none!important;
+}
+body[data-aura-workspace="talk"] #composer.composer,
+body[data-aura-workspace="talk"] .workspace>.composer{
+  display:flex!important;
+  pointer-events:auto!important;
+}
+.aura-p0712-conversation-drawer .aura-p0712-composer,
+.aura-p071-conversation-drawer .aura-p071-composer{
+  visibility:visible!important;
+  opacity:1!important;
+}

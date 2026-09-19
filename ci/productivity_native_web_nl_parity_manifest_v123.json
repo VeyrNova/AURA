@@ -1,0 +1,26 @@
+{
+  "schema": "aura.v123.ft6-r4-d2-r2.native-web-productivity-sync-binding.v1",
+  "target_version": "1.2.3",
+  "canonical_version_during_implementation": "1.2.2",
+  "parent_result_sha256": "4edea3616b882f4b68a09c466fe77c880497c2495928faceb718eef1620dcc0e",
+  "agenda_nl": {
+    "capability": "calendar.search_events",
+    "limit": 20,
+    "empty_text": true
+  },
+  "contacts_nl": {
+    "capability": "contacts.search",
+    "list_limit": 100,
+    "empty_list_text": true,
+    "specific_search_preserved": true
+  },
+  "tasks": {
+    "native_page_bound": true,
+    "structured_web_renderer": true,
+    "oauth_reconsent_in_d2_r2": false,
+    "google_write_in_d2_r2": false
+  },
+  "layout": {
+    "conversation_results_system_live_preserved": true
+  }
+}

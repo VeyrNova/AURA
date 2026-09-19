@@ -1,0 +1,89 @@
+/* AURA P0.4.3.4 PROCEDURAL REFERENCE ORB REBUILD */
+
+.aura-p042-final-orb #stage {
+  overflow: hidden !important;
+}
+
+/* AURA P0.4.3.5 PROCEDURAL CANVAS VISIBILITY FIX */
+.aura-reference-procedural-canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 6 !important;
+  width: 100%;
+  height: 100%;
+  pointer-events: none !important;
+  display: block !important;
+
+  /* Overrides the legacy P0.4.2 rule that hides every non-final-orb canvas. */
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  filter:
+    saturate(1.24)
+    contrast(1.10)
+    brightness(1.16)
+    drop-shadow(0 0 7px rgba(84,217,255,.10))
+    drop-shadow(0 0 16px rgba(216,76,255,.08));
+}
+
+/* Hide older orb renderers visually, not structurally, for rollback safety. */
+.aura-p042-final-orb #stage > canvas:not(.aura-reference-procedural-canvas) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.aura-ref-orb-layer,
+.aura-svg-identity-layer {
+  display: none !important;
+}
+
+.aura-reference-logo {
+  position: absolute;
+  z-index: 8;
+  transform: translate(-50%,-50%);
+  transform-origin: center;
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+  opacity: 0;
+  filter:
+    drop-shadow(0 0 5px rgba(234,247,255,.16))
+    drop-shadow(0 0 12px rgba(139,92,255,.18))
+    drop-shadow(0 0 18px rgba(216,76,255,.12));
+  will-change: transform, opacity, filter;
+}
+
+.aura-reference-logo[data-state="SPEAKING"] {
+  filter:
+    drop-shadow(0 0 6px rgba(234,247,255,.24))
+    drop-shadow(0 0 15px rgba(139,92,255,.28))
+    drop-shadow(0 0 22px rgba(216,76,255,.18));
+}
+
+.brand-mark.aura-reference-brand-active {
+  display: grid !important;
+  place-items: center !important;
+  overflow: visible !important;
+}
+
+.brand-mark.aura-reference-brand-active > span,
+.brand-mark.aura-reference-brand-active > i {
+  display: none !important;
+}
+
+.aura-reference-header-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 4px rgba(84,217,255,.18))
+    drop-shadow(0 0 6px rgba(216,76,255,.10));
+}
+
+body[data-state="SPEAKING"] .aura-reference-header-icon {
+  filter:
+    drop-shadow(0 0 5px rgba(84,217,255,.26))
+    drop-shadow(0 0 9px rgba(216,76,255,.18));
+}

@@ -1,0 +1,121 @@
+/* AURA P0.6.3.3 — Contextual Response Dock */
+.aura-p0633-response-dock{
+  position:absolute;
+  left:50%;
+  bottom:100px;
+  z-index:68;
+  width:min(760px,calc(100% - 42px));
+  transform:translate(-50%,8px);
+  border:1px solid rgba(111,226,247,.13);
+  border-radius:12px;
+  overflow:hidden;
+  opacity:0;
+  pointer-events:none;
+  background:linear-gradient(145deg,rgba(4,17,27,.975),rgba(7,12,23,.965));
+  box-shadow:0 18px 58px rgba(0,0,0,.38);
+  transition:opacity .18s ease,transform .18s ease,width .18s ease;
+}
+.aura-p0633-response-dock.show{
+  opacity:1;
+  transform:translate(-50%,0);
+  pointer-events:auto;
+}
+.aura-p0633-response-dock>header{
+  height:34px;
+  padding:0 8px 0 11px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(111,226,247,.07);
+}
+.aura-p0633-response-dock>header>div:first-child{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+.aura-p0633-response-dock>header i{
+  width:6px;height:6px;border-radius:50%;
+  background:#76e2f1;
+  box-shadow:0 0 11px rgba(118,226,241,.48);
+}
+.aura-p0633-response-dock>header b{
+  font-size:8.5px;
+  letter-spacing:.13em;
+  color:#b9eff8;
+}
+.aura-p0633-response-dock>header [data-context]{
+  min-width:0;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  font-size:7.5px;
+  letter-spacing:.08em;
+  color:#587b8a;
+}
+.aura-p0633-actions{display:flex;align-items:center;gap:5px}
+.aura-p0633-actions button{
+  min-height:23px;
+  padding:0 7px;
+  border:1px solid rgba(111,226,247,.09);
+  border-radius:6px;
+  background:rgba(5,20,30,.62);
+  color:#7099a9;
+  font-size:7.5px;
+  letter-spacing:.06em;
+  cursor:pointer;
+}
+.aura-p0633-actions button:hover{
+  border-color:rgba(111,226,247,.2);
+  color:#b4ecf7;
+}
+.aura-p0633-actions button.ok{border-color:rgba(91,230,180,.26);color:#8de5c5}
+.aura-p0633-actions button.error{border-color:rgba(235,100,132,.26);color:#dc879d}
+.aura-p0633-actions button:disabled{opacity:.45;cursor:wait}
+.aura-p0633-response-dock>p{
+  margin:0;
+  padding:11px 13px 8px;
+  max-height:128px;
+  overflow:auto;
+  white-space:pre-wrap;
+  color:#c2e6ee;
+  font-size:11.5px;
+  line-height:1.55;
+}
+.aura-p0633-response-dock>footer{
+  height:24px;
+  padding:0 13px;
+  display:flex;
+  align-items:center;
+  border-top:1px solid rgba(111,226,247,.05);
+}
+.aura-p0633-response-dock>footer span{
+  font-size:7.5px;
+  color:#4e6d7a;
+}
+
+/* After 14 s the answer becomes a small pill instead of disappearing. */
+.aura-p0633-response-dock.collapsed{
+  width:min(340px,calc(100% - 42px));
+  cursor:pointer;
+}
+.aura-p0633-response-dock.collapsed>p,
+.aura-p0633-response-dock.collapsed>footer,
+.aura-p0633-response-dock.collapsed .aura-p0633-actions [data-replay],
+.aura-p0633-response-dock.collapsed .aura-p0633-actions [data-talk]{
+  display:none;
+}
+.aura-p0633-response-dock.collapsed>header{
+  border-bottom:0;
+}
+.aura-p0633-response-dock.collapsed [data-context]::after{
+  content:" · cliquer pour relire";
+}
+
+@media(max-width:760px){
+  .aura-p0633-response-dock{
+    bottom:96px;
+    width:calc(100% - 22px);
+  }
+  .aura-p0633-actions button span{display:none}
+}

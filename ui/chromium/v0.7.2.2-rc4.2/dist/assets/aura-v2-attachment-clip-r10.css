@@ -1,0 +1,37 @@
+/* AURA v2 Attachment Clip Exact Selector R10 */
+.workspace > .composer .attach[data-aura-r10-paperclip="1"],
+#composer .attach[data-aura-r10-paperclip="1"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0 !important;
+}
+
+.workspace > .composer .attach[data-aura-r10-paperclip="1"]::before,
+.workspace > .composer .attach[data-aura-r10-paperclip="1"]::after,
+#composer .attach[data-aura-r10-paperclip="1"]::before,
+#composer .attach[data-aura-r10-paperclip="1"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+.workspace > .composer .attach[data-aura-r10-paperclip="1"] > *,
+#composer .attach[data-aura-r10-paperclip="1"] > * {
+  display: none !important;
+}
+
+.workspace > .composer .attach[data-aura-r10-paperclip="1"] > .aura-r10-paperclip,
+#composer .attach[data-aura-r10-paperclip="1"] > .aura-r10-paperclip {
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  pointer-events: none !important;
+}
+
+.aura-r10-paperclip path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

@@ -1,0 +1,157 @@
+/* AURA P0.4.3.1 CINEMATIC CONTINUITY */
+/* AURA P0.4.3 NEURAL CONSTRUCTION BOOT */
+
+#auraP043Backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  opacity: 1;
+  background:
+    radial-gradient(circle at 50% 48%,
+      rgba(9, 20, 35, .58) 0%,
+      rgba(4, 9, 17, .92) 42%,
+      rgba(2, 4, 8, .985) 72%,
+      #010204 100%);
+  transition: opacity 900ms cubic-bezier(.2,.7,.2,1);
+}
+
+#auraP043Backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .28;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(84,217,255,.028), transparent 24%),
+    linear-gradient(90deg,
+      transparent 0 49.92%,
+      rgba(84,217,255,.018) 50%,
+      transparent 50.08% 100%);
+}
+
+#auraP043Backdrop.aura-p043-backdrop-reveal {
+  opacity: 0;
+}
+
+#auraP043Hud {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(32px, 6vh, 72px);
+  z-index: 9004;
+  transform: translateX(-50%);
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: 17px;
+  color: rgba(220,241,255,.72);
+  letter-spacing: .16em;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  transition:
+    opacity 540ms ease,
+    transform 720ms cubic-bezier(.2,.7,.2,1);
+}
+
+#auraP043Hud.aura-p043-hud-reveal {
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+}
+
+#auraP043Index {
+  color: rgba(84,217,255,.72);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+#auraP043Phase {
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 156px;
+  text-align: center;
+}
+
+#auraP043Percent {
+  font-size: 10px;
+  color: rgba(216,76,255,.74);
+  font-variant-numeric: tabular-nums;
+}
+
+#auraP043Pulse {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 148px;
+  height: 1px;
+  position: relative;
+  overflow: visible;
+  background: rgba(84,217,255,.07);
+}
+
+#auraP043Pulse::after {
+  content: "";
+  display: block;
+  width: calc(100% * var(--aura-build, .015));
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(84,217,255,.12),
+    rgba(139,92,255,.58),
+    rgba(216,76,255,.72)
+  );
+  box-shadow: 0 0 8px rgba(139,92,255,.20);
+  transition: width 260ms cubic-bezier(.2,.7,.2,1);
+}
+
+html.aura-p043-running,
+html.aura-p043-running body {
+  background: #010204 !important;
+}
+
+/* Existing loader is still updated by runtime, but is never part of the
+   cinematic presentation. */
+html.aura-p043-running #bootCard,
+html.aura-p043-revealing #bootCard {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* The same Final Orb canvas floats above the boot veil. */
+html.aura-p043-running #stage {
+  background: transparent !important;
+}
+
+/* During stabilization the surrounding environment stays absent. */
+html.aura-p043-stabilizing #auraP043Hud {
+  color: rgba(234,247,255,.82);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #auraP043Backdrop,
+  #auraP043Hud {
+    transition-duration: 180ms;
+  }
+}
+
+html.aura-p043-running #auraP043Hud {
+  text-shadow: 0 0 12px rgba(84,217,255,.055);
+}
+html.aura-p043-running #auraP043Pulse::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: calc(100% * var(--aura-build, .015));
+  width: 3px;
+  height: 5px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: rgba(234,247,255,.48);
+  box-shadow:
+    0 0 7px rgba(84,217,255,.28),
+    0 0 12px rgba(139,92,255,.18);
+  animation: auraP043Alive 2.6s ease-in-out infinite;
+}
+@keyframes auraP043Alive {
+  0%,100% { opacity:.28; transform:translateX(-50%) scale(.8); }
+  50% { opacity:.82; transform:translateX(-50%) scale(1.15); }
+}

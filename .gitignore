@@ -1,0 +1,124 @@
+# AURA public repository candidate
+# REVIEW BEFORE APPLYING
+
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+htmlcov/
+.coverage
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Secrets - NEVER COMMIT
+.env
+.env.*
+!.env.example
+**/credentials*.json
+**/credential*.json
+**/client_secret*.json
+**/*token*.json
+**/*secrets*.json
+**/*api_key*
+**/*apikey*
+**/oauth*.json
+**/keyring*
+
+# User/private AURA data
+**/conversations/
+**/conversation_history/
+**/sessions/
+**/cookies/
+**/recordings/
+**/voice_profiles/
+**/voice_samples/
+**/reference_audio/
+**/speaker_wav/
+**/user_data/
+**/userdata/
+**/private/
+**/personal/
+
+# Models
+*.gguf
+*.safetensors
+*.onnx
+*.pth
+*.pt
+*.ckpt
+*.tflite
+*.pb
+
+# Runtime/generated
+*.log
+*.dmp
+*.dump
+*.bak
+*.old
+*.tmp
+*.temp
+*.sqlite
+*.sqlite3
+*.db
+logs/
+log/
+tmp/
+temp/
+.cache/
+cache/
+data/roadmap/
+**/.aura_transactions/
+**/transactions/backups/
+
+/build/
+/out/
+/artifacts/
+
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IMPORTANT: no generic dist/ rule.
+# AURA active Chromium dist assets may be required.
+
+# Local validation evidence
+_github_preflight/
+# AURA machine-local/runtime state
+_archive_post_v2/
+ui/chromium/*/aura_ui_config.json
+ui/chromium/*/dist/aura_music_media_index_v180.json
+ui/chromium/*/dist/aura_music_pc_selection_v180.json
+runtime/developer_fabric/live_selftest_transaction_state.json
+# Historical/generated engineering artifacts excluded from public product repository
+.aura_audit/
+_patch_backups/
+_dev/staging/
+ci/reports/
+/ROLLBACK_*.bat
+# Local runtime/user state
+config/authorized_folders.json
+config/dual_brain_gpu_ok.json
+config/voice_audition.json
+config/voice_profile.json
+data/a200_runtime/
+data/media/
+data/youtube/
+database/google_search_usage.json
+runtime/developer_fabric/developer_mode_state.json
+runtime/developer_fabric/developer_workspace_request.json
+runtime/developer_fabric/roadmap_auto_certification_rm26.json
+# Historical patch 26.8.3 diagnostic fixtures excluded from public product repo
+scripts/patch_ui_26_8_3_diagnostics.py
+tests/test_patch2683_multibrain_documents.py

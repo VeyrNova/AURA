@@ -1,0 +1,8 @@
+{
+  "phase": "P0.8.5.4.7.6-R2",
+  "read_only": true,
+  "modifies_aura": false,
+  "fix": "Final certifier baseline updated for accepted P0.8.5.4.7.6.1.5 state",
+  "expected_cache_bust": "p08547615-evidence-memory-sse-20260823",
+  "global_sse_invariant": "exactly one /api/events EventSource owned by index-Ckl5rwwJ.js"
+}

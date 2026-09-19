@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="280" viewBox="0 0 1000 280">
+<defs>
+  <linearGradient id="wordGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#D466FF"/>
+    <stop offset="58%" stop-color="#8A7FFF"/>
+    <stop offset="100%" stop-color="#7DEFFF"/>
+  </linearGradient>
+</defs>
+<text x="500" y="130" text-anchor="middle" font-family="Segoe UI Light, Montserrat, Arial, sans-serif" font-size="112" font-weight="300" letter-spacing="8" fill="url(#wordGrad)">AURA</text>
+<text x="500" y="214" text-anchor="middle" font-family="Segoe UI, Montserrat, Arial, sans-serif" font-size="34" font-weight="300" letter-spacing="7" fill="#7281AA">NEURAL INTERFACE</text>
+</svg>

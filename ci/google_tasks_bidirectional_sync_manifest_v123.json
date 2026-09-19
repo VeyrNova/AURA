@@ -1,0 +1,19 @@
+{
+  "schema": "aura.google-tasks-bidirectional-sync-foundation.v123.v1",
+  "target_version": "1.2.3",
+  "canonical_version_during_implementation": "1.2.2",
+  "google_tasks": {
+    "provider_id": "tasks.provider",
+    "oauth_scope": "https://www.googleapis.com/auth/tasks",
+    "reconsent_required": true,
+    "live_write_performed_in_d2_r1": false
+  },
+  "reminders": {
+    "date_only": "google_tasks",
+    "timed": "google_calendar_with_reminder"
+  },
+  "layout": {
+    "target": "Conversation | Results | SYSTEM LIVE",
+    "overlap_allowed": false
+  }
+}

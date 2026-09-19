@@ -1,0 +1,321 @@
+/* AURA_M190_R3_CINEMATIC_MIND_WORKSPACE_REDESIGN_CSS */
+.aura-m190-mind-workspace{
+  position:fixed;z-index:42;display:flex;flex-direction:column;overflow:hidden;
+  border:1px solid rgba(86,190,255,.18);border-radius:18px;
+  background:
+    radial-gradient(circle at 34% 22%,rgba(25,83,158,.10),transparent 38%),
+    radial-gradient(circle at 73% 28%,rgba(113,49,190,.08),transparent 34%),
+    linear-gradient(145deg,rgba(5,11,23,.985),rgba(5,8,18,.992));
+  box-shadow:0 26px 90px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.035);
+  color:#dff5ff;backdrop-filter:blur(22px)
+}
+.aura-m190-mind-workspace[hidden]{display:none!important}
+.aura-m190-mind-workspace.open{animation:auraM190R3In .20s ease-out both}
+@keyframes auraM190R3In{from{opacity:0;transform:translateY(7px) scale(.995)}to{opacity:1;transform:none}}
+
+.aura-m190-head{
+  min-height:64px;display:grid;grid-template-columns:minmax(320px,1fr) minmax(190px,.55fr) auto auto;
+  gap:16px;align-items:center;padding:10px 14px;border-bottom:1px solid rgba(107,198,255,.10);
+  background:linear-gradient(180deg,rgba(8,18,34,.88),rgba(5,12,24,.54))
+}
+.aura-m190-title{display:flex;align-items:center;gap:11px}.aura-m190-title>div{display:flex;flex-direction:column;gap:1px}
+.aura-m190-title small,.aura-m190-side small,.aura-m190-bottom small{
+  font:700 8px/1.2 ui-monospace,Consolas,monospace;letter-spacing:.16em;color:#69defa
+}
+.aura-m190-title b{font:750 15px/1.2 system-ui,sans-serif;letter-spacing:.045em}
+.aura-m190-title em{font:400 9px/1.3 system-ui,sans-serif;color:rgba(209,232,247,.52)}
+.aura-m190-glyph{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid rgba(91,219,255,.30);box-shadow:0 0 22px rgba(80,180,255,.13);font-size:15px;color:#bff7ff}
+.aura-m190-quote{font:400 10px/1.2 system-ui,sans-serif;color:rgba(211,231,247,.52);text-align:center;font-style:italic}
+.aura-m190-quote small{display:block;margin-top:4px;font:600 8px/1 ui-monospace,Consolas,monospace;color:rgba(109,192,241,.40)}
+.aura-m190-head-meta{display:flex;align-items:center;gap:7px}.aura-m190-head-meta span{
+  padding:6px 9px;border-radius:999px;border:1px solid rgba(98,211,255,.18);
+  font:700 8px/1 ui-monospace,Consolas,monospace;letter-spacing:.08em;color:rgba(217,246,255,.82);background:rgba(40,107,151,.09)
+}
+.aura-m190-head-meta .aura-m190-readonly{border-color:rgba(177,118,255,.18);color:rgba(222,198,255,.74)}
+.aura-m190-close{width:32px;height:32px;border-radius:9px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.035);color:#e4f3ff;font-size:19px;cursor:pointer}
+
+.aura-m190-shell{flex:1;min-height:0;display:grid;grid-template-columns:176px minmax(0,1fr)}
+.aura-m190-local-nav{padding:12px 8px 12px 12px;border-right:1px solid rgba(91,185,255,.08);display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,rgba(5,15,28,.58),rgba(4,10,21,.30))}
+.aura-m190-local-nav button{
+  width:100%;display:flex;align-items:center;gap:10px;padding:10px;border:1px solid rgba(106,191,255,.08);border-radius:10px;
+  background:rgba(14,27,48,.42);color:rgba(205,228,242,.60);text-align:left;cursor:pointer;transition:.18s ease
+}
+.aura-m190-local-nav button>i{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;font-style:normal;color:#85dff8;border:1px solid rgba(111,210,255,.14);background:rgba(26,99,137,.08)}
+.aura-m190-local-nav button span{display:flex;flex-direction:column;gap:2px}.aura-m190-local-nav b{font:700 9px/1.1 ui-monospace,Consolas,monospace;letter-spacing:.06em}.aura-m190-local-nav small{font:500 8px/1.1 system-ui,sans-serif;color:rgba(188,211,225,.40)}
+.aura-m190-local-nav button.active{border-color:rgba(73,221,255,.28);background:linear-gradient(135deg,rgba(20,128,170,.22),rgba(25,74,125,.12));color:#e7fbff;box-shadow:inset 2px 0 0 #48dfff,0 0 22px rgba(42,172,255,.06)}
+.aura-m190-local-nav button.active>i{border-color:rgba(80,228,255,.28);color:#d9fdff;box-shadow:0 0 14px rgba(44,215,255,.12)}
+
+.aura-m190-main{min-width:0;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) 182px;gap:10px;padding:10px}
+.aura-m190-top{min-height:0;display:grid;grid-template-columns:minmax(0,1.66fr) minmax(330px,.86fr);gap:10px}
+.aura-m190-neural-card,.aura-m190-state-card,.aura-m190-meters,.aura-m190-signals,.aura-m190-nodes,
+.aura-m190-bottom>article{
+  border:1px solid rgba(99,203,255,.14);border-radius:14px;background:linear-gradient(155deg,rgba(9,20,39,.78),rgba(6,12,25,.80));box-shadow:inset 0 1px 0 rgba(255,255,255,.025)
+}
+.aura-m190-neural-card{min-height:0;overflow:hidden}
+.aura-m190-canvas-wrap{position:relative;width:100%;height:100%;min-height:350px;overflow:hidden;background:
+  radial-gradient(circle at center,rgba(32,83,153,.08),transparent 38%),
+  linear-gradient(rgba(80,160,255,.022) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(80,160,255,.022) 1px,transparent 1px);
+  background-size:auto,32px 32px,32px 32px
+}
+.aura-m190-canvas-wrap:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at center,transparent 40%,rgba(2,6,15,.30) 100%)}
+.aura-m190-canvas-wrap canvas{position:absolute;inset:0;width:100%;height:100%}
+.aura-m190-core-label{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;display:flex;flex-direction:column;align-items:center;pointer-events:none;text-shadow:0 0 20px rgba(67,221,255,.45)}
+.aura-m190-core-label small{font:700 8px/1 ui-monospace,Consolas,monospace;letter-spacing:.18em;color:rgba(110,227,255,.72)}
+.aura-m190-core-label b{margin-top:6px;font:800 17px/1 system-ui,sans-serif;letter-spacing:.075em;color:#effdff}.aura-m190-core-label span{margin-top:5px;font:600 8px/1 ui-monospace,Consolas,monospace;color:rgba(190,214,255,.50)}
+.aura-m190-legend{position:absolute;left:14px;bottom:12px;z-index:2;display:flex;gap:12px}
+.aura-m190-legend span{font:700 8px/1 ui-monospace,Consolas,monospace;letter-spacing:.08em;color:rgba(207,228,240,.64)}.aura-m190-legend i{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:1px}
+.aura-m190-legend .active i{background:#bd4cff;box-shadow:0 0 8px rgba(189,76,255,.65)}.aura-m190-legend .signal i{background:#45dbff;box-shadow:0 0 8px rgba(69,219,255,.60)}.aura-m190-legend .idle i{background:#4b6688}
+.aura-m190-version{position:absolute;right:12px;bottom:10px;z-index:2;text-align:right;font:600 7px/1.35 ui-monospace,Consolas,monospace;letter-spacing:.09em;color:rgba(159,192,214,.36)}.aura-m190-version b{color:rgba(186,222,243,.58)}
+
+.aura-m190-side{min-height:0;display:flex;flex-direction:column;gap:9px;overflow:auto;padding-right:1px}
+.aura-m190-state-card{padding:13px}.aura-m190-state-card header,.aura-m190-meters header,.aura-m190-signals header,.aura-m190-nodes header,.aura-m190-bottom header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.aura-m190-state-card header span{font-size:18px;color:#7ce8ff}.aura-m190-state-card strong{display:block;margin-top:6px;font:800 26px/1 system-ui,sans-serif;letter-spacing:.03em;color:#f1fcff;text-shadow:0 0 20px rgba(66,211,255,.12)}.aura-m190-state-card p{margin:8px 0 0;font:400 9px/1.45 system-ui,sans-serif;color:rgba(203,226,241,.52)}
+
+.aura-m190-meters{padding:12px;display:grid;gap:9px}.aura-m190-meters header{margin-bottom:1px}
+.aura-m190-meters>div{display:grid;grid-template-columns:82px 1fr 34px;gap:7px;align-items:center}.aura-m190-meters>div span,.aura-m190-meters>div b{font:700 8px/1 ui-monospace,Consolas,monospace;letter-spacing:.05em}.aura-m190-meters>div span{color:rgba(198,221,236,.62)}.aura-m190-meters>div b{text-align:right;color:rgba(229,247,255,.82)}
+.aura-m190-meters>div i{height:5px;border-radius:99px;background:rgba(255,255,255,.055);overflow:hidden}.aura-m190-meters>div u{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#43d9ff,#aa52ff);box-shadow:0 0 12px rgba(99,173,255,.25);transition:width .28s ease}
+
+.aura-m190-signals,.aura-m190-nodes{padding:11px}.aura-m190-signals header b,.aura-m190-nodes header b,.aura-m190-bottom header b{font:700 7px/1 ui-monospace,Consolas,monospace;letter-spacing:.08em;color:rgba(195,218,233,.44)}
+.aura-m190-signals header b i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#49f0d5;margin-right:5px;box-shadow:0 0 8px rgba(73,240,213,.55)}
+.aura-m190-signal-head,.aura-m190-signals>div:not(.aura-m190-signal-head){display:grid;grid-template-columns:1fr .8fr .65fr;gap:8px;align-items:center}
+.aura-m190-signal-head{padding:7px 0 5px;font:700 7px/1 ui-monospace,Consolas,monospace;color:rgba(156,188,210,.38)}
+.aura-m190-signals>div:not(.aura-m190-signal-head){padding:6px 0;border-top:1px solid rgba(255,255,255,.04)}.aura-m190-signals>div span{font:500 8px/1 system-ui,sans-serif;color:rgba(198,221,234,.54)}.aura-m190-signals>div strong{font:700 7px/1 ui-monospace,Consolas,monospace;color:#d8f6ff}.aura-m190-signals>div em{font:600 7px/1 ui-monospace,Consolas,monospace;font-style:normal;color:rgba(180,207,224,.44)}
+
+.aura-m190-node-grid{margin-top:8px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.aura-m190-node-grid span{padding:8px 5px;text-align:center;border:1px solid rgba(98,177,219,.10);border-radius:7px;background:rgba(68,127,167,.04);font:700 7px/1 ui-monospace,Consolas,monospace;color:rgba(190,220,236,.52)}
+.aura-m190-node-grid span[data-node-level="signal"]{border-color:rgba(64,217,255,.28);background:rgba(43,170,215,.08);color:#dffaff;box-shadow:inset 0 0 15px rgba(53,196,255,.05)}
+.aura-m190-node-grid span[data-node-level="active"]{border-color:rgba(178,86,255,.36);background:linear-gradient(135deg,rgba(44,194,255,.10),rgba(153,77,255,.15));color:#fff;box-shadow:0 0 16px rgba(117,104,255,.10),inset 0 0 18px rgba(160,78,255,.08)}
+
+.aura-m190-bottom{min-height:0;display:grid;grid-template-columns:1.18fr 1.38fr .92fr 1.04fr;gap:9px}
+.aura-m190-bottom>article{min-width:0;overflow:hidden;padding:10px}.aura-m190-bottom header{margin-bottom:7px}
+.aura-m190-bottom header button{border:0;background:transparent;color:rgba(157,199,224,.42);font:700 7px/1 ui-monospace,Consolas,monospace;cursor:pointer}
+
+.aura-m190-recent [data-recent-events]{display:grid}.aura-m190-recent [data-recent-events]>div{display:grid;grid-template-columns:38px 8px 1fr 48px;gap:6px;align-items:center;min-height:25px;border-top:1px solid rgba(255,255,255,.035);font-size:8px}.aura-m190-recent time{font:600 7px/1 ui-monospace,Consolas,monospace;color:rgba(147,190,219,.50)}.aura-m190-recent i{width:5px;height:5px;border-radius:50%;background:#5bdcff;box-shadow:0 0 7px rgba(91,220,255,.35)}.aura-m190-recent span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:rgba(214,234,246,.70)}.aura-m190-recent em{text-align:right;font:600 7px/1 ui-monospace,Consolas,monospace;font-style:normal;color:rgba(159,186,204,.36)}
+
+.aura-m190-history canvas{display:block;width:100%;height:132px}
+.aura-m190-active-modules [data-active-module-grid]{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}.aura-m190-active-modules [data-active-module-grid]>span{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 4px;border:1px solid rgba(88,175,219,.10);border-radius:7px;background:rgba(49,107,145,.04)}.aura-m190-active-modules b{font:700 7px/1 ui-monospace,Consolas,monospace}.aura-m190-active-modules small{font-size:6px;color:rgba(177,202,218,.44)}.aura-m190-active-modules [data-state="signal"]{border-color:rgba(67,214,255,.23);background:rgba(37,167,208,.08)}.aura-m190-active-modules [data-state="active"]{border-color:rgba(178,84,255,.30);background:rgba(128,62,200,.10);box-shadow:inset 0 0 16px rgba(165,73,255,.06)}
+
+.aura-m190-resonance{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;column-gap:6px}.aura-m190-resonance header{grid-column:1/-1}.aura-m190-resonance canvas{width:100%;height:128px}.aura-m190-resonance-values{display:flex;flex-direction:column;justify-content:center;gap:9px}.aura-m190-resonance-values span{display:flex;justify-content:space-between;gap:6px;font:600 7px/1 ui-monospace,Consolas,monospace;color:rgba(188,215,230,.52)}.aura-m190-resonance-values b{color:#d9f5ff}
+
+.aura-m190-foot{display:flex;justify-content:space-between;gap:14px;padding:7px 12px;border-top:1px solid rgba(93,179,226,.07);font:600 6.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.10em;color:rgba(160,190,208,.25)}
+.aura-m190-module-entry{width:100%;display:flex;gap:11px;align-items:center;text-align:left}.aura-m190-module-entry>span{display:grid;place-items:center}.aura-m190-module-entry svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5}.aura-m190-module-entry div{display:flex;flex-direction:column;gap:3px}.aura-m190-module-entry b{font-size:11px}.aura-m190-module-entry small{font-size:9px;opacity:.58}
+
+@media(max-width:1280px){
+  .aura-m190-shell{grid-template-columns:150px minmax(0,1fr)}
+  .aura-m190-main{grid-template-rows:minmax(0,1fr) 166px}
+  .aura-m190-top{grid-template-columns:minmax(0,1.5fr) minmax(310px,.9fr)}
+  .aura-m190-bottom{grid-template-columns:1.1fr 1.25fr .9fr}.aura-m190-resonance{display:none}
+}
+@media(max-width:1020px){
+  .aura-m190-local-nav{display:none}
+  .aura-m190-shell{grid-template-columns:1fr}
+  .aura-m190-main{grid-template-rows:minmax(0,1fr) 160px}
+  .aura-m190-top{grid-template-columns:1fr}
+  .aura-m190-side{display:grid;grid-template-columns:1fr 1fr;max-height:250px}
+  .aura-m190-bottom{grid-template-columns:1fr 1fr}.aura-m190-active-modules{display:none}
+}
+@media(max-width:720px){
+  .aura-m190-head{grid-template-columns:1fr auto}.aura-m190-quote,.aura-m190-head-meta{display:none}
+  .aura-m190-main{grid-template-rows:minmax(0,1fr) 145px;padding:6px}.aura-m190-top{gap:6px}.aura-m190-side{display:none}
+  .aura-m190-bottom{grid-template-columns:1fr}.aura-m190-history,.aura-m190-active-modules,.aura-m190-resonance{display:none}
+}
+@media(prefers-reduced-motion:reduce){.aura-m190-mind-workspace.open{animation:none}.aura-m190-meters u{transition:none}}
+
+/* AURA_M190_R3_R1_VISUAL_POLISH_READABILITY_CSS */
+
+/* Readability lift */
+.aura-m190-title small,
+.aura-m190-side small,
+.aura-m190-bottom small{font-size:9px}
+.aura-m190-title em{font-size:10px}
+.aura-m190-local-nav b{font-size:10px}
+.aura-m190-local-nav small{font-size:9px}
+.aura-m190-state-card p{font-size:10px;line-height:1.5}
+.aura-m190-meters>div span,
+.aura-m190-meters>div b{font-size:9px}
+.aura-m190-signals>div span{font-size:9px}
+.aura-m190-signals>div strong,
+.aura-m190-signals>div em{font-size:8px}
+.aura-m190-node-grid span{font-size:8px}
+.aura-m190-recent [data-recent-events]>div{font-size:9px}
+.aura-m190-recent time,.aura-m190-recent em{font-size:8px}
+.aura-m190-active-modules b{font-size:8px}
+.aura-m190-active-modules small{font-size:7px}
+.aura-m190-resonance-values span{font-size:8px}
+
+/* Stronger selected sub-view */
+.aura-m190-local-nav button.active{
+  border-color:rgba(75,225,255,.42);
+  background:linear-gradient(135deg,rgba(24,143,190,.30),rgba(65,69,160,.16));
+  box-shadow:inset 3px 0 0 #54e6ff,0 0 26px rgba(45,180,255,.10),inset 0 0 22px rgba(57,197,255,.06)
+}
+.aura-m190-local-nav button.active b{color:#f3fdff}
+.aura-m190-local-nav button.active small{color:rgba(203,240,250,.68)}
+
+/* More explicit topology states */
+.aura-m190-node-grid span{
+  position:relative;padding-left:16px;transition:border-color .2s ease,background .2s ease,box-shadow .2s ease,color .2s ease
+}
+.aura-m190-node-grid span:before{
+  content:"";position:absolute;left:7px;top:50%;width:5px;height:5px;border-radius:50%;transform:translateY(-50%);
+  background:#4b6688;box-shadow:none
+}
+.aura-m190-node-grid span[data-node-level="signal"]:before{background:#45dbff;box-shadow:0 0 9px rgba(69,219,255,.72)}
+.aura-m190-node-grid span[data-node-level="active"]:before{background:#c15cff;box-shadow:0 0 10px rgba(193,92,255,.82)}
+.aura-m190-node-grid span[data-node-level="signal"]{
+  border-color:rgba(69,219,255,.42);background:rgba(46,181,225,.11);color:#ecfcff
+}
+.aura-m190-node-grid span[data-node-level="active"]{
+  border-color:rgba(193,92,255,.50);background:linear-gradient(135deg,rgba(47,206,255,.14),rgba(159,81,255,.20));
+  color:#fff;box-shadow:0 0 20px rgba(130,98,255,.14),inset 0 0 20px rgba(165,83,255,.10)
+}
+
+/* Richer lower cards */
+.aura-m190-bottom>article{
+  background:
+    radial-gradient(circle at 22% 0%,rgba(57,150,255,.055),transparent 46%),
+    linear-gradient(155deg,rgba(9,20,39,.86),rgba(6,12,25,.88))
+}
+.aura-m190-history canvas{height:136px}
+.aura-m190-resonance canvas{height:138px}
+.aura-m190-resonance-values{padding-right:5px}
+.aura-m190-resonance-values span{padding:3px 0;border-bottom:1px solid rgba(255,255,255,.025)}
+.aura-m190-resonance-values b{font-size:9px;color:#e8fbff;text-shadow:0 0 10px rgba(85,219,255,.15)}
+
+/* Slightly stronger central visualization labels */
+.aura-m190-core-label small{font-size:9px}
+.aura-m190-core-label b{font-size:18px}
+.aura-m190-core-label span{font-size:9px}
+.aura-m190-version{font-size:8px}
+
+/* AURA_M190_R3_R2_NEURAL_CORE_GEOMETRY_VISUAL_HIERARCHY_CSS */
+
+/* Core hierarchy: make the central state the visual anchor without obscuring module labels. */
+.aura-m190-core-label{
+  width:190px;
+  padding:10px 12px;
+  border-radius:999px;
+  background:radial-gradient(circle at center,rgba(10,34,66,.26),rgba(8,15,31,.05) 66%,transparent 72%);
+}
+.aura-m190-core-label small{
+  font-size:9px;
+  letter-spacing:.20em;
+  color:rgba(129,235,255,.80)
+}
+.aura-m190-core-label b{
+  margin-top:7px;
+  font-size:21px;
+  letter-spacing:.085em;
+  text-shadow:0 0 22px rgba(72,219,255,.50),0 0 36px rgba(160,78,255,.30)
+}
+.aura-m190-core-label span{
+  margin-top:6px;
+  font-size:9px;
+  color:rgba(204,225,255,.62)
+}
+
+/* Let the neural field breathe a little more. */
+.aura-m190-canvas-wrap{
+  background-size:auto,36px 36px,36px 36px;
+}
+.aura-m190-neural-card{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    inset 0 0 80px rgba(34,104,190,.025)
+}
+
+/* Stronger optical separation for the main neural viewport. */
+.aura-m190-canvas-wrap:before{
+  content:"";
+  position:absolute;
+  inset:7%;
+  z-index:0;
+  pointer-events:none;
+  border-radius:50%;
+  border:1px solid rgba(67,145,255,.035);
+  box-shadow:
+    0 0 70px rgba(43,121,255,.025),
+    inset 0 0 70px rgba(137,70,255,.025);
+}
+
+/* Keep legend/version subordinate to the expanded core. */
+.aura-m190-legend{bottom:11px}
+.aura-m190-version{bottom:9px}
+
+/* Preserve readability on smaller displays after widening the node orbit. */
+@media(max-width:1280px){
+  .aura-m190-core-label{width:172px}
+  .aura-m190-core-label b{font-size:19px}
+}
+@media(max-width:1020px){
+  .aura-m190-core-label{width:160px}
+  .aura-m190-core-label b{font-size:18px}
+}
+/* AURA_M190_R4_CINEMATIC_NEURAL_VISUAL_ENGINE_REBUILD_CSS */
+.aura-m190-r3 .aura-m190-top{grid-template-columns:minmax(0,1.78fr) minmax(338px,.82fr)}
+.aura-m190-r3 .aura-m190-canvas-wrap{
+  min-height:390px;
+  background:
+    radial-gradient(circle at 50% 46%,rgba(25,91,174,.11),transparent 38%),
+    radial-gradient(circle at 50% 48%,rgba(115,47,206,.07),transparent 56%),
+    linear-gradient(rgba(74,157,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(74,157,255,.018) 1px,transparent 1px);
+  background-size:auto,auto,42px 42px,42px 42px
+}
+.aura-m190-r3 .aura-m190-canvas-wrap:after{
+  background:
+    radial-gradient(circle at center,transparent 48%,rgba(2,7,18,.26) 82%,rgba(2,6,15,.46) 100%),
+    linear-gradient(180deg,rgba(4,9,22,.02),rgba(3,8,20,.16))
+}
+.aura-m190-r3 .aura-m190-core-label{
+  width:220px;padding:13px 18px;
+  background:radial-gradient(circle at center,rgba(9,24,58,.18),rgba(6,14,34,.035) 66%,transparent 73%)
+}
+.aura-m190-r3 .aura-m190-core-label small{font-size:9px;letter-spacing:.22em}
+.aura-m190-r3 .aura-m190-core-label b{
+  font-size:22px;letter-spacing:.10em;
+  text-shadow:0 0 14px rgba(102,235,255,.75),0 0 28px rgba(92,164,255,.48),0 0 46px rgba(186,72,255,.34)
+}
+.aura-m190-r3 .aura-m190-core-label span{font-size:9px;opacity:.82}
+.aura-m190-r3 .aura-m190-neural-card{
+  border-color:rgba(76,205,255,.20);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03),inset 0 0 110px rgba(37,103,204,.028),0 0 30px rgba(34,106,190,.035)
+}
+.aura-m190-r3 .aura-m190-legend{
+  padding:6px 8px;border-radius:999px;background:rgba(4,10,23,.42);
+  border:1px solid rgba(84,179,231,.07);backdrop-filter:blur(8px)
+}
+.aura-m190-r3 .aura-m190-version{padding:5px 7px;border-radius:7px;background:rgba(3,8,18,.30)}
+.aura-m190-r3 .aura-m190-state-card{
+  background:radial-gradient(circle at 88% 22%,rgba(151,63,255,.10),transparent 30%),linear-gradient(155deg,rgba(9,22,43,.86),rgba(6,12,25,.90));
+  border-color:rgba(119,104,255,.19)
+}
+.aura-m190-r3 .aura-m190-meters{border-color:rgba(66,208,255,.18)}
+.aura-m190-r3 .aura-m190-signals{border-color:rgba(71,216,255,.17)}
+.aura-m190-r3 .aura-m190-nodes{border-color:rgba(134,92,255,.16)}
+@media(max-width:1280px){
+  .aura-m190-r3 .aura-m190-top{grid-template-columns:minmax(0,1.62fr) minmax(320px,.88fr)}
+  .aura-m190-r3 .aura-m190-core-label{width:198px}
+  .aura-m190-r3 .aura-m190-core-label b{font-size:20px}
+}
+@media(max-width:1020px){
+  .aura-m190-r3 .aura-m190-top{grid-template-columns:1fr}
+  .aura-m190-r3 .aura-m190-core-label{width:176px}
+  .aura-m190-r3 .aura-m190-core-label b{font-size:18px}
+}
+
+/* AURA_M190_R4_R1_R1_CINEMATIC_SCALE_FIDELITY_ANCHOR_FIX_CSS */
+.aura-m190-r3 .aura-m190-canvas-wrap{min-height:420px}
+.aura-m190-r3 .aura-m190-core-label{width:238px}
+.aura-m190-r3 .aura-m190-core-label b{font-size:24px}
+.aura-m190-r3 .aura-m190-neural-card{
+  background:
+    radial-gradient(circle at 50% 47%,rgba(35,104,205,.075),transparent 42%),
+    linear-gradient(155deg,rgba(7,15,31,.78),rgba(4,9,21,.86))
+}
+@media(max-width:1280px){
+  .aura-m190-r3 .aura-m190-canvas-wrap{min-height:390px}
+  .aura-m190-r3 .aura-m190-core-label{width:214px}
+  .aura-m190-r3 .aura-m190-core-label b{font-size:22px}
+}
+

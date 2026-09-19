@@ -1,0 +1,63 @@
+/* AURA_V123_VISIBLE_WEB_PRODUCTIVITY_REBIND */
+.aura-v123-native-syncbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 12px;padding:10px 12px;border:1px solid rgba(85,218,255,.22);border-radius:10px;background:rgba(3,21,31,.72)}
+.aura-v123-native-syncbar>div{display:grid;gap:3px;min-width:0}.aura-v123-native-syncbar b{font-size:11px;letter-spacing:.08em}.aura-v123-native-syncbar small{font-size:9px;opacity:.68}.aura-v123-native-syncbar small.is-error{opacity:1}
+.aura-v123-native-syncbar button,.aura-v123-cal-toolbar button{min-height:30px;padding:0 12px;border:1px solid rgba(85,218,255,.24);border-radius:8px;background:rgba(6,31,44,.86);font:inherit;font-size:9px;letter-spacing:.06em;color:inherit;cursor:pointer}.aura-v123-native-syncbar button:disabled{opacity:.45;cursor:wait}
+.aura-v123-section-head,.aura-v123-local-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0 7px;font-size:9px;letter-spacing:.08em;opacity:.84}
+.aura-v123-google-task-section{margin:0 0 12px}.aura-v123-google-task-row,.aura-v123-cal-list-row{display:flex;align-items:center;gap:10px;margin:6px 0;padding:9px 10px;border:1px solid rgba(85,218,255,.14);border-radius:9px;background:rgba(2,17,26,.7)}
+.aura-v123-google-task-row>div,.aura-v123-cal-list-row>div{display:grid;gap:3px;min-width:0}.aura-v123-google-task-row b,.aura-v123-cal-list-row b{font-size:10px;white-space:normal}.aura-v123-google-task-row small,.aura-v123-cal-list-row small{font-size:8px;opacity:.62}
+.aura-v123-source-badge{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-width:48px;padding:3px 6px;border:1px solid rgba(126,106,255,.34);border-radius:999px;font-size:7px;letter-spacing:.09em}.aura-v123-source-badge.google{border-color:rgba(85,218,255,.34)}.aura-v123-source-badge.aura{border-color:rgba(168,100,255,.36)}
+.aura-v123-native-empty{padding:14px 10px;text-align:center;font-size:9px;opacity:.58}.aura-v123-native-calendar{min-height:100%}.aura-v123-cal-toolbar{display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:8px;margin-bottom:10px}.aura-v123-cal-toolbar strong{text-align:center;font-size:11px;letter-spacing:.1em}
+.aura-v123-cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;min-height:430px}.aura-v123-cal-weekday{padding:5px;text-align:center;font-size:7px;letter-spacing:.1em;opacity:.55}.aura-v123-cal-day{min-width:0;min-height:62px;padding:5px;border:1px solid rgba(85,218,255,.12);border-radius:8px;background:rgba(2,17,26,.52);overflow:hidden}.aura-v123-cal-day.muted{opacity:.32}.aura-v123-cal-day.today{border-color:rgba(85,218,255,.5)}.aura-v123-cal-num{font-size:8px;margin-bottom:4px;opacity:.8}
+.aura-v123-cal-pill{display:flex;align-items:center;gap:4px;min-width:0;margin:2px 0;padding:2px 4px;border-radius:4px;font-size:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.aura-v123-cal-pill span{font-size:6px;font-weight:700}.aura-v123-cal-pill.google{background:rgba(53,190,225,.14)}.aura-v123-cal-pill.aura{background:rgba(145,85,225,.14)}.aura-v123-cal-list{margin-top:12px}
+@media(max-width:1180px){.aura-v123-cal-grid{min-height:350px}.aura-v123-cal-day{min-height:52px}}
+/* AURA_V123_CONVERSATION_PERSONAL_RESULTS_DIRECT_RECOVERY */
+.aura-v123-pr-recovery{
+  position:fixed;
+  top:84px;
+  bottom:86px;
+  z-index:88;
+  display:flex;
+  flex-direction:column;
+  min-width:340px;
+  max-width:470px;
+  overflow:hidden;
+  border:1px solid rgba(85,218,255,.24);
+  border-radius:12px;
+  background:rgba(2,15,24,.97);
+  box-shadow:0 18px 55px rgba(0,0,0,.38);
+  color:inherit;
+}
+.aura-v123-pr-recovery[hidden]{display:none!important}
+.aura-v123-prr-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 14px;border-bottom:1px solid rgba(85,218,255,.15)
+}
+.aura-v123-prr-head>div{display:grid;gap:3px;min-width:0}
+.aura-v123-prr-head small{font-size:7px;letter-spacing:.12em;opacity:.55}
+.aura-v123-prr-head strong{font-size:12px;letter-spacing:.08em}
+.aura-v123-prr-head button{
+  width:30px;height:30px;border:1px solid rgba(85,218,255,.2);border-radius:8px;
+  background:rgba(4,25,36,.85);color:inherit;font-size:18px;cursor:pointer
+}
+.aura-v123-prr-meta{
+  padding:8px 14px;border-bottom:1px solid rgba(85,218,255,.09);
+  font-size:8px;letter-spacing:.06em;opacity:.65
+}
+.aura-v123-prr-body{flex:1;min-height:0;overflow:auto;padding:9px 10px 14px}
+.aura-v123-prr-row{
+  display:flex;align-items:flex-start;gap:9px;margin:6px 0;padding:10px;
+  border:1px solid rgba(85,218,255,.12);border-radius:9px;background:rgba(2,20,30,.72)
+}
+.aura-v123-prr-source{
+  flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  min-width:52px;padding:3px 6px;border:1px solid rgba(168,100,255,.35);
+  border-radius:999px;font-size:7px;letter-spacing:.08em
+}
+.aura-v123-prr-source.google{border-color:rgba(85,218,255,.38)}
+.aura-v123-prr-main{display:grid;gap:4px;min-width:0}
+.aura-v123-prr-main b{font-size:10px;line-height:1.3;overflow-wrap:anywhere}
+.aura-v123-prr-main small{font-size:8px;line-height:1.35;opacity:.62;overflow-wrap:anywhere}
+.aura-v123-prr-empty{padding:24px 10px;text-align:center;font-size:9px;opacity:.55}
+body.aura-v123-personal-results-recovery-open[data-aura-workspace="talk"] #conversation{
+  min-width:0!important;
+}

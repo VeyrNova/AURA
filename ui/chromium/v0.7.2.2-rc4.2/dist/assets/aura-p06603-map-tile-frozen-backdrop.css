@@ -1,0 +1,13 @@
+/* AURA P0.6.6.0.3 — FROZEN TILE BACKDROP / TRANSITION ARTIFACT FIX */
+.aura-nav-tile-backdrop{
+  position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:hidden;
+  pointer-events:none;background:#04101a;opacity:0;visibility:hidden;
+  transition:opacity .32s ease;will-change:opacity,transform;
+}
+.aura-nav-tile-backdrop.aura-nav-tile-backdrop-active{opacity:.96;visibility:visible}
+.aura-nav-tile-backdrop.aura-nav-tile-backdrop-retiring{opacity:0;visibility:visible}
+.aura-nav-tile-backdrop .aura-nav-tile-backdrop-img{
+  opacity:1 !important;filter:grayscale(.80) brightness(.44) contrast(1.14) sepia(.10) hue-rotate(150deg) saturate(1.20);
+}
+.aura-nav-tile-layer{background:transparent !important}
+.aura-nav-tile.aura-nav-tile-stale{opacity:0 !important}

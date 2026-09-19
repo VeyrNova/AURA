@@ -1,0 +1,19 @@
+{
+  "schema": "aura.v123.ft5-r4-r3.presenter-nested-sender-depth-hotfix.v1",
+  "generated_at": "2026-08-29T19:10:40",
+  "product_version_during_change": "1.2.2",
+  "target_version": "1.2.3",
+  "root_cause": "presenter _plain depth guard executed before primitive preservation; sender primitive fields at the boundary were converted to None",
+  "change": "preserve primitive values before applying the depth guard to deeper containers",
+  "scope": [
+    "runtime/personal_result_presenter_v123.py"
+  ],
+  "gmail_read_only": true,
+  "live_mutations_performed": false,
+  "google_backend_changed": false,
+  "dispatcher_changed": false,
+  "transport_changed": false,
+  "ui_changed": false,
+  "security_changed": false,
+  "version_bump": false
+}

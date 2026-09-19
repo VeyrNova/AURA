@@ -1,0 +1,617 @@
+/* AURA P0.8.1 — EVENT WATCHERS */
+:root{--aura-p081-z:250;--aura-p081-cyan:#64e8ff;--aura-p081-violet:#9c6cff;--aura-p081-bg:#050c19}
+.aura-p081-module-entry{position:relative}.aura-p081-module-entry>span:nth-child(2){display:grid;gap:3px}.aura-p081-module-entry>span b{font:700 8px/1 system-ui;letter-spacing:.06em}.aura-p081-module-entry>span small{font:500 6.5px/1.1 system-ui;opacity:.58}.aura-p081-module-icon{display:grid;place-items:center;width:26px;height:26px;border:1px solid rgba(100,232,255,.24);border-radius:8px;color:var(--aura-p081-cyan);background:rgba(8,30,43,.42);font:700 13px/1 system-ui}.aura-p081-module-entry i[data-p081-badge]{position:absolute;right:8px;top:7px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:#8b5cf6;color:#fff;font:700 8px/17px system-ui;text-align:center;box-shadow:0 0 18px rgba(139,92,246,.42)}.aura-p081-module-entry[data-active="watching"] .aura-p081-module-icon{box-shadow:0 0 18px rgba(100,232,255,.14)}.aura-p081-module-entry[data-active="paused"]{opacity:.68}
+.aura-p081-panel{position:fixed;z-index:var(--aura-p081-z);top:100px;right:22px;width:min(560px,calc(100vw - 44px));max-height:calc(100vh - 124px);display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden;border:1px solid rgba(105,88,195,.42);border-radius:13px;background:linear-gradient(155deg,rgba(4,11,24,.995),rgba(5,11,27,.995));box-shadow:0 28px 90px rgba(0,0,0,.58),0 0 60px rgba(92,56,205,.08);color:#e8ecf8}.aura-p081-panel[hidden]{display:none!important}.aura-p081-panel.open{display:grid}
+.aura-p081-panel>header{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 13px;border-bottom:1px solid rgba(97,103,159,.18);background:linear-gradient(90deg,rgba(9,19,38,.96),rgba(7,12,29,.93))}.aura-p081-panel>header small{display:block;color:#7d75a9;font:700 7px/1 system-ui;letter-spacing:.14em}.aura-p081-panel>header b{display:block;margin-top:5px;color:#f0edff;font:750 13px/1.05 system-ui;letter-spacing:.065em}.aura-p081-panel>header em{display:block;margin-top:6px;color:#78839f;font:500 7.5px/1.2 system-ui;font-style:normal}.aura-p081-head-actions{display:flex;align-items:center;gap:6px}.aura-p081-head-actions button{height:31px;padding:0 9px;border:1px solid rgba(104,111,164,.24);border-radius:8px;background:rgba(9,18,36,.78);color:#9ca7c0;font:700 7px/1 system-ui;cursor:pointer}.aura-p081-head-actions button:last-child{width:32px;padding:0;font-size:18px}.aura-p081-head-actions button.active{border-color:rgba(244,190,82,.52);color:#ffd877;background:rgba(92,66,18,.2)}
+.aura-p081-body{min-height:0;overflow:auto;padding:12px;scrollbar-width:thin;scrollbar-color:rgba(112,92,205,.5) rgba(5,11,23,.2)}
+.aura-p081-overview{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:12px;padding:11px 12px;border:1px solid rgba(88,98,151,.17);border-radius:10px;background:linear-gradient(90deg,rgba(5,18,31,.72),rgba(13,10,38,.62))}.aura-p081-overview>div{display:grid;grid-template-columns:auto 1fr;column-gap:8px;row-gap:4px;align-items:center}.aura-p081-overview b{color:#cdd6ea;font:750 8px/1 system-ui;letter-spacing:.08em}.aura-p081-overview small{grid-column:2;color:#71809d;font:500 7px/1.2 system-ui}.aura-p081-overview strong{min-width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(140,99,245,.3);border-radius:10px;background:rgba(70,42,139,.2);color:#d9c8ff;font:750 15px/1 system-ui}.aura-p081-dot{width:7px;height:7px;border-radius:50%;background:#59657c;box-shadow:0 0 0 3px rgba(89,101,124,.08)}.aura-p081-panel[data-watching="true"] .aura-p081-dot{background:#5be7ff;box-shadow:0 0 12px rgba(91,231,255,.66)}.aura-p081-panel[data-paused="true"] .aura-p081-dot{background:#f0be61;box-shadow:0 0 12px rgba(240,190,97,.42)}
+.aura-p081-section{margin-bottom:12px;padding:10px;border:1px solid rgba(88,98,151,.15);border-radius:10px;background:rgba(6,14,29,.62)}.aura-p081-section-title{min-height:22px;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px;color:#858eaa;font:700 7px/1 system-ui;letter-spacing:.09em}.aura-p081-section-title small{color:#665f84;font:650 6.5px/1 system-ui}.aura-p081-section-title button{height:24px;padding:0 7px;border:1px solid rgba(91,102,151,.18);border-radius:6px;background:rgba(9,18,35,.66);color:#78849f;font:700 6.2px/1 system-ui;cursor:pointer}
+.aura-p081-families{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.aura-p081-family{min-height:61px;display:grid;grid-template-columns:31px minmax(0,1fr) auto;align-items:center;gap:8px;padding:8px 9px;text-align:left;border:1px solid rgba(84,96,145,.17);border-radius:8px;background:rgba(8,17,34,.72);color:#acb6ce;cursor:pointer}.aura-p081-family:nth-child(5){grid-column:1/-1}.aura-p081-family-icon{display:grid;place-items:center;width:29px;height:29px;border:1px solid rgba(99,112,162,.18);border-radius:8px;background:rgba(10,21,41,.8);color:#7888a9;font:700 12px/1 system-ui}.aura-p081-family>span:nth-child(2){min-width:0}.aura-p081-family b{display:block;color:#b9c2d7;font:750 7px/1 system-ui;letter-spacing:.05em}.aura-p081-family small{display:block;margin-top:5px;color:#68758f;font:500 6.4px/1.25 system-ui}.aura-p081-family i{color:#626d86;font:700 6px/1 system-ui;font-style:normal}.aura-p081-family.active{border-color:rgba(112,91,218,.62);background:linear-gradient(90deg,rgba(65,43,126,.28),rgba(9,22,39,.7));box-shadow:inset 0 0 0 1px rgba(138,107,241,.06)}.aura-p081-family.active .aura-p081-family-icon{border-color:rgba(100,232,255,.35);color:#70e9ff;background:rgba(12,54,66,.38)}.aura-p081-family.active b{color:#e3dbff}.aura-p081-family.active i{color:#77e8ff}
+.aura-p081-events-section{padding-bottom:7px}.aura-p081-events{display:grid;gap:7px}.aura-p081-event{display:grid;grid-template-columns:31px minmax(0,1fr);gap:8px;padding:9px;border:1px solid rgba(84,96,145,.15);border-radius:8px;background:rgba(6,15,31,.7)}.aura-p081-event[data-status="new"]{border-color:rgba(115,90,221,.46);box-shadow:inset 2px 0 0 #8f67f0}.aura-p081-event[data-status="dismissed"]{opacity:.45}.aura-p081-event[data-severity="critical"]{border-color:rgba(237,98,120,.44)}.aura-p081-event[data-severity="important"]{border-color:rgba(221,171,83,.34)}.aura-p081-event-icon{width:29px;height:29px;display:grid;place-items:center;border:1px solid rgba(97,109,161,.19);border-radius:8px;background:rgba(9,20,40,.78);color:#83dff1;font:700 12px/1 system-ui}.aura-p081-event-main{min-width:0}.aura-p081-event-meta{display:flex;align-items:center;justify-content:space-between;gap:8px}.aura-p081-event-meta b{color:#8577b0;font:750 6.5px/1 system-ui;letter-spacing:.08em}.aura-p081-event-meta span{color:#596780;font:600 6px/1 system-ui}.aura-p081-event strong{display:block;margin-top:5px;color:#cbd3e8;font:720 8px/1.15 system-ui}.aura-p081-event p{margin:5px 0 0;color:#73809b;font:500 6.8px/1.35 system-ui}.aura-p081-event-actions{display:flex;gap:6px;margin-top:7px}.aura-p081-event-actions button{height:24px;padding:0 7px;border:1px solid rgba(99,108,156,.2);border-radius:6px;background:rgba(9,19,38,.74);color:#8792ad;font:700 6.2px/1 system-ui;cursor:pointer}.aura-p081-event-actions button:first-child{border-color:rgba(112,91,218,.42);color:#bcaaff;background:rgba(61,40,122,.18)}.aura-p081-empty{min-height:105px;display:grid;place-items:center;align-content:center;gap:6px;color:#59657e}.aura-p081-empty span{font-size:19px;color:#716496}.aura-p081-empty b{font:700 7px/1 system-ui;letter-spacing:.08em}.aura-p081-empty small{font:500 6.5px/1 system-ui}
+.aura-p081-privacy{display:grid;gap:5px;padding:10px;border:1px solid rgba(66,139,158,.18);border-radius:9px;background:rgba(7,28,37,.38)}.aura-p081-privacy b{color:#75d7e8;font:750 7px/1 system-ui;letter-spacing:.08em}.aura-p081-privacy span{color:#667b93;font:500 6.8px/1.35 system-ui}
+.aura-p081-panel>footer{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px;border-top:1px solid rgba(90,99,151,.16);background:rgba(5,11,25,.9)}.aura-p081-panel>footer button{height:29px;padding:0 10px;border:1px solid rgba(104,111,164,.22);border-radius:7px;background:rgba(11,20,39,.76);color:#8994ad;font:700 6.5px/1 system-ui;cursor:pointer}.aura-p081-panel>footer span{color:#606b86;font:600 6.3px/1 system-ui}
+/* Small P0.7.5 visual polish carried forward after validation. */
+.aura-p075-panel .aura-p075-options button b{font-size:7.4px}.aura-p075-panel .aura-p075-options button small{font-size:6.8px}.aura-p075-panel .aura-p075-options button.active{border-color:rgba(116,232,255,.8);box-shadow:inset 0 0 0 1px rgba(119,232,255,.17),0 0 16px rgba(93,107,224,.08)}.aura-p075-panel>footer button:first-child{border-color:rgba(116,99,202,.38);color:#a9b2c9;background:rgba(30,25,64,.45)}
+:root[data-aura-contrast="high"] .aura-p081-panel{border-color:rgba(215,224,255,.56)}:root[data-aura-contrast="high"] .aura-p081-family,:root[data-aura-contrast="high"] .aura-p081-event{border-color:rgba(195,207,245,.38)}
+:root[data-aura-motion="reduced"] .aura-p081-panel,:root[data-aura-motion="off"] .aura-p081-panel{transition:none!important}
+@media(max-width:760px){.aura-p081-panel{top:78px;right:10px;width:calc(100vw - 20px);max-height:calc(100vh - 94px)}.aura-p081-families{grid-template-columns:1fr}.aura-p081-family:nth-child(5){grid-column:auto}.aura-p081-panel>footer{align-items:flex-start;flex-direction:column}}
+
+/* AURA P0.8.1.2 — WORKSPACE DOCKING HOTFIX
+   Activity Center is a right-side workspace companion, never a free overlay.
+*/
+:root{--aura-p0812-dock-width:clamp(390px,27vw,500px);--aura-p0812-dock-gap:14px;--aura-p0812-dock-reserve:calc(var(--aura-p0812-dock-width) + var(--aura-p0812-dock-gap) + 12px)}
+.aura-p081-panel{z-index:153;top:102px;right:12px;bottom:84px;width:var(--aura-p0812-dock-width);max-height:none;opacity:0;transform:translateX(16px);pointer-events:none;transition:opacity .16s ease,transform .16s ease}
+.aura-p081-panel.open:not([hidden]){opacity:1;transform:none;pointer-events:auto}
+.aura-p081-head-actions button:disabled{opacity:.38;cursor:default}
+/* Reserve actual horizontal space for every established right-side AURA workspace. */
+body.aura-p0812-activity-docked .aura-p0626-memory.open,
+body.aura-p0812-activity-docked .aura-p0627-system.open,
+body.aura-p0812-activity-docked .aura-p0623-drawer.open,
+body.aura-p0812-activity-docked .aura-weather-workspace.open,
+body.aura-p0812-activity-docked .aura-p074-vitals-workspace.open,
+body.aura-p0812-activity-docked .aura-p066-maps-workspace.open,
+body.aura-p0812-activity-docked .aura-maps-workspace.open{
+  right:var(--aura-p0812-dock-reserve)!important;
+  max-width:calc(100vw - var(--aura-p0702-rail-width,220px) - var(--aura-p0812-dock-reserve) - 30px)!important;
+  transition:right .16s ease,max-width .16s ease!important;
+}
+/* The dock is above the composer, so the global composer remains usable. */
+/* Conversation Drawer and Activity Center share the same right-dock slot and are mutually exclusive in JS. */
+body.aura-p0812-activity-docked .aura-p0712-conversation-drawer.open,
+body.aura-p0812-activity-docked .aura-p071-conversation-drawer.open{pointer-events:none!important;opacity:0!important}
+:root[data-aura-motion="reduced"] .aura-p081-panel,:root[data-aura-motion="off"] .aura-p081-panel{transition:none!important}
+@media(max-width:1280px){:root{--aura-p0812-dock-width:380px}.aura-p081-panel{right:10px}.aura-p0812-activity-docked .aura-p0626-memory.open,.aura-p0812-activity-docked .aura-p0627-system.open,.aura-p0812-activity-docked .aura-p0623-drawer.open,.aura-p0812-activity-docked .aura-weather-workspace.open,.aura-p0812-activity-docked .aura-p074-vitals-workspace.open{max-width:calc(100vw - var(--aura-p0702-rail-width,190px) - var(--aura-p0812-dock-reserve) - 20px)!important}}
+@media(max-width:900px){:root{--aura-p0812-dock-width:320px}.aura-p081-panel{top:90px;bottom:78px}.aura-p081-families{grid-template-columns:1fr}.aura-p081-family:nth-child(5){grid-column:auto}}
+
+
+/* AURA P0.8.1.3 — SYSTEM LIVE PERSISTENCE HOTFIX
+   The RC4.2 System Live telemetry card is a permanent shell HUD.
+   Product workspaces reserve its real measured width instead of covering it.
+*/
+:root{
+  --aura-p0813-system-hud-width:var(--aura-p0813-system-hud-measured,318px);
+  --aura-p0813-system-hud-gap:14px;
+  --aura-p0813-system-hud-reserve:calc(var(--aura-p0813-system-hud-width) + var(--aura-p0813-system-hud-gap) + 12px);
+  --aura-p0813-activity-plus-system:calc(var(--aura-p0813-system-hud-reserve) + var(--aura-p0812-dock-reserve));
+  --aura-p0813-conversation-plus-system:calc(var(--aura-p0813-system-hud-reserve) + var(--aura-p0712-drawer-reserve,520px));
+}
+.aura-p0813-system-hud-persistent{
+  position:fixed!important;
+  z-index:147!important;
+  top:102px!important;
+  right:12px!important;
+  bottom:84px!important;
+  width:var(--aura-p0813-system-hud-width)!important;
+  min-width:286px!important;
+  max-width:410px!important;
+  max-height:calc(100vh - 186px)!important;
+  box-sizing:border-box!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  filter:none!important;
+  pointer-events:auto!important;
+  isolation:isolate!important;
+}
+/* Default major workspaces stop before the persistent System Live HUD. */
+body.aura-p0813-system-hud-ready .aura-p0626-memory.open,
+body.aura-p0813-system-hud-ready .aura-p0627-system.open,
+body.aura-p0813-system-hud-ready .aura-p0623-drawer.open,
+body.aura-p0813-system-hud-ready .aura-weather-workspace.open,
+body.aura-p0813-system-hud-ready .aura-p074-vitals-workspace.open,
+body.aura-p0813-system-hud-ready .aura-p066-maps-workspace.open,
+body.aura-p0813-system-hud-ready .aura-maps-workspace.open,
+body.aura-p0813-system-hud-ready #auraNavigationWorkspace.open{
+  right:var(--aura-p0813-system-hud-reserve)!important;
+  max-width:calc(100vw - var(--aura-p0702-rail-width,220px) - var(--aura-p0813-system-hud-reserve) - 30px)!important;
+}
+/* Activity Center gets the slot immediately to the left of System Live. */
+body.aura-p0813-system-hud-ready .aura-p081-panel{
+  right:var(--aura-p0813-system-hud-reserve)!important;
+}
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p0626-memory.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p0627-system.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p0623-drawer.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-weather-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p074-vitals-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p066-maps-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-maps-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked #auraNavigationWorkspace.open{
+  right:var(--aura-p0813-activity-plus-system)!important;
+  max-width:calc(100vw - var(--aura-p0702-rail-width,220px) - var(--aura-p0813-activity-plus-system) - 30px)!important;
+}
+/* Conversation Drawer also lives left of System Live; its contextual workspace moves farther left. */
+body.aura-p0813-system-hud-ready .aura-p0712-conversation-drawer.open,
+body.aura-p0813-system-hud-ready .aura-p071-conversation-drawer.open{
+  right:var(--aura-p0813-system-hud-reserve)!important;
+}
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-p0626-memory.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-p0627-system.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-p0623-drawer.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-weather-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-p074-vitals-workspace.open{
+  right:var(--aura-p0813-conversation-plus-system)!important;
+  max-width:calc(100vw - var(--aura-p0702-rail-width,220px) - var(--aura-p0813-conversation-plus-system) - 30px)!important;
+}
+/* Full Conversation respects the HUD too. */
+body.aura-p0813-system-hud-ready[data-aura-workspace="talk"] #conversation{
+  right:var(--aura-p0813-system-hud-reserve)!important;
+}
+/* Resume chip belongs to the usable workspace, not underneath System Live. */
+body.aura-p0813-system-hud-ready .aura-p070-resume-chip{
+  right:var(--aura-p0813-system-hud-reserve)!important;
+}
+@media(max-width:1280px){
+  :root{--aura-p0813-system-hud-width:300px}
+  .aura-p0813-system-hud-persistent{right:10px!important;min-width:274px!important}
+}
+@media(max-width:1040px){
+  :root{--aura-p0813-system-hud-width:286px;--aura-p0813-system-hud-gap:10px}
+  body.aura-p0813-system-hud-ready .aura-p081-panel{width:min(340px,calc(100vw - var(--aura-p0813-system-hud-reserve) - 110px))}
+}
+@media(max-width:820px){
+  /* On very narrow shells, priority remains: System Live is visible; workspaces may scroll horizontally rather than cover it. */
+  .aura-p0813-system-hud-persistent{top:90px!important;bottom:78px!important;width:270px!important;min-width:270px!important}
+  :root{--aura-p0813-system-hud-width:270px}
+}
+:root[data-aura-motion="reduced"] .aura-p0813-system-hud-persistent,
+:root[data-aura-motion="off"] .aura-p0813-system-hud-persistent{transition:none!important}
+
+/* AURA P0.8.1.4 — GLOBAL LAYOUT RHYTHM & PANEL ALIGNMENT HOTFIX
+   Canonical geometry for every established AURA surface.
+   Full workspaces/docks share one top/bottom line; utility popovers retain content-driven height.
+*/
+:root{
+  --aura-p0814-surface-top:102px;
+  --aura-p0814-surface-bottom:84px;
+  --aura-p0814-surface-edge:12px;
+  --aura-p0814-surface-gap:14px;
+  --aura-p0814-rail-gap:14px;
+  --aura-p0712-drawer-gap:var(--aura-p0814-surface-gap);
+  --aura-p0712-drawer-reserve:calc(var(--aura-p0712-drawer-width) + var(--aura-p0814-surface-gap) + var(--aura-p0814-surface-edge));
+  --aura-p0812-dock-gap:var(--aura-p0814-surface-gap);
+  --aura-p0812-dock-reserve:calc(var(--aura-p0812-dock-width) + var(--aura-p0814-surface-gap) + var(--aura-p0814-surface-edge));
+  --aura-p0814-system-slot:calc(var(--aura-p0813-system-hud-width) + var(--aura-p0814-surface-gap) + var(--aura-p0814-surface-edge));
+  --aura-p0814-system-activity-slot:calc(var(--aura-p0814-system-slot) + var(--aura-p0812-dock-width) + var(--aura-p0814-surface-gap));
+  --aura-p0814-system-conversation-slot:calc(var(--aura-p0814-system-slot) + var(--aura-p0712-drawer-width) + var(--aura-p0814-surface-gap));
+}
+/* Canonical full-height surface line: Memory, Tasks/Agenda, Diagnostics, Weather, Vitals and Maps. */
+.aura-p0626-memory.open,
+.aura-p0623-drawer.open,
+.aura-p0627-system.open:not(.aura-p0813-system-hud-persistent),
+.aura-weather-workspace.open,
+.aura-p074-vitals-workspace.open,
+.aura-p066-maps-workspace.open,
+.aura-maps-workspace.open,
+#auraNavigationWorkspace.open{
+  top:var(--aura-p0814-surface-top)!important;
+  bottom:var(--aura-p0814-surface-bottom)!important;
+  max-height:none!important;
+  box-sizing:border-box!important;
+}
+/* All persistent right lanes use the same top/bottom line. */
+.aura-p0813-system-hud-persistent,
+.aura-p081-panel.open:not([hidden]),
+.aura-p0712-conversation-drawer.open:not([hidden]),
+.aura-p071-conversation-drawer.open:not([hidden]){
+  top:var(--aura-p0814-surface-top)!important;
+  bottom:var(--aura-p0814-surface-bottom)!important;
+  max-height:none!important;
+  box-sizing:border-box!important;
+}
+.aura-p0813-system-hud-persistent{right:var(--aura-p0814-surface-edge)!important}
+/* One exact 14 px gutter between System Live and the next right dock. */
+body.aura-p0813-system-hud-ready .aura-p081-panel,
+body.aura-p0813-system-hud-ready .aura-p0712-conversation-drawer.open,
+body.aura-p0813-system-hud-ready .aura-p071-conversation-drawer.open{
+  right:var(--aura-p0814-system-slot)!important;
+}
+/* One exact 14 px gutter between the active workspace, Activity Center and System Live.
+   P0.8.1.3 double-counted the outer 12 px edge in the combined reserve; this removes it. */
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p0626-memory.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p0623-drawer.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p0627-system.open:not(.aura-p0813-system-hud-persistent),
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-weather-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p074-vitals-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-p066-maps-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked .aura-maps-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0812-activity-docked #auraNavigationWorkspace.open{
+  right:var(--aura-p0814-system-activity-slot)!important;
+  max-width:calc(100vw - var(--aura-p0702-rail-width,220px) - var(--aura-p0814-system-activity-slot) - var(--aura-p0814-rail-gap))!important;
+}
+/* Same rhythm when Conversation Drawer is the companion panel. */
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-p0626-memory.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-p0623-drawer.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-p0627-system.open:not(.aura-p0813-system-hud-persistent),
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-weather-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-p074-vitals-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-p066-maps-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel .aura-maps-workspace.open,
+body.aura-p0813-system-hud-ready.aura-p0712-coexist-right-panel #auraNavigationWorkspace.open{
+  right:var(--aura-p0814-system-conversation-slot)!important;
+  max-width:calc(100vw - var(--aura-p0702-rail-width,220px) - var(--aura-p0814-system-conversation-slot) - var(--aura-p0814-rail-gap))!important;
+}
+/* Single workspace beside System Live: exact 14 px gutter. */
+body.aura-p0813-system-hud-ready:not(.aura-p0812-activity-docked):not(.aura-p0712-coexist-right-panel) .aura-p0626-memory.open,
+body.aura-p0813-system-hud-ready:not(.aura-p0812-activity-docked):not(.aura-p0712-coexist-right-panel) .aura-p0623-drawer.open,
+body.aura-p0813-system-hud-ready:not(.aura-p0812-activity-docked):not(.aura-p0712-coexist-right-panel) .aura-p0627-system.open:not(.aura-p0813-system-hud-persistent),
+body.aura-p0813-system-hud-ready:not(.aura-p0812-activity-docked):not(.aura-p0712-coexist-right-panel) .aura-weather-workspace.open,
+body.aura-p0813-system-hud-ready:not(.aura-p0812-activity-docked):not(.aura-p0712-coexist-right-panel) .aura-p074-vitals-workspace.open,
+body.aura-p0813-system-hud-ready:not(.aura-p0812-activity-docked):not(.aura-p0712-coexist-right-panel) .aura-p066-maps-workspace.open,
+body.aura-p0813-system-hud-ready:not(.aura-p0812-activity-docked):not(.aura-p0712-coexist-right-panel) .aura-maps-workspace.open,
+body.aura-p0813-system-hud-ready:not(.aura-p0812-activity-docked):not(.aura-p0712-coexist-right-panel) #auraNavigationWorkspace.open{
+  right:var(--aura-p0814-system-slot)!important;
+  max-width:calc(100vw - var(--aura-p0702-rail-width,220px) - var(--aura-p0814-system-slot) - var(--aura-p0814-rail-gap))!important;
+}
+/* Accessibility is a utility window: same top line and right-side gutter, content-driven height remains intentional. */
+.aura-p075-panel.open:not([hidden]){
+  top:var(--aura-p0814-surface-top)!important;
+  max-height:calc(100vh - var(--aura-p0814-surface-top) - var(--aura-p0814-surface-bottom))!important;
+  box-sizing:border-box!important;
+}
+body.aura-p0813-system-hud-ready .aura-p075-panel.open:not([hidden]){right:var(--aura-p0814-system-slot)!important}
+/* Full Conversation follows the same shell top line and stops before System Live. */
+body[data-aura-workspace="talk"] #conversation{
+  top:0!important;
+  left:0!important;
+  bottom:72px!important;
+  border-radius:12px!important;
+}
+body.aura-p0813-system-hud-ready[data-aura-workspace="talk"] #conversation{right:var(--aura-p0814-system-slot)!important}
+/* Resume chip and transient module popover keep a clean gutter from persistent lanes. */
+body.aura-p0813-system-hud-ready .aura-p070-resume-chip{right:var(--aura-p0814-system-slot)!important}
+.aura-p0702-modules-popover{box-sizing:border-box}
+/* Responsive rhythm: reduce the gutter before sacrificing a persistent panel. */
+@media(max-width:1280px){:root{--aura-p0814-surface-gap:12px;--aura-p0814-rail-gap:12px}}
+@media(max-width:1040px){:root{--aura-p0814-surface-top:90px;--aura-p0814-surface-bottom:78px;--aura-p0814-surface-edge:10px;--aura-p0814-surface-gap:10px;--aura-p0814-rail-gap:10px}}
+@media(max-width:820px){:root{--aura-p0814-surface-top:90px;--aura-p0814-surface-bottom:78px;--aura-p0814-surface-edge:8px;--aura-p0814-surface-gap:8px;--aura-p0814-rail-gap:8px}}
+:root[data-aura-motion="reduced"] :where(.aura-p0626-memory,.aura-p0623-drawer,.aura-p0627-system,.aura-weather-workspace,.aura-p074-vitals-workspace,#auraNavigationWorkspace,.aura-p081-panel,.aura-p0712-conversation-drawer,.aura-p075-panel),
+:root[data-aura-motion="off"] :where(.aura-p0626-memory,.aura-p0623-drawer,.aura-p0627-system,.aura-weather-workspace,.aura-p074-vitals-workspace,#auraNavigationWorkspace,.aura-p081-panel,.aura-p0712-conversation-drawer,.aura-p075-panel){transition:none!important}
+
+
+/* AURA P0.8.1.5 — GLOBAL TOP BASELINE NORMALIZATION HOTFIX
+   Runtime geometry is authoritative. Individual `translate` composes with legacy
+   `transform` animations, so horizontal centering and opening transitions are preserved. */
+.aura-p0815-baseline-main{
+  translate:0 var(--aura-p0815-shift-y,0px)!important;
+  height:var(--aura-p0815-target-height)!important;
+  min-height:0!important;
+  max-height:none!important;
+  bottom:auto!important;
+  box-sizing:border-box!important;
+}
+.aura-p0815-baseline-utility{
+  translate:0 var(--aura-p0815-shift-y,0px)!important;
+  box-sizing:border-box!important;
+}
+/* These surfaces own internal scrolling; the normalized outer frame must not grow again. */
+.aura-p0626-memory.aura-p0815-baseline-main,
+.aura-p0623-drawer.aura-p0815-baseline-main,
+.aura-p0627-system.aura-p0815-baseline-main,
+.aura-weather-workspace.aura-p0815-baseline-main,
+.aura-p074-vitals-workspace.aura-p0815-baseline-main,
+#auraNavigationWorkspace.aura-p0815-baseline-main,
+.aura-p066-maps-workspace.aura-p0815-baseline-main,
+.aura-maps-workspace.aura-p0815-baseline-main,
+.aura-p0712-conversation-drawer.aura-p0815-baseline-main,
+.aura-p071-conversation-drawer.aura-p0815-baseline-main,
+.aura-p081-panel.aura-p0815-baseline-main,
+.aura-p0813-system-hud-persistent.aura-p0815-baseline-main,
+body[data-aura-workspace="talk"] #conversation.aura-p0815-baseline-main{overflow:hidden!important}
+:root[data-aura-motion="reduced"] .aura-p0815-baseline-main,
+:root[data-aura-motion="reduced"] .aura-p0815-baseline-utility,
+:root[data-aura-motion="off"] .aura-p0815-baseline-main,
+:root[data-aura-motion="off"] .aura-p0815-baseline-utility{transition:none!important}
+
+
+/* --- AURA V0.9.5 D2 R9 ACTIVITY CENTER STRUCTURAL THEME START --- */
+
+/*
+  Structural scope only.
+  Target = the real P0.8.1 Activity Center:
+  aside.aura-p081-panel
+  No document/root inference and no runtime DOM recoloring.
+*/
+
+.aura-p081-panel {
+  border-color: rgba(113, 224, 255, 0.16) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 22, 38, 0.98),
+      rgba(3, 10, 19, 0.97)
+    ) !important;
+  box-shadow:
+    0 20px 70px rgba(0, 0, 0, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02) !important;
+  color: rgb(216, 247, 255) !important;
+}
+
+.aura-p081-panel > header {
+  border-bottom-color: rgba(113, 224, 255, 0.12) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 22, 38, 0.94),
+      rgba(3, 10, 19, 0.90)
+    ) !important;
+}
+
+.aura-p081-panel > header small {
+  color: rgb(119, 184, 202) !important;
+}
+
+.aura-p081-panel > header b {
+  color: rgb(216, 247, 255) !important;
+}
+
+.aura-p081-panel > header em {
+  color: rgb(86, 123, 143) !important;
+}
+
+.aura-p081-head-actions button,
+.aura-p081-section-title button,
+.aura-p081-panel > footer button {
+  border-color: rgba(113, 224, 255, 0.14) !important;
+  background: rgba(8, 22, 38, 0.78) !important;
+  color: rgb(142, 188, 198) !important;
+  box-shadow: none !important;
+}
+
+.aura-p081-head-actions button:hover,
+.aura-p081-section-title button:hover,
+.aura-p081-panel > footer button:hover {
+  border-color: rgba(113, 224, 255, 0.28) !important;
+  background: rgba(8, 32, 51, 0.82) !important;
+  color: rgb(185, 242, 255) !important;
+}
+
+.aura-p081-body {
+  scrollbar-color:
+    rgba(113, 224, 255, 0.32)
+    rgba(3, 10, 19, 0.30) !important;
+}
+
+.aura-p081-body::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.aura-p081-body::-webkit-scrollbar-track {
+  background: rgba(3, 10, 19, 0.30) !important;
+}
+
+.aura-p081-body::-webkit-scrollbar-thumb {
+  background: rgba(113, 224, 255, 0.30) !important;
+  border: 2px solid rgba(3, 10, 19, 0.92) !important;
+  border-radius: 999px !important;
+}
+
+.aura-p081-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(113, 224, 255, 0.48) !important;
+}
+
+.aura-p081-section,
+.aura-p081-panel .aura-p083-settings.aura-p081-section,
+.aura-p081-panel .aura-p084-control.aura-p081-section {
+  border-color: rgba(105, 232, 255, 0.08) !important;
+  background: rgba(3, 14, 23, 0.50) !important;
+  box-shadow: none !important;
+  color: rgb(216, 247, 255) !important;
+}
+
+.aura-p081-section-title {
+  color: rgb(119, 184, 202) !important;
+}
+
+.aura-p081-section-title small {
+  color: rgb(80, 111, 126) !important;
+}
+
+.aura-p081-family {
+  border-color: rgba(105, 232, 255, 0.08) !important;
+  background: rgba(4, 16, 26, 0.52) !important;
+  color: rgb(166, 220, 232) !important;
+  box-shadow: none !important;
+}
+
+.aura-p081-family-icon {
+  border-color: rgba(105, 232, 255, 0.10) !important;
+  background: rgba(3, 14, 23, 0.60) !important;
+  color: rgb(120, 170, 187) !important;
+}
+
+.aura-p081-family b {
+  color: rgb(166, 220, 232) !important;
+}
+
+.aura-p081-family small,
+.aura-p081-family i {
+  color: rgb(82, 118, 135) !important;
+}
+
+.aura-p081-family.active {
+  border-color: rgba(105, 232, 255, 0.24) !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 32, 51, 0.86),
+      rgba(3, 14, 23, 0.74)
+    ) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(105, 232, 255, 0.03) !important;
+}
+
+.aura-p081-family.active .aura-p081-family-icon {
+  border-color: rgba(105, 232, 255, 0.26) !important;
+  background: rgba(8, 32, 51, 0.72) !important;
+  color: rgb(158, 239, 255) !important;
+}
+
+.aura-p081-family.active b,
+.aura-p081-family.active i {
+  color: rgb(185, 242, 255) !important;
+}
+
+.aura-p081-panel > footer {
+  border-top-color: rgba(113, 224, 255, 0.10) !important;
+  background: rgba(3, 10, 19, 0.90) !important;
+}
+
+.aura-p081-panel > footer span {
+  color: rgb(79, 114, 135) !important;
+}
+
+/* P0.8.3 proactive settings */
+.aura-p081-panel .aura-p083-settings {
+  border-color: rgba(105, 232, 255, 0.08) !important;
+  background: rgba(3, 14, 23, 0.50) !important;
+}
+
+/* P0.8.4 explicit-confirmation section */
+.aura-p081-panel .aura-p084-control {
+  border-color: rgba(105, 232, 255, 0.08) !important;
+  background: rgba(3, 14, 23, 0.50) !important;
+}
+
+/* P0.8.1 overview / stopped-watcher card */
+.aura-p081-panel .aura-p081-overview {
+  border-color: rgba(105, 232, 255, 0.10) !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 14, 23, 0.62),
+      rgba(5, 20, 32, 0.60)
+    ) !important;
+  box-shadow: none !important;
+}
+
+.aura-p081-panel .aura-p081-overview b {
+  color: rgb(185, 242, 255) !important;
+}
+
+.aura-p081-panel .aura-p081-overview small {
+  color: rgb(82, 118, 135) !important;
+}
+
+.aura-p081-panel .aura-p081-overview strong {
+  border-color: rgba(105, 232, 255, 0.28) !important;
+  background: rgba(8, 32, 51, 0.86) !important;
+  color: rgb(185, 242, 255) !important;
+  box-shadow: inset 0 0 0 1px rgba(105, 232, 255, 0.03) !important;
+}
+
+/* P0.8.2 suggestion engine strip */
+.aura-p081-panel .aura-p082-engine-strip {
+  border-color: rgba(105, 232, 255, 0.10) !important;
+  background: rgba(3, 14, 23, 0.50) !important;
+  box-shadow: none !important;
+  color: rgb(216, 247, 255) !important;
+}
+
+.aura-p081-panel .aura-p082-engine-strip button,
+.aura-p081-panel .aura-p082-engine-strip [role="button"] {
+  border-color: rgba(105, 232, 255, 0.18) !important;
+  background: rgba(8, 22, 38, 0.74) !important;
+  color: rgb(142, 188, 198) !important;
+  box-shadow: none !important;
+}
+
+/* Event history: remove remaining legacy purple emphasis. */
+.aura-p081-panel .aura-p081-event[data-status="new"] {
+  border-color: rgba(105, 232, 255, 0.28) !important;
+  box-shadow: rgb(85, 220, 255) 2px 0 0 inset !important;
+}
+
+.aura-p081-panel .aura-p081-event-meta b {
+  color: rgb(119, 184, 202) !important;
+}
+
+.aura-p081-panel .aura-p081-event-actions button:first-child {
+  border-color: rgba(105, 232, 255, 0.24) !important;
+  background: rgba(8, 32, 51, 0.64) !important;
+  color: rgb(185, 242, 255) !important;
+}
+
+.aura-p081-panel .aura-p081-empty span {
+  color: rgb(119, 184, 202) !important;
+}
+
+/* Remove inherited violet/purple from common interactive descendants. */
+.aura-p081-panel button,
+.aura-p081-panel [role="button"] {
+  box-shadow: none !important;
+}
+
+.aura-p081-panel button[style*="purple"],
+.aura-p081-panel button[style*="violet"] {
+  border-color: rgba(113, 224, 255, 0.20) !important;
+  background: rgba(8, 32, 51, 0.82) !important;
+  color: rgb(185, 242, 255) !important;
+}
+
+/* --- AURA V0.9.5 D2 R9 ACTIVITY CENTER STRUCTURAL THEME END --- */
+
+/* AURA LIVE V20 - centralize persistent SYSTEM LIVE HUD only while aura-live is active */
+body.aura-live-active{
+  --aura-p0813-system-hud-measured:0px;
+  --aura-p0813-system-hud-reserve:0px;
+  --aura-p0813-system-hud-gap:0px;
+}
+body.aura-live-active .workspace > .hero{
+  position:relative !important;
+  display:block !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  overflow:auto !important;
+  box-sizing:border-box !important;
+  padding:12px !important;
+}
+body.aura-live-active .workspace > .hero > :not(.telemetry){
+  display:none !important;
+}
+body.aura-live-active .workspace > .hero > .telemetry.aura-p0813-system-hud-persistent,
+body.aura-live-active .workspace > .hero > aside.telemetry.glass{
+  position:relative !important;
+  z-index:auto !important;
+  top:auto !important;
+  right:auto !important;
+  bottom:auto !important;
+  left:auto !important;
+  inset:auto !important;
+  width:100% !important;
+  min-width:0 !important;
+  max-width:none !important;
+  height:auto !important;
+  max-height:none !important;
+  margin:0 !important;
+  box-sizing:border-box !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:none !important;
+  filter:none !important;
+  overflow:visible !important;
+  pointer-events:auto !important;
+  isolation:auto !important;
+}
+
+/* AURA LIVE V22 - remove legacy persistent right SYSTEM LIVE outside aura-live */
+:root{
+  --aura-p0813-system-hud-measured:0px !important;
+  --aura-p0813-system-hud-width:0px !important;
+  --aura-p0813-system-hud-gap:0px !important;
+  --aura-p0813-system-hud-reserve:0px !important;
+  --aura-p0813-activity-plus-system:var(--aura-p0812-dock-reserve,0px) !important;
+  --aura-p0813-conversation-plus-system:var(--aura-p0712-drawer-reserve,0px) !important;
+}
+
+/* Outside AURA LIVE there is no legacy right System Live sidebar anymore. */
+body:not(.aura-live-active) .aura-p0813-system-hud-persistent{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+  width:0 !important;
+  min-width:0 !important;
+  max-width:0 !important;
+}
+
+/* In AURA LIVE the exact same existing node is shown centrally. */
+body.aura-live-active .workspace > .hero > .telemetry.aura-p0813-system-hud-persistent,
+body.aura-live-active .workspace > .hero > aside.telemetry.glass{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  pointer-events:auto !important;
+  width:100% !important;
+  min-width:0 !important;
+  max-width:none !important;
+}
+
+/* AURA LIVE V23 - trim residual shell below Project Active */
+body.aura-live-active .workspace > .hero > aside.telemetry.glass{
+  padding-bottom:0 !important;
+  margin-bottom:0 !important;
+}
+body.aura-live-active .workspace > .hero > aside.telemetry.glass > .aura-project-active-v130{
+  margin-bottom:0 !important;
+}

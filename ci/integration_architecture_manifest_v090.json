@@ -1,0 +1,92 @@
+{
+  "schema": "aura.integration-architecture.v090.v1",
+  "milestone": "AURA v0.9.0 Personal Integrations - Integration Architecture",
+  "product_version_during_d2": "0.8.9",
+  "canonical_authority": "integrations.registry.IntegrationRegistry",
+  "models": [
+    "IntegrationManifest",
+    "IntegrationCapability",
+    "IntegrationProviderState",
+    "IntegrationRequest",
+    "IntegrationResult"
+  ],
+  "operations": [
+    "register_provider",
+    "unregister_provider",
+    "get_provider",
+    "list_providers",
+    "resolve_capability",
+    "build_integration_context",
+    "execute_integration",
+    "health_snapshot"
+  ],
+  "provider_protocol": "integrations.registry.IntegrationProvider",
+  "future_provider_families": [
+    "email",
+    "calendar",
+    "contacts",
+    "files_cloud",
+    "notifications",
+    "browser_web_workflows",
+    "productivity"
+  ],
+  "authority_boundaries": {
+    "security": "SecurityPolicyEngine v2 remains authorization authority",
+    "receipts": "ActionReceiptService remains traceability authority",
+    "mission": "MissionEngine remains orchestration authority",
+    "memory": "MemoryKernel v2 may supply context but never provider secrets"
+  },
+  "security": {
+    "unknown_provider_fail_closed": true,
+    "unknown_capability_fail_closed": true,
+    "require_confirmation_pauses": true,
+    "same_receipt_resumes_after_confirmation": true,
+    "receipt_before_provider_side_effect": true,
+    "registry_owns_credentials": false
+  },
+  "d2": {
+    "synthetic_providers_only": true,
+    "real_provider_connections": false,
+    "real_oauth_accounts": false,
+    "user_database_modified": false,
+    "product_version_bumped": false
+  },
+  "written_at": "2026-08-26T13:01:47",
+  "files": {
+    "package_init": {
+      "path": "C:\\AURA GPT version\\integrations\\__init__.py",
+      "sha256": "70806cb7e4990361819b5185b416c153b7328412f41723946a5bb4c2f8dd85db"
+    },
+    "authority": {
+      "path": "C:\\AURA GPT version\\integrations\\registry.py",
+      "sha256": "61589a0516f12152f6c26461a7ec3a5d1428693af9d515074181f9eb23507409"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_integration_architecture_v090.py",
+      "sha256": "51ef48790d4d52f12d9ca9bb394c4f56c584087266a7fe01e06e54ed778879ad"
+    }
+  },
+  "parent_authority_hashes": {
+    "core_version": "fc61494e488f4eb5345fc97d2c83aa084146f146788b2f7ebe13fb0aa6831782",
+    "baseline_v089": "405ca0c08c2f8837a3beaff89c648b14e81d7cd0e6ec06f3ba6c67ae52daf074",
+    "critical_v089": "3fe50a07b2e68f71673d86530d883fdb80b18ed8eb1460746cb0f4ae6781ae84",
+    "architecture_v089": "f7b62320372e14d10ea514abb7803e1d0cbbe44552c8fd28c4c3af7ad6852460",
+    "metadata_v089": "0477938e707df8856317ee9dd3b1345ff2b0b16e07c8007b57adb01bded3e0f2",
+    "foundation_v089": "9a01688cd97cdffe6a1709f796e9c6c8cd9fb2f0577a75941de0cb5b845fcf43",
+    "mission_invariant": "4a65eee144aeee9b2321dd62fd8ddf39406481f55a4b2bc10593c799b98bbc4d",
+    "action_receipts_invariant": "665a0139b3fee15e02661f94ec10bed8504212b7b163def03a320878688e645b",
+    "memory_invariant": "374edb3259a6933e7863e5eba27e37a3d984c334f1172fe00fae29ff620804ca",
+    "security_invariant": "3e4e78b94cf365c5e9c5c92101354b3ec48e1ba0815c2ceaea1ef54b0bfd6766",
+    "fast_lane": "f8238b21289183781ece2d9dde9908e5a90990606079434d1837958982b6bfb7",
+    "user_db": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb"
+  },
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "certified_at": "2026-08-26T15:54:41",
+  "last_verified_product_version": "0.9.2.2.1",
+  "reverified_at": "2026-08-26T18:38:22",
+  "reverified_at_v0922": "2026-08-27T18:20:54",
+  "reverified_at_v09221": "2026-08-27T19:00:45",
+  "reverified_at_v093": "2026-08-27T20:46:17",
+  "reverified_at_v094": "2026-08-28T10:06:06"
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "aura.skill.v1",
+  "version": "2.3.0",
+  "skill_id": "research",
+  "title": "Recherche",
+  "description": "Recherche Web et investigation explicite via les exÃ©cuteurs dÃ©jÃ  validÃ©s.",
+  "enabled": true,
+  "commands": [
+    "research_query"
+  ],
+  "permissions": [
+    "network"
+  ],
+  "owner": "services.core_bridge",
+  "risk": "network_read",
+  "execution_mode": "delegate_existing_owner",
+  "microphone_policy": "not_applicable"
+}

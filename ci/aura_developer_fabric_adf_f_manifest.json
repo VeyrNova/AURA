@@ -1,0 +1,45 @@
+{
+  "schema": "aura.developer-fabric.adf-f.manifest.v1",
+  "installed_at": "2026-08-30T20:44:41",
+  "aura_version": "1.3.0",
+  "product_version_bumped": false,
+  "milestone": "ADF-F Repository Context + Planner + Patch/Test/Diff Transaction Engine",
+  "clean_room": true,
+  "fcc_dependency": false,
+  "fcc_source_reused": false,
+  "features": {
+    "repository_scan": true,
+    "bounded_context_pack": true,
+    "sensitive_file_exclusion": true,
+    "deterministic_planner": true,
+    "unified_diff": true,
+    "preimage_sha256": true,
+    "ephemeral_staging": true,
+    "allowlisted_tests_shell_false": true,
+    "explicit_approval_phrase": true,
+    "transaction_backup": true,
+    "atomic_write": true,
+    "post_apply_tests": true,
+    "automatic_rollback": true,
+    "manual_receipt_rollback": true
+  },
+  "http_endpoint_added": "GET /aura/v1/developer",
+  "certification": {
+    "temporary_repository_mutated": true,
+    "aura_product_source_mutated_by_invariant": false,
+    "external_network": false,
+    "external_provider": false,
+    "third_party_agent": false
+  },
+  "files": {
+    "runtime\\aura_repository_context.py": "64edab2ebbfbca458b673593bdc5180a7b729225100a1dafb1f39eb16081d5c0",
+    "runtime\\aura_developer_planner.py": "c1f9751d8adfbd9b329c376eff8fcfe50726283428e694ea99582994df72d953",
+    "runtime\\aura_patch_transaction_engine.py": "b6ade24a32f6d5a96d3fae700c2afb2a924d067170162182c708c9232ab4ed51",
+    "aura_dev_fabric.py": "eecf977f002b345eedb28420154f4f93a29094b69be5ddc88bfe2478fdc269ed",
+    "ci\\aura_developer_fabric_adf_f_policy.json": "b45e46ddbe7840ba89e05461b37924aaee7584c632dd15d4fcc01ff4b8cdba5b",
+    "runtime\\aura_fabric_http_gateway.py": "af720a7feeefba53dd19f404053bf9e2f54cc24891d7dd445dee4b8e63a470d0",
+    "tests\\invariants\\test_aura_developer_fabric_adf_f_transaction_engine.py": "c9029797ed9465a926936f956ddddab20b0c8f81a0b025e70c1ca69f7be1f062",
+    "docs\\AURA_DEVELOPER_FABRIC_ADF_F_REPOSITORY_TRANSACTION_ENGINE.md": "95f8df94b1cc6822022923ea0576dc780397d0235686660428127a1fcfe7b9a7",
+    "ci\\aura_developer_fabric_roadmap_overlay.json": "fa42fb42fe88851265ea8ccae2e81c2a9c1890d57f960999db6984229354bc47"
+  }
+}

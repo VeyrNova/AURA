@@ -1,0 +1,5 @@
+# AURA v0.5.2.3 XTTS compatibility pins (Windows / Python 3.10-3.14)
+# Keep Transformers below the breaking 5.1+ API until Coqui removes its
+# dependency on transformers.pytorch_utils.isin_mps_friendly.
+coqui-tts==0.27.5
+transformers==4.57.6

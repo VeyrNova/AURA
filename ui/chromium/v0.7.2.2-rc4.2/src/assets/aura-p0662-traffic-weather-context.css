@@ -1,0 +1,47 @@
+/* AURA P0.6.6.2 TRAFFIC + WEATHER CONTEXT */
+#auraNavigationWorkspace .aura-route-context{display:none;margin:0 12px 10px;padding:11px;border:1px solid rgba(61,201,237,.22);border-radius:12px;background:linear-gradient(180deg,rgba(4,18,30,.96),rgba(3,13,24,.96));box-shadow:0 10px 28px rgba(0,0,0,.18)}
+#auraNavigationWorkspace .aura-route-context.open{display:block}
+#auraNavigationWorkspace .aura-route-context>header{display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;border-bottom:1px solid rgba(78,190,222,.16)}
+#auraNavigationWorkspace .aura-route-context>header div{display:flex;flex-direction:column;gap:2px}
+#auraNavigationWorkspace .aura-route-context>header span{font-size:8px;letter-spacing:.14em;color:#5bbbd0}
+#auraNavigationWorkspace .aura-route-context>header b{font-size:12px;letter-spacing:.08em;color:#e8fbff}
+#auraNavigationWorkspace .aura-route-context>header em{font-style:normal;font-size:7px;padding:4px 6px;border:1px solid rgba(82,213,246,.36);border-radius:999px;color:#7fe8ff}
+#auraNavigationWorkspace .aura-route-context-status-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px 0}
+#auraNavigationWorkspace .aura-route-context-status-grid>div{min-width:0;display:flex;flex-direction:column;gap:3px;padding:8px;border:1px solid rgba(67,174,211,.16);border-radius:9px;background:rgba(3,14,24,.72)}
+#auraNavigationWorkspace .aura-route-context-status-grid span{font-size:6.5px;letter-spacing:.11em;color:#5d8795}
+#auraNavigationWorkspace .aura-route-context-status-grid b{font-size:9px;color:#c7f7ff}
+#auraNavigationWorkspace .aura-route-context-status-grid b.offline{color:#d7a968}
+#auraNavigationWorkspace .aura-route-context-status-grid b.live{color:#79e5bc}
+#auraNavigationWorkspace .aura-route-context-status-grid small{font-size:6.5px;line-height:1.25;color:#577784}
+#auraNavigationWorkspace .aura-route-context-summary{display:flex;flex-direction:column;gap:4px;margin-bottom:7px;padding:8px 9px;border-radius:9px;background:linear-gradient(90deg,rgba(22,117,143,.12),rgba(115,61,182,.09));border:1px solid rgba(80,198,227,.16)}
+#auraNavigationWorkspace .aura-route-context-summary strong{font-size:9px;letter-spacing:.1em;color:#8feaff}
+#auraNavigationWorkspace .aura-route-context-summary strong.watch{color:#e6c577}
+#auraNavigationWorkspace .aura-route-context-summary strong.difficult{color:#ef9b88}
+#auraNavigationWorkspace .aura-route-context-summary span{font-size:7px;line-height:1.35;color:#a8c2ca}
+#auraNavigationWorkspace .aura-route-context-summary small{font-size:6.5px;color:#55737e}
+#auraNavigationWorkspace .aura-route-weather-timeline{display:grid;grid-template-columns:1fr 1fr;gap:5px;max-height:214px;overflow:auto;overscroll-behavior:contain;padding-right:3px;scrollbar-width:thin;scrollbar-color:rgba(75,211,244,.48) rgba(3,13,24,.28)}
+#auraNavigationWorkspace .aura-route-weather-card{min-width:0;padding:7px;border-radius:9px;border:1px solid rgba(72,184,214,.15);background:rgba(3,14,24,.8)}
+#auraNavigationWorkspace .aura-route-weather-card.watch{border-color:rgba(223,182,86,.28)}
+#auraNavigationWorkspace .aura-route-weather-card.difficult{border-color:rgba(235,117,95,.34)}
+#auraNavigationWorkspace .aura-route-weather-card header{display:flex;justify-content:space-between;gap:5px;color:#5f93a3;font-size:6.5px;letter-spacing:.08em}
+#auraNavigationWorkspace .aura-route-weather-card header b{color:#94e8f7}
+#auraNavigationWorkspace .aura-route-weather-card>div{display:flex;align-items:baseline;gap:6px;margin:5px 0 4px}
+#auraNavigationWorkspace .aura-route-weather-card>div strong{font-size:17px;color:#effcff}
+#auraNavigationWorkspace .aura-route-weather-card>div span{font-size:7px;color:#9ac5d0}
+#auraNavigationWorkspace .aura-route-weather-card footer{font-size:6.2px;line-height:1.3;color:#63848f}
+#auraNavigationWorkspace .aura-route-context-empty{grid-column:1/-1;padding:18px 8px;text-align:center;font-size:7px;letter-spacing:.06em;color:#57727b;border:1px dashed rgba(79,167,190,.18);border-radius:9px}
+#auraNavigationWorkspace .aura-route-context-refresh{width:100%;margin-top:7px;padding:8px 10px;text-align:left;border-radius:9px;border:1px solid rgba(68,208,241,.3);background:linear-gradient(90deg,rgba(8,74,95,.34),rgba(62,31,112,.34));color:#dffbff;cursor:pointer}
+#auraNavigationWorkspace .aura-route-context-refresh span{display:block;font-size:8px;font-weight:700;letter-spacing:.08em}
+#auraNavigationWorkspace .aura-route-context-refresh small{display:block;margin-top:2px;font-size:6.5px;color:#66a8b7}
+#auraNavigationWorkspace .aura-route-context-refresh:disabled{opacity:.45;cursor:wait}
+#auraNavigationWorkspace .aura-route-context>footer{display:flex;justify-content:space-between;gap:8px;margin-top:7px;padding-top:7px;border-top:1px solid rgba(74,177,204,.13);font-size:6.5px;color:#5d8895}
+#auraNavigationWorkspace .aura-route-context>footer span.error{color:#ef9b88}
+#auraNavigationWorkspace.traffic-weather-mode #auraTripPlanner{display:none!important}
+#auraNavigationWorkspace.traffic-weather-mode .aura-poi-places{display:none!important}
+#auraNavigationWorkspace .aura-route-context-marker-layer{position:absolute;inset:0;z-index:7;pointer-events:none;overflow:hidden}
+#auraNavigationWorkspace .aura-route-weather-marker{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:31px;height:31px;padding:2px 5px;border-radius:999px;border:1px solid rgba(92,225,250,.7);background:rgba(4,24,36,.94);box-shadow:0 0 12px rgba(48,196,233,.24);color:#dffbff}
+#auraNavigationWorkspace .aura-route-weather-marker.watch{border-color:rgba(231,191,92,.82);box-shadow:0 0 12px rgba(216,166,60,.22)}
+#auraNavigationWorkspace .aura-route-weather-marker.difficult{border-color:rgba(239,116,93,.86);box-shadow:0 0 12px rgba(230,91,70,.22)}
+#auraNavigationWorkspace .aura-route-weather-marker b{font-size:8px;line-height:1}
+#auraNavigationWorkspace .aura-route-weather-marker span{margin-top:2px;font-size:5.5px;color:#75aaba}
+@media(max-height:820px){#auraNavigationWorkspace .aura-route-weather-timeline{max-height:174px}#auraNavigationWorkspace .aura-route-context{padding:9px}}

@@ -1,0 +1,56 @@
+{
+  "schema": "aura.self-development-policy.v1",
+  "default": "approval-gated",
+  "workspace_must_equal_aura_root": true,
+  "risk_levels": [
+    "standard",
+    "elevated",
+    "critical",
+    "constitutional",
+    "forbidden"
+  ],
+  "critical_dual_gate": true,
+  "constitutional_release_mode_required": true,
+  "constitutional_release_gate": true,
+  "forbidden_targets": [
+    ".git/**",
+    ".aura_audit/**",
+    ".aura_transactions/**",
+    "_patch_backups/**",
+    "AURA_*_RESULT.json",
+    "AURA_*_REPORT.txt",
+    ".env",
+    "*.pem",
+    "*.key",
+    "credentials.json",
+    "secrets.json"
+  ],
+  "constitutional_targets": [
+    "core/version.py",
+    "ci/aura_developer_fabric_capability_charter.json"
+  ],
+  "audit": {
+    "sha256_hash_chain": true,
+    "head_anchor": true,
+    "append_only_intent": true,
+    "tamper_detection": true
+  },
+  "approval": {
+    "standard": "APPLY txn_id",
+    "critical": "APPLY + AUTHORIZE SELF",
+    "constitutional": "APPLY + AUTHORIZE SELF + AUTHORIZE RELEASE"
+  },
+  "self_development_can_bypass_staging": false,
+  "self_development_can_bypass_tests": false,
+  "self_development_can_bypass_backup": false,
+  "self_development_can_bypass_rollback": false,
+  "developer_mode_required_for_self_apply": true,
+  "developer_mode_default_enabled": false,
+  "developer_mode_toggle_channels": [
+    "text",
+    "voice"
+  ],
+  "developer_mode_activation_is_not_write_approval": true,
+  "brief_spoken_summary_after_apply": true,
+  "spoken_output_policy": "brief-change-summary-only"
+}

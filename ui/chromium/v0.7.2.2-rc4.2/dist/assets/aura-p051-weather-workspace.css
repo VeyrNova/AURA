@@ -1,0 +1,354 @@
+/* AURA P0.5.1 CONTEXTUAL WEATHER WORKSPACE */
+/* AURA P0.5.1.4 RUNTIME DOM BOOTSTRAP FIX */
+/* AURA P0.5.1.7 LOCATION PARSER + WEATHER UI POLISH */
+/* AURA P0.5.1.8 CANONICAL CORE WEATHER PAYLOAD BRIDGE */
+/* AURA P0.5.1.1 ROBUST WEATHER CONVERSATION BRIDGE */
+
+.aura-weather-workspace{
+  position:absolute;
+  inset:0;
+  z-index:30;
+  overflow:hidden;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 58% 45%,rgba(20,55,76,.19),transparent 36%),
+    linear-gradient(180deg,rgba(2,10,18,.97),rgba(2,9,16,.985));
+  transition:opacity 340ms ease,visibility 0s linear 340ms;
+}
+.aura-weather-workspace.open{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transition:opacity 340ms ease;
+}
+
+.aura-weather-field,
+.aura-weather-map-grid,
+.aura-weather-vignette{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+.aura-weather-field{z-index:1}
+.aura-weather-map-grid{
+  z-index:0;
+  opacity:.72;
+  background-image:
+    linear-gradient(rgba(78,151,183,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(78,151,183,.035) 1px,transparent 1px),
+    linear-gradient(rgba(78,151,183,.017) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(78,151,183,.017) 1px,transparent 1px);
+  background-size:72px 72px,72px 72px,18px 18px,18px 18px;
+}
+.aura-weather-vignette{
+  z-index:2;
+  box-shadow:inset 0 0 140px rgba(0,0,0,.68);
+  background:
+    linear-gradient(90deg,rgba(2,8,14,.92) 0%,rgba(2,8,14,.38) 22%,transparent 44%),
+    linear-gradient(0deg,rgba(2,8,14,.88) 0%,transparent 26%);
+}
+
+.aura-weather-topbar{
+  position:absolute;
+  z-index:8;
+  top:22px;left:24px;right:24px;
+  min-height:56px;
+  display:grid;
+  grid-template-columns:1fr auto 38px;
+  align-items:center;
+  gap:16px;
+  border-bottom:1px solid rgba(84,217,255,.10);
+}
+.aura-weather-brand{display:flex;align-items:center;gap:12px}
+.aura-weather-brand img{width:32px;height:32px;filter:drop-shadow(0 0 8px rgba(84,217,255,.18))}
+.aura-weather-brand div{display:grid;gap:2px}
+.aura-weather-brand span,
+.aura-weather-location small,
+.aura-weather-metrics small,
+.aura-weather-synthesis header span,
+.aura-weather-hourly header span{
+  font-size:9px;letter-spacing:.18em;color:rgba(126,179,205,.55);font-weight:600
+}
+.aura-weather-brand strong{font-size:15px;letter-spacing:.24em;color:#d9f5ff;font-weight:600}
+.aura-weather-status{
+  display:flex;align-items:center;gap:8px;
+  padding:7px 11px;border:1px solid rgba(84,217,255,.10);border-radius:8px;
+  font-size:9px;letter-spacing:.12em;color:rgba(157,202,221,.65)
+}
+.aura-weather-status i{width:5px;height:5px;border-radius:50%;background:#8b5cff;box-shadow:0 0 9px rgba(139,92,255,.8)}
+.aura-weather-status.ready i{background:#63f3ff;box-shadow:0 0 9px rgba(99,243,255,.85)}
+.aura-weather-close{
+  width:34px;height:34px;border-radius:9px;
+  border:1px solid rgba(84,217,255,.12);background:rgba(5,20,31,.72);
+  color:rgba(187,228,242,.75);display:grid;place-items:center;cursor:pointer
+}
+.aura-weather-close:hover{border-color:rgba(84,217,255,.32);color:#e7fbff}
+.aura-weather-close svg{width:16px;height:16px}
+
+.aura-weather-current{
+  position:absolute;z-index:6;left:42px;top:116px;width:310px;
+}
+.aura-weather-location{display:flex;align-items:center;gap:9px;margin-bottom:22px}
+.aura-weather-location>span{width:19px;height:19px;color:#63f3ff}
+.aura-weather-location svg{width:19px;height:19px}
+.aura-weather-location div{display:grid;gap:4px}
+.aura-weather-location strong{font-size:15px;color:#dff8ff;letter-spacing:.06em;font-weight:550}
+.aura-weather-temperature{display:flex;align-items:flex-start;height:105px}
+.aura-weather-temperature strong{
+  font-size:94px;line-height:.92;font-weight:200;letter-spacing:-.05em;
+  color:#e7fbff;text-shadow:0 0 28px rgba(84,217,255,.12)
+}
+.aura-weather-temperature span{font-size:25px;color:#72dff4;margin:6px 0 0 8px;font-weight:300}
+.aura-weather-condition{font-size:14px;letter-spacing:.16em;color:#c3ebf6;margin-top:8px}
+.aura-weather-feels{font-size:9px;letter-spacing:.15em;color:rgba(128,177,197,.58);margin-top:9px}
+.aura-weather-feels b{color:rgba(200,235,245,.75);font-weight:500;margin-left:5px}
+
+.aura-weather-metrics{
+  position:absolute;z-index:6;left:42px;top:350px;width:300px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px
+}
+.aura-weather-metrics article{
+  height:88px;padding:12px 10px;
+  display:grid;grid-template-columns:20px 1fr;grid-template-rows:22px 1fr;
+  border:1px solid rgba(84,217,255,.085);border-radius:10px;
+  background:rgba(4,17,27,.54);backdrop-filter:blur(10px)
+}
+.aura-weather-metrics article>span{grid-row:1/3;width:18px;color:#6fd9ef;margin-top:3px}
+.aura-weather-metrics svg{width:17px;height:17px}
+.aura-weather-metrics small{align-self:center}
+.aura-weather-metrics strong{font-size:12px;color:#d8f1f7;font-weight:500;align-self:start}
+
+.aura-weather-layers{
+  position:absolute;z-index:7;right:34px;top:102px;
+  display:flex;gap:6px;padding:5px;border-radius:10px;
+  border:1px solid rgba(84,217,255,.09);background:rgba(3,13,22,.60);backdrop-filter:blur(12px)
+}
+.aura-weather-layers button{
+  border:0;background:transparent;color:rgba(132,180,199,.55);
+  padding:7px 11px;border-radius:7px;font:600 9px/1 system-ui;letter-spacing:.12em;cursor:pointer
+}
+.aura-weather-layers button.active{
+  color:#c9f7ff;background:rgba(84,217,255,.08);box-shadow:inset 0 0 0 1px rgba(84,217,255,.10)
+}
+
+.aura-weather-synthesis{
+  position:absolute;z-index:7;left:42px;bottom:116px;width:min(430px,37%);
+  padding:14px 16px;border-radius:11px
+}
+.aura-weather-synthesis header,
+.aura-weather-hourly header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.aura-weather-synthesis header b{
+  font-size:8px;letter-spacing:.12em;color:rgba(99,243,255,.62);font-weight:600
+}
+.aura-weather-synthesis p{
+  margin:0;font-size:11px;line-height:1.55;color:rgba(184,217,229,.70);
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden
+}
+
+.aura-weather-hourly{
+  position:absolute;z-index:7;left:500px;right:34px;bottom:52px;
+  padding:13px 14px 12px;border-radius:11px
+}
+.aura-weather-hourly header small{
+  font-size:8px;letter-spacing:.12em;color:rgba(122,169,188,.46)
+}
+.aura-weather-hourly-row{height:78px;display:flex;align-items:stretch;gap:7px;overflow:hidden}
+.aura-weather-hourly-row article{
+  min-width:76px;display:grid;grid-template-rows:16px 1fr 19px;place-items:center;
+  border-left:1px solid rgba(84,217,255,.06);color:rgba(165,207,222,.62)
+}
+.aura-weather-hourly-row article:first-child{border-left:0}
+.aura-weather-hourly-row article.active{color:#d9f9ff}
+.aura-weather-hourly-row article small{font-size:9px;letter-spacing:.06em}
+.aura-weather-hourly-row article i{
+  width:5px;height:5px;border-radius:50%;background:#8b5cff;box-shadow:0 0 8px rgba(139,92,255,.44)
+}
+.aura-weather-hourly-row article.active i{background:#63f3ff;box-shadow:0 0 9px rgba(99,243,255,.65)}
+.aura-weather-hourly-row article strong{font-size:14px;font-weight:400}
+.aura-weather-hour-empty{
+  width:100%;display:grid;place-items:center;font-size:9px;letter-spacing:.11em;color:rgba(116,163,182,.45)
+}
+
+.aura-weather-foot{
+  position:absolute;z-index:6;left:42px;right:34px;bottom:18px;
+  display:flex;justify-content:space-between;
+  font-size:7px;letter-spacing:.17em;color:rgba(94,144,165,.34)
+}
+
+/* Contextual transition: keep P0.4 alive but visually yield HERO to the workspace. */
+body.aura-weather-active .core-label,
+body.aura-weather-active #conversation{opacity:0 !important;pointer-events:none !important}
+body.aura-weather-active #stage,
+body.aura-weather-active .scanlines{
+  opacity:.045 !important;
+  transition:opacity 300ms ease
+}
+body:not(.aura-weather-active) #stage,
+body:not(.aura-weather-active) .scanlines{transition:opacity 300ms ease}
+.aura-weather-rail-btn span{display:grid !important;place-items:center}
+.aura-weather-rail-btn span svg{width:15px;height:15px}
+.aura-weather-rail-btn.active{
+  color:#7beaff !important;
+  border-color:rgba(84,217,255,.26) !important;
+  background:rgba(84,217,255,.065) !important
+}
+
+@media(max-width:1150px){
+  .aura-weather-current{left:28px}
+  .aura-weather-metrics{left:28px}
+  .aura-weather-synthesis{left:28px;width:38%}
+  .aura-weather-hourly{left:44%;right:24px}
+}
+
+/* P0.5.1.1: real runtime rail insertion may use slightly different button geometry. */
+#auraWeatherBtn.aura-weather-rail-btn{
+  appearance:none;
+  cursor:pointer;
+}
+#auraWeatherBtn.aura-weather-rail-btn small{
+  display:block;
+  font-size:8.5px;
+  line-height:1;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.aura-weather-synthesis header b{
+  max-width:58%;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+
+/* P0.5.1.7 presentation polish */
+.aura-weather-workspace{
+  background:
+    radial-gradient(circle at 61% 43%,rgba(20,75,98,.25),transparent 34%),
+    radial-gradient(circle at 52% 56%,rgba(95,45,145,.055),transparent 42%),
+    linear-gradient(180deg,rgba(2,10,18,.992),rgba(2,9,16,.997));
+}
+.aura-weather-field{
+  opacity:1;
+  filter:saturate(1.15) brightness(1.12);
+}
+.aura-weather-location strong{
+  max-width:310px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.aura-weather-hour-empty{
+  display:grid;
+  gap:7px;
+  align-content:center;
+  justify-items:center;
+  text-align:center;
+}
+.aura-weather-hour-empty strong{
+  font-size:9px;
+  letter-spacing:.14em;
+  color:rgba(164,216,232,.58);
+  font-weight:600;
+}
+.aura-weather-hour-empty span{
+  font-size:9px;
+  letter-spacing:.035em;
+  color:rgba(116,163,182,.38);
+}
+.aura-weather-no-hourly .aura-weather-hourly{
+  opacity:.82;
+}
+.aura-weather-synthesis p{
+  -webkit-line-clamp:5;
+}
+
+
+/* P0.5.1.8 — compact current-conditions mode */
+.aura-weather-no-hourly .aura-weather-hourly{
+  min-height:72px !important;
+  height:72px;
+  bottom:38px;
+  opacity:.88;
+}
+.aura-weather-no-hourly .aura-weather-hourly-row{
+  min-height:34px;
+}
+.aura-weather-no-hourly .aura-weather-hour-empty{
+  min-height:30px;
+  grid-template-columns:auto 1fr;
+  justify-content:start;
+  justify-items:start;
+  align-items:center;
+  text-align:left;
+  gap:14px;
+  padding:0 10px;
+}
+.aura-weather-no-hourly .aura-weather-hour-empty strong{
+  white-space:nowrap;
+  color:rgba(151,221,238,.68);
+}
+.aura-weather-no-hourly .aura-weather-hour-empty span{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:780px;
+}
+
+
+/* P0.5.1.9 — current-only mode must stay INSIDE its glass card. */
+.aura-weather-location strong{
+  max-width:460px;
+}
+
+.aura-weather-no-hourly .aura-weather-hourly{
+  height:auto !important;
+  min-height:0 !important;
+  bottom:46px;
+  padding:10px 12px 9px;
+  overflow:hidden;
+}
+
+.aura-weather-no-hourly .aura-weather-hourly header{
+  margin-bottom:5px;
+}
+
+.aura-weather-no-hourly .aura-weather-hourly-row{
+  height:28px !important;
+  min-height:28px !important;
+  max-height:28px !important;
+  overflow:hidden;
+}
+
+.aura-weather-no-hourly .aura-weather-hour-empty{
+  height:28px !important;
+  min-height:28px !important;
+  max-height:28px !important;
+  padding:0 8px;
+  overflow:hidden;
+  grid-template-columns:auto minmax(0,1fr);
+}
+
+.aura-weather-no-hourly .aura-weather-hour-empty strong,
+.aura-weather-no-hourly .aura-weather-hour-empty span{
+  line-height:28px;
+}
+
+
+/* AURA P0.5.2.3.2 WEATHER ERROR RECOVERY */
+.aura-weather-status.error{
+  color:rgba(255,174,190,.95)!important;
+  border-color:rgba(255,87,124,.32)!important;
+  box-shadow:0 0 18px rgba(255,55,105,.08);
+}
+.aura-weather-error #auraWxCondition{
+  color:rgba(255,180,195,.82);
+}
+.aura-weather-error #auraWxTemp,
+.aura-weather-error #auraWxDegree,
+.aura-weather-error .aura-weather-metric strong{
+  opacity:.42;
+}

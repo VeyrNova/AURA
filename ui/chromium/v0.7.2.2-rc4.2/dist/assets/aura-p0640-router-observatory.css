@@ -1,0 +1,586 @@
+/* AURA P0.6.4.8.1 — Transient Selector History */
+.aura-p0640-router-pill{
+  height:28px;
+  padding:0 9px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  border:1px solid rgba(111,228,247,.08);
+  border-radius:7px;
+  background:rgba(3,17,27,.62);
+  color:#638694;
+  cursor:pointer;
+}
+.aura-p0640-router-pill i{
+  width:5px;height:5px;border-radius:50%;
+  background:#74dbe9;box-shadow:0 0 8px rgba(116,219,233,.42)
+}
+.aura-p0640-router-pill b{font-size:7px;letter-spacing:.1em;color:#8ecbd7}
+.aura-p0640-router-pill span{font-size:7px;letter-spacing:.06em;color:#587783}
+.aura-p0640-router-pill.active{border-color:rgba(111,228,247,.2);background:rgba(10,39,50,.72)}
+.aura-p0640-router-pill[data-route="llm"] i{background:#a07bea}
+.aura-p0640-router-pill[data-route="tool"] i{background:#67d9b7}
+.aura-p0640-router-pill[data-route="local-core"] i{background:#e0b172}
+
+.aura-p0640-router-panel{
+  position:absolute;
+  right:14px;
+  top:14px;
+  bottom:92px;
+  z-index:76;
+  width:var(--aura-router-dock-width,min(430px,31vw));
+  border-radius:14px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateX(9px);
+  pointer-events:none;
+  background:linear-gradient(145deg,rgba(3,17,27,.988),rgba(6,10,20,.982));
+  box-shadow:0 25px 90px rgba(0,0,0,.5);
+  transition:opacity .18s ease,transform .18s ease;
+  display:flex;
+  flex-direction:column;
+}
+.aura-p0640-router-panel.open{opacity:1;transform:none;pointer-events:auto}
+.aura-p0640-router-panel>header{
+  height:52px;flex:0 0 52px;padding:0 11px 0 14px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(111,228,247,.07)
+}
+.aura-p0640-router-panel>header>div{display:flex;align-items:center;gap:7px}
+.aura-p0640-router-panel>header i{width:6px;height:6px;border-radius:50%;background:#79e0ec;box-shadow:0 0 10px rgba(121,224,236,.42)}
+.aura-p0640-router-panel>header b{font-size:8.5px;letter-spacing:.13em;color:#b8edf6}
+.aura-p0640-router-panel>header span{font-size:7px;color:#4d6e7b}
+.aura-p0640-router-panel>header button{width:28px;height:28px;border:1px solid rgba(111,228,247,.08);border-radius:7px;background:rgba(5,20,31,.6);color:#668b98;cursor:pointer}
+
+.aura-p0640-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:9px}
+.aura-p0640-grid article{padding:9px;border:1px solid rgba(111,228,247,.07);border-radius:8px;background:rgba(4,18,28,.48);min-width:0}
+.aura-p0640-grid small{display:block;font-size:7px;letter-spacing:.1em;color:#527583}
+.aura-p0640-grid b{display:block;margin-top:3px;font-size:11px;color:#b7e6ef;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aura-p0640-grid span{display:block;margin-top:3px;font-size:7.5px;color:#506f7b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.aura-p0640-contract{margin:0 9px 8px;padding:9px;border:1px solid rgba(111,228,247,.07);border-radius:9px;background:rgba(6,19,29,.42)}
+.aura-p0640-contract>div:first-child{display:flex;align-items:center;justify-content:space-between}
+.aura-p0640-contract b{font-size:8px;letter-spacing:.11em;color:#86cdda}
+.aura-p0640-contract>div:first-child span{font-size:7px;color:#5d7a85}
+.aura-p0640-contract p{margin:6px 0 8px;font-size:8px;line-height:1.45;color:#587582}
+.aura-p0640-rules{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.aura-p0640-rules span{padding:5px 6px;border-radius:6px;background:rgba(3,14,23,.55);font-size:7.5px;color:#91bdc7}
+.aura-p0640-rules i{display:block;margin-top:2px;font-style:normal;font-size:6.8px;color:#4f6c78}
+
+.aura-p0640-history{margin:0 9px 8px;min-height:0;flex:1;border:1px solid rgba(111,228,247,.07);border-radius:9px;overflow:hidden;display:flex;flex-direction:column}
+.aura-p0640-history .title{height:32px;flex:0 0 32px;padding:0 9px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(111,228,247,.05)}
+.aura-p0640-history .title b{font-size:7.5px;letter-spacing:.11em;color:#7dbdca}
+.aura-p0640-history .title span{font-size:6.8px;color:#4d6b77}
+.aura-p0640-history [data-history]{overflow:auto;padding:5px;display:grid;gap:3px}
+.aura-p0640-history article{display:grid;grid-template-columns:52px 76px 1fr auto;gap:6px;align-items:center;padding:6px;border-radius:6px;background:rgba(4,17,27,.45)}
+.aura-p0640-history time{font-size:6.7px;color:#45636f}
+.aura-p0640-history article b{font-size:7px;color:#85c5d1}
+.aura-p0640-history article span{min-width:0;font-size:7.3px;color:#5f7e89;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aura-p0640-history article i{font-style:normal;font-size:6.5px;color:#46646f}
+.aura-p0640-history .empty{padding:20px;text-align:center;font-size:8px;color:#4f6d78}
+
+.aura-p0640-router-panel>footer{
+  height:32px;flex:0 0 32px;padding:0 10px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(111,228,247,.06)
+}
+.aura-p0640-router-panel>footer span{font-size:7px;color:#54717c}
+.aura-p0640-router-panel>footer b{font-size:7px;letter-spacing:.08em;color:#9a7381}
+
+@media(max-width:900px){
+  .aura-p0640-router-panel{left:10px;right:10px;width:auto}
+  .aura-p0640-router-pill span{display:none}
+}
+
+
+/* ------------------------------------------------------------------
+   P0.6.4.0.1 — non-overlapping observatory dock
+   ------------------------------------------------------------------ */
+:root{
+  --aura-router-dock-width:min(430px,31vw);
+  --aura-router-dock-gap:12px;
+}
+
+/* The router is an inspector, not a workspace. When it opens, reserve its
+   horizontal column so the current functional workspace remains usable. */
+body.aura-router-observatory-open .aura-p0623-drawer.open,
+body.aura-router-observatory-open .aura-p0626-memory.open{
+  right:calc(var(--aura-router-dock-width) + var(--aura-router-dock-gap) + 16px) !important;
+  transition:right .18s ease,opacity .24s ease,transform .24s ease;
+}
+
+body.aura-router-observatory-open .aura-p0627-system.open{
+  right:calc(var(--aura-router-dock-width) + var(--aura-router-dock-gap) + 16px) !important;
+  transition:right .18s ease,opacity .22s ease,transform .22s ease;
+}
+
+body.aura-router-observatory-open .aura-weather-workspace.open{
+  right:calc(var(--aura-router-dock-width) + var(--aura-router-dock-gap) + 14px) !important;
+  transition:right .18s ease,opacity 340ms ease,visibility 0s linear 340ms;
+}
+
+/* TALK usually sits left and does not collide. If a wide Conversation layout
+   reaches the inspector column, cap its width rather than letting it hide. */
+body.aura-router-observatory-open #conversation.open{
+  max-width:calc(100% - var(--aura-router-dock-width) - 54px) !important;
+}
+
+/* Response Dock remains inside the usable workspace region. */
+body.aura-router-observatory-open .aura-p0633-response-dock.show{
+  max-width:calc(100% - var(--aura-router-dock-width) - 70px);
+  margin-left:calc(var(--aura-router-dock-width) * -0.5);
+}
+
+/* On smaller windows there is not enough room for two desktop columns.
+   Use a bottom inspector instead of covering the active workspace. */
+@media(max-width:1180px){
+  :root{--aura-router-dock-width:0px}
+  .aura-p0640-router-panel{
+    left:12px;
+    right:12px;
+    top:auto;
+    bottom:94px;
+    width:auto;
+    height:min(410px,52vh);
+  }
+  body.aura-router-observatory-open .aura-p0623-drawer.open,
+  body.aura-router-observatory-open .aura-p0626-memory.open,
+  body.aura-router-observatory-open .aura-p0627-system.open,
+  body.aura-router-observatory-open .aura-weather-workspace.open{
+    right:14px !important;
+  }
+  body.aura-router-observatory-open #conversation.open{
+    max-width:none !important;
+  }
+  body.aura-router-observatory-open .aura-p0633-response-dock.show{
+    max-width:none;
+    margin-left:0;
+  }
+}
+
+.aura-p0641-live-contract{
+  margin:0 9px 8px;border:1px solid rgba(111,228,247,.08);border-radius:9px;
+  overflow:hidden;background:linear-gradient(90deg,rgba(10,37,48,.36),rgba(31,21,55,.18));
+}
+.aura-p0641-live-contract .title{
+  height:31px;padding:0 9px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(111,228,247,.06);
+}
+.aura-p0641-live-contract .title b{font-size:7.5px;letter-spacing:.11em;color:#8bd5e1}
+.aura-p0641-live-contract .title span{font-size:6.8px;color:#6f637e}
+.aura-p0641-live-contract .body{display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:6px}
+.aura-p0641-live-contract article{min-width:0;padding:6px 7px;border-radius:5px;background:rgba(3,15,24,.46)}
+.aura-p0641-live-contract small{display:block;font-size:6.5px;letter-spacing:.08em;color:#4c6e79}
+.aura-p0641-live-contract b{display:block;margin-top:2px;font-size:7.8px;color:#9ecdd6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+
+/* P0.6.4.2 — historical observed route vs canonical Core contract. */
+.aura-p0642-compare{
+  margin:0 9px 8px;
+  border:1px solid rgba(111,228,247,.08);
+  border-radius:9px;
+  overflow:hidden;
+  background:rgba(4,16,26,.48);
+}
+.aura-p0642-compare .title{
+  height:31px;
+  padding:0 9px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(111,228,247,.06);
+}
+.aura-p0642-compare .title b{
+  font-size:7.5px;
+  letter-spacing:.11em;
+  color:#85c9d5;
+}
+.aura-p0642-compare .title span{
+  padding:3px 6px;
+  border-radius:5px;
+  font-size:6.8px;
+  letter-spacing:.08em;
+  color:#8099a2;
+  background:rgba(112,228,247,.05);
+}
+.aura-p0642-compare .body{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  padding:6px;
+}
+.aura-p0642-compare article{
+  min-width:0;
+  padding:6px 7px;
+  border-radius:5px;
+  background:rgba(3,14,23,.5);
+}
+.aura-p0642-compare article.wide{grid-column:1/-1}
+.aura-p0642-compare small{
+  display:block;
+  font-size:6.4px;
+  letter-spacing:.08em;
+  color:#4e6e79;
+}
+.aura-p0642-compare article b{
+  display:block;
+  margin-top:2px;
+  font-size:7.8px;
+  color:#9bcbd4;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.aura-p0642-compare>footer{
+  min-height:28px;
+  padding:0 8px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border-top:1px solid rgba(111,228,247,.05);
+}
+.aura-p0642-compare>footer span{
+  font-size:6.5px;
+  color:#506f7a;
+}
+.aura-p0642-compare>footer span b{
+  margin-left:3px;
+  color:#8ebcc6;
+}
+.aura-p0642-compare>footer strong{
+  margin-left:auto;
+  font-size:6.8px;
+  letter-spacing:.06em;
+  color:#7597a1;
+}
+.aura-p0642-compare[data-compare-state="match"]{
+  border-color:rgba(92,220,177,.16);
+  box-shadow:inset 0 0 22px rgba(65,193,151,.025);
+}
+.aura-p0642-compare[data-compare-state="match"] .title span{
+  color:#8bdcc1;
+  background:rgba(79,205,161,.07);
+}
+.aura-p0642-compare[data-compare-state="mismatch"]{
+  border-color:rgba(235,105,135,.2);
+  box-shadow:inset 0 0 22px rgba(220,80,116,.03);
+}
+.aura-p0642-compare[data-compare-state="mismatch"] .title span{
+  color:#dc8a9e;
+  background:rgba(225,91,125,.07);
+}
+.aura-p0642-compare[data-compare-state="pending"] .title span{
+  color:#d1b079;
+  background:rgba(210,166,89,.06);
+}
+
+
+/* P0.6.4.2.1 — PENDING is evidence debt, not a routing failure. */
+.aura-p0642-compare[data-compare-state="pending"]{
+  border-color:rgba(210,166,89,.14);
+  box-shadow:inset 0 0 20px rgba(210,166,89,.018);
+}
+.aura-p0642-compare article.wide b{
+  white-space:normal;
+  line-height:1.35;
+  max-height:34px;
+}
+
+
+/* P0.6.4.3 — first ownership scope. */
+.aura-p0641-live-contract [data-contract-owner]{color:#9de2c9}
+.aura-p0641-live-contract [data-contract-mode]{color:#b9a4e8}
+.aura-p0640-rules .aura-p0643-owner-rule{
+  border:1px solid rgba(91,218,174,.08);color:#8dd9bf
+}
+.aura-p0640-rules .aura-p0643-shadow-rule{
+  border:1px solid rgba(164,128,226,.08);color:#a994d4
+}
+
+
+/* P0.6.4.4 — canonical tool ownership indicator. */
+.aura-p0641-live-contract [data-contract-owner]{
+  text-shadow:0 0 10px rgba(106,224,184,.12);
+}
+
+
+/* P0.6.4.5 — all deterministic read-only Internet reference tools are owned. */
+.aura-p0640-rules .aura-p0643-owner-rule i{
+  color:#6f9c91;
+}
+
+
+/* P0.6.4.5.1 — runtime-result evidence is a strong comparator signal. */
+.aura-p0642-compare[data-compare-state="match"] .title b{
+  text-shadow:0 0 10px rgba(91,218,174,.10);
+}
+
+
+/* P0.6.4.5.2 — comparator evidence is route-correlated, not delivery-only. */
+.aura-p0642-compare article.wide small::after{
+  content:" · route correlated";
+  color:#405d67;
+}
+
+
+/* P0.6.4.6 — local zero-LLM ownership stays visually distinct from LLM. */
+.aura-p0641-live-contract [data-contract-route]{
+  letter-spacing:.025em;
+}
+
+
+/* P0.6.4.7 — accepted AgentPlans are owned; the LLM selector is not. */
+.aura-p0640-rules .aura-p0643-owner-rule{
+  box-shadow:inset 0 0 18px rgba(91,218,174,.018);
+}
+
+
+/* P0.6.4.7.1 — a fresh contract is shown neutral until correlated evidence arrives. */
+.aura-p0642-compare[data-compare-state="pending"] .title b{
+  opacity:.92;
+}
+
+
+/* P0.6.4.8 — selector ownership is routing ownership, never tool privilege. */
+.aura-p0640-rules .aura-p0643-owner-rule i{
+  letter-spacing:.01em;
+}
+
+
+.aura-p06481-selector{
+  margin:0 9px 8px;border:1px solid rgba(111,228,247,.08);
+  border-radius:9px;overflow:hidden;background:rgba(4,16,26,.48)
+}
+.aura-p06481-selector .title{
+  height:30px;padding:0 9px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(111,228,247,.06)
+}
+.aura-p06481-selector .title b{font-size:7.5px;letter-spacing:.1em;color:#87cbd6}
+.aura-p06481-selector .title span{font-size:6.8px;color:#7d98a1}
+.aura-p06481-selector .body{display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:6px}
+.aura-p06481-selector article{min-width:0;padding:6px 7px;border-radius:5px;background:rgba(3,14,23,.5)}
+.aura-p06481-selector small{display:block;font-size:6.2px;color:#4f6c76;letter-spacing:.08em}
+.aura-p06481-selector article b{
+  display:block;margin-top:2px;font-size:7.6px;color:#9bcbd4;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.aura-p06481-selector[data-selector-state="match"]{border-color:rgba(92,220,177,.18)}
+.aura-p06481-selector[data-selector-state="match"] .title span{color:#8bdcc1}
+.aura-p06481-selector[data-selector-state="pending"] .title span{color:#d1b079}
+
+
+/* P0.6.4.9 — canonical perimeter / cutover guardrails. */
+.aura-p0649-guardrails{
+  margin:0 9px 8px;border:1px solid rgba(111,228,247,.09);
+  border-radius:9px;overflow:hidden;background:rgba(4,16,26,.52)
+}
+.aura-p0649-guardrails .title{
+  height:30px;padding:0 9px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(111,228,247,.06)
+}
+.aura-p0649-guardrails .title b{font-size:7.5px;letter-spacing:.1em;color:#87cbd6}
+.aura-p0649-guardrails .title span{font-size:6.8px;color:#7d98a1}
+.aura-p0649-guardrails .body{display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:6px}
+.aura-p0649-guardrails article{min-width:0;padding:6px 7px;border-radius:5px;background:rgba(3,14,23,.5)}
+.aura-p0649-guardrails article.wide{grid-column:1/-1}
+.aura-p0649-guardrails small{display:block;font-size:6.2px;color:#4f6c76;letter-spacing:.08em}
+.aura-p0649-guardrails article b{
+  display:block;margin-top:2px;font-size:7.6px;color:#9bcbd4;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.aura-p0649-guardrails[data-guard-state="safe"]{border-color:rgba(92,220,177,.20)}
+.aura-p0649-guardrails[data-guard-state="safe"] .title span{color:#8bdcc1}
+.aura-p0649-guardrails[data-guard-state="fallback"] .title span{color:#9bb8c0}
+.aura-p0649-guardrails[data-guard-state="partial"] .title span,
+.aura-p0649-guardrails[data-guard-state="guarded"] .title span{color:#d1b079}
+.aura-p0649-guardrails[data-guard-state="blocked"]{
+  border-color:rgba(230,104,104,.25)
+}
+.aura-p0649-guardrails[data-guard-state="blocked"] .title span{color:#e89292}
+
+
+/* P0.6.4.9.1 — keep observatory cards at their intrinsic content height.
+   The parent is a flex column; without flex-shrink:0, adding CUTOVER GUARDRAILS
+   made the card compress vertically and hid OWNED/SHADOW, VIOLATIONS and
+   LOCKED NEXT CUTOVER values. */
+.aura-p0640-grid,
+.aura-p0640-contract,
+.aura-p0641-live-contract,
+.aura-p0649-guardrails,
+.aura-p0642-compare,
+.aura-p06481-selector{
+  flex:0 0 auto;
+}
+
+/* The trace is the only elastic region. It can shrink/scroll instead of
+   compressing functional status cards. */
+.aura-p0640-history{
+  flex:1 1 96px;
+  min-height:72px;
+}
+
+/* Ensure the complete 3-row guardrail matrix is visible. */
+.aura-p0649-guardrails .body{
+  grid-auto-rows:minmax(29px,auto);
+}
+.aura-p0649-guardrails article{
+  min-height:29px;
+}
+
+
+/* P0.6.5.0 — Desktop safe route joins the explicit canonical perimeter. */
+.aura-p0640-rules .aura-p0643-owner-rule{
+  min-width:0;
+}
+
+
+/* P0.6.5.0.1 — deterministic denied desktop intents remain local. */
+.aura-p0640-rules .aura-p0643-owner-rule i{max-width:100%}
+
+/* P0.6.5.1 */
+.aura-p0640-rules .aura-p0643-owner-rule i{white-space:normal}
+
+/* P0.6.5.2 authorized files */
+
+/* P0.6.5.3 local documents */
+
+
+/* ========================================================================
+   AURA P0.6.5.3.1 — Router readability + full-panel vertical scroll
+   ======================================================================== */
+
+.aura-p0640-router-panel{
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  scrollbar-width:auto;
+  scrollbar-color:rgba(111,228,247,.48) rgba(3,15,24,.76);
+  overscroll-behavior:contain;
+  scroll-behavior:smooth;
+}
+
+/* Dynamic sections must grow instead of being squeezed into the inspector. */
+.aura-p0640-router-panel>.aura-p0640-grid,
+.aura-p0640-router-panel>.aura-p0640-contract,
+.aura-p0640-router-panel>.aura-p0641-live-contract,
+.aura-p0640-router-panel>.aura-p0642-compare,
+.aura-p0640-router-panel>.aura-p06481-selector,
+.aura-p0640-router-panel>.aura-p0649-guardrails,
+.aura-p0640-router-panel>.aura-p0640-history{
+  flex:0 0 auto !important;
+}
+.aura-p0640-history{
+  min-height:180px !important;
+  max-height:300px;
+}
+
+/* Header stays visible while reviewing long traces/guardrails. */
+.aura-p0640-router-panel>header{
+  position:sticky;
+  top:0;
+  z-index:12;
+  background:rgba(3,17,27,.985);
+  backdrop-filter:blur(18px);
+}
+.aura-p0640-router-panel>footer{
+  flex:0 0 34px;
+}
+
+.aura-p0640-router-panel::-webkit-scrollbar{width:11px}
+.aura-p0640-router-panel::-webkit-scrollbar-track{
+  background:rgba(2,11,18,.74);
+  border-left:1px solid rgba(111,228,247,.04);
+}
+.aura-p0640-router-panel::-webkit-scrollbar-thumb{
+  min-height:48px;
+  border:2px solid rgba(2,11,18,.74);
+  border-radius:10px;
+  background:rgba(111,228,247,.38);
+}
+.aura-p0640-router-panel::-webkit-scrollbar-thumb:hover{
+  background:rgba(111,228,247,.6);
+}
+
+/* Typography: +1–2 px on the inspector's smallest labels. */
+.aura-p0640-router-panel>header b{font-size:10.5px}
+.aura-p0640-router-panel>header span{font-size:8.5px}
+
+.aura-p0640-grid small{font-size:8px}
+.aura-p0640-grid b{font-size:12px}
+.aura-p0640-grid span{font-size:8.5px}
+
+.aura-p0640-contract b{font-size:9.5px}
+.aura-p0640-contract>div:first-child span{font-size:8px}
+.aura-p0640-contract p{font-size:9px;line-height:1.5}
+.aura-p0640-rules span{font-size:8.5px}
+.aura-p0640-rules i{font-size:8px}
+
+.aura-p0641-live-contract .title b,
+.aura-p0642-compare .title b,
+.aura-p06481-selector .title b,
+.aura-p0649-guardrails .title b,
+.aura-p0640-history .title b{font-size:9px}
+
+.aura-p0641-live-contract .title span,
+.aura-p0642-compare .title span,
+.aura-p06481-selector .title span,
+.aura-p0649-guardrails .title span,
+.aura-p0640-history .title span{font-size:8px}
+
+.aura-p0641-live-contract small,
+.aura-p0642-compare small,
+.aura-p06481-selector small,
+.aura-p0649-guardrails small{font-size:7.8px}
+
+.aura-p0641-live-contract b,
+.aura-p0642-compare article b,
+.aura-p06481-selector article b,
+.aura-p0649-guardrails article b{font-size:9px}
+
+.aura-p0640-history time{font-size:7.8px}
+.aura-p0640-history article b{font-size:8.5px}
+.aura-p0640-history article span{font-size:8.5px}
+.aura-p0640-history article i{font-size:7.8px}
+.aura-p0640-history .empty{font-size:9px}
+
+.aura-p0640-router-panel>footer span,
+.aura-p0640-router-panel>footer b{font-size:8px}
+
+/* Keep the bottom-docked inspector usable on smaller windows. */
+@media(max-width:1180px){
+  .aura-p0640-router-panel{
+    height:min(500px,62vh);
+  }
+  .aura-p0640-history{
+    max-height:220px;
+  }
+  .aura-p0640-router-panel::-webkit-scrollbar{width:9px}
+}
+
+/* ==========================================================================
+   AURA P0.8.5.3.4.1 — ROUTER / SYSTEM LIVE COEXISTENCE HOTFIX
+   The persistent System Live HUD owns the rightmost shell lane.
+   On desktop the Router Observatory occupies the immediately adjacent lane,
+   using the measured System Live width from P0.8.1.3/P0.8.1.4.
+   No visual design token, content, font, color or feature behavior changes.
+   ========================================================================== */
+@media (min-width:1181px){
+  body.aura-p0813-system-hud-ready .aura-p0640-router-panel{
+    position:fixed !important;
+    top:var(--aura-p0814-surface-top,102px) !important;
+    bottom:var(--aura-p0814-surface-bottom,84px) !important;
+    right:var(
+      --aura-p0814-system-slot,
+      calc(var(--aura-p0813-system-hud-width,318px) + 26px)
+    ) !important;
+    width:var(--aura-router-dock-width,min(430px,31vw)) !important;
+    max-width:calc(
+      100vw
+      - var(--aura-p0702-rail-width,220px)
+      - var(--aura-p0814-system-slot,344px)
+      - var(--aura-p0814-rail-gap,14px)
+      - 12px
+    ) !important;
+    z-index:146 !important;
+  }
+}
+

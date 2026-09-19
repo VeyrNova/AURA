@@ -1,0 +1,22 @@
+{
+  "schema": "aura.notifications-runtime-bridge.v095.v1",
+  "phase": "D2 R1 Bridge Provider Runtime Wiring",
+  "product_version_during_d2": "0.9.4",
+  "runtime": {
+    "getter": "get_notifications_provider_v095",
+    "capability_context": "notifications_capability_context_v095",
+    "controller": "NotificationsModuleController",
+    "registry_descriptor": "AURA_V095_NOTIFICATIONS_PROVIDER_DESCRIPTOR"
+  },
+  "visual_intent": {
+    "legacy_surface": "P0.8.1 Activity Center",
+    "browser_api": "window.AuraEventWatchers.open",
+    "presentation_api": "window.AuraProactiveNotifications",
+    "prefill_if_empty": "affiche mes notifications",
+    "auto_submit": false,
+    "preserve_non_empty_draft": true,
+    "duplicate_history_ui": false,
+    "module_card_added_in_D2_R1": false
+  },
+  "next_phase": "D2 R2 visual/routing exposure over existing Activity Center"
+}

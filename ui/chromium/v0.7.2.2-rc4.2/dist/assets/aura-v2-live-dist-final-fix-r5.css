@@ -1,0 +1,6 @@
+/* AURA v2 live dist UI final fix R5 */
+[data-aura-v2-r5-hidden="1"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

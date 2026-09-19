@@ -1,0 +1,181 @@
+{
+  "schema": "aura.fabric.coding-agent-catalog.v1",
+  "generated_at": "2026-08-30T20:20:00+02:00",
+  "gateway": {
+    "root_url": "http://127.0.0.1:8766",
+    "openai_base_url": "http://127.0.0.1:8766/v1",
+    "anthropic_base_url": "http://127.0.0.1:8766",
+    "model_catalog_url": "http://127.0.0.1:8766/v1/models"
+  },
+  "policy": {
+    "single_model_catalog": true,
+    "dry_run_default": true,
+    "no_third_party_agent_installed_during_certification": true,
+    "no_third_party_agent_executed_during_certification": true,
+    "no_secret_values_persisted": true,
+    "managed_config_root_only": true
+  },
+  "agents": [
+    {
+      "agent_id": "claude_code",
+      "display_name": "Claude Code",
+      "executables": [
+        "claude"
+      ],
+      "protocol": "anthropic_messages",
+      "bridge_mode": "environment",
+      "support_level": "documented",
+      "platforms": [
+        "windows",
+        "darwin",
+        "linux"
+      ],
+      "docs_url": "https://code.claude.com/docs/en/env-vars"
+    },
+    {
+      "agent_id": "codex",
+      "display_name": "Codex",
+      "executables": [
+        "codex"
+      ],
+      "protocol": "openai_responses",
+      "bridge_mode": "isolated_config",
+      "support_level": "documented",
+      "platforms": [
+        "windows",
+        "darwin",
+        "linux"
+      ],
+      "docs_url": "https://github.com/openai/codex"
+    },
+    {
+      "agent_id": "pi",
+      "display_name": "Pi",
+      "executables": [
+        "pi"
+      ],
+      "protocol": "openai_responses",
+      "bridge_mode": "extension",
+      "support_level": "documented",
+      "platforms": [
+        "windows",
+        "darwin",
+        "linux",
+        "android"
+      ],
+      "docs_url": "https://github.com/earendil-works/pi"
+    },
+    {
+      "agent_id": "opencode",
+      "display_name": "OpenCode",
+      "executables": [
+        "opencode"
+      ],
+      "protocol": "openai_chat",
+      "bridge_mode": "isolated_config",
+      "support_level": "documented",
+      "platforms": [
+        "windows",
+        "darwin",
+        "linux"
+      ],
+      "docs_url": "https://opencode.ai/docs/providers/"
+    },
+    {
+      "agent_id": "cline",
+      "display_name": "Cline",
+      "executables": [
+        "cline"
+      ],
+      "protocol": "openai_chat",
+      "bridge_mode": "isolated_data_dir",
+      "support_level": "documented_provider_surface",
+      "platforms": [
+        "windows",
+        "darwin",
+        "linux"
+      ],
+      "docs_url": "https://docs.cline.bot/provider-config/openai-compatible"
+    },
+    {
+      "agent_id": "hermes",
+      "display_name": "Hermes",
+      "executables": [
+        "hermes"
+      ],
+      "protocol": "openai_chat",
+      "bridge_mode": "isolated_config",
+      "support_level": "documented",
+      "platforms": [
+        "windows",
+        "darwin",
+        "linux"
+      ],
+      "docs_url": "https://github.com/NousResearch/hermes-agent"
+    },
+    {
+      "agent_id": "deepseek_harness",
+      "display_name": "DeepSeek Harness",
+      "executables": [
+        "dsh",
+        "deepseek-harness"
+      ],
+      "protocol": "openai_chat",
+      "bridge_mode": "environment_config",
+      "support_level": "documented",
+      "platforms": [
+        "windows",
+        "darwin",
+        "linux"
+      ],
+      "docs_url": "https://github.com/deepseek-ai/deepseek-harness"
+    },
+    {
+      "agent_id": "grok_build",
+      "display_name": "Grok Build",
+      "executables": [
+        "grok"
+      ],
+      "protocol": "openai_responses",
+      "bridge_mode": "environment",
+      "support_level": "documented",
+      "platforms": [
+        "windows",
+        "darwin",
+        "linux"
+      ],
+      "docs_url": "https://github.com/xai-org/grok-build"
+    },
+    {
+      "agent_id": "muse_code",
+      "display_name": "Muse Code",
+      "executables": [
+        "muse"
+      ],
+      "protocol": "openai_responses",
+      "bridge_mode": "experimental_isolated_config",
+      "support_level": "experimental_beta",
+      "platforms": [
+        "darwin",
+        "linux"
+      ],
+      "docs_url": "https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2/"
+    },
+    {
+      "agent_id": "aider",
+      "display_name": "Aider",
+      "executables": [
+        "aider"
+      ],
+      "protocol": "openai_chat",
+      "bridge_mode": "environment",
+      "support_level": "documented",
+      "platforms": [
+        "windows",
+        "darwin",
+        "linux"
+      ],
+      "docs_url": "https://aider.chat/docs/llms/openai-compat.html"
+    }
+  ]
+}

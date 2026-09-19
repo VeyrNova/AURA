@@ -1,0 +1,12 @@
+{
+  "schema": "aura.v130.w130-d-r1.manifest.v1",
+  "created_at": "2026-08-30T14:55:59",
+  "canonical_version": "1.2.3",
+  "target_version": "1.3.0",
+  "failed_w130_d_result_sha256": "3a74a334123cf481000f1824bb1db350f3fd34b3d593edf853130935d2a0c2ce",
+  "personal_integrations_pre_sha256": "ea07455c1d7e877c9e41bea5c41b59e8cbc003f0471227b51c9afe3790061f22",
+  "personal_integrations_post_sha256": "bab727d324a910f18ba06dff6101637930909a427c769d9be6400bdb2bb9a684",
+  "bridge_sha256": "99a8e4dde528832adfd62ae39c9c8b0841d10cc1aaba1fe528f93847da050e68",
+  "invariant_sha256": "52eecbddb419dd3919fbaa14295698912e1f170afc292b68aa8187565b01389e",
+  "fix": "resume-active commands resolve before named project activation"
+}

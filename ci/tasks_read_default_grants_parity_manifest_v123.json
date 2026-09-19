@@ -1,0 +1,12 @@
+{
+  "schema": "aura.v123.tasks-read-permission-parity-r2.manifest.v1",
+  "failed_r6_result_sha256": "323e43dbc9499e326648aab7d49078a512d2deeef0e0af059999718c5d608746",
+  "product_version": "1.2.2",
+  "target_version": "1.2.3",
+  "registry_pre_sha256": "d1d64a83edba838b2d626287f1293c227477d0e64258cc847d17ad3f944c2c74",
+  "registry_post_sha256": "0d3d3b5011047be2db3eaec2487539d0d5c41d149c71c05e0e04531ada41b2f3",
+  "scope": "remove only missing-granted_permissions hard DENY inside v1.2.3 Tasks marker",
+  "read_behavior": "tasks.list/read/tasklists -> canonical WEB_READ defaults",
+  "mutation_behavior": "EXTERNAL_NETWORK remains non-default; confirmation preserved",
+  "google_api_or_mutation_during_install": false
+}

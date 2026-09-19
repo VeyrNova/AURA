@@ -1,0 +1,867 @@
+{
+  "schema": "aura.fabric.provider-registry-seed.v1",
+  "snapshot_generated_at": "2026-08-30T20:10:00+02:00",
+  "clean_room": true,
+  "external_source_code_reused": false,
+  "source_policy": {
+    "source_kind": "public_behavioral_reference",
+    "source_url": "https://github.com/Alishahryar1/free-claude-code",
+    "reference_claim": "50 ToS-friendly providers; provider terms and free tiers can change",
+    "aura_interpretation": "The public catalog is a discovery/reference snapshot, not a permanent legal guarantee. A remote provider is eligible only while its policy record is fresh and not blocked.",
+    "remote_ttl_days": 30,
+    "local_ttl_days": null
+  },
+  "providers": [
+    {
+      "provider_id": "nvidia_nim",
+      "display_name": "NVIDIA NIM",
+      "credential_env_names": [
+        "NVIDIA_NIM_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "open_router",
+      "display_name": "OpenRouter",
+      "credential_env_names": [
+        "OPENROUTER_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "groq",
+      "display_name": "Groq",
+      "credential_env_names": [
+        "GROQ_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "cline_pass",
+      "display_name": "ClinePass",
+      "credential_env_names": [
+        "CLINE_API_KEY"
+      ],
+      "connection_mode": "subscription_api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "openai",
+      "display_name": "OpenAI / ChatGPT",
+      "credential_env_names": [],
+      "connection_mode": "connected_account",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": ""
+    },
+    {
+      "provider_id": "xai",
+      "display_name": "xAI (Grok)",
+      "credential_env_names": [
+        "XAI_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "qwencloud",
+      "display_name": "QwenCloud Token Plan",
+      "credential_env_names": [
+        "QWENCLOUD_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "qwencloud_coding",
+      "display_name": "QwenCloud Coding Plan",
+      "credential_env_names": [
+        "QWENCLOUD_CODING_API_KEY"
+      ],
+      "connection_mode": "subscription_api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "together",
+      "display_name": "Together AI",
+      "credential_env_names": [
+        "TOGETHER_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "deepinfra",
+      "display_name": "DeepInfra",
+      "credential_env_names": [
+        "DEEPINFRA_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "siliconflow",
+      "display_name": "SiliconFlow",
+      "credential_env_names": [
+        "SILICONFLOW_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "nebius",
+      "display_name": "Nebius Token Factory",
+      "credential_env_names": [
+        "NEBIUS_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "chutes",
+      "display_name": "Chutes",
+      "credential_env_names": [
+        "CHUTES_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "featherless",
+      "display_name": "Featherless AI",
+      "credential_env_names": [
+        "FEATHERLESS_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "agnes",
+      "display_name": "Agnes AI",
+      "credential_env_names": [
+        "AGNES_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "zenmux",
+      "display_name": "ZenMux",
+      "credential_env_names": [
+        "ZENMUX_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "wandb",
+      "display_name": "W&B Inference",
+      "credential_env_names": [
+        "WANDB_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "azure_openai",
+      "display_name": "Azure OpenAI",
+      "credential_env_names": [
+        "AZURE_OPENAI_API_KEY",
+        "AZURE_OPENAI_BASE_URL"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "gemini",
+      "display_name": "Google AI Studio (Gemini)",
+      "credential_env_names": [
+        "GEMINI_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "vertex",
+      "display_name": "Google Vertex AI",
+      "credential_env_names": [
+        "VERTEX_PROJECT_ID"
+      ],
+      "connection_mode": "adc",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "deepseek",
+      "display_name": "DeepSeek",
+      "credential_env_names": [
+        "DEEPSEEK_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "mistral",
+      "display_name": "Mistral La Plateforme",
+      "credential_env_names": [
+        "MISTRAL_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "mistral_codestral",
+      "display_name": "Mistral Codestral",
+      "credential_env_names": [
+        "CODESTRAL_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "opencode_zen",
+      "display_name": "OpenCode Zen",
+      "credential_env_names": [
+        "OPENCODE_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "opencode_go",
+      "display_name": "OpenCode Go",
+      "credential_env_names": [
+        "OPENCODE_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "vercel",
+      "display_name": "Vercel AI Gateway",
+      "credential_env_names": [
+        "AI_GATEWAY_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "bedrock",
+      "display_name": "Amazon Bedrock",
+      "credential_env_names": [
+        "AWS_BEARER_TOKEN_BEDROCK",
+        "BEDROCK_BASE_URL"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "huggingface",
+      "display_name": "Hugging Face Inference Providers",
+      "credential_env_names": [
+        "HUGGINGFACE_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "cohere",
+      "display_name": "Cohere",
+      "credential_env_names": [
+        "COHERE_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "github_models",
+      "display_name": "GitHub Models",
+      "credential_env_names": [
+        "GITHUB_MODELS_TOKEN"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "wafer",
+      "display_name": "Wafer",
+      "credential_env_names": [
+        "WAFER_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "kimi",
+      "display_name": "Kimi API",
+      "credential_env_names": [
+        "KIMI_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "kimi_code",
+      "display_name": "Kimi Code",
+      "credential_env_names": [
+        "KIMI_CODE_API_KEY"
+      ],
+      "connection_mode": "subscription_api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "minimax",
+      "display_name": "MiniMax",
+      "credential_env_names": [
+        "MINIMAX_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "cerebras",
+      "display_name": "Cerebras Inference",
+      "credential_env_names": [
+        "CEREBRAS_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "sambanova",
+      "display_name": "SambaNova",
+      "credential_env_names": [
+        "SAMBANOVA_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "kilo",
+      "display_name": "Kilo.ai",
+      "credential_env_names": [
+        "KILO_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "fireworks",
+      "display_name": "Fireworks AI",
+      "credential_env_names": [
+        "FIREWORKS_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "novita",
+      "display_name": "Novita AI",
+      "credential_env_names": [
+        "NOVITA_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "cloudflare",
+      "display_name": "Cloudflare Workers AI",
+      "credential_env_names": [
+        "CLOUDFLARE_API_TOKEN",
+        "CLOUDFLARE_ACCOUNT_ID"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "zai",
+      "display_name": "Z.ai Coding Plan",
+      "credential_env_names": [
+        "ZAI_API_KEY"
+      ],
+      "connection_mode": "subscription_api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "zai_api",
+      "display_name": "Z.ai API (pay as you go)",
+      "credential_env_names": [
+        "ZAI_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "tokenrouter",
+      "display_name": "TokenRouter",
+      "credential_env_names": [
+        "TOKENROUTER_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "nararoute",
+      "display_name": "NaraRoute",
+      "credential_env_names": [
+        "NARAROUTE_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "poolside",
+      "display_name": "Poolside AI",
+      "credential_env_names": [
+        "POOLSIDE_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "llm7",
+      "display_name": "LLM7.io",
+      "credential_env_names": [
+        "LLM7_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "ollama_cloud",
+      "display_name": "Ollama Cloud",
+      "credential_env_names": [
+        "OLLAMA_API_KEY"
+      ],
+      "connection_mode": "api",
+      "tos_status": "reference_allowed",
+      "policy_basis": "public_reference_claim",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": 30,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "source_snapshot": "fcc-public-provider-catalog-2026-08-30",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "lmstudio",
+      "display_name": "LM Studio",
+      "credential_env_names": [
+        "LM_STUDIO_BASE_URL"
+      ],
+      "connection_mode": "local",
+      "tos_status": "local",
+      "policy_basis": "local_runtime",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": null,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": null,
+      "source_snapshot": "local-provider",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "llamacpp",
+      "display_name": "llama.cpp",
+      "credential_env_names": [
+        "LLAMACPP_BASE_URL"
+      ],
+      "connection_mode": "local",
+      "tos_status": "local",
+      "policy_basis": "local_runtime",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": null,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": null,
+      "source_snapshot": "local-provider",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    },
+    {
+      "provider_id": "ollama",
+      "display_name": "Ollama",
+      "credential_env_names": [
+        "OLLAMA_BASE_URL"
+      ],
+      "connection_mode": "local",
+      "tos_status": "local",
+      "policy_basis": "local_runtime",
+      "last_verified_at": "2026-08-30T20:10:00+02:00",
+      "verification_ttl_days": null,
+      "default_policy_eligible": true,
+      "default_configured": false,
+      "source_url": null,
+      "source_snapshot": "local-provider",
+      "notes": "No secret value is stored in this registry; only credential variable names."
+    }
+  ]
+}

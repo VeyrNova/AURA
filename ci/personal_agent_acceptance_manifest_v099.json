@@ -1,0 +1,33 @@
+{
+  "schema": "aura.personal-agent-acceptance.v099.v1",
+  "status": "CERTIFIED_V0_9_9_PERSONAL_AGENT_ACCEPTANCE",
+  "generated_at": "2026-08-28T19:36:01",
+  "product_version": "0.9.5",
+  "acceptance_model": "DETERMINISTIC_SYNTHETIC_E2E_NO_EXTERNAL_NETWORK",
+  "scope": [
+    "v0.9.8 integration permission fail-closed contract",
+    "real PersonalIntegrationDispatcher synthetic read acceptance",
+    "real confirmation broker mutation stop/cancel acceptance",
+    "MissionEngine lifecycle through v0.9.7 ProductivityMissionToolExecutorV097",
+    "IntegrationMissionToolAdapter registry dispatch",
+    "v0.9.6 browser route/live/security/provider/workflow regression",
+    "v0.9.7 productivity regression",
+    "v0.9.8 permission regression",
+    "all certified existing authorities byte-exact"
+  ],
+  "authorities": {
+    "tests/invariants/test_personal_agent_acceptance_v099.py": "f1d0482281ebe828a3209bc8969544f927a4fcaaff6bd2e723564b11d32b0161",
+    "core/aura_core.py": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474",
+    "runtime/productivity_mission_bridge_v097.py": "4a290cbe3cb83bcf14b25171a47126607a9b5a96405c6dc4a4da0b1df4279992",
+    "runtime/integration_permissions_v098.py": "47b633afc02e0ecb36d30cc51d12d9275d9df3ff19dd3a5f2feb7cc8bb56f0fe",
+    "ci/browser_end_to_end_certification_v096.json": "db563ac2700139df255c1978f7a7da965a54c5758d40eb962d10f80f472a0ef0",
+    "ci/productivity_mission_bridge_manifest_v097.json": "13c73867567628b86c897ffc5a9dcf1fe94756c837dbcf09c9ef983087f0670d",
+    "ci/integration_permissions_manifest_v098.json": "faf1573590ffdf304cb9a3d9b8c947ec9b4e961ed0a603d6a95731ebc1818d41"
+  },
+  "existing_project_source_modified": false,
+  "external_network": "NOT USED / NOT REQUIRED",
+  "state_changing_real_accounts": "NOT TOUCHED",
+  "synthetic_mutations": "STOPPED_AT_CONFIRMATION_AND_CANCELLED",
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_state": "V0_9_9_PERSONAL_AGENT_ACCEPTANCE_COMPLETE_READY_FOR_V1_0_0_SKILL_MANIFEST_CAPABILITY_REGISTRY"
+}

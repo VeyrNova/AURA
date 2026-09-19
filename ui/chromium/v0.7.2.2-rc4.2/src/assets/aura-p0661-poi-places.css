@@ -1,0 +1,62 @@
+/* AURA P0.6.6.1 MAPS DESKTOP — POI & PLACES */
+/* AURA P0.6.6.1.1 POI TOOLBAR ACTIVATION FIX */
+#auraNavigationWorkspace .aura-poi-places{
+  display:none;margin:0 14px 12px;padding:12px;border:1px solid rgba(69,207,255,.22);border-radius:10px;
+  background:linear-gradient(180deg,rgba(6,20,37,.96),rgba(4,12,25,.94));box-shadow:inset 0 0 30px rgba(44,174,225,.035)
+}
+#auraNavigationWorkspace .aura-poi-places.open{display:block}
+#auraNavigationWorkspace .aura-poi-places>header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding-bottom:9px;border-bottom:1px solid rgba(82,184,226,.14)}
+#auraNavigationWorkspace .aura-poi-places>header span{display:block;color:#56ddff;font-size:8px;letter-spacing:.16em}
+#auraNavigationWorkspace .aura-poi-places>header b{display:block;margin-top:3px;color:#eaf9ff;font-size:11px;letter-spacing:.08em}
+#auraNavigationWorkspace .aura-poi-places>header em{font-style:normal;font-size:8px;color:#7fe6ff;border:1px solid rgba(80,218,255,.28);border-radius:999px;padding:3px 6px}
+#auraNavigationWorkspace .aura-poi-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:10px 0}
+#auraNavigationWorkspace .aura-poi-categories button{min-width:0;display:flex;align-items:center;gap:6px;padding:7px;border:1px solid rgba(66,139,171,.22);border-radius:7px;background:rgba(3,13,24,.72);color:#91aebb;cursor:pointer;text-align:left;transition:.15s ease}
+#auraNavigationWorkspace .aura-poi-categories button:hover{border-color:rgba(74,215,255,.46);color:#dff8ff}
+#auraNavigationWorkspace .aura-poi-categories button.active{border-color:rgba(74,225,255,.68);background:linear-gradient(135deg,rgba(10,48,63,.9),rgba(19,18,49,.82));color:#effcff;box-shadow:inset 0 0 18px rgba(75,215,255,.05)}
+#auraNavigationWorkspace .aura-poi-categories button i{display:grid;place-items:center;width:19px;height:19px;flex:0 0 19px;border-radius:50%;border:1px solid rgba(92,214,241,.28);font-style:normal;font-size:9px;font-weight:900;color:#68e6ff;background:#071624}
+#auraNavigationWorkspace .aura-poi-categories button span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:7px;font-weight:800;letter-spacing:.06em}
+#auraNavigationWorkspace .aura-poi-tools{display:grid;gap:7px;padding-bottom:9px}
+#auraNavigationWorkspace .aura-poi-tools label>span{display:block;margin-bottom:4px;color:#7898aa;font-size:7px;font-weight:700;letter-spacing:.09em}
+#auraNavigationWorkspace .aura-poi-tools select{box-sizing:border-box;width:100%;padding:7px 8px;border:1px solid rgba(76,183,224,.24);border-radius:6px;outline:none;background:#071525;color:#eaf9ff;font:600 10px/1.2 'Segoe UI',sans-serif;color-scheme:dark}
+#auraNavigationWorkspace .aura-poi-tools select:focus{border-color:rgba(70,226,255,.7);box-shadow:0 0 0 2px rgba(40,205,255,.08)}
+#auraNavigationWorkspace #auraPoiSearch{width:100%;padding:9px 10px;border:1px solid rgba(83,220,255,.42);border-radius:8px;background:linear-gradient(135deg,rgba(9,59,77,.86),rgba(20,24,57,.88));color:#ecfbff;text-align:left;cursor:pointer;transition:.15s ease}
+#auraNavigationWorkspace #auraPoiSearch:hover{border-color:rgba(109,235,255,.78);transform:translateY(-1px)}
+#auraNavigationWorkspace #auraPoiSearch:disabled{opacity:.55;cursor:wait;transform:none}
+#auraNavigationWorkspace #auraPoiSearch span{display:block;font-size:9px;font-weight:900;letter-spacing:.1em}
+#auraNavigationWorkspace #auraPoiSearch small{display:block;margin-top:3px;color:#84aaba;font-size:7px;letter-spacing:.06em}
+#auraNavigationWorkspace .aura-poi-results{display:grid;gap:6px;max-height:330px;overflow:auto;padding-right:2px;scrollbar-width:thin;scrollbar-color:rgba(72,211,245,.34) transparent}
+#auraNavigationWorkspace .aura-poi-empty{padding:10px;border:1px dashed rgba(97,153,182,.18);border-radius:7px;color:#6f899a;font-size:8px;line-height:1.5;text-align:center}
+#auraNavigationWorkspace .aura-poi-result{display:grid;grid-template-columns:26px minmax(0,1fr) auto;align-items:center;gap:7px;width:100%;padding:8px;border:1px solid rgba(60,133,164,.18);border-radius:8px;background:rgba(3,13,25,.72);color:#dff8ff;text-align:left;cursor:pointer;transition:.14s ease}
+#auraNavigationWorkspace .aura-poi-result:hover{border-color:rgba(75,213,255,.45)}
+#auraNavigationWorkspace .aura-poi-result.selected{border-color:rgba(90,232,255,.72);background:linear-gradient(135deg,rgba(9,46,62,.88),rgba(20,17,48,.84))}
+#auraNavigationWorkspace .aura-poi-result-icon{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;border:1px solid rgba(92,214,241,.3);background:#071624;color:#71e8ff;font-size:9px;font-weight:900}
+#auraNavigationWorkspace .aura-poi-result-copy{min-width:0}
+#auraNavigationWorkspace .aura-poi-result-copy b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#effcff;font-size:9px}
+#auraNavigationWorkspace .aura-poi-result-copy small{display:block;margin-top:3px;color:#6cdff7;font-size:6px;line-height:1.35;letter-spacing:.03em}
+#auraNavigationWorkspace .aura-poi-result-copy em{display:block;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#718b9b;font-style:normal;font-size:6px}
+#auraNavigationWorkspace .aura-poi-result>i{font-style:normal;color:#9a7cff;font-size:6px;font-weight:900;letter-spacing:.07em}
+#auraNavigationWorkspace .aura-poi-places>footer{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-top:9px;padding-top:8px;border-top:1px solid rgba(75,158,193,.12)}
+#auraNavigationWorkspace .aura-poi-places>footer span{max-width:78%;color:#69dff7;font-size:6px;line-height:1.4;letter-spacing:.05em}
+#auraNavigationWorkspace .aura-poi-places>footer span.error{color:#ff7799}
+#auraNavigationWorkspace .aura-poi-places>footer button{padding:5px 7px;border:1px solid rgba(111,117,161,.3);border-radius:6px;background:#07111e;color:#8fa8b7;font-size:6px;font-weight:800;letter-spacing:.06em;cursor:pointer}
+#auraNavigationWorkspace .aura-poi-marker-layer{position:absolute;inset:0;z-index:5;overflow:hidden;pointer-events:none}
+#auraNavigationWorkspace .aura-poi-marker{position:absolute;display:grid;place-items:center;width:25px;height:25px;margin:-12.5px 0 0 -12.5px;padding:0;border:1px solid rgba(99,229,255,.85);border-radius:50%;background:rgba(4,18,30,.92);box-shadow:0 0 0 3px rgba(25,198,239,.10),0 4px 14px rgba(0,0,0,.4);color:#eaffff;cursor:pointer;pointer-events:auto;transform:translateZ(0);transition:transform .13s ease,opacity .13s ease,border-color .13s ease}
+#auraNavigationWorkspace .aura-poi-marker:hover{transform:scale(1.13);z-index:3}
+#auraNavigationWorkspace .aura-poi-marker.selected{transform:scale(1.24);border-color:#fff;box-shadow:0 0 0 4px rgba(52,220,255,.22),0 4px 18px rgba(0,0,0,.48);z-index:4}
+#auraNavigationWorkspace .aura-poi-marker span{font-size:9px;font-weight:900;line-height:1}
+#auraNavigationWorkspace .aura-poi-marker[data-category="parking"]{border-color:rgba(86,220,255,.92)}
+#auraNavigationWorkspace .aura-poi-marker[data-category="fuel"]{border-color:rgba(255,197,92,.92)}
+#auraNavigationWorkspace .aura-poi-marker[data-category="charging"]{border-color:rgba(91,255,166,.92)}
+#auraNavigationWorkspace .aura-poi-marker[data-category="restaurant"]{border-color:rgba(255,112,184,.92)}
+#auraNavigationWorkspace .aura-poi-marker[data-category="hotel"]{border-color:rgba(177,124,255,.92)}
+#auraNavigationWorkspace .aura-poi-marker[data-category="services"]{border-color:rgba(116,183,255,.92)}
+#auraNavigationWorkspace .aura-nav-toolbar button[aria-pressed="true"]{border-color:rgba(91,229,255,.72)!important;color:#effcff!important;background:rgba(13,64,80,.72)!important}
+@media (max-width:1200px){
+  #auraNavigationWorkspace .aura-poi-categories{grid-template-columns:1fr}
+  #auraNavigationWorkspace .aura-poi-results{max-height:260px}
+}
+
+/* P0.6.6.1.1 — keep the Maps toolbar above interactive map layers and POI clickable. */
+#auraNavigationWorkspace .aura-nav-toolbar{z-index:40!important;pointer-events:auto!important}
+#auraNavigationWorkspace .aura-nav-toolbar button[data-nav-toolbar="poi"]{pointer-events:auto!important;cursor:pointer!important;opacity:1!important}
+#auraNavigationWorkspace .aura-nav-toolbar button[data-nav-toolbar="poi"][aria-disabled="false"]{filter:none!important}

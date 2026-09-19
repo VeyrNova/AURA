@@ -1,0 +1,9 @@
+{
+  "schema": "aura.v123.os-shell-structured-results.manifest.v1",
+  "product_version_during_implementation": "1.2.2",
+  "target_version": "1.2.3",
+  "version_bump": false,
+  "color_charter_changed": false,
+  "google_core_changed": false,
+  "security_changed": false
+}

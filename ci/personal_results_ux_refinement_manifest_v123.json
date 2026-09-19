@@ -1,0 +1,17 @@
+{
+  "schema": "aura.v123.ft5-r1.personal-results-ux-refinement.v1",
+  "generated_at": "2026-08-29T18:07:01",
+  "product_version_during_change": "1.2.2",
+  "target_version": "1.2.3",
+  "changes": [
+    "apply existing AURA dark-cyan panel palette to personal result surface",
+    "reduce panel width/spacing to match OS shell proportions",
+    "normalize mail sender display and remove raw null JSON objects"
+  ],
+  "existing_color_charter_reused": true,
+  "new_color_charter_introduced": false,
+  "google_backend_changed": false,
+  "security_changed": false,
+  "transport_changed": false,
+  "version_bump": false
+}

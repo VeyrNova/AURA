@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+<title>AURA symbol neon outline — Patch 13</title>
+<defs>
+  <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#F4FBFF"/>
+    <stop offset="35%" stop-color="#7DEFFF"/>
+    <stop offset="72%" stop-color="#7D92FF"/>
+    <stop offset="100%" stop-color="#D466FF"/>
+  </linearGradient>
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="18" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<path d="M 448.72 5.88 Q 472.50 0.00 496.79 0.00 Q 520.60 0.20 535.26 32.35 L 1000.00 1000.00 L 737.18 1000.00 L 634.62 844.12 L 522.44 844.12 L 586.54 755.88 L 685.90 752.94 L 477.56 267.65 L 205.13 997.06 L 0.00 1000.00 L 416.67 44.12 Q 430.50 18.00 448.72 5.88 Z" fill="none" stroke="url(#g)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+</svg>

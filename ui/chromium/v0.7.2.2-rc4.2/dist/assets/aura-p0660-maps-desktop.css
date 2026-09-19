@@ -1,0 +1,36 @@
+/* AURA P0.6.6.0 MAPS DESKTOP — TRIP PLANNING */
+#auraNavigationWorkspace .aura-nav-sidebar{overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(60,220,255,.42) rgba(5,12,24,.35)}
+#auraNavigationWorkspace .aura-trip-compare{width:100%;margin-top:9px;padding:11px 12px;border:1px solid rgba(152,91,255,.48);border-radius:9px;background:linear-gradient(135deg,rgba(73,35,130,.72),rgba(10,28,48,.9));color:#f4efff;text-align:left;cursor:pointer;box-shadow:inset 0 0 22px rgba(135,76,255,.08);transition:.18s ease}
+#auraNavigationWorkspace .aura-trip-compare:hover{border-color:rgba(187,132,255,.82);transform:translateY(-1px)}
+#auraNavigationWorkspace .aura-trip-compare:disabled{opacity:.55;cursor:wait;transform:none}
+#auraNavigationWorkspace .aura-trip-compare span{display:block;font-size:11px;font-weight:800;letter-spacing:.12em}
+#auraNavigationWorkspace .aura-trip-compare small{display:block;margin-top:4px;font-size:8px;color:#baaee0;letter-spacing:.08em}
+#auraNavigationWorkspace .aura-trip-planner{margin:0 14px 12px;padding:12px;border:1px solid rgba(77,217,255,.22);border-radius:10px;background:linear-gradient(180deg,rgba(7,20,38,.94),rgba(4,12,25,.92));box-shadow:inset 0 0 30px rgba(35,166,213,.035)}
+#auraNavigationWorkspace .aura-trip-planner>header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding-bottom:9px;border-bottom:1px solid rgba(82,184,226,.14)}
+#auraNavigationWorkspace .aura-trip-planner>header span{display:block;color:#56ddff;font-size:8px;letter-spacing:.16em}
+#auraNavigationWorkspace .aura-trip-planner>header b{display:block;margin-top:3px;color:#eaf9ff;font-size:11px;letter-spacing:.08em}
+#auraNavigationWorkspace .aura-trip-planner>header em{font-style:normal;font-size:8px;color:#b899ff;border:1px solid rgba(167,105,255,.3);border-radius:999px;padding:3px 6px}
+#auraNavigationWorkspace .aura-trip-settings{display:grid;gap:8px;padding:10px 0}
+#auraNavigationWorkspace .aura-trip-settings label span{display:block;margin-bottom:4px;color:#7f9eb1;font-size:7px;font-weight:700;letter-spacing:.1em}
+#auraNavigationWorkspace .aura-trip-settings input{box-sizing:border-box;width:100%;min-width:0;padding:7px 8px;border:1px solid rgba(76,183,224,.24);border-radius:6px;outline:none;background:#071525;color:#eaf9ff;font:600 10px/1.2 'Segoe UI',sans-serif;color-scheme:dark}
+#auraNavigationWorkspace .aura-trip-settings input:focus{border-color:rgba(70,226,255,.7);box-shadow:0 0 0 2px rgba(40,205,255,.08)}
+#auraNavigationWorkspace .aura-trip-cost-settings{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#auraNavigationWorkspace .aura-trip-routes{display:grid;gap:7px}
+#auraNavigationWorkspace .aura-trip-empty{padding:10px;border:1px dashed rgba(97,153,182,.18);border-radius:7px;color:#6f899a;font-size:9px;line-height:1.45;text-align:center}
+#auraNavigationWorkspace .aura-trip-route{width:100%;padding:9px;border:1px solid rgba(63,137,172,.2);border-radius:8px;background:rgba(4,15,28,.72);color:#dff8ff;text-align:left;cursor:pointer;transition:.15s ease}
+#auraNavigationWorkspace .aura-trip-route:hover{border-color:rgba(77,219,255,.52)}
+#auraNavigationWorkspace .aura-trip-route.selected{border-color:rgba(97,235,255,.7);background:linear-gradient(135deg,rgba(11,48,63,.86),rgba(23,19,55,.82));box-shadow:0 0 0 1px rgba(78,214,255,.08),inset 0 0 26px rgba(80,203,255,.05)}
+#auraNavigationWorkspace .aura-trip-route-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+#auraNavigationWorkspace .aura-trip-route-head span{color:#65e6ff;font-size:7px;font-weight:800;letter-spacing:.09em}
+#auraNavigationWorkspace .aura-trip-route-head b{font-size:13px;color:#fff}
+#auraNavigationWorkspace .aura-trip-route-grid{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:5px;margin-top:8px}
+#auraNavigationWorkspace .aura-trip-route-grid div{padding:6px;border-radius:6px;background:rgba(2,9,18,.48)}
+#auraNavigationWorkspace .aura-trip-route-grid small{display:block;color:#6c899d;font-size:6px;letter-spacing:.09em}
+#auraNavigationWorkspace .aura-trip-route-grid strong{display:block;margin-top:3px;font-size:9px;color:#dff8ff;white-space:nowrap}
+#auraNavigationWorkspace .aura-trip-route-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:7px;color:#687f90;font-size:7px}
+#auraNavigationWorkspace .aura-trip-route-foot em{font-style:normal;color:#9e7cff;font-weight:800;letter-spacing:.08em}
+#auraNavigationWorkspace .aura-trip-route.selected .aura-trip-route-foot em{color:#59e7ff}
+#auraNavigationWorkspace .aura-trip-planner>footer{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-top:9px;padding-top:8px;border-top:1px solid rgba(75,158,193,.12)}
+#auraNavigationWorkspace .aura-trip-planner>footer span{max-width:70%;color:#6edfff;font-size:7px;line-height:1.4;letter-spacing:.06em}
+#auraNavigationWorkspace .aura-trip-planner>footer span.error{color:#ff7799}
+#auraNavigationWorkspace .aura-trip-planner>footer small{color:#526c7b;font-size:6px;text-align:right}

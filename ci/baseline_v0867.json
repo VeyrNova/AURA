@@ -1,0 +1,218 @@
+{
+  "schema": "aura.ci.baseline.v0867.v1",
+  "milestone": "AURA v0.8.6.7 Runtime & Performance Cleanup",
+  "created_at": "2026-08-26T09:33:57",
+  "historical_parent": "C:\\AURA GPT version\\ci\\baseline_v0866.json",
+  "historical_parent_immutable": true,
+  "runtime_performance": {
+    "microphone_stale_warning_dedup": true,
+    "microphone_live_fallback_preserved": true,
+    "xtts_repeat_warmup_reuse": true,
+    "xtts_first_warmup_original_preserved": true,
+    "resource_guardian_limits_changed": false,
+    "provider_policy_changed": false,
+    "historical_metrics": {
+      "cold_prewarm_seconds": {
+        "count": 43,
+        "min": 24.186,
+        "median": 34.549,
+        "max": 80.539,
+        "mean": 38.495000000000005
+      },
+      "first_audio_seconds": {
+        "count": 116,
+        "min": 0.362,
+        "median": 0.706,
+        "max": 2.798,
+        "mean": 0.7635775862068965
+      },
+      "warmup_first_chunk_seconds": {
+        "count": 42,
+        "min": 1.007,
+        "median": 1.632,
+        "max": 6.068,
+        "mean": 1.975047619047619
+      }
+    },
+    "manifest": "C:\\AURA GPT version\\ci\\runtime_performance_manifest_v0867.json",
+    "invariant": "C:\\AURA GPT version\\tests\\invariants\\test_runtime_performance_v0867.py"
+  },
+  "files": [
+    {
+      "path": "C:\\AURA GPT version\\core\\version.py",
+      "sha256": "60b5b4f676a552b1a7961203ea5950493b39b19a837d6e84f026690d8457af26"
+    },
+    {
+      "path": "C:\\AURA GPT version\\config\\settings.py",
+      "sha256": "43d82dae39f92003575724b74ef438fb92dd2c459359a222c20cbe05b456f268"
+    },
+    {
+      "path": "C:\\AURA GPT version\\services\\core_bridge.py",
+      "sha256": "fcd86f20d9df178848c6a27a8e9fc4044b9794f72226658f437020e8e1df171c"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ui\\main_window.py",
+      "sha256": "b95314824d32f93f1f26b82368440fbc55f225f4117aaee77d909e5c0cc65f4d"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ui\\workers\\realtime_tts_worker.py",
+      "sha256": "d3438289116983beebfcc7d0f680017ce660753e64e9bd92f28eaeaf180e2df3"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\ui_source_manifest_v0865.json",
+      "sha256": "311c3463b374a03500414b5d611ed0044618307d777d917e3553d131939fc313"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tools\\ui_source_build_v0865.py",
+      "sha256": "89566080a61fca8977579203c2640c852cc7a0710788b39e44cadaaf5705e073"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
+      "sha256": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\package.json",
+      "sha256": "c3ee52b34d74e43a39345b8af5acbfae2d7ba97b6ce34ac3fdd85ff9f5869f48"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p081-event-watchers.js",
+      "sha256": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p081-event-watchers.js",
+      "sha256": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p081-event-watchers.js",
+      "sha256": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0436-official-neural-orb.js",
+      "sha256": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0436-official-neural-orb.js",
+      "sha256": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0521-weather-map.js",
+      "sha256": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0521-weather-map.js",
+      "sha256": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p060-navigation-workspace.js",
+      "sha256": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
+      "sha256": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0623-file-productivity.js",
+      "sha256": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0623-file-productivity.js",
+      "sha256": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0624-quality-ux.js",
+      "sha256": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0624-quality-ux.js",
+      "sha256": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0626-memory.js",
+      "sha256": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0626-memory.js",
+      "sha256": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p074-vitals-activity-module.js",
+      "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p074-vitals-activity-module.js",
+      "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p074-vitals-activity-module.js",
+      "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08518-system-state-final-polish.js",
+      "sha256": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08518-system-state-final-polish.js",
+      "sha256": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08518-system-state-final-polish.js",
+      "sha256": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\policy_engine.py",
+      "sha256": "4a9dcf6a9c878061847c487dd3b64c0a6435cb2f4fcc1e9db10310bddf7a7b11"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\policy_engine_v2.py",
+      "sha256": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\permissions.py",
+      "sha256": "de81fd45114252111c4681fa998ff034f57247b3c30b12e9aa6f797465e90d34"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\common.py",
+      "sha256": "1b14c117d4e576ae19d018ad48aaf8ab2a7e4fd35de3264bf7a54ebbc2a6e124"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_security_fail_closed_v0861.py",
+      "sha256": "7667b5a82d5f904e05c15ce344c9f5d693bac860e1f55c6cffc557d1b8dda830"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_security_policy_v2_v0866.py",
+      "sha256": "3e4e78b94cf365c5e9c5c92101354b3ec48e1ba0815c2ceaea1ef54b0bfd6766"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\fast_lane.py",
+      "sha256": "f1b038d23d8e395e45fe34a8ca55c19025f064e0483b84dbfb65cd9277cc2c8c"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\full_lane.py",
+      "sha256": "18e9789b7cbf56c6f7ad9b8c9a7bb07cb6a60e57c92a05a9fa4eb3686c4aa7bb"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\microphone.py",
+      "sha256": "c4a3d811de7eee7b56599c509313316a6c3f3d845d36d1381054c075ff0ea27f"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\xtts_tts.py",
+      "sha256": "3cdf085bb1da23d10050a417fd6a2cf01058dea83170f3712d3a2fbea70d6ff6"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\voice_engine.py",
+      "sha256": "f59310277feed54eb6cabfadb63c81d210179928681610b2f50e6c3dd5320469"
+    },
+    {
+      "path": "C:\\AURA GPT version\\runtime\\resource_guardian.py",
+      "sha256": "f8f3ee6a70e196423fed44545436407139bb9518efb1138f3f868a841c0b3df2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_runtime_performance_v0867.py",
+      "sha256": "46b8c18d5396949ea43563ead1421e474c4cb8bdd13e404be84ecd943c4e19f2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\runtime_performance_manifest_v0867.json",
+      "sha256": "b281c06dec97f025a1886d3e7545a9661e2e519c353afe6ac16c18a60cff2cc0"
+    }
+  ]
+}

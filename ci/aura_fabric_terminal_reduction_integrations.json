@@ -1,0 +1,83 @@
+{
+  "schema": "aura.fabric.terminal-reduction-integrations.v1",
+  "generated_at": "2026-08-30T20:30:00+02:00",
+  "kernel": "AURA Terminal Reduction Kernel",
+  "target_output_byte_reduction_percent_up_to": 90,
+  "guaranteed": false,
+  "measurement": "terminal output bytes only",
+  "automatic_interception_certified": false,
+  "exposure": {
+    "environment_variable": "AURA_TRK_EXECUTABLE",
+    "cli": "aura_trk.py",
+    "raw_escape_hatch": "--raw"
+  },
+  "agents": [
+    {
+      "agent_id": "claude_code",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    },
+    {
+      "agent_id": "codex",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    },
+    {
+      "agent_id": "pi",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    },
+    {
+      "agent_id": "opencode",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    },
+    {
+      "agent_id": "cline",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    },
+    {
+      "agent_id": "hermes",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    },
+    {
+      "agent_id": "deepseek_harness",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    },
+    {
+      "agent_id": "grok_build",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    },
+    {
+      "agent_id": "muse_code",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    },
+    {
+      "agent_id": "aider",
+      "available": true,
+      "mode": "managed_launcher_environment",
+      "automatic_interception": false
+    }
+  ],
+  "local_provider_free_optimizations": [
+    "quota_probe_local",
+    "command_prefix_detection",
+    "session_title",
+    "suggest_next_action",
+    "filepath_normalization"
+  ]
+}

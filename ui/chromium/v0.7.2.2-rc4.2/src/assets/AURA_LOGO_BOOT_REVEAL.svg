@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+<title>AURA Boot Reveal Master</title>
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#63F3FF"/>
+<stop offset="56%" stop-color="#9B5CFF"/>
+<stop offset="100%" stop-color="#DA5CFF"/>
+</linearGradient>
+</defs>
+<path id="aura-master-symbol" d="M 205 820 L 458 190 Q 472 150 500 150 Q 528 150 542 190 L 820 820 L 658 820 L 596 716 L 525 716 L 565 655 L 625 655 L 500 330 L 332 820 Z" fill="url(#g)"/>
+</svg>

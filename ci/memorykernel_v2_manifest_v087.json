@@ -1,0 +1,150 @@
+{
+  "schema": "aura.memorykernel.v2.v087.v1",
+  "milestone": "AURA v0.8.7 MemoryKernel v2",
+  "product_version_during_d2": "0.8.6.8",
+  "legacy_authority": "memory.manager.MemoryManager",
+  "v2_authority": "memory.kernel_v2.MemoryKernelV2",
+  "compatibility": {
+    "legacy_constructor_changed": false,
+    "legacy_methods_replaced": false,
+    "lazy_facade_property": "MemoryManager.memorykernel_v2",
+    "v2_methods": [
+      "remember_v2",
+      "retrieve_v2",
+      "update_v2",
+      "merge_v2",
+      "forget_v2",
+      "expire_v2"
+    ]
+  },
+  "memory_types": [
+    "working",
+    "episodic",
+    "semantic",
+    "preference",
+    "project"
+  ],
+  "scopes": [
+    "session",
+    "user",
+    "project"
+  ],
+  "operations": [
+    "remember",
+    "retrieve",
+    "update",
+    "merge",
+    "forget",
+    "expire"
+  ],
+  "persistence": {
+    "legacy_tables_rewritten": false,
+    "companion_records_table": "memory_kernel_v2_records",
+    "companion_audit_table": "memory_kernel_v2_audit",
+    "working_memory_ephemeral": true,
+    "user_memory_rows_rewritten_during_d2": false
+  },
+  "provenance": {
+    "stored_with_record": true,
+    "merge_preserves_source_provenance": true,
+    "forget_audit_excludes_content": true
+  },
+  "security": {
+    "SecurityPolicyEngine_v2_changed": false,
+    "optional_policy_guard_fail_closed": true,
+    "policy_guard_exception_denied": true,
+    "router_user_confirmed_compatibility": true,
+    "router_user_confirmed_semantics": "optional kwarg copied into safe params; v2 evaluator remains fail-closed"
+  },
+  "written_at": "2026-08-26T10:18:01",
+  "files": {
+    "manager": {
+      "path": "C:\\AURA GPT version\\memory\\manager.py",
+      "sha256": "249a44e49f1a106f4c0ddaeac16949c51a7ca2b69168fbcd14dda92f08cbe56e"
+    },
+    "kernel_v2": {
+      "path": "C:\\AURA GPT version\\memory\\kernel_v2.py",
+      "sha256": "1b8870f77707412313d75e2c6d7c678997cfe49797c06eca4c57f7d3d1a7066f"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_memorykernel_v2_v087.py",
+      "sha256": "374edb3259a6933e7863e5eba27e37a3d984c334f1172fe00fae29ff620804ca"
+    },
+    "security_policy_compat": {
+      "path": "C:\\AURA GPT version\\security\\policy_engine.py",
+      "sha256": "6b9a6cf82e6afd8d00115264c56ae80ae8deb602095aa150d555424df9ebacf1"
+    }
+  },
+  "database": {
+    "path": "C:\\AURA GPT version\\database\\aura.db",
+    "legacy_rows_rewritten": false,
+    "records_table": "memory_kernel_v2_records",
+    "audit_table": "memory_kernel_v2_audit",
+    "records_columns": [
+      "memory_id",
+      "memory_type",
+      "scope",
+      "scope_id",
+      "content",
+      "provenance_json",
+      "version",
+      "created_at",
+      "updated_at",
+      "expires_at",
+      "status",
+      "merged_into_id",
+      "is_sensitive"
+    ],
+    "audit_columns": [
+      "audit_id",
+      "memory_id",
+      "action",
+      "at",
+      "version",
+      "detail_json"
+    ]
+  },
+  "critical_baseline_v0868": {
+    "exit": 2,
+    "controlled_drift": [
+      "C:\\AURA GPT version\\security\\policy_engine.py"
+    ],
+    "unexpected_drift": []
+  },
+  "fast_lane": {
+    "exit": 2,
+    "pass_global": false,
+    "fail_labels": [],
+    "controlled": true
+  },
+  "runtime": {
+    "ok": true,
+    "sample": 6,
+    "pid": 23424,
+    "port": 18973,
+    "interaction_ready": true,
+    "core_service_bridge": true,
+    "bridge_version": "P0.6.5.4",
+    "metadata_schema": "aura.runtime-metadata.v1",
+    "product_version": "0.8.6.8",
+    "ui_release": "0.7.2.2-rc4.2"
+  },
+  "legacy_memory_tests": [
+    {
+      "file": "C:\\AURA GPT version\\tests\\test_memory_v060.py",
+      "exit": 0
+    },
+    {
+      "file": "C:\\AURA GPT version\\tests\\test_memory_intents_v060.py",
+      "exit": 0
+    },
+    {
+      "file": "C:\\AURA GPT version\\tests\\test_memory_human_v061.py",
+      "exit": 0
+    },
+    {
+      "file": "C:\\AURA GPT version\\tests\\test_memory_profile_recall_v0662.py",
+      "exit": 0
+    }
+  ]
+}

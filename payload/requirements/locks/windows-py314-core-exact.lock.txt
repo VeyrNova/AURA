@@ -1,0 +1,18 @@
+# AURA v0.8.6.2.1 — exact transitive CORE lock
+# Versions are taken from the D1 certified reference environment.
+# Package membership comes from the successful clean cold-install dependency closure.
+# pip must reproduce this exact set (excluding bootstrap pip itself).
+# package_count=11
+# drift_repaired=2
+
+certifi==2026.7.22
+charset-normalizer==3.4.9
+idna==3.18
+psutil==7.2.2
+PySide6==6.11.1
+PySide6_Addons==6.11.1
+PySide6_Essentials==6.11.1
+python-dotenv==1.2.2
+requests==2.34.2
+shiboken6==6.11.1
+urllib3==2.7.0

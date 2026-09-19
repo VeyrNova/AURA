@@ -1,0 +1,19 @@
+{
+  "schema": "aura.v123.google-tasks-durable-refresh-scope.manifest.v1",
+  "parent_r8_r2_sha256": "28d8512178be8f1df74e88201115ecbf7b6da1b58ed910eed33db4c0c10e1b4e",
+  "failed_r9_result_sha256": "ad01573f65498e14053d685e018d730f468145195e7a977cec95799a69c3963e",
+  "product_version": "1.2.2",
+  "target_version": "1.2.3",
+  "tasks_oauth_pre_sha256": "fae4e2bf38a714da16946c0977cf4cf5653d9f406372f15ab88e9c0d332b5de1",
+  "tasks_oauth_post_sha256": "db744f95e0239083adc342d3f7887509435f6725829bf2fa6700b83f85c3b6a6",
+  "root_cause": "policy ALLOW then Google Tasks HTTP 403 insufficient authentication scopes",
+  "repair": "offline + prompt consent + forced refresh before persistence",
+  "fresh_process_validation": {
+    "direct_count": 1,
+    "conversation_handled": true,
+    "conversation_status": "succeeded",
+    "conversation_capability": "tasks.list",
+    "conversation_count": 1
+  },
+  "google_content_mutation": false
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "aura.notifications-module-ui.v095.v1",
+  "phase": "D2 R3 Activity Center Visual Routing",
+  "product_version_during_d2": "0.9.4",
+  "module": {
+    "id": "notifications",
+    "label": "NOTIFICATIONS",
+    "subtitle": "Centre d'activite et alertes",
+    "single_card": true,
+    "duplicate_sidebar": false
+  },
+  "route": {
+    "primary": "window.AuraEventWatchers.open()",
+    "legacy_history_ui": "P0.8.1 Activity Center",
+    "legacy_presentation": "P0.8.3 AuraProactiveNotifications",
+    "new_history_ui": false,
+    "new_popup_layer": false,
+    "fallback_workspace": "talk",
+    "fallback_prefill_if_empty": "affiche mes notifications",
+    "preserve_non_empty_draft": true,
+    "auto_submit": false
+  },
+  "preserve": {
+    "system_live_module_card": false,
+    "system_live_permanent_right_panel": true,
+    "diagnostics": true,
+    "mail": 1,
+    "agenda": 1,
+    "contacts": 1,
+    "documents": 1
+  },
+  "hashes": {
+    "rail_js": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "rail_css": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+  }
+}

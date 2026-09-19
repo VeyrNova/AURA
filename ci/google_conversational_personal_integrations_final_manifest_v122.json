@@ -1,0 +1,58 @@
+{
+  "schema": "aura.google-conversational-personal-integrations.final.v122.v2",
+  "status": "CERTIFIED_V1_2_2_CONVERSATIONAL_GOOGLE_PERSONAL_INTEGRATIONS",
+  "generated_at": "2026-08-29T14:41:56",
+  "product_version": "1.2.2",
+  "real_ui_acceptance": {
+    "status": "PASS_V1_2_2_FT3_R7_R8_REAL_UI_TEXT_VOICE_REACCEPTANCE",
+    "manual_text_voice_tests": "10/10",
+    "technical_checks": "65/65",
+    "gmail_text_voice": true,
+    "calendar_text_voice": true,
+    "contacts_text_voice": true,
+    "drive_text_voice": true,
+    "generic_conversation": true,
+    "precert_spoken_version_1_2_1": true
+  },
+  "final_automated_live_acceptance": {
+    "gmail_natural_conversation_read": true,
+    "calendar_natural_conversation_read": true,
+    "contacts_natural_conversation_read": true,
+    "drive_natural_conversation_read": true,
+    "ordinary_chat_llm_fallback_preserved": true,
+    "personal_reply_delivery": true,
+    "aura_module_catalog": true,
+    "drive_write_fail_closed": true,
+    "browser_adapters_unused": true,
+    "live_google_mutations_performed": false,
+    "content_logged": false
+  },
+  "security": {
+    "integration_permission_contract": "v0.9.8 certified contract reused",
+    "integration_registry_bridge": "PASS",
+    "security_weakened": false,
+    "forbidden_capabilities_fail_closed": true,
+    "unknown_integration_capabilities_fail_closed": true,
+    "confirmation_required_mutations_preserved": true,
+    "oauth_secrets_exposed": false,
+    "state_changing_google_test": false
+  },
+  "production": {
+    "default_mode": "GOOGLE_LIVE",
+    "gmail": "natural text+voice read certified",
+    "calendar": "natural text+voice read certified",
+    "contacts": "natural text+voice read certified",
+    "drive": "natural text+voice read certified; current OAuth remains read-only",
+    "microsoft": "EXCLUDED",
+    "orange_mail": "EXCLUDED"
+  },
+  "version_identity": {
+    "canonical": "1.2.2",
+    "source_ui": "PASS",
+    "deployed_live_ui": "PASS",
+    "spoken": "PASS",
+    "tts": "PASS"
+  },
+  "ui_color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_state": "V1_2_2_CONVERSATIONAL_GOOGLE_PERSONAL_INTEGRATIONS_COMPLETE_READY_FOR_NEXT_ROADMAP_BLOCK"
+}

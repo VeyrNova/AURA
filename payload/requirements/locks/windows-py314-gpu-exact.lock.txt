@@ -1,0 +1,11 @@
+# AURA v0.8.6.2.2 — exact GPU layer lock
+# Certified by D3 exact cold-install on Windows 11 / CPython 3.14.7 / CUDA 13.0.
+# Apply on top of VOICE exact 107. PyTorch packages must come from the official CUDA 13.0 index.
+# package_count=6
+
+Jinja2==3.1.6
+mpmath==1.3.0
+networkx==3.6.1
+sympy==1.14.0
+torch==2.13.0+cu130
+torchaudio==2.11.0+cu130

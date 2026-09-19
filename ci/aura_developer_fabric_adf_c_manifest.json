@@ -1,0 +1,42 @@
+{
+  "schema": "aura.developer-fabric.adf-c.manifest.v1",
+  "installed_at": "2026-08-30T20:10:53",
+  "aura_version": "1.3.0",
+  "product_version_bumped": false,
+  "milestone": "ADF-C 50-provider ToS-aware registry + Free-tier/Quota Observatory",
+  "clean_room": true,
+  "fcc_dependency": false,
+  "fcc_source_reused": false,
+  "public_reference_metadata_used": true,
+  "provider_registry_count": 50,
+  "provider_policy": {
+    "remote_snapshot_ttl_days": 30,
+    "stale_remote_becomes_ineligible": true,
+    "local_provider_exempt_from_remote_tos_ttl": true,
+    "secret_values_stored": false
+  },
+  "quota_policy": {
+    "external_reference_headline_tokens_per_month": 1300000000,
+    "headline_guaranteed": false,
+    "headline_independently_verified_by_aura": false,
+    "aura_guaranteed_tokens_per_month": 0,
+    "stale_observations_excluded": true,
+    "non_token_metrics_never_fabricated_into_token_counts": true
+  },
+  "http_endpoints_added": [
+    "GET /aura/v1/providers",
+    "GET /aura/v1/quotas"
+  ],
+  "external_provider_called_during_certification": false,
+  "files": {
+    "runtime\\aura_fabric_provider_registry.py": "73033b2b92987f46d908004d2bf52f2053b22c0aa88b5fa0b875073f5f9ca955",
+    "runtime\\aura_fabric_quota_observatory.py": "05a0c0f256089b70ef13baee4077865e59d4edde296c7134356583ab69d62464",
+    "ci\\aura_fabric_provider_registry_seed.json": "dbbf897a2aa94a8f18401daf132f8c4dc6e5c524cd8c0686165b872e5584e59b",
+    "ci\\aura_fabric_free_tier_snapshot_2026_08_30.json": "bfd140bfb21c93af3dabe1e86f92a5d1666ca70d63ee19570028bd25e8c8515a",
+    "ci\\aura_fabric_provider_source_snapshot_2026_08_30.json": "73aebec1ae5ed886cdcf5b966d7c9e36f42ef60bde764a19d3938de2f1bf0710",
+    "runtime\\aura_fabric_http_gateway.py": "bed0f04a0e6becb0887b702314994dc007007fd31785ac3945e346587a69ef60",
+    "tests\\invariants\\test_aura_developer_fabric_adf_c_provider_registry.py": "4d41be643f29dcc5fc4bf6191728bb2517a2e2133f1e4ae99374191bef5eee56",
+    "docs\\AURA_DEVELOPER_FABRIC_ADF_C_PROVIDER_POLICY_AND_QUOTA.md": "991cdebceea03f118b0735401fdd4197ea07cac63ebfad281b25d65844da844d",
+    "ci\\aura_developer_fabric_roadmap_overlay.json": "db1f6cedfaffe78c6ec9786a2989c6d89d435bcba330011ee2aa2444c9d675c9"
+  }
+}

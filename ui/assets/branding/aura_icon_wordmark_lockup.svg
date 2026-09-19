@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480">
+<defs>
+  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#D466FF"/>
+    <stop offset="58%" stop-color="#8A7FFF"/>
+    <stop offset="100%" stop-color="#7DEFFF"/>
+  </linearGradient>
+</defs>
+<g transform="translate(170,40) scale(0.38)">
+  <path d="M 448.72 5.88 Q 472.50 0.00 496.79 0.00 Q 520.60 0.20 535.26 32.35 L 1000.00 1000.00 L 737.18 1000.00 L 634.62 844.12 L 522.44 844.12 L 586.54 755.88 L 685.90 752.94 L 477.56 267.65 L 205.13 997.06 L 0.00 1000.00 L 416.67 44.12 Q 430.50 18.00 448.72 5.88 Z" fill="url(#grad)"/>
+</g>
+<text x="600" y="380" text-anchor="middle" font-family="Segoe UI Light, Montserrat, Arial, sans-serif" font-size="92" font-weight="300" letter-spacing="8" fill="#F4FBFF">AURA</text>
+</svg>

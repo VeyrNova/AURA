@@ -1,0 +1,73 @@
+/* AURA P0.6.6.1.8 POI COMPACT PANEL / SIDEBAR LAYOUT FIX */
+#auraNavigationWorkspace .aura-poi-places.open{
+  margin-bottom:10px;
+  padding:10px;
+}
+#auraNavigationWorkspace .aura-poi-places>header{
+  padding-bottom:7px;
+}
+#auraNavigationWorkspace .aura-poi-categories{
+  gap:5px;
+  padding:8px 0;
+}
+#auraNavigationWorkspace .aura-poi-categories button{
+  gap:5px;
+  min-height:34px;
+  padding:6px 7px;
+}
+#auraNavigationWorkspace .aura-poi-categories button i{
+  width:18px;
+  height:18px;
+  flex-basis:18px;
+}
+#auraNavigationWorkspace .aura-poi-tools{
+  gap:6px;
+  padding-bottom:7px;
+}
+#auraNavigationWorkspace #auraPoiSearch{
+  padding:8px 9px;
+}
+/* Keep the POI window compact: roughly four cards are visible, then the list scrolls internally. */
+#auraNavigationWorkspace .aura-poi-results{
+  max-height:clamp(188px,26vh,232px)!important;
+  min-height:0;
+  gap:5px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+  padding-right:4px;
+  scrollbar-gutter:stable;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(72,211,245,.52) rgba(3,13,24,.28);
+}
+#auraNavigationWorkspace .aura-poi-results::-webkit-scrollbar{width:6px}
+#auraNavigationWorkspace .aura-poi-results::-webkit-scrollbar-track{background:rgba(3,13,24,.26);border-radius:999px}
+#auraNavigationWorkspace .aura-poi-results::-webkit-scrollbar-thumb{background:rgba(72,211,245,.48);border-radius:999px}
+#auraNavigationWorkspace .aura-poi-result{
+  grid-template-columns:24px minmax(0,1fr) auto;
+  gap:6px;
+  min-height:46px;
+  padding:6px 7px;
+}
+#auraNavigationWorkspace .aura-poi-result-icon{
+  width:22px;
+  height:22px;
+  font-size:8px;
+}
+#auraNavigationWorkspace .aura-poi-result-copy b{font-size:8.5px}
+#auraNavigationWorkspace .aura-poi-result-copy small{margin-top:2px;line-height:1.25}
+#auraNavigationWorkspace .aura-poi-result-copy em{margin-top:2px}
+#auraNavigationWorkspace .aura-poi-places>footer{
+  margin-top:7px;
+  padding-top:7px;
+}
+/* Short desktop windows: preserve room for MODE and the simulator below the POI card. */
+@media (max-height:820px){
+  #auraNavigationWorkspace .aura-poi-results{max-height:178px!important}
+  #auraNavigationWorkspace .aura-poi-categories{padding:6px 0}
+  #auraNavigationWorkspace .aura-poi-categories button{min-height:31px;padding:5px 6px}
+  #auraNavigationWorkspace .aura-poi-tools{gap:5px;padding-bottom:6px}
+}
+@media (min-height:1000px){
+  #auraNavigationWorkspace .aura-poi-results{max-height:248px!important}
+}

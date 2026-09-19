@@ -1,0 +1,17 @@
+{
+  "schema": "aura.dev.workspace-policy.v1",
+  "dev_root": "C:\\AURA GPT version",
+  "rules": {
+    "runtime_source_stays_at_dev_root": true,
+    "new_patch_work_goes_to__dev_patches_current": true,
+    "release_zips_go_to__dev_releases": true,
+    "diagnostics_go_to__dev_diagnostics": true,
+    "temporary_builds_go_to__dev_build_or_system_temp": true,
+    "staging_goes_to__dev_staging": true,
+    "backups_keep_only_files_changed_by_current_patch": true,
+    "one_primary_dev_venv": true,
+    "heavy_test_sandboxes_deleted_after_report": true,
+    "models_never_auto_deleted": true,
+    "user_data_never_auto_deleted": true
+  }
+}

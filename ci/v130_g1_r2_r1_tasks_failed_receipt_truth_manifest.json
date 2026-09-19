@@ -1,0 +1,15 @@
+{
+  "schema": "aura.v130.w130-g1-r2-r1.tasks-failed-receipt-truth.manifest.v1",
+  "created_at": "2026-08-30T17:51:29",
+  "canonical_version": "1.2.3",
+  "target_version": "1.3.0",
+  "failed_r2_parent_sha256": "57e256cfb4b8374190ce730ce5c81bb8b58eebfce0192adfa4f40558b6fe37d4",
+  "g1_r1_parent_sha256": "d56d5db299a46e50b480be8897dece5fbd179c9b8622efdfded007b834c50e41",
+  "root_cause_fixed": "stale character offset inserted truth block into build_personal_result_payload_v123",
+  "r1_fix": "recompute summarize function semantic anchor after all prior prospective edits",
+  "presenter_sha256": "a5c44f50e83d91dca84529033f2a2b2d51673e839f49954433a5f44c6f59f820",
+  "personal_results_js_sha256": "4e7b0037697015fa09a999bb1aa13eae30bac7960bcc79581040d1f3080edc51",
+  "invariant_sha256": "23ab28a8c5a0383c31536a759cfb3eb02fa95d075796d0ccf9a45b76d2e52e73",
+  "protected_core_sha256": "19cdbcfd4382c4923e65827f92d927ff427e328696175f9b38379e9c3da68374",
+  "version_sha256": "8ab2d0c466dbfb832d1807027c4363a2af690017e587e243fc736e8424b84e8a"
+}

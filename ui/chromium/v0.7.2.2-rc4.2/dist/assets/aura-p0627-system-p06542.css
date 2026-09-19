@@ -1,0 +1,552 @@
+/* AURA P0.6.2.7 — System Service Foundation */
+.aura-p0627-system{position:absolute;z-index:27;inset:14px 14px 92px 14px;border-radius:15px;overflow:hidden;opacity:0;transform:translateY(10px) scale(.995);pointer-events:none;transition:.22s ease;background:linear-gradient(145deg,rgba(3,17,27,.988),rgba(4,9,18,.982));box-shadow:0 28px 100px rgba(0,0,0,.48);display:flex;flex-direction:column}
+.aura-p0627-system.open{opacity:1;transform:none;pointer-events:auto}
+.aura-p0627-system>header{height:60px;flex:0 0 60px;padding:0 17px 0 20px;border-bottom:1px solid rgba(105,232,255,.1);display:flex;align-items:center;justify-content:space-between}.aura-p0627-system>header span{display:block;color:#baf4ff;font-size:11px;letter-spacing:.18em}.aura-p0627-system>header small{display:block;color:#587789;font-size:9px;margin-top:3px}.aura-p0627-head-actions{display:flex;align-items:center;gap:9px}.aura-p0627-head-actions i{font-style:normal;color:#79d9ee;font-size:8px;letter-spacing:.12em}.aura-p0627-head-actions button{width:31px;height:31px;border:1px solid rgba(105,232,255,.12);border-radius:8px;background:#06131e;color:#7fa4b5;cursor:pointer}
+.aura-p0627-banner{margin:10px 12px 8px;padding:9px 12px;border:1px solid rgba(104,223,255,.1);border-radius:9px;background:linear-gradient(90deg,rgba(29,87,105,.13),rgba(60,36,103,.08));display:flex;align-items:center;gap:11px}.aura-p0627-banner b{font-size:8.5px;letter-spacing:.11em;color:#9eeeff}.aura-p0627-banner span{font-size:9px;color:#668899}
+.aura-p0627-resources{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 12px 9px}.aura-p0627-resources article{padding:9px 10px;border:1px solid rgba(105,232,255,.08);border-radius:10px;background:rgba(3,14,23,.6)}.aura-p0627-resources small{display:block;font-size:8px;letter-spacing:.12em;color:#587f92}.aura-p0627-resources b{display:block;margin:3px 0 7px;font-size:17px;color:#c6f5ff}.aura-p0627-resources i{display:block;height:3px;border-radius:3px;background:rgba(105,232,255,.08);overflow:hidden}.aura-p0627-resources em{display:block;height:100%;width:0;background:linear-gradient(90deg,#5fdcf5,#8b70df);transition:width .45s ease}
+.aura-p0627-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 12px 8px}.aura-p0627-card{border:1px solid rgba(105,232,255,.08);border-radius:10px;background:rgba(3,14,23,.6);overflow:hidden}.aura-p0627-card .title{height:36px;padding:0 10px;border-bottom:1px solid rgba(105,232,255,.06);display:flex;align-items:center;justify-content:space-between}.aura-p0627-card .title span{font-size:8.5px;letter-spacing:.12em;color:#77c4d6}.aura-p0627-card .title small{font-size:8px;color:#4f6f7f}
+.aura-p0627-kv{display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:7px}.aura-p0627-kv>div{min-width:0;padding:7px 8px;background:rgba(6,21,31,.43);border-radius:6px}.aura-p0627-kv small{display:block;font-size:7.5px;letter-spacing:.08em;color:#557789}.aura-p0627-kv b{display:block;margin-top:3px;font-size:9.5px;color:#b9e8f2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aura-p0627-card.capabilities{margin:0 12px 8px;flex:0 0 auto}.aura-p0627-cap-list{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;padding:7px}.aura-p0627-cap-list article{min-width:0;display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;padding:7px 8px;border-radius:7px;background:rgba(5,19,29,.52);border:1px solid rgba(105,232,255,.05)}.aura-p0627-cap-list article div{min-width:0}.aura-p0627-cap-list b{display:block;font-size:8.5px;color:#a9dce8}.aura-p0627-cap-list small{display:block;font-size:7px;color:#4f7181;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.aura-p0627-cap-list span{font-size:7.5px;color:#6d8b9a}.aura-p0627-cap-list i{font-style:normal;font-size:7px;letter-spacing:.06em;color:#758d99}.aura-p0627-cap-list article.enabled i{color:#82e6c4}.aura-p0627-cap-list article.locked i{color:#d2aa70}.aura-p0627-cap-list article.blocked i{color:#d98299}
+.aura-p0627-card.audit{margin:0 12px 8px;flex:1;min-height:0;display:flex;flex-direction:column}.aura-p0627-audit-list{padding:6px 7px 8px;overflow:auto;display:grid;gap:4px}.aura-p0627-audit-list article{display:grid;grid-template-columns:18px 1fr auto;gap:7px;align-items:center;padding:6px 7px;border-radius:7px;background:rgba(5,19,29,.46)}.aura-p0627-audit-list article>span{font-size:11px;color:#8bdcbe}.aura-p0627-audit-list article.denied>span{color:#d9869d}.aura-p0627-audit-list b{display:block;font-size:8px;color:#9fcbd6}.aura-p0627-audit-list small{display:block;margin-top:2px;font-size:7.5px;color:#526f7d}.aura-p0627-audit-list time{font-size:7px;color:#496775;white-space:nowrap}
+.aura-p0627-system>footer{flex:0 0 34px;padding:0 13px;border-top:1px solid rgba(105,232,255,.07);display:flex;align-items:center;justify-content:space-between;gap:10px}.aura-p0627-system>footer span{font-size:7.5px;color:#4e7180;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.aura-p0627-system>footer b{font-size:7.5px;letter-spacing:.09em;color:#bf8294;white-space:nowrap}.aura-p0627-empty{padding:14px;text-align:center;color:#557788;font-size:9px}
+#systemBtn{color:#688b9d!important}#systemBtn.active{color:#a8efff!important}
+@media(max-width:1000px){.aura-p0627-system{left:10px;right:10px}.aura-p0627-cap-list{grid-template-columns:1fr}}
+@media(max-width:760px){.aura-p0627-resources{grid-template-columns:1fr 1fr}.aura-p0627-grid{grid-template-columns:1fr}.aura-p0627-system{bottom:94px}.aura-p0627-card.audit{display:none}}
+
+
+/* AURA P0.6.2.8 — fixed safe-app launcher */
+.aura-p0628-safe-actions{margin:0 12px 8px;padding:8px 9px 9px;border:1px solid rgba(105,232,255,.09);border-radius:10px;background:linear-gradient(90deg,rgba(11,44,58,.34),rgba(37,24,67,.18))}
+.aura-p0628-safe-actions>div{display:flex;align-items:end;justify-content:space-between;margin:0 1px 7px}.aura-p0628-safe-actions>div span{font-size:8.5px;letter-spacing:.12em;color:#8cdae9}.aura-p0628-safe-actions>div small{font-size:7.5px;color:#526f7d}
+.aura-p0628-safe-actions nav{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.aura-p0628-safe-actions button{height:34px;border:1px solid rgba(105,232,255,.1);border-radius:8px;background:rgba(4,18,28,.72);color:#78aabb;font-size:11px;cursor:pointer;transition:.16s ease}.aura-p0628-safe-actions button b{margin-left:5px;font-size:7.5px;letter-spacing:.07em;color:#a6dce8}.aura-p0628-safe-actions button:hover{border-color:rgba(105,232,255,.24);background:rgba(11,43,56,.72);color:#baf4ff}.aura-p0628-safe-actions button.ok{border-color:rgba(91,230,180,.34);box-shadow:inset 0 0 22px rgba(57,203,154,.08)}.aura-p0628-safe-actions button.error{border-color:rgba(245,101,132,.3)}.aura-p0628-safe-actions button:disabled{opacity:.45;cursor:wait}
+@media(max-width:760px){.aura-p0628-safe-actions nav{grid-template-columns:1fr 1fr}}
+
+
+/* AURA P0.6.5.0 — Desktop Intelligence safe-action contract */
+.aura-p0650-desktop-contract{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:0 12px 9px;
+}
+.aura-p0650-desktop-contract>div{
+  min-width:0;padding:8px 9px;border:1px solid rgba(105,232,255,.08);
+  border-radius:9px;background:rgba(4,18,28,.58);
+}
+.aura-p0650-desktop-contract small{
+  display:block;font-size:7px;letter-spacing:.1em;color:#527687;
+}
+.aura-p0650-desktop-contract b{
+  display:block;margin-top:3px;font-size:8px;color:#9fd9e5;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.aura-p0650-desktop-contract b[data-policy-safe]{color:#82e6c4}
+.aura-p0650-desktop-contract b[data-policy-run],
+.aura-p0650-desktop-contract b[data-policy-system]{color:#d995a5}
+@media(max-width:760px){
+  .aura-p0650-desktop-contract{grid-template-columns:1fr 1fr}
+}
+
+
+/* AURA P0.6.5.1 — authorized projects / folders */
+.aura-p0650-desktop-contract{grid-template-columns:repeat(5,1fr)}
+.aura-p0650-desktop-contract b[data-policy-folder-reg],
+.aura-p0650-desktop-contract b[data-policy-folder-open]{color:#d9c27d}
+
+.aura-p0651-folders{
+  margin:0 12px 8px;flex:0 0 auto;border:1px solid rgba(105,232,255,.09);
+  border-radius:10px;background:linear-gradient(90deg,rgba(7,36,50,.36),rgba(31,23,58,.2));overflow:hidden
+}
+.aura-p0651-title{
+  height:34px;padding:0 10px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(105,232,255,.06)
+}
+.aura-p0651-title span{display:block;font-size:8.5px;letter-spacing:.12em;color:#8cd8e8}
+.aura-p0651-title small{display:block;margin-top:2px;font-size:7px;color:#4e7080}
+.aura-p0651-title>b{font-size:11px;color:#9fe7cf}
+.aura-p0651-authorize{display:grid;grid-template-columns:minmax(190px,2fr) minmax(130px,1fr) 92px;gap:6px;padding:7px 8px}
+.aura-p0651-authorize input{
+  min-width:0;height:30px;padding:0 9px;border:1px solid rgba(105,232,255,.1);
+  border-radius:7px;outline:none;background:rgba(2,13,22,.7);color:#a8dbe5;font-size:8px
+}
+.aura-p0651-authorize button,.aura-p0651-folder-list button{
+  border:1px solid rgba(105,232,255,.11);border-radius:7px;background:rgba(4,18,28,.78);
+  color:#9fd8e4;font-size:7px;letter-spacing:.06em;cursor:pointer
+}
+.aura-p0651-authorize button:disabled,.aura-p0651-folder-list button:disabled{opacity:.4;cursor:wait}
+.aura-p0651-action{
+  margin:0 8px 6px;padding:5px 7px;border-radius:6px;background:rgba(3,17,26,.52);
+  color:#5e8391;font-size:7.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.aura-p0651-action[data-ok="yes"]{color:#7eddbd}.aura-p0651-action[data-ok="no"]{color:#df8da3}
+.aura-p0651-folder-list{display:grid;gap:4px;max-height:124px;overflow:auto;padding:0 8px 7px}
+.aura-p0651-folder-list>article{
+  min-width:0;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:center;
+  padding:6px 7px;border-radius:7px;background:rgba(3,16,25,.56)
+}
+.aura-p0651-folder-list>article>div{min-width:0}
+.aura-p0651-folder-list b{display:block;font-size:8px;color:#b5e6ef}
+.aura-p0651-folder-list small{display:block;margin-top:2px;font-size:6.8px;color:#4e7180;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aura-p0651-folder-list>article>i{font-style:normal;font-size:6.5px;color:#7fdcbd}
+.aura-p0651-folder-list>article.missing>i{color:#db879d}
+.aura-p0651-folder-list nav{display:flex;gap:4px}.aura-p0651-folder-list button{height:24px;padding:0 6px}
+.aura-p0651-preview{margin:0 8px 8px;border:1px solid rgba(105,232,255,.06);border-radius:8px;background:rgba(2,13,21,.52);overflow:hidden}
+.aura-p0651-preview>div:first-child{height:28px;padding:0 8px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(105,232,255,.05)}
+.aura-p0651-preview>div:first-child span{font-size:7px;letter-spacing:.09em;color:#69aab9}
+.aura-p0651-preview>div:first-child small{font-size:6.7px;color:#4e7180}
+.aura-p0651-preview-list{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-height:86px;overflow:auto;padding:5px}
+.aura-p0651-preview-list>article{min-width:0;display:grid;grid-template-columns:13px minmax(0,1fr) auto;gap:4px;align-items:center;padding:4px 5px;border-radius:5px;background:rgba(5,20,29,.48)}
+.aura-p0651-preview-list span{font-size:8px;color:#70c9dc}
+.aura-p0651-preview-list b{min-width:0;font-size:6.9px;color:#9eced8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aura-p0651-preview-list small{font-size:6.3px;color:#4f7180}
+.aura-p0651-preview-list>i{grid-column:1/-1;padding:8px;text-align:center;color:#4f7180;font-size:7px}
+
+@media(max-width:900px){
+  .aura-p0650-desktop-contract{grid-template-columns:repeat(3,1fr)}
+  .aura-p0651-authorize{grid-template-columns:1fr 1fr}
+  .aura-p0651-authorize button{grid-column:1/-1;height:28px}
+  .aura-p0651-preview-list{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .aura-p0650-desktop-contract{grid-template-columns:1fr 1fr}
+  .aura-p0651-folder-list>article{grid-template-columns:1fr auto}
+  .aura-p0651-folder-list nav{grid-column:1/-1}
+  .aura-p0651-preview-list{grid-template-columns:1fr}
+}
+
+
+/* AURA P0.6.5.2 — authorized file intelligence */
+.aura-p0650-desktop-contract{grid-template-columns:repeat(4,1fr)}
+.aura-p0650-desktop-contract b[data-policy-file-read]{color:#82e6c4}
+
+.aura-p0651-preview-list>article{
+  grid-template-columns:13px minmax(0,1fr) auto auto;
+}
+.aura-p0651-preview-list>article button{
+  height:20px;padding:0 6px;border:1px solid rgba(105,232,255,.13);
+  border-radius:5px;background:rgba(4,21,31,.78);color:#8dd9e7;
+  font-size:6px;letter-spacing:.06em;cursor:pointer
+}
+.aura-p0651-preview-list>article button:hover{border-color:rgba(105,232,255,.3)}
+.aura-p0651-preview-list>article button:disabled{opacity:.45;cursor:wait}
+.aura-p0651-preview-list>article.readable{border:1px solid rgba(89,215,174,.06)}
+
+.aura-p0652-file{
+  margin:0 8px 8px;border:1px solid rgba(89,215,174,.08);border-radius:8px;
+  overflow:hidden;background:rgba(2,14,21,.64)
+}
+.aura-p0652-file>div{
+  height:28px;padding:0 8px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(89,215,174,.06)
+}
+.aura-p0652-file>div span{font-size:7px;letter-spacing:.09em;color:#75cdb0}
+.aura-p0652-file>div small{font-size:6.7px;color:#52786e}
+.aura-p0652-file pre{
+  margin:0;padding:8px 9px;max-height:180px;overflow:auto;white-space:pre-wrap;
+  word-break:break-word;font:7px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;
+  color:#99cbd2;background:transparent
+}
+
+
+/* AURA P0.6.5.3 — deterministic local document intelligence */
+.aura-p0650-desktop-contract b[data-policy-file-analysis]{color:#82e6c4}
+.aura-p0653-analysis{
+  margin:0 8px 8px;border:1px solid rgba(135,112,230,.12);border-radius:8px;
+  overflow:hidden;background:rgba(8,8,24,.54)
+}
+.aura-p0653-analysis>div:first-child{
+  height:28px;padding:0 8px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(135,112,230,.08)
+}
+.aura-p0653-analysis>div:first-child span{font-size:7px;letter-spacing:.09em;color:#a598e9}
+.aura-p0653-analysis>div:first-child small{font-size:6.7px;color:#6e668f}
+.aura-p0653-controls{display:grid;grid-template-columns:minmax(180px,1fr) 72px 72px 72px;gap:5px;padding:7px}
+.aura-p0653-controls input{
+  min-width:0;height:27px;padding:0 8px;border:1px solid rgba(135,112,230,.12);
+  border-radius:6px;background:rgba(3,12,22,.75);color:#a9ced7;font-size:7px;outline:none
+}
+.aura-p0653-controls button{
+  border:1px solid rgba(135,112,230,.14);border-radius:6px;background:rgba(16,14,39,.72);
+  color:#b7aef0;font-size:6.5px;letter-spacing:.05em;cursor:pointer
+}
+.aura-p0653-controls button:disabled{opacity:.4;cursor:wait}
+.aura-p0653-analysis-meta{padding:0 8px 6px;color:#6e7894;font-size:6.8px}
+.aura-p0653-analysis pre{
+  margin:0;padding:8px 9px;max-height:210px;overflow:auto;white-space:pre-wrap;
+  word-break:break-word;font:7px/1.52 ui-monospace,SFMono-Regular,Consolas,monospace;
+  color:#aabbd8;background:rgba(2,9,17,.34);border-top:1px solid rgba(135,112,230,.06)
+}
+
+
+/* ========================================================================
+   AURA P0.6.5.3.1 — SYS readability + full-panel vertical scroll
+   ======================================================================== */
+
+/* The SYS workspace can now grow naturally and scroll as a whole. */
+.aura-p0627-system{
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  scrollbar-width:auto;
+  scrollbar-color:rgba(105,232,255,.48) rgba(3,16,25,.72);
+  overscroll-behavior:contain;
+  scroll-behavior:smooth;
+}
+
+/* Prevent the long sections from being compressed to fit the viewport. */
+.aura-p0627-system>.aura-p0627-banner,
+.aura-p0627-system>.aura-p0650-desktop-contract,
+.aura-p0627-system>.aura-p0627-resources,
+.aura-p0627-system>.aura-p0628-safe-actions,
+.aura-p0627-system>.aura-p0651-folders,
+.aura-p0627-system>.aura-p0627-grid,
+.aura-p0627-system>.aura-p0627-card.capabilities{
+  flex:0 0 auto !important;
+}
+.aura-p0627-system>.aura-p0627-card.audit{
+  flex:0 0 auto !important;
+  min-height:180px;
+}
+
+/* Keep the window controls accessible while scrolling. */
+.aura-p0627-system>header{
+  position:sticky;
+  top:0;
+  z-index:8;
+  background:rgba(3,17,27,.985);
+  backdrop-filter:blur(18px);
+}
+.aura-p0627-system>footer{
+  position:sticky;
+  bottom:0;
+  z-index:7;
+  background:rgba(3,14,23,.97);
+  backdrop-filter:blur(16px);
+}
+
+/* Chromium scrollbar — intentionally visible, not ultra-thin. */
+.aura-p0627-system::-webkit-scrollbar{width:11px}
+.aura-p0627-system::-webkit-scrollbar-track{
+  background:rgba(2,12,20,.72);
+  border-left:1px solid rgba(105,232,255,.04);
+}
+.aura-p0627-system::-webkit-scrollbar-thumb{
+  min-height:48px;
+  border:2px solid rgba(2,12,20,.72);
+  border-radius:10px;
+  background:rgba(105,232,255,.38);
+}
+.aura-p0627-system::-webkit-scrollbar-thumb:hover{
+  background:rgba(105,232,255,.58);
+}
+
+/* Readability pass — preserve hierarchy while removing 6–7 px text. */
+.aura-p0627-system>header span{font-size:13px}
+.aura-p0627-system>header small{font-size:10px}
+.aura-p0627-head-actions i{font-size:9px}
+
+.aura-p0627-banner b{font-size:10px}
+.aura-p0627-banner span{font-size:10px;line-height:1.35}
+
+.aura-p0650-desktop-contract small{font-size:8.5px}
+.aura-p0650-desktop-contract b{font-size:10px}
+
+.aura-p0627-resources small{font-size:9px}
+.aura-p0627-resources b{font-size:18px}
+
+.aura-p0628-safe-actions>div span{font-size:10px}
+.aura-p0628-safe-actions>div small{font-size:8.5px}
+.aura-p0628-safe-actions button b{font-size:9px}
+
+.aura-p0651-title span{font-size:10px}
+.aura-p0651-title small{font-size:8.5px}
+.aura-p0651-title>b{font-size:12px}
+.aura-p0651-authorize input{font-size:10px}
+.aura-p0651-authorize button,
+.aura-p0651-folder-list button{font-size:8.5px}
+.aura-p0651-action{font-size:9px}
+.aura-p0651-folder-list b{font-size:10px}
+.aura-p0651-folder-list small{font-size:8.5px}
+.aura-p0651-folder-list>article>i{font-size:8px}
+
+.aura-p0651-preview>div:first-child span,
+.aura-p0652-file>div span,
+.aura-p0653-analysis>div:first-child span{font-size:9px}
+.aura-p0651-preview>div:first-child small,
+.aura-p0652-file>div small,
+.aura-p0653-analysis>div:first-child small{font-size:8px}
+.aura-p0651-preview-list span{font-size:9px}
+.aura-p0651-preview-list b{font-size:8.5px}
+.aura-p0651-preview-list small{font-size:7.8px}
+.aura-p0651-preview-list>article button{font-size:7.5px}
+
+.aura-p0652-file pre{font-size:9.5px;line-height:1.6}
+.aura-p0653-controls input{font-size:9.5px}
+.aura-p0653-controls button{font-size:8.5px}
+.aura-p0653-analysis-meta{font-size:8.5px}
+.aura-p0653-analysis pre{font-size:9.5px;line-height:1.6}
+
+.aura-p0627-card .title span{font-size:10px}
+.aura-p0627-card .title small{font-size:9px}
+.aura-p0627-kv small{font-size:8.5px}
+.aura-p0627-kv b{font-size:10.5px}
+.aura-p0627-cap-list b{font-size:10px}
+.aura-p0627-cap-list small{font-size:8.5px}
+.aura-p0627-cap-list span{font-size:8.5px}
+.aura-p0627-cap-list i{font-size:8.5px}
+.aura-p0627-audit-list b{font-size:9.5px}
+.aura-p0627-audit-list small{font-size:8.5px}
+.aura-p0627-audit-list time{font-size:8px}
+.aura-p0627-system>footer span,
+.aura-p0627-system>footer b{font-size:8.5px}
+
+@media(max-width:900px){
+  .aura-p0627-system::-webkit-scrollbar{width:9px}
+}
+\n\n/* ========================================================================\n   AURA P0.6.5.4 — Authorized Project Intelligence\n   ======================================================================== */\n.aura-p0650-desktop-contract b[data-policy-project-analysis]{color:#82e6c4}\n.aura-p0654-project{\n  margin:0 8px 9px;border:1px solid rgba(100,224,245,.15);border-radius:8px;\n  overflow:hidden;background:rgba(3,14,26,.68);flex:0 0 auto\n}\n.aura-p0654-project-title{\n  min-height:30px;padding:0 9px;display:flex;align-items:center;justify-content:space-between;gap:10px;\n  border-bottom:1px solid rgba(100,224,245,.08)\n}\n.aura-p0654-project-title span{font-size:9.5px;letter-spacing:.09em;color:#8de6ef}\n.aura-p0654-project-title small{font-size:8px;color:#728998;text-align:right}\n.aura-p0654-project-controls{\n  display:grid;grid-template-columns:minmax(125px,.7fr) minmax(190px,1fr) 72px 72px 72px;gap:5px;padding:7px\n}\n.aura-p0654-project-controls select,.aura-p0654-project-controls input{\n  min-width:0;height:29px;padding:0 8px;border:1px solid rgba(100,224,245,.14);border-radius:6px;\n  background:rgba(2,12,22,.88);color:#b7dbe0;font-size:9.5px;outline:none\n}\n.aura-p0654-project-controls button{\n  border:1px solid rgba(100,224,245,.15);border-radius:6px;background:rgba(5,24,34,.8);\n  color:#91e4ea;font-size:8.5px;letter-spacing:.04em;cursor:pointer\n}\n.aura-p0654-project-controls button:hover{border-color:rgba(100,224,245,.42)}\n.aura-p0654-project-controls button:disabled{opacity:.4;cursor:wait}\n.aura-p0654-project-meta{padding:0 9px 6px;color:#7e9ba7;font-size:8.5px;line-height:1.35}\n.aura-p0654-provenance{display:flex;gap:4px;flex-wrap:wrap;padding:0 9px 7px}\n.aura-p0654-provenance span{\n  padding:3px 6px;border-radius:10px;border:1px solid rgba(100,224,245,.11);\n  background:rgba(100,224,245,.045);color:#83b9c1;font-size:7.8px\n}\n.aura-p0654-project pre{\n  margin:0;padding:9px 10px;max-height:260px;overflow:auto;white-space:pre-wrap;word-break:break-word;\n  font:9.5px/1.58 ui-monospace,SFMono-Regular,Consolas,monospace;color:#b3c8dc;\n  background:rgba(2,9,17,.38);border-top:1px solid rgba(100,224,245,.07)\n}\n@media(max-width:900px){\n  .aura-p0654-project-controls{grid-template-columns:1fr 1fr 1fr}\n  .aura-p0654-project-controls select,.aura-p0654-project-controls input{grid-column:1/-1}\n}\n
+
+/* ========================================================================
+   AURA P0.6.5.4.1 — Forced Project UI asset refresh / control visibility
+   ======================================================================== */
+.aura-p0654-project{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  min-height:150px;
+}
+.aura-p0654-project-controls{
+  display:grid !important;
+  grid-template-columns:minmax(150px,.8fr) minmax(210px,1fr) repeat(3,82px) !important;
+  gap:6px !important;
+  align-items:center !important;
+}
+.aura-p0654-project-controls button[data-project-mode]{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  min-height:31px !important;
+  font-size:9px !important;
+  font-weight:700 !important;
+}
+.aura-p0654-project-controls button[data-project-mode="summary"]{
+  border-color:rgba(119,233,255,.38) !important;
+  background:rgba(18,55,72,.88) !important;
+  color:#c7f6ff !important;
+}
+@media(max-width:1100px){
+  .aura-p0654-project-controls{
+    grid-template-columns:1fr 1fr 1fr !important;
+  }
+  .aura-p0654-project-controls select,
+  .aura-p0654-project-controls input{
+    grid-column:1/-1 !important;
+  }
+}
+
+
+/* ========================================================================
+   AURA P0.6.5.4.2 — Project controls contrast / visible input text
+   Runtime issue confirmed on video:
+   - native white select/input surface
+   - CHERCHER / CONTEXTE white buttons
+   - typed text effectively invisible
+   ======================================================================== */
+
+.aura-p0627-system .aura-p0654-project{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  margin:8px !important;
+  border:1px solid rgba(99,225,245,.22) !important;
+  border-radius:9px !important;
+  background:rgba(3,14,26,.94) !important;
+  overflow:hidden !important;
+}
+
+.aura-p0627-system .aura-p0654-project-title{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:14px !important;
+  min-height:34px !important;
+  padding:0 10px !important;
+  border-bottom:1px solid rgba(99,225,245,.10) !important;
+  background:rgba(4,20,31,.92) !important;
+}
+
+.aura-p0627-system .aura-p0654-project-title span{
+  display:block !important;
+  color:#9df3fb !important;
+  font-size:10px !important;
+  font-weight:700 !important;
+  letter-spacing:.08em !important;
+  white-space:nowrap !important;
+}
+
+.aura-p0627-system .aura-p0654-project-title small{
+  display:block !important;
+  color:#7898a3 !important;
+  font-size:8.5px !important;
+  text-align:right !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls{
+  display:grid !important;
+  grid-template-columns:minmax(170px,.8fr) minmax(260px,1.15fr) repeat(3,88px) !important;
+  gap:7px !important;
+  align-items:center !important;
+  padding:9px !important;
+  background:rgba(2,11,20,.82) !important;
+}
+
+/* Force Chromium native controls into the AURA dark surface. */
+.aura-p0627-system .aura-p0654-project-controls select,
+.aura-p0627-system .aura-p0654-project-controls input{
+  -webkit-appearance:none !important;
+  appearance:none !important;
+  box-sizing:border-box !important;
+  min-width:0 !important;
+  height:34px !important;
+  padding:0 11px !important;
+  border:1px solid rgba(105,232,255,.34) !important;
+  border-radius:7px !important;
+  outline:none !important;
+  background:#071923 !important;
+  background-color:#071923 !important;
+  color:#d8f7fb !important;
+  -webkit-text-fill-color:#d8f7fb !important;
+  caret-color:#79efff !important;
+  font:500 10px/1.2 "Segoe UI",Arial,sans-serif !important;
+  opacity:1 !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls input::placeholder{
+  color:#77939c !important;
+  -webkit-text-fill-color:#77939c !important;
+  opacity:1 !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls select{
+  color-scheme:dark !important;
+  padding-right:30px !important;
+  background-image:
+    linear-gradient(45deg,transparent 50%,#77eaf3 50%),
+    linear-gradient(135deg,#77eaf3 50%,transparent 50%) !important;
+  background-position:
+    calc(100% - 15px) 14px,
+    calc(100% - 10px) 14px !important;
+  background-size:5px 5px,5px 5px !important;
+  background-repeat:no-repeat !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls select option{
+  background:#071923 !important;
+  color:#d8f7fb !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls select:focus,
+.aura-p0627-system .aura-p0654-project-controls input:focus{
+  border-color:#6ceaf6 !important;
+  box-shadow:0 0 0 2px rgba(108,234,246,.10) !important;
+  background:#09202b !important;
+}
+
+/* Buttons: never allow native white button rendering. */
+.aura-p0627-system .aura-p0654-project-controls button[data-project-mode]{
+  -webkit-appearance:none !important;
+  appearance:none !important;
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  box-sizing:border-box !important;
+  min-height:34px !important;
+  height:34px !important;
+  padding:0 8px !important;
+  border-radius:7px !important;
+  border:1px solid rgba(103,228,246,.32) !important;
+  background:#0a2632 !important;
+  background-color:#0a2632 !important;
+  color:#bff8ff !important;
+  -webkit-text-fill-color:#bff8ff !important;
+  font:700 9px/1 "Segoe UI",Arial,sans-serif !important;
+  letter-spacing:.035em !important;
+  cursor:pointer !important;
+  box-shadow:none !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls button[data-project-mode="summary"]{
+  background:#0d3341 !important;
+  border-color:rgba(100,235,255,.52) !important;
+  color:#d8fbff !important;
+  -webkit-text-fill-color:#d8fbff !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls button[data-project-mode="search"]{
+  background:#171c3b !important;
+  border-color:rgba(159,139,255,.42) !important;
+  color:#ded7ff !important;
+  -webkit-text-fill-color:#ded7ff !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls button[data-project-mode="context"]{
+  background:#102b2d !important;
+  border-color:rgba(117,232,207,.40) !important;
+  color:#d1fff4 !important;
+  -webkit-text-fill-color:#d1fff4 !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls button[data-project-mode]:hover{
+  filter:brightness(1.16) !important;
+  border-color:rgba(130,240,255,.72) !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls button[data-project-mode]:active{
+  transform:translateY(1px) !important;
+}
+
+.aura-p0627-system .aura-p0654-project-controls button[data-project-mode]:disabled{
+  opacity:.45 !important;
+  cursor:wait !important;
+}
+
+/* Result/readability pass. */
+.aura-p0627-system .aura-p0654-project-meta{
+  padding:1px 10px 7px !important;
+  color:#98c2ca !important;
+  font-size:9px !important;
+  line-height:1.4 !important;
+}
+
+.aura-p0627-system .aura-p0654-provenance{
+  display:flex !important;
+  gap:5px !important;
+  flex-wrap:wrap !important;
+  padding:0 10px 8px !important;
+}
+
+.aura-p0627-system .aura-p0654-provenance span{
+  padding:3px 7px !important;
+  border:1px solid rgba(100,224,245,.16) !important;
+  border-radius:12px !important;
+  background:rgba(100,224,245,.065) !important;
+  color:#9ed7df !important;
+  font-size:8px !important;
+}
+
+.aura-p0627-system .aura-p0654-project pre{
+  margin:0 !important;
+  padding:10px 11px !important;
+  max-height:280px !important;
+  overflow:auto !important;
+  white-space:pre-wrap !important;
+  word-break:break-word !important;
+  border-top:1px solid rgba(100,224,245,.08) !important;
+  background:rgba(1,9,16,.55) !important;
+  color:#c5d9e8 !important;
+  font:9.5px/1.62 ui-monospace,SFMono-Regular,Consolas,monospace !important;
+}
+
+@media(max-width:1150px){
+  .aura-p0627-system .aura-p0654-project-controls{
+    grid-template-columns:1fr 1fr 1fr !important;
+  }
+  .aura-p0627-system .aura-p0654-project-controls select,
+  .aura-p0627-system .aura-p0654-project-controls input{
+    grid-column:1/-1 !important;
+  }
+}

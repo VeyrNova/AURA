@@ -1,0 +1,52 @@
+{
+  "schema": "aura.skill-lifecycle-developer-contract.v102.v1",
+  "status": "CERTIFIED_V1_0_2_SKILL_LIFECYCLE_DEVELOPER_CONTRACT",
+  "generated_at": "2026-08-28T20:26:33",
+  "product_version": "1.0.2",
+  "strategy": "NEW_V102_SKILL_LIFECYCLE_AND_DEVELOPER_CONTRACT_REFERENCING_V100_MANIFEST_REGISTRY_AND_V101_SECURE_RUNTIME",
+  "new_authorities": {
+    "skills/developer_contract.py": "d85a3f4587d675fa08d414a52199faad99d0c7f5fc293a41c2db36454cba2ec3",
+    "skills/lifecycle.py": "70aec18373009368bf622da3bbf78dd91ffe3b00a5879fe69e9c10553b893142",
+    "tests/invariants/test_skill_lifecycle_developer_contract_v102.py": "7f9ae2ae6dfff47aaae133a4dfe82fcb1149f5384d8292bbbcb62572269dcc20"
+  },
+  "lifecycle_contract": {
+    "install": "metadata/version validation only",
+    "activate": "register SkillManifest in SkillCapabilityRegistryV100",
+    "deactivate": "unregister SkillManifest from SkillCapabilityRegistryV100",
+    "uninstall": "remove Skill lifecycle metadata; never touch IntegrationRegistry providers",
+    "execution": "SecureSkillRuntimeV101 only",
+    "dynamic_skill_code": "FORBIDDEN",
+    "direct_python_execution": "FORBIDDEN",
+    "direct_subprocess_execution": "FORBIDDEN",
+    "direct_network_stack": "FORBIDDEN"
+  },
+  "developer_contract": {
+    "strict_unknown_fields": true,
+    "semantic_version_compatibility": true,
+    "immutable_metadata": true,
+    "execution_model": "secure_runtime_v101",
+    "install_scope": "metadata_only",
+    "dynamic_code": false
+  },
+  "preserved_authorities": {
+    "skills/manifest.py": "f8305b0a35634ef6587b9f9a17abb98838d6ca0ff121d65d8745cd7b8593cbcf",
+    "skills/registry.py": "96a5ea3dcb38d9cfc6d212d883b129832e2d9a0d01f6ae38a990dd001c76a58a",
+    "skills/runtime.py": "50335b7643a94e5d907fae69565d09f74e7d312bd71b50007e8b90af9e932b68",
+    "integrations/registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+    "security/permissions.py": "6df1f3a88072355147e9b1409566bb9046a25412f57112830308ccc948c7d4a0",
+    "security/policy_engine_v2.py": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+    "action_receipts/service.py": "4c0f13eefaa6351eca157235d3b0ceea5643474a8cbf0cdb7401c1d71b34023e",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "core/aura_core.py": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474"
+  },
+  "version_identity": {
+    "canonical": "1.0.2",
+    "display": "v1.0.2",
+    "surface_files_changed": 0,
+    "surface_replacements": 0,
+    "spoken_verified": true
+  },
+  "external_network": "NOT USED",
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_state": "V1_0_2_SKILL_LIFECYCLE_DEVELOPER_CONTRACT_COMPLETE_READY_FOR_V1_0_FINAL_ACCEPTANCE_LOCAL_DEPLOYMENT"
+}

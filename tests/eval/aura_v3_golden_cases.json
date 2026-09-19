@@ -1,0 +1,252 @@
+{
+  "schema": "aura.v3.golden_cases",
+  "version": "1.0.0",
+  "description": "Deterministic, offline golden-case matrix for the accepted AURA v3 conversation architecture.",
+  "cases": [
+    {
+      "id": "GC01",
+      "family": "local_only_privacy_forced_local",
+      "title": "Local-only / privacy forces local route",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_model_policy_engine_v3.py"
+        },
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_eligibility_filter_v3.py"
+        }
+      ],
+      "expected": {
+        "provider": "local",
+        "blocked": false,
+        "network_allowed": false
+      }
+    },
+    {
+      "id": "GC02",
+      "family": "cloud_preferred_healthy_provider",
+      "title": "Cloud-preferred request keeps a healthy eligible remote provider",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_model_policy_engine_v3.py"
+        },
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_intelligence_gateway_v3.py"
+        }
+      ],
+      "expected": {
+        "provider": "policy_selected_remote",
+        "blocked": false
+      }
+    },
+    {
+      "id": "GC03",
+      "family": "provider_cooldown_exclusion",
+      "title": "Provider in cooldown is excluded from eligibility",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_provider_health_registry_v3.py"
+        },
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_eligibility_filter_v3.py"
+        }
+      ],
+      "expected": {
+        "health_state": "cooldown",
+        "eligible": false
+      }
+    },
+    {
+      "id": "GC04",
+      "family": "rate_limit_exclusion_and_probe",
+      "title": "Rate-limited provider blocks then reopens as degraded probe",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_provider_health_registry_v3.py"
+        }
+      ],
+      "expected": {
+        "active_state": "rate_limited",
+        "active_eligible": false,
+        "expired_state": "degraded"
+      }
+    },
+    {
+      "id": "GC05",
+      "family": "hard_auth_unavailable",
+      "title": "Hard authentication failure makes remote provider unavailable",
+      "checks": [
+        {
+          "type": "source_contract",
+          "path": "runtime\\aura_provider_health_registry_v3.py",
+          "contains": [
+            "HARD_FAILURES",
+            "state = \"unavailable\""
+          ]
+        },
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_provider_health_registry_v3.py"
+        }
+      ],
+      "expected": {
+        "health_state": "unavailable",
+        "eligible": false
+      }
+    },
+    {
+      "id": "GC06",
+      "family": "policy_primary_success",
+      "title": "Policy primary route succeeds without fallback",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_intelligence_gateway_v3.py"
+        }
+      ],
+      "expected": {
+        "blocked": false,
+        "fallback_count": 0
+      }
+    },
+    {
+      "id": "GC07",
+      "family": "approved_fallback_after_primary_failure",
+      "title": "Primary failure advances only to an approved eligible fallback",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_intelligence_gateway_cross_candidate_failover.py"
+        }
+      ],
+      "expected": {
+        "blocked": false,
+        "fallback_used": true,
+        "arbitrary_fallback": false
+      }
+    },
+    {
+      "id": "GC08",
+      "family": "all_approved_candidates_fail",
+      "title": "All approved candidates fail with bounded final failure",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_intelligence_gateway_v3.py"
+        },
+        {
+          "type": "source_contract",
+          "path": "runtime\\aura_intelligence_gateway_v3.py",
+          "contains": [
+            "last_error_chain",
+            "gateway_attempts"
+          ]
+        }
+      ],
+      "expected": {
+        "ok": false,
+        "blocked": false,
+        "error_code": "executor_error_or_specific"
+      }
+    },
+    {
+      "id": "GC09",
+      "family": "exact_fabric_route_deduplication",
+      "title": "Exact Fabric route is single-delegation and deduplicated",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_fabric_execution_binding_v3.py"
+        },
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_intelligence_gateway_cross_candidate_failover.py"
+        },
+        {
+          "type": "source_contract",
+          "path": "runtime\\aura_intelligence_gateway_v3.py",
+          "contains": [
+            "fabric_route_slug",
+            "seen",
+            "ordered"
+          ]
+        }
+      ],
+      "expected": {
+        "binding_delegations_per_candidate": 1,
+        "duplicate_exact_route_executions": 0
+      }
+    },
+    {
+      "id": "GC10",
+      "family": "xtts_vram_preservation_pressure",
+      "title": "XTTS preservation can exclude routes under VRAM pressure",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_eligibility_filter_v3.py"
+        }
+      ],
+      "expected": {
+        "preserve_xtts": true,
+        "resource_filtering": true
+      }
+    },
+    {
+      "id": "GC11",
+      "family": "insufficient_ram_vram_rejection",
+      "title": "Insufficient RAM/VRAM rejects resource-incompatible candidates",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_eligibility_filter_v3.py"
+        },
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_hardware_capability_service_v3.py"
+        }
+      ],
+      "expected": {
+        "eligible": false,
+        "resource_reason": true
+      }
+    },
+    {
+      "id": "GC12",
+      "family": "network_disallowed_remote_rejection",
+      "title": "Remote provider is rejected when network is disallowed",
+      "checks": [
+        {
+          "type": "invariant",
+          "path": "tests\\invariants\\test_aura_v3_eligibility_filter_v3.py"
+        }
+      ],
+      "expected": {
+        "network_allowed": false,
+        "remote_eligible": false
+      }
+    },
+    {
+      "id": "GC13",
+      "family": "document_fast_lane_outside_v3_gateway",
+      "title": "Document fast lane remains outside the v3 conversation Gateway",
+      "checks": [
+        {
+          "type": "document_fast_lane_static",
+          "path": "ui\\main_window.py"
+        }
+      ],
+      "expected": {
+        "uses_llmworker": true,
+        "direct_v3_gateway_call": false,
+        "document_context": true
+      }
+    }
+  ]
+}

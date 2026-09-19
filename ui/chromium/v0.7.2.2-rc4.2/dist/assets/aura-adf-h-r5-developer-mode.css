@@ -1,0 +1,227 @@
+/* AURA ADF-H R5 R4.4 — DEV SURFACE PARITY */
+#aura-adf-h-r5-frame{
+  position:fixed;left:0;right:0;top:0;height:3px;z-index:2147483500;
+  pointer-events:none;
+  background:linear-gradient(90deg,
+    rgba(224,168,90,0) 0%,
+    rgba(224,168,90,.92) 28%,
+    rgba(208,107,255,.98) 56%,
+    rgba(94,231,247,.62) 86%,
+    rgba(94,231,247,0) 100%);
+  box-shadow:0 0 18px rgba(224,168,90,.18),0 0 20px rgba(208,107,255,.14)
+}
+#aura-adf-h-r5-underbar{
+  position:fixed;left:0;right:0;top:72px;height:1px;z-index:2147483499;pointer-events:none;
+  background:linear-gradient(90deg,
+    rgba(208,107,255,0) 0%,
+    rgba(208,107,255,.32) 18%,
+    rgba(224,168,90,.38) 50%,
+    rgba(94,231,247,.14) 82%,
+    rgba(94,231,247,0) 100%)
+}
+#aura-adf-h-r5-glow{
+  position:fixed;inset:0;z-index:2147483498;pointer-events:none;
+  background:
+    radial-gradient(circle at 14% 6%,rgba(208,107,255,.065),transparent 21%),
+    radial-gradient(circle at 86% 6%,rgba(224,168,90,.055),transparent 19%),
+    radial-gradient(circle at 50% 100%,rgba(208,107,255,.03),transparent 24%);
+  mix-blend-mode:screen
+}
+#aura-adf-h-r5-badge{
+  position:fixed;left:258px;top:16px;z-index:2147483502;pointer-events:none;
+  padding:7px 12px;border-radius:7px;
+  color:#fff1d7;
+  background:linear-gradient(135deg,rgba(58,20,78,.94),rgba(26,18,40,.96));
+  border:1px solid rgba(224,168,90,.52);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03),0 0 16px rgba(208,107,255,.10);
+  font:800 10px/1 Inter,"Segoe UI",sans-serif;letter-spacing:1.15px;text-transform:uppercase
+}
+#aura-adf-h-r5-status{
+  position:fixed;left:358px;top:18px;z-index:2147483502;pointer-events:none;
+  padding:5px 0;color:#e0a85a;background:transparent;border:0;
+  text-shadow:0 0 12px rgba(224,168,90,.14);
+  font:800 8px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.72px;text-transform:uppercase
+}
+.aura-adf-dev-active{
+  --aura-dev-prune:#d06bff;
+  --aura-dev-amber:#e0a85a;
+  --aura-dev-paper:#fff1d7;
+}
+.aura-adf-dev-composer{
+  border-color:rgba(224,168,90,.62)!important;
+  outline:1px solid rgba(208,107,255,.30)!important;
+  box-shadow:inset 0 0 0 1px rgba(224,168,90,.05),0 0 18px rgba(208,107,255,.06)!important;
+  background:linear-gradient(90deg,rgba(32,20,43,.31),rgba(9,17,25,.10))!important;
+  color:#fff1d7!important
+}
+.aura-adf-dev-composer-wrap{
+  border-radius:14px!important;
+  box-shadow:0 0 0 1px rgba(224,168,90,.07),0 0 28px rgba(208,107,255,.03)!important
+}
+.aura-adf-dev-sidebar,
+.aura-adf-dev-rightrail,
+.aura-adf-dev-card{
+  position:relative;
+  overflow:hidden
+}
+.aura-adf-dev-sidebar::before,
+.aura-adf-dev-rightrail::before,
+.aura-adf-dev-card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(135deg,rgba(58,20,78,.12),rgba(224,168,90,.05) 52%,rgba(94,231,247,.02) 100%);
+  box-shadow:inset 0 0 0 1px rgba(224,168,90,.10)
+}
+.aura-adf-dev-sidebar::after{
+  content:"";position:absolute;left:0;top:10px;bottom:10px;width:2px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(208,107,255,0),rgba(208,107,255,.75),rgba(224,168,90,.75),rgba(224,168,90,0));
+  box-shadow:0 0 16px rgba(208,107,255,.16)
+}
+.aura-adf-dev-rightrail::after{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;pointer-events:none;
+  background:linear-gradient(90deg,rgba(224,168,90,.75),rgba(208,107,255,.55),rgba(94,231,247,.14))
+}
+.aura-adf-dev-card::after{
+  content:"DEV";position:absolute;right:10px;bottom:10px;pointer-events:none;
+  color:rgba(255,241,215,.28);font:800 8px/1 Inter,"Segoe UI",sans-serif;letter-spacing:1px
+}
+#aura-adf-h-r5-workspace{
+  position:fixed;inset:0;z-index:2147483600;
+  background:
+    radial-gradient(circle at 22% 0,rgba(208,107,255,.08),transparent 24%),
+    radial-gradient(circle at 80% 0,rgba(224,168,90,.06),transparent 20%),
+    rgba(2,5,9,.84);
+  backdrop-filter:blur(11px);
+  display:flex;align-items:center;justify-content:center;
+  font-family:Inter,"Segoe UI",sans-serif;
+  animation:adfWorkspaceFade .16s ease-out
+}
+@keyframes adfWorkspaceFade{from{opacity:0}to{opacity:1}}
+#aura-adf-h-r5-workspace .adf-panel{
+  width:min(1050px,86vw);height:min(668px,78vh);
+  display:flex;flex-direction:column;overflow:hidden;color:#edf2f7;
+  border:1px solid rgba(224,168,90,.16);border-radius:16px;
+  background:linear-gradient(180deg,rgba(10,15,24,.995),rgba(5,9,15,.995));
+  box-shadow:0 34px 110px rgba(0,0,0,.68),inset 0 1px 0 rgba(255,255,255,.02),0 0 38px rgba(208,107,255,.055)
+}
+#aura-adf-h-r5-workspace .adf-head{
+  min-height:62px;display:flex;align-items:center;gap:12px;padding:0 18px 0 20px;
+  border-bottom:1px solid rgba(208,107,255,.10);
+  background:linear-gradient(90deg,rgba(58,20,78,.18),rgba(224,168,90,.08),transparent 72%)
+}
+#aura-adf-h-r5-workspace .adf-title-wrap{display:flex;flex-direction:column;gap:4px}
+#aura-adf-h-r5-workspace .adf-title{color:#fff1d7;font-weight:820;font-size:13px;letter-spacing:1.04px}
+#aura-adf-h-r5-workspace .adf-subtitle{color:#987da8;font-weight:720;font-size:8px;letter-spacing:.62px}
+#aura-adf-h-r5-workspace .adf-head-status{
+  margin-left:4px;padding:4px 8px;border-radius:999px;
+  color:#f4ebff;background:rgba(208,107,255,.16);border:1px solid rgba(208,107,255,.34);
+  font:800 8px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.62px
+}
+#aura-adf-h-r5-workspace .adf-gate{
+  padding:4px 8px;border-radius:999px;
+  color:#f2d09a;background:rgba(224,168,90,.14);border:1px solid rgba(224,168,90,.34);
+  font:800 8px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.58px
+}
+#aura-adf-h-r5-workspace .adf-close{
+  margin-left:auto;width:32px;height:32px;cursor:pointer;border-radius:8px;
+  border:1px solid rgba(224,168,90,.18);background:rgba(20,16,28,.88);color:#d8b783;
+  font:700 14px/1 Inter,"Segoe UI",sans-serif
+}
+#aura-adf-h-r5-workspace .adf-close:hover{background:rgba(35,22,45,.96);border-color:rgba(224,168,90,.32);color:#fff1d7}
+#aura-adf-h-r5-workspace .adf-grid{display:grid;grid-template-columns:308px 1fr;min-height:0;flex:1}
+#aura-adf-h-r5-workspace .adf-left{
+  padding:18px;border-right:1px solid rgba(208,107,255,.09);overflow:auto;
+  background:linear-gradient(180deg,rgba(33,19,42,.23),rgba(4,9,15,.42))
+}
+#aura-adf-h-r5-workspace .adf-right{padding:18px 20px;overflow:auto}
+#aura-adf-h-r5-workspace .adf-section-title{margin-bottom:9px;color:#b596ca;font:800 8px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.86px}
+#aura-adf-h-r5-workspace .adf-mode-card{
+  padding:14px;border-radius:10px;border:1px solid rgba(224,168,90,.14);
+  background:linear-gradient(135deg,rgba(58,20,78,.24),rgba(224,168,90,.06))
+}
+#aura-adf-h-r5-workspace .adf-mode-row{display:flex;align-items:center;gap:8px;color:#fff1d7;font:800 11px/1 Inter,"Segoe UI",sans-serif}
+#aura-adf-h-r5-workspace .adf-dot{width:7px;height:7px;border-radius:50%;background:#e0a85a;box-shadow:0 0 12px rgba(224,168,90,.48)}
+#aura-adf-h-r5-workspace .adf-mode-note{margin-top:8px;color:#8d7599;font-size:9px;line-height:1.4}
+#aura-adf-h-r5-workspace .adf-chip-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
+#aura-adf-h-r5-workspace .adf-chip{
+  min-height:32px;display:flex;align-items:center;gap:7px;padding:0 10px;border-radius:8px;
+  border:1px solid rgba(224,168,90,.12);background:rgba(21,16,29,.72);color:#f0ddbd;
+  box-shadow:inset 0 0 0 1px rgba(208,107,255,.05);
+  font:780 8px/1.15 Inter,"Segoe UI",sans-serif;letter-spacing:.34px
+}
+#aura-adf-h-r5-workspace .adf-chip::before{content:"";width:5px;height:5px;border-radius:50%;background:#d06bff;box-shadow:0 0 10px rgba(208,107,255,.38)}
+#aura-adf-h-r5-workspace .adf-card{
+  margin-bottom:14px;border-radius:11px;border:1px solid rgba(224,168,90,.09);
+  background:linear-gradient(180deg,rgba(14,11,21,.58),rgba(5,10,17,.64));overflow:hidden
+}
+#aura-adf-h-r5-workspace .adf-card-head{
+  height:39px;display:flex;align-items:center;padding:0 13px;border-bottom:1px solid rgba(208,107,255,.06);
+  color:#c6aad8;font:800 8px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.8px
+}
+#aura-adf-h-r5-workspace .adf-card-body{padding:12px 13px}
+#aura-adf-h-r5-workspace .adf-empty{min-height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:#7f6d89;text-align:center;font-size:9px}
+#aura-adf-h-r5-workspace .adf-empty strong{color:#ead5b4;font-size:9px;font-weight:760}
+#aura-adf-h-r5-workspace .adf-tx{display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 0;border-bottom:1px solid rgba(208,107,255,.04)}
+#aura-adf-h-r5-workspace .adf-tx:last-child{border-bottom:0}
+#aura-adf-h-r5-workspace .adf-tx-id{color:#efdabc;font:700 9px/1.3 "Cascadia Mono",Consolas,monospace}
+#aura-adf-h-r5-workspace .adf-tx-state{color:#d06bff;font:800 8px/1 Inter,"Segoe UI",sans-serif}
+#aura-adf-h-r5-workspace .adf-audit-line{display:flex;align-items:center;justify-content:space-between;min-height:34px;padding:0 3px;color:#c6aad8;font-size:9px}
+#aura-adf-h-r5-workspace .adf-audit-value{color:#f0ddbd;font:700 9px/1 "Cascadia Mono",Consolas,monospace}
+#aura-adf-h-r5-workspace .adf-footer{margin-top:auto;padding-top:13px;color:#8d7599;font-size:8px;line-height:1.55}
+
+/* AURA ADF-H R6.2 — VISIBLE SELF-DEVELOPMENT TRANSACTION */
+#aura-adf-h-r5-workspace .adf-r62-transaction{
+  margin-bottom:14px;border-radius:11px;overflow:hidden;
+  border:1px solid rgba(224,168,90,.18);
+  background:linear-gradient(180deg,rgba(31,17,39,.72),rgba(8,11,17,.86));
+  box-shadow:inset 0 0 0 1px rgba(208,107,255,.055),0 0 24px rgba(208,107,255,.035)
+}
+#aura-adf-h-r5-workspace .adf-r62-head{
+  min-height:42px;display:flex;align-items:center;gap:8px;padding:0 13px;
+  border-bottom:1px solid rgba(208,107,255,.09);
+  color:#fff1d7;font:800 9px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.72px
+}
+#aura-adf-h-r5-workspace .adf-r62-state{
+  margin-left:auto;padding:4px 7px;border-radius:999px;
+  color:#f2d09a;background:rgba(224,168,90,.12);border:1px solid rgba(224,168,90,.26);
+  font:800 8px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.42px
+}
+#aura-adf-h-r5-workspace .adf-r62-body{padding:13px}
+#aura-adf-h-r5-workspace .adf-r62-meta{
+  display:grid;grid-template-columns:120px 1fr;gap:6px 10px;margin-bottom:12px;
+  color:#9a86a5;font-size:9px
+}
+#aura-adf-h-r5-workspace .adf-r62-meta strong{color:#ead5b4;font-weight:750}
+#aura-adf-h-r5-workspace .adf-r62-label{
+  margin:12px 0 7px;color:#c6aad8;
+  font:800 8px/1 Inter,"Segoe UI",sans-serif;letter-spacing:.78px
+}
+#aura-adf-h-r5-workspace .adf-r62-code{
+  max-height:260px;overflow:auto;margin:0;padding:12px;border-radius:8px;
+  border:1px solid rgba(208,107,255,.10);
+  background:#05070c;color:#d9c9e3;
+  white-space:pre-wrap;word-break:break-word;
+  font:9px/1.55 "Cascadia Mono",Consolas,monospace
+}
+#aura-adf-h-r5-workspace .adf-r62-approval{
+  display:flex;align-items:center;gap:9px;margin-top:8px;padding:10px 11px;border-radius:8px;
+  border:1px solid rgba(224,168,90,.20);
+  background:rgba(224,168,90,.055)
+}
+#aura-adf-h-r5-workspace .adf-r62-approval code{
+  flex:1;color:#fff1d7;word-break:break-all;
+  font:800 9px/1.3 "Cascadia Mono",Consolas,monospace
+}
+#aura-adf-h-r5-workspace .adf-r62-copy{
+  flex:none;padding:6px 8px;cursor:pointer;border-radius:6px;
+  border:1px solid rgba(208,107,255,.22);background:rgba(208,107,255,.08);color:#e2c7f0;
+  font:800 8px/1 Inter,"Segoe UI",sans-serif
+}
+#aura-adf-h-r5-workspace .adf-r62-copy:hover{
+  border-color:rgba(224,168,90,.30);color:#fff1d7
+}
+#aura-adf-h-r5-workspace .adf-r62-ok{
+  color:#74d9c4;font-weight:800
+}
+#aura-adf-h-r5-workspace .adf-r62-warn{
+  color:#e0a85a;font-weight:800
+}

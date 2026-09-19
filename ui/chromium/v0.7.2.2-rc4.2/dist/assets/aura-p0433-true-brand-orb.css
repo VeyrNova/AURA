@@ -1,0 +1,93 @@
+/* AURA P0.4.3.3 TRUE BRAND ORB REFERENCE */
+
+.aura-ref-orb-layer {
+  --aura-ref-orb-size: 44vw;
+  --aura-ref-orb-scale: 1;
+  --aura-ref-orb-opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  width: min(760px, max(320px, var(--aura-ref-orb-size)));
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%) scale(var(--aura-ref-orb-scale));
+  transform-origin: 50% 50%;
+  opacity: var(--aura-ref-orb-opacity);
+  pointer-events: none;
+  z-index: 8;
+  mix-blend-mode: screen;
+  filter:
+    drop-shadow(0 0 10px rgba(84,217,255,.10))
+    drop-shadow(0 0 22px rgba(216,76,255,.08));
+  will-change: transform, opacity, filter;
+}
+
+.aura-ref-orb-layer img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.aura-ref-orb-layer[data-state="IDLE"] {
+  filter:
+    drop-shadow(0 0 10px rgba(84,217,255,.08))
+    drop-shadow(0 0 20px rgba(216,76,255,.07));
+}
+
+.aura-ref-orb-layer[data-state="LISTENING"] {
+  filter:
+    drop-shadow(0 0 12px rgba(84,217,255,.16))
+    drop-shadow(0 0 26px rgba(84,217,255,.12));
+}
+
+.aura-ref-orb-layer[data-state="THINKING"],
+.aura-ref-orb-layer[data-state="ANALYZING"],
+.aura-ref-orb-layer[data-state="SEARCHING"] {
+  filter:
+    drop-shadow(0 0 12px rgba(84,217,255,.12))
+    drop-shadow(0 0 28px rgba(216,76,255,.16));
+}
+
+.aura-ref-orb-layer[data-state="SPEAKING"] {
+  filter:
+    drop-shadow(0 0 13px rgba(84,217,255,.14))
+    drop-shadow(0 0 32px rgba(216,76,255,.19));
+}
+
+.brand-mark.aura-brand-ref-active {
+  display: grid !important;
+  place-items: center;
+  overflow: visible !important;
+}
+
+.brand-mark.aura-brand-ref-active > span,
+.brand-mark.aura-brand-ref-active > i {
+  display: none !important;
+}
+
+.aura-brand-ref-icon {
+  display: block;
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 4px rgba(84,217,255,.18))
+    drop-shadow(0 0 7px rgba(216,76,255,.12));
+  transition: transform 220ms ease, filter 220ms ease, opacity 220ms ease;
+}
+
+body[data-state="LISTENING"] .aura-brand-ref-icon {
+  transform: scale(1.02);
+  filter:
+    drop-shadow(0 0 5px rgba(84,217,255,.28))
+    drop-shadow(0 0 8px rgba(84,217,255,.18));
+}
+
+body[data-state="SPEAKING"] .aura-brand-ref-icon {
+  transform: scale(1.04);
+  filter:
+    drop-shadow(0 0 5px rgba(84,217,255,.22))
+    drop-shadow(0 0 10px rgba(216,76,255,.18));
+}

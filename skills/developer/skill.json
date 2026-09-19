@@ -1,0 +1,18 @@
+{
+  "schema": "aura.skill.v1",
+  "version": "2.3.0",
+  "skill_id": "developer",
+  "title": "Developer",
+  "description": "Contexte Developer Fabric et workspace. L'Ã©tat Ã©phÃ©mÃ¨re workspace reste exÃ©cutÃ© par le shell/MainWindow existant.",
+  "enabled": true,
+  "commands": [
+    "workspace_context"
+  ],
+  "permissions": [
+    "developer_workspace"
+  ],
+  "owner": "ui.shell_host",
+  "risk": "developer_context",
+  "execution_mode": "delegate_existing_owner",
+  "microphone_policy": "not_applicable"
+}

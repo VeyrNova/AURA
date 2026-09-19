@@ -1,0 +1,43 @@
+{
+  "schema": "aura.email-provider.v091.v1",
+  "product_version_during_d2": "0.9.0",
+  "canonical_authority": "integrations.email.provider.EmailProvider",
+  "backend_contract": "integrations.email.provider.EmailBackend",
+  "models": 7,
+  "capabilities": 11,
+  "operations": 12,
+  "read_capabilities": 4,
+  "confirmation_capabilities": 6,
+  "synthetic_mailbox_only": true,
+  "real_gmail": false,
+  "real_imap": false,
+  "real_smtp": false,
+  "real_oauth": false,
+  "IntegrationRegistry_preserved": true,
+  "SecurityPolicyEngine_preserved": true,
+  "ActionReceiptService_preserved": true,
+  "MissionEngine_preserved": true,
+  "files": {
+    "package_init": {
+      "path": "C:\\AURA GPT version\\integrations\\email\\__init__.py",
+      "sha256": "730560fde31ea0c920d0e850d88b646eec1fbfc41f262ee111162db69123b6f2"
+    },
+    "authority": {
+      "path": "C:\\AURA GPT version\\integrations\\email\\provider.py",
+      "sha256": "63188d71ddf0b91d479e640a4a0835ab9207ee54dd0d9b80ee26d0031738e09c"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_email_provider_v091.py",
+      "sha256": "99bff90ea9665fb5818db9720e64885076630abb3b65a6f59abec3b2eee7f294"
+    }
+  },
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "certified_at": "2026-08-26T15:54:41",
+  "last_verified_product_version": "0.9.2.2.1",
+  "reverified_at": "2026-08-26T18:38:22",
+  "reverified_at_v0922": "2026-08-27T18:20:54",
+  "reverified_at_v09221": "2026-08-27T19:00:45",
+  "reverified_at_v093": "2026-08-27T20:46:17",
+  "reverified_at_v094": "2026-08-28T10:06:06"
+}

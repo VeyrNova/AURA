@@ -1,0 +1,28 @@
+{
+  "schema": "aura.fabric.provider-source-snapshot.v1",
+  "observed_at": "2026-08-30T20:10:00+02:00",
+  "clean_room": true,
+  "sources": [
+    {
+      "id": "fcc-current-readme",
+      "url": "https://github.com/Alishahryar1/free-claude-code",
+      "claim": "50 ToS-friendly providers and 1.3B+ free tokens every month; free-tier availability may change.",
+      "use": "provider discovery and external headline reference only",
+      "trust": "third_party_public_reference"
+    },
+    {
+      "id": "openrelay-current-readme",
+      "url": "https://github.com/romgX/openrelay",
+      "claim": "58 non-virtual providers; direct API/local quotas controlled by upstream providers and can change.",
+      "use": "secondary ecosystem cross-check only",
+      "trust": "third_party_public_reference"
+    },
+    {
+      "id": "omniroute-current-readme",
+      "url": "https://github.com/adl-54/Token",
+      "claim": "Examples of free-tier quotas including Cerebras token/day, Cloudflare neurons/day and NVIDIA request rate.",
+      "use": "quota-observatory non-guaranteed reference observations only",
+      "trust": "third_party_public_reference"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# AURA v0.8.6.2 — GPU CUDA 13.0
+# Exact top-level versions observed on 2026-08-24.
+# The current environment uses +cu130 builds.
+# D2 could not recover an immutable direct_url/index provenance.
+# Cold-install requires an explicit torch index URL if the default index cannot resolve these builds.
+# torchcodec is deliberately excluded from this required group.
+
+torch==2.13.0+cu130
+torchaudio==2.11.0+cu130

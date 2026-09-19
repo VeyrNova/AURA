@@ -1,0 +1,43 @@
+/* AURA P0.7.1.1 — DRAWER PERSISTENCE + COMPOSER DEDUP */
+.aura-p071-conversation-drawer{
+  position:fixed;z-index:154;top:94px;right:18px;bottom:18px;
+  width:min(410px,calc(100vw - var(--aura-p0702-rail-width,220px) - 72px));
+  min-width:330px;display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;
+  overflow:hidden;border:1px solid rgba(111,101,235,.32);border-radius:14px;
+  background:linear-gradient(160deg,rgba(5,13,29,.992),rgba(7,10,26,.986));
+  box-shadow:-18px 0 58px rgba(0,0,0,.38),0 0 0 1px rgba(96,79,220,.05),inset 1px 0 rgba(130,103,255,.05);
+  opacity:0;transform:translateX(18px) scale(.992);pointer-events:none;
+  transition:opacity .16s ease,transform .16s ease;
+}
+.aura-p071-conversation-drawer.open:not([hidden]){opacity:1;transform:none;pointer-events:auto}
+.aura-p071-conversation-drawer[hidden]{display:none!important}
+.aura-p071-head{min-height:62px;padding:11px 11px 10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(108,119,175,.13);background:linear-gradient(90deg,rgba(80,52,194,.10),transparent 58%)}
+.aura-p071-title{display:flex;align-items:center;gap:10px;min-width:0}.aura-p071-title>i{width:8px;height:8px;border-radius:50%;background:#7ee5f7;box-shadow:0 0 13px rgba(126,229,247,.6)}
+.aura-p071-title>span{display:block;min-width:0}.aura-p071-title small{display:block;color:#5d6687;font:600 7px/1.2 system-ui;letter-spacing:.15em}.aura-p071-title b{display:block;margin-top:4px;color:#e4e5ff;font:600 12px/1.1 system-ui;letter-spacing:.07em}.aura-p071-title em{display:block;margin-top:5px;color:#8876d5;font:500 8px/1.15 system-ui;font-style:normal;letter-spacing:.055em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aura-p071-head-actions{display:flex;align-items:center;gap:6px}.aura-p071-head-actions button{height:29px;padding:0 9px;border:1px solid rgba(111,101,203,.2);border-radius:8px;background:rgba(22,26,57,.62);color:#8189ad;font:600 7px/1 system-ui;letter-spacing:.06em;cursor:pointer}.aura-p071-head-actions button:hover{border-color:rgba(142,111,255,.45);color:#d6d8f3}.aura-p071-head-actions [data-close]{width:29px;padding:0;font-size:15px;font-weight:300}
+.aura-p071-history{min-height:0;overflow:auto;padding:15px 13px 18px;scrollbar-width:thin;scrollbar-color:rgba(116,94,214,.55) rgba(12,19,38,.3)}
+.aura-p071-history::-webkit-scrollbar{width:7px}.aura-p071-history::-webkit-scrollbar-track{background:rgba(12,19,38,.3)}.aura-p071-history::-webkit-scrollbar-thumb{border-radius:8px;background:rgba(116,94,214,.5)}
+.aura-p071-message{width:fit-content;max-width:88%;margin:0 0 11px;padding:9px 11px;border:1px solid rgba(111,126,181,.13);border-radius:11px;background:rgba(12,22,39,.72)}
+.aura-p071-message small{display:block;margin-bottom:5px;color:#66718f;font:600 7px/1 system-ui;letter-spacing:.11em}.aura-p071-message p{margin:0;color:#c9d4e5;font:10.5px/1.5 "Segoe UI Variable","Segoe UI",system-ui,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere}
+.aura-p071-message.aura{margin-right:auto;border-color:rgba(86,198,224,.15);background:linear-gradient(145deg,rgba(8,34,48,.76),rgba(10,20,38,.72))}.aura-p071-message.aura small{color:#67c8da}.aura-p071-message.user{margin-left:auto;border-color:rgba(131,96,239,.2);background:linear-gradient(145deg,rgba(42,28,92,.70),rgba(25,25,65,.70))}.aura-p071-message.user small{color:#a18ae9}.aura-p071-message.system{max-width:100%;margin-inline:auto;background:rgba(22,26,43,.55)}
+.aura-p071-empty{height:100%;min-height:220px;display:grid;place-content:center;text-align:center;padding:24px}.aura-p071-empty b{color:#8993bb;font:600 10px/1.2 system-ui;letter-spacing:.11em}.aura-p071-empty span{display:block;margin-top:8px;color:#555f7e;font:9px/1.5 system-ui}
+.aura-p071-footer-note{min-height:27px;padding:0 13px;display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid rgba(105,116,168,.09);background:rgba(4,10,22,.45)}.aura-p071-footer-note span{color:#56617e;font:8px/1.2 system-ui}.aura-p071-footer-note b{display:grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:10px;background:#704de4;color:white;font:700 8px/1 system-ui}
+.aura-p071-composer{display:grid;grid-template-columns:32px minmax(0,1fr) 34px;align-items:end;gap:8px;padding:10px 11px 11px;border-top:1px solid rgba(107,118,173,.12);background:rgba(5,12,26,.92)}
+.aura-p071-composer>button{height:32px;border:1px solid rgba(98,111,171,.19);border-radius:9px;background:rgba(12,24,43,.74);color:#7f89ad;cursor:pointer}.aura-p071-composer>button:hover{border-color:rgba(126,101,239,.4);color:#d6d8f2}.aura-p071-composer>button:disabled{opacity:.4;cursor:not-allowed}.aura-p071-composer>div{min-width:0}.aura-p071-composer textarea{box-sizing:border-box;width:100%;min-height:32px;max-height:112px;resize:none;padding:7px 9px;border:1px solid rgba(104,119,178,.16);border-radius:9px;outline:none;background:rgba(6,16,31,.85);color:#dbe2f2;font:10.5px/1.45 "Segoe UI Variable","Segoe UI",system-ui,sans-serif}.aura-p071-composer textarea:focus{border-color:rgba(113,87,232,.5);box-shadow:0 0 0 2px rgba(94,68,210,.08)}.aura-p071-composer textarea::placeholder{color:#596581}.aura-p071-composer small{display:block;margin-top:5px;color:#4f5975;font:7.5px/1.25 system-ui}.aura-p071-send{color:#74d8ed!important;font-size:14px!important}
+.runtime-disabled .aura-p071-title>i{background:#7a819d;box-shadow:none}.runtime-disabled .aura-p071-footer-note span{color:#876977}
+/* The old contextual response dock would duplicate the same answer. */
+body[data-aura-workspace-overlay="conversation-drawer"] .aura-p0633-response-dock{display:none!important}
+/* Drawer is an overlay: keep the active module highlighted and add a secondary Conversation signal. */
+.aura-p0702-nav-btn[data-rail-target="conversation"].drawer-open{color:#cbc9ef;background:rgba(75,51,169,.10);border-color:rgba(118,90,239,.22)}
+.aura-p0702-nav-btn[data-rail-target="conversation"].drawer-open i{background:#8c69ff;box-shadow:0 0 9px rgba(140,105,255,.65)}
+.aura-p0702-nav-btn[data-rail-target="conversation"].has-unread i{background:#71ddec;box-shadow:0 0 9px rgba(113,221,236,.62)}
+.aura-p0702-nav-btn[data-rail-target="conversation"].has-unread:not(.drawer-open):after{content:"";position:absolute;right:8px;top:8px;width:5px;height:5px;border-radius:50%;background:#71ddec;box-shadow:0 0 8px rgba(113,221,236,.72)}
+@media(max-width:1100px){.aura-p071-conversation-drawer{width:min(380px,calc(100vw - var(--aura-p0702-rail-width,190px) - 48px));right:12px;bottom:12px}}
+@media(max-width:850px){.aura-p071-conversation-drawer{top:88px;right:10px;bottom:10px;width:min(390px,calc(100vw - 104px));min-width:280px}.aura-p071-head-actions [data-full]{display:none}}
+@media(max-width:560px){.aura-p071-conversation-drawer{left:92px;right:8px;width:auto;min-width:0}.aura-p071-message{max-width:94%}}
+@media(prefers-reduced-motion:reduce){.aura-p071-conversation-drawer{transition:none}}
+
+/* P0.7.1.1 — while the contextual drawer is open, it is the only composer surface.
+   Removing the global composer also gives the active module back the bottom workspace area. */
+body.aura-p0711-drawer-contextual .workspace > .composer{display:none!important}
+body.aura-p0711-drawer-contextual #composer.composer{display:none!important}

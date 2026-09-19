@@ -1,0 +1,16 @@
+{
+  "schema": "aura.v123.ft4-r9-r4.corrected-cross-process-transport.v1",
+  "generated_at": "2026-08-29T17:12:22",
+  "product_version_during_hotfix": "1.2.2",
+  "target_version": "1.2.3",
+  "transport": "localhost TCP IPC -> existing shell hub -> existing SSE",
+  "endpoint_payload_persisted": false,
+  "endpoint_metadata_only": true,
+  "native_local_sink_retained": true,
+  "duplicate_eventsource_added": false,
+  "escape_watchdog_changed": false,
+  "google_changed": false,
+  "security_authority_changed": false,
+  "color_charter_changed": false,
+  "version_bump": false
+}

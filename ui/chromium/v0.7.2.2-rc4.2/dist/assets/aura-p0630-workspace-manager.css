@@ -1,0 +1,107 @@
+/* AURA P0.6.3.1 — Unified Focus + Activity Layer */
+
+/* Keep the rail's active state visually deterministic across all modules. */
+.rail .rail-btn{
+  transition:border-color .16s ease,background .16s ease,color .16s ease,opacity .16s ease,transform .16s ease;
+}
+.rail .rail-btn.active{
+  transform:translateX(1px);
+}
+
+/* The composer remains the stable interaction floor while major workspaces
+   occupy the desktop above it. */
+body[data-aura-workspace="talk"] .workspace>.composer,
+body[data-aura-workspace="plan"] .workspace>.composer,
+body[data-aura-workspace="memory"] .workspace>.composer,
+body[data-aura-workspace="system"] .workspace>.composer{
+  z-index:60;
+}
+
+/* Keyboard navigation should be visible without changing the existing DA. */
+.rail .rail-btn:focus-visible,
+.conversation button:focus-visible,
+.aura-p0623-drawer button:focus-visible,
+.aura-p0626-memory button:focus-visible,
+.aura-p0627-system button:focus-visible{
+  outline:1px solid rgba(116,232,255,.72);
+  outline-offset:2px;
+}
+
+/* Avoid accidental pointer access to a stale closed major surface if an older
+   module leaves a class behind during a transition. */
+.aura-p0623-drawer:not(.open),
+.aura-p0626-memory:not(.open),
+.aura-p0627-system:not(.open),
+#conversation:not(.open){
+  pointer-events:none;
+}
+
+
+/* Normalized workspace activity indicator. */
+.aura-p0631-workspace-status{
+  position:absolute;
+  left:16px;
+  bottom:100px;
+  z-index:59;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  max-width:min(520px,52vw);
+  min-height:28px;
+  padding:6px 10px;
+  border-radius:9px;
+  opacity:0;
+  transform:translateY(5px);
+  pointer-events:none;
+  transition:opacity .16s ease,transform .16s ease,border-color .16s ease;
+  color:#87a9b8;
+}
+.aura-p0631-workspace-status.show{opacity:1;transform:none}
+.aura-p0631-workspace-status i{
+  display:block;width:6px;height:6px;border-radius:50%;
+  background:#72ddeb;box-shadow:0 0 10px rgba(114,221,235,.38);
+}
+.aura-p0631-workspace-status b{font-size:7.5px;letter-spacing:.12em;color:#aeeaf5}
+.aura-p0631-workspace-status span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:8.5px;color:#628795}
+.aura-p0631-workspace-status[data-state="loading"] i{animation:auraP0631Pulse .9s ease-in-out infinite}
+.aura-p0631-workspace-status[data-state="error"]{border-color:rgba(235,100,132,.22)}
+.aura-p0631-workspace-status[data-state="error"] i{background:#dc7891;box-shadow:0 0 11px rgba(220,120,145,.35)}
+@keyframes auraP0631Pulse{50%{opacity:.35;transform:scale(.72)}}
+
+/* Each rail button exposes the same activity language. */
+.rail .rail-btn[data-workspace-state="loading"]::after,
+.rail .rail-btn[data-workspace-state="error"]::after{
+  content:"";
+  position:absolute;
+  right:5px;
+  top:5px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+}
+.rail .rail-btn[data-workspace-state="loading"]::after{
+  background:#6fe5f5;
+  box-shadow:0 0 8px rgba(111,229,245,.55);
+  animation:auraP0631Pulse .9s ease-in-out infinite;
+}
+.rail .rail-btn[data-workspace-state="error"]::after{
+  background:#df7891;
+  box-shadow:0 0 8px rgba(223,120,145,.45);
+}
+
+/* One short transition language for every major surface. */
+body.aura-workspace-transition #conversation.open,
+body.aura-workspace-transition .aura-p0623-drawer.open,
+body.aura-workspace-transition .aura-weather-workspace.open,
+body.aura-workspace-transition .aura-p0626-memory.open,
+body.aura-workspace-transition .aura-p0627-system.open{
+  animation:auraP0631Enter .19s cubic-bezier(.2,.72,.2,1);
+}
+@keyframes auraP0631Enter{
+  from{filter:brightness(.88);transform:translateY(4px) scale(.998)}
+  to{filter:none;transform:none}
+}
+
+@media(max-width:760px){
+  .aura-p0631-workspace-status{left:10px;right:10px;max-width:none;bottom:96px}
+}

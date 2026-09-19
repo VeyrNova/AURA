@@ -1,0 +1,15 @@
+{
+  "schema": "aura.v123.ft4-r12-r2.compatible-awaitable-hub-completion.v1",
+  "generated_at": "2026-08-29T17:32:18",
+  "product_version_during_hotfix": "1.2.2",
+  "target_version": "1.2.3",
+  "change": "preserve direct hub.send call while completing awaitable results",
+  "legacy_invariant_compatibility_preserved": true,
+  "ipc_transport_changed": false,
+  "browser_transport_changed": false,
+  "duplicate_eventsource_added": false,
+  "google_changed": false,
+  "security_authority_changed": false,
+  "color_charter_changed": false,
+  "version_bump": false
+}

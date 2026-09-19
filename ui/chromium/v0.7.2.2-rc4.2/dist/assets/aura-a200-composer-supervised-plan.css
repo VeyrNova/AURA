@@ -1,0 +1,50 @@
+#aura-a200-r21-supervised-plan {
+  position: fixed;
+  right: 20px;
+  bottom: 84px;
+  z-index: 2147483200;
+  width: min(420px, calc(100vw - 32px));
+  max-height: min(70vh, 620px);
+  overflow: auto;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 16px;
+  background: rgba(10,14,24,.96);
+  box-shadow: 0 18px 60px rgba(0,0,0,.38);
+  padding: 16px;
+  color: #f4f7fb;
+  font: 13px/1.45 system-ui, sans-serif;
+}
+#aura-a200-r21-supervised-plan[hidden] {
+  display: none !important;
+}
+#aura-a200-r21-supervised-plan [data-r21-eyebrow] {
+  opacity: .65;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 6px;
+}
+#aura-a200-r21-supervised-plan [data-r21-risk],
+#aura-a200-r21-supervised-plan [data-r21-target],
+#aura-a200-r21-supervised-plan [data-r21-result] {
+  margin-top: 10px;
+  opacity: .84;
+}
+#aura-a200-r21-supervised-plan [data-r21-actions] {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+#aura-a200-r21-supervised-plan button,
+button[data-aura-a200-r21-plan] {
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 10px;
+  background: rgba(255,255,255,.08);
+  color: inherit;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+button[data-aura-a200-r21-plan] {
+  margin-left: 8px;
+  white-space: nowrap;
+}

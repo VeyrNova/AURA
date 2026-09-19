@@ -1,0 +1,12 @@
+/* AURA P0.8.2.3 — COMPOSER SINGLE-SURFACE HOTFIX */
+/* The source composer remains in the DOM for P0.7.1.2 draft synchronization but is not visible while the contextual drawer owns input. */
+html[data-aura-conversation-drawer="open"] body:not([data-aura-workspace="talk"]) #composer.composer,
+html[data-aura-conversation-drawer="open"] body:not([data-aura-workspace="talk"]) .workspace>.composer,
+body.aura-p0823-single-composer:not([data-aura-workspace="talk"]) #composer.composer,
+body.aura-p0823-single-composer:not([data-aura-workspace="talk"]) .workspace>.composer{display:none!important;pointer-events:none!important}
+/* Full Conversation always owns the canonical global composer. */
+body[data-aura-workspace="talk"] #composer.composer,
+body[data-aura-workspace="talk"] .workspace>.composer{display:flex!important;pointer-events:auto!important}
+/* Drawer composer stays available only inside the drawer surface. */
+.aura-p0712-conversation-drawer .aura-p0712-composer,.aura-p071-conversation-drawer .aura-p071-composer{visibility:visible!important;opacity:1!important}
+:root[data-aura-motion="reduced"] body.aura-p0823-single-composer .composer,:root[data-aura-motion="off"] body.aura-p0823-single-composer .composer{transition:none!important}

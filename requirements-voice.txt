@@ -1,0 +1,9 @@
+# Optional local voice stack for AURA v0.5 (Windows)
+# Installed explicitly with INSTALL_VOICE.bat.
+faster-whisper>=1.2.0,<2
+sounddevice>=0.5.5,<0.6
+numpy>=1.26,<3
+piper-tts>=1.6.0,<2
+
+# Optional but recommended: true realtime Gradium streaming.
+websockets>=16.1,<17

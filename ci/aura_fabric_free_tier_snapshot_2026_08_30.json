@@ -1,0 +1,78 @@
+{
+  "schema": "aura.fabric.free-tier-observatory-snapshot.v1",
+  "snapshot_generated_at": "2026-08-30T20:10:00+02:00",
+  "guaranteed_free_tokens_per_month": 0,
+  "reference_headline": {
+    "tokens_per_month": 1300000000,
+    "operator": ">=",
+    "guaranteed": false,
+    "independently_verified_by_aura": false,
+    "source_id": "fcc-current-readme",
+    "source_url": "https://github.com/Alishahryar1/free-claude-code",
+    "observed_at": "2026-08-30T20:10:00+02:00",
+    "ttl_days": 7,
+    "note": "External headline reference only; never exposed by AURA as a guaranteed quota."
+  },
+  "observations": [
+    {
+      "provider_id": "cerebras",
+      "metric": "free_tokens",
+      "value": 1000000,
+      "unit": "tokens/day",
+      "convertible_to_monthly_tokens": true,
+      "guaranteed": false,
+      "confidence": "third_party_reference",
+      "source_url": "https://github.com/adl-54/Token",
+      "observed_at": "2026-08-30T20:10:00+02:00",
+      "ttl_days": 7
+    },
+    {
+      "provider_id": "cloudflare",
+      "metric": "free_compute",
+      "value": 10000,
+      "unit": "neurons/day",
+      "convertible_to_monthly_tokens": false,
+      "guaranteed": false,
+      "confidence": "third_party_reference",
+      "source_url": "https://github.com/adl-54/Token",
+      "observed_at": "2026-08-30T20:10:00+02:00",
+      "ttl_days": 7
+    },
+    {
+      "provider_id": "nvidia_nim",
+      "metric": "rate_limit",
+      "value": 40,
+      "unit": "requests/minute",
+      "convertible_to_monthly_tokens": false,
+      "guaranteed": false,
+      "confidence": "third_party_reference",
+      "source_url": "https://github.com/adl-54/Token",
+      "observed_at": "2026-08-30T20:10:00+02:00",
+      "ttl_days": 7
+    },
+    {
+      "provider_id": "open_router",
+      "metric": "free_models",
+      "value": null,
+      "unit": "variable",
+      "convertible_to_monthly_tokens": false,
+      "guaranteed": false,
+      "confidence": "third_party_reference",
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "observed_at": "2026-08-30T20:10:00+02:00",
+      "ttl_days": 7
+    },
+    {
+      "provider_id": "kilo",
+      "metric": "free_access",
+      "value": null,
+      "unit": "provider-controlled",
+      "convertible_to_monthly_tokens": false,
+      "guaranteed": false,
+      "confidence": "third_party_reference",
+      "source_url": "https://github.com/Alishahryar1/free-claude-code",
+      "observed_at": "2026-08-30T20:10:00+02:00",
+      "ttl_days": 7
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "aura.google-live-provider-bridge.v121.v1",
+  "status": "IMPLEMENTED_V1_2_1_GOOGLE_LIVE_PROVIDER_BRIDGE",
+  "generated_at": "2026-08-29T09:07:15",
+  "product_version": "1.2.0",
+  "target_version": "1.2.1",
+  "network_during_certification": "NOT USED",
+  "secret_values_read": false,
+  "production_default": "GOOGLE_LIVE",
+  "services": {
+    "gmail": "live read/write adapter",
+    "calendar": "live read/write adapter",
+    "contacts": "live read/write adapter",
+    "drive": "live read-only adapter under current OAuth scope"
+  },
+  "protected_authorities_unchanged": true,
+  "next_state": "READY_FOR_V1_2_1_FT3_LIVE_MODULE_ACCEPTANCE_FINAL_CERTIFICATION_VERSION_BUMP"
+}

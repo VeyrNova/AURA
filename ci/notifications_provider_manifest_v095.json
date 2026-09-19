@@ -1,0 +1,31 @@
+{
+  "schema": "aura.notifications-provider.v095.v1",
+  "phase": "D2 R1 Bridge Provider Runtime Wiring",
+  "product_version_during_d2": "0.9.4",
+  "provider": {
+    "id": "notifications.provider",
+    "mode": "BRIDGE_EXISTING_P081_P083",
+    "capabilities": [
+      "notifications.list",
+      "notifications.read",
+      "notifications.create",
+      "notifications.mark_read",
+      "notifications.dismiss",
+      "notifications.clear"
+    ],
+    "persistence": "provider-owned in-memory D2 sandbox",
+    "external_delivery": false,
+    "network_side_effects": false,
+    "windows_notifications": false,
+    "background_llm": false,
+    "auto_action": false,
+    "clear_requires_confirmation": true
+  },
+  "legacy_bridge": {
+    "P081": "Activity Center / Event Watchers",
+    "P083": "Proactive Notifications",
+    "duplicate_history_ui": false,
+    "duplicate_popup_layer": false,
+    "visual_changes_in_D2_R1": false
+  }
+}

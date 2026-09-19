@@ -1,0 +1,45 @@
+{
+  "schema": "aura.connected-accounts-google-only.v120.v1",
+  "status": "CERTIFIED_V1_2_0_GOOGLE_CONNECTED_ACCOUNTS",
+  "generated_at": "2026-08-29T08:50:57",
+  "product_version": "1.2.0",
+  "live_acceptance": {
+    "status": "PASS_V1_2_0_FT5_GOOGLE_ONLY_OAUTH_LIVE_ACCEPTANCE",
+    "google_connected": true,
+    "google_tested": true,
+    "google_synced": true,
+    "services": [
+      "gmail",
+      "calendar",
+      "contacts",
+      "drive"
+    ]
+  },
+  "scope": {
+    "google": [
+      "gmail",
+      "calendar",
+      "contacts",
+      "drive"
+    ],
+    "microsoft": "EXCLUDED",
+    "orange_mail": "EXCLUDED"
+  },
+  "production": {
+    "microsoft_oauth_module_present": false,
+    "google_only_runtime": true,
+    "google_only_settings_ui": true,
+    "secret_store": "Windows keyring / WinVault",
+    "plaintext_passwords": "FORBIDDEN",
+    "plaintext_tokens": "FORBIDDEN"
+  },
+  "version_identity": {
+    "canonical": "1.2.0",
+    "legacy_ui_sync": "PASS",
+    "live_deployed_ui_sync": "PASS",
+    "spoken": "PASS",
+    "tts": "PASS"
+  },
+  "network_during_final_certification": "NOT USED",
+  "next_state": "V1_2_0_GOOGLE_CONNECTED_ACCOUNTS_COMPLETE_READY_FOR_NEXT_ROADMAP_BLOCK"
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "aura.v130.w130-g1-r1.ui-productivity-coherence.manifest.v1",
+  "created_at": "2026-08-30T17:18:30",
+  "canonical_version": "1.2.3",
+  "target_version": "1.3.0",
+  "parent_blocked_g1_sha256": "637a107e5e0cd84aef35f6f6ca2751eabe3880785832dc24edf15049df98fe4b",
+  "actual_system_live_topology": "single dist/assets canonical asset",
+  "fixes": [
+    "SYSTEM LIVE visible label 1.2.2 -> 1.2.3",
+    "Desktop Intelligence label 1.2.2 -> 1.2.3",
+    "Google Tasks renderer filters failed Action Receipts",
+    "receipt-only tasks personal_result cannot overwrite valid task cache"
+  ],
+  "dist_index_sha256": "d8f94a0fa3cb5a973be8feda8db44287c4b62cb98d8a03020d05914224e03b45",
+  "system_js_sha256": "e8bb7091e1fcf34971153b79876344a816d31f12a1e61c5600102a38a3a514e2",
+  "visible_rebind_js_sha256": "c9ecd2b4ecbfe5e3cdb02dab70f5d571cd642127c8768f227a26a944fba9ccb9",
+  "invariant_sha256": "709879844208ebe247fc4c1420673574a065a059b17c53f68397d0c215671db7",
+  "next": "manual Home + Tasks visual acceptance, then final v1.3.0 certification/promotion"
+}

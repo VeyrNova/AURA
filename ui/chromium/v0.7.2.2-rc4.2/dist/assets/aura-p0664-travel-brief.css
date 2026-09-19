@@ -1,0 +1,56 @@
+/* AURA P0.6.6.4 AURA TRAVEL BRIEF */
+#auraNavigationWorkspace .aura-travel-brief{margin:10px 14px 0;position:relative;z-index:5;color:#d9f7ff;font-family:inherit}
+#auraNavigationWorkspace .aura-brief-launch{width:100%;min-height:52px;border:1px solid rgba(135,84,255,.72);border-radius:10px;background:linear-gradient(110deg,rgba(44,18,74,.94),rgba(12,30,57,.96));color:#fff;text-align:left;padding:10px 36px 9px 12px;position:relative;cursor:pointer;box-shadow:0 0 18px rgba(112,57,255,.12)}
+#auraNavigationWorkspace .aura-brief-launch span{display:block;font-size:12px;font-weight:900;letter-spacing:1.15px}
+#auraNavigationWorkspace .aura-brief-launch small{display:block;margin-top:3px;font-size:7px;color:#a89ec9;letter-spacing:.45px}
+#auraNavigationWorkspace .aura-brief-launch i{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-style:normal;color:#72f2ff;font-size:19px;transition:transform .18s ease}
+#auraNavigationWorkspace .aura-travel-brief.open .aura-brief-launch i{transform:translateY(-50%) rotate(90deg)}
+#auraNavigationWorkspace .aura-brief-body{display:none;margin-top:7px;padding:11px;border:1px solid rgba(38,185,222,.28);border-radius:12px;background:rgba(4,18,29,.97);box-shadow:0 16px 36px rgba(0,0,0,.22)}
+#auraNavigationWorkspace .aura-travel-brief.open .aura-brief-body{display:block}
+#auraNavigationWorkspace .aura-brief-body>header{display:flex;justify-content:space-between;align-items:center;padding-bottom:8px;border-bottom:1px solid rgba(56,171,204,.19)}
+#auraNavigationWorkspace .aura-brief-body>header div span{display:block;font-size:7px;color:#52d9ec;letter-spacing:1px}
+#auraNavigationWorkspace .aura-brief-body>header div b{display:block;margin-top:2px;font-size:11px;letter-spacing:.6px}
+#auraNavigationWorkspace .aura-brief-body>header em{font-style:normal;font-size:7px;padding:3px 6px;border:1px solid rgba(79,221,241,.5);border-radius:7px;color:#7defff}
+#auraNavigationWorkspace .aura-brief-status{margin-top:9px;padding:8px 9px;border-radius:9px;border:1px solid rgba(69,173,209,.28);background:rgba(15,42,58,.5)}
+#auraNavigationWorkspace .aura-brief-status b{display:block;font-size:10px;letter-spacing:.55px;color:#7aefff}
+#auraNavigationWorkspace .aura-brief-status small{display:block;margin-top:3px;font-size:7px;color:#8baab6}
+#auraNavigationWorkspace .aura-brief-status.ready{border-color:rgba(67,228,182,.38)}
+#auraNavigationWorkspace .aura-brief-status.ready b{color:#6ff2bd}
+#auraNavigationWorkspace .aura-brief-status.watch{border-color:rgba(255,196,72,.42);background:rgba(66,47,9,.36)}
+#auraNavigationWorkspace .aura-brief-status.watch b{color:#ffd166}
+#auraNavigationWorkspace .aura-brief-status.difficult{border-color:rgba(255,102,102,.45);background:rgba(67,18,24,.4)}
+#auraNavigationWorkspace .aura-brief-status.difficult b{color:#ff8b8b}
+#auraNavigationWorkspace .aura-brief-status.partial b,#auraNavigationWorkspace .aura-brief-status.missing b{color:#c8b4ff}
+#auraNavigationWorkspace .aura-brief-route{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+#auraNavigationWorkspace .aura-brief-route>div{padding:7px 8px;border:1px solid rgba(43,155,187,.2);border-radius:8px;background:rgba(5,25,37,.65)}
+#auraNavigationWorkspace .aura-brief-route>div span,.aura-brief-route>p span{display:block;font-size:6px;color:#5c8796;letter-spacing:.55px}
+#auraNavigationWorkspace .aura-brief-route>div b{display:block;margin-top:2px;font-size:11px;color:#edfaff}
+#auraNavigationWorkspace .aura-brief-route>p{grid-column:1/-1;margin:0;padding:7px 8px;border:1px solid rgba(75,117,163,.18);border-radius:8px;background:rgba(8,21,36,.7)}
+#auraNavigationWorkspace .aura-brief-route>p b{display:block;margin-top:2px;font-size:9px;color:#dffaff}
+#auraNavigationWorkspace .aura-brief-route>p small{display:block;margin-top:2px;font-size:7px;color:#7999a8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#auraNavigationWorkspace .aura-brief-empty{grid-column:1/-1;padding:12px 8px;text-align:center;font-size:8px;color:#7393a0}
+#auraNavigationWorkspace .aura-brief-context{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:7px}
+#auraNavigationWorkspace .aura-brief-context>div{min-width:0;padding:7px;border:1px solid rgba(48,142,174,.2);border-radius:8px;background:rgba(6,24,34,.68)}
+#auraNavigationWorkspace .aura-brief-context span{display:block;font-size:6px;color:#5f8795;letter-spacing:.45px}
+#auraNavigationWorkspace .aura-brief-context b{display:block;margin-top:2px;font-size:8px;color:#e1faff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#auraNavigationWorkspace .aura-brief-context b.offline{color:#ffce70}.aura-brief-context b.live{color:#70f1bd}
+#auraNavigationWorkspace .aura-brief-context small{display:block;margin-top:2px;font-size:6px;line-height:1.35;color:#6f909d}
+#auraNavigationWorkspace .aura-brief-poi-wrap{margin-top:7px;padding:7px 8px;border:1px solid rgba(133,84,255,.22);border-radius:8px;background:rgba(23,13,42,.42)}
+#auraNavigationWorkspace .aura-brief-poi-wrap>span{display:block;font-size:6px;color:#9f8ecf;letter-spacing:.5px}
+#auraNavigationWorkspace .aura-brief-poi b{display:block;margin-top:2px;font-size:8px;color:#efe9ff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#auraNavigationWorkspace .aura-brief-poi small{display:block;margin-top:2px;font-size:6px;color:#877ca8}
+#auraNavigationWorkspace .aura-brief-notes{display:flex;flex-direction:column;gap:3px;margin-top:7px}
+#auraNavigationWorkspace .aura-brief-notes span{position:relative;padding-left:10px;font-size:6.5px;color:#9cb1ba;line-height:1.35}
+#auraNavigationWorkspace .aura-brief-notes span:before{content:'•';position:absolute;left:1px;color:#f1c66b}
+#auraNavigationWorkspace .aura-brief-narrative{margin:7px 0 0;padding:7px 8px;border-left:2px solid rgba(78,222,241,.48);background:rgba(12,34,48,.5);font-size:7px;line-height:1.5;color:#a8c2cc}
+#auraNavigationWorkspace .aura-brief-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+#auraNavigationWorkspace .aura-brief-actions button{min-height:39px;border:1px solid rgba(55,190,220,.35);border-radius:8px;background:rgba(8,39,54,.88);color:#dffaff;cursor:pointer}
+#auraNavigationWorkspace .aura-brief-actions button:nth-child(2){border-color:rgba(125,80,255,.5);background:rgba(37,22,70,.8)}
+#auraNavigationWorkspace .aura-brief-actions button:last-child{grid-column:1/-1;min-height:34px;background:linear-gradient(100deg,rgba(8,55,69,.92),rgba(37,24,78,.92))}
+#auraNavigationWorkspace .aura-brief-actions button:disabled{opacity:.36;cursor:default}
+#auraNavigationWorkspace .aura-brief-actions span{display:block;font-size:8px;font-weight:800;letter-spacing:.35px}
+#auraNavigationWorkspace .aura-brief-actions small{display:block;margin-top:2px;font-size:5.5px;color:#7695a1}
+#auraNavigationWorkspace .aura-brief-body>footer{display:flex;justify-content:space-between;gap:8px;margin-top:8px;padding-top:6px;border-top:1px solid rgba(46,142,169,.15);font-size:6px;color:#59818e}
+#auraNavigationWorkspace #auraBriefState{color:#64e6f4}.aura-brief-body #auraBriefState.error{color:#ff9c77}
+#auraNavigationWorkspace.navigation-live .aura-travel-brief{display:none!important}
+@media (max-height:840px){#auraNavigationWorkspace .aura-brief-body{max-height:410px;overflow:auto;scrollbar-width:thin}}

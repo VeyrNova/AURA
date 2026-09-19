@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+<title>AURA Symbol Neon</title>
+<defs>
+<linearGradient id="g" x1="0%" y1="8%" x2="100%" y2="96%">
+<stop offset="0%" stop-color="#F3FAFF"/>
+<stop offset="18%" stop-color="#63F3FF"/>
+<stop offset="55%" stop-color="#6287FF"/>
+<stop offset="78%" stop-color="#9B5CFF"/>
+<stop offset="100%" stop-color="#DA5CFF"/>
+</linearGradient>
+<filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+<feGaussianBlur stdDeviation="22" result="b1"/>
+<feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b2"/>
+<feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
+<path d="M 205 820 L 458 190 Q 472 150 500 150 Q 528 150 542 190 L 820 820 L 658 820 L 596 716 L 525 716 L 565 655 L 625 655 L 500 330 L 332 820 Z" fill="url(#g)" filter="url(#glow)"/>
+<path d="M 205 820 L 458 190 Q 472 150 500 150 Q 528 150 542 190 L 820 820 L 658 820 L 596 716 L 525 716 L 565 655 L 625 655 L 500 330 L 332 820 Z" fill="none" stroke="#F3FAFF" stroke-width="5" opacity=".72"/>
+</svg>

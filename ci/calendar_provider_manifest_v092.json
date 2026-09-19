@@ -1,0 +1,119 @@
+{
+  "schema": "aura.calendar-provider.v092.v1",
+  "milestone": "AURA v0.9.2 Calendar",
+  "product_version_during_d2": "0.9.1",
+  "canonical_calendar_provider": "integrations.calendar.provider.CalendarProvider",
+  "backend_contract": "integrations.calendar.provider.CalendarBackend",
+  "models": [
+    "CalendarInfo",
+    "CalendarEvent",
+    "CalendarAttendee",
+    "CalendarReminder",
+    "CalendarQuery",
+    "CalendarFreeBusy",
+    "CalendarResult"
+  ],
+  "capabilities": [
+    "calendar.list",
+    "calendar.search_events",
+    "calendar.read_event",
+    "calendar.free_busy",
+    "calendar.create_event",
+    "calendar.update_event",
+    "calendar.delete_event",
+    "calendar.respond_invitation"
+  ],
+  "read_capabilities": [
+    "calendar.list",
+    "calendar.search_events",
+    "calendar.read_event",
+    "calendar.free_busy"
+  ],
+  "confirmation_capabilities": [
+    "calendar.create_event",
+    "calendar.update_event",
+    "calendar.delete_event",
+    "calendar.respond_invitation"
+  ],
+  "operations": [
+    "list_calendars",
+    "search_events",
+    "get_event",
+    "free_busy",
+    "create_event",
+    "update_event",
+    "delete_event",
+    "respond_invitation",
+    "health_snapshot"
+  ],
+  "authority_boundaries": {
+    "integration": "IntegrationRegistry remains provider registration/execution authority",
+    "security": "SecurityPolicyEngine v2 remains authorization authority",
+    "receipts": "ActionReceiptService remains traceability authority",
+    "mission": "MissionEngine remains orchestration authority",
+    "email": "EmailProvider remains independent and unchanged"
+  },
+  "calendar_semantics": {
+    "timezone_aware_timestamps": true,
+    "all_day_explicit": true,
+    "free_busy_normalized": true,
+    "provider_source_ids_preserved": true
+  },
+  "security": {
+    "write_confirmation_required": true,
+    "unknown_calendar_event_fail_closed": true,
+    "unknown_capability_fail_closed": true,
+    "plaintext_credentials_persisted": false,
+    "receipt_before_side_effect": true
+  },
+  "d2": {
+    "synthetic_calendars_only": true,
+    "real_google_calendar_connection": false,
+    "real_microsoft_graph_connection": false,
+    "real_caldav_connection": false,
+    "real_oauth_login": false,
+    "real_account_tokens": false,
+    "user_database_modified": false,
+    "product_version_bumped": false
+  },
+  "written_at": "2026-08-26T16:11:49",
+  "files": {
+    "package_init": {
+      "path": "C:\\AURA GPT version\\integrations\\calendar\\__init__.py",
+      "sha256": "ffab62891e721254fe6a07d9e6f98589a2f66069d76cb0a0dafaee95f2dd3e59"
+    },
+    "authority": {
+      "path": "C:\\AURA GPT version\\integrations\\calendar\\provider.py",
+      "sha256": "f9e5c702492c7eb6578b1009f7544441de5200f54c17a45662eef40d25501103"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_calendar_provider_v092.py",
+      "sha256": "223d49cc34d736eed1587bd88b7f225da67182624facd2402ad103d745563f7e"
+    }
+  },
+  "parent_authority_hashes": {
+    "core_version": "fe89dac32e5ed9084e330705bae0789c19fa6c23580d34a98287bddc657590f0",
+    "baseline_v091": "0269ec5a31b938c6cd165dc5745fcb290f2248c2d42171db6232e1d9d81dc24c",
+    "critical_v091": "f35046bd586c78c6ce1ce6e423148110378217930fd3991d54597adff6d7e20b",
+    "architecture_v091": "6a0703a87fb429a40a8210c2a93858010c885c3c21da4469ad2d67f4507ee013",
+    "metadata_v091": "cfe57d833175a2ef288e9e07775baf3d71b6ea10646c8a5b5471ba2c0dccb6cb",
+    "foundation_v091": "23dd53737949082175c091fc1b43d854df24753c16a290d29ec155cbcc21d546",
+    "mission_invariant": "7d08d25bd7b891a2627a7d66a1e62bdea723783eacc18deb6dacaad2c4fc54a3",
+    "action_receipts_invariant": "6d743eee95fdf15acbf85303a2ee70df1debf1dd11dc088484866f18fb918ab1",
+    "integration_invariant": "2cac2ffd613b701994a1c58c8a21803c381425acc97824148a8a71372b9fb5e0",
+    "email_invariant": "2b81a94320252ecd68eb4168f921d4fa2a7bd396b27d098b69ffd509a33a49ca",
+    "memory_invariant": "374edb3259a6933e7863e5eba27e37a3d984c334f1172fe00fae29ff620804ca",
+    "security_invariant": "3e4e78b94cf365c5e9c5c92101354b3ec48e1ba0815c2ceaea1ef54b0bfd6766",
+    "fast_lane": "545a5da794b29c6044f191c044552698a11de35a490cc23caa331c3724f512e0",
+    "user_db": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb"
+  },
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "certified_at": "2026-08-26T16:22:10",
+  "last_verified_product_version": "0.9.2.2.1",
+  "reverified_at": "2026-08-26T18:38:22",
+  "reverified_at_v0922": "2026-08-27T18:20:54",
+  "reverified_at_v09221": "2026-08-27T19:00:45",
+  "reverified_at_v093": "2026-08-27T20:46:17",
+  "reverified_at_v094": "2026-08-28T10:06:06"
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "aura.skill-package-signing-trust.v111.v1",
+  "status": "CERTIFIED_V1_1_1_SKILL_PACKAGE_SIGNING_TRUST",
+  "generated_at": "2026-08-28T21:04:59",
+  "product_version": "1.1.1",
+  "crypto_backend": {
+    "name": "cryptography",
+    "version": "50.0.1",
+    "algorithm": "Ed25519"
+  },
+  "new_files": {
+    "skills/signing.py": "64c72a1a1b44f995bf4373daa295cdcfa30e4077f35f450c25ff9b6d44af5236",
+    "skills/trust.py": "677f0b823b48772b62c91051d92e6356530f827d7c3caf1fbb2fd93fbce46f85",
+    "skills/trusted_distribution.py": "1a844335196b48865e2baa2d5597e4d9c17aecbc7a1e9235c17f2363da49823b",
+    "tests/invariants/test_skill_package_signing_trust_v111.py": "b8b6e3c6e53a3602b96770d363e99b2e10533ab13235334ba5d3f10bf418854a"
+  },
+  "signing_contract": {
+    "signed_object": "exact canonical v1.1.0 package bytes",
+    "algorithm": "Ed25519",
+    "publisher_id": "required",
+    "key_id": "required",
+    "private_key_persistence": "FORBIDDEN",
+    "private_key_serialization": "FORBIDDEN",
+    "sha256_integrity": "PRESERVED"
+  },
+  "trust_contract": {
+    "scope": "local public-key trust store",
+    "remote_key_fetch": "FORBIDDEN",
+    "trust_on_first_use": "FORBIDDEN",
+    "unknown_publisher": "DENY",
+    "unknown_key_id": "DENY",
+    "disabled_key": "DENY",
+    "revoked_key": "DENY",
+    "signature_failure": "DENY",
+    "key_rotation": "explicit local add/revoke"
+  },
+  "trusted_distribution": {
+    "verify_before_catalog_acceptance": true,
+    "verify_before_install": true,
+    "network": "NOT USED",
+    "lifecycle": "existing SkillLifecycleManagerV102",
+    "execution": "existing SecureSkillRuntimeV101",
+    "integration_provider_authority": "NONE"
+  },
+  "preserved_authorities": {
+    "skills/package.py": "cfd00997ace888a29791c446884a439cee29a9b31070a541e40d2c897c90b27b",
+    "skills/catalog.py": "380a0bebcd2d0d1b69d7b3bbb03dc13c7876d39197647eabade0c44d5fa77a5c",
+    "skills/distribution.py": "28d0b3f565e2efb535faf1b9a6578517da0076d6a9ccabfa46c9cf78fc94e424",
+    "skills/manifest.py": "f8305b0a35634ef6587b9f9a17abb98838d6ca0ff121d65d8745cd7b8593cbcf",
+    "skills/registry.py": "96a5ea3dcb38d9cfc6d212d883b129832e2d9a0d01f6ae38a990dd001c76a58a",
+    "skills/runtime.py": "50335b7643a94e5d907fae69565d09f74e7d312bd71b50007e8b90af9e932b68",
+    "skills/developer_contract.py": "d85a3f4587d675fa08d414a52199faad99d0c7f5fc293a41c2db36454cba2ec3",
+    "skills/lifecycle.py": "70aec18373009368bf622da3bbf78dd91ffe3b00a5879fe69e9c10553b893142",
+    "core/aura_core.py": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474"
+  },
+  "identity": {
+    "canonical": "1.1.1",
+    "display": "v1.1.1",
+    "spoken_verified": true,
+    "surface_files_changed": 0,
+    "surface_replacements": 0
+  },
+  "external_network": "NOT USED",
+  "private_key_persisted": false,
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_state": "V1_1_1_SKILL_PACKAGE_SIGNING_TRUST_COMPLETE_READY_FOR_NEXT_V1_1_ROADMAP_BLOCK"
+}

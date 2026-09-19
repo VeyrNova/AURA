@@ -1,0 +1,34 @@
+{
+  "schema": "aura.version-surface-sync-hotfix-r3.v099.v1",
+  "status": "CERTIFIED_V0_9_9_R3_VERSION_SURFACE_AND_SPOKEN_SYNC",
+  "generated_at": "2026-08-28T19:50:49",
+  "reason": "Catch up canonical/display/spoken identity after v0.9.6-v0.9.9 functional certifications retained core version 0.9.5.",
+  "canonical_authority": "core.version.AURA_VERSION",
+  "canonical_version_before": "0.9.5",
+  "canonical_version_after": "0.9.9",
+  "display_version": "v0.9.9",
+  "sync_tool": {
+    "path": "C:\\AURA GPT version\\tools\\sync_product_version_surfaces.py",
+    "sha256": "bc7a591821ffc052ae82ae4d055ffbb9c986dbf57801f418e66a7bebe086e63a",
+    "affected_file_count": 48,
+    "replacement_count": 76
+  },
+  "spoken_authority": {
+    "core/spoken_version.py": "1665e485cedd2d6f8adb4b0ea64b5695461dc078e1e5b7beaa2d0fb9555b9340",
+    "ai/local_first_voice.py": "b069ac09281b4b68759eecbd5392038ac39897330111ed66ab4d30ec0910319b",
+    "voice/text_to_speech.py": "9d4f576de34332d980ac834835cdedcf2af8c3834743088a711b5a0a72b8423d"
+  },
+  "historical_v099_certification_manifest_preserved": {
+    "path": "C:\\AURA GPT version\\ci\\personal_agent_acceptance_manifest_v099.json",
+    "sha256": "41f9cd134e6dfc1ea79822ce9dfb44e702cbbdce338bbedcef9844789fae1975"
+  },
+  "protected_existing_sources_unchanged": true,
+  "external_network": "NOT USED",
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "release_policy": {
+    "display_and_spoken_version_must_equal_last_certified_product_version": true,
+    "future_final_certification_must_bump_core_version_and_run_surface_sync": true,
+    "manual_dist_only_version_patch_forbidden": true
+  },
+  "next_state": "READY_FOR_V1_0_0_FT1_REBASED_ON_CANONICAL_0_9_9"
+}

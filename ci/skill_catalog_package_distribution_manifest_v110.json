@@ -1,0 +1,62 @@
+{
+  "schema": "aura.skill-catalog-package-distribution.v110.v1",
+  "status": "CERTIFIED_V1_1_0_SKILL_CATALOG_PACKAGE_DISTRIBUTION",
+  "generated_at": "2026-08-28T20:49:37",
+  "product_version": "1.1.0",
+  "strategy": "NEW_V110_DECLARATIVE_SKILL_PACKAGE_CODEC_LOCAL_CATALOG_AND_DISTRIBUTION_REFERENCING_V100_MANIFEST_REGISTRY_V101_RUNTIME_AND_V102_LIFECYCLE",
+  "new_files": {
+    "skills/package.py": "cfd00997ace888a29791c446884a439cee29a9b31070a541e40d2c897c90b27b",
+    "skills/catalog.py": "380a0bebcd2d0d1b69d7b3bbb03dc13c7876d39197647eabade0c44d5fa77a5c",
+    "skills/distribution.py": "28d0b3f565e2efb535faf1b9a6578517da0076d6a9ccabfa46c9cf78fc94e424",
+    "tests/invariants/test_skill_catalog_package_distribution_v110.py": "e5c77f3e8a964352454020c81c34c1ff62f88aa25c4d31ba2a7fe08c196cbae5"
+  },
+  "package_contract": {
+    "schema": "aura.skill-package.v1",
+    "format": "canonical JSON UTF-8 bytes",
+    "integrity": "SHA-256",
+    "publisher_authenticity": "NOT PROVIDED BY SHA-256",
+    "executable_payload": "FORBIDDEN",
+    "entrypoint": "FORBIDDEN",
+    "dynamic_code": "FORBIDDEN",
+    "archive_extraction": "FORBIDDEN",
+    "pickle_marshal": "FORBIDDEN",
+    "non_json_metadata": "DENY"
+  },
+  "catalog_contract": {
+    "scope": "local in-memory",
+    "unique_key": "skill_id",
+    "duplicate": "DENY",
+    "execution_authority": "NONE",
+    "lifecycle_authority": "NONE"
+  },
+  "distribution_contract": {
+    "network": "NOT USED",
+    "filesystem_install": "NONE",
+    "remote_repository": "NONE",
+    "installation_path": "decode -> existing SkillLifecycleManagerV102",
+    "activation_path": "existing SkillLifecycleManagerV102",
+    "execution_path": "existing SecureSkillRuntimeV101"
+  },
+  "preserved_authorities": {
+    "skills/manifest.py": "f8305b0a35634ef6587b9f9a17abb98838d6ca0ff121d65d8745cd7b8593cbcf",
+    "skills/registry.py": "96a5ea3dcb38d9cfc6d212d883b129832e2d9a0d01f6ae38a990dd001c76a58a",
+    "skills/runtime.py": "50335b7643a94e5d907fae69565d09f74e7d312bd71b50007e8b90af9e932b68",
+    "skills/developer_contract.py": "d85a3f4587d675fa08d414a52199faad99d0c7f5fc293a41c2db36454cba2ec3",
+    "skills/lifecycle.py": "70aec18373009368bf622da3bbf78dd91ffe3b00a5879fe69e9c10553b893142",
+    "integrations/registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+    "security/permissions.py": "6df1f3a88072355147e9b1409566bb9046a25412f57112830308ccc948c7d4a0",
+    "action_receipts/service.py": "4c0f13eefaa6351eca157235d3b0ceea5643474a8cbf0cdb7401c1d71b34023e",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "core/aura_core.py": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474"
+  },
+  "identity": {
+    "canonical": "1.1.0",
+    "display": "v1.1.0",
+    "spoken_verified": true,
+    "surface_files_changed": 0,
+    "surface_replacements": 0
+  },
+  "external_network": "NOT USED",
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_state": "V1_1_0_SKILL_CATALOG_PACKAGE_DISTRIBUTION_COMPLETE_READY_FOR_NEXT_V1_1_ROADMAP_BLOCK"
+}

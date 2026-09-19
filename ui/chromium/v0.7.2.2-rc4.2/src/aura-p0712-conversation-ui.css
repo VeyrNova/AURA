@@ -1,0 +1,163 @@
+/* AURA P0.7.1.2 — Conversation UI Coexistence + Visual Redesign */
+:root{--aura-p0712-drawer-width:clamp(420px,29vw,500px);--aura-p0712-drawer-gap:14px;--aura-p0712-drawer-reserve:calc(var(--aura-p0712-drawer-width) + var(--aura-p0712-drawer-gap) + 18px)}
+.aura-p0712-conversation-drawer{position:fixed;z-index:154;top:102px;right:12px;bottom:14px;width:var(--aura-p0712-drawer-width);min-width:0;display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden;border:1px solid rgba(113,87,232,.43);border-radius:12px;background:linear-gradient(155deg,rgba(4,10,24,.996),rgba(6,9,23,.994));box-shadow:-20px 0 58px rgba(0,0,0,.4),0 0 28px rgba(84,57,190,.08),inset 1px 0 rgba(134,107,255,.07);opacity:0;transform:translateX(18px);pointer-events:none;transition:opacity .16s ease,transform .16s ease}
+.aura-p0712-conversation-drawer.open:not([hidden]){opacity:1;transform:none;pointer-events:auto}.aura-p0712-conversation-drawer[hidden]{display:none!important}
+.aura-p0712-head{min-height:55px;padding:8px 9px 8px 11px;display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid rgba(97,84,178,.18);background:linear-gradient(90deg,rgba(79,45,170,.15),rgba(6,10,24,.15) 55%,transparent)}
+.aura-p0712-title{display:flex;align-items:center;gap:8px;min-width:0}.aura-p0712-brandmark{width:22px;height:22px;display:grid;place-items:center;border:1px solid rgba(130,96,245,.42);border-radius:6px;background:linear-gradient(145deg,rgba(116,72,235,.32),rgba(26,23,67,.55));color:#cbbcff;font:700 11px/1 system-ui;box-shadow:0 0 14px rgba(108,72,225,.18)}
+.aura-p0712-title>span:last-child{min-width:0}.aura-p0712-title small{display:block;color:#726d9e;font:600 6.5px/1.1 system-ui;letter-spacing:.13em}.aura-p0712-title b{display:block;margin-top:3px;color:#d9d5fa;font:600 10px/1.1 system-ui;letter-spacing:.055em}.aura-p0712-title em{display:block;margin-top:4px;color:#8e75df;font:500 7px/1.1 system-ui;font-style:normal;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aura-p071-head-actions{display:flex;align-items:center;gap:5px}.aura-p071-head-actions button{height:26px;padding:0 8px;border:1px solid rgba(112,98,195,.24);border-radius:7px;background:rgba(20,22,49,.7);color:#8c8bad;font:600 6.5px/1 system-ui;letter-spacing:.045em;cursor:pointer}.aura-p071-head-actions button:hover{border-color:rgba(145,112,255,.5);color:#e4defc}.aura-p071-head-actions [data-close]{width:27px;padding:0;font-size:13px;font-weight:300}
+.aura-p0712-main{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 142px}.aura-p0712-thread{min-width:0;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto auto;border-right:1px solid rgba(96,84,155,.13)}
+.aura-p071-history{min-height:0;overflow:auto;padding:12px 10px 16px;scrollbar-width:thin;scrollbar-color:rgba(116,94,214,.5) rgba(12,19,38,.2)}.aura-p071-history::-webkit-scrollbar{width:6px}.aura-p071-history::-webkit-scrollbar-thumb{border-radius:8px;background:rgba(116,94,214,.48)}
+.aura-p071-message{display:grid;grid-template-columns:22px minmax(0,1fr);gap:7px;width:auto;max-width:94%;margin:0 0 9px;padding:0;border:0;background:transparent}.aura-p071-message>div{min-width:0;padding:8px 9px;border:1px solid rgba(91,108,161,.14);border-radius:8px;background:rgba(9,18,34,.78)}.aura-p0712-msg-avatar{width:22px;height:22px;display:grid;place-items:center;border-radius:6px;border:1px solid rgba(123,91,226,.22);background:rgba(33,24,74,.68);color:#b59cff;font:700 9px/1 system-ui}.aura-p071-message small{display:block;margin-bottom:4px;color:#777d9a;font:600 6.5px/1 system-ui;letter-spacing:.08em}.aura-p071-message p{margin:0;color:#cbd2e2;font:9.5px/1.45 "Segoe UI Variable","Segoe UI",system-ui,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere}.aura-p071-message.aura{margin-right:auto}.aura-p071-message.aura>div{border-color:rgba(62,177,205,.17);background:linear-gradient(145deg,rgba(7,34,45,.82),rgba(7,18,34,.76))}.aura-p071-message.aura small{color:#61c6d9}.aura-p071-message.aura .aura-p0712-msg-avatar{border-color:rgba(105,80,218,.32);background:linear-gradient(145deg,rgba(109,59,213,.36),rgba(25,23,68,.75));color:#e1d4ff}.aura-p071-message.user{margin-left:auto;grid-template-columns:minmax(0,1fr) 22px}.aura-p071-message.user .aura-p0712-msg-avatar{grid-column:2}.aura-p071-message.user>div{grid-column:1;grid-row:1;border-color:rgba(122,91,224,.22);background:linear-gradient(145deg,rgba(38,27,80,.82),rgba(21,22,55,.8))}.aura-p071-message.user small{color:#a994ee}.aura-p071-message.system{max-width:100%}.aura-p071-empty{height:100%;min-height:170px;display:grid;place-content:center;text-align:center;padding:22px}.aura-p071-empty b{color:#8a90b6;font:600 9px/1.2 system-ui;letter-spacing:.1em}.aura-p071-empty span{display:block;margin-top:7px;color:#555c79;font:8px/1.45 system-ui}
+.aura-p071-footer-note{min-height:24px;padding:0 10px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(91,98,143,.08);background:rgba(3,8,19,.48)}.aura-p071-footer-note span{color:#515a77;font:7px/1.2 system-ui}.aura-p071-footer-note b{display:grid;place-items:center;min-width:17px;height:17px;border-radius:10px;background:#704de4;color:white;font:700 7px/1 system-ui}
+.aura-p0712-composer{display:grid;grid-template-columns:29px minmax(0,1fr) 31px;align-items:end;gap:6px;padding:8px;border-top:1px solid rgba(96,103,151,.12);background:rgba(4,10,23,.94)}.aura-p0712-composer>button{height:29px;border:1px solid rgba(91,103,158,.2);border-radius:8px;background:rgba(10,20,39,.8);color:#848ba9;cursor:pointer}.aura-p0712-composer>button:hover{border-color:rgba(126,101,239,.45);color:#ddd8f8}.aura-p0712-composer>div{min-width:0}.aura-p0712-composer textarea{box-sizing:border-box;width:100%;min-height:30px;max-height:112px;resize:none;padding:6px 8px;border:1px solid rgba(95,106,160,.2);border-radius:8px;outline:none;background:rgba(5,14,29,.92);color:#d9dfec;font:9px/1.42 "Segoe UI Variable","Segoe UI",system-ui,sans-serif}.aura-p0712-composer textarea:focus{border-color:rgba(120,90,235,.52);box-shadow:0 0 0 2px rgba(94,68,210,.08)}.aura-p0712-composer textarea::placeholder{color:#5b6380}.aura-p0712-composer small{display:block;margin-top:4px;color:#4e5671;font:6.5px/1.2 system-ui}.aura-p071-send{color:#77d8ec!important;font-size:13px!important}
+.aura-p0712-context-side{min-width:0;display:flex;flex-direction:column;gap:12px;padding:10px 8px;background:linear-gradient(180deg,rgba(8,11,27,.82),rgba(4,9,20,.74));overflow:auto}.aura-p0712-context-card,.aura-p0712-suggestions{border:1px solid rgba(93,85,153,.17);border-radius:8px;background:rgba(10,14,31,.58);overflow:hidden}.aura-p0712-context-card>header,.aura-p0712-suggestions>header{padding:8px 8px 6px;color:#746e99;font:600 6.5px/1 system-ui;letter-spacing:.09em}.aura-p0712-context-card dl{margin:0;padding:1px 8px 8px}.aura-p0712-context-card dl>div{padding:5px 0;border-top:1px solid rgba(92,87,142,.09)}.aura-p0712-context-card dt{color:#565e7c;font:500 6px/1.2 system-ui}.aura-p0712-context-card dd{margin:3px 0 0;color:#b9bed3;font:600 7px/1.3 system-ui;overflow-wrap:anywhere}.aura-p0712-context-card dd[data-context-state]{color:#6fc9d8}.aura-p0712-suggestions{padding-bottom:5px}.aura-p0712-suggestions button{width:100%;display:grid;grid-template-columns:15px minmax(0,1fr);gap:4px;align-items:center;padding:6px 7px;border:0;background:transparent;color:#8c91ad;text-align:left;font:500 6.5px/1.25 system-ui;cursor:pointer}.aura-p0712-suggestions button:hover{background:rgba(92,65,185,.11);color:#d3cef0}.aura-p0712-clear-context{margin-top:auto;min-height:27px;border:1px solid rgba(100,91,162,.18);border-radius:7px;background:rgba(11,14,30,.62);color:#686e8e;font:600 6px/1 system-ui;letter-spacing:.04em}.aura-p0712-clear-context:disabled{opacity:.55;cursor:not-allowed}
+.runtime-disabled .aura-p0712-brandmark{filter:saturate(.2)}
+body[data-aura-workspace-overlay="conversation-drawer"] .aura-p0633-response-dock{display:none!important}.aura-p0702-nav-btn[data-rail-target="conversation"].drawer-open{color:#cbc9ef;background:rgba(75,51,169,.10);border-color:rgba(118,90,239,.22)}.aura-p0702-nav-btn[data-rail-target="conversation"].drawer-open i{background:#8c69ff;box-shadow:0 0 9px rgba(140,105,255,.65)}.aura-p0702-nav-btn[data-rail-target="conversation"].has-unread i{background:#71ddec;box-shadow:0 0 9px rgba(113,221,236,.62)}
+/* Only one composer surface while the contextual drawer is open. */
+body.aura-p0712-drawer-contextual .workspace>.composer,body.aura-p0712-drawer-contextual #composer.composer,body.aura-p0711-drawer-contextual .workspace>.composer,body.aura-p0711-drawer-contextual #composer.composer{display:none!important}
+/* Coexistence contract: right-side product panels move left instead of being covered by Conversation. */
+body.aura-p0712-coexist-right-panel .aura-p0626-memory.open,body.aura-p0712-coexist-right-panel .aura-p0627-system.open,body.aura-p0712-coexist-right-panel .aura-p0623-drawer.open,body.aura-p0712-coexist-right-panel .aura-weather-workspace.open{right:var(--aura-p0712-drawer-reserve)!important;max-width:calc(100vw - var(--aura-p0702-rail-width,220px) - var(--aura-p0712-drawer-reserve) - 30px)!important;transition:right .16s ease,max-width .16s ease!important}
+/* Some historical module builds use fixed side panels without .open on the root. */
+body.aura-p0712-coexist-right-panel[data-aura-conversation-context="memory"] .aura-p0626-memory,body.aura-p0712-coexist-right-panel[data-aura-conversation-context="system"] .aura-p0627-system,body.aura-p0712-coexist-right-panel[data-aura-conversation-context="plan"] .aura-p0623-drawer,body.aura-p0712-coexist-right-panel[data-aura-conversation-context="weather"] .aura-weather-workspace{right:var(--aura-p0712-drawer-reserve)!important;max-width:calc(100vw - var(--aura-p0702-rail-width,220px) - var(--aura-p0712-drawer-reserve) - 30px)!important}
+/* Full Conversation: inspired by the central reference, but keeps the real AURA DOM and composer. */
+body[data-aura-workspace="talk"] #conversation{position:absolute!important;z-index:70!important;inset:14px 14px 72px 14px!important;display:grid!important;grid-template-rows:auto minmax(0,1fr)!important;overflow:hidden!important;border:1px solid rgba(92,74,190,.34)!important;border-radius:12px!important;background:linear-gradient(160deg,rgba(4,10,23,.98),rgba(5,12,25,.965))!important;box-shadow:0 18px 54px rgba(0,0,0,.28)!important}
+.aura-p0712-full-head{min-height:48px;padding:8px 10px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(93,82,160,.15);background:linear-gradient(90deg,rgba(79,49,167,.14),transparent 58%)}.aura-p0712-full-title{display:flex;align-items:center;gap:8px}.aura-p0712-full-title>span{width:23px;height:23px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(117,89,222,.3);color:#b699ff;background:rgba(37,24,78,.7);font-size:9px}.aura-p0712-full-title small{display:block;color:#696d8c;font:600 6px/1 system-ui;letter-spacing:.11em}.aura-p0712-full-title b{display:block;margin-top:4px;color:#cfc9ec;font:600 9px/1 system-ui;letter-spacing:.06em}.aura-p0712-full-actions{display:flex;gap:5px}.aura-p0712-full-actions button{width:26px;height:25px;border:1px solid rgba(97,89,157,.2);border-radius:7px;background:rgba(12,17,35,.65);color:#777f9f;cursor:pointer}.aura-p0712-full-actions button:hover{color:#ddd7f4;border-color:rgba(122,91,226,.42)}
+body[data-aura-workspace="talk"] #conversation>#closeTalk{display:none!important}body[data-aura-workspace="talk"] #conversation #messages{min-height:0!important;overflow:auto!important;padding:14px 18px 24px!important;background:transparent!important}body[data-aura-workspace="talk"] #conversation #messages .message{max-width:min(760px,82%)!important;margin:0 0 12px!important;padding:10px 13px!important;border-radius:9px!important;border:1px solid rgba(91,106,161,.15)!important;background:rgba(9,18,34,.72)!important}body[data-aura-workspace="talk"] #conversation #messages .message.user{margin-left:auto!important;border-color:rgba(123,91,226,.22)!important;background:linear-gradient(145deg,rgba(34,25,78,.82),rgba(18,21,52,.78))!important}body[data-aura-workspace="talk"] #conversation #messages .message.aura{margin-right:auto!important;border-color:rgba(65,176,203,.16)!important;background:linear-gradient(145deg,rgba(6,31,43,.78),rgba(7,17,31,.75))!important}body[data-aura-workspace="talk"] #conversation #messages .message p{font-size:11px!important;line-height:1.55!important;color:#d3d8e6!important}body[data-aura-workspace="talk"] .workspace>.composer,body[data-aura-workspace="talk"] #composer.composer{display:flex!important;z-index:72!important;border:1px solid rgba(85,98,147,.2)!important;border-radius:10px!important;background:rgba(5,13,27,.96)!important;box-shadow:0 12px 34px rgba(0,0,0,.2)!important}
+@media(max-width:1280px){:root{--aura-p0712-drawer-width:390px}.aura-p0712-main{grid-template-columns:minmax(0,1fr) 124px}.aura-p0712-context-side{padding-inline:6px}.aura-p0712-context-card dd{font-size:6.5px}}
+@media(max-width:1040px){:root{--aura-p0712-drawer-width:340px}.aura-p0712-main{grid-template-columns:1fr}.aura-p0712-context-side{display:none}.aura-p0712-conversation-drawer{top:90px;right:8px;bottom:10px}.aura-p071-head-actions [data-full]{display:none}body.aura-p0712-coexist-right-panel .aura-p0626-memory.open,body.aura-p0712-coexist-right-panel .aura-p0627-system.open,body.aura-p0712-coexist-right-panel .aura-p0623-drawer.open,body.aura-p0712-coexist-right-panel .aura-weather-workspace.open{max-width:calc(100vw - var(--aura-p0702-rail-width,190px) - var(--aura-p0712-drawer-reserve) - 20px)!important}}
+@media(max-width:760px){:root{--aura-p0712-drawer-width:min(320px,calc(100vw - 108px))}.aura-p0712-conversation-drawer{left:auto}body.aura-p0712-coexist-right-panel .aura-p0626-memory,body.aura-p0712-coexist-right-panel .aura-p0627-system,body.aura-p0712-coexist-right-panel .aura-p0623-drawer,body.aura-p0712-coexist-right-panel .aura-weather-workspace{right:var(--aura-p0712-drawer-reserve)!important}}
+@media(prefers-reduced-motion:reduce){.aura-p0712-conversation-drawer,.aura-p0626-memory,.aura-p0627-system,.aura-p0623-drawer,.aura-weather-workspace{transition:none!important}}
+
+/* AURA V0.9.2.2.1 COLOR HARMONIZATION - CONVERSATION
+   Visual-only hotfix. Dark navy + cyan/blue primary.
+   Purple is retained only as a tiny semantic accent. */
+.aura-p0712-conversation-drawer{
+  border-color:rgba(111,228,247,.32);
+  background:linear-gradient(155deg,rgba(3,17,27,.988),rgba(4,11,23,.994));
+  box-shadow:-20px 0 58px rgba(0,0,0,.40),0 0 28px rgba(111,228,247,.055),inset 1px 0 rgba(111,228,247,.06);
+}
+.aura-p0712-head{
+  border-bottom-color:rgba(111,228,247,.16);
+  background:linear-gradient(90deg,rgba(20,91,108,.15),rgba(4,16,26,.10) 58%,transparent);
+}
+.aura-p0702-nav-btn[data-rail-target="conversation"].drawer-open{
+  color:#dffaff;
+  background:rgba(111,228,247,.075);
+  border-color:rgba(111,228,247,.24);
+}
+.aura-p0702-nav-btn[data-rail-target="conversation"].drawer-open i{
+  background:#74dbe9;
+  box-shadow:0 0 9px rgba(111,228,247,.48);
+}
+body[data-aura-workspace="talk"] #conversation{
+  border-color:rgba(111,228,247,.30)!important;
+  background:linear-gradient(160deg,rgba(3,17,27,.985),rgba(4,12,23,.975))!important;
+  box-shadow:0 18px 54px rgba(0,0,0,.28),0 0 24px rgba(111,228,247,.025)!important;
+}
+.aura-p0712-full-head{
+  border-bottom-color:rgba(111,228,247,.16);
+  background:linear-gradient(90deg,rgba(20,91,108,.14),transparent 60%);
+}
+.aura-p0712-full-title>span{
+  border-color:rgba(111,228,247,.30);
+  color:#79e0ec;
+  background:rgba(7,34,45,.72);
+  box-shadow:0 0 12px rgba(111,228,247,.08);
+}
+.aura-p0712-full-title small{
+  color:#8ebcc6;
+}
+.aura-p0712-full-title b{
+  color:#dffaff;
+}
+.aura-p0712-full-actions button{
+  border-color:rgba(111,228,247,.17);
+  background:rgba(5,20,31,.62);
+  color:#8ebcc6;
+}
+.aura-p0712-full-actions button:hover{
+  color:#dffaff;
+  border-color:rgba(111,228,247,.38);
+  background:rgba(111,228,247,.055);
+}
+body[data-aura-workspace="talk"] #conversation #messages .message{
+  border-color:rgba(111,228,247,.11)!important;
+  background:rgba(7,18,31,.72)!important;
+}
+body[data-aura-workspace="talk"] #conversation #messages .message.user{
+  border-color:rgba(126,101,239,.16)!important;
+  background:linear-gradient(145deg,rgba(10,19,34,.82),rgba(11,17,35,.78))!important;
+}
+body[data-aura-workspace="talk"] #conversation #messages .message.aura{
+  border-color:rgba(111,228,247,.18)!important;
+  background:linear-gradient(145deg,rgba(6,31,43,.78),rgba(7,17,31,.75))!important;
+}
+.aura-p0712-drawer-composer,
+.aura-p0712-drawer-input-wrap{
+  border-color:rgba(111,228,247,.18);
+}
+.aura-p0712-drawer-input:focus,
+.aura-p0712-drawer-composer input:focus,
+.aura-p0712-drawer-composer textarea:focus{
+  border-color:rgba(111,228,247,.42);
+  box-shadow:0 0 0 2px rgba(111,228,247,.08);
+}
+
+/* AURA_V123_CONVERSATION_RESULTS_COEXISTENCE
+   Conversation | Personal Results | SYSTEM LIVE */
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation{
+  right:var(--aura-v123-conversation-right-reserve,0px)!important;
+  max-width:none!important;
+  transition:right .16s ease;
+}
+
+/* AURA_V123_CONVERSATION_HARD_REFLOW_BEGIN
+   Personal Results is a sibling column, never an overlay over Conversation. */
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation{
+  top:14px!important;
+  bottom:72px!important;
+  left:14px!important;
+  right:var(--aura-v123-conversation-right-reserve,0px)!important;
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  transition:right .16s ease,width .16s ease!important;
+}
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation,
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation>*,
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation .aura-p0712-main,
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation .aura-p0712-thread,
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation #messages,
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation .aura-p0712-composer,
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation .composer{
+  min-width:0!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation .aura-p0712-main{
+  grid-template-columns:minmax(0,1fr)!important;
+  overflow:hidden!important;
+}
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation .aura-p0712-context-side{
+  display:none!important;
+}
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation #messages{
+  overflow-x:hidden!important;
+}
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation #messages .message{
+  width:auto!important;
+  max-width:min(680px,calc(100% - 24px))!important;
+  min-width:0!important;
+  overflow-wrap:anywhere!important;
+  word-break:break-word!important;
+}
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation textarea,
+body.aura-v123-personal-results-open[data-aura-workspace="talk"] #conversation input{
+  max-width:100%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+}
+/* AURA_V123_CONVERSATION_HARD_REFLOW_END */

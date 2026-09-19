@@ -1,0 +1,30 @@
+{
+  "schema": "aura.v130.w130-c.auracore-conversation-project-context-injection.manifest.v1",
+  "created_at": "2026-08-30T14:44:54",
+  "canonical_version": "1.2.3",
+  "target_version": "1.3.0",
+  "parent_w130_b_sha256": "e55c2b74538378b6b1f31a62eeb66a7052aa503308190e18664c1185d1e9422e",
+  "workspace_context_sha256": "7f6966fa83855daf700fa7b5242777b4d2163850d82dffc7224b78bfa0721781",
+  "workspace_runtime_binding_sha256": "7e7f10b99ebad34ab186a8ce126d2b1bf1fecc6e65db4a0d2ae30989499a7991",
+  "module": "runtime/workspace_conversation_context_v130.py",
+  "module_sha256": "53df01c893b0e5b02a4f029ea9c46d1b6a2be6e6e041f7f49f2d1ddb72d2bae4",
+  "invariant": "tests/invariants/test_workspace_conversation_context_v130.py",
+  "invariant_sha256": "54f8977bc67e16310bcd749b833b347daf32e999eaef316fe657aedf1cfe12fa",
+  "contract": [
+    "exactly one [AURA_ACTIVE_PROJECT] context block",
+    "idempotent message injection",
+    "idempotent plain-prompt injection",
+    "no active project => no injection",
+    "archived active project => clean removal",
+    "structured active-project explanation payload",
+    "no action-success claims without tools/receipts"
+  ],
+  "next": "W130-D live Conversation bridge + active project intents",
+  "non_goals": [
+    "no existing AuraCore source modified in W130-C",
+    "no UI mutation",
+    "no PC control",
+    "no network",
+    "no version bump"
+  ]
+}

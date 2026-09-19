@@ -1,0 +1,13 @@
+{
+  "schema": "aura.dev.patch.p0854695.v1",
+  "patch_id": "P0.8.5.4.6.9.5",
+  "active_ui": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2",
+  "asset_sha256": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9",
+  "index_sha256": "f1df20e941a4f447b532f8879e8878bd85fb0191ba3befba5e363b5d52af1a87",
+  "intent": {
+    "external_orb_tendrils": "disabled",
+    "voice_vertical_analyzer_bars": "removed",
+    "horizontal_pcm_waveform": "preserved",
+    "internal_orb_network": "preserved"
+  }
+}

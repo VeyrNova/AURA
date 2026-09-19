@@ -1,0 +1,1 @@
+@echo off\r\nsetlocal\r\ntitle AURA A200-R18 UI HOST TRANSPORT\r\nif exist "C:\AURA GPT version\\venv\\Scripts\\python.exe" (\r\n  "C:\AURA GPT version\\venv\\Scripts\\python.exe" -B "C:\AURA GPT version\runtime\aura_ui_host_transport_v200.py"\r\n) else (\r\n  python -B "C:\AURA GPT version\runtime\aura_ui_host_transport_v200.py"\r\n)\r\nexit /b %ERRORLEVEL%\r\n

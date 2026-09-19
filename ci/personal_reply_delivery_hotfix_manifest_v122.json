@@ -1,0 +1,11 @@
+{
+  "schema": "aura.v122.personal-reply-delivery-hotfix.manifest.v2",
+  "generated_at": "2026-08-29T11:52:40",
+  "product_version": "1.2.1",
+  "target_version": "1.2.2",
+  "classification": "PERSONAL_REPLY_DELIVERY_CONTRACT_FIXED_AST_ANCHORED",
+  "prewrite_core_sha256": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474",
+  "postwrite_core_sha256": "19ff40b2153c73c842f41e4d9910b44f0ef2dd22034518a5d2d0f512628f6e0f",
+  "invariant_sha256": "0bc4ef6a4b80e7945c85037569c9d03acab3bd146d7fb1339bafc89cac2ec60c",
+  "version_bumped": false
+}

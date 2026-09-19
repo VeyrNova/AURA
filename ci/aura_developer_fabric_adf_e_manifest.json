@@ -1,0 +1,41 @@
+{
+  "schema": "aura.developer-fabric.adf-e.manifest.v1",
+  "installed_at": "2026-08-30T20:34:15",
+  "aura_version": "1.3.0",
+  "product_version_bumped": false,
+  "clean_room": true,
+  "fcc_dependency": false,
+  "fcc_source_reused": false,
+  "features": {
+    "production_retry_failover": true,
+    "retryable_http": [
+      408,
+      409,
+      425,
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "nonretry_auth_request_fast_fail": true,
+    "circuit_breaker_preserved": true,
+    "terminal_reduction_kernel": true,
+    "terminal_output_reduction_target_up_to_percent": 90,
+    "terminal_reduction_guaranteed": false,
+    "provider_free_local_optimizations": 5,
+    "voice_local_whisper_first": true,
+    "nvidia_nim_optional": true,
+    "remote_audio_requires_explicit_approval": true
+  },
+  "http_endpoints_added": [
+    "GET /aura/v1/efficiency",
+    "GET /aura/v1/voice"
+  ],
+  "certification": {
+    "external_network": false,
+    "external_provider": false,
+    "third_party_agent": false,
+    "audio_upload": false
+  }
+}

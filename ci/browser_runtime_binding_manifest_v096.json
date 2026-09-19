@@ -1,0 +1,78 @@
+{
+  "schema": "aura.browser-runtime-binding-manifest.v096.d2-r8.v1",
+  "status": "D2_R8_LIVE_BROWSER_RUNTIME_BINDING_WRITTEN",
+  "generated_at": "2026-08-28T16:48:57",
+  "product_version": "0.9.5",
+  "strategy": "CORE_HOOK_REUSES_EXISTING_PERSONAL_CONTEXT_AND_EXISTING_INTERNET_TOOL_MANAGER",
+  "existing_file_modified": {
+    "path": "core/aura_core.py",
+    "before_sha256": "a7c3d03e28ec213f496d2c51021b9936c9ef5ee275c1f71a67523d9ff74b848f",
+    "after_sha256": "f74fd9c810828c71ef39321df875b6828d8510b72a105c9d0eef51fc4af87816"
+  },
+  "new_files": [
+    "tests/invariants/test_browser_runtime_binding_v096.py",
+    "ci/browser_runtime_binding_manifest_v096.json"
+  ],
+  "runtime_binding": {
+    "AuraCore_manager_attr": "internet_tools",
+    "InternetToolManager_search_attr": "search",
+    "InternetToolManager_fetch_attr": "fetch",
+    "provider_id": "browser.provider",
+    "registration_helper": "runtime.personal_integrations.register_browser_provider_v096",
+    "adapter": "runtime.browser_live_adapters_v096.BrowserLiveToolAdapters",
+    "idempotent_registry_guard": true
+  },
+  "binding_rules": {
+    "reuse_existing_InternetToolManager": true,
+    "reuse_existing_FreeWebSearchTool": true,
+    "reuse_existing_WebFetchTool": true,
+    "reuse_existing_SafeHTTPClient_transitively": true,
+    "do_not_create_second_HTTP_stack": true,
+    "do_not_create_second_search_backend": true,
+    "read_only_first": true,
+    "evidence_required": true,
+    "state_changing_executor": "DISABLED",
+    "external_content_trust": "UNTRUSTED_BY_DEFAULT"
+  },
+  "network_test_policy": {
+    "external_network_required_for_D2_R8_pass": false,
+    "live_network_used": false
+  },
+  "backup": {
+    "path": "_patch_backups\\v0.9.6_d2_r8_20260828_164852\\core\\aura_core.py",
+    "sha256": "a7c3d03e28ec213f496d2c51021b9936c9ef5ee275c1f71a67523d9ff74b848f"
+  },
+  "adapter_sha256": "c1d72b36cff27a6509f736132ed64136e3e030ffaae6b7d0d82ecef1f28905e7",
+  "adapter_manifest_sha256": "f14c4d9ebad5a1df2aa2c4b36a6cef1d2335778fdbaa2ea4fca82ea2252dc971",
+  "R4_hashes": {
+    "security/permissions.py": "6df1f3a88072355147e9b1409566bb9046a25412f57112830308ccc948c7d4a0",
+    "runtime/route_contract.py": "a04a000f19c4794b543dbd4cd5b73541997f32055d3a7776f4979a89eb62f9b4",
+    "integrations/registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+    "runtime/personal_integrations.py": "de47c1a8bd1598ab6d03a29276dfdd0ada90b5220415cc8e2a418b940259a893",
+    "runtime/browser_wiring_v096.py": "31b73e0b56204bdac1cf3768ed56d75edcf44bbb3cd2bf0891f182d8ff02fac1",
+    "tests/invariants/test_browser_wiring_v096.py": "9319598ad79c9fdbbdadd61da362f0dcbcdf2d11771540031ec5374319209ec9",
+    "tests/invariants/test_browser_security_mapping_v096.py": "87a2166fd00c4599fa0139e4d18407384b130bcaa6a9dde042db0029a1152da1",
+    "tests/invariants/test_browser_workflow_contract_preserved_d2r4_v096.py": "e0459e7d1993380aa32811a62fc32e73efe3a2175d6e1fe7a4bebb4dd1501b49",
+    "ci/browser_wiring_security_manifest_v096.json": "9c92ba0b6555eb0497b2c0c9e3cf146e0d5b5e07ae7bf1e4d2a5709a5f166e7b"
+  },
+  "web_hashes": {
+    "tools/web_search.py": "12527a9474569ba697cb0d7235a9848ce63ba15dde21b4bbeab766556ca3dc27",
+    "tools/web_fetch.py": "68d7eb5f3894b30a5dc15019714311d2435dc0ca64be65a0f02d97ea40d9450f",
+    "tools/safe_http.py": "3d9cfa0c877b03eef3f4dfa4ce7550bf56ef7bf78963db31f24910e2ed2c385c",
+    "tools/models.py": "a9a08ce878dd68a3feb334b03919ff92b9b19ab42d9b17782a50055ecf6625fc"
+  },
+  "protected_hashes": {
+    "security/policy_engine_v2.py": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "action_receipts/service.py": "4c0f13eefaa6351eca157235d3b0ceea5643474a8cbf0cdb7401c1d71b34023e",
+    "integrations/browser/provider.py": "fee06ec1a9651687aacd93669114003d03618fa2ee85c171632abdeb232cdaf8",
+    "runtime/browser_workflows.py": "cb92861f65a719810c77fb50c8640af8d691b9d289ac83bfc229e602355700d1"
+  },
+  "database_sha256": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb",
+  "color_charter": "LOCKED",
+  "visual_hashes": {
+    "main_css": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5",
+    "activity_project": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4",
+    "activity_dist": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4"
+  }
+}

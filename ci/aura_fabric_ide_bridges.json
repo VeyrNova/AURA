@@ -1,0 +1,24 @@
+{
+  "schema": "aura.fabric.ide-bridges.v1",
+  "bridges": [
+    {
+      "id": "vscode",
+      "display_name": "VS Code",
+      "mode": "terminal_and_extension_handoff",
+      "mutates_ide_config": false
+    },
+    {
+      "id": "jetbrains",
+      "display_name": "JetBrains",
+      "mode": "external_tool_handoff",
+      "mutates_ide_config": false
+    },
+    {
+      "id": "codex_app",
+      "display_name": "Codex App",
+      "mode": "shared_codex_provider_contract",
+      "mutates_ide_config": false,
+      "live_certified": false
+    }
+  ]
+}

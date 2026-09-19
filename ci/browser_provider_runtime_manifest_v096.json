@@ -1,0 +1,45 @@
+{
+  "schema": "aura.browser-provider-runtime-manifest.v096.v1",
+  "created_at": "2026-08-28T14:19:22",
+  "status": "D2_R2_BACKEND_SKELETON",
+  "product_version": "0.9.5",
+  "target_version": "0.9.6",
+  "milestone": "Browser / Web Workflows",
+  "source_dry_run": {
+    "path": "AURA_V0_9_6_D2_R1_BROWSER_PROVIDER_RUNTIME_FULL_DRY_RUN_RESULT.json",
+    "status": "PASS_V0_9_6_D2_R1_BROWSER_PROVIDER_RUNTIME_FULL_DRY_RUN",
+    "checks": "47/47",
+    "blockers": 0
+  },
+  "strategy": "ADAPTER_OVER_EXISTING_WEB_FOUNDATION",
+  "scope": "safe backend skeleton only; no real state-changing browser action",
+  "files": {
+    "integrations/browser/__init__.py": "80b8302ecffb06e34b151a7ab66818b8f7a8e48706982a9abaf85d2888aa8bcc",
+    "integrations/browser/provider.py": "fee06ec1a9651687aacd93669114003d03618fa2ee85c171632abdeb232cdaf8",
+    "runtime/browser_workflows.py": "cb92861f65a719810c77fb50c8640af8d691b9d289ac83bfc229e602355700d1",
+    "tests/invariants/test_browser_provider_v096.py": "8bc4ec38ce4eae371e0d1ae36c8cb1594d5726fe1d5241df0ba609b304534b9a",
+    "tests/invariants/test_browser_workflow_engine_v096.py": "47e898d11c547ac0708e5b65c8384d4f55de7e75165a26e9aa3a342aaa0912ff"
+  },
+  "prospective_source_hashes_from_D2_R1": {
+    "provider": "fee06ec1a9651687aacd93669114003d03618fa2ee85c171632abdeb232cdaf8",
+    "workflow_engine": "cb92861f65a719810c77fb50c8640af8d691b9d289ac83bfc229e602355700d1"
+  },
+  "behavior": {
+    "read_only_actions": "synthetic adapters validated; evidence required",
+    "state_changing_actions": "CONFIRMATION_REQUIRED; NO SIDE EFFECT",
+    "workflow_state_change": "WAITING_CONFIRMATION before execution",
+    "out_of_scope": "DENIED_OUT_OF_SCOPE",
+    "missing_evidence": "FAIL_CLOSED",
+    "max_initial_steps": 8,
+    "real_network_used_by_D2_R2_invariants": false
+  },
+  "existing_authorities_modified": [],
+  "future_D2_R3": [
+    "registry/runtime wiring",
+    "SecurityPolicyEngine mapping for BROWSER_MUTATE / BROWSER_DOWNLOAD",
+    "RouteContract browser.* routing",
+    "MissionEngine adapter",
+    "ActionReceipt + confirmation adapter"
+  ],
+  "color_charter": "LOCKED / NO COLOR CHANGE"
+}

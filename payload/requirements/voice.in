@@ -1,0 +1,9 @@
+# AURA v0.8.6.2 — voice
+# Exact top-level versions observed on 2026-08-24.
+
+numpy==2.4.6
+sounddevice==0.5.5
+faster-whisper==1.2.1
+piper-tts==1.6.0
+coqui-tts==0.27.5
+websockets==16.1.1

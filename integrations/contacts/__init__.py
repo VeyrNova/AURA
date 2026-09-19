@@ -1,0 +1,36 @@
+"""AURA v0.9.3 Contacts integration package."""
+from .provider import (
+    CONTACTS_CAPABILITIES,
+    CONTACTS_MANIFEST,
+    CONTACTS_PROVIDER_ID,
+    CONFIRMATION_CAPABILITIES,
+    READ_CAPABILITIES,
+    WRITE_CAPABILITIES,
+    Contact,
+    ContactLookupError,
+    ContactProvider,
+    ContactQuery,
+    ContactResult,
+    ContactsProvider,
+    ContactsProviderError,
+    ContactValidationError,
+    SyntheticContactsBackend,
+)
+
+__all__ = [
+    "CONTACTS_PROVIDER_ID",
+    "CONTACTS_CAPABILITIES",
+    "READ_CAPABILITIES",
+    "WRITE_CAPABILITIES",
+    "CONFIRMATION_CAPABILITIES",
+    "CONTACTS_MANIFEST",
+    "Contact",
+    "ContactQuery",
+    "ContactResult",
+    "ContactProvider",
+    "ContactsProvider",
+    "SyntheticContactsBackend",
+    "ContactsProviderError",
+    "ContactLookupError",
+    "ContactValidationError",
+]

@@ -1,0 +1,43 @@
+{
+  "schema": "aura.skill-manifest-capability-registry.v100.v1",
+  "status": "CERTIFIED_V1_0_0_SKILL_MANIFEST_CAPABILITY_REGISTRY",
+  "generated_at": "2026-08-28T19:57:48",
+  "product_version": "1.0.0",
+  "strategy": "NEW_V100_SKILL_MANIFEST_AND_SKILL_CAPABILITY_REGISTRY_REFERENCING_EXISTING_INTEGRATION_CAPABILITY_AND_PERMISSION_AUTHORITIES",
+  "scope": [
+    "SkillManifest",
+    "SkillCapabilityRef",
+    "SkillCapabilityRegistryV100",
+    "existing IntegrationCapability authority reuse",
+    "existing Permission/v0.9.8 permission contract reuse",
+    "unknown and denied capability fail-closed",
+    "metadata-only skill registry with no execution authority",
+    "canonical UI/spoken product version synchronized to 1.0.0"
+  ],
+  "new_authorities": {
+    "skills/__init__.py": "236e039410baff9584833f1d38ad2a444befba567c653cb22967eaad070b4684",
+    "skills/manifest.py": "f8305b0a35634ef6587b9f9a17abb98838d6ca0ff121d65d8745cd7b8593cbcf",
+    "skills/registry.py": "96a5ea3dcb38d9cfc6d212d883b129832e2d9a0d01f6ae38a990dd001c76a58a",
+    "tests/invariants/test_skill_manifest_capability_registry_v100.py": "5a2b3adb0ebff086112abfffb44c4757961064dc975adc962fb7b4c436df82b7"
+  },
+  "preserved_authorities": {
+    "integrations/registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+    "security/permissions.py": "6df1f3a88072355147e9b1409566bb9046a25412f57112830308ccc948c7d4a0",
+    "security/policy_engine_v2.py": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "runtime/integration_permissions_v098.py": "47b633afc02e0ecb36d30cc51d12d9275d9df3ff19dd3a5f2feb7cc8bb56f0fe",
+    "runtime/productivity_mission_bridge_v097.py": "4a290cbe3cb83bcf14b25171a47126607a9b5a96405c6dc4a4da0b1df4279992",
+    "core/aura_core.py": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474"
+  },
+  "version_identity": {
+    "canonical": "1.0.0",
+    "display": "v1.0.0",
+    "surface_files_changed": 48,
+    "surface_replacements": 76,
+    "spoken_verified": true
+  },
+  "existing_execution_authority_modified": false,
+  "external_network": "NOT USED",
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_state": "V1_0_0_SKILL_MANIFEST_CAPABILITY_REGISTRY_COMPLETE_READY_FOR_V1_0_1_SECURE_SKILL_RUNTIME"
+}

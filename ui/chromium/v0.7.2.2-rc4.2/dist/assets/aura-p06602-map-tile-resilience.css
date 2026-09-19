@@ -1,0 +1,64 @@
+/* AURA P0.6.6.0.2 — MAP TILE RESILIENCE & SMOOTH LOADING */
+.aura-nav-map{
+  background:
+    radial-gradient(circle at 50% 46%, rgba(14,38,58,.42), transparent 52%),
+    linear-gradient(145deg, #071019 0%, #091521 48%, #050b12 100%);
+}
+
+.aura-nav-tile{
+  opacity:1;
+  transition:opacity .28s ease, filter .28s ease;
+  will-change:opacity;
+}
+
+.aura-nav-tile[data-aura-state="loading"],
+.aura-nav-tile[data-aura-state="retrying"]{
+  opacity:0;
+}
+
+.aura-nav-tile[data-aura-state="loaded"]{
+  opacity:1;
+}
+
+.aura-nav-tile.aura-nav-tile-stale{
+  opacity:.92;
+  filter:saturate(.88) brightness(.92);
+}
+
+.aura-nav-tile.aura-nav-tile-retiring,
+.aura-nav-tile[data-aura-state="failed"]{
+  opacity:0;
+}
+
+.aura-nav-tile-status{
+  position:absolute;
+  left:50%;
+  bottom:54px;
+  z-index:18;
+  transform:translate(-50%,8px);
+  padding:7px 12px;
+  border:1px solid rgba(93,224,255,.32);
+  border-radius:999px;
+  background:rgba(5,14,23,.88);
+  box-shadow:0 0 22px rgba(29,211,255,.12);
+  color:#bfefff;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.12em;
+  white-space:nowrap;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .2s ease, transform .2s ease;
+  backdrop-filter:blur(8px);
+}
+
+.aura-navigation-workspace.tiles-loading .aura-nav-tile-status,
+.aura-navigation-workspace.tiles-degraded .aura-nav-tile-status{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+.aura-navigation-workspace.tiles-degraded .aura-nav-tile-status{
+  border-color:rgba(255,188,92,.42);
+  color:#ffd79f;
+}

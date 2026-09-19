@@ -1,0 +1,11 @@
+{
+  "schema": "aura.developer-fabric.adf-h-r4.manifest.v1",
+  "installed_at": "2026-08-31T19:09:48",
+  "aura_version": "1.3.0",
+  "root_cause": "native Qt DEV visuals were behind visible QWebEngine/Three.js shell",
+  "visible_surface_binding": "QWebEngineView.runJavaScript",
+  "web_assets_modified": false,
+  "web_workspace": true,
+  "native_qt_fallback": true,
+  "manual_visual_voice_acceptance_required": true
+}

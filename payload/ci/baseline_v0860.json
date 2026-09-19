@@ -1,0 +1,179 @@
+{
+  "schema": "aura.ci.baseline.v0861.v1",
+  "source_freeze": "AURA v0.8.6.0-R3",
+  "freeze_fingerprint": "c0d095909e6bd392fe513e91bd92b5dbfd92769ada4408668f987bdeb251b302",
+  "created_from_result": "AURA_V0_8_6_0_R3_CLEAN_SOURCE_SCOPE_RESULT.json",
+  "critical": {
+    "core_main_window": {
+      "path": "C:\\AURA GPT version\\ui\\main_window.py",
+      "exists": true,
+      "sha256": "13b11617d6b656fd951b09765397f9c051b2c429a5d2ae749f5619a8e374438d",
+      "bytes": 291577,
+      "lines": 5947
+    },
+    "core_intent_manager": {
+      "path": "C:\\AURA GPT version\\core\\intent_manager.py",
+      "exists": true,
+      "sha256": "da259e875203ae4e2921c7262b592fdefb030c4b90fdf1352a0464029a881b9f",
+      "bytes": 6560,
+      "lines": 148
+    },
+    "core_internet_manager": {
+      "path": "C:\\AURA GPT version\\tools\\internet_manager.py",
+      "exists": true,
+      "sha256": "0cf66aecdb915ba1a0cf30da2541d3c5d5f092378138b960ea323d5c361d66c6",
+      "bytes": 18934,
+      "lines": 386
+    },
+    "core_policy_engine": {
+      "path": "C:\\AURA GPT version\\security\\policy_engine.py",
+      "exists": true,
+      "sha256": "fd28c5d78ef2b20acad0c64b3554a570cb22fb73956861b07b309ff4753b502f",
+      "bytes": 3584,
+      "lines": 109
+    },
+    "core_safe_http": {
+      "path": "C:\\AURA GPT version\\tools\\safe_http.py",
+      "exists": true,
+      "sha256": "3d9cfa0c877b03eef3f4dfa4ce7550bf56ef7bf78963db31f24910e2ed2c385c",
+      "bytes": 6882,
+      "lines": 147
+    },
+    "core_memory_manager": {
+      "path": "C:\\AURA GPT version\\memory\\manager.py",
+      "exists": true,
+      "sha256": "67b5ef0a4bec9aab50b7d2acc3e857f0a89622f12919e0cd84a0f52316d08fc2",
+      "bytes": 25311,
+      "lines": 565
+    },
+    "core_resource_guardian": {
+      "path": "C:\\AURA GPT version\\runtime\\resource_guardian.py",
+      "exists": true,
+      "sha256": "f8f3ee6a70e196423fed44545436407139bb9518efb1138f3f868a841c0b3df2",
+      "bytes": 121342,
+      "lines": 2309
+    },
+    "core_microphone": {
+      "path": "C:\\AURA GPT version\\voice\\microphone.py",
+      "exists": true,
+      "sha256": "198d34849016a1972edcd5ce4f3999a91ee0019e2ba15a38ac6e212b6b024348",
+      "bytes": 17944,
+      "lines": 466
+    },
+    "ui_shell_host": {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
+      "exists": true,
+      "sha256": "453448bf8e357176a904b40bfa300f974a9bcb401a57de308498071a4d46b2a9",
+      "bytes": 185361,
+      "lines": 3568
+    },
+    "ui_index": {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
+      "exists": true,
+      "sha256": "dad55aa207c47375e8ea4931a2ba77950fa8d354991d8f33f59010052cfe25aa",
+      "bytes": 13430,
+      "lines": 188
+    },
+    "ui_main_bundle": {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\index-Ckl5rwwJ.js",
+      "exists": true,
+      "sha256": "c90a330add27d9e006451164bb2df255e7e80584917369ec9dfff7ab5b958551",
+      "bytes": 551325,
+      "lines": 4164
+    },
+    "ui_maps_workspace": {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
+      "exists": true,
+      "sha256": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a",
+      "bytes": 151222,
+      "lines": 3139
+    }
+  },
+  "expected_markers": {
+    "core/ui/main_window.py": [
+      "P0.8.5.4.7.3"
+    ],
+    "core/intent_manager.py": [
+      "P0.8.5.4.7.6.1.5"
+    ],
+    "tools/internet_manager.py": [
+      "P0.8.5.4.7.5",
+      "P0.8.5.4.7.6.1.5"
+    ],
+    "voice/microphone.py": [
+      "P0.8.5.4.7.4"
+    ],
+    "ui::tools/shell_host.py": [
+      "P0.8.5.4.7.5.1",
+      "P0.8.5.4.7.6.1.3"
+    ],
+    "ui::dist/assets/index-Ckl5rwwJ.js": [
+      "P0.8.5.4.7.6.1.2",
+      "P0.8.5.4.7.6.1.4"
+    ],
+    "ui::dist/assets/aura-p060-navigation-workspace.js": [
+      "P0.8.5.4.7.6.1.5"
+    ]
+  },
+  "architecture_ceilings": {
+    "ui/main_window.py": 5947,
+    "services/core_bridge.py": 2959,
+    "voice/xtts_tts.py": 2465
+  },
+  "active_ui_ceilings": {
+    "tools/shell_host.py": 3568,
+    "dist/assets/index-Ckl5rwwJ.js": 4164,
+    "dist/assets/aura-p060-navigation-workspace.js": 3139
+  },
+  "canonical_tests_at_freeze": {
+    "files_in_tests_directory": 156,
+    "test_functions": 1004
+  },
+  "known_undeclared_external_import_roots": [
+    "chatterbox",
+    "docx",
+    "faster_whisper",
+    "fitz",
+    "numpy",
+    "openpyxl",
+    "piper",
+    "psutil",
+    "pypdf",
+    "PyPDF2",
+    "sounddevice",
+    "torch",
+    "transformers",
+    "TTS",
+    "websockets"
+  ],
+  "requirements_at_freeze": [
+    "PySide6>=6.6.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0"
+  ],
+  "policy_debt": {
+    "parameter_aware": false,
+    "evidence": "security/policy_engine.py still contains 'del params'"
+  },
+  "ui_src_dist_at_freeze": {
+    "paired": 104,
+    "identical": 96,
+    "drifted": 8,
+    "drifted_names": [
+      "aura-p0436-official-neural-orb.js",
+      "aura-p0521-weather-map.js",
+      "aura-p060-navigation-workspace.js",
+      "aura-p0623-file-productivity.js",
+      "aura-p0624-quality-ux.js",
+      "aura-p0626-memory.js",
+      "aura-p074-vitals-activity-module.js",
+      "aura-p08518-system-state-final-polish.js"
+    ]
+  },
+  "transitional_rules": {
+    "local_fast_lane_is_authoritative_for_active_ui": true,
+    "github_portable_lane_may_skip_active_ui_runtime_checks": true,
+    "no_new_undeclared_dependency": true,
+    "no_growth_of_existing_monoliths_without_baseline_review": true
+  }
+}

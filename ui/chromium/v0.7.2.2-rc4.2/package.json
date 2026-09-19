@@ -1,0 +1,9 @@
+{
+  "name": "aura-threejs-shell",
+  "private": true,
+  "version": "0.7.2.2-rc4.2",
+  "type": "module",
+  "scripts": {"build": "vite build"},
+  "dependencies": {"three": "0.185.1"},
+  "devDependencies": {"vite": "8.1.5"}
+}

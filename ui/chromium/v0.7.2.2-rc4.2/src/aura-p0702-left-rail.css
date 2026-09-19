@@ -1,0 +1,254 @@
+/* AURA P0.7.0.2 — LEFT RAIL IA NAVIGATION REFRESH */
+:root{--aura-p0702-rail-width:220px;--aura-p0702-rail-left:14px;--aura-p0702-gap:14px}
+.rail{
+  box-sizing:border-box!important;
+  width:var(--aura-p0702-rail-width)!important;
+  left:var(--aura-p0702-rail-left)!important;
+  top:94px!important;bottom:18px!important;
+  padding:12px 10px!important;
+  align-items:stretch!important;gap:0!important;
+  overflow:hidden!important;
+  background:linear-gradient(180deg,rgba(4,11,27,.985),rgba(3,8,21,.97))!important;
+  border-color:rgba(89,104,255,.18)!important;
+  box-shadow:inset -1px 0 rgba(92,104,255,.07),0 18px 48px rgba(0,0,0,.18)!important;
+}
+.workspace{left:calc(var(--aura-p0702-rail-left) + var(--aura-p0702-rail-width) + var(--aura-p0702-gap))!important}
+.aura-p0702-legacy-rail-controls{display:none!important}
+.aura-p0702-nav{display:flex;flex-direction:column;gap:5px;min-height:0}
+.aura-p0702-nav-btn{
+  position:relative;display:grid;grid-template-columns:32px 1fr 6px;align-items:center;gap:10px;
+  width:100%;min-height:46px;padding:0 11px;border:1px solid transparent;border-radius:10px;
+  background:transparent;color:#7f86a5;text-align:left;cursor:pointer;
+  transition:background .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease,transform .16s ease;
+}
+.aura-p0702-nav-btn:hover{color:#c5c9ec;background:rgba(89,73,188,.075);border-color:rgba(105,92,221,.11)}
+.aura-p0702-nav-btn.active{
+  color:#ecebff;border-color:rgba(102,71,255,.56);
+  background:linear-gradient(90deg,rgba(82,43,190,.34),rgba(36,40,137,.34));
+  box-shadow:inset 0 0 26px rgba(81,50,211,.16),0 0 16px rgba(67,45,192,.08);
+}
+.aura-p0702-nav-btn.active:before{content:"";position:absolute;left:-1px;top:8px;bottom:8px;width:2px;border-radius:3px;background:#9a6fff;box-shadow:0 0 10px rgba(154,111,255,.75)}
+.aura-p0702-nav-btn b{font:500 11px/1 "Segoe UI Variable","Segoe UI",system-ui,sans-serif;letter-spacing:.035em;white-space:nowrap}
+.aura-p0702-nav-btn i{width:4px;height:4px;border-radius:50%;background:transparent}
+.aura-p0702-nav-btn.active i{background:#7658ff;box-shadow:0 0 8px rgba(118,88,255,.7)}
+.aura-p0702-icon{display:grid;place-items:center;width:26px;height:26px;color:#73799a}
+.aura-p0702-nav-btn:hover .aura-p0702-icon,.aura-p0702-nav-btn.active .aura-p0702-icon{color:#b699ff}
+.aura-p0702-icon svg,.aura-p0702-profile svg,.aura-p0702-core-icon svg,.aura-p0702-module-grid svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+.aura-p0702-lower{margin-top:auto;padding-top:12px;border-top:1px solid rgba(96,110,160,.12);display:grid;gap:10px}
+.aura-p0702-profile{display:grid;grid-template-columns:34px 1fr 12px;gap:9px;align-items:center;width:100%;padding:8px;border:0;border-radius:10px;background:transparent;color:#777e9c;text-align:left}
+.aura-p0702-profile>span{display:grid;place-items:center;width:31px;height:31px;border:1px solid rgba(117,105,208,.23);border-radius:50%;background:rgba(66,52,138,.08);color:#8e89bc}
+.aura-p0702-profile small{display:block;color:#555d7f;font-size:7px;letter-spacing:.13em}.aura-p0702-profile b{display:block;margin-top:3px;color:#898fb0;font:500 10px/1.2 system-ui}.aura-p0702-profile em{font-style:normal;color:#8a68ff;font-size:8px;text-shadow:0 0 7px rgba(138,104,255,.65)}
+.aura-p0702-core-card{display:grid;grid-template-columns:43px 1fr 10px;gap:9px;align-items:center;padding:10px 9px;border:1px solid rgba(118,75,255,.47);border-radius:10px;background:radial-gradient(circle at 18% 50%,rgba(74,80,255,.18),transparent 37%),linear-gradient(135deg,rgba(24,24,73,.93),rgba(18,13,57,.88));box-shadow:inset 0 0 24px rgba(79,57,223,.08)}
+.aura-p0702-core-icon{display:grid;place-items:center;width:40px;height:40px;color:#9a78ff;filter:drop-shadow(0 0 7px rgba(105,77,255,.45))}.aura-p0702-core-icon svg{width:34px;height:34px;stroke-width:1.1}
+.aura-p0702-core-card b{display:block;color:#9b7cff;font:600 8px/1.2 system-ui;letter-spacing:.04em}.aura-p0702-core-card small{display:block;margin-top:3px;color:#6e7598;font:400 8px/1.2 system-ui}.aura-p0702-core-card strong{display:block;margin-top:5px;color:#28bfd2;font:500 9px/1.2 system-ui}.aura-p0702-core-card>i{color:#68628f;font-size:11px;font-style:normal}
+.aura-p0702-popover{position:fixed;z-index:160;left:calc(var(--aura-p0702-rail-left) + var(--aura-p0702-rail-width) + 10px);width:300px;max-height:calc(100vh - 120px);overflow:auto;padding:0;border:1px solid rgba(105,82,232,.27);border-radius:13px;background:linear-gradient(145deg,rgba(5,13,28,.985),rgba(8,9,29,.985));box-shadow:0 22px 70px rgba(0,0,0,.5),0 0 0 1px rgba(101,83,230,.05);opacity:0;transform:translateX(-5px) scale(.99);transition:opacity .14s ease,transform .14s ease}
+.aura-p0702-popover.open:not([hidden]){opacity:1;transform:none}.aura-p0702-popover[hidden]{display:none!important}
+.aura-p0702-popover header{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-bottom:1px solid rgba(104,117,168,.12)}.aura-p0702-popover header small{display:block;color:#596582;font-size:7px;letter-spacing:.15em}.aura-p0702-popover header b{display:block;margin-top:4px;color:#c9c9e8;font-size:11px;letter-spacing:.09em}.aura-p0702-popover header button{width:28px;height:28px;border:1px solid rgba(113,122,177,.15);border-radius:8px;background:rgba(28,35,66,.38);color:#727b9c;cursor:pointer}.aura-p0702-popover header button:hover{color:#d7d8f2;border-color:rgba(144,110,255,.35)}
+.aura-p0702-module-grid{display:grid;padding:9px;gap:5px}.aura-p0702-module-grid>button{display:grid;grid-template-columns:34px 1fr;align-items:center;gap:9px;width:100%;padding:9px 10px;border:1px solid transparent;border-radius:9px;background:transparent;color:#848ba9;text-align:left;cursor:pointer}.aura-p0702-module-grid>button:hover{border-color:rgba(112,91,225,.2);background:rgba(71,58,155,.11);color:#d0d2ed}.aura-p0702-module-grid>button>span{display:grid;place-items:center;color:#8d79d4}.aura-p0702-module-grid b{display:block;font:500 10px/1.2 system-ui}.aura-p0702-module-grid small{display:block;margin-top:3px;color:#5f6987;font:400 8px/1.3 system-ui}
+.aura-p0702-settings-body{padding:14px}.aura-p0702-settings-body>b{color:#c9cce9;font-size:11px}.aura-p0702-settings-body p{margin:7px 0 13px;color:#69738f;font:9px/1.5 system-ui}.aura-p0702-settings-body>div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid rgba(99,111,157,.1);font:9px/1.2 system-ui}.aura-p0702-settings-body span{color:#65708e}.aura-p0702-settings-body strong{color:#a2a8c8;font-weight:500}
+body[data-aura-workspace="maps"] .aura-p0702-nav-btn[data-rail-target="modules"],body[data-aura-workspace="weather"] .aura-p0702-nav-btn[data-rail-target="modules"]{color:#ecebff}
+.aura-p0702-nav-btn:focus-visible,.aura-p0702-profile:focus-visible,.aura-p0702-popover button:focus-visible{outline:1px solid rgba(152,113,255,.8);outline-offset:2px}
+@media(max-height:760px){.aura-p0702-nav{gap:2px}.aura-p0702-nav-btn{min-height:39px}.aura-p0702-lower{gap:6px;padding-top:7px}.aura-p0702-profile{padding:4px 8px}.aura-p0702-core-card{padding:6px 8px}.aura-p0702-core-icon{height:33px}.aura-p0702-core-icon svg{width:29px;height:29px}}
+@media(max-width:1180px){:root{--aura-p0702-rail-width:190px}.aura-p0702-nav-btn{grid-template-columns:29px 1fr 5px;padding:0 8px}.aura-p0702-nav-btn b{font-size:10px}.aura-p0702-core-card{grid-template-columns:36px 1fr 8px}.aura-p0702-core-icon{width:34px}.aura-p0702-core-icon svg{width:29px;height:29px}}
+@media(max-width:850px){:root{--aura-p0702-rail-width:76px;--aura-p0702-gap:12px}.rail{padding:10px 7px!important}.aura-p0702-nav-btn{grid-template-columns:1fr;justify-items:center;padding:0;min-height:48px}.aura-p0702-nav-btn b,.aura-p0702-nav-btn i,.aura-p0702-lower{display:none}.aura-p0702-icon{width:30px;height:30px}.aura-p0702-popover{left:102px}.aura-p0702-nav-btn.active:before{top:9px;bottom:9px}}
+@media(prefers-reduced-motion:reduce){.aura-p0702-nav-btn,.aura-p0702-popover{transition:none}}
+
+/* AURA_V0922_MODULES_COLOR_FIX_BEGIN
+   Modules + Personal Integrations surface aligned with AURA shell.
+   Cyan/blue is primary. Purple remains a secondary accent only. */
+
+.aura-p0702-modules-popover,
+.aura-p0702-mail-popover{
+  background:
+    radial-gradient(circle at 18% 8%,rgba(111,228,247,.10),transparent 34%),
+    linear-gradient(145deg,rgba(3,17,27,.988),rgba(4,16,26,.985) 58%,rgba(6,19,29,.97));
+  border:1px solid rgba(111,228,247,.38);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.5),
+    0 0 0 1px rgba(111,228,247,.05) inset,
+    0 0 34px rgba(111,228,247,.08);
+  color:#b7e6ef;
+}
+
+.aura-p0702-modules-popover header,
+.aura-p0702-mail-popover header{
+  border-bottom:1px solid rgba(111,228,247,.20);
+  background:linear-gradient(180deg,rgba(10,39,50,.42),rgba(3,17,27,.18));
+}
+
+.aura-p0702-modules-popover header small,
+.aura-p0702-mail-popover header small,
+.aura-p0702-modules-popover header span,
+.aura-p0702-mail-popover header span{
+  color:#79e0ec;
+}
+
+.aura-p0702-modules-popover header b,
+.aura-p0702-mail-popover header b{
+  color:#dffaff;
+  text-shadow:0 0 18px rgba(111,228,247,.18);
+}
+
+.aura-p0702-modules-popover [data-pop-close],
+.aura-p0702-mail-popover [data-mail-close]{
+  color:#b7e6ef;
+  border-color:rgba(111,228,247,.22);
+  background:rgba(10,37,48,.36);
+}
+
+.aura-p0702-module-grid button{
+  background:
+    linear-gradient(145deg,rgba(10,37,48,.36),rgba(3,17,27,.62));
+  border:1px solid rgba(111,228,247,.18);
+  box-shadow:
+    0 0 0 1px rgba(111,228,247,.025) inset,
+    0 10px 24px rgba(0,0,0,.18);
+  color:#b7e6ef;
+}
+
+.aura-p0702-module-grid button:hover,
+.aura-p0702-module-grid button:focus-visible{
+  border-color:rgba(111,228,247,.60);
+  background:
+    linear-gradient(145deg,rgba(10,39,50,.72),rgba(3,17,27,.76));
+  box-shadow:
+    0 0 0 1px rgba(111,228,247,.08) inset,
+    0 0 22px rgba(111,228,247,.10),
+    0 12px 28px rgba(0,0,0,.22);
+  transform:translateY(-1px);
+}
+
+.aura-p0702-module-grid button > span{
+  color:#74dbe9;
+}
+
+.aura-p0702-module-grid button b{
+  color:#e9fcff;
+}
+
+.aura-p0702-module-grid button small{
+  color:#8ebcc6;
+}
+
+.aura-p0702-mail-popover{
+  width:min(560px,calc(100vw - 120px));
+}
+
+.aura-v0922-agenda-calendar-bridge{
+  margin:12px 14px 8px;
+  padding:14px 15px;
+  border:1px solid rgba(111,228,247,.28);
+  border-radius:16px;
+  background:
+    radial-gradient(circle at 10% 0%,rgba(111,228,247,.08),transparent 42%),
+    linear-gradient(145deg,rgba(3,17,27,.82),rgba(5,20,31,.72));
+  box-shadow:0 12px 34px rgba(0,0,0,.22);
+  color:#b7e6ef;
+}
+
+.aura-v0922-agenda-calendar-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.aura-v0922-agenda-calendar-head div{
+  display:grid;
+  gap:3px;
+}
+
+.aura-v0922-agenda-calendar-head small,
+.aura-v0922-agenda-calendar-head span{
+  color:#79e0ec;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.aura-v0922-agenda-calendar-head b{
+  color:#e9fcff;
+  font-size:15px;
+  letter-spacing:.04em;
+}
+
+.aura-v0922-agenda-calendar-actions{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+
+.aura-v0922-agenda-calendar-actions button{
+  min-height:38px;
+  border-radius:10px;
+  border:1px solid rgba(111,228,247,.22);
+  background:rgba(10,37,48,.36);
+  color:#dffaff;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.04em;
+}
+
+.aura-v0922-agenda-calendar-actions button:hover,
+.aura-v0922-agenda-calendar-actions button:focus-visible{
+  border-color:rgba(111,228,247,.60);
+  background:rgba(10,39,50,.72);
+  box-shadow:0 0 18px rgba(111,228,247,.08);
+}
+
+.aura-v0922-agenda-calendar-bridge p{
+  margin:10px 0 0;
+  color:#8ebcc6;
+  font-size:11px;
+  line-height:1.45;
+}
+
+/* AURA_V0922_MODULES_COLOR_FIX_END */
+
+/* AURA V0.9.2.2.1 COLOR HARMONIZATION - SETTINGS
+   Scoped to Settings so Modules/Mail keep their certified styling. */
+.aura-p0702-popover.aura-p0702-settings-popover{
+  border-color:rgba(111,228,247,.32);
+  background:linear-gradient(145deg,rgba(3,17,27,.985),rgba(4,12,23,.985));
+  box-shadow:0 22px 70px rgba(0,0,0,.50),0 0 0 1px rgba(111,228,247,.04),0 0 26px rgba(111,228,247,.035);
+}
+.aura-p0702-settings-popover header{
+  border-bottom-color:rgba(111,228,247,.16);
+  background:linear-gradient(90deg,rgba(20,91,108,.13),rgba(4,16,26,.08) 62%,transparent);
+}
+.aura-p0702-settings-popover header small{
+  color:#6f9eaa;
+}
+.aura-p0702-settings-popover header b{
+  color:#dffaff;
+}
+.aura-p0702-settings-popover header button{
+  border-color:rgba(111,228,247,.16);
+  background:rgba(5,20,31,.58);
+  color:#8ebcc6;
+}
+.aura-p0702-settings-popover header button:hover{
+  color:#dffaff;
+  border-color:rgba(111,228,247,.38);
+  background:rgba(111,228,247,.055);
+}
+.aura-p0702-settings-popover button:focus-visible{
+  outline:1px solid rgba(111,228,247,.70);
+  outline-offset:2px;
+}
+.aura-p0702-settings-popover .aura-p0702-settings-body>b{
+  color:#dffaff;
+}
+.aura-p0702-settings-popover .aura-p0702-settings-body p{
+  color:#7899a5;
+}
+.aura-p0702-settings-popover .aura-p0702-settings-body>div{
+  border-top-color:rgba(111,228,247,.10);
+}
+.aura-p0702-settings-popover .aura-p0702-settings-body span{
+  color:#7399a5;
+}
+.aura-p0702-settings-popover .aura-p0702-settings-body strong{
+  color:#a9cdd5;
+}

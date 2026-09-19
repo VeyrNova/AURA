@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Aura neural nexus">
+  <defs>
+    <linearGradient id="auraCyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EAF7FF"/>
+      <stop offset=".34" stop-color="#54D9FF"/>
+      <stop offset="1" stop-color="#427BFF"/>
+    </linearGradient>
+    <linearGradient id="auraViolet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CFF"/>
+      <stop offset=".56" stop-color="#B653FF"/>
+      <stop offset="1" stop-color="#D84CFF"/>
+    </linearGradient>
+    <linearGradient id="auraCore" x1=".18" y1=".12" x2=".82" y2=".88">
+      <stop offset="0" stop-color="#EAF7FF"/>
+      <stop offset=".22" stop-color="#54D9FF"/>
+      <stop offset=".58" stop-color="#8B5CFF"/>
+      <stop offset="1" stop-color="#D84CFF"/>
+    </linearGradient>
+    <radialGradient id="auraSeed">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".20" stop-color="#BFF4FF"/>
+      <stop offset=".46" stop-color="#54D9FF"/>
+      <stop offset=".72" stop-color="#8B5CFF"/>
+      <stop offset="1" stop-color="#D84CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="auraGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g id="aura-nexus" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Flow copies sit below the crisp structural branches. -->
+    <g class="aura-svg-flow" opacity=".32">
+      <path pathLength="1" class="flow flow-left" d="M60 60 L22 60"/>
+      <path pathLength="1" class="flow flow-ul" d="M60 60 L40 24"/>
+      <path pathLength="1" class="flow flow-ur" d="M60 60 L80 24"/>
+      <path pathLength="1" class="flow flow-right" d="M60 60 L98 60"/>
+      <path pathLength="1" class="flow flow-ll" d="M60 60 L40 96"/>
+      <path pathLength="1" class="flow flow-lr" d="M60 60 L80 96"/>
+    </g>
+
+    <g class="aura-svg-branches">
+      <path pathLength="1" class="branch branch-left cyan" d="M60 60 L22 60"/>
+      <path pathLength="1" class="branch branch-ul cyan" d="M60 60 L40 24"/>
+      <path pathLength="1" class="branch branch-ur cyan" d="M60 60 L80 24"/>
+      <path pathLength="1" class="branch branch-right violet" d="M60 60 L98 60"/>
+      <path pathLength="1" class="branch branch-ll violet" d="M60 60 L40 96"/>
+      <path pathLength="1" class="branch branch-lr violet" d="M60 60 L80 96"/>
+    </g>
+
+    <polygon class="aura-svg-hub" points="60,48 70.4,54 70.4,66 60,72 49.6,66 49.6,54"
+      fill="url(#auraCore)" stroke="#DDF8FF" stroke-opacity=".38" stroke-width="1.25"/>
+    <circle class="aura-svg-hub-ring" cx="60" cy="60" r="15.5"
+      stroke="url(#auraCore)" stroke-width="1.15" stroke-opacity=".42"/>
+    <circle class="aura-svg-seed-glow" cx="60" cy="60" r="13" fill="url(#auraSeed)" stroke="none"/>
+    <circle class="aura-svg-seed" cx="60" cy="60" r="4.4"
+      fill="#EAF7FF" stroke="#54D9FF" stroke-width="1.2" filter="url(#auraGlow)"/>
+  </g>
+</svg>

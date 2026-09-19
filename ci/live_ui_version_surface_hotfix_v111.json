@@ -1,0 +1,22 @@
+{
+  "schema": "aura.live-ui-version-surface-hotfix.v111.v1",
+  "status": "CERTIFIED_V1_1_1_LIVE_UI_VERSION_SURFACE_HOTFIX",
+  "generated_at": "2026-08-28T21:10:11",
+  "product_version": "1.1.1",
+  "cause": "legacy sync_product_version_surfaces.py did not cover the active deployed UI markers under LocalAppData/AppData",
+  "fix": {
+    "companion_tool": "tools/sync_live_ui_version_surfaces.py",
+    "companion_tool_sha256": "2df1c60883ec84f97bdd6cd23b98f2ba0c74d6ddf5763c8efa5d0c2d41316100",
+    "permanent_invariant": "tests/invariants/test_live_ui_product_version_v111.py",
+    "permanent_invariant_sha256": "691ed6e08e54656c8e1ae46bf03a413a95b5fb9a0a53eac6b4afa3268ca07155",
+    "changed_live_ui_files": [
+      "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\index.html",
+      "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
+      "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0627-system-p06541.js"
+    ],
+    "live_ui_display": "v1.1.1",
+    "stale_hits": 0
+  },
+  "release_gate_rule": "ALL FUTURE RELEASES MUST PASS BOTH sync_product_version_surfaces.py AND test_live_ui_product_version_v111.py",
+  "next_state": "V1_1_1_UI_IDENTITY_REPAIRED_READY_FOR_NEXT_ROADMAP_BLOCK"
+}

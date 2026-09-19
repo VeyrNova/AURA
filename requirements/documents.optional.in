@@ -1,0 +1,9 @@
+# AURA v0.8.6.2 — optional document features
+# These packages were ABSENT in the certified environment, and all corresponding imports are guarded.
+# Versions are intentionally not invented and are not part of the reproducible required lock.
+
+python-docx
+PyMuPDF
+openpyxl
+pypdf
+PyPDF2

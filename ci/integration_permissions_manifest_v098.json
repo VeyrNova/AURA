@@ -1,0 +1,59 @@
+{
+  "schema": "aura.integration-permissions.v098.v1",
+  "status": "CERTIFIED_V0_9_8_INTEGRATION_PERMISSIONS",
+  "generated_at": "2026-08-28T19:13:46",
+  "product_version": "0.9.5",
+  "strategy": "NEW_V098_INTEGRATION_PERMISSION_CONTRACT_PLUS_EXISTING_SECURITY_POLICY_ENGINE_V2",
+  "scope": [
+    "53 canonical integration capabilities",
+    "6 provider families",
+    "existing Permission enum reuse",
+    "existing RiskLevel and ActionPolicy reuse",
+    "provider confirmation contract preservation",
+    "permission-not-granted fail closed",
+    "unknown capability fail closed",
+    "explicit denial of dangerous browser capabilities"
+  ],
+  "authorities": {
+    "runtime/integration_permissions_v098.py": "47b633afc02e0ecb36d30cc51d12d9275d9df3ff19dd3a5f2feb7cc8bb56f0fe",
+    "tests/invariants/test_integration_permissions_v098.py": "50fb61ceff6e2c23452812870a34f09bc704edbc545c2a1587b7cf7b3c6b38f1",
+    "security/permissions.py": "6df1f3a88072355147e9b1409566bb9046a25412f57112830308ccc948c7d4a0",
+    "security/policy_engine_v2.py": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+    "integrations/registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "runtime/productivity_mission_bridge_v097.py": "4a290cbe3cb83bcf14b25171a47126607a9b5a96405c6dc4a4da0b1df4279992"
+  },
+  "counts": {
+    "canonical_capabilities": 53,
+    "providers": 6,
+    "allowed_capabilities": 47,
+    "explicitly_denied_capabilities": 6,
+    "confirmation_required_capabilities": 22
+  },
+  "denied_browser_capabilities": [
+    "browser.antibot_bypass",
+    "browser.captcha_bypass",
+    "browser.credentials",
+    "browser.pay",
+    "browser.purchase",
+    "browser.transfer"
+  ],
+  "default_grants_do_not_include_sensitive_permissions": true,
+  "existing_project_source_modified": false,
+  "protected_existing_hashes": {
+    "security/permissions.py": "6df1f3a88072355147e9b1409566bb9046a25412f57112830308ccc948c7d4a0",
+    "security/policy_engine_v2.py": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+    "integrations/registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+    "runtime/route_contract.py": "a04a000f19c4794b543dbd4cd5b73541997f32055d3a7776f4979a89eb62f9b4",
+    "runtime/personal_integrations.py": "de47c1a8bd1598ab6d03a29276dfdd0ada90b5220415cc8e2a418b940259a893",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "action_receipts/service.py": "4c0f13eefaa6351eca157235d3b0ceea5643474a8cbf0cdb7401c1d71b34023e",
+    "integrations/browser/provider.py": "fee06ec1a9651687aacd93669114003d03618fa2ee85c171632abdeb232cdaf8",
+    "runtime/browser_workflows.py": "cb92861f65a719810c77fb50c8640af8d691b9d289ac83bfc229e602355700d1"
+  },
+  "database_sha256": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb",
+  "core_sha256": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474",
+  "v097_manifest_sha256": "13c73867567628b86c897ffc5a9dcf1fe94756c837dbcf09c9ef983087f0670d",
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_state": "V0_9_8_INTEGRATION_PERMISSIONS_COMPLETE_READY_FOR_V0_9_9_PERSONAL_AGENT_ACCEPTANCE"
+}

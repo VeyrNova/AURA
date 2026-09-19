@@ -1,0 +1,23 @@
+{
+  "schema": "aura.ui-config.v0.7.2.2",
+  "release": "0.7.2.2-rc4.2",
+  "core_version": "0.8.0.5.8",
+  "core_build": "2026.08.21.47",
+  "core_root": "${AURA_CORE_ROOT}",
+  "ui_root": "${LOCALAPPDATA}\\AURA\\ui\\v0.7.2.2-rc4.2",
+  "visual_engine": "three.js-webgl2",
+  "gpu_policy": "intel-balanced-48fps",
+  "compute_policy": "nvidia-cuda-priority",
+  "three_version": "0.185.1",
+  "vite_version": "8.1.5",
+  "node_build_toolchain": "${LOCALAPPDATA}\\AURA\\toolchains\\node\\v24.18.1-x64",
+  "runtime_requires_node": false,
+  "transport": "http+sse+post-loopback-token",
+  "single_visible_window": true,
+  "bidirectional_ui": true,
+  "conversation_text_local_only": true,
+  "legacy_pyside_visible": false,
+  "core_files_modified": false,
+  "installed_at": "2026-08-15T16:00:20",
+  "path_resolver": "aura.paths.v1"
+}

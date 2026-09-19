@@ -1,0 +1,20 @@
+{
+  "schema": "aura.skill.v1",
+  "version": "2.3.0",
+  "skill_id": "voice",
+  "title": "Voix",
+  "description": "Sortie vocale et arrÃªt vocal. Le microphone reste une commande UI explicite hors Skills.",
+  "enabled": true,
+  "commands": [
+    "nav_speak",
+    "stop_speaking",
+    "voice_speak"
+  ],
+  "permissions": [
+    "audio_output"
+  ],
+  "owner": "services.core_bridge",
+  "risk": "audio_output",
+  "execution_mode": "delegate_existing_owner",
+  "microphone_policy": "explicit_button_only"
+}

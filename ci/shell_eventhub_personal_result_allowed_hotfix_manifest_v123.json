@@ -1,0 +1,14 @@
+{
+  "schema": "aura.v123.ft4-r14.eventhub-personal-result-allowlist.v1",
+  "generated_at": "2026-08-29T17:42:21",
+  "product_version_during_hotfix": "1.2.2",
+  "target_version": "1.2.3",
+  "root_cause": "EventHub ALLOWED omitted personal_result while aura_message was allowed",
+  "change": "add personal_result to existing EventHub ALLOWED set",
+  "new_transport_added": false,
+  "duplicate_eventsource_added": false,
+  "google_changed": false,
+  "security_authority_changed": false,
+  "color_charter_changed": false,
+  "version_bump": false
+}

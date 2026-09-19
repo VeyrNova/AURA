@@ -1,0 +1,25 @@
+/* AURA P0.4.2.3 HERO GEOMETRY RESTORE */
+.aura-p042-final-orb .workspace {
+  min-height: 0 !important;
+}
+
+.aura-p042-final-orb .hero {
+  position: relative !important;
+  min-height: 360px;
+  overflow: hidden !important;
+}
+
+.aura-p042-final-orb #stage {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+.aura-p042-final-orb .aura-final-orb-canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}

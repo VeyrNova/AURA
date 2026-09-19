@@ -1,0 +1,13 @@
+{
+  "schema": "aura.v123.ft4-r3-r4.preloaded-eventsource-bridge.v1",
+  "generated_at": "2026-08-29T15:36:00",
+  "source_main_modified": false,
+  "dist_bundle_modified": false,
+  "preloaded_eventsource_wrapper": true,
+  "duplicate_eventsource_connection": false,
+  "chrome_start_fullscreen": true,
+  "browser_native_escape": true,
+  "authoritative_empty_lists": true,
+  "color_charter_changed": false,
+  "version_bump": false
+}

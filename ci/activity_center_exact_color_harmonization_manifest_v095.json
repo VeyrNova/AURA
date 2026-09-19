@@ -1,0 +1,16 @@
+{
+  "schema": "aura.activity-center-exact-color-harmonization.v095.v1",
+  "palette": {
+    "background": "#04111f",
+    "surface": "#061827",
+    "cyan": "#55dcff",
+    "cyan_soft": "#94ebff",
+    "violet_role": "minor accent only"
+  },
+  "hashes": {
+    "p081_project": "896794e36fd5eb763749879e2a9e8ee60b6ba00f69979fdaa7b478c606539cfc",
+    "p081_dist": "504dce3991baa14d7556875f3ebb1fba8cf9f0016fb5985b4d6768938f8c8592",
+    "rail_js": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "rail_css": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+  }
+}

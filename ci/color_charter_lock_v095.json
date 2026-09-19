@@ -1,0 +1,43 @@
+{
+  "schema": "aura.color-charter-lock.v095.v1",
+  "created_at": "2026-08-28T13:50:43",
+  "version": "0.9.5",
+  "milestone": "Notifications",
+  "status": "LOCKED",
+  "manual_visual_approval": true,
+  "policy": {
+    "status": "LOCKED",
+    "effective_from_version": "0.9.5",
+    "effective_for": [
+      "existing AURA UI surfaces",
+      "future modules"
+    ],
+    "rule": "No unintended color changes. Future modules must inherit the certified AURA palette.",
+    "locked_authorities": {
+      "main_ui_css": {
+        "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0702-left-rail.css",
+        "sha256": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+      },
+      "activity_center_css_project": {
+        "path": "C:\\AURA GPT version\\aura-p081-event-watchers.css",
+        "sha256": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4"
+      },
+      "activity_center_css_deployed": {
+        "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p081-event-watchers.css",
+        "sha256": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4"
+      }
+    },
+    "reference": {
+      "panel_background": "linear-gradient(145deg, rgba(8,22,38,.98), rgba(3,10,19,.97))",
+      "panel_border": "rgba(113,224,255,.16)",
+      "section_background": "rgba(3,14,23,.50)",
+      "active_border": "rgba(105,232,255,.24)",
+      "purple_dominant": false
+    }
+  },
+  "future_module_requirement": {
+    "must_inherit_current_palette": true,
+    "must_not_modify_locked_authorities_without_explicit_recertification": true,
+    "new_module_manifest_should_reference": "ci/color_charter_lock_v095.json"
+  }
+}

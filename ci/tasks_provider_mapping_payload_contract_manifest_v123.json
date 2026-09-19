@@ -1,0 +1,30 @@
+{
+  "schema": "aura.v123.tasks-provider-mapping-payload-contract.v1",
+  "target_version": "1.2.3",
+  "canonical_version_during_hotfix": "1.2.2",
+  "parent_result_sha256": "1abf8a46a647b734fc555a0275075d686aedf143eccbcefdfbadcf4ea3e0b011",
+  "provider_pre_sha256": "b13701df661f52d1bac6e8cd4dbf2036dad5ca39fc45143bbae6c579d1d9ad6a",
+  "provider_post_sha256": "336e18f8c1218c985b67fe4348ec841bfdbabc3f1de471b70d38c12e36e574ee",
+  "behavior": {
+    "provider_execute_output": "Mapping",
+    "list_payload": [
+      "tasks",
+      "items",
+      "results",
+      "count",
+      "total",
+      "tasklist_id"
+    ],
+    "single_task_payload": [
+      "task",
+      "tasks",
+      "items",
+      "results",
+      "count",
+      "total",
+      "tasklist_id"
+    ],
+    "google_mutation_in_hotfix": false,
+    "oauth_in_hotfix": false
+  }
+}

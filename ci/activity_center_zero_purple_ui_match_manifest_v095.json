@@ -1,0 +1,28 @@
+{
+  "schema": "aura.activity-center-zero-purple-ui-match.v095.v1",
+  "product_version_during_d2": "0.9.4",
+  "palette": {
+    "background": "#030b14",
+    "panel": "#051522",
+    "card": "#071a28",
+    "border": "#12384d",
+    "cyan": "#55dcff",
+    "text": "#e5f9ff"
+  },
+  "contract": {
+    "purple_panels_allowed": false,
+    "purple_borders_allowed": false,
+    "purple_scrollbar_allowed": false,
+    "purple_counter_badge_allowed": false,
+    "runtime_computed_color_neutralizer": true,
+    "notifications_entry": 1,
+    "legacy_activity_center_entry": 0
+  },
+  "hashes": {
+    "p081_project": "d17a9df39d646259eb81efae18f9993556d6b7e9139648a298d5e4d9358abd22",
+    "p081_dist": "308de7991688d44cb7d9422154ba8ccabcf4f47fe8bff090439b2b4d2dfe428e",
+    "rail": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "css": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5",
+    "db": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb"
+  }
+}

@@ -1,0 +1,388 @@
+/* AURA P0.8.5.4.6.9.6 — SHELL FINAL POLISH
+   Scope: header brand, runtime clock, compact AURA CORE card, composer vector controls.
+   No runtime/core/voice behavior changes.
+*/
+
+:root{
+  --aura-p0854696-cyan:#6de8ff;
+  --aura-p0854696-blue:#3f8cff;
+  --aura-p0854696-violet:#9a6cff;
+  --aura-p0854696-muted:#6f8da3;
+  --aura-p0854696-line:rgba(113,224,255,.16);
+  --aura-p0854696-panel:rgba(4,13,26,.88);
+}
+
+/* -------------------------------------------------------------------------
+   1) Header brand — exact AURA master vector geometry.
+   The source SVG is used as a CSS mask, so the geometry remains exact while
+   the live UI can retain its cyan/blue/violet chromatic language.
+   ------------------------------------------------------------------------- */
+.topbar .brand{
+  width:304px!important;
+  min-width:304px!important;
+  gap:12px!important;
+}
+.topbar .brand-mark{
+  position:relative!important;
+  display:grid!important;
+  place-items:center!important;
+  width:38px!important;
+  height:38px!important;
+  flex:0 0 38px!important;
+  border:1px solid rgba(109,232,255,.34)!important;
+  border-radius:50%!important;
+  background:
+    radial-gradient(circle at 48% 48%,rgba(58,112,170,.10),rgba(3,11,23,.82) 68%)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(154,108,255,.08),
+    0 0 18px rgba(63,140,255,.08)!important;
+  overflow:hidden!important;
+}
+.topbar .brand-mark:before{
+  content:""!important;
+  position:absolute!important;
+  inset:5px!important;
+  width:auto!important;
+  height:auto!important;
+  left:5px!important;
+  top:5px!important;
+  transform:none!important;
+  transform-origin:initial!important;
+  border-radius:50%!important;
+  background:
+    conic-gradient(from 210deg,
+      rgba(109,232,255,.82),
+      rgba(63,140,255,.68),
+      rgba(154,108,255,.78),
+      rgba(109,232,255,.82))!important;
+  -webkit-mask:
+    radial-gradient(circle,transparent 61%,#000 63%,#000 67%,transparent 69%)!important;
+  mask:
+    radial-gradient(circle,transparent 61%,#000 63%,#000 67%,transparent 69%)!important;
+  opacity:.72!important;
+}
+.topbar .brand-mark:after{
+  content:""!important;
+  position:absolute!important;
+  inset:7px!important;
+  width:auto!important;
+  height:auto!important;
+  left:7px!important;
+  top:7px!important;
+  transform:none!important;
+  transform-origin:initial!important;
+  background:linear-gradient(145deg,
+    #f3faff 0%,
+    var(--aura-p0854696-cyan) 30%,
+    var(--aura-p0854696-blue) 56%,
+    var(--aura-p0854696-violet) 82%,
+    #d86cff 100%)!important;
+  -webkit-mask:url("/assets/AURA_LOGO_SYMBOL_MASTER.svg?v=p0854696") center/contain no-repeat!important;
+  mask:url("/assets/AURA_LOGO_SYMBOL_MASTER.svg?v=p0854696") center/contain no-repeat!important;
+  filter:drop-shadow(0 0 4px rgba(109,232,255,.24))!important;
+}
+.topbar .brand-mark>span,
+.topbar .brand-mark>i{
+  display:none!important;
+}
+.topbar .brand>div:last-child{
+  min-width:0;
+}
+.topbar .brand strong{
+  display:block!important;
+  color:#e7f7ff!important;
+  font-size:18px!important;
+  font-weight:650!important;
+  line-height:1!important;
+  letter-spacing:.34em!important;
+  text-shadow:0 0 12px rgba(109,232,255,.08);
+}
+.topbar .brand small{
+  display:block!important;
+  margin-top:5px!important;
+  color:#68899e!important;
+  font-size:8.5px!important;
+  line-height:1!important;
+  letter-spacing:.18em!important;
+}
+
+/* -------------------------------------------------------------------------
+   2) Runtime chip row + clock
+   ------------------------------------------------------------------------- */
+.topbar .top-center{
+  gap:7px!important;
+  align-items:center!important;
+}
+.topbar .state-pill,
+.topbar .route-pill,
+.topbar .aura-p0640-router-pill,
+.topbar .aura-p0854696-clock{
+  box-sizing:border-box;
+  height:30px!important;
+  min-height:30px!important;
+  border:1px solid rgba(109,232,255,.16)!important;
+  border-radius:8px!important;
+  background:linear-gradient(180deg,rgba(5,17,31,.86),rgba(3,11,22,.78))!important;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.015),
+    0 0 0 1px rgba(63,140,255,.015)!important;
+}
+.topbar .state-pill,
+.topbar .route-pill{
+  padding:0 11px!important;
+}
+.topbar .aura-p0640-router-pill{
+  padding:0 10px!important;
+}
+.aura-p0854696-clock{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:0 10px;
+  color:#cfeffc;
+  white-space:nowrap;
+  font:600 10px/1 "Segoe UI Variable","Segoe UI",system-ui,sans-serif;
+  letter-spacing:.06em;
+}
+.aura-p0854696-clock svg{
+  width:14px;height:14px;
+  fill:none;
+  stroke:#72dcf3;
+  stroke-width:1.55;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  opacity:.86;
+}
+.aura-p0854696-clock b{
+  color:#d7f5ff;
+  font:600 10px/1 "Segoe UI Variable","Segoe UI",system-ui,sans-serif;
+  letter-spacing:.07em;
+}
+.aura-p0854696-clock small{
+  display:none;
+}
+
+/* -------------------------------------------------------------------------
+   3) AURA CORE compact definitive card
+   ------------------------------------------------------------------------- */
+.aura-p0702-core-card{
+  position:relative!important;
+  isolation:isolate;
+  grid-template-columns:48px minmax(0,1fr) 7px!important;
+  min-height:66px!important;
+  gap:10px!important;
+  padding:9px 10px!important;
+  border:1px solid rgba(109,232,255,.20)!important;
+  border-radius:12px!important;
+  background:
+    radial-gradient(circle at 18% 48%,rgba(76,91,197,.14),transparent 34%),
+    linear-gradient(145deg,rgba(5,18,34,.96),rgba(5,10,26,.94))!important;
+  box-shadow:
+    inset 0 0 24px rgba(63,140,255,.035),
+    inset 0 1px rgba(109,232,255,.035),
+    0 10px 25px rgba(0,0,0,.10)!important;
+  overflow:hidden!important;
+}
+.aura-p0702-core-card:before{
+  content:"";
+  position:absolute;
+  left:8px;right:8px;top:0;
+  height:1px;
+  background:linear-gradient(90deg,
+    transparent,
+    rgba(109,232,255,.32) 24%,
+    rgba(154,108,255,.24) 72%,
+    transparent);
+  opacity:.7;
+  pointer-events:none;
+}
+.aura-p0702-core-card:after{
+  content:"";
+  position:absolute;
+  right:-28px;bottom:-34px;
+  width:90px;height:90px;
+  border:1px solid rgba(154,108,255,.07);
+  border-radius:50%;
+  pointer-events:none;
+}
+.aura-p0702-core-icon{
+  position:relative!important;
+  display:grid!important;
+  place-items:center!important;
+  width:46px!important;
+  height:46px!important;
+  border:1px solid rgba(109,232,255,.16);
+  border-radius:12px;
+  background:
+    radial-gradient(circle,rgba(90,74,191,.16),rgba(3,12,25,.66) 64%);
+  color:#98dfff!important;
+  filter:none!important;
+  overflow:hidden;
+}
+.aura-p0702-core-icon svg{
+  width:38px!important;
+  height:38px!important;
+  overflow:visible!important;
+}
+.aura-p0854696-core-svg .core-outer{
+  fill:none;stroke:#6de8ff;stroke-opacity:.62;stroke-width:1.1;
+}
+.aura-p0854696-core-svg .core-mid{
+  fill:none;stroke:#9a6cff;stroke-opacity:.66;stroke-width:1;
+}
+.aura-p0854696-core-svg .core-inner{
+  fill:rgba(75,117,255,.08);stroke:#69dff6;stroke-opacity:.62;stroke-width:.9;
+}
+.aura-p0854696-core-svg .core-node{
+  fill:#78e6ff;stroke:#d9f8ff;stroke-width:.35;
+}
+.aura-p0854696-core-svg .core-center{
+  fill:url(#auraCoreGrad);
+  stroke:#edfaff;stroke-opacity:.78;stroke-width:.55;
+}
+.aura-p0702-core-card>div{
+  min-width:0;
+  align-self:center;
+}
+.aura-p0702-core-card b{
+  display:block!important;
+  color:#cbd7f1!important;
+  font:650 9px/1.1 "Segoe UI Variable","Segoe UI",system-ui,sans-serif!important;
+  letter-spacing:.09em!important;
+}
+.aura-p0702-core-card small{
+  display:block!important;
+  margin-top:4px!important;
+  color:#6f7e9b!important;
+  font:450 7.5px/1.1 "Segoe UI Variable","Segoe UI",system-ui,sans-serif!important;
+  letter-spacing:.035em!important;
+}
+.aura-p0702-core-card strong{
+  display:flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  margin-top:7px!important;
+  color:#62d7e7!important;
+  font:600 8.5px/1 "Segoe UI Variable","Segoe UI",system-ui,sans-serif!important;
+  letter-spacing:.025em!important;
+}
+.aura-p0702-core-card strong:before{
+  content:"";
+  width:5px;height:5px;
+  border-radius:50%;
+  background:#59deee;
+  box-shadow:0 0 7px rgba(89,222,238,.52);
+}
+.aura-p0702-core-card>i{
+  width:4px!important;height:4px!important;
+  align-self:center!important;
+  border-radius:50%!important;
+  background:#6258a4!important;
+  color:transparent!important;
+  font-size:0!important;
+  opacity:.55;
+}
+
+/* -------------------------------------------------------------------------
+   4) Composer controls — vector PTT + send
+   ------------------------------------------------------------------------- */
+#composer .mic,
+#composer .send{
+  position:relative;
+  display:grid!important;
+  place-items:center!important;
+  width:43px!important;
+  height:43px!important;
+  min-width:43px!important;
+  padding:0!important;
+  border-radius:11px!important;
+  background:linear-gradient(145deg,rgba(5,20,34,.90),rgba(4,12,26,.92))!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(63,140,255,.025),
+    inset 0 1px rgba(255,255,255,.012)!important;
+}
+#composer .mic{
+  border-color:rgba(109,232,255,.24)!important;
+  color:#8ae8f7!important;
+}
+#composer .send{
+  border-color:rgba(107,135,255,.23)!important;
+  color:#75dcff!important;
+}
+#composer .mic svg,
+#composer .send svg{
+  width:21px;height:21px;
+  overflow:visible;
+}
+#composer .mic svg{
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.45;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+#composer .send svg{
+  fill:none;
+  stroke:url(#auraSendGrad);
+  stroke-width:1.55;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+#composer .mic:not(:disabled):hover{
+  border-color:rgba(109,232,255,.43)!important;
+  background:linear-gradient(145deg,rgba(8,28,43,.94),rgba(5,15,30,.94))!important;
+}
+#composer .send:not(:disabled):hover{
+  border-color:rgba(154,108,255,.40)!important;
+  background:linear-gradient(145deg,rgba(8,23,42,.94),rgba(10,13,35,.94))!important;
+}
+#composer .mic.recording{
+  color:#ff7f9f!important;
+  border-color:rgba(255,92,132,.55)!important;
+  background:linear-gradient(145deg,rgba(67,8,28,.80),rgba(35,7,23,.86))!important;
+  box-shadow:
+    inset 0 0 18px rgba(255,78,125,.07),
+    0 0 18px rgba(255,78,125,.10)!important;
+}
+#composer .mic.recording svg{
+  animation:aura-p0854696-ptt 1.05s ease-in-out infinite;
+}
+#composer .mic:disabled,
+#composer .send:disabled{
+  opacity:.42!important;
+}
+@keyframes aura-p0854696-ptt{
+  0%,100%{transform:scale(1);opacity:.92}
+  50%{transform:scale(.90);opacity:1}
+}
+
+/* Keep input hierarchy close to the final reference without changing layout. */
+body[data-aura-workspace="talk"] #composer.composer{
+  border-color:rgba(109,232,255,.16)!important;
+  background:linear-gradient(180deg,rgba(4,13,27,.965),rgba(3,10,22,.97))!important;
+}
+#composer .composer-input-wrap{
+  border-left-color:rgba(109,232,255,.10)!important;
+}
+#composer .composer-input-wrap textarea{
+  color:#ccebf7!important;
+}
+#composer .composer-input-wrap textarea::placeholder{
+  color:#6d92a8!important;
+}
+#composer .composer-input-wrap small{
+  color:#4f7287!important;
+}
+
+/* Responsive protection: never let the clock collide with branding/actions. */
+@media(max-width:1220px){
+  .topbar .brand{width:270px!important;min-width:270px!important}
+  .topbar .brand small{font-size:7.8px!important;letter-spacing:.14em!important}
+  .aura-p0854696-clock{padding:0 8px}
+}
+@media(max-width:1060px){
+  .aura-p0854696-clock{display:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #composer .mic.recording svg{animation:none!important}
+}

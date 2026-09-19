@@ -1,0 +1,67 @@
+{
+  "schema": "aura.v122.google-live-adapter-contract-hotfix.manifest.v1",
+  "generated_at": "2026-08-29T10:38:42",
+  "product_version": "1.2.1",
+  "target_version": "1.2.2",
+  "files": {
+    "integrations\\google\\live_email_backend_v121.py": "f560fb4682a1ec70ea552e741fe3b9436951dbecd7cef782cf8a7686cbe0d791",
+    "integrations\\google\\live_calendar_backend_v121.py": "b89e5d9fb1dd5ce6ad8485ddd0fd6b877c4acfba6b6675b9407d8289db918b9c",
+    "integrations\\google\\live_contacts_backend_v121.py": "1371ffb7b22c7e1e12abde01437c46a03d1d3039024b204f071a24cd0f1066ee",
+    "tests\\invariants\\test_google_live_adapter_contract_v122.py": "87b318ad411c4d4903857a0b8974a97aae8bd1a78542867ca9741dd7455cf95e"
+  },
+  "protected": {
+    "core\\aura_core.py": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474",
+    "runtime\\personal_integrations.py": "9a5cd74de96b68888a8e47af323292621ed70a27fc516700548fae3c53359ce7",
+    "ui\\main_window.py": "cda6d7d746d8f98b01ede7e5f634a26fc005768fb9406bcb1d3891bde1309481",
+    "integrations\\google\\live_files_backend_v121.py": "e5ff2e94ff7aa7f84b560cecff66acc7aae3b6a5ca9c58079308481c74110684",
+    "runtime\\google_personal_integrations_bridge_v121.py": "b58f31aab1803e8817768b36beb7fb1e17b20189302a50edb1c5e0949a53137c",
+    "integrations\\registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411"
+  },
+  "live_read_acceptance": {
+    "gmail": {
+      "ok": true,
+      "provider": "email.provider",
+      "capability": "email.search",
+      "output_type": "dict",
+      "keys": [
+        "evidence_refs",
+        "messages"
+      ],
+      "messages_count": 10
+    },
+    "calendar": {
+      "ok": true,
+      "provider": "calendar.provider",
+      "capability": "calendar.search_events",
+      "output_type": "dict",
+      "keys": [
+        "events",
+        "evidence_refs"
+      ],
+      "events_count": 0
+    },
+    "contacts": {
+      "ok": true,
+      "provider": "contacts.provider",
+      "capability": "contacts.search",
+      "output_type": "dict",
+      "keys": [
+        "contacts"
+      ],
+      "contacts_count": 0
+    },
+    "drive": {
+      "ok": true,
+      "provider": "files.provider",
+      "capability": "files.list",
+      "output_type": "dict",
+      "keys": [
+        "items"
+      ],
+      "items_count": 100
+    }
+  },
+  "network_used": true,
+  "live_mutations_performed": false,
+  "version_written": false
+}

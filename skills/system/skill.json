@@ -1,0 +1,26 @@
+{
+  "schema": "aura.skill.v1",
+  "version": "2.3.0",
+  "skill_id": "system",
+  "title": "SystÃ¨me",
+  "description": "Actions PC et fichiers explicitement autorisÃ©s, avec les garde-fous existants.",
+  "enabled": true,
+  "commands": [
+    "system_analyze_authorized_file",
+    "system_analyze_authorized_project",
+    "system_authorize_folder",
+    "system_open_folder",
+    "system_open_safe_app",
+    "system_read_authorized_file",
+    "system_revoke_folder",
+    "system_scan_folder"
+  ],
+  "permissions": [
+    "filesystem_authorized",
+    "desktop_control"
+  ],
+  "owner": "services.core_bridge",
+  "risk": "privileged_local_action",
+  "execution_mode": "delegate_existing_owner",
+  "microphone_policy": "not_applicable"
+}

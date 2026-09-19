@@ -1,0 +1,25 @@
+{
+  "schema": "aura.developer-mode-policy.v1",
+  "default_enabled": false,
+  "toggle_channels": [
+    "text",
+    "voice"
+  ],
+  "activation_phrases": [
+    "Aura, active le mode développeur",
+    "Aura, passe en mode développeur"
+  ],
+  "deactivation_phrases": [
+    "Aura, désactive le mode développeur",
+    "Aura, repasse en mode normal"
+  ],
+  "activation_is_permission_to_enter_developer_mode_not_permission_to_write": true,
+  "write_approvals_still_required": true,
+  "critical_dual_gate_still_required": true,
+  "constitutional_release_gate_still_required": true,
+  "brief_spoken_summary_after_apply": true,
+  "spoken_output_policy": "brief-change-summary-only",
+  "spoken_summary_max_chars": 150,
+  "verbose_receipt_not_spoken": true,
+  "live_text_and_voice_router_binding_stage": "ADF-H"
+}

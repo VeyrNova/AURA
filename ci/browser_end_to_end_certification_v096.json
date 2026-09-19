@@ -1,0 +1,60 @@
+{
+  "schema": "aura.browser-end-to-end-certification.v096.d2.v1",
+  "status": "CERTIFIED_V0_9_6_D2_BROWSER_INTEGRATION",
+  "generated_at": "2026-08-28T18:39:20",
+  "product_version": "0.9.5",
+  "certification_scope": [
+    "browser provider registration",
+    "existing AURA Web tool reuse",
+    "read-only search/read evidence",
+    "explicit browser-language route binding",
+    "AuraCore.try_handle_intent end-to-end search/read",
+    "state-changing confirmation-only fail-closed behavior",
+    "generic Web intent ownership preservation",
+    "no duplicate HTTP/search backend"
+  ],
+  "authorities": {
+    "core/aura_core.py": "dbf4f7c6279497b6e0f46152bbacbb9428138619815a883a34f06c41f2d6ffa1",
+    "runtime/browser_route_binding_v096.py": "9c019c742918e9b0b3068df91acc2a68f28032294a578677da00e8f096eab620",
+    "tests/invariants/test_browser_route_binding_v096.py": "d125da48fd7481a5e84a3b2fcc246cd33211dcd96ddf68aac7e8764c85501883",
+    "ci/browser_route_binding_manifest_v096.json": "9332e6c5b919964c4eb7b2bc40669ffbc8f37e426f9767df053969f48ccc89b4"
+  },
+  "state_changing_browser_executor": "DISABLED",
+  "external_network_gating": false,
+  "network_observation": {
+    "attempted": true,
+    "ok": false,
+    "evidence_count": 0,
+    "error": "RuntimeError('existing_web_search_failed:free_search_unavailable')"
+  },
+  "database_sha256": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb",
+  "color_charter": "LOCKED",
+  "visual_hashes": {
+    "main_css": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5",
+    "activity_project": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4",
+    "activity_dist": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4"
+  },
+  "protected_existing_hashes": {
+    "runtime/personal_integrations.py": "de47c1a8bd1598ab6d03a29276dfdd0ada90b5220415cc8e2a418b940259a893",
+    "runtime/route_contract.py": "a04a000f19c4794b543dbd4cd5b73541997f32055d3a7776f4979a89eb62f9b4",
+    "integrations/registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+    "tools/internet_manager.py": "0cf66aecdb915ba1a0cf30da2541d3c5d5f092378138b960ea323d5c361d66c6",
+    "tools/web_search.py": "12527a9474569ba697cb0d7235a9848ce63ba15dde21b4bbeab766556ca3dc27",
+    "tools/web_fetch.py": "68d7eb5f3894b30a5dc15019714311d2435dc0ca64be65a0f02d97ea40d9450f",
+    "tools/safe_http.py": "3d9cfa0c877b03eef3f4dfa4ce7550bf56ef7bf78963db31f24910e2ed2c385c",
+    "tools/models.py": "a9a08ce878dd68a3feb334b03919ff92b9b19ab42d9b17782a50055ecf6625fc",
+    "runtime/browser_live_adapters_v096.py": "c1d72b36cff27a6509f736132ed64136e3e030ffaae6b7d0d82ecef1f28905e7",
+    "runtime/browser_wiring_v096.py": "31b73e0b56204bdac1cf3768ed56d75edcf44bbb3cd2bf0891f182d8ff02fac1",
+    "integrations/browser/provider.py": "fee06ec1a9651687aacd93669114003d03618fa2ee85c171632abdeb232cdaf8",
+    "runtime/browser_workflows.py": "cb92861f65a719810c77fb50c8640af8d691b9d289ac83bfc229e602355700d1",
+    "security/permissions.py": "6df1f3a88072355147e9b1409566bb9046a25412f57112830308ccc948c7d4a0",
+    "security/policy_engine_v2.py": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "action_receipts/service.py": "4c0f13eefaa6351eca157235d3b0ceea5643474a8cbf0cdb7401c1d71b34023e",
+    "ui/main_window.py": "326d1b2ca580ef83c704c97b24e0052ca83c56c6c8b72f9a9e39a2e460f61d0a",
+    "ui/personal_integration_modules.py": "ed71cb262b86a290890a290e82019a494c6df61352c97aaa6e903d96107f2f1d",
+    "ci/browser_runtime_binding_manifest_v096.json": "7fff597a419dad592deeca4b73e5adb1bf646563bed2abf0d8bd33685b334674",
+    "tests/invariants/test_browser_runtime_binding_v096.py": "2b38f784b56e6c41738f20240afa0c21c979d10fce8e869644d53efe616c60b9"
+  },
+  "next_state": "D2_BROWSER_INTEGRATION_COMPLETE_READY_FOR_NEXT_ROADMAP_BLOCK"
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "aura.developer-fabric.adf-f.policy.v1",
+  "read_only_default": true,
+  "workspace_boundary_required": true,
+  "deny_outside_workspace": true,
+  "deny_follow_symlinks": true,
+  "sensitive_files_excluded_from_context": true,
+  "proposal_preimage_sha256_required": true,
+  "staging_required_before_apply": true,
+  "tests_required_before_apply": true,
+  "test_shell_execution": false,
+  "test_command_allowlist_required": true,
+  "explicit_approval_phrase_required": true,
+  "transaction_backup_required": true,
+  "atomic_write_required": true,
+  "post_apply_tests_required": true,
+  "automatic_rollback_on_post_test_failure": true,
+  "receipt_required": true
+}

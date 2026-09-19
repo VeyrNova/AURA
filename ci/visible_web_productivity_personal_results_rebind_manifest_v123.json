@@ -1,0 +1,35 @@
+{
+  "schema": "aura.v123.visible-web-productivity-personal-results-rebind.manifest.v1",
+  "parent_result_sha256": "1c6dbaaa628aba694fc2b72009eb9cfb9cc890b420144801df5e54b6c853bb70",
+  "retry_parent_result_sha256": "8de1d4cd4cea9669aae75dce7fc11854ce32113e06b965e87ad435cc73c99c74",
+  "product_version": "1.2.2",
+  "target_version": "1.2.3",
+  "prewrite": {
+    "rail": "32bbd18437489872bb440c2e08afecb3fc0a1a1886db6c5e1cc5b778de6f0d3f",
+    "product": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58",
+    "renderer": "025d83640b86da69ab1483b6557f3d759f9a9fec6eef330494cf7ccb95637320",
+    "bridge": "90ba33ad359aec4a00f6cec882ed533d1c4c7c0bd1f0e8dcd68ceded1c1b8a57",
+    "conversation": "daf268c403fcae2264f0be77a18d3fa5009427422d7d16e3545bff1b0665ff31",
+    "root_index": "0d617fda92cd29aa34287a53ecfb696550da84070ec8a5808f0483b0cd3177d1",
+    "dist_index": "130d50b7381e9702f87ba096d4d65d3f87b1ec8bcebfbbf69f369d044a81ef3e",
+    "shell": "3d376959368022f35b6a86ec5c7c0a67f33de360cde2a7f0cb5a8b67be58044b",
+    "main": "8847f482d48c57259d2e0a50fe6844b4ef8c0af11e683b9b2142c2b232b454b9",
+    "bundle": "c90a330add27d9e006451164bb2df255e7e80584917369ec9dfff7ab5b958551"
+  },
+  "postwrite": {
+    "left_rail": "d363e2ce1d5ff0c7f23b8f32380a901dda9dd0298d7086286203d4dc714d7596",
+    "visible_rebind_js": "2e9231aeb0f8aaed64da5e479c2e040b0b1b45ec1da8b3f990d66e5d22ddb6f3",
+    "visible_rebind_css": "299319d82d032c125c17fcfa401a489bca2f5d43c0d4253b782d20760456822a",
+    "root_index": "e92f4edcc47d988e8086fd18d56b8c479ef7c67f692d39aaf32a00f0e4bdd9f2",
+    "dist_index": "2984550318d00e9c64ba30c6b2ab003ef8c8f18b38f1eb78139972f6af5e9f90",
+    "invariant": "cb4bbdb242ad810e3b65a8948ccd5c3101eeb6cb8a42c43c7638c7b07b2ed2a6"
+  },
+  "contracts": {
+    "native_tasks": "AURA local + Google Tasks",
+    "native_agenda": "real monthly AURA + Google calendar",
+    "refresh": "ACTUALISER TOUT",
+    "personal_results": "bridge before dist EventSource owner",
+    "google_write": false,
+    "oauth": false
+  }
+}

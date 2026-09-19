@@ -1,0 +1,28 @@
+{
+  "schema": "aura.developer-fabric.adf-d.manifest.v1",
+  "installed_at": "2026-08-30T20:24:43",
+  "aura_version": "1.3.0",
+  "agent_count": 10,
+  "agents": [
+    "Claude Code",
+    "Codex",
+    "Pi",
+    "OpenCode",
+    "Cline",
+    "Hermes",
+    "DeepSeek Harness",
+    "Grok Build",
+    "Muse Code",
+    "Aider"
+  ],
+  "single_model_catalog": true,
+  "dry_run_default": true,
+  "third_party_agents_executed_during_certification": false,
+  "third_party_agents_installed_during_certification": false,
+  "secret_values_persisted": false,
+  "muse_code": {
+    "experimental_beta": true,
+    "native_windows_claim": false
+  },
+  "http_endpoint": "GET /aura/v1/agents"
+}

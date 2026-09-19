@@ -1,0 +1,56 @@
+{
+  "schema": "aura.v1.2.3.final-certification.manifest.v1",
+  "certified_at": "2026-08-30T14:10:23",
+  "version": "1.2.3",
+  "failed_ft7_result_sha256": "65b740f2452fa6c61a805491d294e1db67d13bf1b7dcfe3df05d21a0d14a71f2",
+  "d4_r5_result_sha256": "6ca74c78c302e557660306f880795b342b83b31c96408f30c90fdb8be23e8031",
+  "version_pre_sha256": "af3425496e4c8d737563c8f9367ecc616d5eb0535dcbce728cea456af109b4ee",
+  "version_post_sha256": "8ab2d0c466dbfb832d1807027c4363a2af690017e587e243fc736e8424b84e8a",
+  "live_read_certification": {
+    "direct": {
+      "tasks": 1,
+      "calendar": 20,
+      "contacts": 1
+    },
+    "conversation": {
+      "tasks": {
+        "handled": true,
+        "status": "succeeded",
+        "capability": "tasks.list"
+      },
+      "calendar": {
+        "handled": true,
+        "status": "succeeded",
+        "capability": "calendar.search_events"
+      },
+      "contacts": {
+        "handled": true,
+        "status": "succeeded",
+        "capability": "contacts.search"
+      }
+    }
+  },
+  "d4_acceptance": {
+    "prior_d4_checks": "59/60",
+    "prior_cleanup_complete": true,
+    "tasks_bidirectional": true,
+    "calendar_bidirectional": true,
+    "contacts_bidirectional": true,
+    "date_only_reminder_to_tasks": true,
+    "timed_reminder_to_calendar_with_notification": true,
+    "calendar_delete_semantics_validated": true,
+    "all_disposable_cleanup": true
+  },
+  "functional_authorities": {
+    "accounts/google_tasks_oauth_v123.py": "db744f95e0239083adc342d3f7887509435f6725829bf2fa6700b83f85c3b6a6",
+    "integrations/google/live_tasks_backend_v123.py": "235bcf06648ff092fb6e80ac33466a0b74976d86924f0faa3f6ad5b36c61badc",
+    "integrations/google/live_calendar_backend_v121.py": "313d19517debb532afd8a8a17c437621a8e7d9aee4ade74d1561a5f7469410e4",
+    "integrations/google/live_contacts_backend_v121.py": "1371ffb7b22c7e1e12abde01437c46a03d1d3039024b204f071a24cd0f1066ee",
+    "integrations/tasks/provider.py": "336e18f8c1218c985b67fe4348ec841bfdbabc3f1de471b70d38c12e36e574ee",
+    "integrations/registry.py": "0d3d3b5011047be2db3eaec2487539d0d5c41d149c71c05e0e04531ada41b2f3",
+    "runtime/personal_integrations.py": "ea07455c1d7e877c9e41bea5c41b59e8cbc003f0471227b51c9afe3790061f22",
+    "runtime/google_productivity_sync_v123.py": "8cadad2879d813279934b83a6f3976ac6973c8ba0b76bfda096fbecd528abe41",
+    "runtime/integration_permissions_tasks_v123.py": "e01a3d57894d3a47a601017b9362f136d686181470f59faf93cc5eb9cb668cb1"
+  },
+  "google_content_mutation_in_ft7_r2": false
+}

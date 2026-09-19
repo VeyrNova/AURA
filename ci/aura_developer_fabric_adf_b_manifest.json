@@ -1,0 +1,54 @@
+{
+  "schema": "aura.developer-fabric.adf-b.manifest.v1",
+  "installed_at": "2026-08-30T20:04:37",
+  "aura_version": "1.3.0",
+  "product_version_bumped": false,
+  "milestone": "ADF-B HTTP Protocol Gateway + Streaming + Model Catalog + Live Health",
+  "clean_room": true,
+  "fcc_dependency": false,
+  "external_provider_called_during_certification": false,
+  "listen_default": "127.0.0.1:8766",
+  "endpoints": [
+    "GET /health",
+    "GET /ready",
+    "GET /v1/models",
+    "POST /v1/responses",
+    "POST /v1/chat/completions",
+    "POST /v1/messages",
+    "GET /aura/v1/catalog",
+    "GET /aura/v1/health",
+    "POST /aura/v1/health/probe",
+    "POST /aura/v1/responses"
+  ],
+  "protocols": [
+    "OpenAI Responses-compatible",
+    "OpenAI Chat Completions-compatible",
+    "Anthropic Messages-compatible",
+    "AURA native"
+  ],
+  "features": {
+    "canonical_request_layer": true,
+    "streaming_sse": true,
+    "tools_preserved": true,
+    "reasoning_metadata_preserved": true,
+    "image_content_preserved": true,
+    "single_model_catalog": true,
+    "health_live": true,
+    "circuit_breaker": true,
+    "bounded_retries": true,
+    "same_turn_fallback_foundation": true,
+    "loopback_default": true,
+    "optional_local_bearer_token": true,
+    "no_secret_logging": true
+  },
+  "files": {
+    "runtime\\aura_fabric_protocols.py": "f497f5bae2728dfb9e31b6d162290dd524c98f2d421b3e3e00b1054a86b15489",
+    "runtime\\aura_fabric_model_catalog.py": "82a111cb9489a0dd514197d84ae4368aa8dffd4c18510a59c7bac6749d1d401a",
+    "runtime\\aura_fabric_provider_adapter.py": "650e81e8d26d6e5ba60c40c7ce4c182acf702fdf063b5f34a9a9b371f5176b5d",
+    "runtime\\aura_fabric_http_gateway.py": "5cc105a381a73671d9be5e85188ca29e04daadce9dd84a8d1aaef4a188f5f23e",
+    "launch_aura_fabric_gateway.py": "1e8b59bb17872f7242236a8830c28da17401a367dc734513a93575ea94e56cdb",
+    "tests\\invariants\\test_aura_developer_fabric_adf_b_http_gateway.py": "06e3ef50f4aa9aa91c679a01ada1f27a8ee70ca14843e4f4a50581be84228330",
+    "docs\\AURA_DEVELOPER_FABRIC_ADF_B_HTTP_GATEWAY.md": "f2809f6cea6bb05d354fd34740f3985f018c5a66327fad5569e27e454eb25476",
+    "ci\\aura_developer_fabric_roadmap_overlay.json": "aeb3cfe765b0449cc54d9c0aa2176ff3d5d4d5c6545a21ffd884d0db5a92b078"
+  }
+}

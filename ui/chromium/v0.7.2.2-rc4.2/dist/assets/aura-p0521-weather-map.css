@@ -1,0 +1,437 @@
+/* AURA P0.5.2.1 IMMERSIVE GEOSPATIAL WEATHER MAP */
+/* AURA P0.5.2.2 WEATHER MAP READABILITY + TEMPORAL COHERENCE */
+#auraWxGeoMap{position:absolute;z-index:5;left:390px;right:30px;top:92px;bottom:182px;border:1px solid rgba(83,213,246,.11);border-radius:14px;overflow:hidden;background:rgba(2,10,17,.86);box-shadow:0 20px 65px rgba(0,0,0,.30),inset 0 0 80px rgba(31,119,153,.045)}
+#auraWxGeoMap .aura-wx-map-surface,#auraWxMapCanvas,.aura-wx-map-scan{position:absolute;inset:0;width:100%;height:100%}
+#aura-wx-map-canvas{pointer-events:none}
+#auraWxMapCanvas{z-index:1}
+.aura-wx-map-scan{z-index:2;pointer-events:none;background:linear-gradient(rgba(91,218,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(91,218,255,.018) 1px,transparent 1px);background-size:32px 32px;mix-blend-mode:screen;opacity:.55}
+.aura-wx-map-toolbar{position:absolute;z-index:8;left:14px;top:14px;display:flex;align-items:center;gap:5px;padding:5px 6px;border:1px solid rgba(84,217,255,.13);border-radius:10px;background:rgba(2,12,20,.78);backdrop-filter:blur(14px)}
+.aura-wx-map-toolbar>span{padding:0 7px;font:600 8px/1 system-ui;letter-spacing:.17em;color:rgba(123,178,199,.55)}
+.aura-wx-map-toolbar button{border:0;border-radius:7px;padding:7px 9px;background:transparent;color:rgba(140,190,207,.55);font:600 8px/1 system-ui;letter-spacing:.09em;cursor:pointer;transition:.16s}
+.aura-wx-map-toolbar button:hover{color:#d5f8ff;background:rgba(91,225,255,.055)}
+.aura-wx-map-toolbar button.active{color:#dbfbff;background:linear-gradient(90deg,rgba(66,210,255,.13),rgba(154,84,255,.12));box-shadow:inset 0 0 0 1px rgba(104,225,255,.16),0 0 16px rgba(95,96,255,.08)}
+.aura-wx-map-animation{position:absolute;z-index:8;right:15px;top:14px;display:flex;align-items:center;gap:8px;height:34px;padding:0 9px;border:1px solid rgba(84,217,255,.11);border-radius:9px;background:rgba(2,12,20,.76);backdrop-filter:blur(12px);font:600 8px/1 system-ui;letter-spacing:.12em;color:rgba(132,186,203,.58)}
+.aura-wx-map-animation button{width:24px;height:24px;border:0;border-radius:6px;background:rgba(88,230,255,.08);color:#7cecff;cursor:pointer;font-size:10px}
+.aura-wx-map-animation b{font-size:7px;color:rgba(164,117,255,.72);font-weight:600}
+.aura-wx-map-details{position:absolute;z-index:7;right:14px;top:61px;bottom:66px;width:218px;padding:13px 14px;border:1px solid rgba(84,217,255,.10);border-radius:11px;background:rgba(2,13,22,.76);backdrop-filter:blur(15px);box-shadow:0 12px 35px rgba(0,0,0,.22)}
+.aura-wx-map-details header{display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid rgba(84,217,255,.08);font:600 8px/1.1 system-ui;letter-spacing:.14em;color:rgba(141,191,208,.58)}
+.aura-wx-map-details header small{font-size:7px;color:#69e8f9}
+.aura-wx-detail-main{padding:13px 0 11px;display:grid;gap:5px}.aura-wx-detail-main span{font:600 9px/1 system-ui;letter-spacing:.14em;color:#bfeef8}.aura-wx-detail-main strong{font:300 28px/1 system-ui;color:#e1faff}
+.aura-wx-map-details dl{margin:0;display:grid;gap:7px}.aura-wx-map-details dl div{display:flex;justify-content:space-between;gap:10px}.aura-wx-map-details dt,.aura-wx-map-details dd{margin:0;font:500 8px/1.2 system-ui;color:rgba(126,177,195,.52)}.aura-wx-map-details dd{color:rgba(197,232,240,.72)}
+.aura-wx-map-details footer{position:absolute;left:14px;right:14px;bottom:11px;font:600 7px/1 system-ui;letter-spacing:.12em;color:rgba(89,145,165,.35)}
+.aura-wx-map-legend{position:absolute;z-index:7;right:247px;top:72px;height:178px;width:32px;display:grid;grid-template-rows:auto 1fr auto;justify-items:center;gap:5px;font:600 7px/1 system-ui;color:rgba(194,228,237,.55)}
+.aura-wx-map-legend i{width:5px;height:100%;border-radius:4px;background:linear-gradient(180deg,#f05cff,#8e5cff,#43c7ff,#5cf2ff);box-shadow:0 0 12px rgba(85,172,255,.22)}
+.aura-wx-map-legend b{position:absolute;top:50%;right:-12px;transform:rotate(90deg);font-size:7px;color:rgba(145,193,210,.45)}
+.aura-wx-map-timeline{position:absolute;z-index:8;left:14px;right:14px;bottom:12px;height:42px;display:flex;align-items:center;gap:6px;padding:0 10px;border:1px solid rgba(84,217,255,.10);border-radius:9px;background:rgba(2,12,20,.78);backdrop-filter:blur(14px)}
+.aura-wx-map-timeline button{border:0;background:transparent;color:rgba(128,181,199,.48);font:600 7px/1 system-ui;letter-spacing:.08em;cursor:pointer;padding:6px 7px;border-radius:6px}.aura-wx-map-timeline button.active{color:#d8fbff;background:rgba(87,224,255,.08)}
+.aura-wx-time-track{height:2px;flex:1;background:rgba(88,186,217,.11);overflow:hidden;border-radius:2px;margin:0 6px}.aura-wx-time-track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#55eaff,#a45cff);box-shadow:0 0 9px rgba(114,98,255,.5)}
+.aura-wx-map-timeline strong{min-width:112px;text-align:right;font:600 8px/1 system-ui;letter-spacing:.08em;color:rgba(186,224,235,.62)}
+.aura-wx-map-target{position:absolute;z-index:6;transform:translate(-50%,-50%);pointer-events:none}.aura-wx-map-target i{display:block;width:16px;height:16px;border:1px solid rgba(94,239,255,.55);border-radius:50%;box-shadow:0 0 18px rgba(95,99,255,.35)}.aura-wx-map-target span{position:absolute;left:18px;top:-1px;white-space:nowrap;padding:4px 7px;border:1px solid rgba(84,217,255,.11);border-radius:6px;background:rgba(2,12,20,.72);font:600 8px/1 system-ui;letter-spacing:.08em;color:#c9f6ff}
+.aura-wx-map-nodata{position:absolute;z-index:4;left:50%;top:52%;transform:translate(-50%,-50%);padding:8px 12px;border:1px solid rgba(84,217,255,.08);border-radius:8px;background:rgba(2,12,20,.64);font:600 8px/1 system-ui;letter-spacing:.14em;color:rgba(130,184,202,.46)}
+#auraWxGeoMap.has-field .aura-wx-map-nodata{display:none}
+#auraWxGeoMap[data-layer="waves"] .aura-wx-map-nodata{display:block;top:50%;content:""}
+#auraWxGeoMap[data-layer="waves"] .aura-wx-map-nodata::after{content:"COUCHE MARINE · DONNÉES NON FOURNIES"}
+/* The P0.5.1 mini decorative layer switch is superseded by the real geospatial toolbar. */
+.aura-weather-workspace .aura-weather-layers{display:none!important}
+.aura-weather-workspace.open .aura-weather-current,.aura-weather-workspace.open .aura-weather-metrics,.aura-weather-workspace.open .aura-weather-synthesis,.aura-weather-workspace.open .aura-weather-hourly{z-index:9}
+@media(max-width:1450px){#auraWxGeoMap{left:345px}.aura-wx-map-details{width:190px}.aura-wx-map-legend{right:220px}.aura-wx-map-toolbar button{padding:7px 6px;font-size:7px}}
+@media(max-width:1180px){#auraWxGeoMap{left:315px;right:18px}.aura-wx-map-details{display:none}.aura-wx-map-legend{right:15px}.aura-wx-map-toolbar>span{display:none}.aura-wx-map-animation span,.aura-wx-map-animation b{display:none}}
+
+
+/* P0.5.2.2 — runtime validation polish from first geospatial screenshot */
+#auraWxGeoMap{
+  bottom:94px;
+  background:rgba(1,8,14,.94);
+  box-shadow:0 24px 74px rgba(0,0,0,.34),inset 0 0 110px rgba(35,143,174,.055);
+}
+.aura-weather-workspace.aura-wx-has-geofield .aura-weather-hourly{
+  display:none!important;
+}
+.aura-wx-map-scan{
+  opacity:.38;
+}
+.aura-wx-map-details{
+  background:rgba(1,12,20,.86);
+}
+.aura-wx-detail-local{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:0 0 13px;
+  padding:8px 9px;
+  border:1px solid rgba(87,217,246,.08);
+  border-radius:7px;
+  background:rgba(73,211,255,.035);
+}
+.aura-wx-detail-local span{
+  font:600 7px/1 system-ui;
+  letter-spacing:.13em;
+  color:rgba(129,185,204,.48);
+}
+.aura-wx-detail-local b{
+  font:600 10px/1 system-ui;
+  color:rgba(209,246,252,.76);
+}
+.aura-wx-map-details footer{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+}
+.aura-wx-map-details footer b{
+  font:600 7px/1 system-ui;
+  letter-spacing:.08em;
+  color:rgba(123,190,210,.40);
+}
+.aura-wx-layer-notice{
+  position:absolute;
+  z-index:7;
+  left:50%;
+  top:63px;
+  transform:translateX(-50%) translateY(-5px);
+  opacity:0;
+  pointer-events:none;
+  padding:7px 10px;
+  border:1px solid rgba(97,221,247,.09);
+  border-radius:7px;
+  background:rgba(2,12,20,.72);
+  backdrop-filter:blur(10px);
+  font:600 7px/1 system-ui;
+  letter-spacing:.12em;
+  color:rgba(166,223,237,.56);
+  transition:.18s ease;
+}
+.aura-wx-layer-notice.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+.aura-wx-map-nav{
+  position:absolute;
+  z-index:8;
+  right:15px;
+  top:54px;
+  display:flex;
+  gap:4px;
+  padding:4px;
+  border:1px solid rgba(84,217,255,.09);
+  border-radius:8px;
+  background:rgba(2,12,20,.72);
+  backdrop-filter:blur(12px);
+}
+.aura-wx-map-nav button{
+  width:24px;
+  height:24px;
+  border:0;
+  border-radius:5px;
+  background:rgba(84,214,245,.035);
+  color:rgba(185,232,241,.62);
+  cursor:pointer;
+  font:500 12px/1 system-ui;
+}
+.aura-wx-map-nav button:hover{
+  color:#dbfbff;
+  background:rgba(84,226,255,.09);
+}
+#auraWxGeoMap[data-layer="waves"] [data-wx-layer="waves"]{
+  color:rgba(152,177,193,.34);
+}
+.aura-wx-map-target span{
+  background:rgba(1,11,18,.86);
+  box-shadow:0 6px 20px rgba(0,0,0,.28);
+}
+.aura-wx-map-timeline{
+  background:rgba(1,11,18,.86);
+}
+@media(max-width:1450px){
+  #auraWxGeoMap{bottom:90px}
+}
+
+
+/* P0.5.2.3 — LOCALIZED CARTOGRAPHY + COASTAL CONTEXT */
+#auraWxGeoMap{
+  background:rgba(1,8,14,.95);
+}
+.aura-wx-map-target span{
+  max-width:220px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* AURA P0.5.2.3.1 LOCALIZED CARTOGRAPHY MARKER FIX */
+
+
+/* AURA P0.5.2.3.2 WEATHER ERROR RECOVERY */
+#auraWxGeoMap.weather-error .aura-wx-map-nodata{
+  color:rgba(255,172,191,.78);
+  border-color:rgba(255,74,115,.16);
+  background:rgba(26,5,12,.38);
+  letter-spacing:.12em;
+}
+#auraWxGeoMap.weather-error .aura-wx-map-details{
+  opacity:.58;
+}
+
+
+/* AURA P0.5.2.4 ADAPTIVE MAP NAVIGATION + CITY LOD */
+#auraWxMapCanvas{
+  cursor:grab;
+  touch-action:none;
+}
+#auraWxGeoMap.map-dragging #auraWxMapCanvas{
+  cursor:grabbing;
+}
+.aura-wx-map-nav button{
+  transition:
+    background .16s ease,
+    border-color .16s ease,
+    transform .12s ease;
+}
+.aura-wx-map-nav button:hover{
+  border-color:rgba(102,232,250,.35);
+  background:rgba(18,66,84,.35);
+}
+.aura-wx-map-nav button:active{
+  transform:scale(.92);
+}
+
+
+/* AURA P0.5.2.4.1 MAP GEOGRAPHY + CITY VISIBILITY HOTFIX */
+#auraWxGeoMap .aura-wx-map-surface{
+  isolation:isolate;
+}
+#auraWxGeoMap .aura-wx-map-target{
+  z-index:8;
+}
+
+
+/* AURA P0.5.2.4.2 FOREGROUND VECTOR CARTOGRAPHY */
+#auraWxGeoOverlay{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  shape-rendering:geometricPrecision;
+}
+#auraWxGeoMap .aura-wx-map-scan{
+  z-index:2;
+}
+#auraWxGeoMap .aura-wx-map-target{
+  z-index:8;
+}
+#auraWxGeoOverlay .aura-geo-city text{
+  paint-order:stroke;
+  stroke:rgba(0,7,12,.86);
+  stroke-width:2px;
+}
+#auraWxGeoOverlay .aura-geo-target{
+  filter:drop-shadow(0 0 6px rgba(84,218,255,.26));
+}
+
+/* AURA P0.5.2.4.3 VIEWPORT NULL CENTER FIX */
+
+
+/* AURA P0.5.2.5 HIGH FIDELITY LOCAL CARTOGRAPHY */
+#auraWxGeoOverlay{
+  shape-rendering:geometricPrecision;
+}
+#auraWxGeoOverlay path{
+  vector-effect:non-scaling-stroke;
+}
+#auraWxGeoOverlay .aura-geo-city rect{
+  fill:rgba(1,11,18,.78);
+  stroke:rgba(93,219,240,.12);
+}
+
+
+/* AURA P0.5.2.5.1 CARTOGRAPHIC READABILITY + CITY HIERARCHY */
+#auraWxGeoOverlay .aura-geo-area-label{
+  pointer-events:none;
+  paint-order:stroke;
+  stroke:rgba(1,9,15,.58);
+  stroke-width:1.5px;
+}
+#auraWxGeoOverlay .aura-geo-city-major text{
+  paint-order:stroke;
+  stroke:rgba(0,8,13,.92);
+  stroke-width:2.4px;
+}
+#auraWxGeoOverlay .aura-geo-city-local text{
+  paint-order:stroke;
+  stroke:rgba(0,8,13,.72);
+  stroke-width:1.5px;
+}
+#auraWxGeoOverlay .aura-geo-city-major circle{
+  filter:drop-shadow(0 0 2px rgba(91,214,235,.24));
+}
+
+
+/* AURA P0.5.2.6 GLOBAL NAVIGABLE CARTOGRAPHY */
+#auraWxGeoOverlay .aura-geo-country-label{
+  pointer-events:none;
+  paint-order:stroke;
+  stroke:rgba(0,8,13,.72);
+  stroke-width:1.4px;
+}
+#auraWxGeoMap.map-dragging #auraWxGeoOverlay{
+  opacity:.92;
+}
+#auraWxGeoMap .aura-wx-map-surface,
+#auraWxGeoMap #auraWxMapCanvas{
+  touch-action:none;
+}
+
+
+/* AURA P0.5.2.7 HYBRID WORLD MAP TILES */
+#auraWxGeoMap .aura-wx-map-surface{
+  background:
+    radial-gradient(circle at 50% 48%,rgba(20,89,113,.08),transparent 54%),
+    #020b12;
+}
+#auraWxTileLayer{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  opacity:0;
+  transition:opacity .18s ease;
+  pointer-events:none;
+  background:#020b12;
+}
+#auraWxTileLayer.ready{
+  opacity:1;
+}
+#auraWxTileLayer .aura-wx-map-tile{
+  position:absolute;
+  display:block;
+  max-width:none;
+  user-select:none;
+  pointer-events:none;
+  image-rendering:auto;
+  filter:
+    grayscale(.82)
+    brightness(.50)
+    contrast(1.18)
+    sepia(.10)
+    hue-rotate(145deg)
+    saturate(1.20);
+  opacity:.92;
+}
+#auraWxMapCanvas{
+  background:transparent !important;
+}
+#auraWxTileAttribution{
+  position:absolute;
+  z-index:9;
+  right:20px;
+  bottom:62px;
+  max-width:250px;
+  padding:3px 6px;
+  border-radius:4px;
+  background:rgba(1,9,15,.66);
+  color:rgba(120,174,190,.42);
+  font:600 7px/1.2 system-ui,sans-serif;
+  letter-spacing:.06em;
+  pointer-events:none;
+  white-space:nowrap;
+}
+#auraWxTileAttribution.online{
+  color:rgba(154,207,219,.58);
+}
+
+
+/* AURA P0.5.2.7.1 LOOPBACK TILE PROXY */
+#auraWxTileAttribution:not(.online){
+  color:rgba(139,186,199,.50);
+}
+
+
+/* AURA P0.5.2.7.2 TILE COMPOSITING FIX */
+#auraWxTileLayer.ready{
+  opacity:1 !important;
+}
+#auraWxTileLayer.ready .aura-wx-map-tile{
+  visibility:visible !important;
+}
+#auraWxGeoMap:has(#auraWxTileLayer.ready) .aura-wx-map-scan{
+  opacity:.28;
+}
+
+
+/* AURA P0.5.2.8 WORLDWIDE AURA CARTOGRAPHIC CONTEXT */
+#auraWxGeoOverlay .aura-geo-dynamic-coast{
+  opacity:.98;
+}
+#auraWxGeoOverlay .aura-geo-dynamic-coast-glow{
+  opacity:.72;
+}
+#auraWxGeoOverlay .aura-geo-city-world text{
+  paint-order:stroke;
+  stroke:rgba(0,8,13,.62);
+  stroke-width:.75px;
+}
+
+
+/* AURA P0.5.2.8.1 REGIONAL CONTEXT ACTIVATION FIX */
+.aura-wx-context-loading{
+  color:rgba(111,218,236,.68);
+}
+.aura-wx-context-error{
+  color:rgba(236,154,176,.72);
+}
+
+
+/* AURA P0.5.2.8.2 CONTEXT REQUEST STABILIZATION */
+.aura-wx-context-timeout{
+  color:rgba(238,183,119,.76);
+}
+
+
+/* AURA P0.5.2.8.3 FAST WORLD CONTEXT */
+#auraWxGeoOverlay .aura-geo-world-reference-coast{
+  opacity:.96;
+}
+#auraWxGeoOverlay .aura-geo-world-reference-border{
+  opacity:.82;
+}
+
+
+/* AURA P0.5.2.8.4 WEB MERCATOR OVERLAY ALIGNMENT */
+
+
+/* AURA P0.5.2.8.5 LOCAL FIDELITY GUARD */
+#auraWxGeoOverlay .aura-geo-world-reference-coast{
+  shape-rendering:geometricPrecision;
+}
+
+
+/* AURA P0.5.2.8.6 NEARBY CITY LABEL CAP */
+
+
+/* AURA P0.5.2.8.7 SEMANTIC WEATHER LAYERS */
+#auraWxGeoMap[data-layer="rain"] #auraWxTileLayer .aura-wx-map-tile{
+  filter:grayscale(.88) brightness(.42) contrast(1.15) sepia(.08) hue-rotate(145deg) saturate(1.12);
+}
+#auraWxGeoMap[data-layer="temperature"] #auraWxTileLayer .aura-wx-map-tile{
+  filter:grayscale(.92) brightness(.40) contrast(1.12) saturate(.76);
+}
+#auraWxGeoMap[data-layer="clouds"] #auraWxTileLayer .aura-wx-map-tile{
+  filter:grayscale(.92) brightness(.43) contrast(1.10) saturate(.70);
+}
+#auraWxGeoMap[data-layer="pressure"] #auraWxTileLayer .aura-wx-map-tile{
+  filter:grayscale(.92) brightness(.41) contrast(1.12) saturate(.72);
+}
+#auraWxGeoMap[data-layer="rain"] .aura-wx-map-legend i{
+  background:linear-gradient(180deg,#ff5bd1 0%,#cd6bff 22%,#69f1b8 48%,#48e1ff 72%,#3aa0ff 100%);
+}
+#auraWxGeoMap[data-layer="temperature"] .aura-wx-map-legend i{
+  background:linear-gradient(180deg,#ffbe5c 0%,#ff7a5d 18%,#e050e5 38%,#7e5dff 62%,#3997ff 82%,#4ad6ff 100%);
+}
+#auraWxGeoMap[data-layer="clouds"] .aura-wx-map-legend i{
+  background:linear-gradient(180deg,#f2fbff 0%,#c4dfe9 38%,#7fa9bb 72%,#304b5a 100%);
+}
+#auraWxGeoMap[data-layer="pressure"] .aura-wx-map-legend i{
+  background:linear-gradient(180deg,#ff70ca 0%,#cd57ff 34%,#7669ff 58%,#42d0ff 100%);
+}

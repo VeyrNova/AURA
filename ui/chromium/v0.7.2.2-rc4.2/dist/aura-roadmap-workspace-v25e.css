@@ -1,0 +1,61 @@
+/* AURA Roadmap Workspace V25-E1 */
+#aura-roadmap-workspace-v25e{display:none;width:100%;min-height:0;color:#c9eff8;font-family:inherit}
+body.aura-live-active.aura-roadmap-editor-v25e .workspace>.hero>aside.telemetry.glass{display:none!important}
+body.aura-live-active.aura-roadmap-editor-v25e #aura-roadmap-workspace-v25e{display:flex!important;flex-direction:column;min-height:0;height:100%;padding:14px 14px 96px;box-sizing:border-box;overflow:hidden;background:linear-gradient(135deg,rgba(4,22,34,.97),rgba(10,15,36,.98));border:1px solid rgba(68,203,230,.22);border-radius:18px}
+.aura-roadmap-v25e__open-btn{margin-left:auto;margin-right:10px;padding:7px 11px;border:1px solid rgba(70,217,241,.32);border-radius:9px;background:rgba(30,111,146,.16);color:#9ceeff;font-size:9px;font-weight:800;letter-spacing:.12em;cursor:pointer}
+.aura-roadmap-v25e__header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:4px 4px 14px;border-bottom:1px solid rgba(112,196,224,.12)}
+.aura-roadmap-v25e__header small,.aura-roadmap-v25e__phase small{color:#55d9ef;font-size:9px;letter-spacing:.16em;font-weight:800}
+.aura-roadmap-v25e__header h2{margin:4px 0 2px;font-size:20px;letter-spacing:.04em}
+.aura-roadmap-v25e__header p{margin:0;color:rgba(173,219,232,.54);font-size:10px}
+.aura-roadmap-v25e__header-actions{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:7px}
+.aura-roadmap-v25e button,.aura-roadmap-v25e select,.aura-roadmap-v25e input,.aura-roadmap-v25e textarea{font:inherit}
+.aura-roadmap-v25e button{border:1px solid rgba(91,174,205,.22);background:rgba(10,33,50,.78);color:#bcecf5;border-radius:8px;padding:7px 9px;font-size:9px;font-weight:800;letter-spacing:.06em;cursor:pointer}
+.aura-roadmap-v25e button:hover{border-color:rgba(73,226,255,.48);background:rgba(24,70,91,.56)}
+.aura-roadmap-v25e button.is-primary{background:linear-gradient(90deg,rgba(38,171,204,.38),rgba(93,68,190,.42));border-color:rgba(101,223,255,.36)}
+.aura-roadmap-v25e button.is-danger,.aura-roadmap-v25e button.is-danger-ghost{color:#ff9dac;border-color:rgba(255,91,122,.24)}
+.aura-roadmap-v25e__bridge{padding:6px 9px;border-radius:999px;border:1px solid rgba(255,194,94,.22);color:#ffd078;background:rgba(94,66,12,.14);font-size:8px;font-weight:900;letter-spacing:.1em}
+.aura-roadmap-v25e__bridge.is-ok{color:#71efc2;border-color:rgba(75,230,183,.28);background:rgba(23,94,72,.18)}
+.aura-roadmap-v25e__bridge.is-error{color:#ff9dac;border-color:rgba(255,91,122,.28);background:rgba(98,30,44,.18)}
+.aura-roadmap-v25e__summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;padding:12px 2px}
+.aura-roadmap-v25e__summary article{padding:10px 11px;border:1px solid rgba(88,185,214,.14);border-radius:12px;background:rgba(7,26,41,.72)}
+.aura-roadmap-v25e__summary span{display:block;color:#5acfe4;font-size:8px;font-weight:900;letter-spacing:.14em}.aura-roadmap-v25e__summary strong{display:block;margin-top:5px;font-size:15px;color:#d7f7ff}.aura-roadmap-v25e__summary small{display:block;margin-top:2px;color:rgba(169,212,225,.48);font-size:8px}
+.aura-roadmap-v25e__summary .is-late strong{color:#ff9dab}.aura-roadmap-v25e__summary .is-ahead strong{color:#72edc2}
+.aura-roadmap-v25e__toolbar{display:grid;grid-template-columns:minmax(240px,1fr) 150px 190px auto;gap:8px;padding:0 2px 10px}
+.aura-roadmap-v25e input,.aura-roadmap-v25e select,.aura-roadmap-v25e textarea{box-sizing:border-box;width:100%;border:1px solid rgba(88,185,214,.18);border-radius:8px;background:rgba(3,19,31,.86);color:#cdf1f7;padding:8px 9px;outline:none}.aura-roadmap-v25e textarea{min-height:78px;resize:vertical}.aura-roadmap-v25e input:focus,.aura-roadmap-v25e select:focus,.aura-roadmap-v25e textarea:focus{border-color:rgba(72,222,247,.5)}
+.aura-roadmap-v25e__toolbar label{display:flex;align-items:center;gap:7px;color:rgba(184,224,233,.64);font-size:9px}.aura-roadmap-v25e__toolbar label input{width:auto}
+.aura-roadmap-v25e__content{min-height:0;overflow:auto;padding:0 4px 30px 2px;scrollbar-width:thin}
+.aura-roadmap-v25e__phase{margin:0 0 12px;border:1px solid rgba(76,172,202,.14);border-radius:13px;background:rgba(4,18,31,.62);overflow:hidden}
+.aura-roadmap-v25e__phase>header{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:rgba(14,38,55,.72);border-bottom:1px solid rgba(94,179,206,.12)}
+.aura-roadmap-v25e__phase>header>div:first-child{display:flex;align-items:baseline;gap:10px}.aura-roadmap-v25e__phase h3{margin:0;font-size:12px;letter-spacing:.03em}.aura-roadmap-v25e__phase header span{color:rgba(177,218,229,.45);font-size:8px}.aura-roadmap-v25e__phase header>div:last-child{display:flex;gap:6px}
+.aura-roadmap-v25e__milestone{padding:10px 12px;border-bottom:1px solid rgba(88,169,198,.09)}.aura-roadmap-v25e__milestone:last-child{border-bottom:0}.aura-roadmap-v25e__milestone.is-inactive{opacity:.55}
+.aura-roadmap-v25e__milestone-main{display:grid;grid-template-columns:8px minmax(0,1fr) 70px 150px;gap:10px;align-items:center}.aura-roadmap-v25e__status-dot{width:6px;height:6px;border-radius:50%;background:#6b87a0}.is-done .aura-roadmap-v25e__status-dot{background:#5fe7bb;box-shadow:0 0 9px rgba(95,231,187,.45)}.is-in-progress .aura-roadmap-v25e__status-dot{background:#4bdcff;box-shadow:0 0 9px rgba(75,220,255,.45)}.is-blocked .aura-roadmap-v25e__status-dot{background:#ff9a71}.is-archived .aura-roadmap-v25e__status-dot,.is-deleted .aura-roadmap-v25e__status-dot{background:#788493}
+.aura-roadmap-v25e__identity>div{display:flex;align-items:center;gap:7px}.aura-roadmap-v25e__identity code{color:#79dff0;font-size:9px;font-weight:900}.aura-roadmap-v25e__identity em{font-style:normal;color:rgba(182,218,228,.46);font-size:8px}.aura-roadmap-v25e__status{padding:3px 6px;border-radius:999px;border:1px solid rgba(92,180,205,.15);font-size:7px;font-weight:900;color:#9fbdc7}.aura-roadmap-v25e__status.is-done{color:#6ce9be}.aura-roadmap-v25e__status.is-in-progress{color:#58dfff}.aura-roadmap-v25e__status.is-blocked{color:#ff9c79}
+.aura-roadmap-v25e__identity h4{margin:4px 0 1px;font-size:11px;color:#d2f3f8}.aura-roadmap-v25e__identity p{margin:0;color:rgba(170,211,222,.48);font-size:8px;line-height:1.35;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.aura-roadmap-v25e__weight span,.aura-roadmap-v25e__dates span{display:block;color:rgba(93,203,222,.64);font-size:7px;letter-spacing:.12em;font-weight:900}.aura-roadmap-v25e__weight b{font-size:12px}
+.aura-roadmap-v25e__row-progress{display:grid;grid-template-columns:38px 1fr;gap:7px;align-items:center}.aura-roadmap-v25e__row-progress span{font-size:8px;text-align:right}.aura-roadmap-v25e__row-progress progress{width:100%;height:6px;accent-color:#58cfe8}
+.aura-roadmap-v25e__dates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:8px 0 7px 18px}.aura-roadmap-v25e__dates div{padding-top:6px;border-top:1px solid rgba(93,176,201,.08)}.aura-roadmap-v25e__dates b{display:block;margin-top:3px;font-size:8px;color:#a9d3dc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.aura-roadmap-v25e__dates .is-locked b{color:#8097a2}
+.aura-roadmap-v25e__actions{display:flex;justify-content:flex-end;gap:5px}.aura-roadmap-v25e__actions button{padding:5px 7px;font-size:7px}
+.aura-roadmap-v25e__modal{position:absolute;inset:8px;z-index:80;display:grid;place-items:center;background:rgba(1,8,15,.78);backdrop-filter:blur(8px);border-radius:16px}.aura-roadmap-v25e__modal[hidden]{display:none}.aura-roadmap-v25e__modal-card{width:min(760px,92%);max-height:88%;overflow:auto;border:1px solid rgba(78,213,237,.24);border-radius:15px;background:linear-gradient(140deg,#071d2a,#11152c);box-shadow:0 25px 80px rgba(0,0,0,.48)}.aura-roadmap-v25e__modal-card>header{display:flex;justify-content:space-between;padding:13px 15px;border-bottom:1px solid rgba(86,180,208,.12)}.aura-roadmap-v25e__modal-card h3{margin:3px 0 0}.aura-roadmap-v25e__form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:14px}.aura-roadmap-v25e__form-grid label{display:block;color:#6fd7e7;font-size:8px;font-weight:800;letter-spacing:.07em}.aura-roadmap-v25e__form-grid label input,.aura-roadmap-v25e__form-grid label select,.aura-roadmap-v25e__form-grid label textarea{margin-top:5px}.aura-roadmap-v25e__form-grid .span-2{grid-column:1/-1}.aura-roadmap-v25e__baseline-lock{padding:10px;border:1px dashed rgba(108,154,170,.2);border-radius:10px}.aura-roadmap-v25e__baseline-lock b,.aura-roadmap-v25e__baseline-lock span,.aura-roadmap-v25e__baseline-lock small{display:block}.aura-roadmap-v25e__baseline-lock b{color:#8da1aa;font-size:8px}.aura-roadmap-v25e__baseline-lock span{margin:4px 0;font-size:9px}.aura-roadmap-v25e__baseline-lock small{color:#728992}.aura-roadmap-v25e__modal-card form>footer{display:flex;justify-content:flex-end;gap:7px;padding:12px 14px;border-top:1px solid rgba(86,180,208,.12)}
+.aura-roadmap-v25e__history{padding:10px 14px;max-height:520px;overflow:auto}.aura-roadmap-v25e__history article{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid rgba(90,174,199,.1)}.aura-roadmap-v25e__history b,.aura-roadmap-v25e__history span,.aura-roadmap-v25e__history small{display:block}.aura-roadmap-v25e__history b{font-size:9px}.aura-roadmap-v25e__history span{color:#7fb4c1;font-size:8px}.aura-roadmap-v25e__history small{color:#607d87;font-size:7px}
+.aura-roadmap-v25e__toast{position:absolute;right:18px;bottom:100px;z-index:100;padding:9px 12px;border:1px solid rgba(83,226,188,.28);border-radius:10px;background:rgba(10,52,44,.94);color:#8bf0ca;font-size:9px;font-weight:800;box-shadow:0 10px 35px rgba(0,0,0,.35)}.aura-roadmap-v25e__toast[data-type="error"]{border-color:rgba(255,95,125,.3);background:rgba(70,23,35,.95);color:#ffabb8}
+.aura-roadmap-v25e__loading,.aura-roadmap-v25e__empty,.aura-roadmap-v25e__error{padding:35px;text-align:center;color:#6f9ba7;font-size:10px}.aura-roadmap-v25e__error{color:#ff9eae}
+@media(max-width:1150px){.aura-roadmap-v25e__summary{grid-template-columns:repeat(3,1fr)}.aura-roadmap-v25e__toolbar{grid-template-columns:1fr 140px}.aura-roadmap-v25e__milestone-main{grid-template-columns:8px 1fr 60px}.aura-roadmap-v25e__row-progress{grid-column:2/-1}.aura-roadmap-v25e__dates{grid-template-columns:repeat(2,1fr)}}
+
+/* AURA ROADMAP V25-E1.1 - STABLE PROJECT ACTIVE BUTTON
+   ROADMAP no longer participates in the Project Active flex layout.
+   ACTIVE therefore keeps its native position while ROADMAP is pinned just
+   to its left. Combined with MutationObserver this removes visible swapping. */
+body.aura-live-active .aura-project-active-v130__head {
+  position: relative !important;
+}
+
+body.aura-live-active .aura-project-active-v130__head .aura-roadmap-v25e__open-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: 78px !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+  z-index: 4 !important;
+  white-space: nowrap !important;
+}
+

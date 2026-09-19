@@ -1,0 +1,38 @@
+{
+  "schema": "aura.google-live-provider-bridge.final.v121.v1",
+  "status": "CERTIFIED_V1_2_1_GOOGLE_LIVE_PERSONAL_INTEGRATIONS",
+  "generated_at": "2026-08-29T09:11:21",
+  "product_version": "1.2.1",
+  "live_acceptance": {
+    "gmail_read": true,
+    "calendar_read": true,
+    "contacts_read": true,
+    "drive_read": true,
+    "aura_module_catalog": true,
+    "live_mutations_performed": false,
+    "drive_write_fail_closed": true,
+    "content_logged": false
+  },
+  "production": {
+    "default_mode": "GOOGLE_LIVE",
+    "gmail": "read/write adapter installed; live read certified",
+    "calendar": "read/write adapter installed; live read certified",
+    "contacts": "read/write adapter installed; live read certified",
+    "drive": "read-only adapter certified under current OAuth scope"
+  },
+  "security": {
+    "existing_security_engine_contract_preserved": true,
+    "integration_registry_preserved": true,
+    "action_receipts_preserved": true,
+    "oauth_secrets_exposed": false,
+    "state_changing_live_test": false
+  },
+  "version_identity": {
+    "canonical": "1.2.1",
+    "source_ui": "PASS",
+    "deployed_live_ui": "PASS",
+    "spoken": "PASS",
+    "tts": "PASS"
+  },
+  "next_state": "V1_2_1_GOOGLE_LIVE_PERSONAL_INTEGRATIONS_COMPLETE_READY_FOR_NEXT_ROADMAP_BLOCK"
+}

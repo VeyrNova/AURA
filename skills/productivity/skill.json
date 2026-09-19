@@ -1,0 +1,23 @@
+{
+  "schema": "aura.skill.v1",
+  "version": "2.3.0",
+  "skill_id": "productivity",
+  "title": "ProductivitÃ©",
+  "description": "Notes, tÃ¢ches et rappels via les services existants.",
+  "enabled": true,
+  "commands": [
+    "note_create",
+    "note_delete",
+    "reminder_create",
+    "reminder_delete",
+    "task_complete",
+    "task_create"
+  ],
+  "permissions": [
+    "local_storage"
+  ],
+  "owner": "services.core_bridge",
+  "risk": "local_mutation",
+  "execution_mode": "delegate_existing_owner",
+  "microphone_policy": "not_applicable"
+}

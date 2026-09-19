@@ -1,0 +1,18 @@
+{
+  "schema": "aura.skill.v1",
+  "version": "2.3.0",
+  "skill_id": "files",
+  "title": "Fichiers",
+  "description": "Cycle de contexte fichier de l'interface. Les lectures autorisÃ©es restent propriÃ©taires du skill systÃ¨me.",
+  "enabled": true,
+  "commands": [
+    "file_clear"
+  ],
+  "permissions": [
+    "conversation_file_context"
+  ],
+  "owner": "services.core_bridge",
+  "risk": "local_context",
+  "execution_mode": "delegate_existing_owner",
+  "microphone_policy": "not_applicable"
+}

@@ -1,0 +1,110 @@
+{
+  "schema": "aura.mission-engine.v088.v1",
+  "milestone": "AURA v0.8.8 Mission Engine",
+  "product_version_during_d2": "0.8.7.2",
+  "canonical_authority": "mission_engine.engine.MissionEngine",
+  "pipeline": "Goal -> Plan -> TaskGraph -> ToolExecution -> Evidence -> Recovery -> Completion",
+  "mission_states": [
+    "draft",
+    "planned",
+    "ready",
+    "running",
+    "waiting_confirmation",
+    "blocked",
+    "recovering",
+    "completed",
+    "failed",
+    "cancelled"
+  ],
+  "task_states": [
+    "pending",
+    "ready",
+    "running",
+    "waiting_confirmation",
+    "succeeded",
+    "failed",
+    "skipped",
+    "cancelled"
+  ],
+  "models": [
+    "Mission",
+    "Goal",
+    "Plan",
+    "Task",
+    "TaskDependency",
+    "ToolCall",
+    "TaskEvidence",
+    "MissionEvent"
+  ],
+  "operations": [
+    "create_mission",
+    "plan_mission",
+    "start_mission",
+    "next_ready_tasks",
+    "execute_task",
+    "record_evidence",
+    "retry_task",
+    "replan",
+    "resume",
+    "cancel",
+    "complete"
+  ],
+  "security": {
+    "authority": "SecurityPolicyEngine v2 compatible injected authorize adapter",
+    "fail_closed": true,
+    "require_confirmation_pauses": true,
+    "auto_confirmation": false
+  },
+  "memory": {
+    "MemoryKernel_v2_change": false,
+    "planning_context_optional": true,
+    "planning_context_is_evidence": false
+  },
+  "persistence": {
+    "store": "SQLiteMissionStore",
+    "tables": [
+      "mission_engine_missions",
+      "mission_engine_events",
+      "mission_engine_evidence"
+    ],
+    "d2_user_database_modified": false,
+    "d2_synthetic_temp_database_only": true
+  },
+  "runtime_integration": {
+    "router_tools": "injected callable adapters",
+    "existing_router_rewritten": false,
+    "existing_tool_stack_rewritten": false
+  },
+  "written_at": "2026-08-26T11:54:26",
+  "files": {
+    "package_init": {
+      "path": "C:\\AURA GPT version\\mission_engine\\__init__.py",
+      "sha256": "6eed6afc39d54a9ebd85e175b1bf60f47043cb65671c3a9c1f6b9721335b94c5"
+    },
+    "authority": {
+      "path": "C:\\AURA GPT version\\mission_engine\\engine.py",
+      "sha256": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_mission_engine_v088.py",
+      "sha256": "f2fc717545a8a750385d542e214ead2df9ae4e3bc2574a48c32f432fd4a5f456"
+    }
+  },
+  "parent_authority_hashes": {
+    "core_version": "b354bf76840e4942ed6a51796c79264189c3d1d6cd16db73cae535a5ae6d6f21",
+    "baseline_v0872": "87ffe8f96aa49170dd13e609e965f0d8718156e26d4add209f37f307c8b97b0c",
+    "security_invariant": "3e4e78b94cf365c5e9c5c92101354b3ec48e1ba0815c2ceaea1ef54b0bfd6766",
+    "memory_invariant": "374edb3259a6933e7863e5eba27e37a3d984c334f1172fe00fae29ff620804ca",
+    "visual_version_invariant": "6f7ec45eebd7ee1d7e11756aec57be5fefe2b2515783f168822b85b60b35d0dc",
+    "spoken_version_invariant": "8ea9de4e1786c92fd3e865d50fef1eeb0930609dd624025d1aa0a89080e74330"
+  },
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "certified_at": "2026-08-26T12:05:52",
+  "last_verified_product_version": "0.9.2.2.1",
+  "reverified_at": "2026-08-26T18:38:22",
+  "reverified_at_v0922": "2026-08-27T18:20:54",
+  "reverified_at_v09221": "2026-08-27T19:00:45",
+  "reverified_at_v093": "2026-08-27T20:46:17",
+  "reverified_at_v094": "2026-08-28T10:06:06"
+}

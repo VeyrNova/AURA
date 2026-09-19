@@ -1,0 +1,19 @@
+{
+  "schema": "aura.dev.patch.p0854696.v1",
+  "patch_id": "P0.8.5.4.6.9.6",
+  "active_ui": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2",
+  "scope": [
+    "brand-master-vector",
+    "runtime-clock",
+    "aura-core-card",
+    "ptt-vector-control",
+    "send-vector-control"
+  ],
+  "music_module": "deferred",
+  "files": {
+    "aura-p0854696-shell-final-polish.css": "8f7c0afac01538f4cd5c5fc6250e3a65066875d8650ce4c24469935d652b0295",
+    "aura-p0854696-shell-final-polish.js": "d0c5d14c69e1950f4f8b4797e1e26eecc6f340af5263fb80ccfb579a7cd99dd6",
+    "AURA_LOGO_SYMBOL_MASTER.svg": "c63f7212fe4805dd89abbeb96994c6f55a380ea4d71035bd381661141e9baecb"
+  },
+  "index_sha256": "5f243adfa7883c92efc9e72c3f3249b6384cc72325fa236f639a7f9fcbf4efe8"
+}

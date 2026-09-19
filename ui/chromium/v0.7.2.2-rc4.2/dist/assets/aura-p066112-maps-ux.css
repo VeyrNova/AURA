@@ -1,0 +1,113 @@
+/* AURA P0.6.6.1.2 — POI MODE + COMPACT TRAVEL MODE UX */
+
+/* Compact, professional travel-mode selector. */
+#auraNavigationWorkspace .aura-nav-modes{
+  box-sizing:border-box!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:6px!important;
+  margin:12px 14px 0!important;
+  padding:10px!important;
+  border:1px solid rgba(73,207,240,.13)!important;
+  border-radius:10px!important;
+  background:linear-gradient(145deg,rgba(5,24,35,.55),rgba(7,15,28,.58))!important;
+  box-shadow:inset 0 0 24px rgba(41,203,235,.018)!important;
+}
+#auraNavigationWorkspace .aura-nav-modes>span{
+  grid-column:1/-1!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  min-height:12px!important;
+  margin:0 0 2px!important;
+  color:rgba(145,204,219,.68)!important;
+  font:700 7px/1 system-ui!important;
+  letter-spacing:.14em!important;
+}
+#auraNavigationWorkspace .aura-nav-modes>span::after{
+  content:'PROFIL ROUTIER';
+  padding:3px 5px;
+  border:1px solid rgba(74,218,245,.12);
+  border-radius:5px;
+  color:rgba(105,224,244,.72);
+  background:rgba(47,211,238,.035);
+  font:700 5.5px/1 system-ui;
+  letter-spacing:.08em;
+}
+#auraNavigationWorkspace .aura-nav-modes button{
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:31px!important;
+  margin:0!important;
+  padding:0 5px!important;
+  border:1px solid rgba(76,181,206,.11)!important;
+  border-radius:7px!important;
+  background:rgba(2,13,22,.62)!important;
+  color:rgba(140,190,204,.52)!important;
+  font:700 6.5px/1 system-ui!important;
+  letter-spacing:.055em!important;
+  text-align:center!important;
+}
+#auraNavigationWorkspace .aura-nav-modes button.active{
+  border-color:rgba(82,226,247,.30)!important;
+  background:linear-gradient(120deg,rgba(25,106,126,.28),rgba(69,47,135,.24))!important;
+  color:#ddfbff!important;
+  box-shadow:inset 0 0 16px rgba(69,219,243,.035),0 0 12px rgba(65,214,239,.025)!important;
+}
+#auraNavigationWorkspace .aura-nav-modes button:disabled{
+  opacity:.42!important;
+  cursor:not-allowed!important;
+  border-style:dashed!important;
+}
+
+/* Simulator visually belongs to the same mode stack, without the oversized empty gap. */
+#auraNavigationWorkspace .aura-nav-simulator{
+  box-sizing:border-box!important;
+  margin:7px 14px 0!important;
+  padding:9px 10px 8px!important;
+  border-radius:10px!important;
+}
+#auraNavigationWorkspace .aura-nav-simulator header{margin-bottom:5px!important}
+#auraNavigationWorkspace .aura-nav-simulator p{margin-bottom:7px!important}
+#auraNavigationWorkspace .aura-nav-sim-start{height:29px!important}
+#auraNavigationWorkspace .aura-nav-sim-tools button{height:25px!important}
+
+/* POI is a genuine toolbar mode, not a passive overlay. */
+#auraNavigationWorkspace .aura-nav-toolbar{
+  z-index:60!important;
+  pointer-events:auto!important;
+}
+#auraNavigationWorkspace .aura-nav-toolbar button{
+  pointer-events:auto!important;
+  cursor:pointer!important;
+  user-select:none!important;
+}
+#auraNavigationWorkspace .aura-nav-toolbar button[data-nav-toolbar="poi"]{
+  opacity:1!important;
+  cursor:pointer!important;
+}
+#auraNavigationWorkspace .aura-nav-toolbar button[data-nav-toolbar="poi"][aria-pressed="true"]{
+  color:#eaffff!important;
+  background:linear-gradient(90deg,rgba(52,210,247,.17),rgba(149,82,255,.16))!important;
+  box-shadow:inset 0 0 12px rgba(63,217,245,.04)!important;
+}
+
+/* The panel appears immediately after route entry; Trip Planner gives way while POI mode is active. */
+#auraNavigationWorkspace.poi-mode #auraTripPlanner{display:none!important}
+#auraNavigationWorkspace.poi-mode .aura-poi-places.open{
+  display:block!important;
+  animation:aura-p066112-poi-in .16s ease-out both;
+}
+#auraNavigationWorkspace .aura-poi-places{
+  margin:10px 14px 4px!important;
+}
+@keyframes aura-p066112-poi-in{
+  from{opacity:.35;transform:translateY(-3px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-height:820px){
+  #auraNavigationWorkspace .aura-nav-modes{margin-top:8px!important;padding:8px!important;gap:5px!important}
+  #auraNavigationWorkspace .aura-nav-modes button{height:28px!important}
+  #auraNavigationWorkspace .aura-nav-simulator{margin-top:6px!important;padding:8px 9px!important}
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "aura.documents-files-module-ui.v094.v2",
+  "phase": "D2 R7 Documents Files Visual Rebuild",
+  "product_version_during_d2": "0.9.3",
+  "created_at": "2026-08-28T09:53:49",
+  "contract": {
+    "module": "documents",
+    "label": "DOCUMENTS",
+    "actual_cards": 1,
+    "opens_workspace": "talk",
+    "prefill": "liste mes fichiers",
+    "auto_submit": false,
+    "preserve_non_empty_draft": true,
+    "attachment_available": true,
+    "system_live_module_card": false,
+    "permanent_right_system_live": true,
+    "diagnostics_workspace": true
+  },
+  "visual": {
+    "new_css_required": false,
+    "rail_js_sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "rail_css_sha256": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+  },
+  "reverified_at_v094": "2026-08-28T10:06:06",
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "status": "CERTIFIED",
+  "product_version": "0.9.4",
+  "runtime_browser_verification_required": true,
+  "files": {
+    "rail_js": {
+      "sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02"
+    },
+    "invariant": {
+      "sha256": "6a4896339d9de88bc47a08480d2946ce48c907a12cca0369bf03c294a1968004"
+    }
+  }
+}

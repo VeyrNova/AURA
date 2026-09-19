@@ -1,0 +1,19 @@
+{
+  "schema": "aura.v123.ft6-r4-d3-r5-r1.native-aggregation-conversation-reflow.v1",
+  "parent_result_sha256": "088d829dc175cbd19dcd76af21813690506f63c7b377de7f3d1517701f73a654",
+  "current_product_version": "1.2.2",
+  "target_version": "1.2.3",
+  "scope": {
+    "native_tasks": "AURA local + Google Tasks",
+    "native_agenda": "AURA reminders + dated AURA tasks + Google Calendar",
+    "conversation_tasks_calendar": "merge local AURA rows into already-fetched Google Personal Result",
+    "contacts_drive": "Google remains authoritative; layout reflow applies to their Personal Results panels",
+    "layout": "Conversation width/content/bubbles/composer reflow around Personal Results"
+  },
+  "safety": {
+    "google_mutation": false,
+    "oauth": false,
+    "version_bump": false,
+    "system_live_modified": false
+  }
+}

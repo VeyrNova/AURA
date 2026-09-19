@@ -1,0 +1,22 @@
+{
+  "schema": "aura.v1.3.0.final-certification.manifest.v1",
+  "certified_at": "2026-08-30T19:24:26",
+  "version": "1.3.0",
+  "previous_version": "1.2.3",
+  "manual_ui_acceptance": true,
+  "g2_r1_parent_sha256": "8a2a6e488b9bf0d4190e91e1313ac1c8196873bdbd045cd9eae6f5de1865a30e",
+  "r4_r3_result_sha256": "eb3dd090daf6af3b6ec15d33ed64861f1e6f621a083d64d02d6d5ffe277cb681",
+  "g2_r2_resolution": "postpromotion stale version assertion executed via temp promotion-aware copy; source invariant unchanged",
+  "version_sha256": "aa81ac328a4ee9afc9ddd11f546f47659e269ef528fc328a4c5e92951adf517c",
+  "index_sha256": "f51117c29c8f795b5d033cf972dc215b7fc6ffaeb72003042ea316d8fd388d7a",
+  "system_live_js_sha256": "e8bb7091e1fcf34971153b79876344a816d31f12a1e61c5600102a38a3a514e2",
+  "workspace_context_sha256": "cc35c5baf69b2cb5054b48af82bc28db21053d6a4f1f2d373569817221fc7e01",
+  "workspace_project_js_sha256": "fadd5bbfb58a6a08a86818c01410dbf1c52b17dddc2e3c0b9a86b710c484f55c",
+  "workspace_snapshot_sha256": "2cbcba50a8d8cc41e788dbb6d22767c8a09cb3ecad0b457f003e5bae8013cc7f",
+  "tasks_oauth_sha256": "db744f95e0239083adc342d3f7887509435f6725829bf2fa6700b83f85c3b6a6",
+  "live_tasks_backend_sha256": "235bcf06648ff092fb6e80ac33466a0b74976d86924f0faa3f6ad5b36c61badc",
+  "personal_integrations_sha256": "bab727d324a910f18ba06dff6101637930909a427c769d9be6400bdb2bb9a684",
+  "presenter_sha256": "a5c44f50e83d91dca84529033f2a2b2d51673e839f49954433a5f44c6f59f820",
+  "aura_core_sha256": "19cdbcfd4382c4923e65827f92d927ff427e328696175f9b38379e9c3da68374",
+  "tasks_truth_invariant_sha256": "23ab28a8c5a0383c31536a759cfb3eb02fa95d075796d0ccf9a45b76d2e52e73"
+}

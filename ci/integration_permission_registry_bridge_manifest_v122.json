@@ -1,0 +1,22 @@
+{
+  "schema": "aura.v122.integration-permission-registry-bridge.v1",
+  "product_version_during_hotfix": "1.2.1",
+  "target_version": "1.2.2",
+  "authority": "runtime/integration_permissions_v098.py",
+  "authority_sha256": "47b633afc02e0ecb36d30cc51d12d9275d9df3ff19dd3a5f2feb7cc8bb56f0fe",
+  "registry_pre_sha256": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+  "registry_post_sha256": "d40ae4b5e174fbd0322dfe8472adf1dff19ac88a1ad34e6f867c65c793733b8e",
+  "invariant_sha256": "f87b0e4af8d128882e8d75eb38f4f57d34a13a8e577b46198f73dc72e9a5da3f",
+  "security_policy_engine_sha256": "6b9a6cf82e6afd8d00115264c56ae80ae8deb602095aa150d555424df9ebacf1",
+  "behavior": {
+    "integration_capability_authority": "v0.9.8 integration permission contract",
+    "production_grants_source": "SecurityPolicyEngine.granted_permissions",
+    "legacy_non_integration_path": "preserved",
+    "unknown_integration_capability": "DENY",
+    "explicit_denied_integration_capability": "DENY",
+    "confirmation_required_mutation": "REQUIRE_CONFIRMATION until explicit confirmation",
+    "custom_security_engine_without_granted_permissions": "legacy authorize compatibility"
+  },
+  "ui_color_charter": "LOCKED / NO COLOR CHANGE",
+  "version_bump": false
+}

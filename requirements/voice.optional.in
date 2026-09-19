@@ -1,0 +1,5 @@
+# AURA v0.8.6.2 — optional voice engines
+# Chatterbox is referenced in source but absent from the certified environment.
+# The exact installable distribution/version was not resolved by D2, so this file is documentation only.
+
+# chatterbox  # unresolved distribution; intentionally not installed automatically

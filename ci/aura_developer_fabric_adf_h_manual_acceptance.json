@@ -1,0 +1,22 @@
+{
+  "schema": "aura.developer-fabric.adf-h.manual-live-acceptance.v1",
+  "status": "PENDING",
+  "instructions": [
+    "Start AURA normally.",
+    "Say: Aura, active le mode développeur.",
+    "Expected: AURA displays and says exactly: Mode développeur activé. Amber DEV badge, border and WRITE GATED · AUDIT ON status appear.",
+    "Say: Aura, ouvre l'espace développeur.",
+    "Expected: native Developer Workspace opens and AURA says: Espace développeur ouvert.",
+    "Say: Aura, désactive le mode développeur.",
+    "Expected: AURA displays and says exactly: Mode développeur désactivé. DEV visual identity disappears and normal UI returns.",
+    "Verify an ordinary voice request still routes normally after deactivation."
+  ],
+  "acceptance_fields": {
+    "activation_voice": null,
+    "activation_visual_identity": null,
+    "workspace_voice_open": null,
+    "deactivation_voice": null,
+    "deactivation_visual_restore": null,
+    "ordinary_voice_route": null
+  }
+}

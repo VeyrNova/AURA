@@ -1,0 +1,81 @@
+{
+  "schema": "aura.runtime-wiring-modules.v0921.v1",
+  "milestone": "AURA v0.9.2.1 Personal Integration Runtime Wiring + Modules",
+  "product_version_during_d2": "0.9.2",
+  "runtime_authority": "runtime.personal_integrations.PersonalIntegrationDispatcher",
+  "mail_module_controller": "ui.personal_integration_modules.MailModuleController",
+  "calendar_module_controller": "ui.personal_integration_modules.CalendarModuleController",
+  "shared_backend": true,
+  "shared_dispatcher": true,
+  "email_capabilities": 11,
+  "calendar_capabilities": 8,
+  "action_receipt_summary_visible": true,
+  "confirmation_broker": true,
+  "windows_timezone_fallback": true,
+  "timezone_dependency_required_for_D2": false,
+  "synthetic_email_only": true,
+  "synthetic_calendar_only": true,
+  "real_email_connection": false,
+  "real_calendar_connection": false,
+  "real_oauth_login": false,
+  "existing_UI_source_modified": false,
+  "AuraCore_source_modified": false,
+  "D3_targets": [
+    "core/aura_core.py conversation hook",
+    "existing AURA module surface registration",
+    "confirmation UI binding",
+    "ActionReceipt UI binding"
+  ],
+  "written_at": "2026-08-26T16:48:21",
+  "files": {
+    "runtime_module": {
+      "path": "C:\\AURA GPT version\\runtime\\personal_integrations.py",
+      "sha256": "2f1973ebfe349e3ae3c592a031559e12e22155ece4b01e60412d94bfbf5f67fd"
+    },
+    "ui_controllers": {
+      "path": "C:\\AURA GPT version\\ui\\personal_integration_modules.py",
+      "sha256": "3dc7286159a4595622e0274aabf9694c4fa0662ba1ff9bd50c00e4dfd0b47127"
+    },
+    "runtime_invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_runtime_wiring_v0921.py",
+      "sha256": "4137ef3ca5c8a87d8e4e0e53ce926a9e4484711c5fe6981ff5a412d765a0f9e4"
+    },
+    "ui_wiring_invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_runtime_wiring_ui_v0921.py",
+      "sha256": "f22800f4e3ad704295152b577399ea31a445e37cb6834c2655a413abdc0c51cc"
+    },
+    "aura_core": {
+      "path": "C:\\AURA GPT version\\core\\aura_core.py",
+      "sha256": "a7c3d03e28ec213f496d2c51021b9936c9ef5ee275c1f71a67523d9ff74b848f"
+    },
+    "final_modules": {
+      "path": "C:\\AURA GPT version\\ui\\final_modules.py",
+      "sha256": "154d75c900a1b3a9520bab3ec0183a3274e166e9f45af76dc3fc90fb051dfef3"
+    },
+    "main_window": {
+      "path": "C:\\AURA GPT version\\ui\\main_window.py",
+      "sha256": "326d1b2ca580ef83c704c97b24e0052ca83c56c6c8b72f9a9e39a2e460f61d0a"
+    }
+  },
+  "parent_authority_hashes": {
+    "core_version": "d741abf056d6499d60ccd65d48912872fa43d1bca42638d09b3e4d0c30195010",
+    "baseline_v092": "93f7691bacdd76baadd06b12090f0df77f04aeeab7b8982dde00ce588c542f3b",
+    "critical_v092": "a618178a7c83adc0e7239b2e0be2783b9d38de2d8fb9267b7754ea6eb432a79f",
+    "architecture_v092": "25ab9cec9a5a2376f85ee12eb698aa8d1b1a1c1fa09de8117953600ef11803f2",
+    "email_invariant": "84c1c60b9dead6496a927875dbebf60bfd3eb58159af9d9c1726fc688a018030",
+    "calendar_invariant": "ea1f4b3d9f1e72b57735a199264cd832d6e2f0ca094aea1317c2d95b38d5cf78",
+    "security_invariant": "3e4e78b94cf365c5e9c5c92101354b3ec48e1ba0815c2ceaea1ef54b0bfd6766",
+    "user_db": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb"
+  },
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "certified_at": "2026-08-26T18:38:22",
+  "AuraCore_hook_active": true,
+  "visible_Mail_module_active": true,
+  "visible_Calendar_module_active": true,
+  "mail_capabilities": 11,
+  "reverified_at_v0922": "2026-08-27T18:20:54",
+  "reverified_at_v09221": "2026-08-27T19:00:45",
+  "reverified_at_v093": "2026-08-27T20:46:17",
+  "reverified_at_v094": "2026-08-28T10:06:06"
+}

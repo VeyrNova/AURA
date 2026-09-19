@@ -1,0 +1,332 @@
+{
+  "schema": "aura.dependency-lock.v0862.2.v1",
+  "phase": "AURA v0.8.6.2.2",
+  "platform": {
+    "python": "3.14.7",
+    "implementation": "CPython",
+    "os": "Windows 11",
+    "machine": "AMD64",
+    "required_tags": [
+      "cp314-cp314-win_amd64",
+      "cp314-abi3-win_amd64",
+      "cp314-none-win_amd64"
+    ]
+  },
+  "profiles": {
+    "core": [
+      {
+        "name": "PySide6",
+        "version": "6.11.1"
+      },
+      {
+        "name": "python-dotenv",
+        "version": "1.2.2"
+      },
+      {
+        "name": "requests",
+        "version": "2.34.2"
+      },
+      {
+        "name": "psutil",
+        "version": "7.2.2"
+      }
+    ],
+    "voice": [
+      {
+        "name": "numpy",
+        "version": "2.4.6"
+      },
+      {
+        "name": "sounddevice",
+        "version": "0.5.5"
+      },
+      {
+        "name": "faster-whisper",
+        "version": "1.2.1"
+      },
+      {
+        "name": "piper-tts",
+        "version": "1.6.0"
+      },
+      {
+        "name": "coqui-tts",
+        "version": "0.27.5"
+      },
+      {
+        "name": "websockets",
+        "version": "16.1.1"
+      }
+    ],
+    "gpu-cu130": [
+      {
+        "name": "torch",
+        "version": "2.13.0+cu130"
+      },
+      {
+        "name": "torchaudio",
+        "version": "2.11.0+cu130"
+      }
+    ],
+    "documents-optional": [
+      {
+        "name": "python-docx",
+        "version": null,
+        "required": false
+      },
+      {
+        "name": "PyMuPDF",
+        "version": null,
+        "required": false
+      },
+      {
+        "name": "openpyxl",
+        "version": null,
+        "required": false
+      },
+      {
+        "name": "pypdf",
+        "version": null,
+        "required": false
+      },
+      {
+        "name": "PyPDF2",
+        "version": null,
+        "required": false
+      }
+    ],
+    "voice-optional": [
+      {
+        "name": "chatterbox",
+        "version": null,
+        "required": false,
+        "provenance_resolved": false
+      }
+    ]
+  },
+  "present_but_not_required": [
+    {
+      "name": "torchcodec",
+      "version": "0.15.0+cu130",
+      "installed_in_reference": true,
+      "required": false,
+      "import_healthy": false,
+      "reason": "D2 import failed loading libtorchcodec; ffmpeg/ffprobe are not on PATH and AURA application code contains zero references to them."
+    }
+  ],
+  "gpu_provenance": {
+    "torch_version": "2.13.0+cu130",
+    "torchaudio_version": "2.11.0+cu130",
+    "cuda_runtime": "13.0",
+    "cudnn": 92000,
+    "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "official_index": "https://download.pytorch.org/whl/cu130",
+    "verified_origin_hosts": [
+      "download.pytorch.org",
+      "download-r2.pytorch.org"
+    ],
+    "torch_verified_url": "https://download-r2.pytorch.org/whl/cu130/torch-2.13.0%2Bcu130-cp314-cp314-win_amd64.whl",
+    "torchaudio_verified_url": "https://download-r2.pytorch.org/whl/cu130/torchaudio-2.11.0%2Bcu130-cp314-cp314-win_amd64.whl",
+    "python_tag": "cp314-cp314-win_amd64",
+    "provenance_status": "official-index-and-d3-cold-install-verified"
+  },
+  "reference_environment": {
+    "installed_distribution_count": 116,
+    "pip_check": "No broken requirements found.",
+    "forensic_snapshot": "requirements/locks/windows-py314-current-freeze.txt",
+    "forensic_snapshot_sha256": "8269f0a4f2ffcedd45c245d0a7f778ed74e317301cc38264a4a321d3ed409dee",
+    "runtime_observed_lock": "requirements/locks/windows-py314-runtime-observed.lock.txt",
+    "runtime_observed_lock_sha256": "5352aaba7c60b50c793a41a1a370e5365e42f22e1530d9098389d40e6ea1baa8",
+    "runtime_observed_lock_count": 112
+  },
+  "optional_evidence": {
+    "documents_missing_and_guarded": true,
+    "documents_missing_import_roots": [
+      "docx",
+      "fitz",
+      "openpyxl",
+      "pypdf",
+      "PyPDF2"
+    ],
+    "chatterbox_missing": true,
+    "piper_present": true,
+    "faster_whisper_present": true,
+    "xtts_present": true,
+    "gradium_websockets_present": true
+  },
+  "external_executables": {
+    "ffmpeg_on_path": false,
+    "ffprobe_on_path": false,
+    "ffmpeg_code_references": 0,
+    "ffprobe_code_references": 0
+  },
+  "exact_transitive_locks": {
+    "core": {
+      "path": "requirements/locks/windows-py314-core-exact.lock.txt",
+      "sha256": "0f249c23dcf4695949768b3d990c512cbfbb36ccdf931a3e8e619acc5bd92895",
+      "package_count": 11,
+      "status": "strict-cold-install-ready"
+    },
+    "voice": {
+      "path": "requirements/locks/windows-py314-voice-exact.lock.txt",
+      "sha256": "0f2ce8ac21c67a8ca879465e64c5be3792a2080aa4818ab618eb4da1baf7ec54",
+      "package_count": 107,
+      "status": "strict-cold-install-ready"
+    },
+    "gpu": {
+      "path": "requirements/locks/windows-py314-gpu-exact.lock.txt",
+      "sha256": "b7cc800a61f4c3c7392a530b106965160f5ebcb94f934017388a70fb341fe927",
+      "package_count": 6,
+      "status": "strict-cold-install-ready",
+      "base_profile": "voice",
+      "base_package_count": 107,
+      "official_index": "https://download.pytorch.org/whl/cu130"
+    },
+    "full": {
+      "path": "requirements/locks/windows-py314-full-exact.lock.txt",
+      "sha256": "e3b4261c70849b076dc9284e236f006443941038c69ffaa2e96ec641e87794b5",
+      "package_count": 113,
+      "status": "strict-cold-install-ready",
+      "composition": "voice-exact-107 + gpu-exact-layer-6",
+      "torchcodec_excluded": true
+    }
+  },
+  "strict_reproducibility": {
+    "compare_installed_set": true,
+    "compare_versions": true,
+    "unexpected_packages_fail": true,
+    "missing_packages_fail": true,
+    "version_mismatch_fail": true,
+    "bootstrap_packages_ignored": [
+      "pip"
+    ],
+    "torchcodec_required": false,
+    "gpu_official_index_required": true,
+    "gpu_origin_hosts_required": [
+      "download.pytorch.org",
+      "download-r2.pytorch.org"
+    ],
+    "full_exact_package_count": 113
+  },
+  "drift_observed_before_repair": {
+    "core": {
+      "charset-normalizer": {
+        "cold_resolved": "3.5.1",
+        "reference": "3.4.9"
+      },
+      "idna": {
+        "cold_resolved": "3.19",
+        "reference": "3.18"
+      }
+    },
+    "voice": {
+      "av": {
+        "cold_resolved": "18.1.0",
+        "reference": "18.0.0"
+      },
+      "charset-normalizer": {
+        "cold_resolved": "3.5.1",
+        "reference": "3.4.9"
+      },
+      "filelock": {
+        "cold_resolved": "3.32.4",
+        "reference": "3.32.2"
+      },
+      "huggingface_hub": {
+        "cold_resolved": "1.28.0",
+        "reference": "0.36.2"
+      },
+      "idna": {
+        "cold_resolved": "3.19",
+        "reference": "3.18"
+      },
+      "librosa": {
+        "cold_resolved": "1.0.0",
+        "reference": "0.11.0"
+      },
+      "llvmlite": {
+        "cold_resolved": "0.49.0",
+        "reference": "0.48.0"
+      },
+      "narwhals": {
+        "cold_resolved": "2.25.0",
+        "reference": "2.24.0"
+      },
+      "numba": {
+        "cold_resolved": "0.67.0",
+        "reference": "0.66.0"
+      },
+      "onnxruntime": {
+        "cold_resolved": "1.29.0",
+        "reference": "1.28.0"
+      },
+      "platformdirs": {
+        "cold_resolved": "4.11.4",
+        "reference": "4.11.0"
+      },
+      "protobuf": {
+        "cold_resolved": "7.36.0",
+        "reference": "7.35.1"
+      },
+      "Pygments": {
+        "cold_resolved": "2.21.0",
+        "reference": "2.20.0"
+      },
+      "scipy": {
+        "cold_resolved": "1.18.1",
+        "reference": "1.18.0"
+      },
+      "setuptools": {
+        "cold_resolved": "84.0.0",
+        "reference": "83.0.0"
+      },
+      "transformers": {
+        "cold_resolved": "5.15.1",
+        "reference": "4.57.6"
+      }
+    }
+  },
+  "closure_repairs": {
+    "voice_v086212": {
+      "reason": "Strict VOICE cold-install reproduced the reference versions but revealed five omitted transitive Python 3.14 audio compatibility packages.",
+      "previous_count": 102,
+      "new_count": 107,
+      "added": [
+        {
+          "name": "audioop-lts",
+          "version": "0.2.2"
+        },
+        {
+          "name": "audioread",
+          "version": "3.1.0"
+        },
+        {
+          "name": "standard-aifc",
+          "version": "3.13.0"
+        },
+        {
+          "name": "standard-chunk",
+          "version": "3.13.0"
+        },
+        {
+          "name": "standard-sunau",
+          "version": "3.13.0"
+        }
+      ],
+      "source": "D1 certified reference environment + strict VOICE cold-install evidence"
+    }
+  },
+  "gpu_certification_v08622": {
+    "evidence": "AURA v0.8.6.2 D3 GPU provenance/exact closure",
+    "d3_pass": true,
+    "exact_expected_count": 113,
+    "exact_actual_count": 113,
+    "missing": [],
+    "unexpected": [],
+    "version_mismatches": [],
+    "cuda_operation_pass": true,
+    "pip_check_pass": true,
+    "torch_official_origin": true,
+    "torchaudio_official_origin": true,
+    "torchcodec_not_installed": true
+  }
+}

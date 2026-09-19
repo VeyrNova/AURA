@@ -1,0 +1,15 @@
+{
+  "schema": "aura.v123.ft6-r2.system-live-personal-results-coexistence.v1",
+  "generated_at": "2026-08-29T19:45:37",
+  "product_version_during_hotfix": "1.2.2",
+  "target_version": "1.2.3",
+  "trigger": "FT6 screenshots show personal results covering permanent SYSTEM LIVE",
+  "system_live_contract": "permanent right-side telemetry remains visible",
+  "system_live_primary_selector": ".telemetry",
+  "personal_results_selector": "#aura-v123-personal-results",
+  "strategy": "measure right-side geometry and reserve it using CSS custom right offset",
+  "gap_px": 14,
+  "system_live_modified": false,
+  "version_bump": false,
+  "rollback_on_failure": true
+}

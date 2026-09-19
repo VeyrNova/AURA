@@ -1,0 +1,66 @@
+{
+  "schema": "aura.environment.v0862.v1",
+  "phase": "AURA v0.8.6.2",
+  "reference_date": "2026-08-24",
+  "python": {
+    "version": "3.14.7",
+    "major_minor": "3.14",
+    "machine": "AMD64",
+    "platform": "win32"
+  },
+  "required_direct": {
+    "PySide6": "6.11.1",
+    "python-dotenv": "1.2.2",
+    "requests": "2.34.2",
+    "psutil": "7.2.2",
+    "numpy": "2.4.6",
+    "sounddevice": "0.5.5",
+    "faster-whisper": "1.2.1",
+    "piper-tts": "1.6.0",
+    "coqui-tts": "0.27.5",
+    "websockets": "16.1.1",
+    "torch": "2.13.0+cu130",
+    "torchaudio": "2.11.0+cu130"
+  },
+  "required_imports": {
+    "PySide6": "PySide6",
+    "dotenv": "python-dotenv",
+    "requests": "requests",
+    "psutil": "psutil",
+    "numpy": "numpy",
+    "sounddevice": "sounddevice",
+    "faster_whisper": "faster-whisper",
+    "piper": "piper-tts",
+    "TTS": "coqui-tts",
+    "websockets": "websockets",
+    "torch": "torch",
+    "torchaudio": "torchaudio"
+  },
+  "optional_absent": {
+    "docx": "python-docx",
+    "fitz": "PyMuPDF",
+    "openpyxl": "openpyxl",
+    "pypdf": "pypdf",
+    "PyPDF2": "PyPDF2",
+    "chatterbox": null
+  },
+  "known_advisories": {
+    "torchcodec": {
+      "installed_version": "0.15.0+cu130",
+      "required": false,
+      "expected_import": "advisory-only"
+    },
+    "ffmpeg": {
+      "required": false,
+      "on_path_in_reference": false
+    },
+    "ffprobe": {
+      "required": false,
+      "on_path_in_reference": false
+    }
+  },
+  "sources": {
+    "D1": "AURA_V0_8_6_2_D1_DEPENDENCY_REALITY_RESULT.json",
+    "D2": "AURA_V0_8_6_2_D2_LOCK_PROVENANCE_OPTIONAL_RESULT.json"
+  }
+}

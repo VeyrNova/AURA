@@ -1,0 +1,27 @@
+{
+  "schema": "aura.modules-system-live-dedup.v094.v1",
+  "milestone": "v0.9.4 Files / Cloud",
+  "status": "D2_SYSTEM_LIVE_DEDUP",
+  "product_version_during_d2": "0.9.3",
+  "created_at": "2026-08-28T09:26:20",
+  "contract": {
+    "modules_system_live_card": false,
+    "permanent_right_system_live_panel": true,
+    "diagnostics_workspace": true,
+    "reason": "SYSTEM LIVE is permanently visible on the right; a Modules card duplicated DIAGNOSTICS behavior.",
+    "preserved_modules": [
+      "mail",
+      "agenda",
+      "contacts",
+      "documents"
+    ]
+  },
+  "rail": {
+    "pre_sha256": "5a15952d6715650405bf9c1382a9d98bffd9cf86cb7243948361bd3ec015fb3b",
+    "post_sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "css_sha256": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+  },
+  "reverified_at_v094": "2026-08-28T10:06:06",
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4"
+}

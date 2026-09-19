@@ -1,0 +1,12 @@
+/* AURA P0.7.2 — CROSS-MODULE CONTEXT CONTRACT UI */
+.aura-p072-context-facts{display:grid;gap:5px;margin-top:7px;padding-top:7px;border-top:1px solid rgba(95,83,160,.12)}
+.aura-p072-context-facts>div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:5px;align-items:start}
+.aura-p072-context-facts small{color:#666f91;font:600 6px/1.25 system-ui;letter-spacing:.035em;text-transform:uppercase}
+.aura-p072-context-facts b{min-width:0;color:#c6cbe0;font:600 6.6px/1.35 system-ui;overflow-wrap:anywhere}
+.aura-p072-context-facts>span{color:#737b99;font:500 6.4px/1.45 system-ui}
+.aura-p072-context-facts em{color:#6dcbd8;font:500 5.8px/1.2 system-ui;font-style:normal;letter-spacing:.04em}
+.aura-p0712-clear-context:not(:disabled){color:#9e94c8;border-color:rgba(126,97,215,.28);cursor:pointer;opacity:1}
+.aura-p0712-clear-context:not(:disabled):hover{color:#ddd6ff;border-color:rgba(143,103,255,.5);background:rgba(74,47,153,.11)}
+.aura-p0712-context-card dd[data-context-state]{color:#62d8e5}
+.aura-p072-full-context{margin-right:5px;padding:5px 8px;border:1px solid rgba(99,82,169,.22);border-radius:999px;color:#8e87b5;background:rgba(24,22,53,.58);font:600 5.7px/1 system-ui;letter-spacing:.045em}
+@media(max-width:1280px){.aura-p072-context-facts>div{grid-template-columns:62px minmax(0,1fr)}}

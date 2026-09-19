@@ -1,0 +1,179 @@
+/* AURA P0.6.3.5 — Workspace Command Palette */
+.aura-p0635-palette{
+  position:absolute;
+  z-index:120;
+  left:50%;
+  top:78px;
+  width:min(620px,calc(100% - 44px));
+  max-height:min(570px,calc(100% - 150px));
+  border:1px solid rgba(112,228,247,.14);
+  border-radius:14px;
+  overflow:hidden;
+  opacity:0;
+  transform:translate(-50%,-8px) scale(.992);
+  pointer-events:none;
+  background:linear-gradient(145deg,rgba(3,16,26,.992),rgba(7,11,22,.988));
+  box-shadow:0 28px 100px rgba(0,0,0,.54);
+  transition:opacity .16s ease,transform .16s ease;
+}
+.aura-p0635-palette.open{
+  opacity:1;
+  transform:translate(-50%,0) scale(1);
+  pointer-events:auto;
+}
+.aura-p0635-palette>header{
+  height:42px;
+  padding:0 12px 0 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(112,228,247,.07);
+}
+.aura-p0635-palette>header>div{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+.aura-p0635-palette>header i{
+  width:6px;height:6px;border-radius:50%;
+  background:#77e2ef;
+  box-shadow:0 0 11px rgba(119,226,239,.46);
+}
+.aura-p0635-palette>header b{
+  font-size:8.5px;
+  letter-spacing:.14em;
+  color:#b8eff7;
+}
+.aura-p0635-palette>header span{
+  font-size:7px;
+  letter-spacing:.1em;
+  color:#4f7280;
+}
+.aura-p0635-palette kbd{
+  padding:3px 6px;
+  border:1px solid rgba(112,228,247,.09);
+  border-radius:5px;
+  background:rgba(5,19,30,.55);
+  color:#648b99;
+  font:7px "Segoe UI",sans-serif;
+}
+.aura-p0635-palette>label{
+  height:50px;
+  margin:10px 10px 6px;
+  padding:0 12px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  border:1px solid rgba(112,228,247,.12);
+  border-radius:9px;
+  background:rgba(4,18,28,.72);
+}
+.aura-p0635-palette>label span{
+  color:#72cddd;
+  font-size:16px;
+}
+.aura-p0635-palette>label input{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:#c6edf4;
+  font:11.5px "Segoe UI Variable","Segoe UI",system-ui,sans-serif;
+}
+.aura-p0635-palette>label input::placeholder{color:#496c79}
+.aura-p0635-list{
+  max-height:390px;
+  overflow:auto;
+  padding:3px 10px 9px;
+  display:grid;
+  gap:4px;
+}
+.aura-p0635-list button{
+  width:100%;
+  min-height:47px;
+  padding:0 11px;
+  display:grid;
+  grid-template-columns:26px 1fr auto;
+  align-items:center;
+  gap:8px;
+  border:1px solid transparent;
+  border-radius:8px;
+  background:rgba(5,19,29,.36);
+  color:#79a1b0;
+  text-align:left;
+  cursor:pointer;
+}
+.aura-p0635-list button.selected{
+  border-color:rgba(112,228,247,.15);
+  background:linear-gradient(90deg,rgba(14,49,61,.57),rgba(28,22,58,.28));
+}
+.aura-p0635-list button>i{
+  font-style:normal;
+  font-size:13px;
+  color:#73d6e6;
+}
+.aura-p0635-list button div{min-width:0}
+.aura-p0635-list button b{
+  display:block;
+  font-size:9px;
+  letter-spacing:.08em;
+  color:#b8e7f0;
+}
+.aura-p0635-list button span{
+  display:block;
+  margin-top:3px;
+  font-size:8px;
+  color:#557683;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.aura-p0635-list button em{
+  padding:3px 5px;
+  border-radius:4px;
+  background:rgba(85,218,237,.08);
+  color:#74ccda;
+  font-style:normal;
+  font-size:6.5px;
+  letter-spacing:.08em;
+}
+.aura-p0635-empty{
+  padding:25px 10px;
+  text-align:center;
+  color:#557681;
+  font-size:9px;
+}
+.aura-p0635-palette>footer{
+  height:32px;
+  padding:0 12px;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  border-top:1px solid rgba(112,228,247,.06);
+}
+.aura-p0635-palette>footer span{
+  font-size:7px;
+  color:#486976;
+}
+.aura-p0635-palette>footer b{
+  margin-left:auto;
+  font-size:7px;
+  letter-spacing:.08em;
+  color:#6798a7;
+}
+
+/* Dim only the workspace surface, never the app chrome. */
+body.aura-command-palette-open .workspace>*:not(.aura-p0635-palette){
+  filter:brightness(.74);
+}
+body.aura-command-palette-open .composer{
+  pointer-events:none;
+}
+
+@media(max-width:760px){
+  .aura-p0635-palette{
+    top:64px;
+    width:calc(100% - 22px);
+    max-height:calc(100% - 130px);
+  }
+}

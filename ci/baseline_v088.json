@@ -1,0 +1,525 @@
+{
+  "schema": "aura.ci.baseline.v088.v1",
+  "milestone": "AURA v0.8.8 Mission Engine",
+  "created_at": "2026-08-26T12:05:52",
+  "historical_parent": "C:\\AURA GPT version\\ci\\baseline_v0872.json",
+  "historical_parent_immutable": true,
+  "version_contract": {
+    "canonical_authority": "core.version.AURA_VERSION",
+    "product_version": "0.8.8",
+    "visible_display_version": "v0.8.8",
+    "spoken_version": "zero point huit point huit",
+    "modified_visual_surface_count": 48
+  },
+  "mission_engine_contract": {
+    "canonical_authority": "mission_engine.engine.MissionEngine",
+    "pipeline": "Goal -> Plan -> TaskGraph -> ToolExecution -> Evidence -> Recovery -> Completion",
+    "models": 8,
+    "operations": 11,
+    "mission_states": 10,
+    "task_states": 8,
+    "security_fail_closed": true,
+    "confirmation_pauses": true,
+    "dag_cycle_rejection": true,
+    "bounded_retry": true,
+    "replan_preserves_completed_evidence": true
+  },
+  "files": [
+    {
+      "path": "C:\\AURA GPT version\\core\\version.py",
+      "sha256": "ee50cf8886c5566f925bbb76f333f9614ef12b837102388e058f5634affa1ce6"
+    },
+    {
+      "path": "C:\\AURA GPT version\\config\\settings.py",
+      "sha256": "43d82dae39f92003575724b74ef438fb92dd2c459359a222c20cbe05b456f268"
+    },
+    {
+      "path": "C:\\AURA GPT version\\services\\core_bridge.py",
+      "sha256": "fcd86f20d9df178848c6a27a8e9fc4044b9794f72226658f437020e8e1df171c"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ui\\main_window.py",
+      "sha256": "b95314824d32f93f1f26b82368440fbc55f225f4117aaee77d909e5c0cc65f4d"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ui\\workers\\realtime_tts_worker.py",
+      "sha256": "d3438289116983beebfcc7d0f680017ce660753e64e9bd92f28eaeaf180e2df3"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\ui_source_manifest_v0865.json",
+      "sha256": "00282c3ff4ef6c96bb87f9e897efce5477428c65da023f3eadbc94747b85a3ba"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tools\\ui_source_build_v0865.py",
+      "sha256": "89566080a61fca8977579203c2640c852cc7a0710788b39e44cadaaf5705e073"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
+      "sha256": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\package.json",
+      "sha256": "c3ee52b34d74e43a39345b8af5acbfae2d7ba97b6ce34ac3fdd85ff9f5869f48"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p081-event-watchers.js",
+      "sha256": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p081-event-watchers.js",
+      "sha256": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p081-event-watchers.js",
+      "sha256": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0436-official-neural-orb.js",
+      "sha256": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0436-official-neural-orb.js",
+      "sha256": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0521-weather-map.js",
+      "sha256": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0521-weather-map.js",
+      "sha256": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p060-navigation-workspace.js",
+      "sha256": "02c61a123f2d51ba37829f78d752dacbe5fd563903389ea62d22e49c4a100252"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
+      "sha256": "02c61a123f2d51ba37829f78d752dacbe5fd563903389ea62d22e49c4a100252"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0623-file-productivity.js",
+      "sha256": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0623-file-productivity.js",
+      "sha256": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0624-quality-ux.js",
+      "sha256": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0624-quality-ux.js",
+      "sha256": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0626-memory.js",
+      "sha256": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0626-memory.js",
+      "sha256": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p074-vitals-activity-module.js",
+      "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p074-vitals-activity-module.js",
+      "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p074-vitals-activity-module.js",
+      "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08518-system-state-final-polish.js",
+      "sha256": "7f6c1180ac960f3096608abebf1d46054c05891ae508d08c6831028a1fbfebcf"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08518-system-state-final-polish.js",
+      "sha256": "7f6c1180ac960f3096608abebf1d46054c05891ae508d08c6831028a1fbfebcf"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08518-system-state-final-polish.js",
+      "sha256": "7f6c1180ac960f3096608abebf1d46054c05891ae508d08c6831028a1fbfebcf"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\policy_engine.py",
+      "sha256": "6b9a6cf82e6afd8d00115264c56ae80ae8deb602095aa150d555424df9ebacf1"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\policy_engine_v2.py",
+      "sha256": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\permissions.py",
+      "sha256": "de81fd45114252111c4681fa998ff034f57247b3c30b12e9aa6f797465e90d34"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\common.py",
+      "sha256": "965af923070217a800e99706c6df15489eb21df167f89838fe41a55d50f688dd"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_security_fail_closed_v0861.py",
+      "sha256": "7667b5a82d5f904e05c15ce344c9f5d693bac860e1f55c6cffc557d1b8dda830"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_security_policy_v2_v0866.py",
+      "sha256": "3e4e78b94cf365c5e9c5c92101354b3ec48e1ba0815c2ceaea1ef54b0bfd6766"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\fast_lane.py",
+      "sha256": "b8dc5f933491e45e284829c3a936b73fdee688f870acc9c9f58aa74665181997"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\full_lane.py",
+      "sha256": "14bc03dbc4869b0880882be01c1c96772fdf06be2b6e1e9a6dbf0add0aa3c35c"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\microphone.py",
+      "sha256": "c4a3d811de7eee7b56599c509313316a6c3f3d845d36d1381054c075ff0ea27f"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\xtts_tts.py",
+      "sha256": "3cdf085bb1da23d10050a417fd6a2cf01058dea83170f3712d3a2fbea70d6ff6"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\voice_engine.py",
+      "sha256": "f59310277feed54eb6cabfadb63c81d210179928681610b2f50e6c3dd5320469"
+    },
+    {
+      "path": "C:\\AURA GPT version\\runtime\\resource_guardian.py",
+      "sha256": "f8f3ee6a70e196423fed44545436407139bb9518efb1138f3f868a841c0b3df2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_runtime_performance_v0867.py",
+      "sha256": "46b8c18d5396949ea43563ead1421e474c4cb8bdd13e404be84ecd943c4e19f2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\runtime_performance_manifest_v0867.json",
+      "sha256": "b281c06dec97f025a1886d3e7545a9661e2e519c353afe6ac16c18a60cff2cc0"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_engineering_foundation_v0868.py",
+      "sha256": "f7491222d6268abb6574d723a0cf2b7e207302009ce71b9cf2cd239d92eb3e8d"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_critical_baseline_v0868.py",
+      "sha256": "b7e11e66e6ab3524073848c5a964cf51b73d07031a2617916c3f72f72277cf21"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\architecture_gate_v0868.py",
+      "sha256": "c3d7e6e1e213cba83f0230e618f55ba86bdfab366b7b8c2c7dfd69b714e7f728"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_metadata_contract_v0868.py",
+      "sha256": "6e4a0dacec921a3d028d3454c23f61ad6c596fb713450ae2f117353497eec020"
+    },
+    {
+      "path": "C:\\AURA GPT version\\memory\\manager.py",
+      "sha256": "249a44e49f1a106f4c0ddaeac16949c51a7ca2b69168fbcd14dda92f08cbe56e"
+    },
+    {
+      "path": "C:\\AURA GPT version\\memory\\kernel_v2.py",
+      "sha256": "1b8870f77707412313d75e2c6d7c678997cfe49797c06eca4c57f7d3d1a7066f"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_memorykernel_v2_v087.py",
+      "sha256": "374edb3259a6933e7863e5eba27e37a3d984c334f1172fe00fae29ff620804ca"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\memorykernel_v2_manifest_v087.json",
+      "sha256": "3ac2b37f767f945dfd153543bb6741c0f8d25706711de604500f2dd86e4fb811"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_critical_baseline_v087.py",
+      "sha256": "d44dd37b504f8a62461832c785958893e8d3a315ff4457fd61c3e0fe0edc87b3"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\architecture_gate_v087.py",
+      "sha256": "677c96c211ac926c778020ddc4c99ab3dae1e0e4476bde28a624cbb0eee334cc"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_metadata_contract_v087.py",
+      "sha256": "59f9b9167aabc6b246e32202650e66cb3306b6d51f6db5050bb53c471e75209e"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_engineering_foundation_v087.py",
+      "sha256": "b4bb79552702b66fbc06da3fa40ec697cfbb2016a495d7b9d9b1ec3823dbd24d"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tools\\sync_product_version_surfaces.py",
+      "sha256": "bc7a591821ffc052ae82ae4d055ffbb9c986dbf57801f418e66a7bebe086e63a"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_product_version_surfaces_v0871.py",
+      "sha256": "6f7ec45eebd7ee1d7e11756aec57be5fefe2b2515783f168822b85b60b35d0dc"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\version_surface_manifest_v0871.json",
+      "sha256": "d23451caba89cc173bd9433a2def8d469cd53bf7471b2d565483e3290c45438a"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_critical_baseline_v0871.py",
+      "sha256": "45632ea4636e61ced565b088c90644ab2b6f291998d5f0709d46fad3ec5ef5d3"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\architecture_gate_v0871.py",
+      "sha256": "73113184eab069aa13fec17438902752042d3b0716f6f1316809de8b07e7b3ae"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_metadata_contract_v0871.py",
+      "sha256": "784d844dfa69635f7fd9723b6ad7e6857acc7b58465fdf9bcc22d367269e2da6"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_engineering_foundation_v0871.py",
+      "sha256": "517bdcd28237730a81b6c21ca9c35e47d8b064cf38783f146577955a67436700"
+    },
+    {
+      "path": "C:\\AURA GPT version\\aura-p060-navigation-workspace.js",
+      "sha256": "13cabc44b7035202859d812ab89889562ac3dc737ddb34fc35411c061dcaf063"
+    },
+    {
+      "path": "C:\\AURA GPT version\\aura-p082-suggestion-engine.js",
+      "sha256": "44b5fa335b44c49664eb1d01d57bff5553c0412d65ddf02d135dfa5e8a8d30fa"
+    },
+    {
+      "path": "C:\\AURA GPT version\\aura-p0821-controlled-test.js",
+      "sha256": "b223d4171b2116f1170940ef7334a03ea3c666a9c7d7f960b50883a059e9f4e3"
+    },
+    {
+      "path": "C:\\AURA GPT version\\aura-p0822-explainability-actions.js",
+      "sha256": "342d9b1a433125e1a4b9327f05c41fd581af022cea159cfa789d4afa93a00a34"
+    },
+    {
+      "path": "C:\\AURA GPT version\\aura-p083-proactive-notifications.js",
+      "sha256": "265e1e334da634ae3663f9f17bdfafeda9ed0332650db53c7a8c85c98448a1c9"
+    },
+    {
+      "path": "C:\\AURA GPT version\\aura-p084-sensitive-action-confirmation.js",
+      "sha256": "116683a7a752c7e5c67699fb5aa47c6161f5a61003e33d5da72ed09278afb7a2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\aura-p08518-system-state-final-polish.js",
+      "sha256": "96618a14bc1b7dc5f98866b9f99a2cf694bef543360bd4b645e00c739402d470"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0627-system-p06541.js",
+      "sha256": "838e38fd50732a90aa13e47b57749613ae9f1cb45e1800009d51482310f89da8"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p082-suggestion-engine.js",
+      "sha256": "44b5fa335b44c49664eb1d01d57bff5553c0412d65ddf02d135dfa5e8a8d30fa"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0821-controlled-test.js",
+      "sha256": "b223d4171b2116f1170940ef7334a03ea3c666a9c7d7f960b50883a059e9f4e3"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0822-explainability-actions.js",
+      "sha256": "342d9b1a433125e1a4b9327f05c41fd581af022cea159cfa789d4afa93a00a34"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p083-proactive-notifications.js",
+      "sha256": "265e1e334da634ae3663f9f17bdfafeda9ed0332650db53c7a8c85c98448a1c9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p084-sensitive-action-confirmation.js",
+      "sha256": "116683a7a752c7e5c67699fb5aa47c6161f5a61003e33d5da72ed09278afb7a2"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08512-system-state-ui.js",
+      "sha256": "0b2fbefa4c9e3286bcacdb4d8e3fa8c64938d59f4cd69c922573604950dab7d9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08513-system-state-ui.js",
+      "sha256": "5884f2ee9e228bdbccd4975519e28e9f271ff4f8572a1a18707ba4994ed45396"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08514-system-state-reference-match.js",
+      "sha256": "6c73496d76d0c1b5750803bd61a7a448b95ef19f4626b99ab313832cfff4fe4b"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08515-system-state-master-logo.js",
+      "sha256": "9ff7aa2af83566190d16a1fbf73f84ff600ce38cbf1ac94780dcefcac990becd"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08516-system-state-harmonized.js",
+      "sha256": "a755e9c74bbcc057773a0ad0cdea76cf9c1c32150d7e40d8afa9d6d5879573b9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08517-state-button-sidebar-realign.js",
+      "sha256": "3eb2fce33a83e56996a3efa98151e3151bbe6dca13b0e1a23d597523a663e293"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
+      "sha256": "87736aa50f070b684e462437a2a59915c2c8fd3a18611ab93d583efd001699d9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\index.html",
+      "sha256": "0074f6b685df0d9232cfc97e1d3e7229505853b92ed0dcb239ef34aa347df4e0"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p082-suggestion-engine.js",
+      "sha256": "44b5fa335b44c49664eb1d01d57bff5553c0412d65ddf02d135dfa5e8a8d30fa"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0821-controlled-test.js",
+      "sha256": "b223d4171b2116f1170940ef7334a03ea3c666a9c7d7f960b50883a059e9f4e3"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0822-explainability-actions.js",
+      "sha256": "342d9b1a433125e1a4b9327f05c41fd581af022cea159cfa789d4afa93a00a34"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p083-proactive-notifications.js",
+      "sha256": "265e1e334da634ae3663f9f17bdfafeda9ed0332650db53c7a8c85c98448a1c9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p084-sensitive-action-confirmation.js",
+      "sha256": "116683a7a752c7e5c67699fb5aa47c6161f5a61003e33d5da72ed09278afb7a2"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08512-system-state-ui.js",
+      "sha256": "0b2fbefa4c9e3286bcacdb4d8e3fa8c64938d59f4cd69c922573604950dab7d9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08513-system-state-ui.js",
+      "sha256": "5884f2ee9e228bdbccd4975519e28e9f271ff4f8572a1a18707ba4994ed45396"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08514-system-state-reference-match.js",
+      "sha256": "6c73496d76d0c1b5750803bd61a7a448b95ef19f4626b99ab313832cfff4fe4b"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08515-system-state-master-logo.js",
+      "sha256": "9ff7aa2af83566190d16a1fbf73f84ff600ce38cbf1ac94780dcefcac990becd"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08516-system-state-harmonized.js",
+      "sha256": "a755e9c74bbcc057773a0ad0cdea76cf9c1c32150d7e40d8afa9d6d5879573b9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08517-state-button-sidebar-realign.js",
+      "sha256": "3eb2fce33a83e56996a3efa98151e3151bbe6dca13b0e1a23d597523a663e293"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p082-suggestion-engine.js",
+      "sha256": "44b5fa335b44c49664eb1d01d57bff5553c0412d65ddf02d135dfa5e8a8d30fa"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0821-controlled-test.js",
+      "sha256": "b223d4171b2116f1170940ef7334a03ea3c666a9c7d7f960b50883a059e9f4e3"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0822-explainability-actions.js",
+      "sha256": "342d9b1a433125e1a4b9327f05c41fd581af022cea159cfa789d4afa93a00a34"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p083-proactive-notifications.js",
+      "sha256": "265e1e334da634ae3663f9f17bdfafeda9ed0332650db53c7a8c85c98448a1c9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p084-sensitive-action-confirmation.js",
+      "sha256": "116683a7a752c7e5c67699fb5aa47c6161f5a61003e33d5da72ed09278afb7a2"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08512-system-state-ui.js",
+      "sha256": "0b2fbefa4c9e3286bcacdb4d8e3fa8c64938d59f4cd69c922573604950dab7d9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08513-system-state-ui.js",
+      "sha256": "5884f2ee9e228bdbccd4975519e28e9f271ff4f8572a1a18707ba4994ed45396"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08514-system-state-reference-match.js",
+      "sha256": "6c73496d76d0c1b5750803bd61a7a448b95ef19f4626b99ab313832cfff4fe4b"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08515-system-state-master-logo.js",
+      "sha256": "9ff7aa2af83566190d16a1fbf73f84ff600ce38cbf1ac94780dcefcac990becd"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08516-system-state-harmonized.js",
+      "sha256": "a755e9c74bbcc057773a0ad0cdea76cf9c1c32150d7e40d8afa9d6d5879573b9"
+    },
+    {
+      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08517-state-button-sidebar-realign.js",
+      "sha256": "3eb2fce33a83e56996a3efa98151e3151bbe6dca13b0e1a23d597523a663e293"
+    },
+    {
+      "path": "C:\\AURA GPT version\\core\\spoken_version.py",
+      "sha256": "1665e485cedd2d6f8adb4b0ea64b5695461dc078e1e5b7beaa2d0fb9555b9340"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ai\\local_first_voice.py",
+      "sha256": "b069ac09281b4b68759eecbd5392038ac39897330111ed66ab4d30ec0910319b"
+    },
+    {
+      "path": "C:\\AURA GPT version\\consciousness\\context_builder.py",
+      "sha256": "4273e8b84afe8d54893c55c5fafcf9a612cdd6b02e997894f075029cce6966be"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\text_to_speech.py",
+      "sha256": "9d4f576de34332d980ac834835cdedcf2af8c3834743088a711b5a0a72b8423d"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_spoken_product_version_v0872.py",
+      "sha256": "dc14c01c439c3afb51ba0c4f5691c72e52a5dfa8c31db90bfea067680860c2b2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\spoken_version_manifest_v0872.json",
+      "sha256": "ed1af43b260a047a9903f2cb61d1a136419d6fa8fc2bb0883a27f8a084e2844a"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_critical_baseline_v0872.py",
+      "sha256": "faa697da3f30e7d138e14f6ae93e33d9d72f1d1c425c72aa7dbb6b2482e60c29"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\architecture_gate_v0872.py",
+      "sha256": "abf08e4ab1c5622b93a33c7aa4c0841919a976f6e4b85401fd22189d190c3e34"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_metadata_contract_v0872.py",
+      "sha256": "a82111fd5581d87ad16f3a64039876bb2b157901dce031e80688f76d197bfb52"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_engineering_foundation_v0872.py",
+      "sha256": "5d43bb83f4aa486e060a81993f80bfcd6e06418ce5768b0c4a3a24d80faf9c86"
+    },
+    {
+      "path": "C:\\AURA GPT version\\mission_engine\\__init__.py",
+      "sha256": "6eed6afc39d54a9ebd85e175b1bf60f47043cb65671c3a9c1f6b9721335b94c5"
+    },
+    {
+      "path": "C:\\AURA GPT version\\mission_engine\\engine.py",
+      "sha256": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_mission_engine_v088.py",
+      "sha256": "477080531e09b917785398501df1f665f404df45b9642c919b9fe8daa608b126"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\mission_engine_manifest_v088.json",
+      "sha256": "1484e7c440418069a44b214bcd524dcca09ec1bdd0bb4c1494e3170a2074b415"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_critical_baseline_v088.py",
+      "sha256": "20cf74cb97bbe8bf9b2177dc0fd704671972aeab36efcce1c04aac07cc6325f7"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\architecture_gate_v088.py",
+      "sha256": "8a2f0284785ce9eb3442052333315b05f915f6eff40ea65bbcef1d6ae7138c01"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_metadata_contract_v088.py",
+      "sha256": "5f352501c47271132c73135dec35d6dd70a3627e4b22090b314cc70326655983"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_engineering_foundation_v088.py",
+      "sha256": "2c95325b88bc6177e4db5684188a46a8828ba544ae6f15842acbc7bad10d363e"
+    }
+  ]
+}

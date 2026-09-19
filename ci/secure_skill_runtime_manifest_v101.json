@@ -1,0 +1,45 @@
+{
+  "schema": "aura.secure-skill-runtime.v101.v1",
+  "status": "CERTIFIED_V1_0_1_SECURE_SKILL_RUNTIME",
+  "generated_at": "2026-08-28T20:08:03",
+  "product_version": "1.0.1",
+  "strategy": "NEW_V101_SECURE_SKILL_RUNTIME_REFERENCING_V100_SKILL_REGISTRY_AND_EXISTING_INTEGRATION_SECURITY_PERMISSION_RECEIPT_AUTHORITIES",
+  "runtime": {
+    "skills/runtime.py": "50335b7643a94e5d907fae69565d09f74e7d312bd71b50007e8b90af9e932b68",
+    "tests/invariants/test_secure_skill_runtime_v101.py": "9dc37fdf19f8c2246ff9f300add304548dac956f6e3f147e3b60a0d70d501d48"
+  },
+  "security_contract": {
+    "skill_registry": "metadata/binding authority only",
+    "execution": "IntegrationRegistry.execute_integration only",
+    "permission_preflight": "runtime.integration_permissions_v098",
+    "confirmation": "caller boolean forwarded; never promoted internally",
+    "receipts": "existing IntegrationRegistry/ActionReceiptService path",
+    "direct_python_execution": "FORBIDDEN",
+    "direct_subprocess_execution": "FORBIDDEN",
+    "direct_network_stack": "FORBIDDEN",
+    "unknown_skill": "DENY",
+    "unbound_capability": "DENY",
+    "permission_not_granted": "DENY",
+    "reserved_user_confirmed_param": "DENY"
+  },
+  "preserved_authorities": {
+    "skills/manifest.py": "f8305b0a35634ef6587b9f9a17abb98838d6ca0ff121d65d8745cd7b8593cbcf",
+    "skills/registry.py": "96a5ea3dcb38d9cfc6d212d883b129832e2d9a0d01f6ae38a990dd001c76a58a",
+    "integrations/registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+    "security/permissions.py": "6df1f3a88072355147e9b1409566bb9046a25412f57112830308ccc948c7d4a0",
+    "security/policy_engine_v2.py": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+    "action_receipts/service.py": "4c0f13eefaa6351eca157235d3b0ceea5643474a8cbf0cdb7401c1d71b34023e",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "core/aura_core.py": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474"
+  },
+  "version_identity": {
+    "canonical": "1.0.1",
+    "display": "v1.0.1",
+    "surface_files_changed": 0,
+    "surface_replacements": 0,
+    "spoken_verified": true
+  },
+  "external_network": "NOT USED",
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_state": "V1_0_1_SECURE_SKILL_RUNTIME_COMPLETE_READY_FOR_V1_0_2_SKILL_LIFECYCLE_DEVELOPER_CONTRACT"
+}

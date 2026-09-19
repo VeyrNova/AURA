@@ -1,0 +1,107 @@
+{
+  "schema": "aura.developer-fabric.capability-charter.v1",
+  "product": "AURA Developer Fabric",
+  "gateway": "AURA Fabric Gateway",
+  "design_rule": "clean-room implementation; public documented behavior may be used as a compatibility target; no FCC source reuse",
+  "provider_fabric": {
+    "initial_target_provider_count": 50,
+    "provider_count_is_dynamic": true,
+    "tos_friendly_only": true,
+    "tos_status_required": true,
+    "remove_or_disable_if_terms_stop_allowing_integration": true,
+    "free_paid_subscription_local_supported": true,
+    "free_token_budget": {
+      "headline_reference_target_tokens_per_month": 1300000000,
+      "guaranteed": false,
+      "calculation": "dynamic aggregate estimate from currently enabled provider free tiers",
+      "provider_limits_may_change": true,
+      "must_show_last_verified_at": true
+    }
+  },
+  "coding_agents": {
+    "single_model_catalog": true,
+    "target_agents": [
+      "Claude Code",
+      "Codex",
+      "Pi",
+      "OpenCode",
+      "Cline",
+      "Hermes",
+      "DeepSeek Harness",
+      "Grok Build",
+      "Muse Code",
+      "Aider"
+    ],
+    "launcher_or_adapter_per_agent": true,
+    "agent_native_sessions_preserved_where_supported": true
+  },
+  "resilience": {
+    "transparent_retry": true,
+    "automatic_next_model_failover_after_retry_exhaustion": true,
+    "same_turn_continuation": true,
+    "cross_client_policy": true,
+    "health_weighted_routing": true,
+    "circuit_breaker": true
+  },
+  "token_efficiency": {
+    "terminal_output_reduction_target_up_to_percent": 90,
+    "guaranteed": false,
+    "local_output_filter_layer": "AURA Terminal Reduction Kernel",
+    "provider_free_optimizations": [
+      "quota probes",
+      "command-prefix detection",
+      "session titles",
+      "suggestions",
+      "filepath normalization"
+    ]
+  },
+  "surfaces": {
+    "terminal": true,
+    "desktop": true,
+    "ide": [
+      "VS Code",
+      "JetBrains"
+    ],
+    "apps": [
+      "Codex App"
+    ],
+    "mobile_bridges": [
+      "Discord",
+      "Telegram"
+    ],
+    "aura_native_ui": true
+  },
+  "voice": {
+    "voice_notes_in": true,
+    "local_whisper": true,
+    "nvidia_nim_optional": true,
+    "aura_existing_stt_bridge_reusable": true
+  },
+  "agent_capability_preservation": {
+    "streaming": true,
+    "tools": true,
+    "reasoning": true,
+    "native_interleaved_thinking_when_protocol_and_provider_support_it": true,
+    "images": true,
+    "structured_output": true
+  },
+  "model_tier_routing": {
+    "independent_routes": [
+      "Fable",
+      "Opus",
+      "Sonnet",
+      "Haiku"
+    ],
+    "fallback_route": true,
+    "capability_compatible_models_only": true
+  },
+  "security_and_governance": {
+    "secrets_never_logged": true,
+    "provider_credentials_stored_outside_project_sources": true,
+    "workspace_policy_gate": true,
+    "read_only_default_for_developer_actions": true,
+    "explicit_approval_before_write": true,
+    "transactional_backup_and_rollback": true,
+    "audit_receipts": true
+  }
+}

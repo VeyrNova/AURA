@@ -1,0 +1,95 @@
+{
+  "schema": "aura.files-provider-manifest.v094.v1",
+  "milestone": "v0.9.4 Files / Cloud",
+  "status": "CERTIFIED",
+  "product_version_during_d2": "0.9.3",
+  "created_at": "2026-08-28T07:29:48",
+  "provider": {
+    "provider_id": "files.provider",
+    "mode": "SYNTHETIC_LOCAL_SANDBOX",
+    "provider_neutral": true,
+    "external_connection": false,
+    "oauth": false,
+    "network_side_effects": false
+  },
+  "capabilities": {
+    "read": [
+      "files.list",
+      "files.search",
+      "files.read"
+    ],
+    "write_confirmation_required": [
+      "files.create",
+      "files.update",
+      "files.move",
+      "files.delete"
+    ]
+  },
+  "security": {
+    "allowed_roots_only": true,
+    "arbitrary_host_filesystem_access": false,
+    "path_traversal": "fail-closed",
+    "absolute_host_paths": "deny",
+    "symlink_escape": "deny",
+    "receipt_before_side_effect": true
+  },
+  "runtime_path": "Conversation/Voice -> PersonalIntegrationDispatcher -> IntegrationRegistry -> FilesProvider -> SecurityPolicyEngine -> ActionReceipts",
+  "ui": {
+    "reuse_existing_documents_card": true,
+    "documents_module_controller": true,
+    "visual_card_changed_in_d2_r1": false,
+    "new_files_sidebar": false,
+    "new_cloud_sidebar": false,
+    "rail_js_sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "rail_css_sha256": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5",
+    "prefill": "liste mes fichiers",
+    "auto_submit": false
+  },
+  "files": {
+    "package_init": {
+      "path": "C:\\AURA GPT version\\integrations\\files\\__init__.py",
+      "sha256": "3a680a19995ccd539ddb8e08080a942a2b9bd89b5c15e6e81dd665e56d0fda60"
+    },
+    "provider": {
+      "path": "C:\\AURA GPT version\\integrations\\files\\provider.py",
+      "sha256": "64a122676343504ba578c601d9ed5da6b9cb0f8610671589f37d2e68ec4bb4bc"
+    },
+    "runtime": {
+      "path": "C:\\AURA GPT version\\runtime\\personal_integrations.py",
+      "sha256": "2f1973ebfe349e3ae3c592a031559e12e22155ece4b01e60412d94bfbf5f67fd"
+    },
+    "controllers": {
+      "path": "C:\\AURA GPT version\\ui\\personal_integration_modules.py",
+      "sha256": "3dc7286159a4595622e0274aabf9694c4fa0662ba1ff9bd50c00e4dfd0b47127"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_files_provider_v094.py",
+      "sha256": "7a3674d43b0fcff3ca10be0722a64d1adfd58041c361421c4fb5828d5f426fdd"
+    }
+  },
+  "next_phase": "v0.9.5 Notifications",
+  "visual_exposure": {
+    "phase": "D2 R7 Documents Files Visual Rebuild",
+    "module": "documents",
+    "label": "DOCUMENTS",
+    "separate_files_sidebar": false,
+    "separate_cloud_sidebar": false,
+    "duplicate_module_card": false,
+    "opens_workspace": "talk",
+    "prefill": "liste mes fichiers",
+    "auto_submit": false,
+    "preserve_non_empty_draft": true,
+    "attachment_available_in_conversation": true,
+    "rail_js_sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "rail_css_sha256": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5",
+    "system_live_module_card": false,
+    "permanent_right_system_live": true,
+    "diagnostics_workspace": true
+  },
+  "reverified_at_v094": "2026-08-28T10:06:06",
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "product_version": "0.9.4",
+  "external_connection": false,
+  "oauth": false
+}

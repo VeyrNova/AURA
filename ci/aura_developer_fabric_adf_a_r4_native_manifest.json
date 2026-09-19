@@ -1,0 +1,50 @@
+{
+  "schema": "aura.developer-fabric.adf-a-r4-native-certified-foundation.v1",
+  "installed_at": "2026-08-30T19:58:36",
+  "aura_version": "1.3.0",
+  "product_version_bumped": false,
+  "implementation": {
+    "developer_fabric": "AURA-native",
+    "gateway": "AURA Fabric Gateway",
+    "clean_room": true,
+    "fcc_dependency": false,
+    "fcc_source_reused": false
+  },
+  "architecture_decision": {
+    "aura_owns": [
+      "workspace",
+      "planning",
+      "repository bounds",
+      "permissions",
+      "provider registry",
+      "model registry",
+      "capability routing",
+      "health scoring",
+      "circuit breaker",
+      "local-first policy",
+      "cost policy",
+      "patch proposal",
+      "tests",
+      "diff review",
+      "approval",
+      "transactional apply",
+      "rollback",
+      "audit receipts"
+    ],
+    "public_interoperability_targets": [
+      "Anthropic Messages-compatible endpoint",
+      "OpenAI Responses-compatible endpoint",
+      "OpenAI Chat Completions-compatible endpoint",
+      "provider-native adapters"
+    ],
+    "default_mode": "native_gateway"
+  },
+  "files": {
+    "runtime\\aura_developer_fabric.py": "a7bb0bc7528bf9d9d70da7db5ba6bf741870fe0e9f7da1906904333bf662915b",
+    "runtime\\aura_fabric_gateway.py": "29ea76a907c3ec082a3d4113eb36a275d33f693e9515a3f8d2fff486a39bf36e",
+    "ci\\aura_developer_fabric_roadmap_overlay.json": "e284f8f8db0cef90f17affdae40207ada1a301c6fb69e27c0839b30c9136c590",
+    "ci\\aura_developer_fabric_capability_charter.json": "d38a468993974ad8df18ce8f43ff280442d67069aeaab2313f9d3c883578b9af",
+    "tests\\invariants\\test_aura_developer_fabric_adf_a_r4_native.py": "0cbcbb8b1066fcf363764c47c7f4617272c0395d760da5090858c05b8c911c51",
+    "docs\\AURA_DEVELOPER_FABRIC_NATIVE_GATEWAY_ARCHITECTURE.md": "4115feb47b840528e995941cc65343b691e05a1d263209dfe7733556ff07a38e"
+  }
+}

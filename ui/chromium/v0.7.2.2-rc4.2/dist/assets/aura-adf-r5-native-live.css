@@ -1,0 +1,299 @@
+/* AURA ADF-H R7.2.12 R5 R28 — Native Developer Fabric LIVE */
+.aura-adf-live-native {
+  --adf-cyan: rgba(122,220,246,.96);
+  --adf-cyan-soft: rgba(122,220,246,.16);
+  --adf-violet: rgba(157,126,255,.92);
+  --adf-green: rgba(108,238,183,.96);
+  --adf-red: rgba(255,113,139,.96);
+  position: fixed;
+  z-index: 985;
+  top: 80px;
+  left: 50%;
+  width: min(880px, calc(100vw - 72px));
+  max-height: min(690px, calc(100vh - 110px));
+  display: none;
+  overflow: hidden;
+  border: 1px solid rgba(122,220,246,.28);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(71,136,180,.17), transparent 37%),
+    radial-gradient(circle at 91% 12%, rgba(126,79,208,.15), transparent 32%),
+    linear-gradient(155deg, rgba(11,18,29,.975), rgba(7,11,19,.985));
+  box-shadow:
+    0 28px 80px rgba(0,0,0,.52),
+    inset 0 1px 0 rgba(255,255,255,.045),
+    0 0 42px rgba(83,187,230,.08);
+  color: rgba(232,247,255,.94);
+  backdrop-filter: blur(24px) saturate(1.16);
+  transform: translateX(-50%) translateY(-8px) scale(.992);
+  opacity: 0;
+  transition: opacity 160ms ease, transform 160ms ease;
+  font-family: Inter, "Segoe UI", system-ui, sans-serif;
+}
+
+.aura-adf-live-native.is-visible {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.aura-adf-live-native[style*="left"] {
+  transform: translateY(0) scale(1);
+}
+
+.aura-adf-live-native__head {
+  min-height: 66px;
+  padding: 0 15px 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid rgba(122,220,246,.13);
+  background: linear-gradient(90deg, rgba(122,220,246,.055), rgba(157,126,255,.025));
+  cursor: grab;
+  touch-action: none;
+}
+
+.aura-adf-live-native__head:active { cursor: grabbing; }
+
+.aura-adf-live-native__identity {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aura-adf-live-native__identity strong {
+  display: block;
+  color: rgba(235,249,255,.97);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  white-space: nowrap;
+}
+
+.aura-adf-live-native__identity strong i {
+  color: var(--adf-cyan);
+  font-style: normal;
+  text-shadow: 0 0 14px rgba(122,220,246,.38);
+}
+
+.aura-adf-live-native__identity small {
+  display: block;
+  margin-top: 4px;
+  max-width: 560px;
+  overflow: hidden;
+  color: rgba(164,204,221,.64);
+  font: 500 10px/1.25 ui-monospace, "Cascadia Code", Consolas, monospace;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aura-adf-live-native__pulse {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(122,220,246,.48);
+  box-shadow: 0 0 0 4px rgba(122,220,246,.07), 0 0 16px rgba(122,220,246,.25);
+}
+
+.aura-adf-live-native.is-running .aura-adf-live-native__pulse {
+  background: var(--adf-green);
+  animation: auraAdfLivePulse 1.25s ease-in-out infinite;
+}
+
+.aura-adf-live-native.is-error .aura-adf-live-native__pulse { background: var(--adf-red); }
+
+@keyframes auraAdfLivePulse {
+  50% { opacity: .52; box-shadow: 0 0 0 7px rgba(108,238,183,.04), 0 0 22px rgba(108,238,183,.42); }
+}
+
+.aura-adf-live-native__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.aura-adf-live-native__actions button {
+  height: 29px;
+  min-width: 31px;
+  padding: 0 9px;
+  border: 1px solid rgba(122,220,246,.16);
+  border-radius: 8px;
+  background: rgba(8,18,27,.72);
+  color: rgba(180,224,239,.74);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+
+.aura-adf-live-native__actions button:hover {
+  border-color: rgba(122,220,246,.38);
+  color: rgba(235,249,255,.96);
+  background: rgba(122,220,246,.08);
+}
+
+.aura-adf-live-native__pipeline {
+  min-height: 44px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 1px solid rgba(255,255,255,.045);
+  overflow-x: auto;
+}
+
+.aura-adf-live-native__pipeline span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(128,164,181,.53);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+.aura-adf-live-native__pipeline span i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(128,164,181,.3);
+}
+
+.aura-adf-live-native__pipeline span.is-done { color: rgba(108,238,183,.72); }
+.aura-adf-live-native__pipeline span.is-done i { background: rgba(108,238,183,.78); }
+.aura-adf-live-native__pipeline span.is-active { color: var(--adf-cyan); }
+.aura-adf-live-native__pipeline span.is-active i {
+  background: var(--adf-cyan);
+  box-shadow: 0 0 11px rgba(122,220,246,.62);
+}
+.aura-adf-live-native__pipeline span.is-failed { color: var(--adf-red); }
+.aura-adf-live-native__pipeline span.is-failed i { background: var(--adf-red); }
+.aura-adf-live-native__pipeline b { color: rgba(141,183,199,.22); font-size: 15px; }
+
+.aura-adf-live-native__meta {
+  padding: 11px 18px;
+  display: grid;
+  grid-template-columns: .7fr 1.25fr 2fr .65fr;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.045);
+  background: rgba(2,8,14,.24);
+}
+
+.aura-adf-live-native__meta div {
+  min-width: 0;
+  padding-right: 9px;
+  border-right: 1px solid rgba(255,255,255,.05);
+}
+
+.aura-adf-live-native__meta div:last-child { border-right: 0; }
+
+.aura-adf-live-native__meta span {
+  display: block;
+  color: rgba(114,165,186,.48);
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.aura-adf-live-native__meta b {
+  display: block;
+  margin-top: 4px;
+  overflow: hidden;
+  color: rgba(196,226,238,.8);
+  font: 600 10px/1.25 ui-monospace, "Cascadia Code", Consolas, monospace;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aura-adf-live-native__terminal-wrap {
+  height: min(420px, calc(100vh - 322px));
+  min-height: 220px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(122,220,246,.24) transparent;
+}
+
+.aura-adf-live-native__terminal {
+  min-height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 16px 18px 22px;
+  color: rgba(193,224,236,.82);
+  background:
+    linear-gradient(rgba(5,11,18,.73), rgba(4,9,15,.9)),
+    repeating-linear-gradient(0deg, rgba(122,220,246,.015) 0 1px, transparent 1px 3px);
+  font: 500 11px/1.55 ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+  tab-size: 2;
+  user-select: text;
+}
+
+.aura-adf-live-native__foot {
+  min-height: 46px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid rgba(122,220,246,.11);
+  background: rgba(5,13,21,.8);
+}
+
+.aura-adf-live-native__foot div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.aura-adf-live-native__shield {
+  color: var(--adf-green);
+  font-size: 9px;
+}
+
+.aura-adf-live-native__foot b,
+.aura-adf-live-native__foot strong {
+  color: rgba(129,182,201,.6);
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+.aura-adf-live-native.is-running .aura-adf-live-native__foot strong { color: var(--adf-cyan); }
+.aura-adf-live-native.is-success .aura-adf-live-native__foot strong { color: var(--adf-green); }
+.aura-adf-live-native.is-error .aura-adf-live-native__foot strong { color: var(--adf-red); }
+
+.aura-adf-live-native.is-minimized .aura-adf-live-native__pipeline,
+.aura-adf-live-native.is-minimized .aura-adf-live-native__meta,
+.aura-adf-live-native.is-minimized .aura-adf-live-native__terminal-wrap {
+  display: none;
+}
+
+.aura-adf-live-native.is-minimized { max-height: 116px; }
+
+@media (max-width: 760px) {
+  .aura-adf-live-native {
+    top: 64px;
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 82px);
+  }
+  .aura-adf-live-native__identity strong { font-size: 10px; letter-spacing: .09em; }
+  .aura-adf-live-native__actions button[data-adf-copy] { display: none; }
+  .aura-adf-live-native__meta {
+    grid-template-columns: 1fr 1fr;
+  }
+  .aura-adf-live-native__target { grid-column: 1 / -1; }
+  .aura-adf-live-native__terminal-wrap { height: calc(100vh - 320px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura-adf-live-native,
+  .aura-adf-live-native__pulse { transition: none; animation: none !important; }
+}

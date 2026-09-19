@@ -1,0 +1,265 @@
+/* AURA P0.6.2.4 — Response Quality & UX Consolidation */
+.aura-p0624-activity{position:absolute;z-index:31;top:14px;left:50%;width:min(520px,56vw);min-height:74px;padding:10px 13px 9px;border-radius:13px;opacity:0;pointer-events:none;transform:translate(-50%,-8px) scale(.985);transition:opacity .2s ease,transform .2s ease;background:linear-gradient(145deg,rgba(5,22,33,.96),rgba(8,9,25,.94));box-shadow:0 18px 55px rgba(0,0,0,.42),0 0 32px rgba(83,221,255,.06)}
+.aura-p0624-activity.show{opacity:1;transform:translate(-50%,0) scale(1)}
+.aura-p0624-activity.error{border-color:rgba(255,102,137,.32);box-shadow:0 18px 55px rgba(0,0,0,.42),0 0 32px rgba(255,86,126,.08)}
+.aura-p0624-activity-head{display:flex;align-items:center;justify-content:space-between;color:#5e8296;font-size:7px;letter-spacing:.17em}.aura-p0624-activity-head b{font-size:7px;color:#7beaff;font-weight:600}.aura-p0624-activity.error .aura-p0624-activity-head b{color:#ff829c}
+.aura-p0624-activity-body{display:flex;align-items:baseline;gap:10px;margin-top:5px;min-width:0}.aura-p0624-activity-body strong{font-size:11px;color:#d3f7ff;white-space:nowrap}.aura-p0624-activity-body small{font-size:8px;color:#67899b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aura-p0624-activity-track{height:2px;background:rgba(105,232,255,.10);margin-top:8px;overflow:hidden}.aura-p0624-activity-track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3f8cff,#6de8ff,#9a6cff);box-shadow:0 0 13px #6de8ff;transition:width .32s ease}
+.aura-p0624-activity-route{margin-top:6px;color:#607f91;font-size:7px;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.aura-p0624-activity-route[hidden]{display:none}
+.message.aura .aura-p0624-rich-text{word-break:break-word;border-radius:10px;margin:0;padding:9px 11px;font-size:10px;line-height:1.52;color:#bdeffa;background:#040f1ac7;border:1px solid #7e73ff1f;white-space:normal}
+.aura-p0624-rich-text p{border:0!important;background:transparent!important;padding:0!important;margin:0 0 7px!important;color:inherit!important;font:inherit!important;line-height:1.52!important;white-space:normal!important}.aura-p0624-rich-text p:last-child{margin-bottom:0!important}
+.aura-p0624-rich-text h2,.aura-p0624-rich-text h3,.aura-p0624-rich-text h4,.aura-p0624-rich-text h5{margin:9px 0 5px;color:#d9f9ff;font-weight:600;letter-spacing:.02em}.aura-p0624-rich-text h2{font-size:12px}.aura-p0624-rich-text h3{font-size:11px}.aura-p0624-rich-text h4,.aura-p0624-rich-text h5{font-size:10px}
+.aura-p0624-rich-text ul,.aura-p0624-rich-text ol{margin:5px 0 8px;padding-left:19px}.aura-p0624-rich-text li{margin:2px 0;padding-left:2px}.aura-p0624-rich-text li::marker{color:#62dff8}.aura-p0624-rich-text strong{color:#e5fbff;font-weight:650}.aura-p0624-rich-text em{color:#a9d9e6}.aura-p0624-rich-text code{font-family:Cascadia Code,Consolas,monospace;color:#b6f5ff;background:rgba(58,140,177,.12);border:1px solid rgba(105,232,255,.10);border-radius:4px;padding:1px 4px}.aura-p0624-rich-text pre{margin:7px 0;padding:8px 9px;border-radius:8px;overflow:auto;background:#010910;border:1px solid rgba(105,232,255,.12)}.aura-p0624-rich-text pre code{border:0;background:transparent;padding:0;white-space:pre}.aura-p0624-rich-text blockquote{margin:6px 0;padding:5px 9px;border-left:2px solid #8b72ff;color:#9fc8d4;background:rgba(120,94,255,.05)}.aura-p0624-rich-text a{color:#78e7ff;text-decoration:none;border-bottom:1px dotted rgba(120,231,255,.42)}
+.aura-p0624-route-badge{display:inline-flex!important;width:max-content;max-width:100%;margin:0 0 4px;padding:2px 6px;border:1px solid rgba(105,232,255,.13);border-radius:999px;background:rgba(2,14,22,.72);color:#5f8799!important;font-size:6px!important;letter-spacing:.12em!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.aura-p0624-route-badge[hidden]{display:none!important}
+@media (max-width:1050px){.aura-p0624-activity{width:min(460px,62vw)}}@media (max-width:760px){.aura-p0624-activity{left:12px;right:12px;width:auto;transform:translateY(-8px)}.aura-p0624-activity.show{transform:none}.aura-p0624-activity-body small{display:none}}
+
+/* ==========================================================================
+   AURA P0.6.2.4.3 — READABILITY + CONVERSATION DOCK
+   - Larger typography across the desktop experience
+   - Larger conversation workspace
+   - Composer always remains visible/clickable while Conversation is open
+   ========================================================================== */
+
+/* ---- Conversation: turn the floating card into a real readable workspace. */
+.workspace > .composer{
+  z-index:60;
+  height:82px;
+}
+.conversation{
+  z-index:24;
+  width:min(920px,76%);
+  height:min(690px,74%);
+  max-height:calc(100% - 28px);
+  bottom:14px;
+  left:18px;
+  display:flex;
+  flex-direction:column;
+}
+.conversation-head{
+  flex:0 0 60px;
+  height:60px;
+  padding:0 18px 0 21px;
+}
+.conversation-head span{font-size:11px}
+.conversation-head small{font-size:9px}
+.conversation-head button{
+  width:32px;
+  height:32px;
+  font-size:17px;
+}
+.messages{
+  flex:1 1 auto;
+  min-height:0;
+  max-height:none;
+  padding:18px 20px 22px;
+}
+.empty-conversation{
+  font-size:11px;
+  line-height:1.6;
+}
+.message{
+  max-width:94%;
+  margin-bottom:14px;
+}
+.message span{
+  font-size:8px;
+  margin-bottom:5px;
+}
+.message p,
+.message.aura .aura-p0624-rich-text{
+  padding:11px 13px;
+  font-size:12.5px;
+  line-height:1.58;
+}
+.aura-p0624-rich-text p{line-height:1.58!important}
+.aura-p0624-rich-text h2{font-size:16px}
+.aura-p0624-rich-text h3{font-size:14.5px}
+.aura-p0624-rich-text h4,
+.aura-p0624-rich-text h5{font-size:13px}
+.aura-p0624-rich-text ul,
+.aura-p0624-rich-text ol{
+  padding-left:23px;
+  margin:7px 0 10px;
+}
+.aura-p0624-rich-text li{margin:3px 0}
+.aura-p0624-route-badge{
+  font-size:8px!important;
+  padding:3px 7px;
+  margin-bottom:6px;
+}
+
+/* The composer has visual priority over every floating Conversation surface. */
+.composer-input-wrap textarea{
+  font-size:14.5px;
+  line-height:1.48;
+}
+.composer-input-wrap small{font-size:9.5px}
+.attach,.mic,.send{
+  width:43px;
+  height:43px;
+  font-size:17px;
+}
+
+/* Attachment chip follows the taller composer. */
+.aura-p0623-file-chip{
+  bottom:92px;
+  height:38px;
+}
+.aura-p0623-file-chip b{font-size:10.5px}
+.aura-p0623-file-chip small{font-size:8.5px}
+
+/* ---- Main shell readability. */
+.brand strong{font-size:18px}
+.brand small{font-size:9.5px}
+.mini-chip,
+.state-pill b{font-size:10px}
+.rail-btn small{font-size:8.5px}
+.core-label span{font-size:9.5px}
+.core-label strong{font-size:20px}
+.core-label small{font-size:10.5px}
+.boot-head,
+.boot-card small{font-size:9px}
+.panel-title span{font-size:10.5px}
+.panel-title i{font-size:8.5px}
+.metric label{font-size:8.5px}
+.metric strong{font-size:13px}
+.metric small{font-size:9.5px}
+.pcm-head{font-size:8.5px}
+.privacy p{font-size:8.5px;line-height:1.5}
+.privacy b{font-size:8.5px}
+.toast{font-size:10.5px}
+
+/* ---- Core activity HUD. */
+.aura-p0624-activity{
+  width:min(600px,62vw);
+  min-height:82px;
+  padding:12px 15px 10px;
+}
+.aura-p0624-activity-head,
+.aura-p0624-activity-head b{font-size:8.5px}
+.aura-p0624-activity-body strong{font-size:13px}
+.aura-p0624-activity-body small{font-size:9.5px}
+.aura-p0624-activity-route{font-size:8.5px}
+
+/* ---- PLAN / Productivity. */
+.aura-p0623-drawer{
+  width:min(500px,46vw);
+}
+.aura-p0623-drawer>header span{font-size:11px}
+.aura-p0623-drawer>header small{font-size:9px}
+.aura-p0623-drawer nav button{font-size:8.5px}
+.aura-p0623-form input,
+.aura-p0623-form textarea{
+  font-size:11px;
+  line-height:1.45;
+}
+.aura-p0623-form button{font-size:8.5px}
+.aura-p0623-row b{font-size:10.5px}
+.aura-p0623-row small{font-size:8.5px;line-height:1.45}
+.aura-p0623-empty,
+.aura-p0623-loading{font-size:10px}
+
+/* ---- Weather: preserve hierarchy, but remove the very small 7–9 px text. */
+.aura-weather-brand span,
+.aura-weather-location small,
+.aura-weather-metrics small,
+.aura-weather-synthesis header span,
+.aura-weather-hourly header span{font-size:10px}
+.aura-weather-brand strong{font-size:17px}
+.aura-weather-status{font-size:10px}
+.aura-weather-location strong{font-size:17px}
+.aura-weather-condition{font-size:16px}
+.aura-weather-feels{font-size:10.5px}
+.aura-weather-metrics strong{font-size:13.5px}
+.aura-weather-synthesis p{font-size:12.5px;line-height:1.6}
+.aura-weather-hourly-row article small{font-size:10px}
+.aura-weather-hourly-row article strong{font-size:15px}
+
+/* ---- Maps / Navigation: raise tiny labels while preserving cockpit hierarchy. */
+.aura-nav-brand span{font-size:9px}
+.aura-nav-brand strong{font-size:19px}
+.aura-nav-status{font-size:8.5px}
+.aura-nav-route-form label>span,
+.aura-nav-modes>span{font-size:8.5px}
+.aura-nav-input-row input{font-size:11.5px}
+.aura-nav-primary span{font-size:9px}
+.aura-nav-primary small{font-size:7.5px}
+.aura-navigation-workspace small{font-size:8px}
+.aura-navigation-workspace label{font-size:8.5px}
+
+/* ---- Responsive safeguards. */
+@media(max-width:1050px){
+  .conversation{
+    left:14px;
+    width:calc(100% - 28px);
+    height:min(650px,72%);
+  }
+  .aura-p0623-drawer{width:min(500px,calc(100% - 28px))}
+}
+@media(max-width:760px){
+  .conversation{
+    left:10px;
+    width:calc(100% - 20px);
+    height:68%;
+    max-height:calc(100% - 16px);
+    bottom:8px;
+  }
+  .messages{padding:14px 14px 18px}
+  .message p,
+  .message.aura .aura-p0624-rich-text{font-size:12px}
+}
+@media(max-height:720px){
+  .conversation{height:66%;max-height:66%}
+  .conversation-head{flex-basis:54px;height:54px}
+  .messages{padding-top:13px}
+}
+
+/* ==========================================================================
+   AURA P0.6.2.4.4 — WEATHER RAIL + CONVERSATION CLEARANCE
+   - Conversation no longer hides behind the composer
+   - Weather rail label becomes “Weather”
+   - Weather rail typography aligned with the other rail labels
+   ========================================================================== */
+
+/* Keep the full Conversation window above the composer instead of letting the
+   bottom rows disappear under the input bar. */
+.conversation{
+  bottom:102px;
+  height:min(660px,calc(100% - 122px));
+  max-height:calc(100% - 122px);
+}
+.messages{
+  padding:18px 20px 28px;
+}
+.aura-p0623-file-chip{
+  bottom:98px;
+}
+
+/* Responsive conversation clearance */
+@media(max-width:1050px){
+  .conversation{
+    bottom:98px;
+    height:min(620px,calc(100% - 116px));
+    max-height:calc(100% - 116px);
+  }
+}
+@media(max-width:760px){
+  .conversation{
+    bottom:92px;
+    height:calc(100% - 104px);
+    max-height:calc(100% - 104px);
+  }
+}
+@media(max-height:720px){
+  .conversation{
+    bottom:92px;
+    height:calc(100% - 106px);
+    max-height:calc(100% - 106px);
+  }
+}
+
+/* Consistent rail micro-typography */
+.rail-btn small{
+  line-height:1;
+}
+

@@ -1,0 +1,42 @@
+{
+  "schema": "aura.secure-skills-platform.final.v1",
+  "status": "CERTIFIED_V1_0_SECURE_SKILLS_PLATFORM_FINAL_ACCEPTANCE_LOCAL_DEPLOYMENT",
+  "generated_at": "2026-08-28T20:34:22",
+  "release_train": "v1.0 Secure Skills Platform",
+  "product_version": "1.0.2",
+  "local_deployment": "CERTIFIED",
+  "components": {
+    "v1.0.0": {
+      "manifest": "f8305b0a35634ef6587b9f9a17abb98838d6ca0ff121d65d8745cd7b8593cbcf",
+      "registry": "96a5ea3dcb38d9cfc6d212d883b129832e2d9a0d01f6ae38a990dd001c76a58a",
+      "cert": "6e950a885515896b2b3358e2b14354b66e159479240477d50236a20c47455eb2"
+    },
+    "v1.0.1": {
+      "runtime": "50335b7643a94e5d907fae69565d09f74e7d312bd71b50007e8b90af9e932b68",
+      "cert": "d9c59b9d95cf4969e6f8413215598eb9cc34fe794a9211a5ab16ed3e76307ccb"
+    },
+    "v1.0.2": {
+      "developer_contract": "d85a3f4587d675fa08d414a52199faad99d0c7f5fc293a41c2db36454cba2ec3",
+      "lifecycle": "70aec18373009368bf622da3bbf78dd91ffe3b00a5879fe69e9c10553b893142",
+      "cert": "a3f0c6086f269ee91b765445f771f87004e7643201bc497450c57fc3bfa6e8b7"
+    },
+    "final_invariant": "cf3337b6e4633003f3e83fa489feaf36e323fd8fee77caf5fc6d211cef6a791e"
+  },
+  "security_contract": {
+    "single_execution_path": "SecureSkillRuntimeV101 -> IntegrationRegistry.execute_integration",
+    "dynamic_skill_code": "FORBIDDEN",
+    "direct_python_execution": "FORBIDDEN",
+    "direct_subprocess_execution": "FORBIDDEN",
+    "direct_network_stack": "FORBIDDEN"
+  },
+  "identity": {
+    "canonical": "1.0.2",
+    "display": "v1.0.2",
+    "spoken_verified": true,
+    "stale_surfaces": 0
+  },
+  "existing_runtime_security_core_modified": false,
+  "external_network": "NOT USED",
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "next_state": "V1_0_SECURE_SKILLS_PLATFORM_COMPLETE_READY_FOR_NEXT_ROADMAP_BLOCK"
+}

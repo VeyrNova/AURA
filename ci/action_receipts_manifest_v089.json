@@ -1,0 +1,89 @@
+{
+  "schema": "aura.action-receipts.v089.v1",
+  "milestone": "AURA v0.8.9 Action Receipts + Capability Context",
+  "product_version_during_d2": "0.8.8",
+  "canonical_authority": "action_receipts.service.ActionReceiptService",
+  "models": [
+    "ActionReceipt",
+    "CapabilityContext",
+    "ActionReceiptEvent"
+  ],
+  "statuses": [
+    "requested",
+    "waiting_confirmation",
+    "denied",
+    "running",
+    "succeeded",
+    "failed",
+    "cancelled"
+  ],
+  "operations": [
+    "begin_receipt",
+    "record_receipt",
+    "complete_receipt",
+    "fail_receipt",
+    "get_receipt",
+    "list_receipts",
+    "build_capability_context",
+    "resolve_capability"
+  ],
+  "integration": {
+    "MissionEngine": "ActionReceiptMissionAdapter only",
+    "MissionEngine_rewritten": false,
+    "TaskEvidence_preserved": true,
+    "SecurityPolicyEngine_rewritten": false,
+    "SecurityPolicyEngine_authority_preserved": true
+  },
+  "security": {
+    "receipt_before_authorization": true,
+    "unknown_policy_fail_closed": true,
+    "require_confirmation_pauses": true,
+    "auto_confirmation": false,
+    "raw_sensitive_params_persisted": false,
+    "raw_result_payloads_persisted": false
+  },
+  "persistence": {
+    "store": "ActionReceiptStore",
+    "tables": [
+      "action_receipts",
+      "action_receipt_events"
+    ],
+    "d2_user_database_modified": false,
+    "d2_synthetic_temp_database_only": true
+  },
+  "written_at": "2026-08-26T12:33:47",
+  "files": {
+    "package_init": {
+      "path": "C:\\AURA GPT version\\action_receipts\\__init__.py",
+      "sha256": "b2fe068ba692daa74a9affa69c6acf13ee594f1d2f680752b87e0e2b3a10dad4"
+    },
+    "authority": {
+      "path": "C:\\AURA GPT version\\action_receipts\\service.py",
+      "sha256": "4c0f13eefaa6351eca157235d3b0ceea5643474a8cbf0cdb7401c1d71b34023e"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_action_receipts_v089.py",
+      "sha256": "e8f6b7a9389ed978850d8978d308e37133a3063bcf7a8e968b1546346e167168"
+    }
+  },
+  "parent_authority_hashes": {
+    "core_version": "ee50cf8886c5566f925bbb76f333f9614ef12b837102388e058f5634affa1ce6",
+    "baseline_v088": "179c29b3691bc373983c665dd76840e206a88a8d108010b4346844bc79889c9c",
+    "mission_invariant": "477080531e09b917785398501df1f665f404df45b9642c919b9fe8daa608b126",
+    "security_invariant": "3e4e78b94cf365c5e9c5c92101354b3ec48e1ba0815c2ceaea1ef54b0bfd6766",
+    "memory_invariant": "374edb3259a6933e7863e5eba27e37a3d984c334f1172fe00fae29ff620804ca",
+    "visual_invariant": "6f7ec45eebd7ee1d7e11756aec57be5fefe2b2515783f168822b85b60b35d0dc",
+    "spoken_invariant": "dc14c01c439c3afb51ba0c4f5691c72e52a5dfa8c31db90bfea067680860c2b2",
+    "fast_lane": "b8dc5f933491e45e284829c3a936b73fdee688f870acc9c9f58aa74665181997",
+    "user_db": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb"
+  },
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "certified_at": "2026-08-26T12:48:14",
+  "last_verified_product_version": "0.9.2.2.1",
+  "reverified_at": "2026-08-26T18:38:22",
+  "reverified_at_v0922": "2026-08-27T18:20:54",
+  "reverified_at_v09221": "2026-08-27T19:00:45",
+  "reverified_at_v093": "2026-08-27T20:46:17",
+  "reverified_at_v094": "2026-08-28T10:06:06"
+}
