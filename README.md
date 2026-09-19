@@ -1,28 +1,28 @@
-<p align="center">
-  <img src="ui/assets/branding/aura_icon_wordmark_lockup.svg" alt="AURA" width="520">
-</p>
+<div align="center">
 
-<h1 align="center">AURA</h1>
+<img src="ui/assets/branding/aura_icon_wordmark_lockup.svg" alt="AURA" width="340">
 
-<p align="center">
-  <strong>A local-first, voice-enabled AI assistant for Windows with persistent memory, secure desktop control, connected services, multimodal workspaces and a supervised developer fabric.</strong>
-</p>
+### Local-first AI for Windows
 
-<p align="center">
-  <img alt="AURA v2.3" src="https://img.shields.io/badge/AURA-v2.3-6f42c1?style=flat-square">
-  <img alt="Runtime v3" src="https://img.shields.io/badge/Intelligence_Runtime-v3-1f6feb?style=flat-square">
-  <img alt="Windows" src="https://img.shields.io/badge/Platform-Windows-0078D4?style=flat-square&logo=windows11&logoColor=white">
-  <img alt="Python 3.14" src="https://img.shields.io/badge/Python-3.14-3776AB?style=flat-square&logo=python&logoColor=white">
-  <img alt="License" src="https://img.shields.io/badge/License-All_Rights_Reserved-555?style=flat-square">
-</p>
+**Voice · Memory · Secure Desktop Control · Connected Services · Developer Fabric**
 
-<p align="center">
-  <a href="#features">Features</a> ·
-  <a href="#architecture">Architecture</a> ·
-  <a href="#security--privacy">Security</a> ·
-  <a href="#configuration">Configuration</a> ·
-  <a href="#development--testing">Development</a>
-</p>
+<br>
+
+<img alt="AURA v2.3" src="https://img.shields.io/badge/AURA-v2.3-6f42c1?style=flat-square">
+<img alt="Runtime v3" src="https://img.shields.io/badge/Intelligence_Runtime-v3-1f6feb?style=flat-square">
+<img alt="Windows" src="https://img.shields.io/badge/Platform-Windows-0078D4?style=flat-square&logo=windows11&logoColor=white">
+<img alt="Python 3.14" src="https://img.shields.io/badge/Python-3.14-3776AB?style=flat-square&logo=python&logoColor=white">
+<img alt="License" src="https://img.shields.io/badge/License-All_Rights_Reserved-555?style=flat-square">
+
+<br><br>
+
+<a href="#features">Features</a> ·
+<a href="#architecture">Architecture</a> ·
+<a href="#security--privacy">Security</a> ·
+<a href="#configuration">Configuration</a> ·
+<a href="#development--testing">Development</a>
+
+</div>
 
 ---
 
