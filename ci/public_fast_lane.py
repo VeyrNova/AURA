@@ -113,7 +113,19 @@ def check_env_example() -> tuple[bool, list[str]]:
         key, value = line.split("=", 1)
         key = key.strip().upper()
         value = value.strip()
-        if any(word in key for word in ("KEY", "TOKEN", "SECRET", "PASSWORD")) and value:
+
+        # Public templates may contain explicit non-secret policy values such as
+        # AURA_ALLOW_PROFILE_EXPORT_SECRETS=false. Only credential-like values
+        # should fail the gate.
+        safe_literals = {
+            "", "false", "0", "no", "off", "disabled", "none", "null",
+            "changeme", "change_me", "your_key_here", "your_api_key_here",
+            "replace_me", "example", "<key>", "<token>", "<secret>",
+        }
+        if (
+            any(word in key for word in ("KEY", "TOKEN", "SECRET", "PASSWORD"))
+            and value.casefold() not in safe_literals
+        ):
             bad.append(key)
     return not bad, bad
 
