@@ -29,3 +29,7 @@ Lancer :
 Puis envoyer :
 
 `AURA_V0_8_6_3_D1_1_CLEAN_RUNTIME_METADATA_RESULT.json`
+
+## License
+
+AURA is distributed under an **All Rights Reserved** proprietary license. See `LICENSE` for details.
