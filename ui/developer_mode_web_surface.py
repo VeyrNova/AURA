@@ -5,7 +5,7 @@ from typing import Any
 import json
 import os
 
-ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
 DEV_ACCENT = "#F0A23A"
 DEV_ACCENT_BRIGHT = "#F6B85F"
 MAX_WEBVIEWS = 8
