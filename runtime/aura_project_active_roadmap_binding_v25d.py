@@ -11,7 +11,7 @@ from runtime.aura_roadmap_service import RoadmapService
 from runtime.aura_roadmap_schedule_engine import RoadmapScheduleEngine
 
 BINDING_SCHEMA = "aura.project-active.roadmap-binding.v25d.v1"
-DEFAULT_ROOT = Path(r"C:\AURA GPT version")
+DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 UI_VERSION = "v0.7.2.2-rc4.2"
 SNAPSHOT_NAME = "workspace_project_active_v130.json"
 
