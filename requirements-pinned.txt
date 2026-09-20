@@ -1,5 +1,1 @@
-# Direct dependency versions observed in the supplied Windows environment.
-# Use this file when you want a reproducible AURA core environment.
-PySide6==6.11.1
-python-dotenv==1.2.2
-requests==2.34.2
+# Direct dependency versions observed in the certified AURA reference environment.\n# Transitive reproducibility is enforced by requirements/locks/windows-py314-core-exact.lock.txt.\nPySide6==6.11.1\npython-dotenv==1.2.2\nrequests==2.34.2\npsutil==7.2.2\n

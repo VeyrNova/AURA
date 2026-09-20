@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 import sys
 
-ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parent).resolve()
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 

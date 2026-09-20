@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 
 SCHEMA = "aura.roadmap.developer-certifier.rm26.v1"
-DEFAULT_ROOT = Path(r"C:\AURA GPT version")
+DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 
 
 class RoadmapDeveloperCertificationError(RuntimeError):

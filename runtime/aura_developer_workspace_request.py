@@ -5,7 +5,7 @@ import json
 import os
 import time
 
-ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
 
 def request_path(root: Path | str | None = None) -> Path:
     base = Path(root).resolve() if root is not None else ROOT

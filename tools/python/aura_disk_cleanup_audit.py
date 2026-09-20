@@ -13,9 +13,9 @@ HERE = Path(__file__).resolve().parent
 RESULT_JSON = HERE / "AURA_DISK_CLEANUP_AUDIT_RESULT.json"
 RESULT_TXT = HERE / "AURA_DISK_CLEANUP_AUDIT_RESULT.txt"
 
-AURA_ROOT = Path(r"C:\AURA GPT version")
-LOCALAPPDATA = Path(os.environ.get("LOCALAPPDATA", r"C:\Users\Public\AppData\Local"))
-USERPROFILE = Path(os.environ.get("USERPROFILE", r"C:\Users\Public"))
+AURA_ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[2]).resolve()
+LOCALAPPDATA = Path(os.environ.get("LOCALAPPDATA") or (Path.home() / "AppData" / "Local"))
+USERPROFILE = Path(os.environ.get("USERPROFILE") or Path.home())
 TEMP = Path(os.environ.get("TEMP", str(LOCALAPPDATA / "Temp")))
 
 # Read-only audit. No path below is ever deleted or modified.

@@ -33,7 +33,7 @@ from runtime.aura_fabric_coding_agent_session import (
     runtime_readiness_snapshot,
 )
 
-ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
 BINDING_ID = "ADF-H-R7.2.11-GENERAL-CODING-FABRIC-BINDING"
 PRIMARY_AGENT_ID = "claude_code"
 FALLBACK_AGENT_ID = "aider"

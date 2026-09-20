@@ -7,7 +7,7 @@ from integrations.channel_analytics_publishing import (
     ChannelAnalyticsPublishingProvider,
 )
 
-DEFAULT_SNAPSHOT = Path(r"C:\AURA GPT version\data\youtube\neural_echo_youtube_snapshot_v150.json")
+DEFAULT_SNAPSHOT = Path(__file__).resolve().parents[1] / "data" / "youtube" / "neural_echo_youtube_snapshot_v150.json"
 
 
 def register_channel_analytics_publishing_provider_v151(

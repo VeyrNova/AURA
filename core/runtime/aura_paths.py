@@ -85,6 +85,34 @@ def _default_roaming_appdata(env: Mapping[str, str]) -> Path:
         return _resolve(Path.home() / "AppData" / "Roaming")
     return _resolve(Path.home() / ".config")
 
+def _is_ui_root(path: Path) -> bool:
+    return (
+        path.is_dir()
+        and (path / "tools" / "launch_shell.py").is_file()
+        and (path / "tools" / "shell_host.py").is_file()
+    )
+
+
+def _embedded_ui_root(core: Path) -> Path:
+    """Resolve the Chromium UI shipped inside a source checkout."""
+    chromium = core / "ui" / "chromium"
+    candidates = []
+    if chromium.is_dir():
+        try:
+            candidates = sorted(
+                (p for p in chromium.iterdir() if _is_ui_root(p)),
+                key=lambda p: p.name.casefold(),
+                reverse=True,
+            )
+        except OSError:
+            candidates = []
+    if candidates:
+        return _resolve(candidates[0])
+
+    legacy = core / "ui"
+    return _resolve(legacy)
+
+
 
 class AuraPaths:
     """Central path resolver. P0.8.5.2.1 is resolution-only: it does not move data."""
@@ -153,7 +181,7 @@ class AuraPaths:
         aura_roaming = roaming / "AURA"
 
         if mode == "portable":
-            default_ui = core / "ui"
+            default_ui = _embedded_ui_root(core)
             default_data = core / "data"
             default_config = core / "config"
             default_models = core / "models"
@@ -169,10 +197,11 @@ class AuraPaths:
             default_logs = aura_local / "logs"
             default_temp = aura_local / "runtime" / "tmp"
 
-        # P0.8.5.2.2 — portable UI precedence.
-        # Installed mode may use the machine-local current.json locator.
-        # Portable mode must never be hijacked by an old installed locator.
+        # Prefer configured/deployed UI, but a clean source checkout must
+        # remain launchable without a machine-local current.json installation.
+        embedded_ui = _embedded_ui_root(core)
         ui = None
+
         if e.get("AURA_UI_ROOT"):
             ui = _resolve(Path(e["AURA_UI_ROOT"]))
         elif mode == "portable":
@@ -183,12 +212,12 @@ class AuraPaths:
                     raw = payload.get("ui_root")
                     if raw:
                         candidate = _resolve(Path(raw))
-                        if candidate.is_dir():
+                        if _is_ui_root(candidate):
                             ui = candidate
                 except Exception:
                     ui = None
-            if ui is None:
-                ui = _resolve(default_ui)
+            if ui is None and _is_ui_root(embedded_ui):
+                ui = embedded_ui
         else:
             current = aura_local / "ui" / "current.json"
             if current.is_file():
@@ -197,10 +226,17 @@ class AuraPaths:
                     raw = payload.get("ui_root")
                     if raw:
                         candidate = _resolve(Path(raw))
-                        if candidate.is_dir():
+                        if _is_ui_root(candidate):
                             ui = candidate
                 except Exception:
                     ui = None
+
+            installed_default = _resolve(default_ui)
+            if ui is None and _is_ui_root(installed_default):
+                ui = installed_default
+            if ui is None and _is_ui_root(embedded_ui):
+                ui = embedded_ui
+
         if ui is None:
             ui = _resolve(default_ui)
 

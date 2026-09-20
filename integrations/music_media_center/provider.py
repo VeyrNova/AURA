@@ -16,7 +16,7 @@ class MusicMediaCenterProvider:
         default_index = Path(
             os.environ.get(
                 "AURA_M180_MEDIA_INDEX",
-                r"C:\AURA GPT version\data\media\local_media_index_v180.json",
+                str(Path(__file__).resolve().parents[2] / "data" / "media" / "local_media_index_v180.json"),
             )
         )
         self.index_path = Path(index_path or default_index).expanduser().resolve()
@@ -192,7 +192,7 @@ class MusicMediaCenterProvider(_AURA_M180_R3_BASE_PROVIDER):
                 session_path=Path(
                     os.environ.get(
                         "AURA_M180_PLAYER_SESSION",
-                        r"C:\AURA GPT version\data\media\player_session_v180.json",
+                        str(Path(__file__).resolve().parents[2] / "data" / "media" / "player_session_v180.json"),
                     )
                 ),
             )
@@ -212,7 +212,7 @@ class MusicMediaCenterProvider(_AURA_M180_R3_BASE_PROVIDER):
                 session_path=Path(
                     os.environ.get(
                         "AURA_M180_PLAYER_SESSION",
-                        r"C:\AURA GPT version\data\media\player_session_v180.json",
+                        str(Path(__file__).resolve().parents[2] / "data" / "media" / "player_session_v180.json"),
                     )
                 ),
             )
@@ -373,7 +373,7 @@ class MusicMediaCenterProvider(_AURA_M180_UI4_R3_R1_BASE_PROVIDER):
             session_path=Path(
                 os.environ.get(
                     "AURA_M180_PLAYER_SESSION",
-                    r"C:\AURA GPT version\data\media\player_session_v180.json",
+                    str(Path(__file__).resolve().parents[2] / "data" / "media" / "player_session_v180.json"),
                 )
             ),
         )
@@ -433,7 +433,7 @@ class MusicMediaCenterProvider(_AURA_M180_UI4_R3_BASE_PROVIDER):
             session_path=Path(
                 os.environ.get(
                     "AURA_M180_PLAYER_SESSION",
-                    r"C:\AURA GPT version\data\media\player_session_v180.json",
+                    str(Path(__file__).resolve().parents[2] / "data" / "media" / "player_session_v180.json"),
                 )
             ),
         )

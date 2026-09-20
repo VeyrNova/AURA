@@ -6,7 +6,7 @@ import unicodedata
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-DEFAULT_ROOT = Path(r"C:\AURA GPT version")
+DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _fold(value: Any) -> str:

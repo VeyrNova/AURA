@@ -12,7 +12,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 
-ROOT = Path(r"C:\AURA GPT version")
+ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "media"
 PLAYLIST = DATA / "premium_playlist_v180.json"
 LIBRARY_STATE = DATA / "premium_library_state_v180.json"

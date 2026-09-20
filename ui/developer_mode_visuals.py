@@ -15,7 +15,7 @@ except Exception:
     Qt = None
     QLabel = QFrame = QLineEdit = QTextEdit = QPlainTextEdit = object
 
-ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
 DEV_ACCENT = "#F0A23A"
 DEV_ACCENT_SOFT = "rgba(240, 162, 58, 0.20)"
 DEV_PANEL = "rgba(13, 16, 24, 0.94)"
