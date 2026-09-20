@@ -14,7 +14,7 @@ from runtime.aura_roadmap_service import (
 from runtime.aura_roadmap_schedule_engine import RoadmapScheduleEngine
 
 BRIDGE_SCHEMA = "aura.roadmap.http-bridge.v25e1.v1"
-DEFAULT_ROOT = Path(r"C:\AURA GPT version")
+DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 ID_RE = re.compile(r"^[A-Za-z0-9._-]{1,48}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}(?:[T ].{1,40})?$")
 
