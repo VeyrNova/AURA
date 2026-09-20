@@ -1,3 +1,1 @@
-PySide6>=6.6.0
-python-dotenv>=1.0.0
-requests>=2.31.0
+# AURA certified Windows/Python 3.14 core dependency closure.\n# For voice/GPU/document profiles, use INSTALL_AURA.bat or docs/INSTALLATION.md.\n-r requirements/locks/windows-py314-core-exact.lock.txt\n
