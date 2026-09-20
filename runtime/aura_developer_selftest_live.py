@@ -11,7 +11,7 @@ import tempfile
 import time
 import unicodedata
 
-ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
 STATE_DIR = ROOT / "runtime" / "developer_fabric"
 STATE_FILE = STATE_DIR / "live_selftest_transaction_state.json"
 TARGET_REL = "runtime/developer_fabric/selftest_dev_patch.py"
