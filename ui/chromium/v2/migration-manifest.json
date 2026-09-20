@@ -8,7 +8,7 @@
   "phases": [
     {
       "id": "foundation",
-      "status": "active",
+      "status": "complete",
       "scope": [
         "state-contract",
         "event-bus",
@@ -19,13 +19,15 @@
     },
     {
       "id": "shell-parity",
-      "status": "pending",
+      "status": "active",
       "scope": [
         "topbar",
         "navigation",
         "orb",
         "conversation",
-        "composer"
+        "composer",
+        "telemetry",
+        "shell-geometry"
       ]
     },
     {
@@ -73,6 +75,15 @@
         "rollback"
       ]
     }
+  ],
+  "shell_components": [
+    "top-bar",
+    "primary-nav",
+    "neural-orb",
+    "telemetry-panel",
+    "conversation-surface",
+    "composer",
+    "aura-shell"
   ],
   "forbidden_activation_references": [
     "aura_paths.py",

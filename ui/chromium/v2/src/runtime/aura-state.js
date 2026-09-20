@@ -16,20 +16,36 @@ export const AURA_UI_STATES = Object.freeze([
   "OFFLINE",
 ]);
 
+export const AURA_WORKSPACES = Object.freeze([
+  "home",
+  "talk",
+  "activity",
+  "apps",
+]);
+
 const STATE_SET = new Set(AURA_UI_STATES);
+const WORKSPACE_SET = new Set(AURA_WORKSPACES);
 
 function normalizeState(value) {
   const next = String(value || "IDLE").trim().toUpperCase();
   return STATE_SET.has(next) ? next : "IDLE";
 }
 
+function normalizeWorkspace(value) {
+  const next = String(value || "home").trim().toLowerCase();
+  return WORKSPACE_SET.has(next) ? next : "home";
+}
+
 export function createAuraState(initial = {}) {
   let snapshot = Object.freeze({
     state: normalizeState(initial.state || "IDLE"),
     mode: initial.mode === "developer" ? "developer" : "normal",
+    workspace: normalizeWorkspace(initial.workspace || "home"),
     activity: String(initial.activity || "AURA prête"),
     runtime: String(initial.runtime || "Local"),
-    voice: String(initial.voice || "Prête"),
+    route: String(initial.route || "LOCAL RUNTIME"),
+    voice: String(initial.voice || "Ready"),
+    provider: String(initial.provider || "Local / Cloud"),
   });
 
   const listeners = new Set();
@@ -53,22 +69,20 @@ export function createAuraState(initial = {}) {
     },
     setState(value, activity) {
       const next = { state: normalizeState(value) };
-      if (activity !== undefined) {
-        next.activity = String(activity);
-      }
+      if (activity !== undefined) next.activity = String(activity);
       return publish(next);
     },
     setMode(mode) {
       return publish({ mode: mode === "developer" ? "developer" : "normal" });
     },
+    setWorkspace(workspace) {
+      return publish({ workspace: normalizeWorkspace(workspace) });
+    },
     update(patch = {}) {
       const next = { ...patch };
-      if ("state" in next) {
-        next.state = normalizeState(next.state);
-      }
-      if ("mode" in next) {
-        next.mode = next.mode === "developer" ? "developer" : "normal";
-      }
+      if ("state" in next) next.state = normalizeState(next.state);
+      if ("mode" in next) next.mode = next.mode === "developer" ? "developer" : "normal";
+      if ("workspace" in next) next.workspace = normalizeWorkspace(next.workspace);
       return publish(next);
     },
   });

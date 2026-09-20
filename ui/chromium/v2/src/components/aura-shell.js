@@ -1,74 +1,62 @@
 import { createNeuralOrb } from "./neural-orb.js";
+import { createTopBar } from "./top-bar.js";
+import { createPrimaryNav } from "./primary-nav.js";
+import { createTelemetryPanel } from "./telemetry-panel.js";
+import { createConversationSurface } from "./conversation-surface.js";
+import { createComposer } from "./composer.js";
 
-export function createAuraShell() {
-  const root = document.createElement("main");
-  root.className = "aura-v2-shell";
-  root.dataset.mode = "normal";
+export function createAuraShell({ onWorkspace } = {}) {
+  const element = document.createElement("div");
+  element.className = "aura-v2-shell";
+  element.dataset.mode = "normal";
 
-  root.innerHTML = `
-    <header class="aura-v2-topbar">
-      <div class="aura-v2-brand">
-        <strong>AURA</strong>
-        <span>PERSONAL INTELLIGENCE</span>
+  const topBar = createTopBar();
+  const primaryNav = createPrimaryNav({ onWorkspace });
+  const telemetry = createTelemetryPanel();
+  const conversation = createConversationSurface();
+  const composer = createComposer();
+  const neuralOrb = createNeuralOrb();
+
+  const workspace = document.createElement("main");
+  workspace.className = "aura-v2-workspace";
+  workspace.innerHTML = `
+    <section class="aura-v2-hero">
+      <div class="aura-v2-scanlines" aria-hidden="true"></div>
+      <div class="aura-v2-core-label">
+        <span>NEURAL CORE</span>
+        <strong data-role="core-state">IDLE</strong>
+        <small>UI V2 shell parity preview</small>
       </div>
-      <div class="aura-v2-topbar__status">
-        <span class="aura-v2-status-dot"></span>
-        <span data-role="runtime">Local</span>
-      </div>
-    </header>
-
-    <nav class="aura-v2-nav" aria-label="Navigation principale">
-      <button type="button" data-workspace="home" aria-current="page">Accueil</button>
-      <button type="button" data-workspace="activity">Activité</button>
-      <button type="button" data-workspace="memory">Mémoire</button>
-      <button type="button" data-workspace="apps">Apps</button>
-    </nav>
-
-    <section class="aura-v2-stage" aria-live="polite">
       <div class="aura-v2-orb-slot" data-role="orb"></div>
-      <p class="aura-v2-activity" data-role="activity">AURA prête</p>
-      <h1>Comment puis-je t'aider ?</h1>
-    </section>
-
-    <section class="aura-v2-conversation" aria-label="Conversation">
-      <div class="aura-v2-empty">
-        La migration V2 est encore dormante. Cette surface sert de fondation structurelle.
+      <div class="aura-v2-stage-copy">
+        <p data-role="activity">AURA prête</p>
+        <h1 data-role="headline">Comment puis-je t'aider ?</h1>
       </div>
     </section>
-
-    <footer class="aura-v2-composer">
-      <button type="button" aria-label="Ajouter une pièce jointe" disabled>+</button>
-      <label>
-        <span class="sr-only">Message</span>
-        <textarea rows="1" placeholder="Écris à AURA…" disabled></textarea>
-      </label>
-      <button type="button" aria-label="Parler" disabled>●</button>
-      <button type="button" aria-label="Envoyer" disabled>➤</button>
-    </footer>
-
-    <aside class="aura-v2-developer" data-role="developer" hidden>
-      <strong>Developer Mode</strong>
-      <dl>
-        <div><dt>State</dt><dd data-role="debug-state">IDLE</dd></div>
-        <div><dt>Runtime</dt><dd>Foundation / dormant</dd></div>
-        <div><dt>Transport</dt><dd>Not connected</dd></div>
-      </dl>
-    </aside>
   `;
 
-  const neuralOrb = createNeuralOrb();
-  root.querySelector('[data-role="orb"]').append(neuralOrb.element);
+  workspace.querySelector('[data-role="orb"]').append(neuralOrb.element);
+  workspace.append(telemetry.element, conversation.element, composer.element);
+  element.append(topBar.element, primaryNav.element, workspace);
 
   return Object.freeze({
-    element: root,
+    element,
     render(snapshot) {
-      root.dataset.mode = snapshot.mode;
-      root.dataset.state = snapshot.state;
-      root.querySelector('[data-role="runtime"]').textContent = snapshot.runtime;
-      root.querySelector('[data-role="activity"]').textContent = snapshot.activity;
-      root.querySelector('[data-role="debug-state"]').textContent = snapshot.state;
-      root.querySelector('[data-role="developer"]').hidden = snapshot.mode !== "developer";
+      element.dataset.mode = snapshot.mode;
+      element.dataset.state = snapshot.state;
+      element.dataset.workspace = snapshot.workspace;
+
+      topBar.render(snapshot);
+      primaryNav.render(snapshot);
+      telemetry.render(snapshot);
+      conversation.render(snapshot);
+      composer.render(snapshot);
       neuralOrb.setState(snapshot.state);
+
+      workspace.querySelector('[data-role="core-state"]').textContent = snapshot.state;
+      workspace.querySelector('[data-role="activity"]').textContent = snapshot.activity;
+      workspace.querySelector('[data-role="headline"]').textContent =
+        snapshot.workspace === "talk" ? "Conversation avec AURA" : "Comment puis-je t'aider ?";
     },
   });
 }
