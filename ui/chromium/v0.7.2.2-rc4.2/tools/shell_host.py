@@ -3951,7 +3951,10 @@ def make_handler(rt:ShellRuntime):
                 if not self.auth():return self.send_json(403,{'ok':False})
                 try:
                     import pathlib as _adfp, json as _adfj
-                    _root=_adfp.Path('C:\\AURA GPT version')
+                    _root_raw=str(os.environ.get('AURA_ROOT') or '').strip()
+                    if not _root_raw:
+                        return self.send_json(503,{'ok':False,'error':'aura_root_unavailable'})
+                    _root=_adfp.Path(_root_raw).expanduser().resolve(strict=False)
                     _state={'schema':'aura.developer-mode-state.v1','enabled':False}
                     _sp=_root/'runtime'/'developer_fabric'/'developer_mode_state.json'
                     if _sp.is_file():
