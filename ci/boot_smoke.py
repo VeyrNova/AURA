@@ -93,6 +93,7 @@ def main() -> int:
     required = {
         "venv_python": ROOT / "venv" / "Scripts" / "python.exe",
         "lifecycle": ROOT / "runtime" / "aura_ui_host_lifecycle_v200.py",
+        "transport": ROOT / "runtime" / "aura_ui_host_transport_v200.py",
         "intent": ROOT / "runtime" / "aura_conversation_intent_handoff_v200.py",
         "ui_launcher": ROOT / "launch_aura_ui_v0722_rc42.py",
         "run_bat": ROOT / "RUN_AURA.bat",
