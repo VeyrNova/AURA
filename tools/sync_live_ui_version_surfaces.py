@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(
     os.environ.get("AURA_ROOT")
-    or r"C:\AURA GPT version"
+    or Path(__file__).resolve().parents[1]
 ).resolve()
 
 if str(ROOT) not in sys.path:
