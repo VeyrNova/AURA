@@ -3,7 +3,7 @@ import hashlib, ipaddress, json, os, shutil, subprocess, time, urllib.request
 from datetime import datetime
 from pathlib import Path
 
-ROOT=Path(r"C:\AURA GPT version")
+ROOT=Path(__file__).resolve().parents[1]
 BRIDGE=ROOT/"runtime"/"aura_healthkit_bridge_v185.py"
 ROADMAP=ROOT/"data"/"roadmap"/"aura_master_roadmap_v2.json"
 SCHEDULE=ROOT/"data"/"roadmap"/"aura_roadmap_schedule_state.json"
