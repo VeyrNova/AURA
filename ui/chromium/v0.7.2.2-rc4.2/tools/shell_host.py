@@ -3456,7 +3456,7 @@ def make_handler(rt:ShellRuntime):
                 except Exception:return self.send_json(400,{'ok':False,'error':'invalid_json'})
                 try:
                     _text=str(data.get('text') or '').strip()
-                    _root=Path(r'C:\AURA GPT version')
+                    _root=Path(os.environ.get('AURA_ROOT') or Path(__file__).resolve().parents[4]).resolve()
                     if str(_root) not in sys.path:sys.path.insert(0,str(_root))
                     from runtime.aura_roadmap_conversation_v25f import handle_roadmap_conversation_v25f
                     _result=handle_roadmap_conversation_v25f(_text,root=_root)
@@ -3477,7 +3477,7 @@ def make_handler(rt:ShellRuntime):
                 try:data=self.read_json(65536)
                 except Exception:return self.send_json(400,{'ok':False,'error':'invalid_json'})
                 try:
-                    _root=Path(r'C:\AURA GPT version')
+                    _root=Path(os.environ.get('AURA_ROOT') or Path(__file__).resolve().parents[4]).resolve()
                     if str(_root) not in sys.path:sys.path.insert(0,str(_root))
                     from runtime.aura_roadmap_http_bridge_v25e import RoadmapHttpBridgeV25E
                     _result=RoadmapHttpBridgeV25E(root=_root).mutate(data)
@@ -3713,7 +3713,7 @@ def make_handler(rt:ShellRuntime):
                         self.end_headers()
                         self.wfile.write(_aura_r62_payload)
                         return
-                    _aura_r62_root = _AuraR62Path(_aura_r62_os.environ.get('AURA_ROOT') or r'C:\AURA GPT version')
+                    _aura_r62_root = _AuraR62Path(_aura_r62_os.environ.get('AURA_ROOT') or _AuraR62Path(__file__).resolve().parents[4]).resolve()
                     _aura_r62_state_file = _aura_r62_root / 'runtime' / 'developer_fabric' / 'live_selftest_transaction_state.json'
                     _aura_r62_state = _aura_r62_json.loads(_aura_r62_state_file.read_text(encoding='utf-8')) if _aura_r62_state_file.is_file() else {'pending': None, 'last_receipt': None, 'last_rollback': None}
                     _aura_r62_payload = _aura_r62_json.dumps({'ok': True, 'state': _aura_r62_state}, ensure_ascii=False).encode('utf-8')
@@ -3988,7 +3988,7 @@ def make_handler(rt:ShellRuntime):
             if path=='/api/roadmap':
                 if not self.auth():return self.send_json(403,{'ok':False,'error':'forbidden'})
                 try:
-                    _root=Path(r'C:\AURA GPT version')
+                    _root=Path(os.environ.get('AURA_ROOT') or Path(__file__).resolve().parents[4]).resolve()
                     if str(_root) not in sys.path:sys.path.insert(0,str(_root))
                     from runtime.aura_roadmap_http_bridge_v25e import RoadmapHttpBridgeV25E
                     return self.send_json(200,RoadmapHttpBridgeV25E(root=_root).snapshot())
