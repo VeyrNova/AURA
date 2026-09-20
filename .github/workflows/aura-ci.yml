@@ -33,10 +33,42 @@ jobs:
         shell: pwsh
         run: python ci/repository_integrity_gate.py
 
-      - name: Upload validation report
+      - name: Upload public validation report
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: aura-public-ci-report
           path: ci/reports/public_fast_lane.json
           if-no-files-found: error
+
+  dependency-gate:
+    name: Reproducible dependency gate
+    runs-on: windows-latest
+    timeout-minutes: 35
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3.14
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+
+      - name: Validate dependency lock contract
+        shell: pwsh
+        run: python environment/verify_environment.py --portable
+
+      - name: Verify clean core installation
+        shell: pwsh
+        run: python environment/cold_install_verifier.py --profile core --network --no-cache
+
+      - name: Upload dependency validation reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: aura-dependency-ci-reports
+          path: |
+            ci/reports/environment_v0862_result.json
+            ci/reports/cold_install_core_result.json
+          if-no-files-found: warn
