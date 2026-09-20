@@ -20,7 +20,7 @@ ALLOWED_STATUSES = {
 }
 IMMUTABLE_MILESTONE_FIELDS = {"id", "baseline"}
 IMMUTABLE_PROJECT_FIELDS = {"baseline_target_v2", "project_start"}
-DEFAULT_ROOT = Path(r"C:\AURA GPT version")
+DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 
 
 class RoadmapError(RuntimeError):
