@@ -23,7 +23,7 @@ class ChannelAnalyticsPublishingProvider:
         default_store = Path(
             os.environ.get(
                 "AURA_Y151_WORKFLOW_STORE",
-                r"C:\AURA GPT version\data\youtube\publishing_workflows_v151.json",
+                str(Path(__file__).resolve().parents[2] / "data" / "youtube" / "publishing_workflows_v151.json"),
             )
         )
         self.workflow_store_path = Path(
