@@ -9,7 +9,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-ROOT = Path(r"C:\AURA GPT version")
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).expanduser().resolve(strict=False)
 LOG_ROOT = ROOT / "logs" / "product_launcher"
 
 PY = ROOT / "venv" / "Scripts" / "python.exe"
