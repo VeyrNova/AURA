@@ -76,3 +76,43 @@ jobs:
             ci/reports/environment_v0862_result.json
             ci/reports/cold_install_core_result.json
           if-no-files-found: warn
+
+  boot-smoke:
+    name: Clean checkout boot smoke
+    needs: [public-gate, dependency-gate]
+    runs-on: windows-latest
+    timeout-minutes: 35
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3.14
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+
+      - name: Create AURA project venv
+        shell: pwsh
+        run: python -m venv venv
+
+      - name: Install certified core dependencies
+        shell: pwsh
+        run: .\venv\Scripts\python.exe -m pip install --disable-pip-version-check --no-cache-dir -r requirements.txt
+
+      - name: Validate RUN_AURA bootstrap chain
+        shell: cmd
+        run: RUN_AURA.bat --self-check
+
+      - name: Validate checkout path and embedded UI resolution
+        shell: pwsh
+        run: .\venv\Scripts\python.exe ci\boot_smoke.py
+
+      - name: Upload boot smoke report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: aura-boot-smoke-report
+          path: ci/reports/boot_smoke_result.json
+          if-no-files-found: warn
+
