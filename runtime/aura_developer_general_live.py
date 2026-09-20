@@ -35,7 +35,7 @@ from runtime.aura_self_development_governance import (
 )
 from runtime.aura_developer_coding_fabric_live import generate_edit_via_coding_fabric
 
-ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
 STATE_PATH = ROOT / "runtime" / "developer_fabric" / "live_selftest_transaction_state.json"
 
 BINDING_ID = "ADF-H-R7.2.11-GENERAL-CODING-FABRIC-BINDING"
