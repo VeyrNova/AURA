@@ -14,7 +14,7 @@ HERE = Path(__file__).resolve().parent
 RESULT_JSON = HERE / "AURA_PATCH_BACKUPS_DEEP_AUDIT_RESULT.json"
 RESULT_TXT = HERE / "AURA_PATCH_BACKUPS_DEEP_AUDIT_RESULT.txt"
 
-AURA_ROOT = Path(r"C:\AURA GPT version")
+AURA_ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[2]).resolve()
 ROOT = AURA_ROOT / "_patch_backups"
 
 # Safety contract: this script is strictly read-only.
