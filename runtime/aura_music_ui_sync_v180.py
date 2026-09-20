@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(r"C:\AURA GPT version")
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
 UI_DIST = Path.home() / "AppData" / "Local" / "AURA" / "ui" / "v0.7.2.2-rc4.2" / "dist"
 INDEX = ROOT / "data" / "media" / "local_media_index_v180.json"
 UI_INDEX = UI_DIST / "aura_music_media_index_v180.json"
