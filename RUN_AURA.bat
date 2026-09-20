@@ -14,6 +14,14 @@ set "PY=%AURA_ROOT%\venv\Scripts\python.exe"
 
 if not exist "%BOOTSTRAP%" exit /b 90
 
+if /I "%~1"=="--self-check" (
+    if exist "%PY%" (
+        "%PY%" "%BOOTSTRAP%" --self-check
+        exit /b %ERRORLEVEL%
+    )
+    exit /b 91
+)
+
 if exist "%PYW%" (
     start "" "%PYW%" "%BOOTSTRAP%"
     exit /b 0
