@@ -732,31 +732,96 @@ This keeps the repository small, reproducible and free from machine-specific ass
 
 ---
 
-## Source / Development Setup
+## Installation
 
-This repository is currently best treated as a **source/development distribution**.
+AURA is being hardened so that a user can start from a clean Windows checkout and reproduce the supported runtime without access to the developer machine.
 
-The standalone clean-Windows installer line is not presented as a fully certified public release yet.
+### Required baseline
 
-The repository includes:
+- Windows 10/11 x64
+- CPython 3.14.x
+- Project-local virtual environment at `venv/`
 
-- `requirements.txt`
-- specialized requirements profiles
-- voice requirements
-- XTTS setup tooling
-- environment verification
-- Windows batch launchers
-- diagnostic scripts
-- CI lanes
-- cold-install verification tooling
+### AI provider choice
 
-Main launcher:
+AURA does **not** require Ollama when a supported cloud provider is configured.
 
-`RUN_AURA.bat`
+| Mode | Ollama | Cloud API key |
+|---|---:|---:|
+| **Cloud** | No | Yes, for at least one configured provider |
+| **Local** | Yes | No for local-only LLM routes |
+| **Hybrid** | Optional / recommended | Optional, depending on configured fallbacks |
 
-Voice / optional subsystem setup scripts are available at the repository root and under `tools/bat/`.
+NVIDIA/CUDA is also optional. It accelerates supported local AI/voice workloads but is not a baseline installation requirement.
 
-> Review configuration, hardware requirements and local provider setup before starting AURA on a new machine.
+### Dependency profiles
+
+The repository contains versioned Windows/Python 3.14 dependency profiles and exact locks under:
+
+```text
+requirements/
+requirements/locks/
+```
+
+The current certified reference profiles cover:
+
+- core desktop/runtime dependencies;
+- local voice/STT/TTS dependencies;
+- optional document readers;
+- an optional CUDA/PyTorch layer.
+
+The repository also includes environment verification and clean-install tooling. The working maintainer PC is treated as the reference source of truth, but private machine state, credentials, personal data, models and private voice assets are never copied into GitHub.
+
+### Quick core setup
+
+```bat
+py -3.14 -m venv venv
+venv\Scripts\python.exe -m pip install --upgrade pip
+venv\Scripts\python.exe -m pip install -r requirements\locks\windows-py314-core-exact.lock.txt
+copy .env.example .env
+```
+
+Configure your own providers locally in `.env`, then launch:
+
+```bat
+RUN_AURA.bat
+```
+
+Optional voice setup:
+
+```bat
+INSTALL_VOICE.bat
+```
+
+Optional XTTS setup:
+
+```bat
+INSTALL_XTTS.bat
+```
+
+### Validation
+
+Repository source closure:
+
+```bat
+venv\Scripts\python.exe ci\repository_integrity_gate.py
+```
+
+Portable dependency/lock validation:
+
+```bat
+venv\Scripts\python.exe environment\verify_environment.py --portable
+```
+
+Clean core installation verification:
+
+```bat
+venv\Scripts\python.exe environment\cold_install_verifier.py --profile core --network --no-cache
+```
+
+Full installation details, cloud/local/Ollama modes, voice/GPU profiles and release acceptance rules are documented in [docs/INSTALLATION.md](docs/INSTALLATION.md).
+
+> **Current status:** the public repository is undergoing a dependency-closure repair. A revision should not be treated as installable until the repository-integrity and clean-install gates are green.
 
 ---
 
