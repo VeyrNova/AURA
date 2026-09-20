@@ -94,7 +94,7 @@ class QuotaObservatory:
         }
 
 def default_quota_snapshot_path() -> Path:
-    root = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+    root = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
     return root / "ci" / "aura_fabric_free_tier_snapshot_2026_08_30.json"
 
 def load_default_observatory() -> QuotaObservatory:
