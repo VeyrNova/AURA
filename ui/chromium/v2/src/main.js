@@ -12,9 +12,10 @@ const app = createAuraApp(root);
 app.mount();
 
 window.AuraUiV2Foundation = Object.freeze({
-  version: "2-foundation",
+  version: "2-shell-parity",
   status: "dormant",
   setState: app.setState,
   setMode: app.setMode,
+  setWorkspace: app.setWorkspace,
   snapshot: app.snapshot,
 });

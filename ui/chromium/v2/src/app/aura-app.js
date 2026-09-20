@@ -5,7 +5,12 @@ import { createAuraShell } from "../components/aura-shell.js";
 export function createAuraApp(root) {
   const state = createAuraState();
   const events = createAuraEventBus();
-  const shell = createAuraShell();
+  const shell = createAuraShell({
+    onWorkspace(workspace) {
+      state.setWorkspace(workspace);
+      events.emit("workspace:change", { workspace });
+    },
+  });
   let unsubscribe = null;
 
   function render(snapshot) {
@@ -18,7 +23,7 @@ export function createAuraApp(root) {
       root.replaceChildren(shell.element);
       unsubscribe = state.subscribe(render);
       render(state.getSnapshot());
-      root.dataset.auraUiV2 = "foundation";
+      root.dataset.auraUiV2 = "shell-parity";
       root.dataset.activation = "dormant";
     },
     unmount() {
@@ -31,6 +36,9 @@ export function createAuraApp(root) {
     },
     setMode(value) {
       return state.setMode(value);
+    },
+    setWorkspace(value) {
+      return state.setWorkspace(value);
     },
     snapshot() {
       return state.getSnapshot();
