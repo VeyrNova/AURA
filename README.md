@@ -754,6 +754,26 @@ AURA does **not** require Ollama when a supported cloud provider is configured.
 
 NVIDIA/CUDA is also optional. It accelerates supported local AI/voice workloads but is not a baseline installation requirement.
 
+### Recommended installer
+
+For a normal Windows installation, run:
+
+```bat
+INSTALL_AURA.bat
+```
+
+The installer:
+
+- requires the currently certified CPython 3.14.7 runtime;
+- creates/reuses the project-local `venv`;
+- lets the user choose Cloud, Local Ollama or Hybrid AI mode;
+- verifies Ollama only when local/hybrid mode is selected;
+- installs the exact Core, Voice or Voice+CUDA dependency profile;
+- can install optional document readers;
+- runs `pip check`, the repository-integrity gate and dependency metadata validation before reporting success.
+
+Ollama is **not** installed automatically and is not required for cloud-only AURA.
+
 ### Dependency profiles
 
 The repository contains versioned Windows/Python 3.14 dependency profiles and exact locks under:
