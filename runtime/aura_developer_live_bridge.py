@@ -5,7 +5,7 @@ from typing import Any
 import json, os, time
 from runtime.aura_developer_mode import developer_mode_enabled, handle_developer_mode_command, state_snapshot
 
-ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
 QUEUE_LIMIT = 8
 SPEAK_LIMIT = 150
 
