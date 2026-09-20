@@ -118,5 +118,5 @@ class SavingsLedger:
         return {"schema":"aura.trk.savings.v1","commands":commands,"raw_bytes":total_raw,"reduced_bytes":total_reduced,"output_byte_reduction_percent":round(savings,2),"estimated_tokens_saved":max(0,(total_raw-total_reduced)//4)}
 
 def default_savings_summary() -> dict:
-    root=Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
+    root=Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
     return SavingsLedger(root/"runtime"/"developer_fabric"/"trk"/"savings.jsonl").summary()
