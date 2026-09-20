@@ -12,20 +12,23 @@ SKIP_DIRS = {
 }
 SKIP_PATH_PARTS = {"aura_qr_vendor"}
 
+# Match one or more literal backslashes OR a slash. This catches both
+# raw Windows paths (C:\AURA...) and Python source literals that escape
+# backslashes (C:\\AURA...).
 PRIVATE_USER_PATH = re.compile(
     r"""(?ix)
     \b[A-Z]:
-    (?:\\\\|/)
+    (?:\\+|/)
     Users
-    (?:\\\\|/)
-    [^\\\\/\r\n"' ]+
+    (?:\\+|/)
+    [^\\/\r\n"' ]+
     """
 )
 
 REFERENCE_ROOT = re.compile(
     r"""(?ix)
     \bC:
-    (?:\\\\|/)
+    (?:\\+|/)
     AURA[ ]GPT[ ]version
     """
 )
