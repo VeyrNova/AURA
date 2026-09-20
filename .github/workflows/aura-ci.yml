@@ -33,6 +33,10 @@ jobs:
         shell: pwsh
         run: python ci/repository_integrity_gate.py
 
+      - name: Validate production source portability
+        shell: pwsh
+        run: python ci/portability_gate.py
+
       - name: Upload public validation report
         if: always()
         uses: actions/upload-artifact@v7
