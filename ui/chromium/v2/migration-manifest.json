@@ -1,0 +1,83 @@
+{
+  "schema": "aura.ui.v2.migration.v1",
+  "status": "dormant",
+  "activation_allowed": false,
+  "active_production_root": "ui/chromium/v0.7.2.2-rc4.2",
+  "foundation_root": "ui/chromium/v2",
+  "strategy": "parity-first-component-migration",
+  "phases": [
+    {
+      "id": "foundation",
+      "status": "active",
+      "scope": [
+        "state-contract",
+        "event-bus",
+        "design-tokens",
+        "shell-boundaries",
+        "ci-dormancy-gate"
+      ]
+    },
+    {
+      "id": "shell-parity",
+      "status": "pending",
+      "scope": [
+        "topbar",
+        "navigation",
+        "orb",
+        "conversation",
+        "composer"
+      ]
+    },
+    {
+      "id": "workspaces",
+      "status": "pending",
+      "scope": [
+        "home",
+        "activity",
+        "memory",
+        "weather",
+        "maps",
+        "files",
+        "productivity",
+        "music",
+        "system",
+        "developer"
+      ]
+    },
+    {
+      "id": "runtime-bridge",
+      "status": "pending",
+      "scope": [
+        "host-events",
+        "sse",
+        "personal-results",
+        "approvals"
+      ]
+    },
+    {
+      "id": "visual-regression",
+      "status": "pending",
+      "scope": [
+        "playwright",
+        "screenshots",
+        "responsive",
+        "accessibility",
+        "performance"
+      ]
+    },
+    {
+      "id": "activation",
+      "status": "blocked",
+      "scope": [
+        "explicit-runtime-selection",
+        "rollback"
+      ]
+    }
+  ],
+  "forbidden_activation_references": [
+    "aura_paths.py",
+    "core/runtime/aura_paths.py",
+    "tools/aura_v2_product_bootstrap.py",
+    "launch_aura_ui_v0722_rc42.py"
+  ]
+}

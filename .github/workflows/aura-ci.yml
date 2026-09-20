@@ -41,12 +41,18 @@ jobs:
         shell: pwsh
         run: python ci/portability_gate.py
 
+      - name: Validate UI Architecture V2 foundation
+        shell: pwsh
+        run: python ci/ui_architecture_v2_gate.py
+
       - name: Upload public validation report
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: aura-public-ci-report
-          path: ci/reports/public_fast_lane.json
+          path: |
+            ci/reports/public_fast_lane.json
+            ci/reports/ui_architecture_v2_result.json
           if-no-files-found: error
 
   dependency-gate:
@@ -119,4 +125,3 @@ jobs:
           name: aura-boot-smoke-report
           path: ci/reports/boot_smoke_result.json
           if-no-files-found: warn
-

@@ -1,0 +1,24 @@
+:root {
+  --aura-bg: #05080d;
+  --aura-surface: rgba(11, 17, 27, 0.82);
+  --aura-surface-elevated: rgba(16, 24, 38, 0.92);
+  --aura-border: rgba(124, 168, 255, 0.16);
+  --aura-text-primary: #f2f6ff;
+  --aura-text-secondary: #91a0b7;
+  --aura-neural: #82a9ff;
+  --aura-neural-soft: rgba(130, 169, 255, 0.18);
+  --aura-success: #72d9a5;
+  --aura-warning: #e6ba68;
+  --aura-danger: #ec7474;
+  --aura-radius-sm: 10px;
+  --aura-radius-md: 16px;
+  --aura-radius-lg: 24px;
+  --aura-space-1: 6px;
+  --aura-space-2: 10px;
+  --aura-space-3: 16px;
+  --aura-space-4: 24px;
+  --aura-motion-fast: 140ms;
+  --aura-motion-normal: 260ms;
+  --aura-motion-slow: 720ms;
+  color-scheme: dark;
+}
