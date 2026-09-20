@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Optional
 from runtime.aura_roadmap_http_bridge_v25e import RoadmapHttpBridgeV25E
 
 SCHEMA = "aura.roadmap.conversation.v25f1.v1"
-DEFAULT_ROOT = Path(r"C:\AURA GPT version")
+DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 CONFIRM_TTL_SECONDS = 600
 
 STATUS_WORDS = {
