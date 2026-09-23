@@ -1,0 +1,493 @@
+/* ================================================================
+   AURA LIQUID GLASS R10
+   Semantic navigation + panel-aware dock + readable Pearl Light theme
+   ================================================================ */
+
+:root{
+  --r10-cyan:#74efff;
+  --r10-violet:#a66cff;
+  --r10-dark-text:rgba(239,250,255,.94);
+  --r10-dark-glass-1:rgba(7,20,34,.68);
+  --r10-dark-glass-2:rgba(3,11,20,.56);
+  --r10-dark-border:rgba(115,228,255,.18);
+
+  --r10-light-text:#173b52;
+  --r10-light-muted:#4b7087;
+  --r10-light-glass-1:rgba(255,255,255,.94);
+  --r10-light-glass-2:rgba(231,243,249,.88);
+  --r10-light-border:rgba(64,132,174,.30);
+}
+
+/* Historical rail stays functional in DOM but never visible. */
+.rail{
+  display:none !important;
+}
+
+/* ================================================================
+   DEDICATED R10 DOCK
+   ================================================================ */
+#auraR10Dock{
+  --gx:50%;
+  --gy:35%;
+
+  position:fixed;
+  z-index:2400;
+
+  left:22px;
+  top:50%;
+  transform:translateY(-50%);
+
+  width:58px;
+  padding:8px 6px;
+
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+
+  border-radius:20px;
+  overflow:hidden;
+
+  background:
+    linear-gradient(180deg,var(--r10-dark-glass-1),var(--r10-dark-glass-2));
+  border:1px solid var(--r10-dark-border);
+
+  color:var(--r10-dark-text);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    0 20px 52px rgba(0,0,0,.28),
+    0 0 30px rgba(82,197,255,.07);
+
+  backdrop-filter:blur(28px) saturate(135%);
+
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+
+  transition:
+    left .30s cubic-bezier(.16,.85,.18,1),
+    width .30s cubic-bezier(.16,.85,.18,1),
+    padding .24s ease,
+    opacity .18s ease,
+    visibility .18s ease,
+    border-color .20s ease,
+    box-shadow .20s ease;
+}
+
+#auraR10Dock::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(133,237,255,.20) 0%,
+      rgba(88,185,255,.075) 22%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 50% 88%,rgba(173,110,255,.09),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.05),transparent 30%);
+}
+
+#auraR10Dock:hover,
+#auraR10Dock:focus-within{
+  width:220px;
+  padding:9px;
+  border-color:rgba(130,237,255,.33);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.075),
+    0 24px 58px rgba(0,0,0,.30),
+    0 0 38px rgba(82,197,255,.12),
+    0 0 58px rgba(166,108,255,.08);
+}
+
+/* Large left workspace: dock disappears completely. */
+#auraR10Dock.aura-r10-panel-hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+/* Small/medium left workspace: dock moves after the panel. */
+#auraR10Dock.aura-r10-panel-shifted{
+  transform:translateY(-50%);
+}
+
+.aura-r10-dock-btn{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  height:40px;
+  flex:0 0 40px;
+
+  display:flex;
+  align-items:center;
+
+  padding:0;
+  margin:0;
+
+  border-radius:13px;
+  border:1px solid transparent;
+  background:transparent;
+
+  color:var(--r10-dark-text);
+  cursor:pointer;
+  overflow:hidden;
+
+  transition:
+    transform .18s ease,
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+.aura-r10-dock-btn:hover{
+  transform:translateX(1px);
+  background:rgba(255,255,255,.045);
+  border-color:rgba(126,232,255,.12);
+}
+
+.aura-r10-dock-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(122,228,255,.15),rgba(126,180,255,.10));
+  border-color:rgba(126,232,255,.21);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 8px 18px rgba(0,0,0,.09),
+    0 0 17px rgba(103,222,255,.09);
+}
+
+.aura-r10-dock-btn.is-unresolved{
+  opacity:.34;
+  cursor:not-allowed;
+}
+
+.aura-r10-dock-icon{
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  width:18px;
+  height:18px;
+  transform:translate(-50%,-50%);
+
+  display:grid;
+  place-items:center;
+
+  opacity:.82;
+
+  transition:
+    left .23s cubic-bezier(.2,.8,.2,1),
+    opacity .18s ease,
+    filter .18s ease;
+}
+
+.aura-r10-dock-icon svg{
+  width:18px;
+  height:18px;
+  display:block;
+}
+
+#auraR10Dock:hover .aura-r10-dock-icon,
+#auraR10Dock:focus-within .aura-r10-dock-icon{
+  left:23px;
+  opacity:.96;
+}
+
+.aura-r10-dock-btn:hover .aura-r10-dock-icon,
+.aura-r10-dock-btn.is-active .aura-r10-dock-icon{
+  opacity:1;
+  filter:drop-shadow(0 0 7px rgba(104,225,255,.28));
+}
+
+.aura-r10-dock-label{
+  position:absolute;
+  left:48px;
+  right:12px;
+  top:50%;
+
+  transform:translateY(-50%) translateX(-7px);
+  opacity:0;
+
+  font-size:11px;
+  line-height:1;
+  font-weight:500;
+  letter-spacing:.025em;
+
+  text-align:left;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  pointer-events:none;
+
+  transition:
+    opacity .16s ease .03s,
+    transform .20s cubic-bezier(.2,.8,.2,1) .03s;
+}
+
+#auraR10Dock:hover .aura-r10-dock-label,
+#auraR10Dock:focus-within .aura-r10-dock-label{
+  opacity:.96;
+  transform:translateY(-50%) translateX(0);
+}
+
+/* ================================================================
+   COMPOSER — keep stable premium liquid behavior
+   ================================================================ */
+.composer,
+#composer{
+  --gx:50%;
+  --gy:50%;
+
+  width:min(580px,calc(100% - 100px)) !important;
+  max-width:580px !important;
+  min-width:320px !important;
+
+  height:44px !important;
+  min-height:44px !important;
+  max-height:44px !important;
+
+  border-radius:17px !important;
+
+  transition:
+    width .32s cubic-bezier(.16,.85,.18,1),
+    max-width .32s cubic-bezier(.16,.85,.18,1),
+    height .28s cubic-bezier(.16,.85,.18,1),
+    min-height .28s cubic-bezier(.16,.85,.18,1),
+    max-height .28s cubic-bezier(.16,.85,.18,1),
+    border-radius .24s ease,
+    border-color .20s ease,
+    box-shadow .20s ease !important;
+}
+
+.composer:hover:not(:focus-within):not(.aura-r10-writing),
+#composer:hover:not(:focus-within):not(.aura-r10-writing){
+  width:min(740px,calc(100% - 76px)) !important;
+  max-width:740px !important;
+
+  height:50px !important;
+  min-height:50px !important;
+  max-height:50px !important;
+}
+
+.composer:focus-within,
+.composer.aura-r10-writing,
+#composer:focus-within,
+#composer.aura-r10-writing{
+  width:min(1040px,calc(100% - 48px)) !important;
+  max-width:1040px !important;
+
+  height:64px !important;
+  min-height:64px !important;
+  max-height:64px !important;
+
+  border-radius:20px !important;
+}
+
+/* ================================================================
+   LIGHT MODE — PEARL GLASS, HIGHER CONTRAST
+   ================================================================ */
+html[data-aura-theme="light"],
+html[data-aura-theme="light"] body{
+  background:
+    radial-gradient(circle at 50% 38%,rgba(82,156,207,.13) 0%,transparent 29%),
+    linear-gradient(180deg,#f6fafc 0%,#edf4f8 48%,#e2edf3 100%) !important;
+
+  color:var(--r10-light-text) !important;
+}
+
+/* Stronger and more readable hero well. */
+html[data-aura-theme="light"] .hero{
+  background:
+    radial-gradient(circle at 50% 43%,
+      rgba(31,73,108,.27) 0%,
+      rgba(80,139,180,.17) 25%,
+      rgba(220,236,245,.46) 49%,
+      rgba(250,252,253,.82) 77%) !important;
+
+  border-color:rgba(61,124,164,.24) !important;
+
+  box-shadow:
+    inset 0 0 110px rgba(48,110,155,.09),
+    inset 0 1px 0 rgba(255,255,255,.92),
+    0 18px 46px rgba(78,119,149,.14) !important;
+}
+
+html[data-aura-theme="light"] #stage,
+html[data-aura-theme="light"] #stage canvas{
+  filter:
+    saturate(1.35)
+    contrast(1.22)
+    brightness(.91)
+    drop-shadow(0 0 24px rgba(39,116,180,.20)) !important;
+}
+
+/* Header */
+html[data-aura-theme="light"] .topbar{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.96),rgba(232,243,249,.91)) !important;
+
+  border-color:rgba(58,122,164,.27) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 10px 28px rgba(75,117,148,.13) !important;
+}
+
+html[data-aura-theme="light"] .brand strong,
+html[data-aura-theme="light"] .core-label strong,
+html[data-aura-theme="light"] .aura-r5-identity__time{
+  color:#163a51 !important;
+}
+
+html[data-aura-theme="light"] .brand small,
+html[data-aura-theme="light"] .core-label span,
+html[data-aura-theme="light"] .core-label small,
+html[data-aura-theme="light"] .aura-r5-identity__date{
+  color:#52768c !important;
+}
+
+html[data-aura-theme="light"] .state-pill,
+html[data-aura-theme="light"] .route-pill,
+html[data-aura-theme="light"] .mini-chip,
+html[data-aura-theme="light"] .aura-theme-toggle{
+  background:rgba(255,255,255,.93) !important;
+  border-color:rgba(61,128,169,.27) !important;
+  color:#244e66 !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 4px 12px rgba(70,114,145,.06) !important;
+}
+
+/* Generic module/drawer readability without forcing geometry. */
+html[data-aura-theme="light"] [role="dialog"],
+html[data-aura-theme="light"] [class*="drawer"],
+html[data-aura-theme="light"] [class*="Drawer"],
+html[data-aura-theme="light"] [class*="panel"],
+html[data-aura-theme="light"] [class*="Panel"]{
+  color:#173b52 !important;
+}
+
+html[data-aura-theme="light"] input,
+html[data-aura-theme="light"] textarea,
+html[data-aura-theme="light"] select{
+  background:rgba(255,255,255,.88) !important;
+  color:#173b52 !important;
+  border-color:rgba(60,127,168,.30) !important;
+}
+
+html[data-aura-theme="light"] input::placeholder,
+html[data-aura-theme="light"] textarea::placeholder{
+  color:#68889a !important;
+}
+
+html[data-aura-theme="light"] button:not(.power):not(.aura-r10-dock-btn){
+  color:#244e66;
+}
+
+/* Dock */
+html[data-aura-theme="light"] #auraR10Dock{
+  background:
+    linear-gradient(180deg,var(--r10-light-glass-1),var(--r10-light-glass-2));
+
+  border-color:var(--r10-light-border);
+  color:var(--r10-light-text);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 18px 44px rgba(72,114,145,.15),
+    0 0 28px rgba(77,168,214,.06);
+}
+
+html[data-aura-theme="light"] #auraR10Dock::before{
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(61,160,212,.20) 0%,
+      rgba(92,181,223,.09) 22%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 50% 88%,rgba(148,111,218,.08),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.64),transparent 30%);
+}
+
+html[data-aura-theme="light"] .aura-r10-dock-icon,
+html[data-aura-theme="light"] .aura-r10-dock-label{
+  color:#244e66;
+}
+
+html[data-aura-theme="light"] .aura-r10-dock-btn:hover{
+  background:rgba(85,175,219,.11);
+  border-color:rgba(59,143,187,.20);
+}
+
+html[data-aura-theme="light"] .aura-r10-dock-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(139,210,239,.68),rgba(104,179,218,.38));
+  border-color:rgba(53,141,188,.34);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.70),
+    0 8px 18px rgba(75,119,149,.08),
+    0 0 16px rgba(66,159,205,.09);
+}
+
+/* Composer */
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.97),rgba(230,242,248,.93)) !important;
+
+  border-color:rgba(61,132,174,.31) !important;
+
+  color:#173b52 !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 18px 42px rgba(74,117,148,.15),
+    0 0 22px rgba(72,165,211,.06) !important;
+}
+
+html[data-aura-theme="light"] #messageInput{
+  color:#173b52 !important;
+}
+
+html[data-aura-theme="light"] #messageInput::placeholder{
+  color:#638397 !important;
+}
+
+html[data-aura-theme="light"] #composerHint{
+  color:#69899b !important;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media(max-width:980px){
+  #auraR10Dock{
+    left:12px;
+    width:54px;
+  }
+
+  #auraR10Dock:hover,
+  #auraR10Dock:focus-within{
+    width:190px;
+  }
+
+  #auraR10Dock:hover .aura-r10-dock-icon,
+  #auraR10Dock:focus-within .aura-r10-dock-icon{
+    left:21px;
+  }
+
+  .aura-r10-dock-label{
+    left:44px;
+  }
+}

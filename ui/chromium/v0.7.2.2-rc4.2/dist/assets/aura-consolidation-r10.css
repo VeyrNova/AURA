@@ -1,0 +1,369 @@
+/* ================================================================
+   AURA CONSOLIDATION R10
+   Stable semantic dock + complete light theme + panel coexistence
+   ================================================================ */
+
+:root{
+  --r10-cyan:#73edff;
+  --r10-violet:#a66cff;
+  --r10-dark1:rgba(7,20,34,.68);
+  --r10-dark2:rgba(3,11,20,.56);
+  --r10-dark-border:rgba(112,226,255,.18);
+  --r10-dark-text:rgba(238,250,255,.94);
+  --r10-light1:rgba(255,255,255,.91);
+  --r10-light2:rgba(236,246,251,.82);
+  --r10-light-border:rgba(78,151,191,.25);
+  --r10-light-text:#173d56;
+}
+
+/* Historical rail remains available to JS but never participates visually. */
+.rail{
+  display:none !important;
+}
+
+/* ================================================================
+   R10 SEMANTIC DOCK
+   ================================================================ */
+#auraR10Dock{
+  --gx:50%;
+  --gy:40%;
+  position:fixed;
+  z-index:3800;
+  left:20px;
+  top:50%;
+  transform:translateY(-50%);
+  width:58px;
+  padding:8px 6px;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(180deg,var(--r10-dark1),var(--r10-dark2));
+  border:1px solid var(--r10-dark-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    0 20px 52px rgba(0,0,0,.28),
+    0 0 28px rgba(82,197,255,.07);
+  backdrop-filter:blur(28px) saturate(135%);
+  transition:
+    width .30s cubic-bezier(.16,.85,.18,1),
+    padding .24s ease,
+    left .26s ease,
+    right .26s ease,
+    bottom .26s ease,
+    top .26s ease,
+    transform .26s ease,
+    border-color .20s ease,
+    box-shadow .20s ease;
+}
+#auraR10Dock::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at var(--gx) var(--gy),rgba(132,235,255,.20),rgba(82,179,245,.07) 22%,transparent 45%),
+    radial-gradient(circle at 50% 88%,rgba(170,106,255,.09),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.05),transparent 30%);
+}
+#auraR10Dock:hover,
+#auraR10Dock:focus-within{
+  width:220px;
+  padding:9px;
+  border-color:rgba(128,235,255,.34);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.075),
+    0 24px 58px rgba(0,0,0,.30),
+    0 0 38px rgba(82,197,255,.12),
+    0 0 56px rgba(166,108,255,.08);
+}
+.aura-r10-dock-btn{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:40px;
+  flex:0 0 40px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  border-radius:13px;
+  border:1px solid transparent;
+  background:transparent;
+  color:var(--r10-dark-text);
+  cursor:pointer;
+  overflow:hidden;
+  transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+.aura-r10-dock-btn:hover{
+  transform:translateX(1px);
+  background:rgba(255,255,255,.045);
+  border-color:rgba(126,232,255,.12);
+}
+.aura-r10-dock-btn.is-active{
+  background:linear-gradient(180deg,rgba(122,228,255,.15),rgba(126,180,255,.10));
+  border-color:rgba(126,232,255,.21);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 8px 18px rgba(0,0,0,.09),
+    0 0 17px rgba(103,222,255,.09);
+}
+.aura-r10-dock-icon{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:18px;
+  height:18px;
+  transform:translate(-50%,-50%);
+  display:grid;
+  place-items:center;
+  opacity:.82;
+  color:var(--r10-dark-text);
+  transition:left .22s cubic-bezier(.2,.8,.2,1),opacity .18s ease,filter .18s ease;
+}
+.aura-r10-dock-icon svg{width:18px;height:18px;display:block}
+#auraR10Dock:hover .aura-r10-dock-icon,
+#auraR10Dock:focus-within .aura-r10-dock-icon{
+  left:23px;
+  opacity:.96;
+}
+.aura-r10-dock-btn:hover .aura-r10-dock-icon,
+.aura-r10-dock-btn.is-active .aura-r10-dock-icon{
+  opacity:1;
+  filter:drop-shadow(0 0 7px rgba(104,225,255,.30));
+}
+.aura-r10-dock-label{
+  position:absolute;
+  left:48px;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%) translateX(-7px);
+  opacity:0;
+  color:var(--r10-dark-text);
+  font-size:11px;
+  line-height:1;
+  font-weight:500;
+  letter-spacing:.025em;
+  text-align:left;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  pointer-events:none;
+  transition:opacity .16s ease .03s,transform .20s cubic-bezier(.2,.8,.2,1) .03s;
+}
+#auraR10Dock:hover .aura-r10-dock-label,
+#auraR10Dock:focus-within .aura-r10-dock-label{
+  opacity:.96;
+  transform:translateY(-50%) translateX(0);
+}
+
+/* When a left contextual workspace is open, dock migrates to the right. */
+body.aura-r10-left-panel-open #auraR10Dock{
+  left:auto;
+  right:18px;
+}
+
+/* Maps gets a horizontal compact dock above the composer. */
+body.aura-r10-maps-open #auraR10Dock{
+  left:50%;
+  right:auto;
+  top:auto;
+  bottom:76px;
+  transform:translateX(-50%);
+  width:auto;
+  max-width:calc(100vw - 80px);
+  flex-direction:row;
+  padding:6px 8px;
+}
+body.aura-r10-maps-open #auraR10Dock:hover,
+body.aura-r10-maps-open #auraR10Dock:focus-within{
+  width:auto;
+}
+body.aura-r10-maps-open .aura-r10-dock-btn{
+  width:40px;
+  flex:0 0 40px;
+}
+body.aura-r10-maps-open .aura-r10-dock-icon,
+body.aura-r10-maps-open #auraR10Dock:hover .aura-r10-dock-icon{
+  left:50%;
+}
+body.aura-r10-maps-open .aura-r10-dock-label{
+  display:none;
+}
+
+/* ================================================================
+   PANEL LAYERING
+   ================================================================ */
+.aura-p0702-popover.open,
+.aura-p0623-drawer.open,
+.aura-p0626-memory.open,
+.aura-p0627-system.open,
+#auraNavigationWorkspace.open,
+.aura-navigation-workspace.open,
+.conversation.open,
+#aura-roadmap-workspace-v25e{
+  z-index:3900 !important;
+}
+
+/* ================================================================
+   COMPLETE LIGHT THEME
+   ================================================================ */
+html[data-aura-theme="light"] .topbar{
+  background:linear-gradient(180deg,rgba(255,255,255,.93),rgba(236,246,251,.86)) !important;
+  border-color:rgba(79,151,190,.25) !important;
+  color:#173d56 !important;
+}
+
+/* Everything in the center/status area must follow light mode. */
+html[data-aura-theme="light"] .top-center > *,
+html[data-aura-theme="light"] .top-actions > *:not(.power),
+html[data-aura-theme="light"] .state-pill,
+html[data-aura-theme="light"] .route-pill,
+html[data-aura-theme="light"] .mini-chip,
+html[data-aura-theme="light"] .aura-theme-toggle,
+html[data-aura-theme="light"] .topbar [class*="pill"],
+html[data-aura-theme="light"] .topbar [class*="chip"],
+html[data-aura-theme="light"] .topbar time,
+html[data-aura-theme="light"] .topbar [id*="clock" i],
+html[data-aura-theme="light"] .topbar [data-time]{
+  background:rgba(255,255,255,.80) !important;
+  border-color:rgba(78,151,191,.23) !important;
+  color:#244d65 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.90),
+    0 4px 12px rgba(82,126,158,.06) !important;
+}
+html[data-aura-theme="light"] .top-center > * *,
+html[data-aura-theme="light"] .top-actions > *:not(.power) *,
+html[data-aura-theme="light"] #stateText,
+html[data-aura-theme="light"] #routeText{
+  color:#244d65 !important;
+}
+html[data-aura-theme="light"] #stateDot{
+  background:#55cfe8 !important;
+  box-shadow:0 0 8px rgba(54,185,220,.70),0 0 14px rgba(54,185,220,.24) !important;
+}
+
+/* Router/time/state explicit readability */
+html[data-aura-theme="light"] #stateText,
+html[data-aura-theme="light"] #routeText{
+  font-weight:700 !important;
+  opacity:1 !important;
+}
+
+/* Composer controls */
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(235,246,251,.89)) !important;
+  border-color:rgba(78,151,191,.26) !important;
+}
+html[data-aura-theme="light"] .mic,
+html[data-aura-theme="light"] .send,
+html[data-aura-theme="light"] #micBtn,
+html[data-aura-theme="light"] #sendBtn,
+html[data-aura-theme="light"] .attach{
+  background:rgba(246,251,254,.96) !important;
+  border-color:rgba(72,145,185,.28) !important;
+  color:#174968 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),
+    0 5px 14px rgba(69,117,150,.10) !important;
+}
+html[data-aura-theme="light"] .send,
+html[data-aura-theme="light"] #sendBtn{
+  background:linear-gradient(180deg,rgba(205,239,250,.98),rgba(175,220,241,.90)) !important;
+  color:#0d4b70 !important;
+}
+html[data-aura-theme="light"] .mic svg,
+html[data-aura-theme="light"] .send svg,
+html[data-aura-theme="light"] #micBtn svg,
+html[data-aura-theme="light"] #sendBtn svg{
+  stroke:currentColor !important;
+}
+html[data-aura-theme="light"] #messageInput{
+  color:#183d54 !important;
+  caret-color:#1c89b8 !important;
+}
+html[data-aura-theme="light"] #messageInput::placeholder{
+  color:rgba(41,82,107,.50) !important;
+}
+
+/* R10 dock light */
+html[data-aura-theme="light"] #auraR10Dock{
+  background:linear-gradient(180deg,var(--r10-light1),var(--r10-light2));
+  border-color:var(--r10-light-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.90),
+    0 18px 44px rgba(75,119,151,.15),
+    0 0 26px rgba(76,166,212,.06);
+}
+html[data-aura-theme="light"] #auraR10Dock::before{
+  background:
+    radial-gradient(circle at var(--gx) var(--gy),rgba(74,169,216,.20),rgba(110,190,228,.08) 22%,transparent 44%),
+    radial-gradient(circle at 80% 76%,rgba(157,123,224,.08),transparent 32%),
+    linear-gradient(180deg,rgba(255,255,255,.60),transparent 32%);
+}
+html[data-aura-theme="light"] .aura-r10-dock-icon,
+html[data-aura-theme="light"] .aura-r10-dock-label{
+  color:var(--r10-light-text);
+}
+html[data-aura-theme="light"] .aura-r10-dock-btn.is-active{
+  background:linear-gradient(180deg,rgba(151,218,241,.65),rgba(116,189,226,.36));
+  border-color:rgba(71,155,201,.32);
+}
+
+/* Settings in light mode */
+html[data-aura-theme="light"] .aura-p0702-settings-popover,
+html[data-aura-theme="light"] .aura-p0702-settings-body,
+html[data-aura-theme="light"] [data-aura-language-setting],
+html[data-aura-theme="light"] #auraR10VersionBlock{
+  color:#183d54 !important;
+}
+html[data-aura-theme="light"] .aura-p0702-settings-popover select,
+html[data-aura-theme="light"] .aura-p0702-settings-popover input,
+html[data-aura-theme="light"] .aura-p0702-settings-popover button{
+  background:rgba(250,253,255,.95) !important;
+  color:#183d54 !important;
+  border-color:rgba(78,151,191,.25) !important;
+}
+
+/* ================================================================
+   ROADMAP CURRENT TRACK BANNER
+   ================================================================ */
+#auraR10RoadmapCurrent{
+  margin:0 18px 14px;
+  padding:12px 14px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:12px;
+  align-items:start;
+  border-radius:12px;
+  border:1px solid rgba(111,225,255,.14);
+  background:linear-gradient(180deg,rgba(9,28,46,.54),rgba(5,17,29,.44));
+}
+#auraR10RoadmapCurrent strong{
+  display:block;
+  color:var(--r10-cyan);
+  font-size:11px;
+  letter-spacing:.10em;
+}
+#auraR10RoadmapCurrent p{
+  margin:3px 0 0;
+  color:rgba(214,238,248,.76);
+  font-size:11px;
+  line-height:1.45;
+}
+html[data-aura-theme="light"] #auraR10RoadmapCurrent{
+  background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(235,246,251,.80));
+  border-color:rgba(78,151,191,.22);
+}
+html[data-aura-theme="light"] #auraR10RoadmapCurrent strong{color:#17658a}
+html[data-aura-theme="light"] #auraR10RoadmapCurrent p{color:#31566e}
+
+/* responsive */
+@media(max-width:980px){
+  #auraR10Dock{left:12px;width:54px}
+  #auraR10Dock:hover,#auraR10Dock:focus-within{width:190px}
+  body.aura-r10-left-panel-open #auraR10Dock{right:10px}
+}

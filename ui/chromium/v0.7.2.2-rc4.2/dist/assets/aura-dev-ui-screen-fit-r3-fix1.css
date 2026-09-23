@@ -1,0 +1,181 @@
+/* ================================================================
+   AURA PREMIUM HUD R3 - SCREEN FIT FIX1
+   Keep composer visible at all supported window heights.
+   ================================================================ */
+
+html,
+body{
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+}
+
+body{
+  margin:0 !important;
+}
+
+#app{
+  width:100% !important;
+  height:100vh !important;
+  max-height:100vh !important;
+  min-height:0 !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+}
+
+/* The workspace must consume only the remaining vertical space. */
+.workspace{
+  min-height:0 !important;
+  height:100% !important;
+  max-height:100% !important;
+  overflow:hidden !important;
+  grid-template-rows:minmax(0,1fr) auto !important;
+}
+
+/* Main content panels are allowed to shrink instead of pushing composer down. */
+.hero,
+.telemetry{
+  min-height:0 !important;
+  max-height:100% !important;
+  overflow:hidden !important;
+}
+
+/* Keep the command deck visible at the bottom of the workspace. */
+.composer{
+  position:relative !important;
+  inset:auto !important;
+  flex:none !important;
+  min-height:64px !important;
+  height:64px !important;
+  max-height:64px !important;
+  margin:0 !important;
+  z-index:30 !important;
+}
+
+/* Keep the orbital scene centered while adapting to available height. */
+#stage{
+  min-height:0 !important;
+  max-height:100% !important;
+}
+
+#stage canvas{
+  max-width:100% !important;
+  max-height:100% !important;
+}
+
+/* Slightly tighten the hero when screen height is limited. */
+@media (max-height: 980px){
+  #app{
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+  }
+
+  .topbar{
+    min-height:60px !important;
+    height:60px !important;
+  }
+
+  .workspace{
+    gap:10px !important;
+  }
+
+  .hero{
+    min-height:0 !important;
+  }
+
+  .core-label{
+    top:16px !important;
+  }
+
+  .composer{
+    min-height:60px !important;
+    height:60px !important;
+    max-height:60px !important;
+    padding-top:9px !important;
+    padding-bottom:9px !important;
+  }
+
+  .attach,
+  .mic,
+  .send{
+    width:38px !important;
+    height:38px !important;
+  }
+}
+
+/* More aggressive fit for laptop-height windows. */
+@media (max-height: 820px){
+  #app{
+    padding:8px !important;
+    gap:8px !important;
+  }
+
+  .topbar{
+    min-height:54px !important;
+    height:54px !important;
+  }
+
+  .rail{
+    margin-top:0 !important;
+  }
+
+  .rail-btn{
+    min-height:36px !important;
+  }
+
+  .core-label{
+    top:12px !important;
+    left:18px !important;
+  }
+
+  .core-label strong{
+    font-size:16px !important;
+  }
+
+  .core-label small{
+    font-size:10px !important;
+  }
+
+  .composer{
+    min-height:56px !important;
+    height:56px !important;
+    max-height:56px !important;
+    padding:7px 10px !important;
+  }
+
+  .attach,
+  .mic,
+  .send{
+    width:36px !important;
+    height:36px !important;
+  }
+
+  #composerHint{
+    display:none !important;
+  }
+}
+
+/* Compact fallback for very short windows. */
+@media (max-height: 700px){
+  .topbar{
+    min-height:50px !important;
+    height:50px !important;
+  }
+
+  .brand small,
+  .route-pill,
+  .mini-chip{
+    display:none !important;
+  }
+
+  .rail-btn{
+    min-height:32px !important;
+  }
+
+  .composer{
+    min-height:52px !important;
+    height:52px !important;
+    max-height:52px !important;
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "schema": "aura.ci.critical-baseline.v087.v1",
+  "pass": false,
+  "checks_total": 56,
+  "checks_passed": 50,
+  "checks_failed": 6,
+  "checks": [
+    {
+      "path": "C:\\AURA GPT version\\core\\version.py",
+      "pass": true,
+      "expected": "043995377420f9eb8effcf48399ca717f52129d4335bbd36113f244252e765bc",
+      "actual": "043995377420f9eb8effcf48399ca717f52129d4335bbd36113f244252e765bc"
+    },
+    {
+      "path": "C:\\AURA GPT version\\config\\settings.py",
+      "pass": true,
+      "expected": "43d82dae39f92003575724b74ef438fb92dd2c459359a222c20cbe05b456f268",
+      "actual": "43d82dae39f92003575724b74ef438fb92dd2c459359a222c20cbe05b456f268"
+    },
+    {
+      "path": "C:\\AURA GPT version\\services\\core_bridge.py",
+      "pass": true,
+      "expected": "fcd86f20d9df178848c6a27a8e9fc4044b9794f72226658f437020e8e1df171c",
+      "actual": "fcd86f20d9df178848c6a27a8e9fc4044b9794f72226658f437020e8e1df171c"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ui\\main_window.py",
+      "pass": true,
+      "expected": "b95314824d32f93f1f26b82368440fbc55f225f4117aaee77d909e5c0cc65f4d",
+      "actual": "b95314824d32f93f1f26b82368440fbc55f225f4117aaee77d909e5c0cc65f4d"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ui\\workers\\realtime_tts_worker.py",
+      "pass": true,
+      "expected": "d3438289116983beebfcc7d0f680017ce660753e64e9bd92f28eaeaf180e2df3",
+      "actual": "d3438289116983beebfcc7d0f680017ce660753e64e9bd92f28eaeaf180e2df3"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\ui_source_manifest_v0865.json",
+      "pass": false,
+      "expected": "311c3463b374a03500414b5d611ed0044618307d777d917e3553d131939fc313",
+      "actual": "8efd8618cb0ee884ab67e3e14839eebf982a76432588082b58608be43139b75e"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tools\\ui_source_build_v0865.py",
+      "pass": true,
+      "expected": "89566080a61fca8977579203c2640c852cc7a0710788b39e44cadaaf5705e073",
+      "actual": "89566080a61fca8977579203c2640c852cc7a0710788b39e44cadaaf5705e073"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
+      "pass": true,
+      "expected": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be",
+      "actual": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\package.json",
+      "pass": true,
+      "expected": "c3ee52b34d74e43a39345b8af5acbfae2d7ba97b6ce34ac3fdd85ff9f5869f48",
+      "actual": "c3ee52b34d74e43a39345b8af5acbfae2d7ba97b6ce34ac3fdd85ff9f5869f48"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p081-event-watchers.js",
+      "pass": true,
+      "expected": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365",
+      "actual": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p081-event-watchers.js",
+      "pass": true,
+      "expected": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365",
+      "actual": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p081-event-watchers.js",
+      "pass": true,
+      "expected": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365",
+      "actual": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0436-official-neural-orb.js",
+      "pass": true,
+      "expected": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9",
+      "actual": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0436-official-neural-orb.js",
+      "pass": true,
+      "expected": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9",
+      "actual": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0521-weather-map.js",
+      "pass": true,
+      "expected": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc",
+      "actual": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0521-weather-map.js",
+      "pass": true,
+      "expected": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc",
+      "actual": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p060-navigation-workspace.js",
+      "pass": false,
+      "expected": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a",
+      "actual": "de0f2e881b011b9081f25a337b4f42e92013602edcfd50ff7263cb751486fc80"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
+      "pass": false,
+      "expected": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a",
+      "actual": "de0f2e881b011b9081f25a337b4f42e92013602edcfd50ff7263cb751486fc80"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0623-file-productivity.js",
+      "pass": true,
+      "expected": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58",
+      "actual": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0623-file-productivity.js",
+      "pass": true,
+      "expected": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58",
+      "actual": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0624-quality-ux.js",
+      "pass": true,
+      "expected": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32",
+      "actual": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0624-quality-ux.js",
+      "pass": true,
+      "expected": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32",
+      "actual": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0626-memory.js",
+      "pass": true,
+      "expected": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20",
+      "actual": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0626-memory.js",
+      "pass": true,
+      "expected": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20",
+      "actual": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p074-vitals-activity-module.js",
+      "pass": true,
+      "expected": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf",
+      "actual": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p074-vitals-activity-module.js",
+      "pass": true,
+      "expected": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf",
+      "actual": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p074-vitals-activity-module.js",
+      "pass": true,
+      "expected": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf",
+      "actual": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08518-system-state-final-polish.js",
+      "pass": false,
+      "expected": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315",
+      "actual": "4696dd037754153a4b3766294e9cc92e11385ff3938d140cadc7466a0dcc4a2c"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08518-system-state-final-polish.js",
+      "pass": false,
+      "expected": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315",
+      "actual": "4696dd037754153a4b3766294e9cc92e11385ff3938d140cadc7466a0dcc4a2c"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08518-system-state-final-polish.js",
+      "pass": false,
+      "expected": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315",
+      "actual": "4696dd037754153a4b3766294e9cc92e11385ff3938d140cadc7466a0dcc4a2c"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\policy_engine.py",
+      "pass": true,
+      "expected": "6b9a6cf82e6afd8d00115264c56ae80ae8deb602095aa150d555424df9ebacf1",
+      "actual": "6b9a6cf82e6afd8d00115264c56ae80ae8deb602095aa150d555424df9ebacf1"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\policy_engine_v2.py",
+      "pass": true,
+      "expected": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+      "actual": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\permissions.py",
+      "pass": true,
+      "expected": "de81fd45114252111c4681fa998ff034f57247b3c30b12e9aa6f797465e90d34",
+      "actual": "de81fd45114252111c4681fa998ff034f57247b3c30b12e9aa6f797465e90d34"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\common.py",
+      "pass": true,
+      "expected": "9142269300e5c8f63b83cb1163e5f4e133be54d8813801cb54bd876d0cde61e3",
+      "actual": "9142269300e5c8f63b83cb1163e5f4e133be54d8813801cb54bd876d0cde61e3"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_security_fail_closed_v0861.py",
+      "pass": true,
+      "expected": "7667b5a82d5f904e05c15ce344c9f5d693bac860e1f55c6cffc557d1b8dda830",
+      "actual": "7667b5a82d5f904e05c15ce344c9f5d693bac860e1f55c6cffc557d1b8dda830"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_security_policy_v2_v0866.py",
+      "pass": true,
+      "expected": "3e4e78b94cf365c5e9c5c92101354b3ec48e1ba0815c2ceaea1ef54b0bfd6766",
+      "actual": "3e4e78b94cf365c5e9c5c92101354b3ec48e1ba0815c2ceaea1ef54b0bfd6766"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\fast_lane.py",
+      "pass": true,
+      "expected": "7c8ab1af713e0944202c5b331db4b26c869f986d9fa0d48c9e878f9905b944b5",
+      "actual": "7c8ab1af713e0944202c5b331db4b26c869f986d9fa0d48c9e878f9905b944b5"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\full_lane.py",
+      "pass": true,
+      "expected": "224245ba912f481c943cf3a0aa4e0c0bf22a55f2bca4e62b1de8657a0518440a",
+      "actual": "224245ba912f481c943cf3a0aa4e0c0bf22a55f2bca4e62b1de8657a0518440a"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\microphone.py",
+      "pass": true,
+      "expected": "c4a3d811de7eee7b56599c509313316a6c3f3d845d36d1381054c075ff0ea27f",
+      "actual": "c4a3d811de7eee7b56599c509313316a6c3f3d845d36d1381054c075ff0ea27f"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\xtts_tts.py",
+      "pass": true,
+      "expected": "3cdf085bb1da23d10050a417fd6a2cf01058dea83170f3712d3a2fbea70d6ff6",
+      "actual": "3cdf085bb1da23d10050a417fd6a2cf01058dea83170f3712d3a2fbea70d6ff6"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\voice_engine.py",
+      "pass": true,
+      "expected": "f59310277feed54eb6cabfadb63c81d210179928681610b2f50e6c3dd5320469",
+      "actual": "f59310277feed54eb6cabfadb63c81d210179928681610b2f50e6c3dd5320469"
+    },
+    {
+      "path": "C:\\AURA GPT version\\runtime\\resource_guardian.py",
+      "pass": true,
+      "expected": "f8f3ee6a70e196423fed44545436407139bb9518efb1138f3f868a841c0b3df2",
+      "actual": "f8f3ee6a70e196423fed44545436407139bb9518efb1138f3f868a841c0b3df2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_runtime_performance_v0867.py",
+      "pass": true,
+      "expected": "46b8c18d5396949ea43563ead1421e474c4cb8bdd13e404be84ecd943c4e19f2",
+      "actual": "46b8c18d5396949ea43563ead1421e474c4cb8bdd13e404be84ecd943c4e19f2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\runtime_performance_manifest_v0867.json",
+      "pass": true,
+      "expected": "b281c06dec97f025a1886d3e7545a9661e2e519c353afe6ac16c18a60cff2cc0",
+      "actual": "b281c06dec97f025a1886d3e7545a9661e2e519c353afe6ac16c18a60cff2cc0"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_engineering_foundation_v0868.py",
+      "pass": true,
+      "expected": "f7491222d6268abb6574d723a0cf2b7e207302009ce71b9cf2cd239d92eb3e8d",
+      "actual": "f7491222d6268abb6574d723a0cf2b7e207302009ce71b9cf2cd239d92eb3e8d"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_critical_baseline_v0868.py",
+      "pass": true,
+      "expected": "b7e11e66e6ab3524073848c5a964cf51b73d07031a2617916c3f72f72277cf21",
+      "actual": "b7e11e66e6ab3524073848c5a964cf51b73d07031a2617916c3f72f72277cf21"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\architecture_gate_v0868.py",
+      "pass": true,
+      "expected": "c3d7e6e1e213cba83f0230e618f55ba86bdfab366b7b8c2c7dfd69b714e7f728",
+      "actual": "c3d7e6e1e213cba83f0230e618f55ba86bdfab366b7b8c2c7dfd69b714e7f728"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_metadata_contract_v0868.py",
+      "pass": true,
+      "expected": "6e4a0dacec921a3d028d3454c23f61ad6c596fb713450ae2f117353497eec020",
+      "actual": "6e4a0dacec921a3d028d3454c23f61ad6c596fb713450ae2f117353497eec020"
+    },
+    {
+      "path": "C:\\AURA GPT version\\memory\\manager.py",
+      "pass": true,
+      "expected": "249a44e49f1a106f4c0ddaeac16949c51a7ca2b69168fbcd14dda92f08cbe56e",
+      "actual": "249a44e49f1a106f4c0ddaeac16949c51a7ca2b69168fbcd14dda92f08cbe56e"
+    },
+    {
+      "path": "C:\\AURA GPT version\\memory\\kernel_v2.py",
+      "pass": true,
+      "expected": "1b8870f77707412313d75e2c6d7c678997cfe49797c06eca4c57f7d3d1a7066f",
+      "actual": "1b8870f77707412313d75e2c6d7c678997cfe49797c06eca4c57f7d3d1a7066f"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_memorykernel_v2_v087.py",
+      "pass": true,
+      "expected": "374edb3259a6933e7863e5eba27e37a3d984c334f1172fe00fae29ff620804ca",
+      "actual": "374edb3259a6933e7863e5eba27e37a3d984c334f1172fe00fae29ff620804ca"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\memorykernel_v2_manifest_v087.json",
+      "pass": true,
+      "expected": "3ac2b37f767f945dfd153543bb6741c0f8d25706711de604500f2dd86e4fb811",
+      "actual": "3ac2b37f767f945dfd153543bb6741c0f8d25706711de604500f2dd86e4fb811"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_critical_baseline_v087.py",
+      "pass": true,
+      "expected": "d44dd37b504f8a62461832c785958893e8d3a315ff4457fd61c3e0fe0edc87b3",
+      "actual": "d44dd37b504f8a62461832c785958893e8d3a315ff4457fd61c3e0fe0edc87b3"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ci\\architecture_gate_v087.py",
+      "pass": true,
+      "expected": "677c96c211ac926c778020ddc4c99ab3dae1e0e4476bde28a624cbb0eee334cc",
+      "actual": "677c96c211ac926c778020ddc4c99ab3dae1e0e4476bde28a624cbb0eee334cc"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_metadata_contract_v087.py",
+      "pass": true,
+      "expected": "59f9b9167aabc6b246e32202650e66cb3306b6d51f6db5050bb53c471e75209e",
+      "actual": "59f9b9167aabc6b246e32202650e66cb3306b6d51f6db5050bb53c471e75209e"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_engineering_foundation_v087.py",
+      "pass": true,
+      "expected": "b4bb79552702b66fbc06da3fa40ec697cfbb2016a495d7b9d9b1ec3823dbd24d",
+      "actual": "b4bb79552702b66fbc06da3fa40ec697cfbb2016a495d7b9d9b1ec3823dbd24d"
+    }
+  ]
+}

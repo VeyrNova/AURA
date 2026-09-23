@@ -1,0 +1,23 @@
+/* AURA MUSIC R17 FIX4 - SINGLE MINIPLAYER OWNERSHIP
+   Prevents the historical global mini-player from appearing while the full R17 player is open.
+   Keeps the richer historical mini-player when the full player is closed.
+*/
+#aura-music-mini-r17{
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
+#aura-global-mini-player-v180.r17-full-player-open{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+
+body:has(#aura-music-player-v180.open) #aura-global-mini-player-v180{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "aura.contacts-provider-manifest.v093.v1",
+  "milestone": "v0.9.3 Contacts",
+  "status": "CERTIFIED",
+  "product_version_during_d2": "0.9.2.2.1",
+  "created_at": "2026-08-27T20:19:53",
+  "provider": {
+    "provider_id": "contacts.provider",
+    "mode": "SYNTHETIC",
+    "provider_neutral": true,
+    "external_connection": false,
+    "oauth": false
+  },
+  "capabilities": {
+    "read": [
+      "contacts.search",
+      "contacts.read"
+    ],
+    "write_confirmation_required": [
+      "contacts.create",
+      "contacts.update",
+      "contacts.delete"
+    ]
+  },
+  "runtime_path": "Conversation/Voice -> PersonalIntegrationDispatcher -> IntegrationRegistry -> ContactsProvider -> SecurityPolicyEngine -> ActionReceipts",
+  "files": {
+    "package_init": {
+      "path": "C:\\AURA GPT version\\integrations\\contacts\\__init__.py",
+      "sha256": "f378718af481635aa2b4a2b33e249f0cc49efbd4fef042deac1c9745cc7fd616"
+    },
+    "provider": {
+      "path": "C:\\AURA GPT version\\integrations\\contacts\\provider.py",
+      "sha256": "32fcedaeebb276946755de1f422f8ce85b07676fd39a2032417cf90c9cf278fe"
+    },
+    "runtime": {
+      "path": "C:\\AURA GPT version\\runtime\\personal_integrations.py",
+      "sha256": "6c46983aec17bdf16258d9b8a131a458582d802feaea39f7ba6e64fb098b37cf"
+    },
+    "controllers": {
+      "path": "C:\\AURA GPT version\\ui\\personal_integration_modules.py",
+      "sha256": "2acacdd4d25b8fc62753b822ac0395a91d2b8b19e1d698938b45553c97c4ba24"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_contacts_provider_v093.py",
+      "sha256": "1edb16a1531b416329c4246a0ac187d86223ef10e936ad5e26b1d120cc9bd8dd"
+    }
+  },
+  "visual_exposure": true,
+  "next_phase": "v0.9.4 Files / Cloud",
+  "visual_exposure_phase": "D2 R5 Contacts Module Visual Exposure",
+  "ui": {
+    "catalog": "p0702 Modules popup",
+    "module_key": "contacts",
+    "launcher": "Conversation workspace prefill",
+    "auto_submit": false,
+    "separate_sidebar_item": false,
+    "rail_js": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0702-left-rail.js",
+    "rail_js_sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "palette": "inherits certified dark navy + cyan/blue Modules card style",
+    "rail_css_sha256": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+  },
+  "reverified_at_v093": "2026-08-27T20:46:17",
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "product_version": "0.9.4",
+  "external_connection": false,
+  "reverified_at_v094": "2026-08-28T10:06:06",
+  "preserved_through": "v0.9.4 Files / Cloud"
+}

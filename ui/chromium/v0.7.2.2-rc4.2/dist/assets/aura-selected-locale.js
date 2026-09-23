@@ -1,1 +1,1 @@
-window.__AURA_BOOT_LOCALE__="fr-FR";
+window.__AURA_BOOT_LOCALE__="en-US";

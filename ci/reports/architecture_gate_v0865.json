@@ -1,0 +1,224 @@
+{
+  "schema": "aura.ci.architecture-gate.v0865.v1",
+  "pass": true,
+  "checks_total": 43,
+  "checks_passed": 43,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "v0.8.6.4 architecture foundation",
+      "pass": true,
+      "detail": "exit=0"
+    },
+    {
+      "name": "source manifest present",
+      "pass": true,
+      "detail": "C:\\AURA GPT version\\ci\\ui_source_manifest_v0865.json"
+    },
+    {
+      "name": "source builder present",
+      "pass": true,
+      "detail": "C:\\AURA GPT version\\tools\\ui_source_build_v0865.py"
+    },
+    {
+      "name": "source manifest schema",
+      "pass": true,
+      "detail": "aura.ui-source-manifest.v0865.v1"
+    },
+    {
+      "name": "source manifest exactly 8 assets",
+      "pass": true,
+      "detail": "8"
+    },
+    {
+      "name": "dist declared generated output",
+      "pass": true,
+      "detail": "True"
+    },
+    {
+      "name": "manual dist patch forbidden",
+      "pass": true,
+      "detail": "True"
+    },
+    {
+      "name": "canonical aura-p0436-official-neural-orb.js",
+      "pass": true,
+      "detail": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "name": "runtime aura-p0436-official-neural-orb.js",
+      "pass": true,
+      "detail": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "name": "mirror aura-p0436-official-neural-orb.js assets",
+      "pass": true,
+      "detail": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "name": "canonical aura-p0521-weather-map.js",
+      "pass": true,
+      "detail": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "name": "runtime aura-p0521-weather-map.js",
+      "pass": true,
+      "detail": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "name": "mirror aura-p0521-weather-map.js assets",
+      "pass": true,
+      "detail": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "name": "canonical aura-p060-navigation-workspace.js",
+      "pass": true,
+      "detail": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a"
+    },
+    {
+      "name": "runtime aura-p060-navigation-workspace.js",
+      "pass": true,
+      "detail": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a"
+    },
+    {
+      "name": "mirror aura-p060-navigation-workspace.js assets",
+      "pass": true,
+      "detail": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a"
+    },
+    {
+      "name": "canonical aura-p0623-file-productivity.js",
+      "pass": true,
+      "detail": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "name": "runtime aura-p0623-file-productivity.js",
+      "pass": true,
+      "detail": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "name": "mirror aura-p0623-file-productivity.js src",
+      "pass": true,
+      "detail": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "name": "canonical aura-p0624-quality-ux.js",
+      "pass": true,
+      "detail": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "name": "runtime aura-p0624-quality-ux.js",
+      "pass": true,
+      "detail": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "name": "mirror aura-p0624-quality-ux.js src",
+      "pass": true,
+      "detail": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "name": "canonical aura-p0626-memory.js",
+      "pass": true,
+      "detail": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "name": "runtime aura-p0626-memory.js",
+      "pass": true,
+      "detail": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "name": "mirror aura-p0626-memory.js src",
+      "pass": true,
+      "detail": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "name": "canonical aura-p074-vitals-activity-module.js",
+      "pass": true,
+      "detail": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "name": "runtime aura-p074-vitals-activity-module.js",
+      "pass": true,
+      "detail": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "name": "mirror aura-p074-vitals-activity-module.js src",
+      "pass": true,
+      "detail": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "name": "mirror aura-p074-vitals-activity-module.js assets",
+      "pass": true,
+      "detail": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "name": "canonical aura-p08518-system-state-final-polish.js",
+      "pass": true,
+      "detail": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315"
+    },
+    {
+      "name": "runtime aura-p08518-system-state-final-polish.js",
+      "pass": true,
+      "detail": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315"
+    },
+    {
+      "name": "mirror aura-p08518-system-state-final-polish.js src",
+      "pass": true,
+      "detail": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315"
+    },
+    {
+      "name": "mirror aura-p08518-system-state-final-polish.js assets",
+      "pass": true,
+      "detail": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315"
+    },
+    {
+      "name": "source builder check",
+      "pass": true,
+      "detail": "[PASS] ui_source_manifest_v0865"
+    },
+    {
+      "name": "source builder stage",
+      "pass": true,
+      "detail": "[PASS] staged 8 assets -> C:\\AURA GPT version\\ci\\reports\\aura_v0865_stage_oj4wq84r"
+    },
+    {
+      "name": "staged aura-p0436-official-neural-orb.js",
+      "pass": true,
+      "detail": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "name": "staged aura-p0521-weather-map.js",
+      "pass": true,
+      "detail": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "name": "staged aura-p060-navigation-workspace.js",
+      "pass": true,
+      "detail": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a"
+    },
+    {
+      "name": "staged aura-p0623-file-productivity.js",
+      "pass": true,
+      "detail": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "name": "staged aura-p0624-quality-ux.js",
+      "pass": true,
+      "detail": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "name": "staged aura-p0626-memory.js",
+      "pass": true,
+      "detail": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "name": "staged aura-p074-vitals-activity-module.js",
+      "pass": true,
+      "detail": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "name": "staged aura-p08518-system-state-final-polish.js",
+      "pass": true,
+      "detail": "c78193a2bc94c24aff66b843b367d968c1b65429bb0da157870a703506e7a315"
+    }
+  ]
+}

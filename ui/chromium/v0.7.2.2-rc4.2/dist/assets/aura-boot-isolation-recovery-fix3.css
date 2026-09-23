@@ -1,0 +1,90 @@
+/* ================================================================
+   AURA BOOT ISOLATION RECOVERY FIX3
+   - Completely hides final/legacy UI during neural boot
+   - Keeps only boot stage + boot HUD visible
+   ================================================================ */
+
+html.aura-p043-running,
+html.aura-p043-running body,
+html.aura-p043-stabilizing,
+html.aura-p043-stabilizing body,
+html.aura-p043-revealing,
+html.aura-p043-revealing body{
+  background:#010204 !important;
+}
+
+/* Fully opaque veil: nothing from the final interface may bleed through. */
+html.aura-p043-running #auraP043Backdrop,
+html.aura-p043-stabilizing #auraP043Backdrop{
+  opacity:1 !important;
+  background:
+    radial-gradient(circle at 50% 48%,
+      #071423 0%,
+      #030a13 36%,
+      #010407 70%,
+      #010204 100%) !important;
+}
+
+/* Keep the boot atmosphere subtle without exposing the interface below. */
+html.aura-p043-running #auraP043Backdrop::before,
+html.aura-p043-stabilizing #auraP043Backdrop::before{
+  opacity:.38 !important;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(84,217,255,.045), transparent 27%),
+    radial-gradient(circle at 50% 64%,
+      rgba(157,88,255,.025), transparent 28%),
+    linear-gradient(90deg,
+      transparent 0 49.94%,
+      rgba(84,217,255,.022) 50%,
+      transparent 50.06% 100%) !important;
+}
+
+/* Explicitly suppress final UI chrome during boot.
+   #stage remains visible because neural-boot.js promotes it to z-index 9002. */
+html.aura-p043-running .topbar,
+html.aura-p043-running .rail,
+html.aura-p043-running .telemetry,
+html.aura-p043-running .composer,
+html.aura-p043-running #composer,
+html.aura-p043-running .core-label,
+html.aura-p043-running .conversation,
+html.aura-p043-running .aura-r5-identity,
+html.aura-p043-running .toast,
+
+html.aura-p043-stabilizing .topbar,
+html.aura-p043-stabilizing .rail,
+html.aura-p043-stabilizing .telemetry,
+html.aura-p043-stabilizing .composer,
+html.aura-p043-stabilizing #composer,
+html.aura-p043-stabilizing .core-label,
+html.aura-p043-stabilizing .conversation,
+html.aura-p043-stabilizing .aura-r5-identity,
+html.aura-p043-stabilizing .toast{
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+}
+
+/* Hero container itself must not reveal its final panel geometry. */
+html.aura-p043-running .hero,
+html.aura-p043-stabilizing .hero{
+  background:transparent !important;
+  border-color:transparent !important;
+  box-shadow:none !important;
+}
+
+/* No final HUD decoration behind the boot orb. */
+html.aura-p043-running .hero::before,
+html.aura-p043-running .hero::after,
+html.aura-p043-running .hero > .scanlines,
+html.aura-p043-stabilizing .hero::before,
+html.aura-p043-stabilizing .hero::after,
+html.aura-p043-stabilizing .hero > .scanlines{
+  opacity:0 !important;
+}
+
+/* Reveal only when the native P043 sequence begins its reveal. */
+html.aura-p043-revealing #auraP043Backdrop{
+  opacity:0 !important;
+}

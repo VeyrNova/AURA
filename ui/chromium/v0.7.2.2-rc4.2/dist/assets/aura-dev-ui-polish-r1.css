@@ -1,0 +1,228 @@
+/* AURA DEV UI POLISH R1 FIX1
+   Safe visual refinement for project-local RC4.2 UI. */
+
+:root{
+  --aura-dev-cyan: rgba(108,232,255,.88);
+  --aura-dev-cyan-soft: rgba(108,232,255,.18);
+  --aura-dev-violet: rgba(191,119,255,.78);
+  --aura-dev-violet-soft: rgba(191,119,255,.16);
+  --aura-dev-glass: linear-gradient(180deg, rgba(5,15,28,.90), rgba(2,10,21,.84));
+  --aura-dev-edge: rgba(94,196,255,.18);
+  --aura-dev-shadow: 0 18px 54px rgba(0,0,0,.28);
+}
+
+body{
+  background:
+    radial-gradient(circle at 50% 38%, rgba(32,112,173,.18), transparent 34%),
+    radial-gradient(circle at 50% 82%, rgba(160,82,255,.10), transparent 22%),
+    linear-gradient(180deg, #02060d 0%, #040913 48%, #02050b 100%);
+}
+
+#app{
+  padding:14px;
+  gap:14px;
+}
+
+.glass{
+  background:var(--aura-dev-glass)!important;
+  border:1px solid var(--aura-dev-edge)!important;
+  box-shadow:var(--aura-dev-shadow);
+  backdrop-filter:blur(14px) saturate(118%);
+}
+
+.topbar{
+  min-height:70px;
+  padding:0 18px;
+  border-radius:18px!important;
+  gap:18px;
+}
+
+.brand{gap:14px!important}
+.brand>div:last-child{display:flex;flex-direction:column;gap:3px}
+.brand strong{font-size:13px;letter-spacing:.42em;font-weight:700;color:#eef9ff}
+.brand small{font-size:8px;letter-spacing:.26em;color:rgba(183,225,243,.56)}
+
+.brand-mark{
+  width:38px!important;
+  height:38px!important;
+  border-radius:50%;
+  box-shadow:inset 0 0 18px rgba(137,228,255,.16),0 0 22px rgba(72,170,255,.14);
+}
+
+.top-center,.top-actions{gap:10px!important}
+
+.state-pill,.route-pill,.mini-chip{
+  min-height:30px;
+  padding:0 12px;
+  border:1px solid rgba(103,215,255,.16)!important;
+  border-radius:10px!important;
+  background:linear-gradient(180deg,rgba(8,20,34,.88),rgba(4,14,26,.76))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+  font-size:10px;
+  letter-spacing:.10em;
+  color:rgba(224,245,255,.84)!important;
+}
+
+#stateDot{box-shadow:0 0 10px rgba(135,242,255,.95)}
+
+.power{
+  width:34px!important;
+  height:34px!important;
+  border-radius:10px!important;
+  border:1px solid rgba(255,99,155,.22)!important;
+  background:linear-gradient(180deg,rgba(30,8,18,.90),rgba(18,5,11,.82))!important;
+  color:rgba(255,153,194,.90)!important;
+  box-shadow:0 0 18px rgba(255,80,150,.12);
+}
+
+.power:hover{
+  border-color:rgba(255,125,176,.42)!important;
+  color:rgba(255,196,219,1)!important;
+}
+
+.rail{
+  border-radius:18px!important;
+  padding-top:10px!important;
+  padding-bottom:14px!important;
+}
+
+.rail-btn{
+  min-height:42px;
+  border-radius:12px!important;
+  border:1px solid transparent!important;
+  color:rgba(197,229,243,.72)!important;
+  transition:transform .16s ease,border-color .16s ease,background .16s ease,color .16s ease;
+}
+
+.rail-btn:hover{
+  transform:translateX(2px);
+  border-color:rgba(104,219,255,.18)!important;
+  background:linear-gradient(90deg,rgba(11,30,49,.78),rgba(7,18,31,.32))!important;
+  color:rgba(236,249,255,.92)!important;
+}
+
+.rail-btn.active{
+  border-color:rgba(100,220,255,.48)!important;
+  background:linear-gradient(90deg,rgba(15,55,87,.90),rgba(8,26,45,.72))!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03),0 0 26px rgba(56,163,255,.12);
+  color:#f2fbff!important;
+}
+
+.rail-btn.locked{opacity:.58}
+
+.workspace{gap:14px!important}
+
+.hero{
+  border-radius:18px!important;
+  overflow:hidden;
+}
+
+.core-label{
+  left:22px!important;
+  top:20px!important;
+  gap:6px!important;
+}
+
+.core-label span{
+  font-size:10px;
+  letter-spacing:.22em;
+  color:rgba(169,220,241,.46);
+}
+
+.core-label strong{
+  font-size:19px;
+  line-height:1;
+  letter-spacing:.18em;
+  color:#ecfbff;
+}
+
+.core-label small{
+  font-size:12px;
+  color:rgba(155,201,225,.52);
+}
+
+.conversation{
+  border-radius:18px!important;
+  overflow:hidden;
+  box-shadow:0 20px 44px rgba(0,0,0,.26);
+}
+
+.conversation-head{
+  border-bottom:1px solid rgba(89,187,230,.10);
+}
+
+.empty-conversation{
+  border:1px solid rgba(85,177,223,.18)!important;
+  border-radius:12px!important;
+  background:linear-gradient(180deg,rgba(7,18,31,.72),rgba(5,12,23,.52))!important;
+  color:rgba(224,245,255,.82)!important;
+  line-height:1.55;
+}
+
+.telemetry{
+  border-radius:18px!important;
+  overflow:hidden;
+}
+
+.panel-title{
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(89,187,230,.12);
+  margin-bottom:14px;
+}
+
+.separator{
+  background:linear-gradient(90deg,transparent,rgba(100,200,246,.18),transparent)!important;
+  height:1px!important;
+  margin:14px 0!important;
+}
+
+.pcm-wrap,.privacy{
+  border-radius:14px!important;
+  background:linear-gradient(180deg,rgba(7,19,33,.68),rgba(4,12,22,.56))!important;
+  border:1px solid rgba(86,176,220,.12)!important;
+}
+
+.composer{
+  min-height:74px!important;
+  border-radius:18px!important;
+  padding:12px 14px!important;
+  gap:12px!important;
+}
+
+.attach,.mic,.send{
+  width:42px!important;
+  height:42px!important;
+  border-radius:12px!important;
+  border:1px solid rgba(103,214,255,.18)!important;
+  background:linear-gradient(180deg,rgba(9,23,39,.90),rgba(4,13,24,.82))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+.send{
+  background:linear-gradient(180deg,rgba(12,54,92,.92),rgba(7,29,51,.88))!important;
+  border-color:rgba(105,211,255,.34)!important;
+}
+
+#messageInput{
+  color:rgba(237,249,255,.95)!important;
+  font-size:15px!important;
+  line-height:1.45!important;
+}
+
+#messageInput::placeholder{color:rgba(161,196,216,.48)!important}
+#composerHint{font-size:11px!important;color:rgba(154,197,220,.46)!important}
+
+.toast{
+  border-radius:12px;
+  border:1px solid rgba(103,214,255,.18);
+  background:linear-gradient(180deg,rgba(9,24,39,.96),rgba(4,13,24,.92));
+  box-shadow:0 16px 36px rgba(0,0,0,.32);
+}
+
+@media(max-width:980px){
+  .telemetry{display:none!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .rail-btn,.power{transition:none!important}
+}

@@ -1,0 +1,498 @@
+/* ================================================================
+   AURA LIQUID GLASS STABILIZATION R10
+   Semantic dock mapping / panel-safe dock / readable Pearl Light theme
+   ================================================================ */
+
+:root{
+  --r10-dark-g1:rgba(7,20,34,.68);
+  --r10-dark-g2:rgba(3,11,20,.56);
+  --r10-dark-border:rgba(116,229,255,.18);
+  --r10-dark-text:rgba(239,250,255,.94);
+  --r10-dark-muted:rgba(177,214,231,.52);
+
+  --r10-light-g1:rgba(255,255,255,.94);
+  --r10-light-g2:rgba(239,247,251,.88);
+  --r10-light-border:rgba(73,143,184,.30);
+  --r10-light-text:#173a50;
+  --r10-light-muted:#567589;
+}
+
+/* ----------------------------------------------------------------
+   Old rail: behavior only, never visual.
+   ---------------------------------------------------------------- */
+.rail{
+  display:none !important;
+}
+
+/* ----------------------------------------------------------------
+   Dedicated R10 Liquid Glass Dock
+   ---------------------------------------------------------------- */
+#auraR10Dock{
+  --gx:50%;
+  --gy:50%;
+
+  position:fixed;
+  z-index:360;
+
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+
+  width:58px;
+  padding:8px 6px;
+
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+
+  border-radius:20px;
+  overflow:hidden;
+
+  background:linear-gradient(180deg,var(--r10-dark-g1),var(--r10-dark-g2));
+  border:1px solid var(--r10-dark-border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    0 20px 52px rgba(0,0,0,.28),
+    0 0 30px rgba(81,197,255,.07);
+
+  backdrop-filter:blur(28px) saturate(138%);
+
+  transition:
+    width .30s cubic-bezier(.16,.85,.18,1),
+    padding .24s ease,
+    opacity .22s ease,
+    transform .28s cubic-bezier(.16,.85,.18,1),
+    border-color .20s ease,
+    box-shadow .20s ease;
+}
+
+#auraR10Dock::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(131,237,255,.20) 0%,
+      rgba(87,184,255,.075) 22%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 50% 88%,rgba(174,109,255,.09),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.055),transparent 30%);
+}
+
+#auraR10Dock:hover,
+#auraR10Dock:focus-within{
+  width:222px;
+  padding:9px;
+
+  border-color:rgba(132,238,255,.34);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 24px 58px rgba(0,0,0,.30),
+    0 0 38px rgba(82,198,255,.12),
+    0 0 58px rgba(166,108,255,.08);
+}
+
+/* When a large AURA module/panel is open, the dock retreats completely
+   instead of sitting on top of that panel. */
+body.aura-r10-panel-open #auraR10Dock{
+  opacity:.16;
+  transform:translateY(-50%) translateX(-66px);
+  pointer-events:none;
+}
+
+/* Small recovery tab while a panel is open. */
+#auraR10DockHandle{
+  position:fixed;
+  z-index:361;
+  left:0;
+  top:50%;
+  transform:translateY(-50%) translateX(-18px);
+
+  width:28px;
+  height:72px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:0 13px 13px 0;
+  border:1px solid rgba(116,229,255,.18);
+  border-left:0;
+
+  background:linear-gradient(180deg,var(--r10-dark-g1),var(--r10-dark-g2));
+  backdrop-filter:blur(22px) saturate(130%);
+
+  color:var(--r10-dark-text);
+  opacity:0;
+  pointer-events:none;
+
+  transition:
+    transform .22s ease,
+    opacity .22s ease,
+    box-shadow .20s ease;
+}
+
+body.aura-r10-panel-open #auraR10DockHandle{
+  opacity:.86;
+  pointer-events:auto;
+  transform:translateY(-50%) translateX(0);
+}
+
+#auraR10DockHandle:hover{
+  opacity:1;
+  box-shadow:0 0 22px rgba(82,198,255,.12);
+}
+
+/* Dock item */
+.aura-r10-btn{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  height:40px;
+  flex:0 0 40px;
+
+  display:flex;
+  align-items:center;
+
+  padding:0;
+  border:1px solid transparent;
+  border-radius:13px;
+
+  background:transparent;
+  color:var(--r10-dark-text);
+
+  cursor:pointer;
+  overflow:hidden;
+
+  transition:
+    transform .16s ease,
+    background .16s ease,
+    border-color .16s ease,
+    box-shadow .16s ease;
+}
+
+.aura-r10-btn:hover{
+  transform:translateX(1px);
+  background:rgba(255,255,255,.046);
+  border-color:rgba(126,232,255,.12);
+}
+
+.aura-r10-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(122,228,255,.15),rgba(126,180,255,.10));
+  border-color:rgba(126,232,255,.21);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 8px 18px rgba(0,0,0,.09),
+    0 0 17px rgba(103,222,255,.09);
+}
+
+.aura-r10-btn.is-unmapped{
+  opacity:.30;
+}
+
+.aura-r10-icon{
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  width:18px;
+  height:18px;
+
+  display:grid;
+  place-items:center;
+
+  transform:translate(-50%,-50%);
+
+  color:var(--r10-dark-text);
+  opacity:.82;
+
+  transition:
+    left .22s cubic-bezier(.2,.8,.2,1),
+    opacity .16s ease,
+    filter .16s ease;
+}
+
+.aura-r10-icon svg{
+  width:18px;
+  height:18px;
+  display:block;
+}
+
+#auraR10Dock:hover .aura-r10-icon,
+#auraR10Dock:focus-within .aura-r10-icon{
+  left:23px;
+  opacity:.96;
+}
+
+.aura-r10-btn:hover .aura-r10-icon,
+.aura-r10-btn.is-active .aura-r10-icon{
+  opacity:1;
+  filter:drop-shadow(0 0 7px rgba(104,225,255,.30));
+}
+
+.aura-r10-label{
+  position:absolute;
+  left:48px;
+  right:12px;
+  top:50%;
+
+  transform:translateY(-50%) translateX(-7px);
+  opacity:0;
+
+  color:var(--r10-dark-text);
+  font-size:11px;
+  line-height:1;
+  font-weight:500;
+  letter-spacing:.025em;
+
+  text-align:left;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  pointer-events:none;
+
+  transition:
+    opacity .15s ease .03s,
+    transform .20s cubic-bezier(.2,.8,.2,1) .03s;
+}
+
+#auraR10Dock:hover .aura-r10-label,
+#auraR10Dock:focus-within .aura-r10-label{
+  opacity:.96;
+  transform:translateY(-50%) translateX(0);
+}
+
+/* ----------------------------------------------------------------
+   Composer: preserve the stable dynamic behavior
+   ---------------------------------------------------------------- */
+.composer,
+#composer{
+  --gx:50%;
+  --gy:50%;
+
+  background:
+    linear-gradient(180deg,var(--r10-dark-g1),var(--r10-dark-g2)) !important;
+  border-color:var(--r10-dark-border) !important;
+}
+
+.composer::before,
+#composer::before{
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(133,237,255,.18) 0%,
+      rgba(88,185,255,.07) 20%,
+      transparent 43%
+    ),
+    radial-gradient(circle at 80% 70%,rgba(173,110,255,.10),transparent 32%),
+    linear-gradient(180deg,rgba(255,255,255,.045),transparent 30%) !important;
+}
+
+/* ----------------------------------------------------------------
+   PEARL LIGHT MODE
+   Light shell + darker neural well = much stronger readability.
+   ---------------------------------------------------------------- */
+html[data-aura-theme="light"],
+html[data-aura-theme="light"] body{
+  color-scheme:light !important;
+  background:
+    radial-gradient(circle at 50% 42%,rgba(93,162,204,.13),transparent 33%),
+    linear-gradient(180deg,#f6fafc 0%,#e9f2f7 52%,#dce8f0 100%) !important;
+  color:var(--r10-light-text) !important;
+}
+
+/* Keep the Neural Core readable instead of washing it out. */
+html[data-aura-theme="light"] .hero{
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(28,62,94,.44) 0%,
+      rgba(55,94,127,.34) 23%,
+      rgba(125,162,187,.20) 43%,
+      rgba(231,241,247,.86) 67%,
+      rgba(247,251,253,.94) 100%) !important;
+
+  border-color:rgba(72,139,179,.25) !important;
+
+  box-shadow:
+    inset 0 0 120px rgba(42,91,132,.10),
+    inset 0 1px 0 rgba(255,255,255,.92),
+    0 18px 46px rgba(80,120,149,.15) !important;
+}
+
+html[data-aura-theme="light"] #stage canvas{
+  filter:
+    saturate(1.35)
+    contrast(1.22)
+    brightness(.90)
+    drop-shadow(0 0 26px rgba(45,129,198,.22)) !important;
+}
+
+/* Header */
+html[data-aura-theme="light"] .topbar{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.97),rgba(237,246,250,.93)) !important;
+  border-color:rgba(74,142,183,.29) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 10px 30px rgba(75,115,145,.15) !important;
+}
+
+html[data-aura-theme="light"] .brand strong{
+  color:#16364b !important;
+}
+html[data-aura-theme="light"] .brand small{
+  color:#567588 !important;
+}
+
+html[data-aura-theme="light"] .state-pill,
+html[data-aura-theme="light"] .route-pill,
+html[data-aura-theme="light"] .mini-chip,
+html[data-aura-theme="light"] .aura-theme-toggle{
+  background:#fbfdfe !important;
+  border-color:rgba(75,143,184,.27) !important;
+  color:#264c64 !important;
+
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 4px 10px rgba(73,112,140,.06) !important;
+}
+
+/* Dedicated dock */
+html[data-aura-theme="light"] #auraR10Dock,
+html[data-aura-theme="light"] #auraR10DockHandle{
+  background:
+    linear-gradient(180deg,var(--r10-light-g1),var(--r10-light-g2)) !important;
+  border-color:var(--r10-light-border) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 18px 42px rgba(75,116,145,.15),
+    0 0 24px rgba(74,164,210,.055) !important;
+}
+
+html[data-aura-theme="light"] #auraR10Dock::before{
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(78,174,222,.22) 0%,
+      rgba(111,192,230,.08) 22%,
+      transparent 44%
+    ),
+    linear-gradient(180deg,rgba(255,255,255,.72),transparent 34%) !important;
+}
+
+html[data-aura-theme="light"] .aura-r10-icon,
+html[data-aura-theme="light"] .aura-r10-label,
+html[data-aura-theme="light"] #auraR10DockHandle{
+  color:var(--r10-light-text) !important;
+}
+
+html[data-aura-theme="light"] .aura-r10-btn:hover{
+  background:rgba(88,177,220,.11) !important;
+  border-color:rgba(65,151,198,.18) !important;
+}
+
+html[data-aura-theme="light"] .aura-r10-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(151,218,241,.70),rgba(111,187,225,.39)) !important;
+  border-color:rgba(61,145,192,.35) !important;
+}
+
+/* Composer */
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:
+    linear-gradient(180deg,var(--r10-light-g1),var(--r10-light-g2)) !important;
+
+  border-color:var(--r10-light-border) !important;
+
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 18px 44px rgba(74,115,145,.16),
+    0 0 26px rgba(77,168,214,.06) !important;
+}
+
+html[data-aura-theme="light"] .composer::before,
+html[data-aura-theme="light"] #composer::before{
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(75,171,219,.22) 0%,
+      rgba(111,190,228,.08) 22%,
+      transparent 44%
+    ),
+    radial-gradient(circle at 82% 72%,rgba(157,123,224,.08),transparent 32%),
+    linear-gradient(180deg,rgba(255,255,255,.70),transparent 34%) !important;
+}
+
+html[data-aura-theme="light"] #messageInput{
+  color:#173a50 !important;
+}
+
+html[data-aura-theme="light"] #messageInput::placeholder{
+  color:#6b8798 !important;
+}
+
+html[data-aura-theme="light"] #composerHint{
+  color:#6a8596 !important;
+}
+
+/* Generic side panels / dialogs / workspaces become readable in light mode. */
+html[data-aura-theme="light"] [role="dialog"],
+html[data-aura-theme="light"] .modal,
+html[data-aura-theme="light"] [class*="panel"],
+html[data-aura-theme="light"] [class*="Panel"]{
+  color:#173a50 !important;
+}
+
+html[data-aura-theme="light"] [role="dialog"] input,
+html[data-aura-theme="light"] [role="dialog"] textarea,
+html[data-aura-theme="light"] [role="dialog"] select,
+html[data-aura-theme="light"] [class*="panel"] input,
+html[data-aura-theme="light"] [class*="panel"] textarea,
+html[data-aura-theme="light"] [class*="panel"] select{
+  background:rgba(255,255,255,.96) !important;
+  color:#173a50 !important;
+  border-color:rgba(73,143,184,.34) !important;
+}
+
+/* Clock */
+html[data-aura-theme="light"] .aura-r5-identity__name{
+  color:rgba(28,64,88,.13) !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__time{
+  color:#15394f !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__date{
+  color:#5d788a !important;
+}
+
+@media(max-width:980px){
+  #auraR10Dock{
+    left:10px;
+    width:54px;
+  }
+
+  #auraR10Dock:hover,
+  #auraR10Dock:focus-within{
+    width:192px;
+  }
+
+  #auraR10Dock:hover .aura-r10-icon,
+  #auraR10Dock:focus-within .aura-r10-icon{
+    left:21px;
+  }
+
+  .aura-r10-label{
+    left:44px;
+  }
+}

@@ -1,0 +1,330 @@
+/* ================================================================
+   AURA LIQUID GLASS R8 FIX2
+   Reliable premium dock icons + clean labels + stronger composer states
+   ================================================================ */
+
+/* ================================================================
+   DOCK — FINAL VISUAL CONTRACT
+   ================================================================ */
+
+.rail{
+  width:58px !important;
+  min-width:58px !important;
+  max-width:58px !important;
+  padding:8px 6px !important;
+  gap:4px !important;
+  border-radius:19px !important;
+  overflow:hidden !important;
+
+  transition:
+    width .30s cubic-bezier(.16,.85,.18,1),
+    min-width .30s cubic-bezier(.16,.85,.18,1),
+    max-width .30s cubic-bezier(.16,.85,.18,1),
+    padding .24s ease,
+    border-color .20s ease,
+    box-shadow .20s ease !important;
+}
+
+.rail:hover,
+.rail:focus-within,
+.rail.aura-r8-dock-expanded{
+  width:222px !important;
+  min-width:222px !important;
+  max-width:222px !important;
+  padding:9px !important;
+}
+
+.rail-btn{
+  box-sizing:border-box !important;
+  position:relative !important;
+
+  width:100% !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  height:40px !important;
+  min-height:40px !important;
+  max-height:40px !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  overflow:hidden !important;
+  border-radius:13px !important;
+
+  font-size:0 !important;
+  line-height:0 !important;
+  color:transparent !important;
+  text-indent:0 !important;
+
+  transition:
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease !important;
+}
+
+/* Hide all original visual children: click behavior stays on original button. */
+.rail-btn > *{
+  visibility:hidden !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+}
+
+/* Our premium visual layer */
+.aura-r8-dock-icon{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-50%) !important;
+
+  width:18px !important;
+  height:18px !important;
+
+  display:grid !important;
+  place-items:center !important;
+
+  visibility:visible !important;
+  opacity:.78 !important;
+  pointer-events:none !important;
+
+  color:var(--r8-lg-text) !important;
+
+  transition:
+    left .22s cubic-bezier(.2,.8,.2,1),
+    transform .22s cubic-bezier(.2,.8,.2,1),
+    opacity .18s ease,
+    filter .18s ease !important;
+}
+
+.aura-r8-dock-icon svg{
+  display:block !important;
+  width:18px !important;
+  height:18px !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  overflow:visible !important;
+}
+
+.aura-r8-dock-label{
+  position:absolute !important;
+  left:50px !important;
+  right:12px !important;
+  top:50% !important;
+  transform:translateY(-50%) translateX(-6px) !important;
+
+  visibility:visible !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+
+  color:var(--r8-lg-text) !important;
+  font-size:11px !important;
+  line-height:1 !important;
+  font-weight:500 !important;
+  letter-spacing:.025em !important;
+
+  text-align:left !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+
+  transition:
+    opacity .15s ease,
+    transform .20s cubic-bezier(.2,.8,.2,1) !important;
+}
+
+/* Expanded state */
+.rail:hover .aura-r8-dock-icon,
+.rail:focus-within .aura-r8-dock-icon,
+.rail.aura-r8-dock-expanded .aura-r8-dock-icon{
+  left:24px !important;
+  transform:translate(-50%,-50%) !important;
+  opacity:.92 !important;
+}
+
+.rail:hover .aura-r8-dock-label,
+.rail:focus-within .aura-r8-dock-label,
+.rail.aura-r8-dock-expanded .aura-r8-dock-label{
+  opacity:.95 !important;
+  transform:translateY(-50%) translateX(0) !important;
+}
+
+/* Button reactions */
+.rail-btn:hover{
+  transform:translateX(1px) !important;
+  background:rgba(255,255,255,.045) !important;
+  border-color:rgba(126,232,255,.11) !important;
+}
+
+.rail-btn:hover .aura-r8-dock-icon{
+  opacity:1 !important;
+  filter:drop-shadow(0 0 7px rgba(103,222,255,.26)) !important;
+}
+
+.rail-btn.active{
+  background:
+    linear-gradient(180deg,rgba(123,228,255,.14),rgba(121,186,255,.10)) !important;
+  border-color:rgba(126,232,255,.20) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 8px 18px rgba(0,0,0,.10),
+    0 0 16px rgba(103,222,255,.08) !important;
+}
+
+.rail-btn.active .aura-r8-dock-icon{
+  opacity:1 !important;
+  filter:
+    drop-shadow(0 0 7px rgba(103,222,255,.28))
+    drop-shadow(0 0 14px rgba(164,108,255,.12)) !important;
+}
+
+/* Remove any old pseudo labels/glows that interfere */
+.rail-btn::after{
+  content:none !important;
+}
+
+/* ================================================================
+   COMPOSER — STRONGER INTENT STATES
+   ================================================================ */
+
+.composer,
+#composer{
+  width:min(600px,calc(100% - 130px)) !important;
+  max-width:600px !important;
+
+  height:44px !important;
+  min-height:44px !important;
+  max-height:44px !important;
+
+  border-radius:17px !important;
+
+  transition:
+    width .32s cubic-bezier(.16,.85,.18,1),
+    max-width .32s cubic-bezier(.16,.85,.18,1),
+    height .28s cubic-bezier(.16,.85,.18,1),
+    min-height .28s cubic-bezier(.16,.85,.18,1),
+    max-height .28s cubic-bezier(.16,.85,.18,1),
+    border-radius .24s ease,
+    box-shadow .22s ease,
+    border-color .22s ease !important;
+}
+
+/* Hover = invitation */
+.composer:hover:not(:focus-within):not(.aura-r8-writing),
+#composer:hover:not(:focus-within):not(.aura-r8-writing){
+  width:min(760px,calc(100% - 90px)) !important;
+  max-width:760px !important;
+
+  height:50px !important;
+  min-height:50px !important;
+  max-height:50px !important;
+
+  border-color:rgba(126,232,255,.22) !important;
+}
+
+/* Focus or text = real writing workspace */
+.composer:focus-within,
+.composer.aura-r8-writing,
+#composer:focus-within,
+#composer.aura-r8-writing{
+  width:min(1080px,calc(100% - 52px)) !important;
+  max-width:1080px !important;
+
+  height:64px !important;
+  min-height:64px !important;
+  max-height:64px !important;
+
+  border-radius:20px !important;
+
+  border-color:var(--r8-lg-border-strong) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 25px 58px rgba(0,0,0,.22),
+    0 0 38px var(--r8-lg-glow),
+    0 0 60px var(--r8-lg-glow-2) !important;
+}
+
+/* Dynamic pointer lens is more visible only on interaction */
+.composer::before,
+#composer::before{
+  opacity:.44 !important;
+}
+.composer:hover::before,
+#composer:hover::before{
+  opacity:.70 !important;
+}
+.composer:focus-within::before,
+.composer.aura-r8-writing::before,
+#composer:focus-within::before,
+#composer.aura-r8-writing::before{
+  opacity:1 !important;
+}
+
+/* ================================================================
+   LIGHT THEME
+   ================================================================ */
+
+html[data-aura-theme="light"] .aura-r8-dock-icon{
+  color:#315b73 !important;
+}
+
+html[data-aura-theme="light"] .aura-r8-dock-label{
+  color:#264d64 !important;
+}
+
+html[data-aura-theme="light"] .rail-btn.active{
+  background:
+    linear-gradient(180deg,rgba(151,218,241,.62),rgba(116,189,226,.34)) !important;
+  border-color:rgba(71,155,201,.30) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.60),
+    0 8px 18px rgba(84,128,158,.08),
+    0 0 16px rgba(78,169,213,.08) !important;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+@media(max-width:980px){
+  .rail{
+    width:54px !important;
+    min-width:54px !important;
+    max-width:54px !important;
+  }
+
+  .rail:hover,
+  .rail:focus-within,
+  .rail.aura-r8-dock-expanded{
+    width:194px !important;
+    min-width:194px !important;
+    max-width:194px !important;
+  }
+
+  .rail:hover .aura-r8-dock-icon,
+  .rail:focus-within .aura-r8-dock-icon,
+  .rail.aura-r8-dock-expanded .aura-r8-dock-icon{
+    left:22px !important;
+  }
+
+  .aura-r8-dock-label{
+    left:44px !important;
+  }
+
+  .composer,
+  #composer{
+    width:min(520px,calc(100% - 30px)) !important;
+    max-width:min(520px,calc(100% - 30px)) !important;
+  }
+
+  .composer:focus-within,
+  .composer.aura-r8-writing,
+  #composer:focus-within,
+  #composer.aura-r8-writing{
+    width:calc(100% - 18px) !important;
+    max-width:calc(100% - 18px) !important;
+  }
+}

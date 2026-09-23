@@ -1,0 +1,93 @@
+{
+  "schema": "aura.ci.critical-baseline.v0864.v1",
+  "pass": true,
+  "checks_total": 14,
+  "checks_passed": 14,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "path": "C:\\AURA GPT version\\ui\\main_window.py",
+      "pass": true,
+      "expected": "b95314824d32f93f1f26b82368440fbc55f225f4117aaee77d909e5c0cc65f4d",
+      "actual": "b95314824d32f93f1f26b82368440fbc55f225f4117aaee77d909e5c0cc65f4d"
+    },
+    {
+      "path": "C:\\AURA GPT version\\core\\intent_manager.py",
+      "pass": true,
+      "expected": "da259e875203ae4e2921c7262b592fdefb030c4b90fdf1352a0464029a881b9f",
+      "actual": "da259e875203ae4e2921c7262b592fdefb030c4b90fdf1352a0464029a881b9f"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tools\\internet_manager.py",
+      "pass": true,
+      "expected": "0cf66aecdb915ba1a0cf30da2541d3c5d5f092378138b960ea323d5c361d66c6",
+      "actual": "0cf66aecdb915ba1a0cf30da2541d3c5d5f092378138b960ea323d5c361d66c6"
+    },
+    {
+      "path": "C:\\AURA GPT version\\security\\policy_engine.py",
+      "pass": true,
+      "expected": "fd28c5d78ef2b20acad0c64b3554a570cb22fb73956861b07b309ff4753b502f",
+      "actual": "fd28c5d78ef2b20acad0c64b3554a570cb22fb73956861b07b309ff4753b502f"
+    },
+    {
+      "path": "C:\\AURA GPT version\\tools\\safe_http.py",
+      "pass": true,
+      "expected": "3d9cfa0c877b03eef3f4dfa4ce7550bf56ef7bf78963db31f24910e2ed2c385c",
+      "actual": "3d9cfa0c877b03eef3f4dfa4ce7550bf56ef7bf78963db31f24910e2ed2c385c"
+    },
+    {
+      "path": "C:\\AURA GPT version\\memory\\manager.py",
+      "pass": true,
+      "expected": "67b5ef0a4bec9aab50b7d2acc3e857f0a89622f12919e0cd84a0f52316d08fc2",
+      "actual": "67b5ef0a4bec9aab50b7d2acc3e857f0a89622f12919e0cd84a0f52316d08fc2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\runtime\\resource_guardian.py",
+      "pass": true,
+      "expected": "f8f3ee6a70e196423fed44545436407139bb9518efb1138f3f868a841c0b3df2",
+      "actual": "f8f3ee6a70e196423fed44545436407139bb9518efb1138f3f868a841c0b3df2"
+    },
+    {
+      "path": "C:\\AURA GPT version\\voice\\microphone.py",
+      "pass": true,
+      "expected": "198d34849016a1972edcd5ce4f3999a91ee0019e2ba15a38ac6e212b6b024348",
+      "actual": "198d34849016a1972edcd5ce4f3999a91ee0019e2ba15a38ac6e212b6b024348"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
+      "pass": true,
+      "expected": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be",
+      "actual": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
+      "pass": true,
+      "expected": "dad55aa207c47375e8ea4931a2ba77950fa8d354991d8f33f59010052cfe25aa",
+      "actual": "dad55aa207c47375e8ea4931a2ba77950fa8d354991d8f33f59010052cfe25aa"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\index-Ckl5rwwJ.js",
+      "pass": true,
+      "expected": "c90a330add27d9e006451164bb2df255e7e80584917369ec9dfff7ab5b958551",
+      "actual": "c90a330add27d9e006451164bb2df255e7e80584917369ec9dfff7ab5b958551"
+    },
+    {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
+      "pass": true,
+      "expected": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a",
+      "actual": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ui\\workers\\realtime_tts_worker.py",
+      "pass": true,
+      "expected": "d3438289116983beebfcc7d0f680017ce660753e64e9bd92f28eaeaf180e2df3",
+      "actual": "d3438289116983beebfcc7d0f680017ce660753e64e9bd92f28eaeaf180e2df3"
+    },
+    {
+      "path": "C:\\AURA GPT version\\ui\\workers\\__init__.py",
+      "pass": true,
+      "expected": "5fb4b5a3b804aed76110af7a52102ff272d768edb4da897a0175409f278f9156",
+      "actual": "5fb4b5a3b804aed76110af7a52102ff272d768edb4da897a0175409f278f9156"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema": "aura.dev.patch.p0854696.v1",
   "patch_id": "P0.8.5.4.6.9.6",
-  "active_ui": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2",
+  "active_ui": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2",
   "scope": [
     "brand-master-vector",
     "runtime-clock",

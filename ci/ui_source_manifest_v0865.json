@@ -1,0 +1,102 @@
+{
+  "schema": "aura.ui-source-manifest.v0865.v1",
+  "product_version_at_creation": "0.8.6.4",
+  "ui_release": "0.7.2.2-rc4.2",
+  "policy": {
+    "dist_is_generated_runtime_output": true,
+    "canonical_source_must_drive_staging": true,
+    "manual_dist_patch_after_v0865_forbidden": true
+  },
+  "assets": [
+    {
+      "name": "aura-p0436-official-neural-orb.js",
+      "decision": "DIST_PATCH_PROVEN",
+      "canonical_slot": "src_assets",
+      "canonical_source": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0436-official-neural-orb.js",
+      "source_mirrors": [
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0436-official-neural-orb.js"
+      ],
+      "runtime_dist": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0436-official-neural-orb.js",
+      "sha256": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
+    },
+    {
+      "name": "aura-p0521-weather-map.js",
+      "decision": "DIST_PATCH_PROVEN",
+      "canonical_slot": "src_assets",
+      "canonical_source": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0521-weather-map.js",
+      "source_mirrors": [
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0521-weather-map.js"
+      ],
+      "runtime_dist": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0521-weather-map.js",
+      "sha256": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
+    },
+    {
+      "name": "aura-p060-navigation-workspace.js",
+      "decision": "DIST_PATCH_PROVEN",
+      "canonical_slot": "src_assets",
+      "canonical_source": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p060-navigation-workspace.js",
+      "source_mirrors": [
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p060-navigation-workspace.js"
+      ],
+      "runtime_dist": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
+      "sha256": "dab75f1d0c7f395c406bbf3d7dee61655af29447b92d02795a22d5c04e01d923"
+    },
+    {
+      "name": "aura-p0623-file-productivity.js",
+      "decision": "DIST_PATCH_PROVEN",
+      "canonical_slot": "src_root",
+      "canonical_source": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0623-file-productivity.js",
+      "source_mirrors": [
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0623-file-productivity.js"
+      ],
+      "runtime_dist": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0623-file-productivity.js",
+      "sha256": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
+    },
+    {
+      "name": "aura-p0624-quality-ux.js",
+      "decision": "DIST_PATCH_PROVEN",
+      "canonical_slot": "src_root",
+      "canonical_source": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0624-quality-ux.js",
+      "source_mirrors": [
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0624-quality-ux.js"
+      ],
+      "runtime_dist": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0624-quality-ux.js",
+      "sha256": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
+    },
+    {
+      "name": "aura-p0626-memory.js",
+      "decision": "DIST_PATCH_PROVEN",
+      "canonical_slot": "src_root",
+      "canonical_source": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0626-memory.js",
+      "source_mirrors": [
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0626-memory.js"
+      ],
+      "runtime_dist": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0626-memory.js",
+      "sha256": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
+    },
+    {
+      "name": "aura-p074-vitals-activity-module.js",
+      "decision": "SOURCE_MATCHES_RUNTIME",
+      "canonical_slot": "src_assets",
+      "canonical_source": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p074-vitals-activity-module.js",
+      "source_mirrors": [
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p074-vitals-activity-module.js",
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p074-vitals-activity-module.js"
+      ],
+      "runtime_dist": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p074-vitals-activity-module.js",
+      "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
+    },
+    {
+      "name": "aura-p08518-system-state-final-polish.js",
+      "decision": "SOURCE_MATCHES_RUNTIME",
+      "canonical_slot": "src_assets",
+      "canonical_source": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08518-system-state-final-polish.js",
+      "source_mirrors": [
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08518-system-state-final-polish.js",
+        "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08518-system-state-final-polish.js"
+      ],
+      "runtime_dist": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08518-system-state-final-polish.js",
+      "sha256": "ab3a8f379fab6bbc63ee9fc9d9c076f86af883c2c3f4862a556db10984d32fc1"
+    }
+  ]
+}

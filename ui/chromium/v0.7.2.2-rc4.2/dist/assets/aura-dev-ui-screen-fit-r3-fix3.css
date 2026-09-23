@@ -1,0 +1,328 @@
+/* ================================================================
+   AURA R3 SCREEN FIT FIX3
+   Composer bottom-lock + legacy geometry neutralization
+   ================================================================ */
+
+html,
+body{
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+}
+
+body{margin:0 !important}
+
+#app{
+  box-sizing:border-box !important;
+  width:100% !important;
+  height:100vh !important;
+  max-height:100vh !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+
+  display:grid !important;
+  grid-template-columns:auto minmax(0,1fr) !important;
+  grid-template-rows:auto minmax(0,1fr) !important;
+  gap:10px !important;
+}
+
+/* Neutralize legacy shell offsets introduced by earlier left-rail layers. */
+.topbar{
+  grid-column:1 / -1 !important;
+  grid-row:1 !important;
+  position:relative !important;
+  inset:auto !important;
+  margin:0 !important;
+}
+
+.rail{
+  grid-column:1 !important;
+  grid-row:2 !important;
+  position:relative !important;
+  inset:auto !important;
+  margin:0 !important;
+  transform:none !important;
+
+  min-height:0 !important;
+  height:100% !important;
+  max-height:100% !important;
+  overflow:hidden !important;
+}
+
+.workspace{
+  grid-column:2 !important;
+  grid-row:2 !important;
+
+  position:relative !important;
+  inset:auto !important;
+  left:auto !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:auto !important;
+
+  margin:0 !important;
+  transform:none !important;
+
+  box-sizing:border-box !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  max-height:100% !important;
+
+  /* Reserve a permanent command-deck zone at the bottom. */
+  padding:0 0 70px 0 !important;
+  overflow:hidden !important;
+
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(250px,320px) !important;
+  grid-template-rows:minmax(0,1fr) !important;
+  gap:10px !important;
+}
+
+.hero{
+  grid-column:1 !important;
+  grid-row:1 !important;
+
+  position:relative !important;
+  inset:auto !important;
+  margin:0 !important;
+  transform:none !important;
+
+  min-width:0 !important;
+  min-height:0 !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  max-height:100% !important;
+  overflow:hidden !important;
+}
+
+.telemetry{
+  grid-column:2 !important;
+  grid-row:1 !important;
+
+  position:relative !important;
+  inset:auto !important;
+  margin:0 !important;
+  transform:none !important;
+
+  min-width:0 !important;
+  min-height:0 !important;
+  height:100% !important;
+  max-height:100% !important;
+  overflow:auto !important;
+}
+
+/* Critical fix:
+   remove composer from all historical grid/fixed/absolute geometry,
+   then pin it to the workspace bottom. */
+.composer,
+#composer{
+  position:absolute !important;
+
+  left:0 !important;
+  right:0 !important;
+  bottom:0 !important;
+  top:auto !important;
+  inset:auto 0 0 0 !important;
+
+  margin:0 !important;
+  transform:none !important;
+
+  grid-column:auto !important;
+  grid-row:auto !important;
+  grid-area:auto !important;
+
+  box-sizing:border-box !important;
+  width:auto !important;
+  min-width:0 !important;
+  max-width:none !important;
+
+  height:62px !important;
+  min-height:62px !important;
+  max-height:62px !important;
+
+  z-index:100 !important;
+  overflow:hidden !important;
+}
+
+/* Cancel possible legacy horizontal offsets on composer descendants. */
+.composer > *,
+#composer > *{
+  transform:none;
+}
+
+.composer-input-wrap{
+  position:relative !important;
+  left:auto !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:auto !important;
+  margin:0 !important;
+  transform:none !important;
+
+  min-width:0 !important;
+  width:auto !important;
+  max-width:none !important;
+  flex:1 1 auto !important;
+  overflow:hidden !important;
+}
+
+#messageInput{
+  position:relative !important;
+  inset:auto !important;
+  margin:0 !important;
+  transform:none !important;
+
+  width:100% !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  max-height:34px !important;
+  resize:none !important;
+}
+
+.attach,
+.mic,
+.send{
+  position:relative !important;
+  inset:auto !important;
+  margin:0 !important;
+  transform:none !important;
+  flex:0 0 auto !important;
+}
+
+/* Stage always stays inside hero. */
+#stage{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  overflow:hidden !important;
+}
+
+#stage canvas{
+  display:block !important;
+  max-width:100% !important;
+  max-height:100% !important;
+}
+
+/* ---------- HEIGHT FIT ---------- */
+@media(max-height:900px){
+  #app{
+    padding:8px !important;
+    gap:8px !important;
+  }
+
+  .topbar{
+    height:56px !important;
+    min-height:56px !important;
+  }
+
+  .workspace{
+    padding-bottom:64px !important;
+    gap:8px !important;
+  }
+
+  .composer,
+  #composer{
+    height:56px !important;
+    min-height:56px !important;
+    max-height:56px !important;
+    padding:8px 10px !important;
+  }
+
+  .attach,
+  .mic,
+  .send{
+    width:38px !important;
+    height:38px !important;
+  }
+}
+
+@media(max-height:780px){
+  #app{
+    padding:6px !important;
+    gap:6px !important;
+  }
+
+  .topbar{
+    height:50px !important;
+    min-height:50px !important;
+  }
+
+  .workspace{
+    padding-bottom:58px !important;
+    gap:6px !important;
+  }
+
+  .composer,
+  #composer{
+    height:52px !important;
+    min-height:52px !important;
+    max-height:52px !important;
+    padding:6px 8px !important;
+  }
+
+  .attach,
+  .mic,
+  .send{
+    width:36px !important;
+    height:36px !important;
+  }
+
+  #composerHint{display:none !important}
+  .rail-btn{min-height:33px !important}
+}
+
+@media(max-height:680px){
+  .brand small,
+  .route-pill,
+  .mini-chip{
+    display:none !important;
+  }
+
+  .topbar{
+    height:46px !important;
+    min-height:46px !important;
+  }
+
+  .workspace{
+    padding-bottom:54px !important;
+  }
+
+  .composer,
+  #composer{
+    height:48px !important;
+    min-height:48px !important;
+    max-height:48px !important;
+  }
+}
+
+/* ---------- WIDTH FIT ---------- */
+@media(max-width:1180px){
+  .workspace{
+    grid-template-columns:minmax(0,1fr) 250px !important;
+  }
+}
+
+@media(max-width:980px){
+  .workspace{
+    grid-template-columns:minmax(0,1fr) !important;
+  }
+
+  .telemetry{
+    display:none !important;
+  }
+
+  .hero{
+    grid-column:1 !important;
+  }
+}

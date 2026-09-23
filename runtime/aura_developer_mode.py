@@ -8,7 +8,7 @@ import re
 import time
 import unicodedata
 
-DEFAULT_ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1])
+DEFAULT_ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version")
 MAX_SPOKEN_SUMMARY_CHARS = 150
 
 ACTIVATE_PHRASES = (

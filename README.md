@@ -26,6 +26,33 @@
 
 ---
 
+<!-- AURA_CURRENT_STATUS_START -->
+## Current development status — 23 September 2026
+
+AURA is in **active private development on Windows**. The current validated product snapshot is stored on the sanitized pre-performance branch:
+
+`validation/aura-current-pre-performance-safe-20260923`
+
+Validated checkpoint SHA:
+
+`61a4d4d5302846942921d05e457ab2a08590e365`
+
+This branch is the **sanitized pre-performance checkpoint** of the current AURA development tree. The default `main` branch remains the public baseline and has **not yet been merged with this snapshot**.
+
+Current engineering focus:
+
+- audit code that is no longer referenced or has become redundant;
+- consolidate accumulated UI patch layers before deleting anything;
+- reduce startup work and move optional modules to lazy/on-demand loading;
+- preserve the current Chromium surface `v0.7.2.2-rc4.2`;
+- keep the current music experience without an equalizer or waveform visualizer;
+- keep machine-local state, browser profiles, databases, secrets, logs, media and temporary files out of public Git history.
+
+No legacy file is considered removable solely because of its filename or version suffix. Removal requires a reference/dependency audit and runtime validation first.
+<!-- AURA_CURRENT_STATUS_END -->
+
+---
+
 ## What AURA can do
 
 | Intelligence | Personal Assistant | System & Creation |

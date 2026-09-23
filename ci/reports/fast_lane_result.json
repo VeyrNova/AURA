@@ -1,0 +1,270 @@
+{
+  "schema": "aura.ci.fast-lane.v0861.v1",
+  "started_at": "2026-08-26T07:54:37.838446",
+  "finished_at": "2026-08-26T07:54:39.476711",
+  "portable": false,
+  "compile": [
+    {
+      "path": "ui/main_window.py",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "path": "core/intent_manager.py",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "path": "tools/internet_manager.py",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "path": "security/policy_engine.py",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "path": "tools/safe_http.py",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "path": "memory/manager.py",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "path": "runtime/resource_guardian.py",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "path": "voice/microphone.py",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "path": "services/core_bridge.py",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "path": "voice/xtts_tts.py",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "checks": [
+    {
+      "name": "critical_baseline",
+      "status": "FAIL",
+      "blocking": true,
+      "portable": false,
+      "active_ui_status": "PASS",
+      "checked": [
+        {
+          "name": "core_main_window",
+          "path": "C:\\AURA GPT version\\ui\\main_window.py",
+          "sha256": "b95314824d32f93f1f26b82368440fbc55f225f4117aaee77d909e5c0cc65f4d"
+        },
+        {
+          "name": "core_intent_manager",
+          "path": "C:\\AURA GPT version\\core\\intent_manager.py",
+          "sha256": "da259e875203ae4e2921c7262b592fdefb030c4b90fdf1352a0464029a881b9f"
+        },
+        {
+          "name": "core_internet_manager",
+          "path": "C:\\AURA GPT version\\tools\\internet_manager.py",
+          "sha256": "0cf66aecdb915ba1a0cf30da2541d3c5d5f092378138b960ea323d5c361d66c6"
+        },
+        {
+          "name": "core_policy_engine",
+          "path": "C:\\AURA GPT version\\security\\policy_engine.py",
+          "sha256": "fd28c5d78ef2b20acad0c64b3554a570cb22fb73956861b07b309ff4753b502f"
+        },
+        {
+          "name": "core_safe_http",
+          "path": "C:\\AURA GPT version\\tools\\safe_http.py",
+          "sha256": "3d9cfa0c877b03eef3f4dfa4ce7550bf56ef7bf78963db31f24910e2ed2c385c"
+        },
+        {
+          "name": "core_memory_manager",
+          "path": "C:\\AURA GPT version\\memory\\manager.py",
+          "sha256": "67b5ef0a4bec9aab50b7d2acc3e857f0a89622f12919e0cd84a0f52316d08fc2"
+        },
+        {
+          "name": "core_resource_guardian",
+          "path": "C:\\AURA GPT version\\runtime\\resource_guardian.py",
+          "sha256": "f8f3ee6a70e196423fed44545436407139bb9518efb1138f3f868a841c0b3df2"
+        },
+        {
+          "name": "core_microphone",
+          "path": "C:\\AURA GPT version\\voice\\microphone.py",
+          "sha256": "198d34849016a1972edcd5ce4f3999a91ee0019e2ba15a38ac6e212b6b024348"
+        },
+        {
+          "name": "ui_shell_host",
+          "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
+          "sha256": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be"
+        },
+        {
+          "name": "ui_index",
+          "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
+          "sha256": "dad55aa207c47375e8ea4931a2ba77950fa8d354991d8f33f59010052cfe25aa"
+        },
+        {
+          "name": "ui_main_bundle",
+          "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\index-Ckl5rwwJ.js",
+          "sha256": "c90a330add27d9e006451164bb2df255e7e80584917369ec9dfff7ab5b958551"
+        },
+        {
+          "name": "ui_maps_workspace",
+          "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
+          "sha256": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a"
+        }
+      ],
+      "failures": [
+        {
+          "name": "core_main_window",
+          "reason": "hash-drift",
+          "expected": "13b11617d6b656fd951b09765397f9c051b2c429a5d2ae749f5619a8e374438d",
+          "actual": "b95314824d32f93f1f26b82368440fbc55f225f4117aaee77d909e5c0cc65f4d",
+          "path": "C:\\AURA GPT version\\ui\\main_window.py"
+        },
+        {
+          "name": "ui_shell_host",
+          "reason": "hash-drift",
+          "expected": "453448bf8e357176a904b40bfa300f974a9bcb401a57de308498071a4d46b2a9",
+          "actual": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be",
+          "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py"
+        }
+      ]
+    },
+    {
+      "name": "security_fail_closed",
+      "status": "PASS",
+      "blocking": true,
+      "checks": {
+        "unknown_denied": true,
+        "unknown_fail_closed_reason": true,
+        "missing_permission_denied": true,
+        "critical_denied_even_confirmed": true,
+        "parameter_aware_debt_still_visible": true
+      },
+      "note": "parameter_aware_debt_still_visible is intentionally frozen until v0.8.6.3."
+    },
+    {
+      "name": "shared_sse",
+      "status": "PASS",
+      "blocking": true,
+      "count": 1,
+      "files": [
+        {
+          "file": "index-Ckl5rwwJ.js",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "memory_forget_routing",
+      "status": "PASS",
+      "blocking": true,
+      "checks": {
+        "natural_forget": true,
+        "natural_forget_payload": true,
+        "forget_que_preserved": true,
+        "forget_all_not_hijacked": true,
+        "delete_note_not_hijacked": true
+      },
+      "read_only": true
+    },
+    {
+      "name": "weather_location_roundtrip",
+      "status": "PASS",
+      "blocking": true,
+      "checks": {
+        "extracts_location": true,
+        "plan_weather": true,
+        "plan_action": true,
+        "plan_location": true
+      },
+      "plan": {
+        "name": "weather",
+        "action": "WEB_WEATHER",
+        "args": {
+          "location": "Toulon",
+          "tomorrow": false
+        }
+      }
+    },
+    {
+      "name": "maps_contract",
+      "status": "PASS",
+      "blocking": true,
+      "checks": {
+        "raw_request_detected": true,
+        "raw_action_directions": true,
+        "raw_origin_toulon": true,
+        "raw_destination_marseille": true,
+        "planner_detected": true,
+        "planner_tool_maps": true,
+        "planner_action_directions": true,
+        "planner_origin_toulon": true,
+        "planner_destination_marseille": true,
+        "planner_driving": true,
+        "shared_bus_listener": true,
+        "maps_subscriber": true,
+        "private_eventsource_absent": true,
+        "native_source_evidence": true,
+        "fallback_source_evidence": true
+      },
+      "raw_request": {
+        "action": "directions",
+        "origin": "Toulon",
+        "destination": "Marseille",
+        "travelmode": "driving"
+      },
+      "planner": {
+        "name": "maps",
+        "action": "MAPS_DIRECTIONS",
+        "args": {
+          "action": "directions",
+          "origin": "Toulon",
+          "destination": "Marseille",
+          "travelmode": "driving"
+        }
+      },
+      "ui": {
+        "shared_bus_listener": true,
+        "maps_subscriber": true,
+        "private_eventsource_absent": true,
+        "native_source_evidence": true,
+        "fallback_source_evidence": true
+      },
+      "gate_revision": "v0.8.6.1.1"
+    },
+    {
+      "name": "architecture_gate",
+      "status": "FAIL",
+      "blocking": true,
+      "returncode": 2,
+      "stdout_tail": "{\n  \"schema\": \"aura.ci.architecture-gate.v1\",\n  \"portable\": false,\n  \"ui_status\": \"PASS\",\n  \"rows\": [\n    {\n      \"path\": \"ui/main_window.py\",\n      \"lines\": 5767,\n      \"ceiling\": 5947\n    },\n    {\n      \"path\": \"services/core_bridge.py\",\n      \"lines\": 2959,\n      \"ceiling\": 2959\n    },\n    {\n      \"path\": \"voice/xtts_tts.py\",\n      \"lines\": 2465,\n      \"ceiling\": 2465\n    },\n    {\n      \"path\": \"ui::tools/shell_host.py\",\n      \"lines\": 3584,\n      \"ceiling\": 3568\n    },\n    {\n      \"path\": \"ui::dist/assets/index-Ckl5rwwJ.js\",\n      \"lines\": 4164,\n      \"ceiling\": 4164\n    },\n    {\n      \"path\": \"ui::dist/assets/aura-p060-navigation-workspace.js\",\n      \"lines\": 3139,\n      \"ceiling\": 3139\n    }\n  ],\n  \"failures\": [\n    {\n      \"path\": \"ui::tools/shell_host.py\",\n      \"reason\": \"monolith-growth\",\n      \"lines\": 3584,\n      \"ceiling\": 3568\n    }\n  ],\n  \"pass\": false\n}\nReport: C:\\AURA GPT version\\ci\\reports\\architecture_gate.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "dependency_probe",
+      "status": "PASS",
+      "blocking": true,
+      "returncode": 0,
+      "stdout_tail": "{\n  \"schema\": \"aura.ci.dependency-probe.v3.3\",\n  \"gate_revision\": \"v0.8.6.2.2\",\n  \"scope\": {\n    \"python_files_scanned\": 140,\n    \"tests_scanned\": false,\n    \"ci_scanned\": false,\n    \"vendor_scanned\": false\n  },\n  \"declaration_sources\": {\n    \"requirements.txt\": [\n      \"PySide6\",\n      \"python-dotenv\",\n      \"requests\"\n    ],\n    \"requirements/core.in\": [\n      \"PySide6\",\n      \"python-dotenv\",\n      \"requests\",\n      \"psutil\"\n    ],\n    \"requirements/voice.in\": [\n      \"numpy\",\n      \"sounddevice\",\n      \"faster-whisper\",\n      \"piper-tts\",\n      \"coqui-tts\",\n      \"websockets\"\n    ],\n    \"requirements/gpu-cu130.in\": [\n      \"torch\",\n      \"torchaudio\"\n    ],\n    \"requirements/documents.optional.in\": [\n      \"python-docx\",\n      \"PyMuPDF\",\n      \"openpyxl\",\n      \"pypdf\",\n      \"PyPDF2\"\n    ]\n  },\n  \"external_import_roots\": [\n    \"PyPDF2\",\n    \"PySide6\",\n    \"TTS\",\n    \"chatterbox\",\n    \"docx\",\n    \"dotenv\",\n    \"faster_whisper\",\n    \"fitz\",\n    \"numpy\",\n    \"openpyxl\",\n    \"piper\",\n    \"psutil\",\n    \"pypdf\",\n    \"requests\",\n    \"sounddevice\",\n    \"torch\",\n    \"websockets\"\n  ],\n  \"resolution\": [\n    {\n      \"import_root\": \"PyPDF2\",\n      \"distribution\": \"pypdf2\",\n      \"declared\": true,\n      \"occurrences\": 1\n    },\n    {\n      \"import_root\": \"PySide6\",\n      \"distribution\": \"PySide6\",\n      \"declared\": true,\n      \"occurrences\": 55\n    },\n    {\n      \"import_root\": \"TTS\",\n      \"distribution\": \"coqui-tts\",\n      \"declared\": true,\n      \"occurrences\": 1\n    },\n    {\n      \"import_root\": \"chatterbox\",\n      \"distribution\": \"chatterbox\",\n      \"declared\": true,\n      \"occurrences\": 2\n    },\n    {\n      \"import_root\": \"docx\",\n      \"distribution\": \"python-docx\",\n      \"declared\": true,\n      \"occurrences\": 1\n    },\n    {\n      \"import_root\": \"dotenv\",\n      \"distribution\": \"python-dotenv\",\n      \"declared\": true,\n      \"occurrences\": 1\n    },\n    {\n      \"import_root\": \"faster_whisper\",\n      \"distribution\": \"faster-whisper\",\n      \"declared\": true,\n      \"occurrences\": 1\n    },\n    {\n      \"import_root\": \"fitz\",\n      \"distribution\": \"pymupdf\",\n      \"declared\": true,\n      \"occurrences\": 1\n    },\n    {\n      \"import_root\": \"numpy\",\n      \"distribution\": \"numpy\",\n      \"declared\": true,\n      \"occurrences\": 5\n    },\n    {\n      \"import_root\": \"openpyxl\",\n      \"distribution\": \"openpyxl\",\n      \"declared\": true,\n      \"occurrences\": 1\n    },\n    {\n      \"import_root\": \"piper\",\n      \"distribution\": \"piper-tts\",\n      \"declared\": true,\n      \"occurrences\": 2\n    },\n    {\n      \"import_root\": \"psutil\",\n      \"distribution\": \"psutil\",\n      \"declared\": true,\n      \"occurrences\": 5\n    },\n    {\n      \"import_root\": \"pypdf\",\n      \"distribution\": \"pypdf\",\n      \"declared\": true,\n      \"occurrences\": 1\n    },\n    {\n      \"import_root\": \"requests\",\n      \"distribution\": \"requests\",\n      \"declared\": true,\n      \"occurrences\": 3\n    },\n    {\n      \"import_root\": \"sounddevice\",\n      \"distribution\": \"sounddevice\",\n      \"declared\": true,\n      \"occurrences\": 18\n    },\n    {\n      \"import_root\": \"torch\",\n      \"distribution\": \"torch\",\n      \"declared\": true,\n      \"occurrences\": 8\n    },\n    {\n      \"import_root\": \"websockets\",\n      \"distribution\": \"websockets\",\n      \"declared\": true,\n      \"occurrences\": 2\n    }\n  ],\n  \"undeclared_external\": [],\n  \"parse_errors\": [],\n  \"lock_contract\": {\n    \"path\": \"C:\\\\AURA GPT version\\\\requirements\\\\locks\\\\windows-py314-cu130.lock.json\",\n    \"schema_ok\": true,\n    \"phase_ok\": true,\n    \"python_ok\": true,\n    \"core_exact_ok\": true,\n    \"voice_exact_ok\": true,\n    \"gpu_exact_ok\": true,\n    \"full_exact_ok\": true,\n    \"gpu_provenance_ok\": true,\n    \"strict_policy_ok\": true,\n    \"error\": null,\n    \"core\": {\n      \"profile\": \"core\",\n      \"declared_path\": \"requirements/locks/windows-py314-core-exact.lock.txt\",\n      \"declared_sha256\": \"0f249c23dcf4695949768b3d990c512cbfbb36ccdf931a3e8e619acc5bd92895\",\n      \"declared_package_count\": 11,\n      \"status\": \"strict-cold-install-ready\",\n      \"resolved_path\": \"C:\\\\AURA GPT version\\\\requirements\\\\locks\\\\windows-py314-core-exact.lock.txt\",\n      \"actual_sha256\": \"0f249c23dcf4695949768b3d990c512cbfbb36ccdf931a3e8e619acc5bd92895\",\n      \"actual_package_count\": 11\n    },\n    \"voice\": {\n      \"profile\": \"voice\",\n      \"declared_path\": \"requirements/locks/windows-py314-voice-exact.lock.txt\",\n      \"declared_sha256\": \"0f2ce8ac21c67a8ca879465e64c5be3792a2080aa4818ab618eb4da1baf7ec54\",\n      \"declared_package_count\": 107,\n      \"status\": \"strict-cold-install-ready\",\n      \"resolved_path\": \"C:\\\\AURA GPT version\\\\requirements\\\\locks\\\\windows-py314-voice-exact.lock.txt\",\n      \"actual_sha256\": \"0f2ce8ac21c67a8ca879465e64c5be3792a2080aa4818ab618eb4da1baf7ec54\",\n      \"actual_package_count\": 107\n    },\n    \"gpu\": {\n      \"profile\": \"gpu\",\n      \"declared_path\": \"requirements/locks/windows-py314-gpu-exact.lock.txt\",\n      \"declared_sha256\": \"b7cc800a61f4c3c7392a530b106965160f5ebcb94f934017388a70fb341fe927\",\n      \"declared_package_count\": 6,\n      \"status\": \"strict-cold-install-ready\",\n      \"resolved_path\": \"C:\\\\AURA GPT version\\\\requirements\\\\locks\\\\windows-py314-gpu-exact.lock.txt\",\n      \"actual_sha256\": \"b7cc800a61f4c3c7392a530b106965160f5ebcb94f934017388a70fb341fe927\",\n      \"actual_package_count\": 6\n    },\n    \"full\": {\n      \"profile\": \"full\",\n      \"declared_path\": \"requirements/locks/windows-py314-full-exact.lock.txt\",\n      \"declared_sha256\": \"e3b4261c70849b076dc9284e236f006443941038c69ffaa2e96ec641e87794b5\",\n      \"declared_package_count\": 113,\n      \"status\": \"strict-cold-install-ready\",\n      \"resolved_path\": \"C:\\\\AURA GPT version\\\\requirements\\\\locks\\\\windows-py314-full-exact.lock.txt\",\n      \"actual_sha256\": \"e3b4261c70849b076dc9284e236f006443941038c69ffaa2e96ec641e87794b5\",\n      \"actual_package_count\": 113\n    },\n    \"gpu_provenance\": {\n      \"torch_version\": \"2.13.0+cu130\",\n      \"torchaudio_version\": \"2.11.0+cu130\",\n      \"cuda_runtime\": \"13.0\",\n      \"cudnn\": 92000,\n      \"device\": \"NVIDIA GeForce RTX 4050 Laptop GPU\",\n      \"official_index\": \"https://download.pytorch.org/whl/cu130\",\n      \"verified_origin_hosts\": [\n        \"download.pytorch.org\",\n        \"download-r2.pytorch.org\"\n      ],\n      \"torch_verified_url\": \"https://download-r2.pytorch.org/whl/cu130/torch-2.13.0%2Bcu130-cp314-cp314-win_amd64.whl\",\n      \"torchaudio_verified_url\": \"https://download-r2.pytorch.org/whl/cu130/torchaudio-2.11.0%2Bcu130-cp314-cp314-win_amd64.whl\",\n      \"python_tag\": \"cp314-cp314-win_amd64\",\n      \"provenance_status\": \"official-index-and-d3-cold-install-verified\"\n    }\n  },\n  \"lock_schema_ok\": true,\n  \"exact_core_lock_ok\": true,\n  \"exact_voice_lock_ok\": true,\n  \"gpu_pending_ok\": false,\n  \"strict_policy_ok\": true,\n  \"runtime_classified_local\": true,\n  \"pass\": true\n}\nReport: C:\\AURA GPT version\\ci\\reports\\dependency_probe.json\n",
+      "stderr_tail": "C:\\AURA GPT version\\ci\\dependency_probe.py:119: DeprecationWarning: 'maxsplit' is passed as positional argument\n  name = re.split(r\"[<>=!~\\[\\]\\s]\", item, 1)[0]\n"
+    }
+  ],
+  "blocking_failures": [
+    "critical_baseline",
+    "architecture_gate"
+  ],
+  "blocking_environment": [],
+  "pass": false
+}

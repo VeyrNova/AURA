@@ -1,0 +1,82 @@
+{
+  "schema": "aura.v0922.modules-agenda-ui-manifest.v1",
+  "milestone": "v0.9.2.2 Modules Visual Exposure + Agenda Calendar Consolidation",
+  "d2_product_version": "0.9.2.1",
+  "created_at": "2026-08-26T20:18:10",
+  "authority": {
+    "modules_js": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0702-left-rail.js",
+    "modules_css": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0702-left-rail.css",
+    "mail_execution_bridge": "existing conversation -> AuraCore.try_handle_intent -> PersonalIntegrationDispatcher",
+    "agenda_execution_bridge": "existing plan/reminders surface + conversation Calendar commands"
+  },
+  "ownership": {
+    "AGENDA": "calendar + scheduled reminders/notes context",
+    "TACHES": "todo/status/priority/completion",
+    "MAIL": "standalone Modules launcher",
+    "CALENDAR_sidebar_duplicate": false
+  },
+  "files": {
+    "js_source": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0702-left-rail.js",
+      "sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02"
+    },
+    "js_source_asset": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0702-left-rail.js",
+      "sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02"
+    },
+    "js_dist": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0702-left-rail.js",
+      "sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02"
+    },
+    "css_source": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0702-left-rail.css",
+      "sha256": "94b85df9d6d009e9486d1a2c35128d5e45a649318ea9f9f25d25d8fac2a588fc"
+    },
+    "css_source_asset": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0702-left-rail.css",
+      "sha256": "94b85df9d6d009e9486d1a2c35128d5e45a649318ea9f9f25d25d8fac2a588fc"
+    },
+    "css_dist": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0702-left-rail.css",
+      "sha256": "94b85df9d6d009e9486d1a2c35128d5e45a649318ea9f9f25d25d8fac2a588fc"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_modules_agenda_ui_v0922.py",
+      "sha256": "7476a249c421c706be2e37aaefa016aeaedcf06f08019b00a247891c7b5e7bb5"
+    }
+  },
+  "providers_modified": false,
+  "oauth_connected": false,
+  "real_email_connected": false,
+  "real_calendar_connected": false,
+  "final_product_version": "0.9.4",
+  "certification_target_version": "0.9.4",
+  "status": "CERTIFIED",
+  "reverified_at": "2026-08-27T18:20:54",
+  "final_files": {
+    "js_source": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0702-left-rail.js",
+      "sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02"
+    },
+    "js_dist": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0702-left-rail.js",
+      "sha256": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02"
+    },
+    "css_source": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0702-left-rail.css",
+      "sha256": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+    },
+    "css_dist": {
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0702-left-rail.css",
+      "sha256": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+    },
+    "invariant": {
+      "path": "C:\\AURA GPT version\\tests\\invariants\\test_modules_agenda_ui_v0922.py",
+      "sha256": "33f70170b2d3c8e0de29ebf85724e36474eb920b4d290ebe5de8d636b5d266bc"
+    }
+  },
+  "certified_at": "2026-08-27T18:21:56",
+  "reverified_at_v09221": "2026-08-27T19:00:45",
+  "reverified_at_v093": "2026-08-27T20:46:17",
+  "reverified_at_v094": "2026-08-28T10:06:06"
+}

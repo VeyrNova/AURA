@@ -1,0 +1,259 @@
+/* ================================================================
+   AURA PREMIUM COMPACT DOCK R6
+   Replace full left sidebar feel with a floating command dock
+   ================================================================ */
+
+:root{
+  --r6-cyan:#73edff;
+  --r6-violet:#a66cff;
+  --r6-panel:rgba(4,13,24,.60);
+  --r6-line:rgba(106,220,255,.12);
+}
+
+/* One main visual canvas under the topbar. */
+#app{
+  grid-template-columns:minmax(0,1fr) !important;
+  grid-template-rows:54px minmax(0,1fr) !important;
+}
+
+.topbar{
+  grid-column:1 !important;
+  grid-row:1 !important;
+}
+
+/* Workspace now owns the whole width. */
+.workspace{
+  grid-column:1 !important;
+  grid-row:2 !important;
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+}
+
+/* Floating compact navigation dock. */
+.rail{
+  position:absolute !important;
+  z-index:180 !important;
+
+  left:22px !important;
+  top:76px !important;
+  right:auto !important;
+  bottom:auto !important;
+
+  width:58px !important;
+  min-width:58px !important;
+  max-width:58px !important;
+
+  height:auto !important;
+  max-height:calc(100vh - 104px) !important;
+  min-height:0 !important;
+
+  padding:7px 6px !important;
+  margin:0 !important;
+  transform:none !important;
+
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:5px !important;
+
+  overflow:visible !important;
+
+  border-radius:15px !important;
+  background:
+    linear-gradient(180deg,rgba(5,16,28,.68),rgba(3,10,19,.52)) !important;
+  border:1px solid rgba(104,219,255,.10) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.018),
+    0 18px 44px rgba(0,0,0,.25),
+    0 0 24px rgba(52,167,232,.035) !important;
+  backdrop-filter:blur(20px) saturate(118%) !important;
+}
+
+.rail::before{
+  content:"";
+  position:absolute !important;
+  left:50% !important;
+  top:8px !important;
+  bottom:8px !important;
+  width:1px !important;
+  transform:translateX(-50%) !important;
+  background:linear-gradient(
+    180deg,
+    transparent,
+    rgba(104,220,255,.025) 14%,
+    transparent 42% 58%,
+    rgba(165,108,255,.025) 86%,
+    transparent
+  ) !important;
+  pointer-events:none !important;
+}
+
+.rail::after{
+  content:"";
+  position:absolute !important;
+  left:50% !important;
+  bottom:-11px !important;
+  width:4px !important;
+  height:4px !important;
+  transform:translateX(-50%) !important;
+  border-radius:50% !important;
+  background:var(--r6-cyan) !important;
+  box-shadow:
+    0 0 7px rgba(115,237,255,.78),
+    0 0 16px rgba(77,194,255,.25) !important;
+  opacity:.68 !important;
+}
+
+/* Navigation buttons become icon-first. */
+.rail-btn{
+  position:relative !important;
+
+  width:44px !important;
+  min-width:44px !important;
+  max-width:44px !important;
+  height:42px !important;
+  min-height:42px !important;
+  max-height:42px !important;
+
+  padding:0 !important;
+  margin:0 !important;
+
+  display:grid !important;
+  place-items:center !important;
+
+  border-radius:11px !important;
+  border:1px solid transparent !important;
+  background:transparent !important;
+  box-shadow:none !important;
+
+  overflow:visible !important;
+}
+
+.rail-btn span{
+  margin:0 !important;
+  font-size:16px !important;
+  line-height:1 !important;
+  opacity:.70 !important;
+  filter:none !important;
+}
+
+.rail-btn small{
+  display:none !important;
+}
+
+.rail-btn:hover{
+  transform:none !important;
+  background:rgba(15,45,67,.34) !important;
+  border-color:rgba(105,220,255,.10) !important;
+}
+
+.rail-btn:hover span{
+  opacity:1 !important;
+  filter:drop-shadow(0 0 7px rgba(102,222,255,.24)) !important;
+}
+
+.rail-btn.active{
+  background:
+    linear-gradient(180deg,rgba(18,62,92,.62),rgba(10,30,50,.44)) !important;
+  border-color:rgba(111,228,255,.28) !important;
+  box-shadow:
+    inset 0 0 18px rgba(56,174,255,.06),
+    0 0 16px rgba(56,174,255,.06) !important;
+}
+
+.rail-btn.active span{
+  opacity:1 !important;
+  color:#effbff !important;
+  filter:drop-shadow(0 0 8px rgba(108,229,255,.48)) !important;
+}
+
+.rail-btn.active::after{
+  content:"";
+  position:absolute !important;
+  right:-10px !important;
+  top:50% !important;
+  width:4px !important;
+  height:4px !important;
+  margin:0 !important;
+  transform:translateY(-50%) !important;
+  border-radius:50% !important;
+  background:var(--r6-violet) !important;
+  box-shadow:0 0 9px rgba(166,108,255,.72) !important;
+}
+
+/* Remove old large lower rail cards in compact mode. */
+.rail [class*="profile"],
+.rail [class*="Profile"],
+.rail [class*="aura-core"],
+.rail [class*="auraCore"],
+.rail [class*="core-card"],
+.rail [class*="coreCard"]{
+  display:none !important;
+}
+
+.rail-spacer{
+  display:none !important;
+}
+
+/* Give the central scene all reclaimed space. */
+.hero{
+  left:0 !important;
+  right:0 !important;
+  width:auto !important;
+}
+
+/* Keep AURA clock slightly away from the top-right edge. */
+.aura-r5-identity{
+  right:30px !important;
+}
+
+/* Composer remains centered and independent of dock. */
+.composer,
+#composer{
+  width:min(980px,calc(100% - 80px)) !important;
+}
+
+/* Optional tooltip-like label from the native title remains available;
+   no new text is injected, preserving behavior/accessibility. */
+
+/* Responsive */
+@media(max-width:980px){
+  .rail{
+    left:14px !important;
+    top:68px !important;
+    width:52px !important;
+    min-width:52px !important;
+    max-width:52px !important;
+    padding-left:4px !important;
+    padding-right:4px !important;
+  }
+
+  .rail-btn{
+    width:40px !important;
+    min-width:40px !important;
+    max-width:40px !important;
+    height:38px !important;
+    min-height:38px !important;
+    max-height:38px !important;
+  }
+
+  .composer,
+  #composer{
+    width:calc(100% - 50px) !important;
+  }
+}
+
+@media(max-height:760px){
+  .rail{
+    top:64px !important;
+    gap:3px !important;
+  }
+
+  .rail-btn{
+    height:34px !important;
+    min-height:34px !important;
+    max-height:34px !important;
+  }
+}

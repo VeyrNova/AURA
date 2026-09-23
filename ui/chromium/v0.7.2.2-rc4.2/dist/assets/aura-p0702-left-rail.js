@@ -315,6 +315,49 @@ function openPlan(mode){
       personalCommand('envoie un mail a ',false);
     }
   });
+/* AURA R15 - DIRECT SETTINGS API */
+window.__AURA_R15_SETTINGS_API__ = true;
+window.AuraP0702Settings = {
+  open: () => {
+    closePopover(pop,'modules',false);
+    settings.hidden = false;
+    settings.classList.add('open');
+
+    const dock = document.getElementById('auraR10Dock');
+    const dr = dock?.getBoundingClientRect?.();
+    const width = Math.min(420,Math.max(320,window.innerWidth - 32));
+    const desired = (dr?.right || 150) + 14;
+    const left = Math.min(
+      Math.max(12,desired),
+      Math.max(12,window.innerWidth - width - 12)
+    );
+
+    settings.style.setProperty('position','fixed','important');
+    settings.style.setProperty('left',`${left}px`,'important');
+    settings.style.setProperty('right','auto','important');
+    settings.style.setProperty('top','76px','important');
+    settings.style.setProperty('width',`${width}px`,'important');
+    settings.style.setProperty('max-width','calc(100vw - 24px)','important');
+    settings.style.setProperty('max-height','calc(100vh - 96px)','important');
+    settings.style.setProperty('overflow','auto','important');
+    settings.style.setProperty('z-index','2147483000','important');
+    settings.style.setProperty('opacity','1','important');
+    settings.style.setProperty('transform','none','important');
+    settings.style.setProperty('pointer-events','auto','important');
+
+    manager()?.overlay?.open?.('rail-settings');
+    setActive('settings');
+    return true;
+  },
+  close: () => {
+    if (settings.hidden) return true;
+    settings.classList.remove('open');
+    settings.hidden = true;
+    manager()?.overlay?.close?.('rail-settings');
+    syncActive();
+    return true;
+  }
+};
 settings.addEventListener('click',e=>{if(e.target.closest('[data-pop-close]'))closePopover(settings,'settings')});
 
   document.addEventListener('click',event=>{

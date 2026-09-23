@@ -1,0 +1,29 @@
+/* ================================================================
+   AURA R15 - DOCK VIEWPORT CONTAINMENT
+   Dock is never allowed to park outside the viewport.
+   ================================================================ */
+#auraR10Dock,
+.aura-r10-dock {
+  left: max(12px, env(safe-area-inset-left)) !important;
+  right: auto !important;
+  margin-left: 0 !important;
+  transform: none !important;
+  translate: none !important;
+  max-width: calc(100vw - 24px) !important;
+  box-sizing: border-box !important;
+}
+
+#auraR10Dock[style],
+.aura-r10-dock[style] {
+  left: max(12px, env(safe-area-inset-left)) !important;
+  transform: none !important;
+  translate: none !important;
+}
+
+@media (max-width: 760px) {
+  #auraR10Dock,
+  .aura-r10-dock {
+    left: max(8px, env(safe-area-inset-left)) !important;
+    max-width: calc(100vw - 16px) !important;
+  }
+}

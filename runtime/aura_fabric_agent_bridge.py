@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 import json, os, platform, shutil
-ROOT=Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
+ROOT=Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
 CATALOG_PATH=ROOT/"ci"/"aura_fabric_coding_agent_catalog.json"
 def _catalog(): return json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
 def _agents(): return {a["agent_id"]:a for a in _catalog()["agents"]}

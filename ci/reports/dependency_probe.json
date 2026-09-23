@@ -1,0 +1,243 @@
+{
+  "schema": "aura.ci.dependency-probe.v3.3",
+  "gate_revision": "v0.8.6.2.2",
+  "scope": {
+    "python_files_scanned": 140,
+    "tests_scanned": false,
+    "ci_scanned": false,
+    "vendor_scanned": false
+  },
+  "declaration_sources": {
+    "requirements.txt": [
+      "PySide6",
+      "python-dotenv",
+      "requests"
+    ],
+    "requirements/core.in": [
+      "PySide6",
+      "python-dotenv",
+      "requests",
+      "psutil"
+    ],
+    "requirements/voice.in": [
+      "numpy",
+      "sounddevice",
+      "faster-whisper",
+      "piper-tts",
+      "coqui-tts",
+      "websockets"
+    ],
+    "requirements/gpu-cu130.in": [
+      "torch",
+      "torchaudio"
+    ],
+    "requirements/documents.optional.in": [
+      "python-docx",
+      "PyMuPDF",
+      "openpyxl",
+      "pypdf",
+      "PyPDF2"
+    ]
+  },
+  "external_import_roots": [
+    "PyPDF2",
+    "PySide6",
+    "TTS",
+    "chatterbox",
+    "docx",
+    "dotenv",
+    "faster_whisper",
+    "fitz",
+    "numpy",
+    "openpyxl",
+    "piper",
+    "psutil",
+    "pypdf",
+    "requests",
+    "sounddevice",
+    "torch",
+    "websockets"
+  ],
+  "resolution": [
+    {
+      "import_root": "PyPDF2",
+      "distribution": "pypdf2",
+      "declared": true,
+      "occurrences": 1
+    },
+    {
+      "import_root": "PySide6",
+      "distribution": "PySide6",
+      "declared": true,
+      "occurrences": 55
+    },
+    {
+      "import_root": "TTS",
+      "distribution": "coqui-tts",
+      "declared": true,
+      "occurrences": 1
+    },
+    {
+      "import_root": "chatterbox",
+      "distribution": "chatterbox",
+      "declared": true,
+      "occurrences": 2
+    },
+    {
+      "import_root": "docx",
+      "distribution": "python-docx",
+      "declared": true,
+      "occurrences": 1
+    },
+    {
+      "import_root": "dotenv",
+      "distribution": "python-dotenv",
+      "declared": true,
+      "occurrences": 1
+    },
+    {
+      "import_root": "faster_whisper",
+      "distribution": "faster-whisper",
+      "declared": true,
+      "occurrences": 1
+    },
+    {
+      "import_root": "fitz",
+      "distribution": "pymupdf",
+      "declared": true,
+      "occurrences": 1
+    },
+    {
+      "import_root": "numpy",
+      "distribution": "numpy",
+      "declared": true,
+      "occurrences": 5
+    },
+    {
+      "import_root": "openpyxl",
+      "distribution": "openpyxl",
+      "declared": true,
+      "occurrences": 1
+    },
+    {
+      "import_root": "piper",
+      "distribution": "piper-tts",
+      "declared": true,
+      "occurrences": 2
+    },
+    {
+      "import_root": "psutil",
+      "distribution": "psutil",
+      "declared": true,
+      "occurrences": 5
+    },
+    {
+      "import_root": "pypdf",
+      "distribution": "pypdf",
+      "declared": true,
+      "occurrences": 1
+    },
+    {
+      "import_root": "requests",
+      "distribution": "requests",
+      "declared": true,
+      "occurrences": 3
+    },
+    {
+      "import_root": "sounddevice",
+      "distribution": "sounddevice",
+      "declared": true,
+      "occurrences": 18
+    },
+    {
+      "import_root": "torch",
+      "distribution": "torch",
+      "declared": true,
+      "occurrences": 8
+    },
+    {
+      "import_root": "websockets",
+      "distribution": "websockets",
+      "declared": true,
+      "occurrences": 2
+    }
+  ],
+  "undeclared_external": [],
+  "parse_errors": [],
+  "lock_contract": {
+    "path": "C:\\AURA GPT version\\requirements\\locks\\windows-py314-cu130.lock.json",
+    "schema_ok": true,
+    "phase_ok": true,
+    "python_ok": true,
+    "core_exact_ok": true,
+    "voice_exact_ok": true,
+    "gpu_exact_ok": true,
+    "full_exact_ok": true,
+    "gpu_provenance_ok": true,
+    "strict_policy_ok": true,
+    "error": null,
+    "core": {
+      "profile": "core",
+      "declared_path": "requirements/locks/windows-py314-core-exact.lock.txt",
+      "declared_sha256": "0f249c23dcf4695949768b3d990c512cbfbb36ccdf931a3e8e619acc5bd92895",
+      "declared_package_count": 11,
+      "status": "strict-cold-install-ready",
+      "resolved_path": "C:\\AURA GPT version\\requirements\\locks\\windows-py314-core-exact.lock.txt",
+      "actual_sha256": "0f249c23dcf4695949768b3d990c512cbfbb36ccdf931a3e8e619acc5bd92895",
+      "actual_package_count": 11
+    },
+    "voice": {
+      "profile": "voice",
+      "declared_path": "requirements/locks/windows-py314-voice-exact.lock.txt",
+      "declared_sha256": "0f2ce8ac21c67a8ca879465e64c5be3792a2080aa4818ab618eb4da1baf7ec54",
+      "declared_package_count": 107,
+      "status": "strict-cold-install-ready",
+      "resolved_path": "C:\\AURA GPT version\\requirements\\locks\\windows-py314-voice-exact.lock.txt",
+      "actual_sha256": "0f2ce8ac21c67a8ca879465e64c5be3792a2080aa4818ab618eb4da1baf7ec54",
+      "actual_package_count": 107
+    },
+    "gpu": {
+      "profile": "gpu",
+      "declared_path": "requirements/locks/windows-py314-gpu-exact.lock.txt",
+      "declared_sha256": "b7cc800a61f4c3c7392a530b106965160f5ebcb94f934017388a70fb341fe927",
+      "declared_package_count": 6,
+      "status": "strict-cold-install-ready",
+      "resolved_path": "C:\\AURA GPT version\\requirements\\locks\\windows-py314-gpu-exact.lock.txt",
+      "actual_sha256": "b7cc800a61f4c3c7392a530b106965160f5ebcb94f934017388a70fb341fe927",
+      "actual_package_count": 6
+    },
+    "full": {
+      "profile": "full",
+      "declared_path": "requirements/locks/windows-py314-full-exact.lock.txt",
+      "declared_sha256": "e3b4261c70849b076dc9284e236f006443941038c69ffaa2e96ec641e87794b5",
+      "declared_package_count": 113,
+      "status": "strict-cold-install-ready",
+      "resolved_path": "C:\\AURA GPT version\\requirements\\locks\\windows-py314-full-exact.lock.txt",
+      "actual_sha256": "e3b4261c70849b076dc9284e236f006443941038c69ffaa2e96ec641e87794b5",
+      "actual_package_count": 113
+    },
+    "gpu_provenance": {
+      "torch_version": "2.13.0+cu130",
+      "torchaudio_version": "2.11.0+cu130",
+      "cuda_runtime": "13.0",
+      "cudnn": 92000,
+      "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "official_index": "https://download.pytorch.org/whl/cu130",
+      "verified_origin_hosts": [
+        "download.pytorch.org",
+        "download-r2.pytorch.org"
+      ],
+      "torch_verified_url": "https://download-r2.pytorch.org/whl/cu130/torch-2.13.0%2Bcu130-cp314-cp314-win_amd64.whl",
+      "torchaudio_verified_url": "https://download-r2.pytorch.org/whl/cu130/torchaudio-2.11.0%2Bcu130-cp314-cp314-win_amd64.whl",
+      "python_tag": "cp314-cp314-win_amd64",
+      "provenance_status": "official-index-and-d3-cold-install-verified"
+    }
+  },
+  "lock_schema_ok": true,
+  "exact_core_lock_ok": true,
+  "exact_voice_lock_ok": true,
+  "gpu_pending_ok": false,
+  "strict_policy_ok": true,
+  "runtime_classified_local": true,
+  "pass": true
+}
