@@ -15,11 +15,15 @@
   const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
   const lerp=(a,b,t)=>a+(b-a)*t;
   const smooth=(a,b,x)=>{const t=clamp((x-a)/Math.max(1e-6,b-a));return t*t*(3-2*t)};
-  const C={
+  /* AURA R16.8 NATIVE LIGHT PALETTE */
+const C_BASE={
     cyan:[99,243,255], cyan2:[59,187,255], blue:[98,135,255],
     violet:[155,92,255], purple:[186,76,255], magenta:[218,92,255],
     white:[243,250,255]
   };
+const AURA_R168_LIGHT_PALETTE={cyan:[42,181,193],magenta:[66,166,180],violet:[103,188,194],blue:[58,139,165],white:[238,250,250]};
+const AURA_R168_IS_LIGHT=()=>document.documentElement.getAttribute('data-aura-theme')==='light';
+const C=new Proxy(C_BASE,{get(target,prop){if(AURA_R168_IS_LIGHT()&&Object.prototype.hasOwnProperty.call(AURA_R168_LIGHT_PALETTE,prop))return AURA_R168_LIGHT_PALETTE[prop];return target[prop];}});
   const rgba=(c,a)=>`rgba(${c[0]|0},${c[1]|0},${c[2]|0},${clamp(a)})`;
   const mix=(a,b,t)=>[lerp(a[0],b[0],t),lerp(a[1],b[1],t),lerp(a[2],b[2],t)];
 

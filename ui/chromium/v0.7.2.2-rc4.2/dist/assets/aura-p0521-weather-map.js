@@ -449,8 +449,15 @@
     root?.classList.toggle('aura-wx-has-geofield',!!field);
     shell?.classList.toggle('marine-unavailable',!d.marine_field);
 
-    try{window.AURA_WORKSPACES?.weather?.open(normalizePayload(d));}catch{}
-    setTimeout(()=>{try{window.AURA_WORKSPACES?.weather?.open(normalizePayload(d));}catch{}},650);
+    /* AURA R16.4 WEATHER PAYLOAD RESPECTS MANUAL DISMISS: incoming data updates must not reopen a UI the user closed. */
+    const auraWeatherUiVisible=()=>!!(root?.classList?.contains('open')||document.body.classList.contains('aura-weather-active'));
+    if(auraWeatherUiVisible()){
+      try{window.AURA_WORKSPACES?.weather?.open(normalizePayload(d));}catch{}
+    }
+    setTimeout(()=>{
+      if(!auraWeatherUiVisible())return;
+      try{window.AURA_WORKSPACES?.weather?.open(normalizePayload(d));}catch{}
+    },650);
     updateTime(); updateDetails(); scheduleDraw();
   }
 

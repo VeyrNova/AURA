@@ -686,7 +686,10 @@
     }
 
     function closeWeather() {
+      /* AURA R16.4 USER DISMISS WEATHER: explicit close is authoritative. */
       active=false;
+      pendingWeather=null;
+      stopBridgePolling();
       document.body.classList.remove('aura-weather-active','aura-workspace-active');
       root.classList.remove('open');
       root.setAttribute('aria-hidden','true');
