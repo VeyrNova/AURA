@@ -71,6 +71,20 @@ This sanitized validation branch contains the validated R21 implementation.
 Next engineering focus: continue the startup/dead-code audit, consolidate legacy UI patch layers carefully, and remove only code proven to be unused.
 <!-- AURA_R21_STATUS_END -->
 
+<!-- AURA_R23_STATUS_START -->
+## R23 status — rejected after runtime regression
+
+**23 September 2026**
+
+R23 attempted to lazy-load the additional Weather cartography datasets (`aura-p0521-world-map.js` and `aura-p0525-local-cartography.js`) after the successful R21 global-cartography optimization.
+
+The patch was **rejected after runtime validation** because it introduced an interface regression: legacy/side panels reappeared and the Memory, Tasks, Agenda and Modules panels no longer opened correctly.
+
+A local rollback restored the pre-R23 state and the UI returned to normal. **R21 remains the last validated performance milestone.**
+
+R23 was never promoted to the validated GitHub runtime state. The next optimization phase will avoid changing shared startup ordering until dependency/lifecycle interactions are mapped more precisely.
+<!-- AURA_R23_STATUS_END -->
+
 ---
 
 ## What AURA can do
