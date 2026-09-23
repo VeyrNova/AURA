@@ -102,6 +102,20 @@ Because no whole stylesheet is fully redundant, no stylesheet will be removed. T
 R21 remains the validated runtime performance baseline; R23 remains rejected.
 <!-- AURA_R25_STATUS_END -->
 
+<!-- AURA_R27_STATUS_START -->
+## R27 status — rejected after runtime panel regression
+
+**23 September 2026**
+
+R27 minimized `aura-dev-ui-screen-fit-r3-fix2.css` after static lineage audits suggested that many declarations were duplicated later in the cascade.
+
+The patch passed static/post-write checks but failed runtime validation: **Memory, Tasks, Agenda and Modules stopped opening**, while the other tested surfaces remained functional.
+
+The exact pre-R27 stylesheet was restored from backup and runtime behavior returned to normal. The rollback restored SHA256 `07EA4B9894059A3D495566DA4B4CCEB242240FC299A4DCDC05D358C9E18EE885` on both runtime and project copies.
+
+**R21 remains the validated performance baseline.** Future performance work should prioritize runtime lifecycle profiling and explicit workspace activation/deactivation over static CSS removal or startup-order changes.
+<!-- AURA_R27_STATUS_END -->
+
 ---
 
 ## What AURA can do
