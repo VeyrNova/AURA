@@ -85,6 +85,23 @@ A local rollback restored the pre-R23 state and the UI returned to normal. **R21
 R23 was never promoted to the validated GitHub runtime state. The next optimization phase will avoid changing shared startup ordering until dependency/lifecycle interactions are mapped more precisely.
 <!-- AURA_R23_STATUS_END -->
 
+<!-- AURA_R25_STATUS_START -->
+## R25 CSS lineage audit — 23 September 2026
+
+R25 completed a conservative lineage/supersession audit across the loaded historical UI stylesheet families.
+
+Key result:
+
+- no stylesheet is fully superseded by later stylesheets;
+- `aura-dev-ui-screen-fit-r3-fix2.css` is the only high-redundancy file, with **85.56%** of its parsed declarations duplicated exactly later in the cascade;
+- the SCREEN_FIT family as a whole is **51.29%** exactly duplicated later;
+- Liquid Glass, Music, Theme, Premium and the remaining Dev UI files still contain substantial unique/final behavior.
+
+Because no whole stylesheet is fully redundant, no stylesheet will be removed. The next safe step is to isolate the essential non-duplicated remainder of `aura-dev-ui-screen-fit-r3-fix2.css` before considering declaration-level consolidation.
+
+R21 remains the validated runtime performance baseline; R23 remains rejected.
+<!-- AURA_R25_STATUS_END -->
+
 ---
 
 ## What AURA can do
