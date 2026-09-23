@@ -637,7 +637,22 @@
   }
 
   function render(now) {
-    requestAnimationFrame(render);
+      requestAnimationFrame(render);
+
+      // AURA_R30_FIX1_HIDDEN_LEGACY_ORB_GUARD
+      // P0436 owns the visible orb. P042 remains as a rollback fallback,
+      // but must not spend a full render budget after its canvas is hidden/collapsed.
+      const auraR30HiddenLegacyOrb =
+        canvas.width <= 4 ||
+        canvas.height <= 4 ||
+        canvas.style.visibility === 'hidden' ||
+        canvas.style.opacity === '0';
+
+      if (auraR30HiddenLegacyOrb) {
+        last = now;
+        lastFrame = now;
+        return;
+      }
     const auraVisualFps=window.AuraVisualBudget?.fps('legacy-orb',36)||36;
     if (now - lastFrame < 1000 / auraVisualFps) return;
     lastFrame = now;
