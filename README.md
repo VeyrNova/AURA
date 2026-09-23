@@ -51,6 +51,26 @@ Current engineering focus:
 No legacy file is considered removable solely because of its filename or version suffix. Removal requires a reference/dependency audit and runtime validation first.
 <!-- AURA_CURRENT_STATUS_END -->
 
+<!-- AURA_R21_STATUS_START -->
+## R21 validated — lazy global cartography
+
+**Validated on 23 September 2026.**
+
+R21 removes the 7.32 MB global cartography dataset from the initial blocking startup path and loads it on demand when the Weather workspace becomes visible.
+
+Measured on the active runtime before/after validation:
+
+- startup JavaScript: **9.19 MB → 1.87 MB**
+- blocking JavaScript: **8.32 MB → ~1.0 MB**
+- blocking reduction: **7.32 MB**
+- original cartography dataset: **preserved**
+- Weather map, zoom, pan and weather layers: **runtime validated**
+
+This sanitized validation branch contains the validated R21 implementation.
+
+Next engineering focus: continue the startup/dead-code audit, consolidate legacy UI patch layers carefully, and remove only code proven to be unused.
+<!-- AURA_R21_STATUS_END -->
+
 ---
 
 ## What AURA can do
