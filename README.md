@@ -116,6 +116,24 @@ The exact pre-R27 stylesheet was restored from backup and runtime behavior retur
 **R21 remains the validated performance baseline.** Future performance work should prioritize runtime lifecycle profiling and explicit workspace activation/deactivation over static CSS removal or startup-order changes.
 <!-- AURA_R27_STATUS_END -->
 
+<!-- AURA_R30_STATUS_START -->
+## R30 validated — hidden legacy orb quiescence
+
+**Validated on 23 September 2026.**
+
+R30 FIX1 keeps the legacy P042 orb available as a fallback but stops its expensive render work whenever its own canvas is hidden, transparent or collapsed to a negligible size. The visible P0436 orb is not modified.
+
+Validated runtime scope:
+
+- target: `assets/aura-final-orb-p042.js`;
+- runtime and project copies patched identically;
+- visible P0436 orb unchanged;
+- no `index.html`, CSS, script-order or unrelated JavaScript change;
+- UI validation passed for Home, Memory, Tasks, Agenda, Modules, Weather, Music, Settings, Roadmap, light mode and dark mode.
+
+R21 remains the validated startup-performance baseline. R30 is the first validated runtime-lifecycle optimization after the rejected R23/R27 experiments.
+<!-- AURA_R30_STATUS_END -->
+
 ---
 
 ## What AURA can do
