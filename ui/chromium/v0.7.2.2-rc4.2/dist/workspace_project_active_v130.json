@@ -1,0 +1,39 @@
+{
+  "schema": "aura.workspace.ui-contract.v1",
+  "project_active": {
+    "schema": "aura.workspace.ui.project-active-card.v1",
+    "visible": true,
+    "title": "PROJET ACTIF",
+    "workspace_id": "ws_aura_main",
+    "project_name": "AURA v2.3",
+    "status": "paused",
+    "root_path": "C:\\AURA GPT version",
+    "last_action": "P230 — AURA Skills v2.3 certified",
+    "next_action": "P240 — Product Installer v2.4 paused; clean Windows acceptance pending",
+    "artifact_count": 0,
+    "progress_percent": null,
+    "progress_label": "—",
+    "tags": [
+      "aura",
+      "development"
+    ],
+    "updated_at": "2026-09-19T17:39:38",
+    "baseline_finish": "2026-11-30",
+    "forecast_finish": "2026-09-20",
+    "optimistic_finish": "2026-09-19",
+    "conservative_finish": "2026-09-22",
+    "schedule_variance_days": 71,
+    "schedule_status": "ahead",
+    "schedule_label": "71 JOURS D'AVANCE",
+    "planned_baseline_progress_percent": 71.5,
+    "actual_baseline_progress_percent": 96.2,
+    "earned_schedule_date": "2026-11-20",
+    "execution_variance_days": 71,
+    "confidence_percent": 95,
+    "confidence_label": "élevée",
+    "scope_critical_path_impact_days": 0,
+    "roadmap_live": true,
+    "roadmap_binding_schema": "aura.project-active.roadmap-binding.v25d.v1"
+  },
+  "active_workspace_id": "ws_aura_main"
+}

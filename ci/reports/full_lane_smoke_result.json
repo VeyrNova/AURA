@@ -1,0 +1,78 @@
+{
+  "schema": "aura.ci.full-lane.v0861.v1",
+  "mode": "smoke",
+  "started_at": "2026-08-28T13:50:54.042853",
+  "finished_at": "2026-08-28T13:50:54.627466",
+  "strict_environment": false,
+  "counts": {
+    "ENVIRONMENT": 8
+  },
+  "files": [
+    {
+      "file": "tests/test_security_policy.py",
+      "status": "ENVIRONMENT",
+      "returncode": 1,
+      "seconds": 0.07,
+      "stdout_tail": "",
+      "stderr_tail": "C:\\AURA GPT version\\venv\\Scripts\\python.exe: No module named pytest\n"
+    },
+    {
+      "file": "tests/test_router_security.py",
+      "status": "ENVIRONMENT",
+      "returncode": 1,
+      "seconds": 0.078,
+      "stdout_tail": "",
+      "stderr_tail": "C:\\AURA GPT version\\venv\\Scripts\\python.exe: No module named pytest\n"
+    },
+    {
+      "file": "tests/test_memory_intents_v060.py",
+      "status": "ENVIRONMENT",
+      "returncode": 1,
+      "seconds": 0.071,
+      "stdout_tail": "",
+      "stderr_tail": "C:\\AURA GPT version\\venv\\Scripts\\python.exe: No module named pytest\n"
+    },
+    {
+      "file": "tests/test_internet_tools_v070.py",
+      "status": "ENVIRONMENT",
+      "returncode": 1,
+      "seconds": 0.082,
+      "stdout_tail": "",
+      "stderr_tail": "C:\\AURA GPT version\\venv\\Scripts\\python.exe: No module named pytest\n"
+    },
+    {
+      "file": "tests/test_microphone_selection.py",
+      "status": "ENVIRONMENT",
+      "returncode": 1,
+      "seconds": 0.071,
+      "stdout_tail": "",
+      "stderr_tail": "C:\\AURA GPT version\\venv\\Scripts\\python.exe: No module named pytest\n"
+    },
+    {
+      "file": "tests/test_resource_guardian_v062.py",
+      "status": "ENVIRONMENT",
+      "returncode": 1,
+      "seconds": 0.07,
+      "stdout_tail": "",
+      "stderr_tail": "C:\\AURA GPT version\\venv\\Scripts\\python.exe: No module named pytest\n"
+    },
+    {
+      "file": "tests/test_redaction.py",
+      "status": "ENVIRONMENT",
+      "returncode": 1,
+      "seconds": 0.071,
+      "stdout_tail": "",
+      "stderr_tail": "C:\\AURA GPT version\\venv\\Scripts\\python.exe: No module named pytest\n"
+    },
+    {
+      "file": "tests/test_validators.py",
+      "status": "ENVIRONMENT",
+      "returncode": 1,
+      "seconds": 0.072,
+      "stdout_tail": "",
+      "stderr_tail": "C:\\AURA GPT version\\venv\\Scripts\\python.exe: No module named pytest\n"
+    }
+  ],
+  "pass": true,
+  "note": "ENVIRONMENT is reported separately; use --strict-environment after dependency lock v0.8.6.2."
+}

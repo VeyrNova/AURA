@@ -18,7 +18,7 @@ class ControlledLearningProvider:
         default_store = Path(
             os.environ.get(
                 "AURA_L170_CANDIDATE_STORE",
-                str(Path(__file__).resolve().parents[2] / "data" / "memory" / "learning_candidates_v170.json"),
+                r"C:\AURA GPT version\data\memory\learning_candidates_v170.json",
             )
         )
         self.store_path = Path(store_path or default_store).expanduser().resolve()

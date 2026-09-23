@@ -1,0 +1,28 @@
+{
+  "schema": "aura.product-status.current.v1",
+  "generated_at": "2026-09-19T17:39:38",
+  "product_version": "v2.3",
+  "product_version_label": "AURA v2.3",
+  "certified_through": {
+    "id": "P230",
+    "title": "AURA Skills v2.3",
+    "status": "certified"
+  },
+  "intelligence_runtime": "v3",
+  "technical_ui_release": "0.7.2.2-rc4.2",
+  "paused_milestone": {
+    "id": "P240",
+    "version": "v2.4",
+    "title": "Product Installer",
+    "status": "paused",
+    "reason": "Clean Windows external acceptance pending"
+  },
+  "next_product_milestone": {
+    "id": "P250",
+    "version": "v2.5",
+    "title": "Command Center",
+    "status": "next_after_P240"
+  },
+  "active_workstream": "FR/EN internationalization hardening",
+  "synthetic_overall_progress_percent": null
+}

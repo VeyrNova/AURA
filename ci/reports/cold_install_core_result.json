@@ -1,0 +1,28 @@
+{
+  "schema": "aura.cold-install-verifier.v0862.1.v1",
+  "profile": "core",
+  "strict_exact_lock": true,
+  "network_install_requested": false,
+  "errors": [],
+  "steps": [
+    {
+      "name": "create_venv",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "network_install",
+      "status": "SKIP",
+      "detail": "Strict lock validated; use --network for exact cold-install."
+    }
+  ],
+  "pass": true,
+  "lock": {
+    "path": "C:\\AURA GPT version\\requirements\\locks\\windows-py314-core-exact.lock.txt",
+    "sha256": "0f249c23dcf4695949768b3d990c512cbfbb36ccdf931a3e8e619acc5bd92895",
+    "expected_package_count": 11
+  },
+  "temporary_root": "C:\\Users\\leclerc\\AppData\\Local\\Temp\\AURA_V08621_COLD_0bac2bfffe",
+  "temporary_venv_removed": true
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "aura.ci.architecture-gate.v1",
+  "portable": false,
+  "ui_status": "PASS",
+  "rows": [
+    {
+      "path": "ui/main_window.py",
+      "lines": 5767,
+      "ceiling": 5947
+    },
+    {
+      "path": "services/core_bridge.py",
+      "lines": 2959,
+      "ceiling": 2959
+    },
+    {
+      "path": "voice/xtts_tts.py",
+      "lines": 2465,
+      "ceiling": 2465
+    },
+    {
+      "path": "ui::tools/shell_host.py",
+      "lines": 3584,
+      "ceiling": 3568
+    },
+    {
+      "path": "ui::dist/assets/index-Ckl5rwwJ.js",
+      "lines": 4164,
+      "ceiling": 4164
+    },
+    {
+      "path": "ui::dist/assets/aura-p060-navigation-workspace.js",
+      "lines": 3139,
+      "ceiling": 3139
+    }
+  ],
+  "failures": [
+    {
+      "path": "ui::tools/shell_host.py",
+      "reason": "monolith-growth",
+      "lines": 3584,
+      "ceiling": 3568
+    }
+  ],
+  "pass": false
+}

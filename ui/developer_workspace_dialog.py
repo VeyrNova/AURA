@@ -12,7 +12,7 @@ except Exception:
     PYSIDE_AVAILABLE = False
     QDialog = object
 
-ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
 
 if PYSIDE_AVAILABLE:
     class DeveloperWorkspaceDialog(QDialog):

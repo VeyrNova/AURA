@@ -1,0 +1,79 @@
+{
+  "schema": "aura.ci.architecture-gate.v0864.v1",
+  "pass": true,
+  "checks_total": 14,
+  "checks_passed": 14,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "main_window present",
+      "pass": true,
+      "detail": "C:\\AURA GPT version\\ui\\main_window.py"
+    },
+    {
+      "name": "worker present",
+      "pass": true,
+      "detail": "C:\\AURA GPT version\\ui\\workers\\realtime_tts_worker.py"
+    },
+    {
+      "name": "workers package present",
+      "pass": true,
+      "detail": "C:\\AURA GPT version\\ui\\workers\\__init__.py"
+    },
+    {
+      "name": "main_window exact modularized hash",
+      "pass": true,
+      "detail": "b95314824d32f93f1f26b82368440fbc55f225f4117aaee77d909e5c0cc65f4d"
+    },
+    {
+      "name": "worker exact certified hash",
+      "pass": true,
+      "detail": "d3438289116983beebfcc7d0f680017ce660753e64e9bd92f28eaeaf180e2df3"
+    },
+    {
+      "name": "RealtimeTTSWorker removed from main_window",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "compatibility import preserved",
+      "pass": true,
+      "detail": "True"
+    },
+    {
+      "name": "worker owns RealtimeTTSWorker exactly once",
+      "pass": true,
+      "detail": "1"
+    },
+    {
+      "name": "worker method count preserved",
+      "pass": true,
+      "detail": "8"
+    },
+    {
+      "name": "no reverse import to main_window",
+      "pass": true,
+      "detail": "False"
+    },
+    {
+      "name": "main_window LOC reduced",
+      "pass": true,
+      "detail": "5767"
+    },
+    {
+      "name": "worker module LOC bounded",
+      "pass": true,
+      "detail": "211"
+    },
+    {
+      "name": "modularized sources compile",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "public import identity preserved",
+      "pass": true,
+      "detail": "ui.workers.realtime_tts_worker"
+    }
+  ]
+}

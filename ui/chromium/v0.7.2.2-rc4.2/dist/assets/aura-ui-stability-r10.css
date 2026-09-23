@@ -1,0 +1,495 @@
+/* ================================================================
+   AURA UI STABILITY R10
+   Semantic dock routing + panel safe lane + readable Pearl Ice theme
+   ================================================================ */
+
+:root{
+  --r10-dock-x:28px;
+  --r10-dock-w:58px;
+  --r10-safe-lane:104px;
+
+  --r10-cyan:#72edff;
+  --r10-violet:#a76cff;
+
+  --r10-dark-g1:rgba(6,19,32,.70);
+  --r10-dark-g2:rgba(3,10,19,.58);
+  --r10-dark-border:rgba(112,226,255,.18);
+  --r10-dark-text:rgba(239,250,255,.94);
+  --r10-dark-muted:rgba(174,211,230,.54);
+
+  --r10-light-g1:rgba(255,255,255,.94);
+  --r10-light-g2:rgba(232,243,250,.88);
+  --r10-light-border:rgba(67,137,178,.28);
+  --r10-light-text:#173b52;
+  --r10-light-muted:#58768a;
+}
+
+/* Historical rail stays available to JS for its real handlers only. */
+.rail{
+  display:none !important;
+}
+
+/* ================================================================
+   DEDICATED STABLE DOCK
+   ================================================================ */
+
+#auraR10Dock{
+  --gx:50%;
+  --gy:45%;
+
+  position:fixed;
+  z-index:5200;
+
+  left:var(--r10-dock-x);
+  top:50%;
+  transform:translateY(-50%);
+
+  width:var(--r10-dock-w);
+  padding:8px 6px;
+
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+
+  overflow:visible;
+  border-radius:20px;
+
+  background:
+    linear-gradient(180deg,var(--r10-dark-g1),var(--r10-dark-g2));
+  border:1px solid var(--r10-dark-border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    0 18px 46px rgba(0,0,0,.28),
+    0 0 28px rgba(76,193,255,.08);
+
+  backdrop-filter:blur(28px) saturate(135%);
+}
+
+#auraR10Dock::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  z-index:0;
+  pointer-events:none;
+  border-radius:inherit;
+
+  background:
+    radial-gradient(circle at var(--gx) var(--gy),
+      rgba(128,235,255,.21) 0%,
+      rgba(87,182,255,.07) 23%,
+      transparent 46%),
+    radial-gradient(circle at 50% 90%,
+      rgba(168,108,255,.09),
+      transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.05),transparent 31%);
+}
+
+/* A fixed dock is more robust than expanding over application panels.
+   Labels appear as floating liquid tooltips instead. */
+.aura-r10-dock-btn{
+  position:relative;
+  z-index:2;
+
+  width:44px;
+  height:40px;
+  flex:0 0 40px;
+  align-self:center;
+
+  display:grid;
+  place-items:center;
+
+  padding:0;
+  border-radius:13px;
+
+  border:1px solid transparent;
+  background:transparent;
+  color:var(--r10-dark-text);
+
+  cursor:pointer;
+
+  transition:
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease;
+}
+
+.aura-r10-dock-btn:hover,
+.aura-r10-dock-btn:focus-visible{
+  transform:translateX(1px) scale(1.025);
+  outline:none;
+
+  background:rgba(255,255,255,.05);
+  border-color:rgba(124,232,255,.14);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 7px 16px rgba(0,0,0,.10),
+    0 0 16px rgba(94,213,255,.08);
+}
+
+.aura-r10-dock-btn.is-active{
+  background:
+    linear-gradient(180deg,
+      rgba(117,227,255,.17),
+      rgba(131,178,255,.11));
+
+  border-color:rgba(123,232,255,.24);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    0 8px 18px rgba(0,0,0,.11),
+    0 0 18px rgba(102,218,255,.10);
+}
+
+.aura-r10-icon{
+  width:18px;
+  height:18px;
+  display:grid;
+  place-items:center;
+
+  opacity:.82;
+  color:currentColor;
+
+  transition:
+    opacity .18s ease,
+    filter .18s ease;
+}
+
+.aura-r10-icon svg{
+  width:18px;
+  height:18px;
+  display:block;
+}
+
+.aura-r10-dock-btn:hover .aura-r10-icon,
+.aura-r10-dock-btn.is-active .aura-r10-icon{
+  opacity:1;
+  filter:drop-shadow(0 0 7px rgba(108,225,255,.30));
+}
+
+/* Premium tooltip: dock never covers a panel. */
+.aura-r10-label{
+  position:absolute;
+  left:52px;
+  top:50%;
+  transform:translateY(-50%) translateX(-5px);
+
+  min-width:max-content;
+  max-width:170px;
+
+  padding:8px 11px;
+  border-radius:11px;
+
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  background:
+    linear-gradient(180deg,
+      rgba(7,21,35,.94),
+      rgba(3,11,20,.91));
+  border:1px solid rgba(112,226,255,.17);
+
+  color:var(--r10-dark-text);
+  font-size:11px;
+  line-height:1;
+  font-weight:550;
+  letter-spacing:.02em;
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.27),
+    0 0 18px rgba(73,184,244,.07);
+
+  backdrop-filter:blur(20px);
+
+  transition:
+    opacity .14s ease,
+    visibility .14s ease,
+    transform .18s ease;
+}
+
+.aura-r10-dock-btn:hover .aura-r10-label,
+.aura-r10-dock-btn:focus-visible .aura-r10-label{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(-50%) translateX(0);
+}
+
+/* ================================================================
+   SAFE LANE FOR OPEN LEFT-SIDE PANELS
+   ================================================================ */
+
+/* Applied only to panel roots detected by R10 JS. */
+.aura-r10-panel-safe{
+  margin-left:var(--r10-safe-lane) !important;
+
+  max-width:calc(100vw - var(--r10-safe-lane) - 18px) !important;
+  box-sizing:border-box !important;
+
+  z-index:4000 !important;
+
+  transition:
+    margin-left .22s ease,
+    max-width .22s ease !important;
+}
+
+/* Wide full-screen application canvases should not be shifted twice. */
+.aura-r10-panel-wide{
+  margin-left:var(--r10-safe-lane) !important;
+  width:calc(100vw - var(--r10-safe-lane) - 18px) !important;
+  max-width:calc(100vw - var(--r10-safe-lane) - 18px) !important;
+}
+
+/* Composer always stays above application panels. */
+.composer,
+#composer{
+  z-index:5600 !important;
+}
+
+/* ================================================================
+   PEARL ICE LIGHT THEME
+   ================================================================ */
+
+html[data-aura-theme="light"],
+html[data-aura-theme="light"] body{
+  background:
+    radial-gradient(circle at 50% 44%,
+      rgba(93,170,220,.16) 0%,
+      transparent 35%),
+    linear-gradient(180deg,#edf5fa 0%,#e5eff6 54%,#dce8f1 100%) !important;
+
+  color:var(--r10-light-text) !important;
+}
+
+/* Keep a darker optical well around the orb so it remains readable. */
+html[data-aura-theme="light"] .hero{
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(48,78,111,.33) 0%,
+      rgba(81,128,166,.23) 24%,
+      rgba(169,204,225,.17) 43%,
+      rgba(238,246,250,.76) 72%),
+    linear-gradient(180deg,
+      rgba(250,253,255,.88),
+      rgba(230,241,248,.86)) !important;
+
+  border-color:rgba(63,130,171,.24) !important;
+
+  box-shadow:
+    inset 0 0 110px rgba(58,111,151,.10),
+    inset 0 1px 0 rgba(255,255,255,.90),
+    0 18px 46px rgba(69,112,145,.15) !important;
+}
+
+html[data-aura-theme="light"] #stage{
+  filter:
+    saturate(1.34)
+    contrast(1.25)
+    brightness(.84)
+    drop-shadow(0 0 23px rgba(54,137,196,.18)) !important;
+}
+
+html[data-aura-theme="light"] #stage canvas{
+  filter:
+    saturate(1.38)
+    contrast(1.30)
+    brightness(.84)
+    drop-shadow(0 0 24px rgba(50,132,195,.22)) !important;
+}
+
+/* Dark, readable labels in light mode. */
+html[data-aura-theme="light"] .core-label strong,
+html[data-aura-theme="light"] .aura-r5-identity__time{
+  color:#123a55 !important;
+}
+
+html[data-aura-theme="light"] .core-label span,
+html[data-aura-theme="light"] .core-label small,
+html[data-aura-theme="light"] .aura-r5-identity__date{
+  color:#557589 !important;
+}
+
+html[data-aura-theme="light"] .aura-r5-identity__name{
+  color:rgba(25,58,82,.12) !important;
+}
+
+/* Top bar with stronger contrast. */
+html[data-aura-theme="light"] .topbar{
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.97),
+      rgba(229,241,248,.92)) !important;
+
+  border-color:rgba(58,126,168,.27) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.98),
+    0 10px 30px rgba(67,108,137,.14) !important;
+}
+
+html[data-aura-theme="light"] .brand strong{
+  color:#14384e !important;
+}
+
+html[data-aura-theme="light"] .brand small{
+  color:#5e7b8c !important;
+}
+
+html[data-aura-theme="light"] .state-pill,
+html[data-aura-theme="light"] .route-pill,
+html[data-aura-theme="light"] .mini-chip,
+html[data-aura-theme="light"] .aura-theme-toggle{
+  background:rgba(250,253,255,.94) !important;
+  border-color:rgba(64,132,172,.25) !important;
+  color:#264f67 !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),
+    0 4px 10px rgba(65,108,138,.07) !important;
+}
+
+/* New dock in light mode. */
+html[data-aura-theme="light"] #auraR10Dock{
+  background:
+    linear-gradient(180deg,
+      var(--r10-light-g1),
+      var(--r10-light-g2));
+
+  border-color:var(--r10-light-border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.97),
+    0 18px 42px rgba(72,113,143,.16),
+    0 0 24px rgba(70,161,207,.06);
+}
+
+html[data-aura-theme="light"] #auraR10Dock::before{
+  background:
+    radial-gradient(circle at var(--gx) var(--gy),
+      rgba(68,166,218,.22) 0%,
+      rgba(113,190,228,.08) 24%,
+      transparent 46%),
+    linear-gradient(180deg,
+      rgba(255,255,255,.70),
+      transparent 34%);
+}
+
+html[data-aura-theme="light"] .aura-r10-dock-btn{
+  color:#24536d;
+}
+
+html[data-aura-theme="light"] .aura-r10-dock-btn.is-active{
+  background:
+    linear-gradient(180deg,
+      rgba(133,209,239,.72),
+      rgba(93,176,219,.40));
+
+  border-color:rgba(53,143,190,.36);
+}
+
+html[data-aura-theme="light"] .aura-r10-label{
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.98),
+      rgba(232,243,249,.96));
+
+  border-color:rgba(63,137,178,.28);
+  color:#153f58;
+
+  box-shadow:
+    0 12px 28px rgba(71,112,141,.15),
+    0 0 18px rgba(73,166,212,.06);
+}
+
+/* Composer: strong readability. */
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.98),
+      rgba(230,242,249,.94)) !important;
+
+  border-color:rgba(59,135,177,.30) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.98),
+    0 16px 38px rgba(65,108,139,.16),
+    0 0 20px rgba(62,157,207,.06) !important;
+}
+
+html[data-aura-theme="light"] #messageInput{
+  color:#153c54 !important;
+}
+
+html[data-aura-theme="light"] #messageInput::placeholder{
+  color:#6d8798 !important;
+}
+
+html[data-aura-theme="light"] #composerHint{
+  color:#718998 !important;
+}
+
+/* Open panels: readable Pearl Ice instead of translucent white wash. */
+html[data-aura-theme="light"] .aura-r10-panel-safe{
+  color:#173b52 !important;
+
+  background:
+    linear-gradient(180deg,
+      rgba(249,253,255,.97),
+      rgba(229,241,248,.95)) !important;
+
+  border-color:rgba(61,132,173,.28) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 20px 46px rgba(65,104,132,.16) !important;
+
+  backdrop-filter:blur(24px) saturate(118%) !important;
+}
+
+html[data-aura-theme="light"] .aura-r10-panel-safe h1,
+html[data-aura-theme="light"] .aura-r10-panel-safe h2,
+html[data-aura-theme="light"] .aura-r10-panel-safe h3,
+html[data-aura-theme="light"] .aura-r10-panel-safe h4,
+html[data-aura-theme="light"] .aura-r10-panel-safe [class*="title"],
+html[data-aura-theme="light"] .aura-r10-panel-safe [class*="Title"]{
+  color:#123a53 !important;
+}
+
+html[data-aura-theme="light"] .aura-r10-panel-safe p,
+html[data-aura-theme="light"] .aura-r10-panel-safe small,
+html[data-aura-theme="light"] .aura-r10-panel-safe label{
+  color:#547287 !important;
+}
+
+html[data-aura-theme="light"] .aura-r10-panel-safe input,
+html[data-aura-theme="light"] .aura-r10-panel-safe textarea,
+html[data-aura-theme="light"] .aura-r10-panel-safe select{
+  background:rgba(255,255,255,.88) !important;
+  color:#173d55 !important;
+  border-color:rgba(64,135,176,.25) !important;
+}
+
+/* Responsive */
+@media(max-width:980px){
+  :root{
+    --r10-dock-x:14px;
+    --r10-dock-w:54px;
+    --r10-safe-lane:84px;
+  }
+
+  #auraR10Dock{
+    padding-left:5px;
+    padding-right:5px;
+  }
+
+  .aura-r10-dock-btn{
+    width:42px;
+  }
+
+  .aura-r10-label{
+    left:48px;
+  }
+}

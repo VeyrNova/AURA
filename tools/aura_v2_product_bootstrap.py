@@ -9,14 +9,13 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).expanduser().resolve(strict=False)
+ROOT = Path(r"C:\AURA GPT version")
 LOG_ROOT = ROOT / "logs" / "product_launcher"
 
 PY = ROOT / "venv" / "Scripts" / "python.exe"
 PYW = ROOT / "venv" / "Scripts" / "pythonw.exe"
 
 LIFECYCLE = ROOT / "runtime" / "aura_ui_host_lifecycle_v200.py"
-TRANSPORT = ROOT / "runtime" / "aura_ui_host_transport_v200.py"
 INTENT = ROOT / "runtime" / "aura_conversation_intent_handoff_v200.py"
 FABRIC = ROOT / "launch_aura_fabric_gateway.py"
 UI_LAUNCHER = ROOT / "launch_aura_ui_v0722_rc42.py"
@@ -83,7 +82,7 @@ def start_hidden(script: Path, log_name: str, args: list[str] | None = None):
     return proc
 
 def self_check() -> int:
-    required = [PY, LIFECYCLE, TRANSPORT, INTENT, UI_LAUNCHER]
+    required = [PY, LIFECYCLE, INTENT, UI_LAUNCHER]
     missing = [str(p) for p in required if not p.is_file()]
     if missing:
         print("MISSING:")

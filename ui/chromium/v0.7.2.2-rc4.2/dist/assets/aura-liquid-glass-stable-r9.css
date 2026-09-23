@@ -1,0 +1,426 @@
+/* ================================================================
+   AURA LIQUID GLASS STABLE R9
+   Dedicated premium dock + stable dynamic composer
+   Does NOT visually reuse the historical RC4.2 rail.
+   ================================================================ */
+
+:root{
+  --r9-cyan:#74efff;
+  --r9-violet:#a66cff;
+  --r9-glass-dark-1:rgba(7,20,34,.66);
+  --r9-glass-dark-2:rgba(3,11,20,.54);
+  --r9-border-dark:rgba(115,228,255,.17);
+  --r9-text-dark:rgba(238,250,255,.92);
+  --r9-subtle-dark:rgba(178,214,231,.50);
+
+  --r9-glass-light-1:rgba(255,255,255,.88);
+  --r9-glass-light-2:rgba(236,246,251,.78);
+  --r9-border-light:rgba(82,157,198,.23);
+  --r9-text-light:#244b63;
+  --r9-subtle-light:rgba(46,87,112,.54);
+}
+
+/* ------------------------------------------------
+   Historical rail is kept in DOM for behavior only.
+   ------------------------------------------------ */
+.rail{
+  display:none !important;
+}
+
+/* ------------------------------------------------
+   New dedicated liquid dock
+   ------------------------------------------------ */
+#auraR9Dock{
+  --gx:50%;
+  --gy:35%;
+
+  position:fixed;
+  z-index:4200;
+
+  left:22px;
+  top:50%;
+  transform:translateY(-50%);
+
+  width:58px;
+  padding:8px 6px;
+
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+
+  border-radius:20px;
+  overflow:hidden;
+
+  background:
+    linear-gradient(180deg,var(--r9-glass-dark-1),var(--r9-glass-dark-2));
+  border:1px solid var(--r9-border-dark);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    0 20px 52px rgba(0,0,0,.28),
+    0 0 30px rgba(82,197,255,.07);
+
+  backdrop-filter:blur(28px) saturate(135%);
+
+  transition:
+    width .30s cubic-bezier(.16,.85,.18,1),
+    padding .24s ease,
+    border-color .22s ease,
+    box-shadow .22s ease;
+}
+
+#auraR9Dock::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(133,237,255,.20) 0%,
+      rgba(88,185,255,.075) 22%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 50% 88%,rgba(173,110,255,.09),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.05),transparent 30%);
+}
+
+#auraR9Dock::after{
+  content:"";
+  position:absolute;
+  top:-30%;
+  left:-45%;
+  width:42%;
+  height:170%;
+  pointer-events:none;
+
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+  filter:blur(9px);
+  transform:skewX(-12deg);
+  opacity:0;
+
+  transition:opacity .18s ease;
+}
+
+#auraR9Dock:hover,
+#auraR9Dock:focus-within{
+  width:218px;
+  padding:9px;
+
+  border-color:rgba(130,237,255,.32);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.075),
+    0 24px 58px rgba(0,0,0,.30),
+    0 0 38px rgba(82,197,255,.12),
+    0 0 58px rgba(166,108,255,.08);
+}
+
+#auraR9Dock:hover::after,
+#auraR9Dock:focus-within::after{
+  opacity:.34;
+}
+
+/* dock button */
+.aura-r9-dock-btn{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  height:40px;
+  flex:0 0 40px;
+
+  display:flex;
+  align-items:center;
+
+  padding:0;
+  border-radius:13px;
+
+  border:1px solid transparent;
+  background:transparent;
+  color:var(--r9-text-dark);
+
+  cursor:pointer;
+  overflow:hidden;
+
+  transition:
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease;
+}
+
+.aura-r9-dock-btn:hover{
+  transform:translateX(1px);
+  background:rgba(255,255,255,.045);
+  border-color:rgba(126,232,255,.12);
+}
+
+.aura-r9-dock-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(122,228,255,.15),rgba(126,180,255,.10));
+  border-color:rgba(126,232,255,.21);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 8px 18px rgba(0,0,0,.09),
+    0 0 17px rgba(103,222,255,.09);
+}
+
+.aura-r9-dock-icon{
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  width:18px;
+  height:18px;
+
+  transform:translate(-50%,-50%);
+
+  display:grid;
+  place-items:center;
+
+  color:var(--r9-text-dark);
+  opacity:.80;
+
+  transition:
+    left .23s cubic-bezier(.2,.8,.2,1),
+    opacity .18s ease,
+    filter .18s ease;
+}
+
+.aura-r9-dock-icon svg{
+  width:18px;
+  height:18px;
+  display:block;
+}
+
+#auraR9Dock:hover .aura-r9-dock-icon,
+#auraR9Dock:focus-within .aura-r9-dock-icon{
+  left:23px;
+  opacity:.94;
+}
+
+.aura-r9-dock-btn:hover .aura-r9-dock-icon,
+.aura-r9-dock-btn.is-active .aura-r9-dock-icon{
+  opacity:1;
+  filter:drop-shadow(0 0 7px rgba(104,225,255,.28));
+}
+
+.aura-r9-dock-label{
+  position:absolute;
+  left:48px;
+  right:12px;
+  top:50%;
+
+  transform:translateY(-50%) translateX(-7px);
+  opacity:0;
+
+  color:var(--r9-text-dark);
+  font-size:11px;
+  line-height:1;
+  font-weight:500;
+  letter-spacing:.025em;
+
+  text-align:left;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  pointer-events:none;
+
+  transition:
+    opacity .16s ease .03s,
+    transform .20s cubic-bezier(.2,.8,.2,1) .03s;
+}
+
+#auraR9Dock:hover .aura-r9-dock-label,
+#auraR9Dock:focus-within .aura-r9-dock-label{
+  opacity:.96;
+  transform:translateY(-50%) translateX(0);
+}
+
+/* ------------------------------------------------
+   Stable liquid composer
+   ------------------------------------------------ */
+.composer,
+#composer{
+  --gx:50%;
+  --gy:50%;
+
+  width:min(580px,calc(100% - 100px)) !important;
+  max-width:580px !important;
+  min-width:320px !important;
+
+  height:44px !important;
+  min-height:44px !important;
+  max-height:44px !important;
+
+  border-radius:17px !important;
+
+  background:
+    linear-gradient(180deg,var(--r9-glass-dark-1),var(--r9-glass-dark-2)) !important;
+
+  border:1px solid var(--r9-border-dark) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 18px 44px rgba(0,0,0,.22),
+    0 0 28px rgba(82,197,255,.055) !important;
+
+  backdrop-filter:blur(28px) saturate(135%) !important;
+
+  transition:
+    width .32s cubic-bezier(.16,.85,.18,1),
+    max-width .32s cubic-bezier(.16,.85,.18,1),
+    height .28s cubic-bezier(.16,.85,.18,1),
+    min-height .28s cubic-bezier(.16,.85,.18,1),
+    max-height .28s cubic-bezier(.16,.85,.18,1),
+    border-radius .24s ease,
+    border-color .20s ease,
+    box-shadow .20s ease !important;
+}
+
+.composer::before,
+#composer::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-1px !important;
+  border-radius:inherit !important;
+  pointer-events:none !important;
+
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(133,237,255,.18) 0%,
+      rgba(88,185,255,.07) 20%,
+      transparent 43%
+    ),
+    radial-gradient(circle at 80% 70%,rgba(173,110,255,.10),transparent 32%),
+    linear-gradient(180deg,rgba(255,255,255,.045),transparent 30%) !important;
+
+  opacity:.48 !important;
+}
+
+.composer:hover:not(:focus-within):not(.aura-r9-writing),
+#composer:hover:not(:focus-within):not(.aura-r9-writing){
+  width:min(740px,calc(100% - 76px)) !important;
+  max-width:740px !important;
+
+  height:50px !important;
+  min-height:50px !important;
+  max-height:50px !important;
+
+  border-color:rgba(126,232,255,.22) !important;
+}
+
+.composer:focus-within,
+.composer.aura-r9-writing,
+#composer:focus-within,
+#composer.aura-r9-writing{
+  width:min(1040px,calc(100% - 48px)) !important;
+  max-width:1040px !important;
+
+  height:64px !important;
+  min-height:64px !important;
+  max-height:64px !important;
+
+  border-radius:20px !important;
+
+  border-color:rgba(130,237,255,.34) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 25px 58px rgba(0,0,0,.24),
+    0 0 38px rgba(82,197,255,.13),
+    0 0 60px rgba(166,108,255,.08) !important;
+}
+
+.composer:focus-within::before,
+.composer.aura-r9-writing::before,
+#composer:focus-within::before,
+#composer.aura-r9-writing::before{
+  opacity:1 !important;
+}
+
+/* ------------------------------------------------
+   Light mode
+   ------------------------------------------------ */
+html[data-aura-theme="light"] #auraR9Dock,
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:
+    linear-gradient(180deg,var(--r9-glass-light-1),var(--r9-glass-light-2)) !important;
+
+  border-color:var(--r9-border-light) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.86),
+    0 18px 44px rgba(78,120,151,.14),
+    0 0 26px rgba(77,168,214,.055) !important;
+}
+
+html[data-aura-theme="light"] #auraR9Dock::before,
+html[data-aura-theme="light"] .composer::before,
+html[data-aura-theme="light"] #composer::before{
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(77,172,220,.20) 0%,
+      rgba(109,191,229,.08) 22%,
+      transparent 44%
+    ),
+    radial-gradient(circle at 82% 72%,rgba(157,123,224,.08),transparent 32%),
+    linear-gradient(180deg,rgba(255,255,255,.58),transparent 32%) !important;
+}
+
+html[data-aura-theme="light"] .aura-r9-dock-icon,
+html[data-aura-theme="light"] .aura-r9-dock-label{
+  color:var(--r9-text-light);
+}
+
+html[data-aura-theme="light"] .aura-r9-dock-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(151,218,241,.62),rgba(116,189,226,.34));
+  border-color:rgba(71,155,201,.30);
+}
+
+/* ------------------------------------------------
+   Responsive
+   ------------------------------------------------ */
+@media(max-width:980px){
+  #auraR9Dock{
+    left:12px;
+    width:54px;
+  }
+
+  #auraR9Dock:hover,
+  #auraR9Dock:focus-within{
+    width:190px;
+  }
+
+  #auraR9Dock:hover .aura-r9-dock-icon,
+  #auraR9Dock:focus-within .aura-r9-dock-icon{
+    left:21px;
+  }
+
+  .aura-r9-dock-label{
+    left:44px;
+  }
+
+  .composer,
+  #composer{
+    width:min(520px,calc(100% - 26px)) !important;
+    max-width:min(520px,calc(100% - 26px)) !important;
+  }
+
+  .composer:focus-within,
+  .composer.aura-r9-writing,
+  #composer:focus-within,
+  #composer.aura-r9-writing{
+    width:calc(100% - 18px) !important;
+    max-width:calc(100% - 18px) !important;
+  }
+}

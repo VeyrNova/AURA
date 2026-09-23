@@ -1,0 +1,565 @@
+/* ================================================================
+   AURA LIQUID GLASS INTERACTIVE R8
+   - Minimal composer that expands on intent
+   - Premium interactive liquid-glass dock
+   - Compatible with dark/light themes
+   ================================================================ */
+
+:root{
+  --r8-lg-bg-1: rgba(7,20,34,.62);
+  --r8-lg-bg-2: rgba(4,12,21,.48);
+  --r8-lg-border: rgba(114,225,255,.16);
+  --r8-lg-border-strong: rgba(132,236,255,.34);
+  --r8-lg-glow: rgba(84,196,255,.13);
+  --r8-lg-glow-2: rgba(162,108,255,.12);
+  --r8-lg-text: rgba(235,248,255,.92);
+  --r8-lg-subtle: rgba(175,210,228,.46);
+  --r8-lg-pill: rgba(255,255,255,.06);
+}
+
+html[data-aura-theme="light"]{
+  --r8-lg-bg-1: rgba(255,255,255,.82);
+  --r8-lg-bg-2: rgba(239,247,251,.72);
+  --r8-lg-border: rgba(88,155,192,.18);
+  --r8-lg-border-strong: rgba(82,167,210,.30);
+  --r8-lg-glow: rgba(87,172,220,.12);
+  --r8-lg-glow-2: rgba(153,124,223,.10);
+  --r8-lg-text: rgba(27,64,87,.92);
+  --r8-lg-subtle: rgba(50,91,116,.50);
+  --r8-lg-pill: rgba(255,255,255,.52);
+}
+
+@keyframes auraLiquidSweep {
+  0%   { transform: translateX(-120%) skewX(-14deg); opacity: 0; }
+  12%  { opacity: .24; }
+  55%  { opacity: .16; }
+  100% { transform: translateX(180%) skewX(-14deg); opacity: 0; }
+}
+
+@keyframes auraLiquidPulse {
+  0%,100% { opacity: .52; transform: scale(1); }
+  50%     { opacity: .86; transform: scale(1.05); }
+}
+
+/* ================================================================
+   LIQUID GLASS COMPOSER
+   ================================================================ */
+
+.workspace{
+  padding-bottom: 86px !important;
+}
+
+.hero{
+  inset: 0 0 86px 0 !important;
+}
+
+.composer,
+#composer{
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: 10px !important;
+  inset: auto auto 10px 50% !important;
+  transform: translateX(-50%) !important;
+
+  width: min(700px, calc(100% - 110px)) !important;
+  max-width: 700px !important;
+  min-width: 320px !important;
+
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+
+  padding: 7px 8px !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+
+  background:
+    linear-gradient(180deg, var(--r8-lg-bg-1), var(--r8-lg-bg-2)) !important;
+  border: 1px solid var(--r8-lg-border) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 18px 44px rgba(0,0,0,.18),
+    0 0 24px var(--r8-lg-glow) !important;
+  backdrop-filter: blur(26px) saturate(130%) !important;
+
+  transition:
+    width .30s cubic-bezier(.2,.9,.2,1),
+    max-width .30s cubic-bezier(.2,.9,.2,1),
+    height .26s cubic-bezier(.2,.9,.2,1),
+    min-height .26s cubic-bezier(.2,.9,.2,1),
+    max-height .26s cubic-bezier(.2,.9,.2,1),
+    box-shadow .24s ease,
+    border-color .24s ease,
+    transform .24s ease !important;
+}
+
+.composer::before,
+#composer::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  background:
+    radial-gradient(circle at 18% 50%, rgba(126,232,255,.16) 0%, transparent 26%),
+    radial-gradient(circle at 82% 48%, rgba(173,109,255,.14) 0%, transparent 25%),
+    linear-gradient(180deg, rgba(255,255,255,.05), transparent 30%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.composer::after,
+#composer::after{
+  content:"";
+  position:absolute;
+  top:-24%;
+  left:-30%;
+  width:38%;
+  height:160%;
+  border-radius:38px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  filter: blur(8px);
+  opacity:.0;
+  pointer-events:none;
+  animation: auraLiquidSweep 6.8s linear infinite;
+}
+
+.composer:hover,
+.composer:focus-within,
+.composer.aura-liquid-active,
+#composer:hover,
+#composer:focus-within,
+#composer.aura-liquid-active{
+  width: min(1080px, calc(100% - 52px)) !important;
+  max-width: 1080px !important;
+
+  height: 62px !important;
+  min-height: 62px !important;
+  max-height: 62px !important;
+
+  border-color: var(--r8-lg-border-strong) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 24px 54px rgba(0,0,0,.22),
+    0 0 34px var(--r8-lg-glow),
+    0 0 52px var(--r8-lg-glow-2) !important;
+}
+
+.composer:hover::after,
+.composer:focus-within::after,
+.composer.aura-liquid-active::after,
+#composer:hover::after,
+#composer:focus-within::after,
+#composer.aura-liquid-active::after{
+  opacity:.38;
+}
+
+#messageInput{
+  position: relative !important;
+  z-index: 2 !important;
+  background: transparent !important;
+  color: var(--r8-lg-text) !important;
+  font-size: 14px !important;
+  transition: font-size .20s ease, opacity .20s ease !important;
+}
+
+.composer:hover #messageInput,
+.composer:focus-within #messageInput,
+.composer.aura-liquid-active #messageInput,
+#composer:hover #messageInput,
+#composer:focus-within #messageInput,
+#composer.aura-liquid-active #messageInput{
+  font-size: 15px !important;
+}
+
+#messageInput::placeholder{
+  color: var(--r8-lg-subtle) !important;
+}
+
+#composerHint{
+  position: relative !important;
+  z-index: 2 !important;
+  color: var(--r8-lg-subtle) !important;
+  letter-spacing: .02em !important;
+  transition: opacity .18s ease, transform .18s ease !important;
+}
+
+.composer:hover #composerHint,
+.composer:focus-within #composerHint,
+.composer.aura-liquid-active #composerHint,
+#composer:hover #composerHint,
+#composer:focus-within #composerHint,
+#composer.aura-liquid-active #composerHint{
+  opacity:.88 !important;
+  transform: translateY(1px);
+}
+
+.attach,
+.mic,
+.send{
+  position: relative !important;
+  z-index: 2 !important;
+  min-width: 38px !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 12px !important;
+
+  background: var(--r8-lg-pill) !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 6px 14px rgba(0,0,0,.08) !important;
+
+  transition:
+    transform .18s ease,
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease !important;
+}
+
+.composer:hover .attach,
+.composer:hover .mic,
+.composer:hover .send,
+.composer:focus-within .attach,
+.composer:focus-within .mic,
+.composer:focus-within .send,
+.composer.aura-liquid-active .attach,
+.composer.aura-liquid-active .mic,
+.composer.aura-liquid-active .send,
+#composer:hover .attach,
+#composer:hover .mic,
+#composer:hover .send,
+#composer:focus-within .attach,
+#composer:focus-within .mic,
+#composer:focus-within .send,
+#composer.aura-liquid-active .attach,
+#composer.aura-liquid-active .mic,
+#composer.aura-liquid-active .send{
+  width: 42px !important;
+  min-width: 42px !important;
+  height: 42px !important;
+  border-radius: 13px !important;
+}
+
+.attach:hover,
+.mic:hover,
+.send:hover{
+  transform: translateY(-1px) scale(1.035) !important;
+  border-color: rgba(126,232,255,.22) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 10px 22px rgba(0,0,0,.12),
+    0 0 18px rgba(102,210,255,.10) !important;
+}
+
+.send{
+  background:
+    linear-gradient(180deg, rgba(123,228,255,.18), rgba(121,186,255,.14)) !important;
+}
+
+/* ================================================================
+   PREMIUM LIQUID GLASS DOCK
+   ================================================================ */
+
+.rail{
+  position: absolute !important;
+  left: 20px !important;
+  top: 76px !important;
+  width: 62px !important;
+  min-width: 62px !important;
+  max-width: 62px !important;
+
+  padding: 8px 7px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+
+  background:
+    linear-gradient(180deg, var(--r8-lg-bg-1), var(--r8-lg-bg-2)) !important;
+  border: 1px solid var(--r8-lg-border) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 18px 46px rgba(0,0,0,.20),
+    0 0 24px var(--r8-lg-glow) !important;
+  backdrop-filter: blur(28px) saturate(132%) !important;
+
+  transition:
+    width .28s cubic-bezier(.2,.9,.2,1),
+    max-width .28s cubic-bezier(.2,.9,.2,1),
+    box-shadow .22s ease,
+    border-color .22s ease,
+    padding .22s ease !important;
+}
+
+.rail::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255,255,255,.08), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.04), transparent 24%);
+  pointer-events:none;
+}
+
+.rail::after{
+  content:"";
+  position:absolute;
+  top:-24%;
+  left:-34%;
+  width:45%;
+  height:160%;
+  border-radius:40px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  filter: blur(8px);
+  opacity:0;
+  pointer-events:none;
+  animation: auraLiquidSweep 7.6s linear infinite;
+}
+
+.rail:hover,
+.rail:focus-within,
+.rail.aura-liquid-active{
+  width: 228px !important;
+  max-width: 228px !important;
+  padding: 10px !important;
+  border-color: var(--r8-lg-border-strong) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    0 24px 54px rgba(0,0,0,.22),
+    0 0 34px var(--r8-lg-glow),
+    0 0 52px var(--r8-lg-glow-2) !important;
+}
+
+.rail:hover::after,
+.rail:focus-within::after,
+.rail.aura-liquid-active::after{
+  opacity:.34;
+}
+
+.rail-btn{
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  padding: 0 11px !important;
+  border-radius: 15px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  overflow: hidden !important;
+
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+
+  color: transparent !important;
+  white-space: nowrap !important;
+  font-size: 0 !important;
+  transition:
+    background .18s ease,
+    border-color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease,
+    justify-content .18s ease !important;
+}
+
+.rail-btn > *{
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.rail-btn svg,
+.rail-btn i,
+.rail-btn span,
+.rail-btn [class*="icon"],
+.rail-btn [class*="Icon"]{
+  font-size: 16px !important;
+  line-height: 1 !important;
+  color: var(--r8-lg-text) !important;
+  opacity: .88 !important;
+  flex: 0 0 auto !important;
+}
+
+.rail-btn small,
+.rail-btn .label,
+.rail-btn .rail-label,
+.rail-btn [class*="label"],
+.rail-btn [class*="Label"],
+.rail-btn [data-label]{
+  display:none !important;
+}
+
+.rail-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:
+    radial-gradient(circle at 18% 50%, rgba(126,232,255,.11) 0%, transparent 26%),
+    radial-gradient(circle at 82% 50%, rgba(173,109,255,.10) 0%, transparent 25%);
+  opacity:0;
+  transition:opacity .18s ease;
+  pointer-events:none;
+}
+
+.rail-btn::after{
+  content: attr(data-liquid-label);
+  position: absolute;
+  left: 46px;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  opacity: 0;
+
+  color: var(--r8-lg-text) !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  letter-spacing: .02em !important;
+  text-align: left !important;
+  text-shadow: 0 0 14px rgba(0,0,0,.08);
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  transition: opacity .18s ease, transform .18s ease !important;
+}
+
+.rail:hover .rail-btn,
+.rail:focus-within .rail-btn,
+.rail.aura-liquid-active .rail-btn{
+  justify-content: flex-start !important;
+}
+
+.rail:hover .rail-btn::after,
+.rail:focus-within .rail-btn::after,
+.rail.aura-liquid-active .rail-btn::after{
+  opacity: .95;
+  transform: translateY(-50%) translateX(0);
+}
+
+.rail-btn:hover,
+.rail-btn:focus-visible{
+  transform: translateX(2px) !important;
+  background: rgba(255,255,255,.05) !important;
+  border-color: rgba(126,232,255,.12) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 8px 20px rgba(0,0,0,.08) !important;
+}
+
+.rail-btn:hover::before,
+.rail-btn:focus-visible::before{
+  opacity:1;
+}
+
+.rail-btn.active{
+  background:
+    linear-gradient(180deg, rgba(123,228,255,.14), rgba(121,186,255,.11)) !important;
+  border-color: rgba(126,232,255,.20) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    0 10px 22px rgba(0,0,0,.12),
+    0 0 18px rgba(102,210,255,.10) !important;
+}
+
+.rail-btn.active::before{
+  opacity: 1;
+}
+
+.rail-btn.active svg,
+.rail-btn.active i,
+.rail-btn.active span,
+.rail-btn.active [class*="icon"],
+.rail-btn.active [class*="Icon"]{
+  filter: drop-shadow(0 0 8px rgba(103,222,255,.32));
+}
+
+.rail [class*="profile"],
+.rail [class*="Profile"],
+.rail [class*="core-card"],
+.rail [class*="CoreCard"],
+.rail .profile,
+.rail .core-card{
+  display:none !important;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+@media (max-width: 980px){
+  .composer,
+  #composer{
+    width: min(600px, calc(100% - 26px)) !important;
+    max-width: min(600px, calc(100% - 26px)) !important;
+  }
+
+  .composer:hover,
+  .composer:focus-within,
+  .composer.aura-liquid-active,
+  #composer:hover,
+  #composer:focus-within,
+  #composer.aura-liquid-active{
+    width: calc(100% - 18px) !important;
+    max-width: calc(100% - 18px) !important;
+  }
+
+  .rail{
+    left: 12px !important;
+    top: 68px !important;
+    width: 56px !important;
+    min-width: 56px !important;
+    max-width: 56px !important;
+  }
+
+  .rail:hover,
+  .rail:focus-within,
+  .rail.aura-liquid-active{
+    width: 194px !important;
+    max-width: 194px !important;
+  }
+}
+
+@media (max-height: 760px){
+  .workspace{
+    padding-bottom: 74px !important;
+  }
+
+  .hero{
+    inset: 0 0 74px 0 !important;
+  }
+
+  .composer,
+  #composer{
+    bottom: 6px !important;
+    inset: auto auto 6px 50% !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+  }
+
+  .composer:hover,
+  .composer:focus-within,
+  .composer.aura-liquid-active,
+  #composer:hover,
+  #composer:focus-within,
+  #composer.aura-liquid-active{
+    height: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important;
+  }
+
+  .attach,
+  .mic,
+  .send{
+    height: 34px !important;
+    width: 34px !important;
+    min-width: 34px !important;
+  }
+
+  .rail{
+    top: 62px !important;
+  }
+}

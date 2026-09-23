@@ -1,0 +1,53 @@
+{
+  "schema": "aura.productivity-mission-bridge.v097.ft3-safe.v1",
+  "status": "CERTIFIED_V0_9_7_PRODUCTIVITY_INTEGRATIONS",
+  "generated_at": "2026-08-28T19:05:19",
+  "product_version": "0.9.5",
+  "scope": [
+    "MissionEngine productivity composition",
+    "IntegrationMissionToolAdapter reuse",
+    "email calendar contacts files notifications browser mission targets",
+    "existing security engine identity reuse",
+    "state-changing confirmation policy preserved",
+    "Agenda duplicate module-card removal from active UI only"
+  ],
+  "authorities": {
+    "core/aura_core.py": "3e9642013962697b452b76d4c542f2cd88bc5cfbfa1b6697b3998826b472b474",
+    "runtime/productivity_mission_bridge_v097.py": "4a290cbe3cb83bcf14b25171a47126607a9b5a96405c6dc4a4da0b1df4279992",
+    "tests/invariants/test_productivity_mission_bridge_v097.py": "4a876034cbdc4df610081d4d24461c0901122af5ea9089582965d8b2cad7bff9"
+  },
+  "active_ui": {
+    "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0702-left-rail.js": {
+      "sha256": "32bbd18437489872bb440c2e08afecb3fc0a1a1886db6c5e1cc5b778de6f0d3f",
+      "main_agenda_nav_present": true,
+      "module_agenda_button_present": false
+    },
+    "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0702-left-rail.js": {
+      "sha256": "32bbd18437489872bb440c2e08afecb3fc0a1a1886db6c5e1cc5b778de6f0d3f",
+      "main_agenda_nav_present": true,
+      "module_agenda_button_present": false
+    },
+    "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0702-left-rail.js": {
+      "sha256": "32bbd18437489872bb440c2e08afecb3fc0a1a1886db6c5e1cc5b778de6f0d3f",
+      "main_agenda_nav_present": true,
+      "module_agenda_button_present": false
+    }
+  },
+  "historical_dev_backups_modified": false,
+  "protected_existing_hashes": {
+    "runtime/personal_integrations.py": "de47c1a8bd1598ab6d03a29276dfdd0ada90b5220415cc8e2a418b940259a893",
+    "runtime/route_contract.py": "a04a000f19c4794b543dbd4cd5b73541997f32055d3a7776f4979a89eb62f9b4",
+    "integrations/registry.py": "5057ef64320721f002828b19147618446621a2e2af26fc70ddece8b04a4e1411",
+    "mission_engine/engine.py": "d497f3a502f985678813a4dec6faf23a810f55788cd8ed41bf2efcb6dcbe7068",
+    "security/policy_engine_v2.py": "61e0a49848b2ba5ff53a80503575f3d77680bc3ba84e9d6f82307958e5d60cd1",
+    "action_receipts/service.py": "4c0f13eefaa6351eca157235d3b0ceea5643474a8cbf0cdb7401c1d71b34023e",
+    "integrations/browser/provider.py": "fee06ec1a9651687aacd93669114003d03618fa2ee85c171632abdeb232cdaf8",
+    "runtime/browser_workflows.py": "cb92861f65a719810c77fb50c8640af8d691b9d289ac83bfc229e602355700d1"
+  },
+  "database_sha256": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb",
+  "d2_browser_certification_sha256": "db563ac2700139df255c1978f7a7da965a54c5758d40eb962d10f80f472a0ef0",
+  "state_changing_confirmation_policy": "user_confirmed remains False at bridge boundary",
+  "color_charter": "LOCKED / NO COLOR CHANGE",
+  "backup_root": "C:\\AURA GPT version\\_patch_backups\\v0.9.7_ft3_r4_safe_20260828_190515",
+  "next_state": "V0_9_7_PRODUCTIVITY_INTEGRATIONS_COMPLETE_READY_FOR_V0_9_8_INTEGRATION_PERMISSIONS"
+}

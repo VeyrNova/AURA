@@ -55,13 +55,7 @@ def run(cmd, timeout=3600):
         return {"returncode": 99, "stdout": "", "stderr": f"{type(exc).__name__}: {exc}"}
 
 def sha256(path: Path) -> str:
-    # Exact lock hashes are certified over canonical UTF-8/LF text so the
-    # verification is independent of Windows checkout CRLF conversion.
-    data = path.read_bytes()
-    if path.suffix.lower() == ".txt":
-        text = data.decode("utf-8-sig")
-        data = text.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
-    return hashlib.sha256(data).hexdigest()
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def parse_lock(path: Path):
     rows = {}

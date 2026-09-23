@@ -1,0 +1,124 @@
+{
+  "schema": "aura.ci.metadata-invariant.v0922.v1",
+  "pass": true,
+  "checks_total": 23,
+  "checks_passed": 23,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "present version.py",
+      "pass": true,
+      "detail": "C:\\AURA GPT version\\core\\version.py"
+    },
+    {
+      "name": "present settings.py",
+      "pass": true,
+      "detail": "C:\\AURA GPT version\\config\\settings.py"
+    },
+    {
+      "name": "present core_bridge.py",
+      "pass": true,
+      "detail": "C:\\AURA GPT version\\services\\core_bridge.py"
+    },
+    {
+      "name": "present shell_host.py",
+      "pass": true,
+      "detail": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py"
+    },
+    {
+      "name": "present package.json",
+      "pass": true,
+      "detail": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\package.json"
+    },
+    {
+      "name": "present aura-p081-event-watchers.js",
+      "pass": true,
+      "detail": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p081-event-watchers.js"
+    },
+    {
+      "name": "present aura-p081-event-watchers.js",
+      "pass": true,
+      "detail": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p081-event-watchers.js"
+    },
+    {
+      "name": "present aura-p081-event-watchers.js",
+      "pass": true,
+      "detail": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p081-event-watchers.js"
+    },
+    {
+      "name": "canonical product version",
+      "pass": true,
+      "detail": "0.9.2.2"
+    },
+    {
+      "name": "APP_VERSION derives from AURA_VERSION",
+      "pass": true,
+      "detail": "derived"
+    },
+    {
+      "name": "no static APP_VERSION literal",
+      "pass": true,
+      "detail": "no duplicate"
+    },
+    {
+      "name": "no second product version authority",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "name": "core_bridge unchanged",
+      "pass": true,
+      "detail": "fcd86f20d9df178848c6a27a8e9fc4044b9794f72226658f437020e8e1df171c"
+    },
+    {
+      "name": "shell boundary unchanged",
+      "pass": true,
+      "detail": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be"
+    },
+    {
+      "name": "shell derives metadata from core.version",
+      "pass": true,
+      "detail": "derived"
+    },
+    {
+      "name": "metadata schema preserved",
+      "pass": true,
+      "detail": "schema"
+    },
+    {
+      "name": "UI release derives from RELEASE",
+      "pass": true,
+      "detail": "UI-owned"
+    },
+    {
+      "name": "UI release independent",
+      "pass": true,
+      "detail": "0.7.2.2-rc4.2"
+    },
+    {
+      "name": "UI watcher mirrors identical",
+      "pass": true,
+      "detail": "['6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365', '6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365', '6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365']"
+    },
+    {
+      "name": "UI watcher certified hash",
+      "pass": true,
+      "detail": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
+    },
+    {
+      "name": "UI reads runtime_metadata",
+      "pass": true,
+      "detail": "consumer"
+    },
+    {
+      "name": "UI emits metadata event",
+      "pass": true,
+      "detail": "event"
+    },
+    {
+      "name": "UI has no product version literal",
+      "pass": true,
+      "detail": "no hardcode"
+    }
+  ]
+}

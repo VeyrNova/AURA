@@ -1,0 +1,34 @@
+{
+  "schema": "aura.activity-center-structural-color-fix.v095.v2",
+  "product_version_during_d2": "0.9.4",
+  "root_cause": {
+    "previous_wrong_root": "HTML",
+    "correct_root": "aside.aura-p081-panel",
+    "broad_runtime_theme_removed": true
+  },
+  "visual_contract": {
+    "scope": ".aura-p081-panel and descendants only",
+    "panel_background": "linear-gradient(145deg, rgba(8,22,38,.98), rgba(3,10,19,.97))",
+    "panel_border": "rgba(113,224,255,.16)",
+    "section_background": "rgba(3,14,23,.50)",
+    "active_border": "rgba(105,232,255,.24)",
+    "purple_active_state": false,
+    "purple_scrollbar": false,
+    "purple_overview_counter": false,
+    "purple_suggestion_engine": false,
+    "purple_new_event_emphasis": false
+  },
+  "hashes": {
+    "js_project": "bc84e5c9d9dc971ab70a8c0b8214e2ab48f0c9788c4c8e76a2be501201ac30ee",
+    "js_dist": "d8e9720b6b4ab806be5bbdda0bd89764cc41c0ce3bdbaa380c68d0f0a98760f3",
+    "css": {
+      "C:\\AURA GPT version\\aura-p081-event-watchers.css": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4",
+      "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p081-event-watchers.css": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4",
+      "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p081-event-watchers.css": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4",
+      "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p081-event-watchers.css": "a76481dce897874f5b5912be7176f0655ec15bbe4351e8876bfa49ef7cc3b5d4"
+    },
+    "db": "de473830987af1daca53a90cdba53a6558d5e2494a6556a5de2ff6c7dc4260fb",
+    "rail": "c9cc3a363344d7148cf2ad85deda5a9c779aca223f17d2c5f27cbfb7e5ba9b02",
+    "main_css": "2162fb9b4f39cd1b0113e2cd06d949fc19bff360251143ef438a37f3b44be4d5"
+  }
+}

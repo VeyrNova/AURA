@@ -61,28 +61,28 @@
       "lines": 466
     },
     "ui_shell_host": {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
       "exists": true,
       "sha256": "453448bf8e357176a904b40bfa300f974a9bcb401a57de308498071a4d46b2a9",
       "bytes": 185361,
       "lines": 3568
     },
     "ui_index": {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
       "exists": true,
       "sha256": "dad55aa207c47375e8ea4931a2ba77950fa8d354991d8f33f59010052cfe25aa",
       "bytes": 13430,
       "lines": 188
     },
     "ui_main_bundle": {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\index-Ckl5rwwJ.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\index-Ckl5rwwJ.js",
       "exists": true,
       "sha256": "c90a330add27d9e006451164bb2df255e7e80584917369ec9dfff7ab5b958551",
       "bytes": 551325,
       "lines": 4164
     },
     "ui_maps_workspace": {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
       "exists": true,
       "sha256": "4b018fe76fb09b2e3a21c46f02f2c5db3ae782c834913d54e322f5c03e38d25a",
       "bytes": 151222,
