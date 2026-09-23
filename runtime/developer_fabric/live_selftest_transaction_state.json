@@ -1,0 +1,120 @@
+{
+  "schema": "aura.general-self-development-live-state.v1",
+  "binding": "ADF-H-R7.2.11-GENERAL-CODING-FABRIC-BINDING",
+  "updated_at": 1788520987.5828764,
+  "pending": null,
+  "last_receipt": {
+    "schema": "aura.self-development-receipt.v1",
+    "transaction_id": "txn_e7e774253ffb4b81ad9e",
+    "proposal_digest": "940679d26d371a8fbddbea73370eeed1f80f5067f21e678a25a0760dc38d7040",
+    "workspace": "C:\\AURA GPT version",
+    "risk_assessment": {
+      "schema": "aura.self-development-assessment.v1",
+      "transaction_id": "txn_e7e774253ffb4b81ad9e",
+      "proposal_digest": "940679d26d371a8fbddbea73370eeed1f80f5067f21e678a25a0760dc38d7040",
+      "max_risk": "standard",
+      "challenge": "3642902653e9c5853433",
+      "files": [
+        {
+          "path": "docs/RM26_LIVE_ACCEPTANCE.md",
+          "risk": "standard"
+        }
+      ],
+      "required_approvals": [
+        "APPLY txn_e7e774253ffb4b81ad9e"
+      ],
+      "release_mode": false
+    },
+    "approval_proofs": [
+      "5986635730f3aad2fa9dd5777f8a444134e2b54fbf0058515e693abb99cd2caa"
+    ],
+    "before_sha256": {
+      "docs/RM26_LIVE_ACCEPTANCE.md": null
+    },
+    "base_transaction_receipt": {
+      "schema": "aura.patch-transaction-receipt.v1",
+      "transaction_id": "txn_e7e774253ffb4b81ad9e",
+      "proposal_digest": "940679d26d371a8fbddbea73370eeed1f80f5067f21e678a25a0760dc38d7040",
+      "workspace": "C:\\AURA GPT version",
+      "approval_phrase_matched": true,
+      "backup_root": "C:\\AURA GPT version\\.aura_transactions\\backups\\txn_e7e774253ffb4b81ad9e",
+      "files": [
+        {
+          "path": "docs/RM26_LIVE_ACCEPTANCE.md",
+          "existed_before": false
+        }
+      ],
+      "diffs": [
+        "--- a/docs/RM26_LIVE_ACCEPTANCE.md\n+++ b/docs/RM26_LIVE_ACCEPTANCE.md\n@@ -0,0 +1,2 @@\n+# RM26 LIVE ACCEPTANCE\r\n+AURA Developer production hook validated after POST-APPLY PASS.\r\n"
+      ],
+      "post_apply_tests": [
+        {
+          "command": [
+            "C:\\AURA GPT version\\venv\\Scripts\\pythonw.exe",
+            "-c",
+            "from pathlib import Path\nimport sys\np=Path(sys.argv[1])\nb=p.read_bytes()\nif not b:\n    raise SystemExit(\"empty markdown target\")\nif b\"\\x00\" in b[:4096]:\n    raise SystemExit(\"binary/NUL markdown target denied\")\ns=b.decode(\"utf-8\")\nif not s.strip():\n    raise SystemExit(\"blank markdown target\")\nprint(\"AURA_MARKDOWN_UTF8_ACCEPTANCE_PASS\")\n",
+            "docs/RM26_LIVE_ACCEPTANCE.md"
+          ],
+          "exit": 0,
+          "passed": true,
+          "duration_ms": 269.379,
+          "stdout": "AURA_MARKDOWN_UTF8_ACCEPTANCE_PASS\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "C:\\AURA GPT version\\venv\\Scripts\\pythonw.exe",
+            "-c",
+            "from pathlib import Path\nimport sys\ns=Path(sys.argv[1]).read_text(encoding=\"utf-8\")\nrequired=[\"# RM26 LIVE ACCEPTANCE\",\"AURA Developer production hook validated after POST-APPLY PASS.\"]\nmissing=[x for x in required if x not in s]\nif missing:\n    raise SystemExit(\"missing RM26 acceptance markers: \"+\", \".join(missing))\nprint(\"RM26_LIVE_ACCEPTANCE_SEMANTIC_PASS\")\n",
+            "docs/RM26_LIVE_ACCEPTANCE.md"
+          ],
+          "exit": 0,
+          "passed": true,
+          "duration_ms": 198.632,
+          "stdout": "RM26_LIVE_ACCEPTANCE_SEMANTIC_PASS\n",
+          "stderr": ""
+        }
+      ],
+      "applied": true,
+      "rolled_back": false,
+      "created_at": 1788520987,
+      "receipt_path": "C:\\AURA GPT version\\.aura_transactions\\backups\\txn_e7e774253ffb4b81ad9e\\_receipt.json"
+    },
+    "rollback_phrase": "ROLLBACK SELF txn_e7e774253ffb4b81ad9e 3642902653e9c5853433",
+    "spoken_summary": "J’ai modifié RM26_LIVE_ACCEPTANCE.md. Les tests sont passés.",
+    "spoken_summary_policy": "brief-only",
+    "audit_receipt_path": "C:\\AURA GPT version\\.aura_audit\\receipts\\txn_e7e774253ffb4b81ad9e.json",
+    "audit_event_hash": "4d9cd75091e2c19f5fc4203f3edc45960d73aa8494e3b9017b7de84b05e1a51f",
+    "proposal_metadata": {
+      "roadmap_auto_certify": true,
+      "roadmap_milestone_id": "RM26",
+      "roadmap_source": "aura-developer-general-live-rm26",
+      "roadmap_title": "Developer Fabric automatic roadmap certification"
+    },
+    "roadmap_certification": {
+      "ok": true,
+      "schema": "aura.roadmap.developer-certifier.rm26.v1",
+      "status": "CERTIFIED",
+      "milestone_id": "RM26",
+      "transaction_id": "txn_e7e774253ffb4b81ad9e",
+      "revision_id": "20260904_132307_488563_a2e6ea6e",
+      "progress_percent": 77.0,
+      "projection": {
+        "ok": true,
+        "schema": "aura.project-active.roadmap-binding.v25d.v1",
+        "snapshot_path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\workspace_project_active_v130.json",
+        "schedule_state_path": "C:\\AURA GPT version\\data\\roadmap\\aura_roadmap_schedule_state.json",
+        "progress_percent": 77.0,
+        "progress_label": "77%",
+        "last_action": "RM26 — Developer Fabric automatic roadmap certification",
+        "next_action": "W131 — Windows App & PC Control Orchestration",
+        "forecast_finish": "2026-11-14",
+        "baseline_finish": "2026-11-30",
+        "schedule_variance_days": 16,
+        "schedule_label": "16 JOURS D'AVANCE",
+        "confidence_percent": 95
+      }
+    }
+  },
+  "last_rollback": null
+}

@@ -1,0 +1,275 @@
+/* ================================================================
+   AURA THEME DUALMODE R7
+   Dark theme = current premium look
+   Light theme = premium ice / glass proposal
+   ================================================================ */
+
+/* ---------- Theme toggle button ---------- */
+.aura-theme-toggle{
+  min-height:26px;
+  height:26px;
+  padding:0 10px;
+  border-radius:8px;
+  border:1px solid rgba(105,220,255,.14);
+  background:rgba(5,16,28,.42);
+  color:rgba(231,246,255,.82);
+  font-size:8px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .18s ease;
+  backdrop-filter:blur(14px);
+}
+.aura-theme-toggle:hover{
+  border-color:rgba(112,230,255,.28);
+  box-shadow:0 0 14px rgba(67,183,255,.08);
+}
+.aura-theme-toggle:active{
+  transform:translateY(1px);
+}
+
+/* ---------- LIGHT THEME ROOT ---------- */
+html[data-aura-theme="light"],
+html[data-aura-theme="light"] body{
+  background:
+    radial-gradient(circle at 50% 42%, rgba(99,190,255,.16) 0%, transparent 34%),
+    radial-gradient(circle at 50% 86%, rgba(178,157,255,.11) 0%, transparent 18%),
+    linear-gradient(180deg,#eef6fb 0%,#e6f1f8 38%,#dceaf4 100%) !important;
+  color:#173142 !important;
+}
+
+html[data-aura-theme="light"] body::before{
+  opacity:.24 !important;
+  background:
+    linear-gradient(rgba(84,136,173,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(84,136,173,.020) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image:radial-gradient(circle at 50% 44%,#000 0%,rgba(0,0,0,.66) 42%,transparent 84%);
+}
+
+/* ---------- Shell ---------- */
+html[data-aura-theme="light"] #app::after{
+  box-shadow:
+    inset 0 0 0 1px rgba(85,151,191,.08),
+    inset 0 0 42px rgba(111,188,228,.05) !important;
+}
+
+html[data-aura-theme="light"] .topbar{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.82),rgba(243,249,252,.72)) !important;
+  border-color:rgba(98,159,196,.20) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.72),
+    0 12px 32px rgba(100,144,177,.12) !important;
+  backdrop-filter:blur(22px) saturate(118%) !important;
+}
+html[data-aura-theme="light"] .topbar::before{
+  background:linear-gradient(90deg,transparent,rgba(87,176,223,.38),rgba(150,124,225,.24),transparent) !important;
+  opacity:.68 !important;
+}
+
+html[data-aura-theme="light"] .brand strong{
+  color:#183649 !important;
+}
+html[data-aura-theme="light"] .brand small{
+  color:rgba(42,78,102,.52) !important;
+}
+
+html[data-aura-theme="light"] .state-pill,
+html[data-aura-theme="light"] .route-pill,
+html[data-aura-theme="light"] .mini-chip,
+html[data-aura-theme="light"] .aura-theme-toggle{
+  background:rgba(255,255,255,.66) !important;
+  border-color:rgba(99,161,198,.18) !important;
+  color:rgba(27,63,84,.78) !important;
+  box-shadow:none !important;
+}
+html[data-aura-theme="light"] .power{
+  background:rgba(255,245,249,.75) !important;
+  border-color:rgba(214,122,156,.18) !important;
+}
+
+/* ---------- Compact dock / rail ---------- */
+html[data-aura-theme="light"] .rail{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.82),rgba(244,249,252,.72)) !important;
+  border-color:rgba(99,162,198,.16) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.75),
+    0 16px 38px rgba(100,144,177,.12),
+    0 0 24px rgba(92,161,210,.04) !important;
+}
+html[data-aura-theme="light"] .rail::before{
+  background:linear-gradient(
+    180deg,
+    transparent,
+    rgba(99,171,213,.05) 14%,
+    transparent 42% 58%,
+    rgba(157,121,228,.04) 86%,
+    transparent
+  ) !important;
+}
+html[data-aura-theme="light"] .rail::after{
+  background:#60bce4 !important;
+  box-shadow:
+    0 0 7px rgba(96,188,228,.56),
+    0 0 16px rgba(96,188,228,.18) !important;
+}
+html[data-aura-theme="light"] .rail-btn{
+  color:#36586d !important;
+}
+html[data-aura-theme="light"] .rail-btn span{
+  opacity:.74 !important;
+}
+html[data-aura-theme="light"] .rail-btn:hover{
+  background:rgba(164,214,239,.22) !important;
+  border-color:rgba(97,168,207,.10) !important;
+}
+html[data-aura-theme="light"] .rail-btn:hover span{
+  filter:drop-shadow(0 0 6px rgba(82,162,210,.16)) !important;
+}
+html[data-aura-theme="light"] .rail-btn.active{
+  background:
+    linear-gradient(180deg,rgba(179,227,247,.48),rgba(160,207,239,.24)) !important;
+  border-color:rgba(97,172,211,.24) !important;
+  box-shadow:
+    inset 0 0 16px rgba(101,189,232,.08),
+    0 0 16px rgba(101,189,232,.06) !important;
+}
+html[data-aura-theme="light"] .rail-btn.active span{
+  color:#18384f !important;
+  filter:drop-shadow(0 0 7px rgba(101,189,232,.24)) !important;
+}
+
+/* ---------- Hero ---------- */
+html[data-aura-theme="light"] .hero{
+  background:
+    radial-gradient(circle at 50% 43%,rgba(104,181,227,.16),transparent 36%),
+    radial-gradient(circle at 50% 80%,rgba(169,133,236,.07),transparent 20%),
+    linear-gradient(180deg,rgba(255,255,255,.64),rgba(240,247,251,.64)) !important;
+  border-color:rgba(106,170,206,.14) !important;
+  box-shadow:
+    inset 0 0 80px rgba(87,171,220,.04),
+    0 18px 48px rgba(109,152,184,.14) !important;
+}
+html[data-aura-theme="light"] .hero::before{
+  opacity:.32 !important;
+}
+html[data-aura-theme="light"] .hero::after{
+  opacity:.08 !important;
+}
+html[data-aura-theme="light"] .hero > .scanlines::before{
+  opacity:.22 !important;
+  border-color:rgba(85,146,185,.06) !important;
+}
+html[data-aura-theme="light"] .hero > .scanlines::after{
+  opacity:.18 !important;
+}
+
+html[data-aura-theme="light"] .core-label span{
+  color:rgba(44,84,108,.48) !important;
+}
+html[data-aura-theme="light"] .core-label strong{
+  color:#16384c !important;
+}
+html[data-aura-theme="light"] .core-label small{
+  color:rgba(47,89,116,.52) !important;
+}
+html[data-aura-theme="light"] .core-label::after{
+  background:linear-gradient(90deg,rgba(99,171,214,.42),transparent) !important;
+}
+
+/* AURA clock block */
+html[data-aura-theme="light"] .aura-r5-identity__name{
+  color:rgba(38,72,97,.085) !important;
+  text-shadow:none !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__time{
+  color:#18384d !important;
+  text-shadow:0 0 14px rgba(105,183,229,.08) !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__date{
+  color:rgba(49,87,111,.52) !important;
+}
+
+/* Keep orb premium but a little cleaner in light mode */
+html[data-aura-theme="light"] #stage canvas{
+  filter:
+    saturate(1.10)
+    brightness(1.03)
+    contrast(1.02)
+    drop-shadow(0 0 18px rgba(80,176,224,.10)) !important;
+}
+html[data-aura-theme="light"] #stage::before,
+html[data-aura-theme="light"] #stage::after{
+  opacity:.08 !important;
+}
+
+/* ---------- Panels ---------- */
+html[data-aura-theme="light"] .telemetry,
+html[data-aura-theme="light"] .conversation{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.84),rgba(244,249,252,.74)) !important;
+  border-color:rgba(99,162,198,.15) !important;
+  box-shadow:0 18px 44px rgba(109,152,184,.12) !important;
+  backdrop-filter:blur(20px) saturate(115%) !important;
+  color:#1f3c4f !important;
+}
+
+/* ---------- Composer ---------- */
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.88),rgba(244,249,252,.80)) !important;
+  border-color:rgba(99,162,198,.18) !important;
+  box-shadow:
+    0 18px 44px rgba(109,152,184,.14),
+    0 0 24px rgba(101,189,232,.04) !important;
+  backdrop-filter:blur(24px) saturate(120%) !important;
+}
+html[data-aura-theme="light"] .composer::after{
+  opacity:.16 !important;
+}
+html[data-aura-theme="light"] .attach,
+html[data-aura-theme="light"] .mic,
+html[data-aura-theme="light"] .send{
+  background:rgba(248,252,255,.84) !important;
+  border-color:rgba(100,164,200,.15) !important;
+  color:#24475d !important;
+}
+html[data-aura-theme="light"] .send{
+  background:
+    linear-gradient(180deg,rgba(214,241,250,.84),rgba(194,229,244,.74)) !important;
+  color:#194562 !important;
+}
+html[data-aura-theme="light"] #messageInput{
+  color:#1b394d !important;
+}
+html[data-aura-theme="light"] #messageInput::placeholder{
+  color:rgba(49,88,113,.44) !important;
+}
+html[data-aura-theme="light"] #composerHint{
+  color:rgba(57,97,123,.44) !important;
+}
+
+/* ---------- Toast ---------- */
+html[data-aura-theme="light"] .toast{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.92),rgba(245,250,252,.86)) !important;
+  border-color:rgba(101,166,202,.18) !important;
+  color:#1d3e54 !important;
+  box-shadow:
+    0 16px 38px rgba(109,152,184,.16),
+    0 0 20px rgba(101,189,232,.06) !important;
+}
+
+/* ---------- Fallback generic text tone ---------- */
+html[data-aura-theme="light"] .hero,
+html[data-aura-theme="light"] .topbar,
+html[data-aura-theme="light"] .rail,
+html[data-aura-theme="light"] .telemetry,
+html[data-aura-theme="light"] .conversation,
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  color:#1d3d51 !important;
+}

@@ -1,7 +1,7 @@
 
 from pathlib import Path
 import argparse, json, os, sys
-ROOT=Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parent).resolve()
+ROOT=Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
 if str(ROOT) not in sys.path: sys.path.insert(0,str(ROOT))
 from runtime.aura_self_development_governance import assess_proposal, capability_snapshot
 from runtime.aura_audit_ledger import AuditLedger

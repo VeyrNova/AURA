@@ -1,0 +1,361 @@
+/* ================================================================
+   AURA DEV UI PREMIUM HUD R3
+   Neural command center / cinematic HUD layer
+   Project-local RC4.2 only
+   ================================================================ */
+
+:root{
+  --r3-cyan:#72eeff;
+  --r3-cyan2:#3bc3ff;
+  --r3-violet:#a66cff;
+  --r3-violet2:#d16cff;
+  --r3-line:rgba(113,226,255,.17);
+  --r3-line2:rgba(166,108,255,.14);
+  --r3-text:#effbff;
+  --r3-muted:rgba(181,218,235,.55);
+}
+
+/* ---------- APP COMPOSITION ---------- */
+#app{
+  gap:12px !important;
+}
+
+.workspace{
+  gap:12px !important;
+}
+
+.hero{
+  position:relative;
+  overflow:hidden !important;
+  border:1px solid rgba(105,220,255,.18) !important;
+  box-shadow:
+    inset 0 0 80px rgba(38,132,201,.035),
+    0 18px 54px rgba(0,0,0,.26) !important;
+}
+
+/* cinematic inner frame */
+.hero > .scanlines::before,
+.hero > .scanlines::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  z-index:4;
+}
+
+.hero > .scanlines::before{
+  inset:18px;
+  border:1px solid rgba(101,214,255,.065);
+  border-radius:14px;
+  clip-path:polygon(
+    0 0, 16% 0, 16% 1px, 84% 1px, 84% 0, 100% 0,
+    100% 100%,84% 100%,84% calc(100% - 1px),16% calc(100% - 1px),16% 100%,0 100%
+  );
+}
+
+.hero > .scanlines::after{
+  left:50%;
+  top:50%;
+  width:min(76%,980px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(100,225,255,.055);
+  box-shadow:
+    0 0 0 34px rgba(100,225,255,.012),
+    0 0 0 72px rgba(165,108,255,.009);
+}
+
+/* top / bottom targeting ticks */
+.hero .core-label::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:-10px;
+  width:12px;
+  height:12px;
+  border-left:1px solid rgba(112,228,255,.42);
+  border-top:1px solid rgba(112,228,255,.42);
+  opacity:.7;
+}
+
+/* ---------- HUD BRACKETS AROUND ORB ---------- */
+#stage::before,
+#stage::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:150px;
+  height:240px;
+  z-index:8;
+  pointer-events:none;
+  opacity:.42;
+}
+
+#stage::before{
+  left:16%;
+  transform:translateY(-50%);
+  border-left:1px solid rgba(104,220,255,.22);
+  border-top:1px solid rgba(104,220,255,.10);
+  border-bottom:1px solid rgba(104,220,255,.10);
+  background:
+    linear-gradient(180deg,rgba(97,218,255,.12),transparent 18% 82%,rgba(97,218,255,.12)) left/1px 100% no-repeat;
+}
+
+#stage::after{
+  right:16%;
+  transform:translateY(-50%);
+  border-right:1px solid rgba(165,108,255,.20);
+  border-top:1px solid rgba(165,108,255,.08);
+  border-bottom:1px solid rgba(165,108,255,.08);
+  background:
+    linear-gradient(180deg,rgba(165,108,255,.11),transparent 18% 82%,rgba(165,108,255,.11)) right/1px 100% no-repeat;
+}
+
+/* orbit presentation */
+#stage canvas{
+  filter:
+    saturate(1.16)
+    brightness(1.045)
+    contrast(1.035)
+    drop-shadow(0 0 18px rgba(78,191,255,.08));
+}
+
+/* ---------- TOP BAR INTEGRATION ---------- */
+.topbar{
+  min-height:66px !important;
+  border-radius:16px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 10px 32px rgba(0,0,0,.24) !important;
+}
+
+.topbar::before{
+  content:"";
+  position:absolute;
+  inset:auto 18% -1px 18%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(111,231,255,.52),rgba(166,108,255,.30),transparent);
+  opacity:.5;
+}
+
+.brand strong{
+  letter-spacing:.48em !important;
+}
+
+.top-center{
+  position:absolute !important;
+  left:50% !important;
+  transform:translateX(-50%) !important;
+}
+
+.top-actions{
+  margin-left:auto !important;
+}
+
+.state-pill,
+.route-pill,
+.mini-chip{
+  height:28px !important;
+  min-height:28px !important;
+  padding:0 11px !important;
+  border-radius:8px !important;
+  font-size:9px !important;
+}
+
+.route-pill{
+  color:rgba(198,230,242,.68) !important;
+}
+
+/* ---------- LEFT RAIL REFINEMENT ---------- */
+.rail{
+  margin-top:0 !important;
+  align-self:stretch !important;
+  border-radius:16px !important;
+  background:
+    linear-gradient(180deg,rgba(5,16,28,.92),rgba(3,10,19,.90)) !important;
+}
+
+.rail-btn{
+  border-radius:10px !important;
+  min-height:42px !important;
+}
+
+.rail-btn small{
+  font-size:10px !important;
+  letter-spacing:.02em !important;
+}
+
+.rail-btn.active{
+  box-shadow:
+    inset 0 0 18px rgba(54,169,255,.065),
+    0 0 18px rgba(54,169,255,.08) !important;
+}
+
+/* profile / aura core lower cards */
+.rail [class*="profile"],
+.rail [class*="core"]{
+  border-radius:12px !important;
+}
+
+/* ---------- HERO EDGE DECORATION ---------- */
+.hero .core-label{
+  padding-left:3px;
+}
+
+.hero .core-label::after{
+  width:92px !important;
+  background:linear-gradient(90deg,var(--r3-cyan),rgba(166,108,255,.56),transparent) !important;
+}
+
+/* central floor light */
+.hero::selection{background:transparent}
+
+.hero .boot-card{
+  border-radius:14px !important;
+}
+
+/* ---------- CONVERSATION ---------- */
+.conversation{
+  border-radius:16px !important;
+  border-color:rgba(103,218,255,.20) !important;
+}
+
+.conversation-head{
+  background:
+    linear-gradient(90deg,rgba(14,42,64,.22),transparent 48%) !important;
+}
+
+.conversation-head span{
+  letter-spacing:.18em !important;
+}
+
+.messages{
+  background:
+    radial-gradient(circle at 20% 0%,rgba(50,150,216,.028),transparent 35%) !important;
+}
+
+/* ---------- COMPOSER COMMAND DECK ---------- */
+.composer{
+  min-height:70px !important;
+  border-radius:16px !important;
+  background:
+    linear-gradient(180deg,rgba(5,19,33,.97),rgba(3,11,21,.96)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 0 0 1px rgba(103,219,255,.025),
+    0 16px 40px rgba(0,0,0,.30) !important;
+}
+
+.composer::before{
+  content:"";
+  position:absolute;
+  left:52px;
+  right:110px;
+  top:11px;
+  bottom:11px;
+  pointer-events:none;
+  border-left:1px solid rgba(100,220,255,.08);
+  border-right:1px solid rgba(100,220,255,.05);
+}
+
+#messageInput{
+  letter-spacing:.01em !important;
+}
+
+.attach,
+.mic,
+.send{
+  border-radius:11px !important;
+}
+
+.mic,
+.send{
+  position:relative;
+}
+
+.mic::after,
+.send::after{
+  content:"";
+  position:absolute;
+  inset:6px;
+  border-radius:8px;
+  border:1px solid rgba(111,226,255,.055);
+  pointer-events:none;
+}
+
+.send{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.035),
+    0 0 20px rgba(59,185,255,.08) !important;
+}
+
+/* ---------- HUD LABEL ACCENTS ---------- */
+.panel-title span,
+.core-label span,
+.conversation-head span{
+  text-shadow:0 0 10px rgba(106,220,255,.12);
+}
+
+/* ---------- PREMIUM EMPTY SPACE TREATMENT ---------- */
+.hero{
+  background:
+    radial-gradient(circle at 50% 44%,rgba(19,81,131,.15),transparent 36%),
+    radial-gradient(circle at 50% 76%,rgba(149,83,231,.065),transparent 24%),
+    linear-gradient(180deg,rgba(3,10,19,.55),rgba(2,7,14,.76)) !important;
+}
+
+/* subtle diagonal tech lines */
+.hero > .scanlines{
+  background-image:
+    repeating-linear-gradient(
+      120deg,
+      transparent 0,
+      transparent 82px,
+      rgba(95,215,255,.013) 83px,
+      transparent 84px
+    ) !important;
+}
+
+/* ---------- FOCUS / HOVER ---------- */
+@media(prefers-reduced-motion:no-preference){
+  .rail-btn,
+  .state-pill,
+  .route-pill,
+  .mini-chip,
+  .attach,
+  .mic,
+  .send{
+    transition:
+      transform .16s ease,
+      border-color .16s ease,
+      box-shadow .16s ease,
+      background .16s ease !important;
+  }
+
+  .state-pill:hover,
+  .route-pill:hover,
+  .mini-chip:hover{
+    border-color:rgba(115,228,255,.30) !important;
+    box-shadow:0 0 18px rgba(71,186,255,.05) !important;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1280px){
+  #stage::before{left:10%}
+  #stage::after{right:10%}
+}
+
+@media(max-width:1100px){
+  #stage::before,
+  #stage::after{
+    opacity:.22;
+  }
+}
+
+@media(max-width:980px){
+  #stage::before,
+  #stage::after{
+    display:none;
+  }
+}

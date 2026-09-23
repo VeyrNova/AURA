@@ -42,7 +42,7 @@ from runtime.aura_fabric_http_gateway import (
     create_server,
 )
 
-ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
+ROOT = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
 BINDING_ID = "ADF-H-R7.2.7-CODING-AGENT-AFG-SANDBOX"
 
 _DEFAULT_MODEL = "aura-code"
@@ -711,7 +711,7 @@ def _run_process_visible(
 
     local_appdata = Path(
         os.environ.get("LOCALAPPDATA")
-        or str(Path.home() / "AppData" / "Local")
+        or r"C:\Users\leclerc\AppData\Local"
     ).resolve()
     ui_dist = (
         local_appdata

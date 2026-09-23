@@ -156,7 +156,7 @@ class ProviderRegistry:
         return {"ok": not suspicious, "findings": suspicious}
 
 def default_registry_path() -> Path:
-    root = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
+    root = Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
     return root / "ci" / "aura_fabric_provider_registry_seed.json"
 
 def load_default_registry() -> ProviderRegistry:

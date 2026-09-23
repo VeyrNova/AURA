@@ -1,0 +1,21 @@
+{
+  "schema": "aura.skill.v1",
+  "version": "2.3.0",
+  "skill_id": "memory",
+  "title": "MÃ©moire",
+  "description": "CrÃ©ation, suppression et mode privÃ© de mÃ©moire via le MemoryService existant.",
+  "enabled": true,
+  "commands": [
+    "memory_clear_profile",
+    "memory_create",
+    "memory_delete",
+    "memory_private"
+  ],
+  "permissions": [
+    "personal_memory"
+  ],
+  "owner": "services.core_bridge",
+  "risk": "personal_data_mutation",
+  "execution_mode": "delegate_existing_owner",
+  "microphone_policy": "not_applicable"
+}

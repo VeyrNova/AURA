@@ -1,0 +1,283 @@
+/* ================================================================
+   AURA THEME DUALMODE R7 FIX1
+   Light theme refinement: Arctic Glass
+   + compact dock label fix
+   ================================================================ */
+
+/* ================================================================
+   COMPACT DOCK LABEL FIX — both themes
+   ================================================================ */
+
+/* Hide textual nav labels while preserving icon containers. */
+.rail-btn{
+  font-size:0 !important;
+  line-height:0 !important;
+  white-space:nowrap !important;
+}
+
+.rail-btn > *{
+  line-height:1 !important;
+}
+
+.rail-btn small,
+.rail-btn .label,
+.rail-btn .rail-label,
+.rail-btn [class*="label"],
+.rail-btn [class*="Label"],
+.rail-btn [data-label]{
+  display:none !important;
+}
+
+/* Restore likely icon elements. */
+.rail-btn span,
+.rail-btn svg,
+.rail-btn i,
+.rail-btn [class*="icon"],
+.rail-btn [class*="Icon"]{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  font-size:16px !important;
+  line-height:1 !important;
+}
+
+/* Hide lower profile/core content that still leaks from the old sidebar. */
+.rail .profile,
+.rail .profile-card,
+.rail .rail-profile,
+.rail [class*="profile-"],
+.rail [class*="Profile"],
+.rail .core-card,
+.rail .aura-core-card,
+.rail [class*="core-card"],
+.rail [class*="CoreCard"]{
+  display:none !important;
+}
+
+/* ================================================================
+   LIGHT THEME — ARCTIC GLASS
+   ================================================================ */
+
+html[data-aura-theme="light"],
+html[data-aura-theme="light"] body{
+  background:
+    radial-gradient(circle at 50% 37%, rgba(88,167,224,.16) 0%, transparent 31%),
+    radial-gradient(circle at 50% 78%, rgba(167,131,226,.08) 0%, transparent 19%),
+    linear-gradient(180deg,#f4f8fb 0%,#eaf2f7 48%,#dfeaf2 100%) !important;
+  color:#17364b !important;
+}
+
+html[data-aura-theme="light"] body::before{
+  opacity:.16 !important;
+  background:
+    linear-gradient(rgba(66,114,147,.026) 1px, transparent 1px),
+    linear-gradient(90deg,rgba(66,114,147,.018) 1px, transparent 1px);
+  background-size:46px 46px;
+}
+
+/* Main hero gets a cool glass well instead of flat grey. */
+html[data-aura-theme="light"] .hero{
+  background:
+    radial-gradient(circle at 50% 44%,
+      rgba(63,115,164,.22) 0%,
+      rgba(94,154,200,.12) 25%,
+      rgba(232,241,247,.34) 48%,
+      rgba(247,251,253,.70) 76%),
+    linear-gradient(180deg,rgba(255,255,255,.76),rgba(238,246,250,.70)) !important;
+
+  border-color:rgba(92,151,188,.20) !important;
+
+  box-shadow:
+    inset 0 0 110px rgba(66,126,177,.08),
+    inset 0 1px 0 rgba(255,255,255,.76),
+    0 18px 48px rgba(91,129,159,.13) !important;
+}
+
+/* Add an atmospheric halo behind the neural sphere. */
+html[data-aura-theme="light"] .hero::before{
+  opacity:1 !important;
+  background:
+    radial-gradient(circle at 50% 46%,
+      rgba(43,86,133,.18) 0%,
+      rgba(67,126,174,.11) 30%,
+      rgba(139,189,219,.045) 48%,
+      transparent 67%) !important;
+}
+
+html[data-aura-theme="light"] .hero::after{
+  opacity:.13 !important;
+  background:
+    linear-gradient(90deg,
+      transparent,
+      rgba(120,87,193,.20),
+      rgba(49,169,213,.34),
+      rgba(120,87,193,.20),
+      transparent) !important;
+}
+
+/* Orb: keep the vivid cyan/violet signature in light mode. */
+html[data-aura-theme="light"] #stage{
+  filter:
+    saturate(1.18)
+    contrast(1.10)
+    brightness(.96)
+    drop-shadow(0 0 22px rgba(48,133,198,.16)) !important;
+}
+
+html[data-aura-theme="light"] #stage canvas{
+  filter:
+    saturate(1.30)
+    contrast(1.16)
+    brightness(.96)
+    drop-shadow(0 0 24px rgba(45,128,196,.19)) !important;
+}
+
+html[data-aura-theme="light"] #stage::before,
+html[data-aura-theme="light"] #stage::after{
+  opacity:.14 !important;
+}
+
+/* Header */
+html[data-aura-theme="light"] .topbar{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.88),rgba(238,246,250,.82)) !important;
+  border-color:rgba(87,148,185,.22) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.92),
+    0 10px 30px rgba(83,126,159,.12) !important;
+}
+
+html[data-aura-theme="light"] .brand strong{
+  color:#17364a !important;
+}
+html[data-aura-theme="light"] .brand small{
+  color:rgba(40,78,103,.58) !important;
+}
+
+html[data-aura-theme="light"] .state-pill,
+html[data-aura-theme="light"] .route-pill,
+html[data-aura-theme="light"] .mini-chip,
+html[data-aura-theme="light"] .aura-theme-toggle{
+  background:rgba(255,255,255,.78) !important;
+  border-color:rgba(87,151,190,.22) !important;
+  color:#31536a !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.82),
+    0 5px 12px rgba(93,132,160,.05) !important;
+}
+
+html[data-aura-theme="light"] .state-pill{
+  color:#1d455d !important;
+}
+
+html[data-aura-theme="light"] #stateDot{
+  box-shadow:
+    0 0 8px rgba(50,184,221,.78),
+    0 0 14px rgba(50,184,221,.28) !important;
+}
+
+/* Dock */
+html[data-aura-theme="light"] .rail{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.89),rgba(238,246,250,.79)) !important;
+  border-color:rgba(91,151,187,.21) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.92),
+    0 16px 40px rgba(82,124,155,.13) !important;
+}
+
+html[data-aura-theme="light"] .rail-btn{
+  color:#365c73 !important;
+}
+
+html[data-aura-theme="light"] .rail-btn:hover{
+  background:rgba(118,190,226,.15) !important;
+  border-color:rgba(78,153,195,.18) !important;
+}
+
+html[data-aura-theme="light"] .rail-btn.active{
+  background:
+    linear-gradient(180deg,rgba(157,220,242,.60),rgba(113,185,224,.30)) !important;
+  border-color:rgba(72,157,202,.31) !important;
+  box-shadow:
+    inset 0 0 16px rgba(74,169,216,.10),
+    0 0 17px rgba(74,169,216,.08) !important;
+}
+
+/* Core label */
+html[data-aura-theme="light"] .core-label span{
+  color:rgba(32,72,97,.53) !important;
+}
+html[data-aura-theme="light"] .core-label strong{
+  color:#183b52 !important;
+  text-shadow:none !important;
+}
+html[data-aura-theme="light"] .core-label small{
+  color:rgba(44,84,110,.56) !important;
+}
+
+/* Clock / identity */
+html[data-aura-theme="light"] .aura-r5-identity__name{
+  color:rgba(32,65,88,.10) !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__time{
+  color:#173c55 !important;
+  text-shadow:0 0 14px rgba(84,167,212,.10) !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__date{
+  color:rgba(41,82,107,.59) !important;
+}
+
+/* Composer */
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.93),rgba(237,246,250,.88)) !important;
+  border-color:rgba(84,153,191,.23) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 16px 42px rgba(80,122,153,.15),
+    0 0 22px rgba(85,173,215,.05) !important;
+}
+
+html[data-aura-theme="light"] .attach,
+html[data-aura-theme="light"] .mic,
+html[data-aura-theme="light"] .send{
+  background:rgba(248,252,254,.92) !important;
+  border-color:rgba(83,153,191,.23) !important;
+  color:#234b63 !important;
+}
+
+html[data-aura-theme="light"] .send{
+  background:
+    linear-gradient(180deg,rgba(205,238,250,.92),rgba(176,220,240,.82)) !important;
+  color:#134967 !important;
+}
+
+html[data-aura-theme="light"] #messageInput{
+  color:#183b50 !important;
+}
+
+html[data-aura-theme="light"] #messageInput::placeholder{
+  color:rgba(39,78,103,.50) !important;
+}
+
+html[data-aura-theme="light"] #composerHint{
+  color:rgba(51,91,116,.49) !important;
+}
+
+/* Toast */
+html[data-aura-theme="light"] .toast{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.96),rgba(238,247,251,.93)) !important;
+  border-color:rgba(88,155,193,.24) !important;
+  color:#1c4158 !important;
+  box-shadow:
+    0 14px 34px rgba(83,124,154,.18),
+    0 0 18px rgba(83,169,212,.06) !important;
+}
+
+/* Slightly darker floor under orb to retain depth. */
+html[data-aura-theme="light"] .hero{
+  background-blend-mode:normal !important;
+}

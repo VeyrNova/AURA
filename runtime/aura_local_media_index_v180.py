@@ -37,16 +37,14 @@ def _parse_filename(path: Path) -> tuple[str, str]:
 
 def default_media_roots() -> list[Path]:
     home = Path.home()
-    public = Path(os.environ.get("PUBLIC") or (home.parent / "Public"))
-    aura_root = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve()
     candidates = [
         home / "Music",
         home / "Videos",
         home / "OneDrive" / "Music",
         home / "OneDrive" / "Videos",
-        public / "Music",
-        public / "Videos",
-        aura_root / "media",
+        Path(r"C:\Users\Public\Music"),
+        Path(r"C:\Users\Public\Videos"),
+        Path(r"C:\AURA GPT version\media"),
     ]
     out = []
     seen = set()

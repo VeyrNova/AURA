@@ -3456,7 +3456,7 @@ def make_handler(rt:ShellRuntime):
                 except Exception:return self.send_json(400,{'ok':False,'error':'invalid_json'})
                 try:
                     _text=str(data.get('text') or '').strip()
-                    _root=Path(os.environ.get('AURA_ROOT') or Path(__file__).resolve().parents[4]).resolve()
+                    _root=Path(r'C:\AURA GPT version')
                     if str(_root) not in sys.path:sys.path.insert(0,str(_root))
                     from runtime.aura_roadmap_conversation_v25f import handle_roadmap_conversation_v25f
                     _result=handle_roadmap_conversation_v25f(_text,root=_root)
@@ -3477,7 +3477,7 @@ def make_handler(rt:ShellRuntime):
                 try:data=self.read_json(65536)
                 except Exception:return self.send_json(400,{'ok':False,'error':'invalid_json'})
                 try:
-                    _root=Path(os.environ.get('AURA_ROOT') or Path(__file__).resolve().parents[4]).resolve()
+                    _root=Path(r'C:\AURA GPT version')
                     if str(_root) not in sys.path:sys.path.insert(0,str(_root))
                     from runtime.aura_roadmap_http_bridge_v25e import RoadmapHttpBridgeV25E
                     _result=RoadmapHttpBridgeV25E(root=_root).mutate(data)
@@ -3713,7 +3713,7 @@ def make_handler(rt:ShellRuntime):
                         self.end_headers()
                         self.wfile.write(_aura_r62_payload)
                         return
-                    _aura_r62_root = _AuraR62Path(_aura_r62_os.environ.get('AURA_ROOT') or _AuraR62Path(__file__).resolve().parents[4]).resolve()
+                    _aura_r62_root = _AuraR62Path(_aura_r62_os.environ.get('AURA_ROOT') or r'C:\AURA GPT version')
                     _aura_r62_state_file = _aura_r62_root / 'runtime' / 'developer_fabric' / 'live_selftest_transaction_state.json'
                     _aura_r62_state = _aura_r62_json.loads(_aura_r62_state_file.read_text(encoding='utf-8')) if _aura_r62_state_file.is_file() else {'pending': None, 'last_receipt': None, 'last_rollback': None}
                     _aura_r62_payload = _aura_r62_json.dumps({'ok': True, 'state': _aura_r62_state}, ensure_ascii=False).encode('utf-8')
@@ -3951,10 +3951,7 @@ def make_handler(rt:ShellRuntime):
                 if not self.auth():return self.send_json(403,{'ok':False})
                 try:
                     import pathlib as _adfp, json as _adfj
-                    _root_raw=str(os.environ.get('AURA_ROOT') or '').strip()
-                    if not _root_raw:
-                        return self.send_json(503,{'ok':False,'error':'aura_root_unavailable'})
-                    _root=_adfp.Path(_root_raw).expanduser().resolve(strict=False)
+                    _root=_adfp.Path('C:\\AURA GPT version')
                     _state={'schema':'aura.developer-mode-state.v1','enabled':False}
                     _sp=_root/'runtime'/'developer_fabric'/'developer_mode_state.json'
                     if _sp.is_file():
@@ -3988,7 +3985,7 @@ def make_handler(rt:ShellRuntime):
             if path=='/api/roadmap':
                 if not self.auth():return self.send_json(403,{'ok':False,'error':'forbidden'})
                 try:
-                    _root=Path(os.environ.get('AURA_ROOT') or Path(__file__).resolve().parents[4]).resolve()
+                    _root=Path(r'C:\AURA GPT version')
                     if str(_root) not in sys.path:sys.path.insert(0,str(_root))
                     from runtime.aura_roadmap_http_bridge_v25e import RoadmapHttpBridgeV25E
                     return self.send_json(200,RoadmapHttpBridgeV25E(root=_root).snapshot())
@@ -4226,6 +4223,95 @@ def _aura_v123_start_escape_watchdog():
         return None
 # AURA_V123_ESCAPE_WATCHDOG_END
 
+# AURA_MUSIC_R17_FIX3_BRIDGE_AUTOSTART
+def _aura_r17_music_bridge_health():
+    try:
+        import json as _aura_r17_json
+        import urllib.request as _aura_r17_request
+        with _aura_r17_request.urlopen("http://127.0.0.1:18180/health", timeout=0.45) as _aura_r17_resp:
+            _aura_r17_data = _aura_r17_json.loads(_aura_r17_resp.read().decode("utf-8"))
+        return bool(
+            _aura_r17_data.get("ok")
+            and _aura_r17_data.get("service") == "aura-music-premium-bridge"
+        )
+    except Exception:
+        return False
+
+
+def _aura_r17_music_bridge_autostart(rt, core):
+    """Ensure the local AURA premium music bridge is available before the browser starts."""
+    if _aura_r17_music_bridge_health():
+        try:
+            rt.log("AURA Music R17 bridge already ready port=18180")
+        except Exception:
+            pass
+        return True
+
+    _aura_r17_core = Path(core)
+    _aura_r17_bridge = _aura_r17_core / "runtime" / "aura_music_premium_bridge_v180.py"
+    _aura_r17_candidates = [
+        _aura_r17_core / "venv" / "Scripts" / "pythonw.exe",
+        _aura_r17_core / "venv" / "Scripts" / "python.exe",
+        Path(sys.executable),
+    ]
+    _aura_r17_python = next((p for p in _aura_r17_candidates if p.is_file()), None)
+
+    if not _aura_r17_bridge.is_file() or _aura_r17_python is None:
+        try:
+            rt.log(
+                "AURA Music R17 bridge autostart unavailable bridge=%s python=%s",
+                _aura_r17_bridge,
+                _aura_r17_python,
+            )
+        except Exception:
+            pass
+        return False
+
+    _aura_r17_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0) if os.name == "nt" else 0
+    try:
+        _aura_r17_proc = subprocess.Popen(
+            [str(_aura_r17_python), str(_aura_r17_bridge)],
+            cwd=str(_aura_r17_core),
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            creationflags=_aura_r17_flags,
+            close_fds=True,
+            env=os.environ.copy(),
+        )
+        rt.music_bridge_process = _aura_r17_proc
+    except Exception as _aura_r17_exc:
+        try:
+            rt.log(
+                "AURA Music R17 bridge launch failed type=%s detail=%s",
+                type(_aura_r17_exc).__name__,
+                str(_aura_r17_exc)[:220],
+            )
+        except Exception:
+            pass
+        return False
+
+    _aura_r17_deadline = time.monotonic() + 6.0
+    while time.monotonic() < _aura_r17_deadline:
+        if _aura_r17_music_bridge_health():
+            try:
+                rt.log("AURA Music R17 bridge ready port=18180")
+            except Exception:
+                pass
+            return True
+        try:
+            if _aura_r17_proc.poll() is not None:
+                break
+        except Exception:
+            pass
+        time.sleep(0.12)
+
+    try:
+        rt.log("AURA Music R17 bridge did not become ready port=18180")
+    except Exception:
+        pass
+    return False
+# /AURA_MUSIC_R17_FIX3_BRIDGE_AUTOSTART
+
 def main():
     _aura_v123_start_escape_watchdog()
     ap=argparse.ArgumentParser(); ap.add_argument('--core'); ap.add_argument('--ui-root'); args=ap.parse_args(); core,root,_aura_paths=_aura_p08522_resolve_runtime_paths(args); setup_logging(root); rt=ShellRuntime(root,core)
@@ -4289,6 +4375,7 @@ def main():
     if not (core/'main.py').is_file() or not (root/'dist'/'index.html').is_file():return 2
     os.environ['OPENGL_ORB_ENABLED']='false'; os.environ['AURA_UI_HOST']='threejs-rc4.2'; os.chdir(core); sys.path.insert(0,str(core))
     try:
+        _aura_r17_music_bridge_autostart(rt,core)
         start_server(rt); write_session(rt); display=inject_display_hint(rt); compute=compute_gpu_name(); rt.p0851_display_gpu=display; rt.p0851_compute_gpu=compute; rt.hub.send('hardware_compute_probe',{'ok':True,'adapter':compute,'source':'cuda-runtime'})
         rt.hub.send('bridge.ready',{'core_files_modified':False,'transport':'sse+post-loopback-token','display_gpu':display,'compute_gpu':compute,'gpu_policy':'intel-balanced','ui_release':RELEASE,'conversation_text_local_only':True,'bidirectional':True,'path_resolver':'aura.paths.v1','deployment_mode':_aura_paths.deployment_mode})
         launch_browser(rt); connect_events(rt); patch_voice(rt); patch_hidden_shell(rt)

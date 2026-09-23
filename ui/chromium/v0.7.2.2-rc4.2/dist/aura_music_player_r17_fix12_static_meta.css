@@ -1,0 +1,153 @@
+/* AURA MUSIC R17 FIX12
+   Static player metadata layout.
+   No equalizer. No waveform. No canvas overlay.
+*/
+
+/* Visualizer is intentionally disabled. */
+#aura-music-player-v180 .aura-music-premium-visualizer,
+#aura-music-player-v180 [class~="aura-r17-fluid-wave"],
+#aura-music-player-v180 [class~="aura-r17-wave-v6"],
+#aura-music-player-v180 [class~="aura-r17-fix7-wave"],
+#aura-r17-fix8-wave,
+#aura-r17-fix9-wave,
+#aura-r17-fix10-wave,
+#aura-r17-fix11-wave{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  width:0!important;
+  height:0!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:0!important;
+  max-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  pointer-events:none!important;
+}
+
+/* Keep the left player column deterministic, whether VLC is stopped,
+   connected, playing, paused or resumable. */
+#aura-music-player-v180 .aura-music-main{
+  min-height:0!important;
+  overflow:hidden!important;
+  display:grid!important;
+  grid-template-rows:minmax(250px,335px) minmax(104px,auto) auto auto auto auto auto!important;
+  align-content:start!important;
+  gap:10px!important;
+  padding:16px!important;
+}
+
+/* Artwork remains the fixed visual anchor. */
+#aura-music-player-v180 .aura-music-cover{
+  width:100%!important;
+  height:100%!important;
+  min-height:250px!important;
+  max-height:335px!important;
+  aspect-ratio:auto!important;
+  align-self:stretch!important;
+  justify-self:stretch!important;
+}
+
+/* Metadata gets its own guaranteed vertical space.
+   This prevents MP3 / ID3V2 from slipping under the timeline. */
+#aura-music-player-v180 .aura-music-meta{
+  position:relative!important;
+  z-index:4!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  min-height:104px!important;
+  height:auto!important;
+  overflow:visible!important;
+  padding:2px 3px 4px!important;
+  margin:0!important;
+}
+
+#aura-music-player-v180 .aura-music-meta>div{
+  min-width:0!important;
+  overflow:visible!important;
+}
+
+#aura-music-player-v180 .aura-music-track{
+  margin:0!important;
+}
+
+#aura-music-player-v180 .aura-music-artist{
+  margin-top:4px!important;
+}
+
+#aura-music-player-v180 .aura-music-runtime-line{
+  margin-top:5px!important;
+  min-height:14px!important;
+  line-height:14px!important;
+}
+
+/* The two format/source badges must always reserve a complete row. */
+#aura-music-player-v180 .aura-music-chips{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  gap:6px!important;
+  min-height:24px!important;
+  height:auto!important;
+  margin:6px 0 0!important;
+  padding:0!important;
+  overflow:visible!important;
+  position:relative!important;
+  z-index:6!important;
+}
+
+#aura-music-player-v180 .aura-music-chip{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  min-height:20px!important;
+  line-height:18px!important;
+  margin:0!important;
+  position:relative!important;
+  z-index:7!important;
+}
+
+/* Timeline starts only AFTER the metadata block. */
+#aura-music-player-v180 .aura-music-progress{
+  position:relative!important;
+  z-index:2!important;
+  display:block!important;
+  clear:both!important;
+  margin:0!important;
+  padding:0 3px!important;
+  overflow:visible!important;
+}
+
+#aura-music-player-v180 .aura-music-progress input[type="range"],
+#aura-music-player-v180 #aura-music-progress-v180{
+  position:relative!important;
+  z-index:2!important;
+}
+
+/* No layout jump when play/pause state changes. */
+#aura-music-player-v180 .aura-music-controls{
+  margin-top:0!important;
+}
+#aura-music-player-v180 .aura-music-mode-strip{
+  margin-top:0!important;
+}
+#aura-music-player-v180 .aura-music-volume{
+  margin-top:0!important;
+}
+
+/* Short screens: shrink artwork, never metadata. */
+@media (max-height:820px){
+  #aura-music-player-v180 .aura-music-main{
+    grid-template-rows:minmax(220px,285px) minmax(104px,auto) auto auto auto auto auto!important;
+    gap:8px!important;
+  }
+  #aura-music-player-v180 .aura-music-cover{
+    min-height:220px!important;
+    max-height:285px!important;
+  }
+}
