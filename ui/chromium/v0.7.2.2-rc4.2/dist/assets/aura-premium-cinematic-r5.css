@@ -1,0 +1,244 @@
+/* ================================================================
+   AURA PREMIUM CINEMATIC R5
+   Floating command bar + status identity + toast safety
+   ================================================================ */
+
+:root{
+  --r5-cyan:#73edff;
+  --r5-blue:#43bfff;
+  --r5-violet:#a66cff;
+  --r5-text:#eefaff;
+  --r5-muted:rgba(188,220,235,.48);
+}
+
+/* ---------- RAIL: even lighter ---------- */
+.rail{
+  background:
+    linear-gradient(180deg,rgba(4,13,24,.48),rgba(3,9,17,.34)) !important;
+  border-color:rgba(101,215,255,.075) !important;
+  box-shadow:0 16px 38px rgba(0,0,0,.16) !important;
+}
+
+.rail-btn{
+  opacity:.86;
+}
+
+.rail-btn:hover{
+  opacity:1;
+}
+
+.rail-btn.active{
+  opacity:1;
+  background:
+    linear-gradient(90deg,rgba(16,56,84,.50),rgba(9,27,45,.22)) !important;
+}
+
+/* ---------- HERO IDENTITY BLOCK ---------- */
+.aura-r5-identity{
+  position:absolute;
+  z-index:40;
+  top:28px;
+  right:34px;
+  min-width:210px;
+  text-align:right;
+  pointer-events:none;
+  user-select:none;
+}
+
+.aura-r5-identity__name{
+  display:block;
+  font-size:52px;
+  line-height:.86;
+  font-weight:700;
+  letter-spacing:.18em;
+  color:rgba(222,237,246,.055);
+  text-shadow:0 0 28px rgba(87,201,255,.025);
+}
+
+.aura-r5-identity__time{
+  display:block;
+  margin-top:-4px;
+  font-size:38px;
+  line-height:1;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:rgba(239,250,255,.94);
+  text-shadow:0 0 20px rgba(89,208,255,.08);
+}
+
+.aura-r5-identity__date{
+  display:block;
+  margin-top:8px;
+  font-size:8px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:rgba(175,213,231,.50);
+}
+
+/* ---------- FLOATING COMMAND BAR ---------- */
+.workspace{
+  padding-bottom:72px !important;
+}
+
+.hero{
+  inset:0 0 72px 0 !important;
+}
+
+.composer,
+#composer{
+  left:50% !important;
+  right:auto !important;
+  bottom:8px !important;
+  top:auto !important;
+  inset:auto auto 8px 50% !important;
+
+  transform:translateX(-50%) !important;
+
+  width:min(980px,calc(100% - 40px)) !important;
+  max-width:980px !important;
+
+  height:52px !important;
+  min-height:52px !important;
+  max-height:52px !important;
+
+  padding:7px 9px !important;
+  border-radius:15px !important;
+
+  background:
+    linear-gradient(180deg,rgba(6,18,31,.82),rgba(3,10,18,.74)) !important;
+  border:1px solid rgba(104,221,255,.12) !important;
+  box-shadow:
+    0 18px 44px rgba(0,0,0,.28),
+    0 0 24px rgba(68,185,255,.035) !important;
+  backdrop-filter:blur(22px) saturate(120%) !important;
+}
+
+.composer::after{
+  left:28% !important;
+  right:28% !important;
+  opacity:.24 !important;
+}
+
+#messageInput{
+  font-size:14px !important;
+}
+
+#composerHint{
+  font-size:8px !important;
+  color:rgba(158,199,219,.36) !important;
+}
+
+/* ---------- TOAST SAFETY ---------- */
+.toast{
+  position:fixed !important;
+  right:24px !important;
+  bottom:78px !important;
+  left:auto !important;
+  top:auto !important;
+
+  max-width:360px !important;
+  min-width:220px !important;
+
+  z-index:5000 !important;
+  border-radius:11px !important;
+  background:
+    linear-gradient(180deg,rgba(5,19,32,.94),rgba(3,10,19,.92)) !important;
+  border:1px solid rgba(105,220,255,.16) !important;
+  box-shadow:
+    0 16px 38px rgba(0,0,0,.34),
+    0 0 20px rgba(62,177,255,.055) !important;
+  backdrop-filter:blur(18px) !important;
+}
+
+/* ---------- TOPBAR FURTHER REFINEMENT ---------- */
+.topbar{
+  background:
+    linear-gradient(180deg,rgba(5,15,27,.56),rgba(3,9,17,.42)) !important;
+}
+
+.state-pill,
+.route-pill,
+.mini-chip{
+  background:rgba(5,16,27,.34) !important;
+  border-color:rgba(103,215,255,.085) !important;
+}
+
+/* ---------- ORB STAGING ---------- */
+.hero::before{
+  opacity:.46 !important;
+}
+
+.hero::after{
+  opacity:.15 !important;
+}
+
+#stage::before,
+#stage::after{
+  opacity:.13 !important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1180px){
+  .aura-r5-identity{
+    right:24px;
+  }
+
+  .aura-r5-identity__name{
+    font-size:44px;
+  }
+
+  .aura-r5-identity__time{
+    font-size:32px;
+  }
+
+  .composer,
+  #composer{
+    width:min(860px,calc(100% - 30px)) !important;
+  }
+}
+
+@media(max-width:980px){
+  .aura-r5-identity{
+    display:none !important;
+  }
+
+  .composer,
+  #composer{
+    width:calc(100% - 20px) !important;
+  }
+}
+
+@media(max-height:760px){
+  .aura-r5-identity{
+    top:18px;
+  }
+
+  .aura-r5-identity__name{
+    font-size:40px;
+  }
+
+  .aura-r5-identity__time{
+    font-size:30px;
+  }
+
+  .workspace{
+    padding-bottom:64px !important;
+  }
+
+  .hero{
+    inset:0 0 64px 0 !important;
+  }
+
+  .composer,
+  #composer{
+    bottom:6px !important;
+    inset:auto auto 6px 50% !important;
+    height:48px !important;
+    min-height:48px !important;
+    max-height:48px !important;
+  }
+
+  .toast{
+    bottom:66px !important;
+  }
+}

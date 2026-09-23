@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(r"C:\AURA GPT version")
 INDEX = ROOT / "data" / "media" / "local_media_index_v180.json"
 SELECTION = ROOT / "data" / "media" / "music_pc_selection_v180.json"
 

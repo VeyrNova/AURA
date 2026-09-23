@@ -2385,6 +2385,248 @@ html[data-aura-theme="light"] #aura-roadmap-workspace-v25e
 
 /* === END AURA R16.9 LIGHT CONTROLS + SINGLE SURFACE + READABILITY === */
 
+/* === AURA R16.10 PANEL NATIVE FRAME CORRECTION === */
+
+/* Outer hero remains visually neutral when Live is active. */
+body.aura-live-active .workspace > .hero{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+  display:flex !important;
+  align-items:stretch !important;
+  justify-content:stretch !important;
+}
+body.aura-live-active .workspace > .hero::before,
+body.aura-live-active .workspace > .hero::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* Full-workspace native panel instead of compact floating card */
+body.aura-live-active .workspace > .hero > .telemetry.aura-p0813-system-hud-persistent,
+body.aura-live-active .workspace > .hero > aside.telemetry.glass{
+  width:calc(100% - 8px) !important;
+  max-width:none !important;
+  height:calc(100% - 8px) !important;
+  max-height:none !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  margin:4px !important;
+  align-self:stretch !important;
+  justify-self:stretch !important;
+  position:relative !important;
+  inset:auto !important;
+  transform:none !important;
+  border-radius:18px !important;
+  overflow:auto !important;
+  box-sizing:border-box !important;
+}
+
+/* Roadmap uses the same native panel footprint */
+body.aura-live-active.aura-roadmap-editor-v25e #aura-roadmap-workspace-v25e{
+  width:calc(100% - 8px) !important;
+  max-width:none !important;
+  height:calc(100% - 8px) !important;
+  max-height:none !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  margin:4px !important;
+  position:relative !important;
+  inset:auto !important;
+  transform:none !important;
+  border-radius:18px !important;
+  overflow:auto !important;
+  box-sizing:border-box !important;
+}
+
+/* Dark theme native panel */
+html[data-aura-theme="dark"] body.aura-live-active
+.workspace > .hero > :is(.telemetry.aura-p0813-system-hud-persistent,aside.telemetry.glass){
+  background:linear-gradient(180deg,rgba(3,15,27,.92),rgba(5,20,35,.88)) !important;
+  border:1px solid rgba(41,112,146,.30) !important;
+  box-shadow:inset 0 1px 0 rgba(120,196,227,.05), inset 0 0 0 1px rgba(8,31,49,.55) !important;
+}
+html[data-aura-theme="dark"] #aura-roadmap-workspace-v25e{
+  background:linear-gradient(180deg,rgba(3,15,27,.94),rgba(6,22,37,.90)) !important;
+  border:1px solid rgba(41,112,146,.30) !important;
+  box-shadow:inset 0 1px 0 rgba(120,196,227,.05), inset 0 0 0 1px rgba(8,31,49,.55) !important;
+}
+
+/* Light theme native panel */
+html[data-aura-theme="light"] body.aura-live-active
+.workspace > .hero > :is(.telemetry.aura-p0813-system-hud-persistent,aside.telemetry.glass){
+  background:linear-gradient(145deg,#fbfeff 0%,#eef7fa 55%,#e7f1f5 100%) !important;
+  border:1px solid rgba(55,130,163,.30) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 14px 34px rgba(41,74,92,.10) !important;
+}
+html[data-aura-theme="light"] #aura-roadmap-workspace-v25e{
+  background:linear-gradient(145deg,#fbfeff 0%,#eef7fa 55%,#e7f1f5 100%) !important;
+  border:1px solid rgba(55,130,163,.30) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 14px 34px rgba(41,74,92,.10) !important;
+}
+
+/* Readability reinforcement */
+html[data-aura-theme="light"] :is(
+  body.aura-live-active .workspace > .hero > .telemetry.aura-p0813-system-hud-persistent,
+  body.aura-live-active .workspace > .hero > aside.telemetry.glass,
+  #aura-roadmap-workspace-v25e
+) :is(h1,h2,h3,h4,h5,h6,b,strong,label,dt,dd){
+  color:#183a4f !important;
+  -webkit-text-fill-color:#183a4f !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html[data-aura-theme="light"] :is(
+  body.aura-live-active .workspace > .hero > .telemetry.aura-p0813-system-hud-persistent,
+  body.aura-live-active .workspace > .hero > aside.telemetry.glass,
+  #aura-roadmap-workspace-v25e
+) :is(p,span,small,time,em){
+  color:#567486 !important;
+  -webkit-text-fill-color:#567486 !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html[data-aura-theme="light"] #aura-roadmap-workspace-v25e
+:is([class*="__metric"],[class*="__stat"],[class*="__kpi"]){
+  background:linear-gradient(180deg,#eff7fa,#dceaf0) !important;
+  border-color:rgba(55,130,163,.22) !important;
+}
+html[data-aura-theme="light"] #aura-roadmap-workspace-v25e
+:is([class*="__phase"],[class*="__step"],[class*="__card"],[class*="__row"]){
+  background:rgba(251,254,255,.96) !important;
+  border-color:rgba(55,130,163,.18) !important;
+}
+
+/* Scrollbars */
+body.aura-live-active .workspace > .hero > :is(.telemetry.aura-p0813-system-hud-persistent,aside.telemetry.glass,#aura-roadmap-workspace-v25e){
+  scrollbar-width:thin !important;
+  scrollbar-color:rgba(111,176,205,.55) transparent !important;
+}
+body.aura-live-active .workspace > .hero > :is(.telemetry.aura-p0813-system-hud-persistent,aside.telemetry.glass,#aura-roadmap-workspace-v25e)::-webkit-scrollbar{
+  width:10px !important;
+  height:10px !important;
+}
+body.aura-live-active .workspace > .hero > :is(.telemetry.aura-p0813-system-hud-persistent,aside.telemetry.glass,#aura-roadmap-workspace-v25e)::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,rgba(125,197,224,.58),rgba(115,143,233,.46)) !important;
+  border-radius:999px !important;
+  border:2px solid transparent !important;
+  background-clip:padding-box !important;
+}
+body.aura-live-active .workspace > .hero > :is(.telemetry.aura-p0813-system-hud-persistent,aside.telemetry.glass,#aura-roadmap-workspace-v25e)::-webkit-scrollbar-track{
+  background:transparent !important;
+}
+
+/* === END AURA R16.10 PANEL NATIVE FRAME CORRECTION === */
+
+/* === AURA R16.11 PANEL VIEWPORT CLAMP === */
+
+/* =========================================================
+   Goal:
+   - prevent AURA Live / Roadmap native panel from leaving
+     the visible screen area
+   - clamp the panel to the real workspace viewport
+   - keep one single visible native surface
+   ========================================================= */
+
+/* Safe container behavior */
+body.aura-live-active .workspace,
+body.aura-live-active .workspace > .hero{
+  min-width:0 !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+}
+
+/* Hero acts like a viewport clamp, not a free canvas */
+body.aura-live-active .workspace > .hero{
+  padding:0 12px 12px 12px !important;
+  display:flex !important;
+  align-items:stretch !important;
+  justify-content:center !important;
+}
+
+/* Shared live / roadmap surface clamp */
+body.aura-live-active .workspace > .hero > :is(
+  .telemetry.aura-p0813-system-hud-persistent,
+  aside.telemetry.glass,
+  #aura-roadmap-workspace-v25e
+){
+  flex:1 1 auto !important;
+  width:auto !important;
+  max-width:min(100%, calc(100vw - 112px)) !important;
+  min-width:0 !important;
+  height:auto !important;
+  max-height:100% !important;
+  min-height:0 !important;
+  margin:0 auto !important;
+  box-sizing:border-box !important;
+  position:relative !important;
+  left:auto !important;
+  right:auto !important;
+  inset:auto !important;
+  transform:none !important;
+  overflow:auto !important;
+  scrollbar-gutter:stable !important;
+}
+
+/* Exact roadmap clamp when roadmap editor mode is active */
+body.aura-live-active.aura-roadmap-editor-v25e #aura-roadmap-workspace-v25e{
+  width:auto !important;
+  max-width:min(100%, calc(100vw - 112px)) !important;
+  margin:0 auto !important;
+}
+
+/* Prevent internal wrappers from generating a second off-screen frame */
+body.aura-live-active .workspace > .hero > :is(
+  .telemetry.aura-p0813-system-hud-persistent,
+  aside.telemetry.glass,
+  #aura-roadmap-workspace-v25e
+) > :is(.panel, .card, .surface, .sheet, .workspace-panel, .workspace-surface){
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+
+/* Ensure action rows and content rows can shrink inside the panel */
+body.aura-live-active .workspace > .hero > :is(
+  .telemetry.aura-p0813-system-hud-persistent,
+  aside.telemetry.glass,
+  #aura-roadmap-workspace-v25e
+) *{
+  min-width:0;
+}
+
+/* Light mode readability reinforcement kept strong */
+html[data-aura-theme="light"] body.aura-live-active .workspace > .hero > :is(
+  .telemetry.aura-p0813-system-hud-persistent,
+  aside.telemetry.glass,
+  #aura-roadmap-workspace-v25e
+){
+  color:#1b4056 !important;
+}
+html[data-aura-theme="light"] body.aura-live-active .workspace > .hero > :is(
+  .telemetry.aura-p0813-system-hud-persistent,
+  aside.telemetry.glass,
+  #aura-roadmap-workspace-v25e
+) :is(h1,h2,h3,h4,h5,h6,strong,b,label,button,a){
+  color:#193a4d !important;
+  -webkit-text-fill-color:#193a4d !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+html[data-aura-theme="light"] body.aura-live-active .workspace > .hero > :is(
+  .telemetry.aura-p0813-system-hud-persistent,
+  aside.telemetry.glass,
+  #aura-roadmap-workspace-v25e
+) :is(p,span,small,li,td,th,time,em){
+  color:#587487 !important;
+  -webkit-text-fill-color:#587487 !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+
+/* === END AURA R16.11 PANEL VIEWPORT CLAMP === */
+
 /* === AURA R16.12 STRUCTURAL VIEWPORT FRAME === */
 
 /* ================================================================

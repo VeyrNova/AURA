@@ -67,7 +67,7 @@ from runtime.integration_permissions_pc_v131 import (
 A200_R13_MARKER = "AURA_A200_R13_PERSISTENT_RUNTIME_BOOTSTRAP_STARTUP_RECOVERY_SESSION_BINDING_V1"
 
 DEFAULT_RUNTIME_STATE_ROOT = (
-    Path(__file__).resolve().parents[1] / "data" / "a200_runtime"
+    Path(r"C:\AURA GPT version") / "data" / "a200_runtime"
 )
 
 PERSISTENT_RUNTIME_REQUIRED = True

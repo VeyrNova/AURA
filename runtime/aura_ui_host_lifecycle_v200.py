@@ -23,7 +23,7 @@ from runtime.aura_ui_host_transport_v200 import (
 
 A200_R19_MARKER = "AURA_A200_R19_HOST_LIFECYCLE_AUTOSTART_LIVE_HANDSHAKE_V1"
 
-DEFAULT_STATE_ROOT = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve() / 'data' / 'a200_runtime'
+DEFAULT_STATE_ROOT = Path(r"C:\AURA GPT version\data\a200_runtime")
 
 SINGLE_HOST_OWNER_REQUIRED = True
 AUTO_START_REGISTRATION_REQUIRED = True

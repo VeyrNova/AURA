@@ -1,0 +1,8 @@
+{
+  "schema": "aura.developer-mode-state.v1",
+  "enabled": false,
+  "updated_at": 1790177863,
+  "source": "startup",
+  "last_command": "session default off",
+  "voice_confirmation": "Mode développeur désactivé."
+}

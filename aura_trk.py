@@ -2,7 +2,7 @@
 from __future__ import annotations
 from pathlib import Path
 import argparse, os, subprocess, sys
-ROOT=Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parent).resolve()
+ROOT=Path(os.environ.get("AURA_ROOT") or r"C:\AURA GPT version").resolve()
 if str(ROOT) not in sys.path: sys.path.insert(0,str(ROOT))
 from runtime.aura_terminal_reduction_kernel import SavingsLedger, reduce_terminal_output
 

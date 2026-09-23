@@ -1,0 +1,299 @@
+/* ================================================================
+   AURA LIQUID GLASS R9 FIX1
+   Accurate navigation mapping / panel-safe dock / readable light mode
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   Dedicated dock: normal home position
+   ---------------------------------------------------------------- */
+#auraR9Dock{
+  left:22px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  width:58px !important;
+  min-width:58px !important;
+  max-width:58px !important;
+  opacity:1 !important;
+  transition:
+    left .26s cubic-bezier(.16,.85,.18,1),
+    width .30s cubic-bezier(.16,.85,.18,1),
+    min-width .30s cubic-bezier(.16,.85,.18,1),
+    max-width .30s cubic-bezier(.16,.85,.18,1),
+    opacity .20s ease,
+    padding .22s ease,
+    border-color .20s ease,
+    box-shadow .20s ease !important;
+}
+
+/* When an operational panel is open, retract dock to a 13px edge handle. */
+body.aura-r9-panel-mode #auraR9Dock{
+  left:-45px !important;
+  width:58px !important;
+  min-width:58px !important;
+  max-width:58px !important;
+  opacity:.58 !important;
+}
+
+body.aura-r9-panel-mode #auraR9Dock:hover,
+body.aura-r9-panel-mode #auraR9Dock:focus-within{
+  left:12px !important;
+  width:218px !important;
+  min-width:218px !important;
+  max-width:218px !important;
+  opacity:1 !important;
+}
+
+/* Visible edge handle when retracted. */
+body.aura-r9-panel-mode #auraR9Dock::after{
+  content:"" !important;
+  position:absolute !important;
+  right:4px !important;
+  top:50% !important;
+  width:4px !important;
+  height:44px !important;
+  transform:translateY(-50%) !important;
+  border-radius:99px !important;
+  background:linear-gradient(180deg,var(--r9-cyan),var(--r9-violet)) !important;
+  box-shadow:0 0 12px rgba(102,220,255,.30) !important;
+  opacity:.75 !important;
+}
+
+/* Dock labels remain clean and single-line. */
+.aura-r9-dock-label{
+  left:48px !important;
+  right:10px !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+}
+
+/* A failed navigation target is visible but non-destructive. */
+.aura-r9-dock-btn.aura-r9-link-error{
+  border-color:rgba(255,105,145,.34) !important;
+}
+.aura-r9-dock-btn.aura-r9-link-error .aura-r9-dock-icon{
+  color:#ff739a !important;
+}
+
+/* ----------------------------------------------------------------
+   Panel safety.
+   R9 JS decorates real operational panels with this class.
+   Dock retracts, so panels retain their original geometry.
+   ---------------------------------------------------------------- */
+.aura-r9-panel-surface{
+  position:relative;
+}
+
+/* ----------------------------------------------------------------
+   LIGHT MODE V2 — readable Arctic Glass
+   ---------------------------------------------------------------- */
+html[data-aura-theme="light"],
+html[data-aura-theme="light"] body{
+  background:
+    radial-gradient(circle at 50% 38%,rgba(73,147,202,.13) 0%,transparent 32%),
+    linear-gradient(180deg,#edf4f8 0%,#dfeaf1 56%,#d5e3ec 100%) !important;
+  color:#16364b !important;
+}
+
+/* Main scene: light shell, but a stronger cool-grey core well so the orb survives. */
+html[data-aura-theme="light"] .hero{
+  background:
+    radial-gradient(circle at 50% 44%,
+      rgba(75,116,154,.34) 0%,
+      rgba(115,153,183,.24) 26%,
+      rgba(204,220,231,.74) 55%,
+      rgba(238,245,249,.94) 100%),
+    linear-gradient(180deg,#e8f0f5,#dce8ef) !important;
+
+  border-color:rgba(66,126,164,.25) !important;
+
+  box-shadow:
+    inset 0 0 120px rgba(59,110,151,.13),
+    inset 0 1px 0 rgba(255,255,255,.90),
+    0 18px 48px rgba(68,105,132,.15) !important;
+}
+
+/* Ensure WebGL orb itself is never washed out by previous light filters. */
+html[data-aura-theme="light"] #stage{
+  opacity:1 !important;
+  mix-blend-mode:normal !important;
+  filter:
+    saturate(1.32)
+    contrast(1.28)
+    brightness(.82)
+    drop-shadow(0 0 24px rgba(37,112,174,.17)) !important;
+}
+
+html[data-aura-theme="light"] #stage canvas{
+  opacity:1 !important;
+  mix-blend-mode:normal !important;
+  filter:
+    saturate(1.42)
+    contrast(1.42)
+    brightness(.78)
+    drop-shadow(0 0 26px rgba(31,106,171,.20)) !important;
+}
+
+/* Header readability */
+html[data-aura-theme="light"] .topbar{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.96),rgba(230,240,246,.93)) !important;
+  border-color:rgba(67,128,165,.26) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 9px 28px rgba(70,107,134,.13) !important;
+}
+
+html[data-aura-theme="light"] .brand strong{
+  color:#12364d !important;
+}
+html[data-aura-theme="light"] .brand small{
+  color:#5b788b !important;
+}
+
+html[data-aura-theme="light"] .state-pill,
+html[data-aura-theme="light"] .route-pill,
+html[data-aura-theme="light"] .mini-chip,
+html[data-aura-theme="light"] .aura-theme-toggle{
+  background:rgba(255,255,255,.90) !important;
+  color:#244e66 !important;
+  border-color:rgba(69,132,169,.25) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),
+    0 4px 12px rgba(77,112,137,.07) !important;
+}
+
+/* Clock / identity */
+html[data-aura-theme="light"] .aura-r5-identity__name{
+  color:rgba(27,66,92,.15) !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__time{
+  color:#123c57 !important;
+  text-shadow:none !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__date{
+  color:#55768a !important;
+}
+
+/* Labels around core */
+html[data-aura-theme="light"] .core-label span{
+  color:#56778a !important;
+}
+html[data-aura-theme="light"] .core-label strong{
+  color:#133b55 !important;
+  text-shadow:none !important;
+}
+html[data-aura-theme="light"] .core-label small{
+  color:#58798c !important;
+}
+
+/* Dedicated dock light glass */
+html[data-aura-theme="light"] #auraR9Dock{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.95),rgba(226,239,246,.91)) !important;
+  border-color:rgba(66,132,171,.28) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 20px 48px rgba(65,106,136,.17),
+    0 0 26px rgba(59,155,205,.08) !important;
+}
+
+html[data-aura-theme="light"] .aura-r9-dock-icon{
+  color:#28566f !important;
+  opacity:.92 !important;
+}
+html[data-aura-theme="light"] .aura-r9-dock-label{
+  color:#183f57 !important;
+  font-weight:600 !important;
+}
+html[data-aura-theme="light"] .aura-r9-dock-btn:hover{
+  background:rgba(85,168,211,.13) !important;
+  border-color:rgba(69,145,187,.20) !important;
+}
+html[data-aura-theme="light"] .aura-r9-dock-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(133,208,238,.64),rgba(93,174,216,.34)) !important;
+  border-color:rgba(54,139,187,.38) !important;
+}
+
+/* Composer light glass — stronger typography and controls */
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.97),rgba(224,238,246,.94)) !important;
+  border-color:rgba(61,130,168,.30) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 17px 42px rgba(65,104,133,.17),
+    0 0 26px rgba(62,158,207,.07) !important;
+}
+
+html[data-aura-theme="light"] #messageInput{
+  color:#163e56 !important;
+  caret-color:#15779e !important;
+}
+html[data-aura-theme="light"] #messageInput::placeholder{
+  color:#678495 !important;
+}
+html[data-aura-theme="light"] #composerHint{
+  color:#678495 !important;
+}
+
+html[data-aura-theme="light"] .attach,
+html[data-aura-theme="light"] .mic,
+html[data-aura-theme="light"] .send{
+  background:rgba(249,253,255,.96) !important;
+  color:#225169 !important;
+  border-color:rgba(60,130,169,.24) !important;
+}
+
+/* Operational panels receive a readable light glass surface.
+   This only applies to panels R9 has positively identified. */
+html[data-aura-theme="light"] .aura-r9-panel-surface{
+  background:
+    linear-gradient(180deg,rgba(247,251,253,.98),rgba(223,237,245,.96)) !important;
+  color:#173b52 !important;
+  border-color:rgba(62,128,166,.30) !important;
+  box-shadow:
+    0 20px 48px rgba(66,102,128,.16),
+    inset 0 1px 0 rgba(255,255,255,.96) !important;
+}
+
+/* Common controls inside identified operational panels. */
+html[data-aura-theme="light"] .aura-r9-panel-surface input,
+html[data-aura-theme="light"] .aura-r9-panel-surface textarea,
+html[data-aura-theme="light"] .aura-r9-panel-surface select,
+html[data-aura-theme="light"] .aura-r9-panel-surface button{
+  color:#173d54 !important;
+  border-color:rgba(65,132,170,.25) !important;
+}
+
+html[data-aura-theme="light"] .aura-r9-panel-surface input,
+html[data-aura-theme="light"] .aura-r9-panel-surface textarea,
+html[data-aura-theme="light"] .aura-r9-panel-surface select{
+  background:rgba(255,255,255,.78) !important;
+}
+
+/* Preserve map readability: do not globally bleach canvas/tile layers. */
+html[data-aura-theme="light"] .aura-r9-panel-surface canvas,
+html[data-aura-theme="light"] .aura-r9-panel-surface img{
+  filter:none !important;
+  opacity:1 !important;
+}
+
+/* Responsive retraction */
+@media(max-width:980px){
+  #auraR9Dock{
+    left:12px !important;
+  }
+  body.aura-r9-panel-mode #auraR9Dock{
+    left:-43px !important;
+  }
+  body.aura-r9-panel-mode #auraR9Dock:hover,
+  body.aura-r9-panel-mode #auraR9Dock:focus-within{
+    left:8px !important;
+    width:190px !important;
+    min-width:190px !important;
+    max-width:190px !important;
+  }
+}

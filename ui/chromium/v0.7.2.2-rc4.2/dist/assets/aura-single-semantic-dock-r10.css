@@ -1,0 +1,461 @@
+/* ================================================================
+   AURA SINGLE SEMANTIC DOCK R10
+   One dock only / semantic routing / panel avoidance / light clarity
+   ================================================================ */
+
+:root{
+  --r10-dock-left:22px;
+  --r10-cyan:#74efff;
+  --r10-violet:#a66cff;
+  --r10-dark-1:rgba(7,20,34,.68);
+  --r10-dark-2:rgba(3,11,20,.56);
+  --r10-dark-border:rgba(115,228,255,.17);
+  --r10-dark-text:rgba(238,250,255,.94);
+
+  --r10-light-1:rgba(255,255,255,.92);
+  --r10-light-2:rgba(235,246,251,.84);
+  --r10-light-border:rgba(67,144,188,.28);
+  --r10-light-text:#173d56;
+}
+
+/* The historical RC4.2 navigation remains available to JS only. */
+.rail{
+  display:none !important;
+}
+
+/* Remove any previously-created custom docks if their elements survive. */
+#auraR9Dock,
+#auraR8Dock,
+.aura-r9-dock,
+.aura-r8-dock{
+  display:none !important;
+}
+
+/* ================================================================
+   SINGLE DOCK
+   ================================================================ */
+#auraR10Dock{
+  --gx:50%;
+  --gy:35%;
+
+  position:fixed;
+  z-index:3600;
+
+  left:var(--r10-dock-left);
+  top:50%;
+  transform:translateY(-50%);
+
+  width:58px;
+  padding:8px 6px;
+
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+
+  overflow:hidden;
+  border-radius:20px;
+
+  background:linear-gradient(180deg,var(--r10-dark-1),var(--r10-dark-2));
+  border:1px solid var(--r10-dark-border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    0 20px 50px rgba(0,0,0,.27),
+    0 0 30px rgba(82,197,255,.07);
+
+  backdrop-filter:blur(28px) saturate(135%);
+
+  transition:
+    left .26s cubic-bezier(.2,.8,.2,1),
+    width .30s cubic-bezier(.16,.85,.18,1),
+    padding .22s ease,
+    border-color .20s ease,
+    box-shadow .20s ease,
+    opacity .20s ease;
+}
+
+#auraR10Dock::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(133,237,255,.20) 0%,
+      rgba(87,183,255,.07) 22%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 50% 88%,rgba(173,110,255,.09),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.05),transparent 30%);
+}
+
+#auraR10Dock:hover,
+#auraR10Dock:focus-within{
+  width:222px;
+  padding:9px;
+
+  border-color:rgba(130,237,255,.32);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.075),
+    0 24px 56px rgba(0,0,0,.29),
+    0 0 38px rgba(82,197,255,.12),
+    0 0 56px rgba(166,108,255,.075);
+}
+
+.aura-r10-btn{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  height:40px;
+  flex:0 0 40px;
+
+  display:flex;
+  align-items:center;
+
+  padding:0;
+  overflow:hidden;
+  border-radius:13px;
+
+  border:1px solid transparent;
+  background:transparent;
+  color:var(--r10-dark-text);
+
+  cursor:pointer;
+
+  transition:
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease,
+    opacity .18s ease;
+}
+
+.aura-r10-btn:hover:not(:disabled){
+  transform:translateX(1px);
+  background:rgba(255,255,255,.045);
+  border-color:rgba(126,232,255,.12);
+}
+
+.aura-r10-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(122,228,255,.15),rgba(126,180,255,.10));
+  border-color:rgba(126,232,255,.21);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 8px 18px rgba(0,0,0,.09),
+    0 0 17px rgba(103,222,255,.09);
+}
+
+.aura-r10-btn:disabled{
+  opacity:.28;
+  cursor:not-allowed;
+}
+
+.aura-r10-icon{
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  width:18px;
+  height:18px;
+
+  transform:translate(-50%,-50%);
+
+  display:grid;
+  place-items:center;
+
+  color:var(--r10-dark-text);
+  opacity:.82;
+
+  transition:
+    left .23s cubic-bezier(.2,.8,.2,1),
+    opacity .18s ease,
+    filter .18s ease;
+}
+
+.aura-r10-icon svg{
+  width:18px;
+  height:18px;
+  display:block;
+}
+
+#auraR10Dock:hover .aura-r10-icon,
+#auraR10Dock:focus-within .aura-r10-icon{
+  left:23px;
+  opacity:.95;
+}
+
+.aura-r10-btn:hover:not(:disabled) .aura-r10-icon,
+.aura-r10-btn.is-active .aura-r10-icon{
+  opacity:1;
+  filter:drop-shadow(0 0 7px rgba(104,225,255,.28));
+}
+
+.aura-r10-label{
+  position:absolute;
+  left:48px;
+  right:12px;
+  top:50%;
+
+  transform:translateY(-50%) translateX(-7px);
+  opacity:0;
+
+  color:var(--r10-dark-text);
+  font-size:11px;
+  line-height:1;
+  font-weight:500;
+  letter-spacing:.025em;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  pointer-events:none;
+
+  transition:
+    opacity .16s ease .03s,
+    transform .20s cubic-bezier(.2,.8,.2,1) .03s;
+}
+
+#auraR10Dock:hover .aura-r10-label,
+#auraR10Dock:focus-within .aura-r10-label{
+  opacity:.96;
+  transform:translateY(-50%) translateX(0);
+}
+
+.aura-r10-btn:disabled .aura-r10-label::after{
+  content:" · indisponible";
+  opacity:.55;
+}
+
+/* ================================================================
+   PANEL SAFETY
+   ================================================================ */
+
+/* panels found dynamically get this marker */
+.aura-r10-front-panel{
+  z-index:3500 !important;
+}
+
+/* dock moves outside detected panel instead of covering it */
+body.aura-r10-panel-open #auraR10Dock{
+  opacity:.94;
+}
+
+/* ================================================================
+   COMPOSER - keep stable R9 behavior
+   ================================================================ */
+.composer,
+#composer{
+  --gx:50%;
+  --gy:50%;
+
+  width:min(580px,calc(100% - 100px)) !important;
+  max-width:580px !important;
+
+  height:44px !important;
+  min-height:44px !important;
+  max-height:44px !important;
+
+  border-radius:17px !important;
+
+  transition:
+    width .32s cubic-bezier(.16,.85,.18,1),
+    max-width .32s cubic-bezier(.16,.85,.18,1),
+    height .28s cubic-bezier(.16,.85,.18,1),
+    min-height .28s cubic-bezier(.16,.85,.18,1),
+    max-height .28s cubic-bezier(.16,.85,.18,1),
+    border-radius .24s ease,
+    border-color .20s ease,
+    box-shadow .20s ease !important;
+}
+
+.composer:hover:not(:focus-within):not(.aura-r10-writing),
+#composer:hover:not(:focus-within):not(.aura-r10-writing){
+  width:min(740px,calc(100% - 76px)) !important;
+  max-width:740px !important;
+
+  height:50px !important;
+  min-height:50px !important;
+  max-height:50px !important;
+}
+
+.composer:focus-within,
+.composer.aura-r10-writing,
+#composer:focus-within,
+#composer.aura-r10-writing{
+  width:min(1040px,calc(100% - 48px)) !important;
+  max-width:1040px !important;
+
+  height:64px !important;
+  min-height:64px !important;
+  max-height:64px !important;
+
+  border-radius:20px !important;
+}
+
+/* ================================================================
+   LIGHT MODE V2 — ICE SHELL + CONTRASTED CORE
+   ================================================================ */
+html[data-aura-theme="light"],
+html[data-aura-theme="light"] body{
+  background:
+    radial-gradient(circle at 50% 36%,rgba(78,158,215,.12),transparent 30%),
+    linear-gradient(180deg,#f5f9fc 0%,#eaf2f7 48%,#dde9f1 100%) !important;
+
+  color:#17384e !important;
+}
+
+/* Stronger contrast well behind the orb while keeping the page light. */
+html[data-aura-theme="light"] .hero{
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(25,67,103,.38) 0%,
+      rgba(45,92,129,.26) 27%,
+      rgba(121,161,191,.13) 43%,
+      rgba(237,245,249,.60) 65%,
+      rgba(250,252,253,.82) 100%),
+    linear-gradient(180deg,#edf5f9,#e1edf4) !important;
+
+  border-color:rgba(72,139,179,.22) !important;
+
+  box-shadow:
+    inset 0 0 120px rgba(56,121,168,.10),
+    inset 0 1px 0 rgba(255,255,255,.84),
+    0 18px 46px rgba(80,121,151,.14) !important;
+}
+
+html[data-aura-theme="light"] #stage canvas{
+  filter:
+    saturate(1.36)
+    contrast(1.24)
+    brightness(.88)
+    drop-shadow(0 0 24px rgba(40,119,190,.22)) !important;
+}
+
+html[data-aura-theme="light"] .topbar{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.95),rgba(235,245,250,.90)) !important;
+  border-color:rgba(65,135,177,.25) !important;
+  color:#17384e !important;
+}
+
+html[data-aura-theme="light"] #auraR10Dock{
+  background:
+    linear-gradient(180deg,var(--r10-light-1),var(--r10-light-2));
+  border-color:var(--r10-light-border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.90),
+    0 18px 44px rgba(70,112,143,.15),
+    0 0 26px rgba(77,168,214,.06);
+}
+
+html[data-aura-theme="light"] #auraR10Dock::before{
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(68,165,216,.20) 0%,
+      rgba(106,190,229,.08) 22%,
+      transparent 44%
+    ),
+    radial-gradient(circle at 82% 72%,rgba(157,123,224,.08),transparent 32%),
+    linear-gradient(180deg,rgba(255,255,255,.62),transparent 32%);
+}
+
+html[data-aura-theme="light"] .aura-r10-icon,
+html[data-aura-theme="light"] .aura-r10-label{
+  color:var(--r10-light-text);
+}
+
+html[data-aura-theme="light"] .aura-r10-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(142,214,240,.66),rgba(105,181,222,.38));
+  border-color:rgba(61,145,193,.34);
+}
+
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.95),rgba(235,246,251,.90)) !important;
+
+  border-color:rgba(69,146,188,.28) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),
+    0 18px 44px rgba(73,116,146,.15),
+    0 0 26px rgba(77,168,214,.06) !important;
+
+  color:#173d56 !important;
+}
+
+html[data-aura-theme="light"] #messageInput{
+  color:#16384e !important;
+}
+
+html[data-aura-theme="light"] #messageInput::placeholder{
+  color:rgba(29,70,96,.55) !important;
+}
+
+/* Generic premium panels in light mode */
+html[data-aura-theme="light"] :is(
+  .conversation,
+  .telemetry,
+  [class*="panel"],
+  [class*="drawer"],
+  [class*="memory"],
+  [class*="productivity"]
+){
+  color:#17384e !important;
+}
+
+html[data-aura-theme="light"] :is(
+  [class*="panel"],
+  [class*="drawer"],
+  [class*="memory"],
+  [class*="productivity"]
+) input,
+html[data-aura-theme="light"] :is(
+  [class*="panel"],
+  [class*="drawer"],
+  [class*="memory"],
+  [class*="productivity"]
+) textarea,
+html[data-aura-theme="light"] :is(
+  [class*="panel"],
+  [class*="drawer"],
+  [class*="memory"],
+  [class*="productivity"]
+) select{
+  color:#17384e !important;
+  background:rgba(255,255,255,.82) !important;
+  border-color:rgba(67,139,180,.24) !important;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media(max-width:980px){
+  #auraR10Dock{
+    width:54px;
+  }
+
+  #auraR10Dock:hover,
+  #auraR10Dock:focus-within{
+    width:190px;
+  }
+
+  #auraR10Dock:hover .aura-r10-icon,
+  #auraR10Dock:focus-within .aura-r10-icon{
+    left:21px;
+  }
+
+  .aura-r10-label{
+    left:44px;
+  }
+}

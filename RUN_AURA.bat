@@ -1,4 +1,8 @@
 @echo off
+
+REM AURA_I18N_R1_PREPARE_LOCALE
+call "%~dp0localization\prepare_locale.bat"
+REM /AURA_I18N_R1_PREPARE_LOCALE
 setlocal EnableExtensions
 cd /d "%~dp0"
 
@@ -9,12 +13,6 @@ set "PYW=%AURA_ROOT%\venv\Scripts\pythonw.exe"
 set "PY=%AURA_ROOT%\venv\Scripts\python.exe"
 
 if not exist "%BOOTSTRAP%" exit /b 90
-
-if /I "%~1"=="--self-check" goto :self_check
-
-REM AURA_I18N_R1_PREPARE_LOCALE
-call "%~dp0localization\prepare_locale.bat"
-REM /AURA_I18N_R1_PREPARE_LOCALE
 
 if exist "%PYW%" (
     start "" "%PYW%" "%BOOTSTRAP%"
@@ -27,8 +25,3 @@ if exist "%PY%" (
 )
 
 exit /b 91
-
-:self_check
-if not exist "%PY%" exit /b 91
-"%PY%" "%BOOTSTRAP%" --self-check
-exit /b %ERRORLEVEL%

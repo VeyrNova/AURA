@@ -16,8 +16,6 @@ Security invariants:
 
 from __future__ import annotations
 
-import os
-
 from dataclasses import dataclass
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -46,7 +44,7 @@ LOOPBACK_HOST = "127.0.0.1"
 DEFAULT_PORT = 18765
 BRIDGE_PATH = "/aura/a200/bridge"
 TOKEN_HEADER = "X-AURA-A200-Transport-Token"
-TOKEN_FILE = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[1]).resolve() / 'data' / 'a200_runtime' / 'r18_ui_transport_token.txt'
+TOKEN_FILE = Path(r"C:\AURA GPT version\data\a200_runtime\r18_ui_transport_token.txt")
 
 LOOPBACK_ONLY_REQUIRED = True
 TRANSPORT_TOKEN_REQUIRED = True

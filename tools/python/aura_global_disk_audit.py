@@ -17,8 +17,8 @@ RESULT_JSON = HERE / "AURA_GLOBAL_DISK_AUDIT_RESULT.json"
 RESULT_TXT = HERE / "AURA_GLOBAL_DISK_AUDIT_RESULT.txt"
 
 DRIVE = Path("C:/")
-AURA = Path(os.environ.get("AURA_ROOT") or Path(__file__).resolve().parents[2]).resolve()
-USERPROFILE = Path(os.environ.get("USERPROFILE") or Path.home())
+AURA = Path(r"C:\AURA GPT version")
+USERPROFILE = Path(os.environ.get("USERPROFILE", r"C:\Users\Public"))
 LOCALAPPDATA = Path(os.environ.get("LOCALAPPDATA", str(USERPROFILE / "AppData" / "Local")))
 APPDATA = Path(os.environ.get("APPDATA", str(USERPROFILE / "AppData" / "Roaming")))
 PROGRAMDATA = Path(os.environ.get("PROGRAMDATA", r"C:\ProgramData"))

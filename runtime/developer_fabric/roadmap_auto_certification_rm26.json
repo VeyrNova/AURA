@@ -1,0 +1,27 @@
+{
+  "entries": {
+    "txn_e7e774253ffb4b81ad9e:RM26": {
+      "status": "CERTIFIED",
+      "transaction_id": "txn_e7e774253ffb4b81ad9e",
+      "milestone_id": "RM26",
+      "revision_id": "20260904_132307_488563_a2e6ea6e",
+      "certified_at": "2026-09-04T13:23:07+02:00",
+      "pre_state": {
+        "forecast": {
+          "status": "planned",
+          "progress_percent": 0,
+          "start": "2026-09-09",
+          "end": "2026-09-10"
+        },
+        "actual": {
+          "start": null,
+          "end": null
+        },
+        "reconciled_confidence": null
+      },
+      "proposal_digest": "940679d26d371a8fbddbea73370eeed1f80f5067f21e678a25a0760dc38d7040"
+    }
+  },
+  "schema": "aura.roadmap.developer-certifier.rm26.v1",
+  "updated_at": "2026-09-04T13:23:07+02:00"
+}

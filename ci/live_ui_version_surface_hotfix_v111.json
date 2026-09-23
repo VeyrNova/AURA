@@ -10,9 +10,9 @@
     "permanent_invariant": "tests/invariants/test_live_ui_product_version_v111.py",
     "permanent_invariant_sha256": "691ed6e08e54656c8e1ae46bf03a413a95b5fb9a0a53eac6b4afa3268ca07155",
     "changed_live_ui_files": [
-      "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\index.html",
-      "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
-      "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0627-system-p06541.js"
+      "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\index.html",
+      "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
+      "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0627-system-p06541.js"
     ],
     "live_ui_display": "v1.1.1",
     "stale_hits": 0

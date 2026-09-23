@@ -44,95 +44,95 @@
       "sha256": "89566080a61fca8977579203c2640c852cc7a0710788b39e44cadaaf5705e073"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\tools\\shell_host.py",
       "sha256": "94fae7315347d56cfa99895914528eec132021378e65085c9d923fb655ebd9be"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\package.json",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\package.json",
       "sha256": "c3ee52b34d74e43a39345b8af5acbfae2d7ba97b6ce34ac3fdd85ff9f5869f48"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p081-event-watchers.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p081-event-watchers.js",
       "sha256": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p081-event-watchers.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p081-event-watchers.js",
       "sha256": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p081-event-watchers.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p081-event-watchers.js",
       "sha256": "6db2f772f781f7322a3cab6bb82d8af2b7e1f1ea8856c3d7abdfb2545b71a365"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0436-official-neural-orb.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0436-official-neural-orb.js",
       "sha256": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0436-official-neural-orb.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0436-official-neural-orb.js",
       "sha256": "af3896f9b7bfb0052e48feb015c87e9b3fe879c17757c09d1212babd66b8bad9"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0521-weather-map.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0521-weather-map.js",
       "sha256": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0521-weather-map.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0521-weather-map.js",
       "sha256": "e84574446a940aaaabcf8d585a64cfe973aec2dc90f3262b03f021228e66c1dc"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p060-navigation-workspace.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p060-navigation-workspace.js",
       "sha256": "ce7e137defa3badf4c034056272ba0629135ebf2d9437523397acec711c6005a"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p060-navigation-workspace.js",
       "sha256": "ce7e137defa3badf4c034056272ba0629135ebf2d9437523397acec711c6005a"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0623-file-productivity.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0623-file-productivity.js",
       "sha256": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0623-file-productivity.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0623-file-productivity.js",
       "sha256": "4dd82de83bacbedc61c99ba39b9e230a402bddd55b24a4e6a03a121cd2885d58"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0624-quality-ux.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0624-quality-ux.js",
       "sha256": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0624-quality-ux.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0624-quality-ux.js",
       "sha256": "4b171af1ccf1222e388e674f54a37c5b9ffa17c61dd955bc71233cbb51fc8e32"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0626-memory.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0626-memory.js",
       "sha256": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0626-memory.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0626-memory.js",
       "sha256": "5050a1feb8751770a743d657fb585d4ea3588f450ad1dc1323caec65da024f20"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p074-vitals-activity-module.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p074-vitals-activity-module.js",
       "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p074-vitals-activity-module.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p074-vitals-activity-module.js",
       "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p074-vitals-activity-module.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p074-vitals-activity-module.js",
       "sha256": "312798f9ad67b073fc974c445c698de805aeb3c60350912caf167e22efe49ccf"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08518-system-state-final-polish.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08518-system-state-final-polish.js",
       "sha256": "65c6e953691646df85e4e57dc4e3b0baf73d180ccef1b2b04b7ac8fbb5dd8ad5"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08518-system-state-final-polish.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08518-system-state-final-polish.js",
       "sha256": "65c6e953691646df85e4e57dc4e3b0baf73d180ccef1b2b04b7ac8fbb5dd8ad5"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08518-system-state-final-polish.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08518-system-state-final-polish.js",
       "sha256": "65c6e953691646df85e4e57dc4e3b0baf73d180ccef1b2b04b7ac8fbb5dd8ad5"
     },
     {
@@ -296,147 +296,147 @@
       "sha256": "fb3dc271b5f3b21678ffafc98d969e9db57dac03d0b39a8884bbbd4ef53e95e0"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0627-system-p06541.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0627-system-p06541.js",
       "sha256": "0efd0ae463ef654b20e5b27e8f9d621af6d967b04fc1420ca3743e1765ab817c"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p082-suggestion-engine.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p082-suggestion-engine.js",
       "sha256": "48116a6f33d534d389bf651769b672a6a922750b0f26118cfc796b0e60583801"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0821-controlled-test.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0821-controlled-test.js",
       "sha256": "c3b552bdabd0e448648775b3be80cb03499be70ecdb4bd37a224d3df022befcb"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0822-explainability-actions.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p0822-explainability-actions.js",
       "sha256": "5137c88c42907cca2ee5d3f76424ac1d6250386cfd54ce002451a35d7bdf12ae"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p083-proactive-notifications.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p083-proactive-notifications.js",
       "sha256": "911be9888f9fed4ed25daddf6ef41e4826b8bebd65d48e9543fbb415139d37fc"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p084-sensitive-action-confirmation.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p084-sensitive-action-confirmation.js",
       "sha256": "2526bd87adbaa7a181cd2eafea193db0c82b690b37b4a01b01dc49975ca16ce9"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08512-system-state-ui.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08512-system-state-ui.js",
       "sha256": "8ec327a2df4d64af8897ae94bde76107bdb422a0250b8ebda335b455ca5b83c6"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08513-system-state-ui.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08513-system-state-ui.js",
       "sha256": "f32361b6155993408d18bfc95d66bb8fd4b51f95f460e79838cd0c6deb007f30"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08514-system-state-reference-match.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08514-system-state-reference-match.js",
       "sha256": "f745c4359b7cec229ddac96f444e7062506990e54507544f75a4713c61efa2a7"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08515-system-state-master-logo.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08515-system-state-master-logo.js",
       "sha256": "c09d48a7f656853d94dfe646cc5851ff82fb05eb0f54b5175f737b8cc6107857"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08516-system-state-harmonized.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08516-system-state-harmonized.js",
       "sha256": "cea9ce6212e84d6aa986418f436321c0a14d8315e4f2d76ffc6c1886e6d58a27"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08517-state-button-sidebar-realign.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\assets\\aura-p08517-state-button-sidebar-realign.js",
       "sha256": "04efd427e77a91ca250f41e37e951a0a1382fb7096acd876a9a1f1de770c2bfe"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\dist\\index.html",
       "sha256": "3bca7388b3afca65ac9ed6a3b9b40670682a99ef1f90a8251637f05196c4e144"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\index.html",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\index.html",
       "sha256": "da2c5e4fa5029fc4ea96b64e099f12d8d20fa27558a8d274d03cb962d0823a6d"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p082-suggestion-engine.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p082-suggestion-engine.js",
       "sha256": "48116a6f33d534d389bf651769b672a6a922750b0f26118cfc796b0e60583801"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0821-controlled-test.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0821-controlled-test.js",
       "sha256": "c3b552bdabd0e448648775b3be80cb03499be70ecdb4bd37a224d3df022befcb"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0822-explainability-actions.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p0822-explainability-actions.js",
       "sha256": "5137c88c42907cca2ee5d3f76424ac1d6250386cfd54ce002451a35d7bdf12ae"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p083-proactive-notifications.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p083-proactive-notifications.js",
       "sha256": "911be9888f9fed4ed25daddf6ef41e4826b8bebd65d48e9543fbb415139d37fc"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p084-sensitive-action-confirmation.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p084-sensitive-action-confirmation.js",
       "sha256": "2526bd87adbaa7a181cd2eafea193db0c82b690b37b4a01b01dc49975ca16ce9"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08512-system-state-ui.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08512-system-state-ui.js",
       "sha256": "8ec327a2df4d64af8897ae94bde76107bdb422a0250b8ebda335b455ca5b83c6"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08513-system-state-ui.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08513-system-state-ui.js",
       "sha256": "f32361b6155993408d18bfc95d66bb8fd4b51f95f460e79838cd0c6deb007f30"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08514-system-state-reference-match.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08514-system-state-reference-match.js",
       "sha256": "f745c4359b7cec229ddac96f444e7062506990e54507544f75a4713c61efa2a7"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08515-system-state-master-logo.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08515-system-state-master-logo.js",
       "sha256": "c09d48a7f656853d94dfe646cc5851ff82fb05eb0f54b5175f737b8cc6107857"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08516-system-state-harmonized.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08516-system-state-harmonized.js",
       "sha256": "cea9ce6212e84d6aa986418f436321c0a14d8315e4f2d76ffc6c1886e6d58a27"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08517-state-button-sidebar-realign.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\assets\\aura-p08517-state-button-sidebar-realign.js",
       "sha256": "04efd427e77a91ca250f41e37e951a0a1382fb7096acd876a9a1f1de770c2bfe"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p082-suggestion-engine.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p082-suggestion-engine.js",
       "sha256": "48116a6f33d534d389bf651769b672a6a922750b0f26118cfc796b0e60583801"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0821-controlled-test.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0821-controlled-test.js",
       "sha256": "c3b552bdabd0e448648775b3be80cb03499be70ecdb4bd37a224d3df022befcb"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0822-explainability-actions.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p0822-explainability-actions.js",
       "sha256": "5137c88c42907cca2ee5d3f76424ac1d6250386cfd54ce002451a35d7bdf12ae"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p083-proactive-notifications.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p083-proactive-notifications.js",
       "sha256": "911be9888f9fed4ed25daddf6ef41e4826b8bebd65d48e9543fbb415139d37fc"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p084-sensitive-action-confirmation.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p084-sensitive-action-confirmation.js",
       "sha256": "2526bd87adbaa7a181cd2eafea193db0c82b690b37b4a01b01dc49975ca16ce9"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08512-system-state-ui.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08512-system-state-ui.js",
       "sha256": "8ec327a2df4d64af8897ae94bde76107bdb422a0250b8ebda335b455ca5b83c6"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08513-system-state-ui.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08513-system-state-ui.js",
       "sha256": "f32361b6155993408d18bfc95d66bb8fd4b51f95f460e79838cd0c6deb007f30"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08514-system-state-reference-match.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08514-system-state-reference-match.js",
       "sha256": "f745c4359b7cec229ddac96f444e7062506990e54507544f75a4713c61efa2a7"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08515-system-state-master-logo.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08515-system-state-master-logo.js",
       "sha256": "c09d48a7f656853d94dfe646cc5851ff82fb05eb0f54b5175f737b8cc6107857"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08516-system-state-harmonized.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08516-system-state-harmonized.js",
       "sha256": "cea9ce6212e84d6aa986418f436321c0a14d8315e4f2d76ffc6c1886e6d58a27"
     },
     {
-      "path": "%USERPROFILE%\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08517-state-button-sidebar-realign.js",
+      "path": "C:\\Users\\leclerc\\AppData\\Local\\AURA\\ui\\v0.7.2.2-rc4.2\\src\\aura-p08517-state-button-sidebar-realign.js",
       "sha256": "04efd427e77a91ca250f41e37e951a0a1382fb7096acd876a9a1f1de770c2bfe"
     },
     {

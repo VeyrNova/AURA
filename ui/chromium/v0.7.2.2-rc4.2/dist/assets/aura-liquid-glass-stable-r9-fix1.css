@@ -1,0 +1,252 @@
+/* ================================================================
+   AURA LIQUID GLASS STABLE R9 FIX1
+   - Semantic navigation mapping
+   - Dock avoids open left panels
+   - High-contrast Pearl Glass light theme
+   ================================================================ */
+
+/* ---------- Dock positioning / panel avoidance ---------- */
+#auraR9Dock{
+  left:var(--aura-r9-dock-left,22px) !important;
+  z-index:850 !important;
+  transition:
+    left .28s cubic-bezier(.16,.85,.18,1),
+    width .30s cubic-bezier(.16,.85,.18,1),
+    padding .24s ease,
+    border-color .22s ease,
+    box-shadow .22s ease,
+    opacity .18s ease !important;
+}
+
+#auraR9Dock.aura-r9-panel-aware{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 22px 52px rgba(0,0,0,.30),
+    0 0 30px rgba(82,197,255,.08) !important;
+}
+
+/* Make module/workspace panels visually sit above the main canvas,
+   while the dock is moved outside their occupied left area. */
+body .aura-r9-detected-panel{
+  position:relative;
+  z-index:900 !important;
+}
+
+/* ---------- Navigation feedback ---------- */
+.aura-r9-dock-btn[data-route-status="missing"]{
+  opacity:.38;
+  cursor:not-allowed;
+}
+
+.aura-r9-dock-btn[data-route-status="missing"]::after{
+  content:"";
+  position:absolute;
+  right:8px;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#ff6c93;
+  box-shadow:0 0 7px rgba(255,108,147,.55);
+}
+
+.aura-r9-dock-btn[data-route-status="bound"]{
+  opacity:1;
+}
+
+/* ================================================================
+   LIGHT THEME V2 — PEARL GLASS + NEURAL WELL
+   ================================================================ */
+
+html[data-aura-theme="light"],
+html[data-aura-theme="light"] body{
+  background:
+    radial-gradient(circle at 50% 42%,rgba(74,143,192,.12) 0%,transparent 34%),
+    linear-gradient(180deg,#f4f8fb 0%,#eaf2f7 52%,#dde8f0 100%) !important;
+  color:#142f42 !important;
+}
+
+/* The central neural area gets a controlled dark-blue well.
+   This keeps the interface light while preserving AURA's visual impact. */
+html[data-aura-theme="light"] .hero{
+  background:
+    radial-gradient(
+      ellipse at 50% 46%,
+      rgba(35,68,99,.46) 0%,
+      rgba(53,91,123,.34) 23%,
+      rgba(102,148,181,.19) 39%,
+      rgba(221,234,243,.62) 62%,
+      rgba(247,250,252,.86) 100%
+    ) !important;
+
+  border-color:rgba(72,133,170,.27) !important;
+
+  box-shadow:
+    inset 0 0 120px rgba(40,87,126,.12),
+    inset 0 1px 0 rgba(255,255,255,.92),
+    0 18px 48px rgba(80,119,148,.15) !important;
+}
+
+html[data-aura-theme="light"] .hero::before{
+  opacity:1 !important;
+  background:
+    radial-gradient(circle at 50% 47%,
+      rgba(18,48,79,.24) 0%,
+      rgba(28,72,110,.16) 28%,
+      rgba(91,155,194,.055) 48%,
+      transparent 67%) !important;
+}
+
+html[data-aura-theme="light"] #stage,
+html[data-aura-theme="light"] #stage canvas{
+  filter:
+    saturate(1.42)
+    contrast(1.27)
+    brightness(.91)
+    drop-shadow(0 0 25px rgba(37,118,184,.22)) !important;
+}
+
+/* Stronger readable HUD */
+html[data-aura-theme="light"] .topbar{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.95),rgba(232,242,248,.91)) !important;
+  border-color:rgba(66,128,165,.28) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 10px 28px rgba(74,112,140,.14) !important;
+}
+
+html[data-aura-theme="light"] .brand strong{
+  color:#102f44 !important;
+}
+html[data-aura-theme="light"] .brand small{
+  color:#547287 !important;
+}
+
+html[data-aura-theme="light"] .state-pill,
+html[data-aura-theme="light"] .route-pill,
+html[data-aura-theme="light"] .mini-chip,
+html[data-aura-theme="light"] .aura-theme-toggle{
+  background:rgba(255,255,255,.88) !important;
+  border-color:rgba(69,133,170,.27) !important;
+  color:#284e65 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 5px 12px rgba(76,116,145,.07) !important;
+}
+
+html[data-aura-theme="light"] .core-label span{
+  color:#526f82 !important;
+}
+html[data-aura-theme="light"] .core-label strong{
+  color:#173a51 !important;
+}
+html[data-aura-theme="light"] .core-label small{
+  color:#57768b !important;
+}
+
+html[data-aura-theme="light"] .aura-r5-identity__name{
+  color:rgba(24,55,76,.13) !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__time{
+  color:#123a55 !important;
+}
+html[data-aura-theme="light"] .aura-r5-identity__date{
+  color:#59788d !important;
+}
+
+/* New R9 dock: more contrast, still glass */
+html[data-aura-theme="light"] #auraR9Dock{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.96),rgba(228,240,247,.91)) !important;
+  border-color:rgba(65,133,171,.29) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 20px 45px rgba(65,104,134,.16),
+    0 0 26px rgba(62,155,207,.08) !important;
+}
+
+html[data-aura-theme="light"] #auraR9Dock::before{
+  background:
+    radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(61,168,219,.24) 0%,
+      rgba(91,184,224,.10) 22%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 50% 88%,rgba(137,96,213,.09),transparent 34%),
+    linear-gradient(180deg,rgba(255,255,255,.78),transparent 32%) !important;
+}
+
+html[data-aura-theme="light"] .aura-r9-dock-icon{
+  color:#28566f !important;
+}
+html[data-aura-theme="light"] .aura-r9-dock-label{
+  color:#183f57 !important;
+  font-weight:600 !important;
+}
+
+html[data-aura-theme="light"] .aura-r9-dock-btn:hover{
+  background:rgba(72,169,214,.11) !important;
+  border-color:rgba(59,145,190,.20) !important;
+}
+html[data-aura-theme="light"] .aura-r9-dock-btn.is-active{
+  background:
+    linear-gradient(180deg,rgba(118,207,237,.68),rgba(87,169,214,.36)) !important;
+  border-color:rgba(48,137,187,.36) !important;
+}
+
+/* Composer: readable Pearl Glass */
+html[data-aura-theme="light"] .composer,
+html[data-aura-theme="light"] #composer{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.97),rgba(229,241,247,.93)) !important;
+  border-color:rgba(62,133,173,.31) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 18px 42px rgba(64,105,135,.17),
+    0 0 25px rgba(61,157,207,.07) !important;
+}
+
+html[data-aura-theme="light"] #messageInput{
+  color:#173b52 !important;
+}
+html[data-aura-theme="light"] #messageInput::placeholder{
+  color:#638196 !important;
+}
+html[data-aura-theme="light"] #composerHint{
+  color:#718c9e !important;
+}
+html[data-aura-theme="light"] .attach,
+html[data-aura-theme="light"] .mic,
+html[data-aura-theme="light"] .send{
+  background:rgba(246,251,254,.98) !important;
+  border-color:rgba(61,133,173,.27) !important;
+  color:#24536e !important;
+}
+html[data-aura-theme="light"] .send{
+  background:
+    linear-gradient(180deg,rgba(178,228,246,.95),rgba(139,204,234,.88)) !important;
+  color:#0d4564 !important;
+}
+
+/* Open panels: high contrast instead of washed-out white */
+html[data-aura-theme="light"] .telemetry,
+html[data-aura-theme="light"] .conversation,
+html[data-aura-theme="light"] .aura-r9-detected-panel{
+  background:
+    linear-gradient(180deg,rgba(250,253,255,.97),rgba(225,238,246,.94)) !important;
+  border-color:rgba(62,130,169,.27) !important;
+  color:#17394e !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 20px 50px rgba(66,107,137,.17) !important;
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:980px){
+  #auraR9Dock{
+    left:var(--aura-r9-dock-left,12px) !important;
+  }
+}

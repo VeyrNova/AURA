@@ -12,7 +12,7 @@ from runtime.aura_roadmap_service import RoadmapService, RoadmapValidationError
 
 SCHEDULE_SCHEMA = "aura.roadmap.schedule-state.v25c.v1"
 ENGINE_SCHEMA = "aura.roadmap.schedule-engine.v25c.v1"
-DEFAULT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_ROOT = Path(r"C:\AURA GPT version")
 
 
 def _date_of(value: Any) -> Optional[date]:
