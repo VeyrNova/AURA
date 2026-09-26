@@ -142,7 +142,8 @@ Item {
         }
 
         Column {
-            width: parent.width - 215
+            // AURA_NATIVE_MUSIC_MINIPLAYER_ACTIONS_R14_FIX2 layout fit
+            width: Math.max(150, parent.width - 249)
             anchors.verticalCenter: parent.verticalCenter
             spacing: 4
 
@@ -321,33 +322,109 @@ Item {
         }
 
         Column {
-            width: 24
+            width: 34
             anchors.verticalCenter: parent.verticalCenter
-            spacing: 5
+            spacing: 7
 
-            Text {
-                width: parent.width
-                horizontalAlignment: Text.AlignHCenter
-                text: "↗"
-                color: "#9EEAF6"
-                font.pixelSize: 16
+            // AURA_NATIVE_MUSIC_MINIPLAYER_ACTIONS_R14_FIX2 START
+            Rectangle {
+                id: r14ExpandButton
+                width: 32
+                height: 32
+                radius: 16
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: r14ExpandHover.hovered ? "#351B3946" : "#220B1A27"
+                border.width: 1
+                border.color: r14ExpandHover.hovered ? "#83F3FF" : "#5574EFFF"
+
+                Behavior on color {
+                    ColorAnimation { duration: 130 }
+                }
+                Behavior on border.color {
+                    ColorAnimation { duration: 130 }
+                }
+
+                Item {
+                    anchors.centerIn: parent
+                    width: 14
+                    height: 14
+                    opacity: r14ExpandHover.hovered ? 1.0 : 0.82
+
+                    Rectangle { x: 0; y: 0; width: 5; height: 1.5; radius: 1; color: "#BDF9FF" }
+                    Rectangle { x: 0; y: 0; width: 1.5; height: 5; radius: 1; color: "#BDF9FF" }
+
+                    Rectangle { x: 9; y: 0; width: 5; height: 1.5; radius: 1; color: "#BDF9FF" }
+                    Rectangle { x: 12.5; y: 0; width: 1.5; height: 5; radius: 1; color: "#BDF9FF" }
+
+                    Rectangle { x: 0; y: 12.5; width: 5; height: 1.5; radius: 1; color: "#BDF9FF" }
+                    Rectangle { x: 0; y: 9; width: 1.5; height: 5; radius: 1; color: "#BDF9FF" }
+
+                    Rectangle { x: 9; y: 12.5; width: 5; height: 1.5; radius: 1; color: "#BDF9FF" }
+                    Rectangle { x: 12.5; y: 9; width: 1.5; height: 5; radius: 1; color: "#BDF9FF" }
+
+                    Behavior on opacity {
+                        NumberAnimation { duration: 120 }
+                    }
+                }
+
+                HoverHandler {
+                    id: r14ExpandHover
+                }
 
                 TapHandler {
                     onTapped: root.openFullRequested()
                 }
             }
 
-            Text {
-                width: parent.width
-                horizontalAlignment: Text.AlignHCenter
-                text: "×"
-                color: "#A7C9D4"
-                font.pixelSize: 14
+            Rectangle {
+                id: r14CloseButton
+                width: 32
+                height: 32
+                radius: 16
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: r14CloseHover.hovered ? "#3D142A34" : "#22100A18"
+                border.width: 1
+                border.color: r14CloseHover.hovered ? "#FF79C9" : "#6A9A4B78"
+
+                Behavior on color {
+                    ColorAnimation { duration: 130 }
+                }
+                Behavior on border.color {
+                    ColorAnimation { duration: 130 }
+                }
+
+                Item {
+                    anchors.centerIn: parent
+                    width: 14
+                    height: 14
+
+                    Rectangle {
+                        anchors.centerIn: parent
+                        width: 15
+                        height: 1.8
+                        radius: 1
+                        rotation: 45
+                        color: r14CloseHover.hovered ? "#FFD4EE" : "#E5A0C1"
+                    }
+                    Rectangle {
+                        anchors.centerIn: parent
+                        width: 15
+                        height: 1.8
+                        radius: 1
+                        rotation: -45
+                        color: r14CloseHover.hovered ? "#FFD4EE" : "#E5A0C1"
+                    }
+                }
+
+                HoverHandler {
+                    id: r14CloseHover
+                }
 
                 TapHandler {
                     onTapped: root.closeRequested()
                 }
             }
+            // AURA_NATIVE_MUSIC_MINIPLAYER_ACTIONS_R14_FIX2 END
         }
     }
 }
