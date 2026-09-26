@@ -14,8 +14,19 @@ Item {
     signal closeRequested()
     signal openFullRequested()
 
-    width: 452
+    // AURA_NATIVE_MUSIC_MINIPLAYER_TRANSPORT_R15 START
+    // Keep the validated 452 px desktop size, but contract slightly
+    // when the host window approaches its minimum width.
+    width: Math.max(
+        408,
+        Math.min(
+            452,
+            parent ? parent.width * 0.36 : 452
+        )
+    )
     height: 104
+    readonly property bool r15Compact: width < 438
+    // AURA_NATIVE_MUSIC_MINIPLAYER_TRANSPORT_R15 END
 
     // R13: shared playing ambience, opacity only — no image scale.
     property real r13PlayingPulse: 0.0
@@ -67,14 +78,14 @@ Item {
 
     Row {
         anchors.fill: parent
-        anchors.margins: 11
-        spacing: 11
+        anchors.margins: root.r15Compact ? 9 : 11
+        spacing: root.r15Compact ? 8 : 11
 
         Rectangle {
             id: r13CoverFrame
-            width: 80
-            height: 80
-            radius: 16
+            width: root.r15Compact ? 68 : 80
+            height: width
+            radius: root.r15Compact ? 14 : 16
             color: "#720A1725"
             border.width: musicBridge.playing ? 2 : 1
             border.color: musicBridge.playing ? "#74EFFF" : "#5C8669D6"
@@ -142,8 +153,15 @@ Item {
         }
 
         Column {
-            // AURA_NATIVE_MUSIC_MINIPLAYER_ACTIONS_R14_FIX2 layout fit
-            width: Math.max(150, parent.width - 249)
+            // R15: consume the exact width left by cover, transport and actions.
+            width: Math.max(
+                108,
+                parent.width
+                - r13CoverFrame.width
+                - r15Transport.width
+                - r15Actions.width
+                - (parent.spacing * 3)
+            )
             anchors.verticalCenter: parent.verticalCenter
             spacing: 4
 
@@ -229,15 +247,51 @@ Item {
         }
 
         Row {
-            width: 102
+            id: r15Transport
+            width: root.r15Compact ? 112 : 126
             anchors.verticalCenter: parent.verticalCenter
-            spacing: 6
+            spacing: root.r15Compact ? 5 : 6
+
+            Rectangle {
+                id: r15PreviousButton
+                width: root.r15Compact ? 30 : 34
+                height: width
+                radius: width / 2
+                anchors.verticalCenter: parent.verticalCenter
+                color: r15PreviousHover.hovered ? "#35132636" : "#4207131F"
+                border.width: 1
+                border.color: r15PreviousHover.hovered ? "#5574EFFF" : "#376B859F"
+
+                Behavior on color {
+                    ColorAnimation { duration: 140 }
+                }
+                Behavior on border.color {
+                    ColorAnimation { duration: 140 }
+                }
+
+                Image {
+                    anchors.centerIn: parent
+                    width: root.r15Compact ? 13 : 15
+                    height: width
+                    source: auraAssetBase + "music-prev-premium.svg"
+                    fillMode: Image.PreserveAspectFit
+                }
+
+                HoverHandler {
+                    id: r15PreviousHover
+                }
+
+                TapHandler {
+                    onTapped: musicBridge.previous()
+                }
+            }
 
             Rectangle {
                 id: r13PlayButton
-                width: 46
-                height: 46
-                radius: 23
+                width: root.r15Compact ? 42 : 46
+                height: width
+                radius: width / 2
+                anchors.verticalCenter: parent.verticalCenter
                 color: r13PlayHover.hovered
                        ? (musicBridge.playing ? "#4B153D4C" : "#3913293A")
                        : (musicBridge.playing ? "#35102431" : "#5D07131F")
@@ -269,8 +323,8 @@ Item {
 
                 Image {
                     anchors.centerIn: parent
-                    width: 20
-                    height: 20
+                    width: root.r15Compact ? 18 : 20
+                    height: width
                     source: auraAssetBase
                             + (musicBridge.playing
                                ? "music-pause-premium.svg"
@@ -288,11 +342,12 @@ Item {
             }
 
             Rectangle {
-                width: 40
-                height: 40
-                radius: 20
+                id: r15NextButton
+                width: root.r15Compact ? 30 : 34
+                height: width
+                radius: width / 2
                 anchors.verticalCenter: parent.verticalCenter
-                color: r13NextHover.hovered ? "#35132636" : "#5207131F"
+                color: r13NextHover.hovered ? "#35132636" : "#4207131F"
                 border.width: 1
                 border.color: r13NextHover.hovered ? "#5574EFFF" : "#376B859F"
 
@@ -305,8 +360,8 @@ Item {
 
                 Image {
                     anchors.centerIn: parent
-                    width: 17
-                    height: 17
+                    width: root.r15Compact ? 13 : 15
+                    height: width
                     source: auraAssetBase + "music-next-premium.svg"
                     fillMode: Image.PreserveAspectFit
                 }
@@ -322,16 +377,17 @@ Item {
         }
 
         Column {
-            width: 34
+            id: r15Actions
+            width: root.r15Compact ? 30 : 34
             anchors.verticalCenter: parent.verticalCenter
-            spacing: 7
+            spacing: root.r15Compact ? 5 : 7
 
             // AURA_NATIVE_MUSIC_MINIPLAYER_ACTIONS_R14_FIX2 START
             Rectangle {
                 id: r14ExpandButton
-                width: 32
-                height: 32
-                radius: 16
+                width: root.r15Compact ? 28 : 32
+                height: width
+                radius: width / 2
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: r14ExpandHover.hovered ? "#351B3946" : "#220B1A27"
                 border.width: 1
@@ -378,9 +434,9 @@ Item {
 
             Rectangle {
                 id: r14CloseButton
-                width: 32
-                height: 32
-                radius: 16
+                width: root.r15Compact ? 28 : 32
+                height: width
+                radius: width / 2
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: r14CloseHover.hovered ? "#3D142A34" : "#22100A18"
                 border.width: 1
