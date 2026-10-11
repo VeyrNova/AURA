@@ -1195,3 +1195,27 @@ No tag, release, merge, or main-branch update was performed.
 
 LOT 015A is ready to close after the validated fix is pushed. Next required
 lot: LOT 015B — FINAL GITHUB PUBLICATION.
+
+## LOT 015B — final GitHub publication
+
+LOT 015B is CLOSED. AURA Native 0.1.0 was published to the public default
+branch through PR #6 and merge commit
+`c985e215854b2551558c5acb2ddf16608f09cedd`. The annotated tag `v0.1.0` and
+GitHub Release were created on that verified commit. The repository description
+and topics now identify the Native Qt/QML and PySide project accurately.
+
+The publication branch `native-migration-014f` is intentionally retained for
+traceability. No force push, history rewrite, branch deletion, or legacy
+workspace access occurred. The release gate remained green after the final
+README/CHANGELOG audit: 35 total, 34 PASS, 0 FAIL, 0 ERROR, 1 expected skip.
+
+AURA_NATIVE_PUBLICATION=COMPLETE
+RELEASE_VERSION=0.1.0
+RELEASE_TAG=v0.1.0
+RELEASE_COMMIT=c985e215854b2551558c5acb2ddf16608f09cedd
+PUBLIC_DEFAULT_BRANCH=main
+PUBLIC_DEFAULT_BRANCH_HEAD=c985e215854b2551558c5acb2ddf16608f09cedd
+GITHUB_RELEASE=https://github.com/VeyrNova/AURA/releases/tag/v0.1.0
+NEXT_PHASE=AURA NEXT — AGENTIC ASSISTANT EVOLUTION
+NEXT LOT: LOT 016A — AURA NEXT CAPABILITY GAP + COMPETITOR BENCHMARK
+Do not start LOT 016A automatically.
