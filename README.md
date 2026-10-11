@@ -18,7 +18,7 @@ Install the project and UI dependencies in an isolated virtual environment, then
 
 ```powershell
 python -m pip install -e ".[ui]"
-python -m aura_native
+python -m aura_native --self-check --state-dir "$env:TEMP\\aura-native-selfcheck"
 ```
 
 Launch the desktop shell with:
