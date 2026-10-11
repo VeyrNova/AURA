@@ -1,9 +1,7 @@
-# AURA public repository candidate
-# REVIEW BEFORE APPLYING
-
-venv/
-.venv/
-env/
+# Local Python environments and generated output
+/.venv/
+/venv/
+/.runtime/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -11,114 +9,95 @@ __pycache__/
 .ruff_cache/
 .tox/
 .nox/
-htmlcov/
 .coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+/build/
+/dist/
 
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# Local state, including retained lot-1 validation evidence
+/.local-state/
+/tests/native/_evidence/
+/data/
+/logs/
+/temp/
+/tmp/
+/cache/
 
-# Secrets - NEVER COMMIT
+# Secrets and user configuration
 .env
 .env.*
 !.env.example
-**/credentials*.json
-**/credential*.json
-**/client_secret*.json
-**/*token*.json
-**/*secrets*.json
-**/*api_key*
-**/*apikey*
-**/oauth*.json
-**/keyring*
+!.env.sample
+/credentials/
+/secrets/
+AURA_ROOT_OVERRIDE.txt
+*.local.json
+*.local.toml
+client_secret*.json
+client_secrets*.json
+credentials.json
+token.json
+tokens.json
+*_token.txt
+*.pem
+*.key
+*.p12
+*.pfx
+/config/authorized_folders.json
+/config/voice_profile.json
+/config/voice_audition.json
+/config/dual_brain_gpu_ok.json
 
-# User/private AURA data
-**/conversations/
-**/conversation_history/
-**/sessions/
-**/cookies/
-**/recordings/
-**/voice_profiles/
-**/voice_samples/
-**/reference_audio/
-**/speaker_wav/
-**/user_data/
-**/userdata/
-**/private/
-**/personal/
-
-# Models
-*.gguf
-*.safetensors
-*.onnx
-*.pth
-*.pt
-*.ckpt
-*.tflite
-*.pb
-
-# Runtime/generated
-*.log
-*.dmp
-*.dump
-*.bak
-*.old
-*.tmp
-*.temp
-*.sqlite
-*.sqlite3
+# Databases and runtime outputs; do not hide Python runtime source
 *.db
-logs/
-log/
-tmp/
-temp/
-.cache/
-cache/
-data/roadmap/
-**/.aura_transactions/
-**/transactions/backups/
-
+*.db-wal
+*.db-shm
+*.sqlite
+/.codex/
+/aura-paths-*/
+/aura-014*-publish/
+/aura-014*-audit/
 /build/
-/out/
-/artifacts/
+/dist/
+/*.bat
+/*.txt
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+/runtime/*.json
+/runtime/*.jsonl
+/runtime/*.log
+/runtime/*.pid
+/runtime/*.tmp
+/runtime/*.lock
+**/rc4_2_session.json
 
-.idea/
-.vscode/
-.DS_Store
+# Downloaded model weights
+/models/*
+!/models/README.md
+!/models/manifest.json
+
+# Backups and temporary files
+*.bak
+*.bak.*
+*.orig
+*.rej
+*.tmp
+*.swp
+*~
+/_patch_backups/
+/.aura_transactions/
+/.aura_ui_project_backups/
+/.aura_audit/
+**/chrome-profile-*/
+**/edge-profile-*/
+/AURA_*_RESULT.txt
+/AURA_*_ROUTES.csv
 Thumbs.db
-desktop.ini
+Desktop.ini
+.DS_Store
 
-# IMPORTANT: no generic dist/ rule.
-# AURA active Chromium dist assets may be required.
-
-# Local validation evidence
-_github_preflight/
-# AURA machine-local/runtime state
-_archive_post_v2/
-ui/chromium/*/aura_ui_config.json
-ui/chromium/*/dist/aura_music_media_index_v180.json
-ui/chromium/*/dist/aura_music_pc_selection_v180.json
-runtime/developer_fabric/live_selftest_transaction_state.json
-# Historical/generated engineering artifacts excluded from public product repository
-.aura_audit/
-_patch_backups/
-_dev/staging/
-ci/reports/
-/ROLLBACK_*.bat
-# Local runtime/user state
-config/authorized_folders.json
-config/dual_brain_gpu_ok.json
-config/voice_audition.json
-config/voice_profile.json
-data/a200_runtime/
-data/media/
-data/youtube/
-database/google_search_usage.json
-runtime/developer_fabric/developer_mode_state.json
-runtime/developer_fabric/developer_workspace_request.json
-runtime/developer_fabric/roadmap_auto_certification_rm26.json
-# Historical patch 26.8.3 diagnostic fixtures excluded from public product repo
-scripts/patch_ui_26_8_3_diagnostics.py
-tests/test_patch2683_multibrain_documents.py
