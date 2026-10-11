@@ -1157,3 +1157,24 @@ installation instructions, and repository preparation. No publication or Git
 operation was performed in LOT 014E.
 
 Next required lot: LOT 014F — GITHUB PUBLICATION + README + RELEASE
+
+## LOT 014F — GitHub publication snapshot
+
+The Native successor was published without rewriting history on the dedicated
+branch `native-migration-014f` from the public `main` lineage. README.md,
+CHANGELOG.md, CONTRIBUTING.md, LICENSE, version metadata, and repository
+ignore rules were added or refreshed. The existing owner-selected
+all-rights-reserved license was preserved. No release tag or binary release
+was created because the publication quality gate is not green.
+
+Validation: secret/private-state audit found no real credentials, tokens,
+runtime databases, caches, or generated evidence in the publication snapshot.
+The focused LOT 013 regression ran 33 tests: 32 PASS, 0 ERROR, 1 expected
+skip, and 1 FAIL in `test_native_composition_and_diagnostics_bridge`
+(`diagReady` false). This failure was not introduced by the publication docs
+or metadata, but it blocks a release claim until repaired and revalidated.
+
+Publication branch: `native-migration-014f`
+Commit: `4cbf111 Publish Native migration baseline`
+Next required lot: repair and revalidate the diagnostics bridge before creating
+a version tag or GitHub Release. LOT 015A was not started.
