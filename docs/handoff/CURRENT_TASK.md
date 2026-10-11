@@ -1178,3 +1178,20 @@ Publication branch: `native-migration-014f`
 Commit: `4cbf111 Publish Native migration baseline`
 Next required lot: repair and revalidate the diagnostics bridge before creating
 a version tag or GitHub Release. LOT 015A was not started.
+
+## LOT 015A — Diagnostics release blocker repair
+
+The release blocker was reproduced and classified as
+`PSUTIL_MISSING_FROM_PACKAGE`: the documented desktop install omitted psutil,
+so DiagnosticsService truthfully returned `ready=False`. The smallest fix was
+to add `psutil>=5.9,<8` to the `[ui]` extra used by the documented install.
+The unavailable collector contract remains truthful; no readiness was faked.
+
+Validation: diagnostics 2/2 PASS; clean `[ui]` install PASS with psutil 7.2.2
+and PySide6 6.11.2; exact RC gate 33 total, 32 PASS, 0 FAIL, 0 ERROR, 1
+expected skip; LOT 014D, 014C, 014B, and LOT 013 scopes PASS; isolated Native
+startup/QML self-check PASS; explicit Legacy rollback remains reachable.
+No tag, release, merge, or main-branch update was performed.
+
+LOT 015A is ready to close after the validated fix is pushed. Next required
+lot: LOT 015B — FINAL GITHUB PUBLICATION.

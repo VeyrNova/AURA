@@ -12,7 +12,7 @@ The Native migration is complete through LOT 014E. The historical Chromium imple
 - Python 3.11+
 - PySide6 6.11.2 for the desktop UI
 
-Install the project and UI dependencies in an isolated virtual environment, then run the self-check:
+Install the project and UI dependencies in an isolated virtual environment, then run the self-check. The `.[ui]` extra includes PySide6 and the psutil-backed Diagnostics collector; no separate psutil install is required:
 
 ```powershell
 python -m pip install -e ".[ui]"
