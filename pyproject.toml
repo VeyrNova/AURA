@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aura-native-foundation"
+version = "0.1.0"
+description = "AURA Native — local-first Windows assistant"
+requires-python = ">=3.11"
+dependencies = [
+    "google-auth>=2.29,<3",
+    "google-auth-oauthlib>=1.2,<2",
+    "google-api-python-client>=2.125,<3",
+    "keyring>=25,<26",
+    "tzdata>=2024.1",
+]
+
+[project.optional-dependencies]
+ui = ["PySide6==6.11.2"]
+
+[project.scripts]
+aura-native-selfcheck = "aura_native.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["aura_native*"]
+
