@@ -4,7 +4,7 @@ AURA is a Native Windows AI assistant built with Qt/QML and PySide. It is local-
 
 ## Status
 
-Version 0.1.0 is the first published Native release candidate. The current architecture uses a Native Qt/QML runtime and Python services; the explicit `--core-mode legacy` option remains available for rollback comparison.
+Version 0.1.0 is the current published Native release. The current architecture uses a Native Qt/QML runtime and Python services; the explicit `--core-mode legacy` option remains available for rollback comparison. This release is distributed as source; no Windows executable or installer is included.
 
 ## Requirements
 
@@ -53,7 +53,7 @@ The `tests/native` suite covers runtime wiring, QML/PySide bridges, Music, Docum
 
 ## Current limitations
 
-The project is Windows-focused, some provider features require user configuration, and unsupported hardware telemetry is reported as unavailable rather than synthesized. The published Native branch is the release candidate for the next public-default integration; the historical Chromium lineage remains in Git history.
+The project is Windows-focused, some provider features require user configuration, and unsupported hardware telemetry is reported as unavailable rather than synthesized. Windows executable packaging is planned for a later dedicated release effort; the historical Chromium lineage remains in Git history.
 
 ## Repository boundaries
 
