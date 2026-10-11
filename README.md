@@ -1,16 +1,18 @@
-# AURA Native
+# AURA
 
-AURA Native is the Qt/PySide desktop runtime for the local-first AURA assistant on Windows. This repository contains the native migration baseline, its provider adapters, local persistence, QML UI, and regression tests.
+AURA is a Native Windows AI assistant built with Qt/QML and PySide. It is local-first and provides a desktop shell for conversation, Music, Documents, reminders, diagnostics, local productivity, and selected provider integrations.
 
 ## Status
 
-The Native migration is complete through LOT 014E. The historical Chromium implementation remains available in the repository's existing history; the Native migration is published on its own branch so that history is preserved without rewriting the public baseline.
+Version 0.1.0 is the first published Native release candidate. The current architecture uses a Native Qt/QML runtime and Python services; the explicit `--core-mode legacy` option remains available for rollback comparison.
 
 ## Requirements
 
 - Windows 10/11
 - Python 3.11+
 - PySide6 6.11.2 for the desktop UI
+
+The supported desktop target is Windows 10/11. The project requires Python 3.11 or newer.
 
 Install the project and UI dependencies in an isolated virtual environment, then run the self-check. The `.[ui]` extra includes PySide6 and the psutil-backed Diagnostics collector; no separate psutil install is required:
 
@@ -27,9 +29,31 @@ python app/main.py --windowed
 
 Use `--core-mode legacy` only for an explicit rollback comparison. Native mode is the default. Runtime state is stored under `%LOCALAPPDATA%\AURA-NATIVE` unless an isolated `--state-dir` is supplied.
 
+## Capabilities
+
+- Native Qt/QML desktop UI with Python service composition
+- Local Music playback and Documents search/open flows
+- Local reminders, notifications, background ownership, and system-tray policy
+- Local persistence with lifecycle and rollback safety
+- Diagnostics with CPU, memory, and disk metrics when the desktop dependencies are installed
+- Provider adapters with explicit unavailable, authentication, and scope states
+
+External provider access and optional telemetry depend on local configuration and credentials; no credentials are included in this repository.
+
 ## Validation
 
 The `tests/native` suite covers runtime wiring, QML/PySide bridges, Music, Documents, provider policy, persistence, notifications, tray ownership, and lifecycle safety. Tests that need credentials or external services are explicitly isolated or skipped.
+
+## Project structure
+
+- `app/` — desktop entry point and QML UI
+- `src/aura_native/` — Native services, contracts, adapters, and Qt bridges
+- `tests/native/` — focused Native regression tests
+- `docs/` — migration and handoff documentation
+
+## Current limitations
+
+The project is Windows-focused, some provider features require user configuration, and unsupported hardware telemetry is reported as unavailable rather than synthesized. The published Native branch is the release candidate for the next public-default integration; the historical Chromium lineage remains in Git history.
 
 ## Repository boundaries
 

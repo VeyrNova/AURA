@@ -1,10 +1,11 @@
 # Changelog
 
-## 0.1.0 — Native migration baseline
+## 0.1.0 — AURA Native release candidate
 
-- Completed the Native Qt/PySide application shell and runtime composition.
-- Added native Music and Documents command parity coverage.
-- Added native provider, persistence, notification, background, tray, and lifecycle contracts.
-- Added isolated-state validation and migration safety documentation.
-- Published the Native successor on a dedicated branch while preserving the historical public `main` lineage.
-- Added the psutil runtime dependency to the documented desktop UI installation so Diagnostics reports real CPU, RAM, and disk metrics when packaged.
+- Replaced the desktop shell with the Native Qt/QML and PySide runtime.
+- Added local Music playback and Documents search/open parity.
+- Added local persistence, reminders, notifications, background ownership, system-tray policy, and lifecycle-safe shutdown.
+- Added explicit Native defaulting with `--core-mode legacy` rollback support.
+- Added provider adapters with truthful unavailable, authentication, and scope states.
+- Added psutil to the documented desktop UI installation so Diagnostics reports real CPU, memory, and disk metrics.
+- Validated the release gate with 32 passing tests and 1 legitimate expected skip.
