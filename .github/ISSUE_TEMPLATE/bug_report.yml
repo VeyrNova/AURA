@@ -1,0 +1,57 @@
+name: "Bug report / Signaler un bug"
+description: "Report a reproducible issue in AURA / Signaler un dysfonctionnement reproductible"
+title: "[Bug] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve AURA. Merci pour votre retour !
+        **Never include API keys, passwords, OAuth tokens, personal conversations, private screenshots or local databases.**
+  - type: dropdown
+    id: language
+    attributes:
+      label: "Language / Langue"
+      options: ["Français", "English"]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: "AURA version / Version AURA"
+      placeholder: "Source checkout, internal build, or public release tag"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: "Windows version"
+      placeholder: "Windows 11 23H2 / 24H2 etc."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Steps to reproduce / Étapes de reproduction"
+      placeholder: "1. Open... 2. Click... 3. Observe..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected / Attendu"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Actual / Observé"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: "Additional details / Informations complémentaires"
+      description: "Only non-sensitive information. Remove personal data from screenshots and logs."
+    validations:
+      required: false
