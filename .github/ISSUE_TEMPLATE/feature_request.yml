@@ -1,0 +1,37 @@
+name: "Feature request / Suggestion"
+description: "Propose an improvement for AURA / Proposer une amélioration"
+title: "[Feature] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help shape AURA with a concrete, user-focused suggestion.
+        Proposez une idée précise et utile pour faire évoluer AURA.
+        Please do not share private data, credentials or proprietary third-party source code.
+  - type: dropdown
+    id: language
+    attributes:
+      label: "Language / Langue"
+      options: ["Français", "English"]
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: "What problem should AURA solve? / Quel problème résoudre ?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Suggested behavior / Fonctionnement proposé"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Area / Domaine"
+      options: ["Conversation", "Voice / Voix", "Vision", "Memory / Mémoire", "Integrations / Intégrations", "Interface FR/EN", "Windows installer", "Other / Autre"]
+    validations:
+      required: true
